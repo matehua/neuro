@@ -1,0 +1,498 @@
+{
+  "categories": [
+    {
+      "id": "neck",
+      "name": "Neck Exercises",
+      "description": "Exercises designed to strengthen and improve mobility in the neck region.",
+      "exercises": [
+        {
+          "id": "cervical-retraction",
+          "name": "Cervical Retraction",
+          "description": "Gently pull your chin back while keeping your gaze level. Hold for 5-10 seconds and repeat 10 times.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/cervical-retraction.jpg",
+          "instructions": [
+            "Sit or stand with good posture",
+            "Keep your gaze level and shoulders relaxed",
+            "Gently tuck your chin in, creating a 'double chin'",
+            "Hold for 5-10 seconds",
+            "Release and return to the starting position",
+            "Repeat 10 times, 3 sets daily"
+          ],
+          "cautions": [
+            "Avoid pushing your head forward after each repetition",
+            "Don't tilt your head up or down during the movement",
+            "Stop if you experience increased pain or dizziness"
+          ]
+        },
+        {
+          "id": "neck-rotation",
+          "name": "Neck Rotation",
+          "description": "Slowly turn your head to look over each shoulder. Move within a comfortable range and avoid forcing the movement.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/neck-rotation.jpg",
+          "instructions": [
+            "Sit or stand with good posture",
+            "Keep your shoulders relaxed and facing forward",
+            "Slowly turn your head to look over your right shoulder",
+            "Hold for 5 seconds",
+            "Return to center",
+            "Repeat on the left side",
+            "Perform 10 repetitions on each side, 2-3 times daily"
+          ],
+          "cautions": [
+            "Move slowly and controlled",
+            "Stay within a pain-free range of motion",
+            "Avoid jerking or forcing the movement",
+            "Stop if you experience dizziness or increased pain"
+          ]
+        },
+        {
+          "id": "neck-side-bend",
+          "name": "Neck Side Bend",
+          "description": "Gently tilt your head toward your shoulder without raising your shoulder. Hold and repeat on both sides.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/neck-side-bend.jpg",
+          "instructions": [
+            "Sit or stand with good posture",
+            "Keep both shoulders relaxed and down",
+            "Slowly tilt your right ear toward your right shoulder",
+            "Hold for 15-30 seconds, feeling a gentle stretch",
+            "Return to center",
+            "Repeat on the left side",
+            "Perform 3-5 repetitions on each side, 2 times daily"
+          ],
+          "cautions": [
+            "Don't raise your shoulders during the stretch",
+            "Keep the movement gentle and controlled",
+            "Avoid bouncing or forcing the stretch",
+            "Stop if you experience increased pain or numbness"
+          ]
+        },
+        {
+          "id": "neck-extension",
+          "name": "Neck Extension",
+          "description": "Gently tilt your head back to look up at the ceiling. Move within a comfortable range.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/neck-extension.jpg",
+          "instructions": [
+            "Sit or stand with good posture",
+            "Keep your shoulders relaxed and jaw relaxed",
+            "Slowly tilt your head back to look up at the ceiling",
+            "Hold for 5 seconds",
+            "Return to the neutral position",
+            "Repeat 10 times, 2 times daily"
+          ],
+          "cautions": [
+            "Avoid excessive extension that causes pain",
+            "Move slowly and controlled",
+            "Stop if you experience dizziness or increased pain",
+            "This exercise may not be suitable for all neck conditions - consult your healthcare provider"
+          ]
+        },
+        {
+          "id": "isometric-neck-flexion",
+          "name": "Isometric Neck Flexion",
+          "description": "Place your palm on your forehead and push your head forward while resisting with your hand. Hold for 5-10 seconds.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/isometric-neck-flexion.jpg",
+          "instructions": [
+            "Sit or stand with good posture",
+            "Place your palm on your forehead",
+            "Push your head forward while resisting with your hand (no movement should occur)",
+            "Hold the contraction for 5-10 seconds",
+            "Relax for 5 seconds",
+            "Repeat 10 times, 1-2 times daily"
+          ],
+          "cautions": [
+            "Maintain a steady breathing pattern during the exercise",
+            "Apply moderate resistance - this should not cause pain",
+            "Keep your shoulders relaxed throughout",
+            "Stop if you experience increased pain or headache"
+          ]
+        },
+        {
+          "id": "isometric-neck-extension",
+          "name": "Isometric Neck Extension",
+          "description": "Place your hands behind your head and push back while resisting with your hands. Hold for 5-10 seconds.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/isometric-neck-extension.jpg",
+          "instructions": [
+            "Sit or stand with good posture",
+            "Place your hands behind your head",
+            "Push your head backward while resisting with your hands (no movement should occur)",
+            "Hold the contraction for 5-10 seconds",
+            "Relax for 5 seconds",
+            "Repeat 10 times, 1-2 times daily"
+          ],
+          "cautions": [
+            "Maintain a steady breathing pattern during the exercise",
+            "Apply moderate resistance - this should not cause pain",
+            "Keep your shoulders relaxed throughout",
+            "Stop if you experience increased pain or headache"
+          ]
+        },
+        {
+          "id": "isometric-neck-lateral-flexion",
+          "name": "Isometric Neck Lateral Flexion",
+          "description": "Place your palm on the side of your head and push toward your shoulder while resisting with your hand. Hold for 5-10 seconds.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/isometric-neck-lateral-flexion.jpg",
+          "instructions": [
+            "Sit or stand with good posture",
+            "Place your right palm on the right side of your head",
+            "Push your head toward your right shoulder while resisting with your hand (no movement should occur)",
+            "Hold the contraction for 5-10 seconds",
+            "Relax for 5 seconds",
+            "Repeat on the left side",
+            "Perform 10 repetitions on each side, 1-2 times daily"
+          ],
+          "cautions": [
+            "Maintain a steady breathing pattern during the exercise",
+            "Apply moderate resistance - this should not cause pain",
+            "Keep your shoulders relaxed throughout",
+            "Stop if you experience increased pain or headache"
+          ]
+        },
+        {
+          "id": "chin-tucks",
+          "name": "Chin Tucks",
+          "description": "Draw your chin straight back while keeping your gaze level. This exercise helps improve posture and relieve neck strain.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/chin-tucks.jpg",
+          "instructions": [
+            "Sit or stand with your back straight",
+            "Keep your shoulders relaxed and down",
+            "Without tilting your head, gently draw your chin straight back",
+            "Hold for 5 seconds",
+            "Release and return to the starting position",
+            "Repeat 10 times, 3-5 times daily"
+          ],
+          "cautions": [
+            "Avoid tilting your head up or down during the movement",
+            "Keep the movement gentle and controlled",
+            "This should feel like you're making a 'double chin'",
+            "Stop if you experience increased pain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "upper-back",
+      "name": "Upper Back Exercises",
+      "description": "Exercises targeting the upper back muscles to improve posture and reduce tension.",
+      "exercises": [
+        {
+          "id": "prone-cobra",
+          "name": "Prone Cobra",
+          "description": "Lie face down and lift your chest off the ground while squeezing your shoulder blades together.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/prone-cobra.jpg",
+          "instructions": [
+            "Lie face down with arms at your sides, palms facing down",
+            "Rest your forehead on the floor",
+            "Gently squeeze your shoulder blades together",
+            "Slowly lift your head and chest off the floor",
+            "Hold for 5-10 seconds",
+            "Lower back down slowly",
+            "Repeat 10 times, 2 times daily"
+          ],
+          "cautions": [
+            "Keep your neck in a neutral position (look at the floor, not up)",
+            "Lift only as high as comfortable without pain",
+            "Avoid excessive arching of the lower back",
+            "Stop if you experience increased pain"
+          ]
+        },
+        {
+          "id": "scapular-retraction",
+          "name": "Scapular Retraction",
+          "description": "Squeeze your shoulder blades together and hold. This exercise helps improve posture and strengthen upper back muscles.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/scapular-retraction.jpg",
+          "instructions": [
+            "Sit or stand with good posture",
+            "Arms can be at your sides or bent at 90 degrees",
+            "Gently squeeze your shoulder blades together and down",
+            "Hold for 5 seconds",
+            "Release and return to the starting position",
+            "Repeat 15 times, 2-3 times daily"
+          ],
+          "cautions": [
+            "Avoid shrugging your shoulders up toward your ears",
+            "Keep your neck relaxed",
+            "Maintain normal breathing throughout",
+            "Stop if you experience increased pain"
+          ]
+        },
+        {
+          "id": "wall-angels",
+          "name": "Wall Angels",
+          "description": "Stand with your back against a wall and move your arms up and down in a snow angel pattern while maintaining contact with the wall.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/wall-angels.jpg",
+          "instructions": [
+            "Stand with your back, head, and arms against a wall",
+            "Bend your elbows at 90 degrees with the backs of your hands against the wall",
+            "Keeping your arms and lower back in contact with the wall, slowly slide your arms up",
+            "Go only as high as you can while maintaining contact with the wall",
+            "Slowly return to the starting position",
+            "Repeat 10 times, 1-2 times daily"
+          ],
+          "cautions": [
+            "Maintain contact between your lower back and the wall throughout",
+            "Move slowly and with control",
+            "Don't force the range of motion",
+            "Stop if you experience shoulder or neck pain"
+          ]
+        },
+        {
+          "id": "band-pull-aparts",
+          "name": "Band Pull-Aparts",
+          "description": "Hold a resistance band with both hands and pull it apart by moving your arms outward, focusing on squeezing your shoulder blades together.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/band-pull-aparts.jpg",
+          "instructions": [
+            "Hold a resistance band with both hands at shoulder height, arms extended forward",
+            "Keep your shoulders down and relaxed",
+            "Pull the band apart by moving your arms outward to the sides",
+            "Focus on squeezing your shoulder blades together",
+            "Slowly return to the starting position",
+            "Repeat 15 times, 2-3 sets daily"
+          ],
+          "cautions": [
+            "Choose an appropriate resistance level - the band should provide challenge but not cause pain",
+            "Keep your wrists straight throughout the movement",
+            "Maintain good posture with shoulders relaxed",
+            "Stop if you experience increased pain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "lower-back",
+      "name": "Lower Back Exercises",
+      "description": "Exercises designed to strengthen and improve mobility in the lower back region.",
+      "exercises": [
+        {
+          "id": "pelvic-tilt",
+          "name": "Pelvic Tilt",
+          "description": "Lie on your back and flatten your lower back against the floor by tilting your pelvis. This exercise helps strengthen core muscles and relieve lower back tension.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/pelvic-tilt.jpg",
+          "instructions": [
+            "Lie on your back with knees bent and feet flat on the floor",
+            "Relax your upper body and place your hands on your lower abdomen",
+            "Gently tighten your abdominal muscles and press your lower back into the floor",
+            "Hold for 5 seconds",
+            "Release and return to the starting position",
+            "Repeat 10 times, 2-3 times daily"
+          ],
+          "cautions": [
+            "Avoid holding your breath during the exercise",
+            "Keep the movement gentle and controlled",
+            "Don't lift your hips off the floor",
+            "Stop if you experience increased pain"
+          ]
+        },
+        {
+          "id": "prone-press-up",
+          "name": "Prone Press-Up",
+          "description": "Lie face down and press your upper body up while keeping your hips on the floor. This exercise helps improve spinal extension and can relieve disc-related pain.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/prone-press-up.jpg",
+          "instructions": [
+            "Lie face down with your hands placed under your shoulders",
+            "Keep your hips and legs relaxed on the floor",
+            "Gently push up with your arms, lifting your upper body",
+            "Keep your lower back and hips relaxed",
+            "Hold for 1-2 seconds at the top",
+            "Lower back down slowly",
+            "Repeat 10 times, 2-3 times daily"
+          ],
+          "cautions": [
+            "Only lift as high as comfortable without pain",
+            "Keep your neck in a neutral position",
+            "Don't force the movement if it causes pain",
+            "This exercise may not be suitable for all back conditions - consult your healthcare provider"
+          ]
+        },
+        {
+          "id": "knee-to-chest",
+          "name": "Knee to Chest",
+          "description": "Lie on your back and gently pull one or both knees toward your chest to stretch the lower back muscles.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/knee-to-chest.jpg",
+          "instructions": [
+            "Lie on your back with knees bent and feet flat on the floor",
+            "Bring one knee toward your chest, using your hands to gently pull it closer",
+            "Keep your lower back pressed into the floor",
+            "Hold for 15-30 seconds",
+            "Return to the starting position",
+            "Repeat with the other leg",
+            "Perform 3 repetitions with each leg, 2 times daily"
+          ],
+          "cautions": [
+            "Keep your movements slow and gentle",
+            "Avoid pulling your knee too forcefully",
+            "Keep your neck relaxed (you may use a small pillow)",
+            "Stop if you experience increased pain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "core",
+      "name": "Core Strengthening Exercises",
+      "description": "Exercises focusing on strengthening the core muscles to provide better support for the spine.",
+      "exercises": [
+        {
+          "id": "plank",
+          "name": "Plank",
+          "description": "Support your body weight on your forearms and toes while maintaining a straight line from head to heels. This exercise strengthens the entire core.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/plank.jpg",
+          "instructions": [
+            "Start in a forearm position with elbows directly under your shoulders",
+            "Extend your legs behind you, balancing on your toes",
+            "Engage your core muscles to maintain a straight line from head to heels",
+            "Keep your neck in a neutral position (look at the floor)",
+            "Hold for 15-30 seconds initially, gradually increasing time",
+            "Repeat 3 times, with 30-second rest between holds"
+          ],
+          "cautions": [
+            "Avoid sagging or lifting your hips",
+            "Don't hold your breath - maintain normal breathing",
+            "Keep your shoulders relaxed, not hunched",
+            "Start with shorter holds and gradually increase as strength improves",
+            "Stop if you experience back or shoulder pain"
+          ]
+        },
+        {
+          "id": "bird-dog",
+          "name": "Bird Dog",
+          "description": "On hands and knees, extend opposite arm and leg while maintaining a stable core. This exercise improves core stability and balance.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/bird-dog.jpg",
+          "instructions": [
+            "Start on your hands and knees with hands under shoulders and knees under hips",
+            "Keep your back flat and core engaged",
+            "Simultaneously extend your right arm forward and left leg backward",
+            "Maintain balance and keep your hips level",
+            "Hold for 3-5 seconds",
+            "Return to the starting position",
+            "Repeat with the left arm and right leg",
+            "Perform 10 repetitions on each side, 2 sets daily"
+          ],
+          "cautions": [
+            "Keep your movements slow and controlled",
+            "Maintain a neutral spine position throughout",
+            "Avoid arching your back or rotating your hips",
+            "Start with arm or leg extensions separately if the full exercise is too challenging",
+            "Stop if you experience increased pain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "mobility",
+      "name": "Mobility Exercises",
+      "description": "Exercises designed to improve overall spinal mobility and flexibility.",
+      "exercises": [
+        {
+          "id": "cat-cow",
+          "name": "Cat-Cow Stretch",
+          "description": "Alternate between arching and rounding your back while on hands and knees to improve spinal mobility.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/cat-cow.jpg",
+          "instructions": [
+            "Start on your hands and knees with hands under shoulders and knees under hips",
+            "Begin with your spine in a neutral position",
+            "Inhale as you drop your belly toward the floor, lifting your head and tailbone (Cow pose)",
+            "Exhale as you round your spine toward the ceiling, tucking your chin and tailbone (Cat pose)",
+            "Move slowly between these positions",
+            "Repeat 10 times, 2-3 times daily"
+          ],
+          "cautions": [
+            "Keep the movement gentle and flowing",
+            "Follow your breath - inhale for cow, exhale for cat",
+            "Avoid excessive arching or rounding",
+            "Stop if you experience increased pain"
+          ]
+        },
+        {
+          "id": "hip-flexor-stretch",
+          "name": "Hip Flexor Stretch",
+          "description": "Kneel on one knee and gently push your hips forward to stretch the front of the hip. Tight hip flexors can contribute to lower back pain.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/hip-flexor-stretch.jpg",
+          "instructions": [
+            "Kneel on your right knee with your left foot flat on the floor in front of you",
+            "Keep your back straight and core engaged",
+            "Gently push your hips forward until you feel a stretch in the front of your right hip",
+            "Place your hands on your left thigh for support if needed",
+            "Hold for 20-30 seconds",
+            "Switch sides and repeat",
+            "Perform 3 repetitions on each side, 1-2 times daily"
+          ],
+          "cautions": [
+            "Keep your front knee aligned over your ankle, not pushed forward",
+            "Maintain good posture throughout - don't arch your lower back",
+            "Use a cushion under your knee if needed for comfort",
+            "Stop if you experience increased pain"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "stretching",
+      "name": "Stretching Exercises",
+      "description": "Gentle stretches to improve flexibility and reduce muscle tension.",
+      "exercises": [
+        {
+          "id": "hamstring-stretch",
+          "name": "Seated Hamstring Stretch",
+          "description": "Sit with one leg extended and reach toward your foot to stretch the back of your thigh. Tight hamstrings can contribute to lower back pain.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/hamstring-stretch.jpg",
+          "instructions": [
+            "Sit on the floor with your right leg extended and left leg bent",
+            "Keep your right knee slightly bent (not locked)",
+            "Hinge at your hips and reach toward your right foot",
+            "Go only as far as comfortable - you should feel a stretch, not pain",
+            "Hold for 20-30 seconds",
+            "Switch sides and repeat",
+            "Perform 3 repetitions on each side, 1-2 times daily"
+          ],
+          "cautions": [
+            "Don't bounce or force the stretch",
+            "Keep your back relatively straight - bend from the hips",
+            "Avoid rounding your shoulders forward",
+            "Stop if you experience increased pain or tingling"
+          ]
+        },
+        {
+          "id": "piriformis-stretch",
+          "name": "Piriformis Stretch",
+          "description": "Stretch the piriformis muscle, which can contribute to sciatic pain when tight.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/piriformis-stretch.jpg",
+          "instructions": [
+            "Lie on your back with knees bent and feet flat on the floor",
+            "Cross your right ankle over your left knee",
+            "Grasp behind your left thigh and gently pull your leg toward your chest",
+            "Hold for 20-30 seconds, feeling a stretch in your right buttock",
+            "Release and switch sides",
+            "Perform 3 repetitions on each side, 1-2 times daily"
+          ],
+          "cautions": [
+            "Keep your head and shoulders relaxed on the floor",
+            "Pull only to the point of a gentle stretch, not pain",
+            "Keep your lower back pressed into the floor",
+            "Stop if you experience increased pain or sciatic symptoms"
+          ]
+        }
+      ]
+    }
+  ]
+}
