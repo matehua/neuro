@@ -1207,6 +1207,14 @@ export const zh = {
       roboticSpine: "机器人辅助脊柱手术"
     },
     appointments: "预约",
+    gpResources: "全科医生资源",
+    gpResourcesSubmenu: {
+      main: "全科医生资源",
+      referralProtocols: "转诊和分诊协议",
+      diagnostics: "神经外科诊断",
+      careCoordination: "多学科护理",
+      emergencies: "紧急情况和危险信号"
+    },
     medicolegal: "医疗法律咨询",
     locations: "诊所位置",
     locationsSubmenu: {
@@ -1348,5 +1356,97 @@ export const zh = {
   legalDocuments: {
     termsConditions: "条款和条件",
     privacyPolicy: "隐私政策"
+  },
+  gpResources: {
+    title: "全科医生资源",
+    subtitle: "为全科医生提供支持最佳患者护理和简化转诊的资源。",
+    overview: {
+      title: "全科医生资源",
+      description: "欢迎访问我们专为全科医生设计的资源部分。我们开发了这些资源，以支持您为神经外科疾病患者提供最佳护理，并促进向我们诊所的高效转诊。我们的目标是加强初级保健和专科神经外科服务之间的协作。"
+    },
+    referralProtocols: {
+      title: "全科医生转诊和分诊协议",
+      subtitle: "高效转诊至神经外科服务的指南",
+      description: "这些协议旨在帮助您确定何时将患者转诊至神经外科服务，转诊中应包含哪些信息，以及如何识别需要紧急关注的病例。",
+      urgentReferrals: {
+        title: "紧急转诊标准",
+        description: "需要立即或紧急神经外科咨询的情况："
+      },
+      standardReferrals: {
+        title: "标准转诊指南",
+        description: "神经外科转诊中建议包含的信息："
+      },
+      referralProcess: {
+        title: "转诊流程",
+        description: "如何将患者转诊至我们的神经外科诊所："
+      },
+      triageCategories: {
+        title: "分诊类别",
+        description: "我们如何根据临床表现优先处理转诊："
+      }
+    },
+    diagnostics: {
+      title: "神经外科诊断",
+      subtitle: "适当影像和诊断测试的指导",
+      description: "本部分提供有关各种神经外科疾病最适当诊断测试的信息，帮助确保患者在专科咨询前接受正确的检查。",
+      imagingGuidelines: {
+        title: "影像指南",
+        description: "常见神经外科疾病的推荐影像模式："
+      },
+      neurologicalAssessment: {
+        title: "神经学评估",
+        description: "常见表现的神经学检查关键要素："
+      },
+      specializedTests: {
+        title: "专业诊断测试",
+        description: "何时考虑额外的诊断检查："
+      },
+      interpretingResults: {
+        title: "结果解读",
+        description: "神经外科影像中常见发现的解读指导："
+      }
+    },
+    careCoordination: {
+      title: "多学科护理协调",
+      subtitle: "神经外科患者管理的协作方法",
+      description: "神经外科疾病的有效管理通常需要多学科方法。本部分概述了我们如何与其他医疗提供者合作，以及全科医生如何参与协调护理。",
+      teamApproach: {
+        title: "团队护理",
+        description: "我们对神经外科疾病的多学科方法："
+      },
+      preoperativeManagement: {
+        title: "术前管理",
+        description: "神经外科手术前患者准备的建议："
+      },
+      postoperativeFollowUp: {
+        title: "术后随访",
+        description: "神经外科手术后患者监测指南："
+      },
+      sharedCareModels: {
+        title: "共享护理模式",
+        description: "专科医生和初级保健之间协作管理的框架："
+      }
+    },
+    emergencies: {
+      title: "紧急情况和危险信号",
+      subtitle: "识别和管理神经外科紧急情况",
+      description: "本部分提供有关识别需要立即关注的神经外科紧急情况和危险信号症状的指导，以及专科干预前的初步管理步骤。",
+      redFlags: {
+        title: "神经外科危险信号",
+        description: "需要紧急评估的警告信号："
+      },
+      initialManagement: {
+        title: "初步管理",
+        description: "管理神经外科紧急情况的第一步："
+      },
+      whenToRefer: {
+        title: "何时转诊至急诊科",
+        description: "急诊科转诊与直接专科联系的标准："
+      },
+      followUpCare: {
+        title: "后续护理",
+        description: "紧急干预后持续管理的建议："
+      }
+    }
   }
 };

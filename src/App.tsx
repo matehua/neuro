@@ -40,6 +40,12 @@ import Contact from "./pages/Contact";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsConditions from "./pages/TermsConditions";
 
+// GP Resources pages
+import GPResources from "./pages/GPResources";
+import ReferralProtocols from "./pages/gp-resources/ReferralProtocols";
+import Diagnostics from "./pages/gp-resources/Diagnostics";
+import CareCoordination from "./pages/gp-resources/CareCoordination";
+
 import NotFound from "./pages/NotFound";
 import { LanguageProvider } from "./contexts/LanguageContext";
 import LanguageWrapper from "./components/LanguageWrapper";
@@ -95,6 +101,12 @@ const App = () => (
             <Route path="/privacy-policy" element={<PrivacyPolicy />} />
             <Route path="/terms-conditions" element={<TermsConditions />} />
 
+            {/* GP Resources routes */}
+            <Route path="/gp-resources" element={<GPResources />} />
+            <Route path="/gp-resources/referral-protocols" element={<ReferralProtocols />} />
+            <Route path="/gp-resources/diagnostics" element={<Diagnostics />} />
+            <Route path="/gp-resources/care-coordination" element={<CareCoordination />} />
+
             {/* Language-specific routes */}
             <Route path="/:lang" element={<LanguageWrapper><Index /></LanguageWrapper>} />
             <Route path="/:lang/appointments" element={<LanguageWrapper><Appointments /></LanguageWrapper>} />
@@ -133,6 +145,12 @@ const App = () => (
             <Route path="/:lang/contact" element={<LanguageWrapper><Contact /></LanguageWrapper>} />
             <Route path="/:lang/privacy-policy" element={<LanguageWrapper><PrivacyPolicy /></LanguageWrapper>} />
             <Route path="/:lang/terms-conditions" element={<LanguageWrapper><TermsConditions /></LanguageWrapper>} />
+
+            {/* GP Resources language-specific routes */}
+            <Route path="/:lang/gp-resources" element={<LanguageWrapper><GPResources /></LanguageWrapper>} />
+            <Route path="/:lang/gp-resources/referral-protocols" element={<LanguageWrapper><ReferralProtocols /></LanguageWrapper>} />
+            <Route path="/:lang/gp-resources/diagnostics" element={<LanguageWrapper><Diagnostics /></LanguageWrapper>} />
+            <Route path="/:lang/gp-resources/care-coordination" element={<LanguageWrapper><CareCoordination /></LanguageWrapper>} />
 
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path="*" element={<NotFound />} />

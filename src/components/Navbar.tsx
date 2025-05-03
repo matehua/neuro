@@ -36,6 +36,17 @@ export default function Navbar() {
       ]
     },
     { name: t.nav.appointments, path: "/appointments" },
+    {
+      name: t.nav.gpResources,
+      path: "/gp-resources",
+      submenu: [
+        { name: t.nav.gpResourcesSubmenu.main, path: "/gp-resources" },
+        { name: t.nav.gpResourcesSubmenu.referralProtocols, path: "/gp-resources/referral-protocols" },
+        { name: t.nav.gpResourcesSubmenu.diagnostics, path: "/gp-resources/diagnostics" },
+        { name: t.nav.gpResourcesSubmenu.careCoordination, path: "/gp-resources/care-coordination" },
+        { name: t.nav.gpResourcesSubmenu.emergencies, path: "/gp-resources/emergencies" },
+      ]
+    },
     { name: t.nav.medicolegal, path: "/medicolegal" },
     {
       name: t.nav.locations,

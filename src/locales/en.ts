@@ -190,7 +190,14 @@ export const en = {
       roboticSpine: "Robotic Spine Surgery"
     },
     appointments: "Appointments",
-
+    gpResources: "GP Resources",
+    gpResourcesSubmenu: {
+      main: "GP Resources",
+      referralProtocols: "Referral & Triage Protocols",
+      diagnostics: "Neurosurgical Diagnostics",
+      careCoordination: "Multidisciplinary Care",
+      emergencies: "Emergencies & Red Flags"
+    },
     medicolegal: "Medicolegal",
     locations: "Locations",
     locationsSubmenu: {
@@ -1439,6 +1446,98 @@ export const en = {
             description: "Trigeminal neuralgia treatment uses minimally-invasive techniques to relieve facial pain and restore normal life."
           }
         ]
+      }
+    }
+  },
+  gpResources: {
+    title: "GP Resources",
+    subtitle: "Resources for General Practitioners to support optimal patient care and streamlined referrals.",
+    overview: {
+      title: "Resources for General Practitioners",
+      description: "Welcome to our dedicated GP Resources section. We've developed these resources to support you in providing optimal care for patients with neurosurgical conditions and to facilitate efficient referrals to our practice. Our goal is to enhance collaboration between primary care and specialist neurosurgical services."
+    },
+    referralProtocols: {
+      title: "GP Referral and Triage Protocols",
+      subtitle: "Guidelines for efficient referrals to neurosurgical services",
+      description: "These protocols are designed to help you determine when to refer patients to neurosurgical services, what information to include in referrals, and how to identify cases requiring urgent attention.",
+      urgentReferrals: {
+        title: "Urgent Referral Criteria",
+        description: "Conditions requiring immediate or urgent neurosurgical consultation:"
+      },
+      standardReferrals: {
+        title: "Standard Referral Guidelines",
+        description: "Recommended information to include in neurosurgical referrals:"
+      },
+      referralProcess: {
+        title: "Referral Process",
+        description: "How to refer patients to our neurosurgical practice:"
+      },
+      triageCategories: {
+        title: "Triage Categories",
+        description: "How we prioritize referrals based on clinical presentation:"
+      }
+    },
+    diagnostics: {
+      title: "Neurosurgical Diagnostics",
+      subtitle: "Guidance on appropriate imaging and diagnostic tests",
+      description: "This section provides information on the most appropriate diagnostic tests for various neurosurgical conditions, helping to ensure patients receive the right investigations before specialist consultation.",
+      imagingGuidelines: {
+        title: "Imaging Guidelines",
+        description: "Recommended imaging modalities for common neurosurgical conditions:"
+      },
+      neurologicalAssessment: {
+        title: "Neurological Assessment",
+        description: "Key elements of neurological examination for common presentations:"
+      },
+      specializedTests: {
+        title: "Specialized Diagnostic Tests",
+        description: "When to consider additional diagnostic investigations:"
+      },
+      interpretingResults: {
+        title: "Interpreting Results",
+        description: "Guidance on interpreting common findings in neurosurgical imaging:"
+      }
+    },
+    careCoordination: {
+      title: "Multidisciplinary Care Coordination",
+      subtitle: "Collaborative approaches to neurosurgical patient management",
+      description: "Effective management of neurosurgical conditions often requires a multidisciplinary approach. This section outlines how we collaborate with other healthcare providers and how GPs can participate in coordinated care.",
+      teamApproach: {
+        title: "Team-Based Care",
+        description: "Our multidisciplinary approach to neurosurgical conditions:"
+      },
+      preoperativeManagement: {
+        title: "Preoperative Management",
+        description: "Recommendations for patient preparation before neurosurgical procedures:"
+      },
+      postoperativeFollowUp: {
+        title: "Postoperative Follow-Up",
+        description: "Guidelines for monitoring patients after neurosurgical procedures:"
+      },
+      sharedCareModels: {
+        title: "Shared Care Models",
+        description: "Frameworks for collaborative management between specialists and primary care:"
+      }
+    },
+    emergencies: {
+      title: "Emergencies and Red Flags",
+      subtitle: "Recognizing and managing neurosurgical emergencies",
+      description: "This section provides guidance on identifying neurosurgical emergencies and red flag symptoms that require immediate attention, along with initial management steps before specialist intervention.",
+      redFlags: {
+        title: "Neurosurgical Red Flags",
+        description: "Warning signs requiring urgent assessment:"
+      },
+      initialManagement: {
+        title: "Initial Management",
+        description: "First steps in managing neurosurgical emergencies:"
+      },
+      whenToRefer: {
+        title: "When to Refer to Emergency Department",
+        description: "Criteria for emergency department referral versus direct specialist contact:"
+      },
+      followUpCare: {
+        title: "Follow-Up Care",
+        description: "Recommendations for ongoing management after emergency intervention:"
       }
     }
   }

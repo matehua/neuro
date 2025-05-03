@@ -40,6 +40,7 @@ export default function Footer() {
                 { name: t.nav.expertise, path: "/expertise" },
                 { name: t.patientResources.title, path: "/patient-resources" },
                 { name: t.nav.appointments, path: "/appointments" },
+                { name: t.nav.gpResources, path: "/gp-resources" },
                 { name: t.nav.locations, path: "/locations" },
                 { name: t.nav.contact, path: "/contact" },
               ].map((link) => (
