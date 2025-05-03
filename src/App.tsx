@@ -23,7 +23,7 @@ import ImageGuidedSurgery from "./pages/expertise/ImageGuidedSurgery";
 import RoboticSpineSurgery from "./pages/expertise/RoboticSpineSurgery";
 import Medicolegal from "./pages/Medicolegal";
 import Locations from "./pages/Locations";
-import LocationDetail from "./pages/locations/LocationDetail.tsx";
+import LocationDetail from "./pages/locations/LocationDetail";
 import SurreyHillsLocation from "./pages/locations/surrey-hills";
 import MorningtonLocation from "./pages/locations/mornington";
 import FrankstonLocation from "./pages/locations/frankston";
