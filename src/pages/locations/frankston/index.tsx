@@ -24,13 +24,13 @@ export default function FrankstonLocation() {
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
-                <h1 className="text-3xl font-bold mb-6">{t.frankstonLocation?.expertNeurosurgery || 'Expert Neurosurgery and Spine Care'}</h1>
-                <h2 className="text-xl text-primary mb-4">{t.frankstonLocation?.peninsulaPrivateHospital || 'PENINSULA PRIVATE HOSPITAL'}</h2>
+                <h1 className="text-3xl font-bold mb-6">{t.locations?.frankstonLocation?.expertNeurosurgery || 'Expert Neurosurgery and Spine Care'}</h1>
+                <h2 className="text-xl text-primary mb-4">{t.locations?.frankstonLocation?.peninsulaPrivateHospital || 'PENINSULA PRIVATE HOSPITAL'}</h2>
                 <p className="text-muted-foreground mb-4">
-                  {t.frankstonLocation?.subtitle || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, neurosurgeon and spine surgeon, has been providing care to patients in Frankston and on Mornington Peninsula since 2012. He offers consultations, procedures and operations at Peninsula Private Hospital, with expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions.'}
+                  {t.locations?.frankstonLocation?.subtitle || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, neurosurgeon and spine surgeon, has been providing care to patients in Frankston and on Mornington Peninsula since 2012. He offers consultations, procedures and operations at Peninsula Private Hospital, with expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions.'}
                 </p>
                 <p className="text-muted-foreground">
-                  {t.frankstonLocation?.expertise || 'Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout the Frankston and Mornington Peninsula region, eliminating the need to travel to Melbourne for specialized care.'}
+                  {t.locations?.frankstonLocation?.expertise || 'Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout the Frankston and Mornington Peninsula region, eliminating the need to travel to Melbourne for specialized care.'}
                 </p>
               </div>
               <div className="md:w-1/2">
@@ -54,13 +54,13 @@ export default function FrankstonLocation() {
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold mb-4">{'Location Details'}</h2>
                   <p className="text-muted-foreground">
-                    {t.frankstonLocation?.locationDetails || 'Everything you need to know about our Frankston consulting location'}
+                    {t.locations?.frankstonLocation?.locationDetails || 'Everything you need to know about our Frankston consulting location'}
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.address || 'Address'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.frankstonLocation?.address || 'Address'}</h3>
                     <p className="text-muted-foreground">
                       Peninsula Private Hospital<br />
                       Mezzanine Consulting Suites<br />
@@ -70,7 +70,7 @@ export default function FrankstonLocation() {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.contactInformation || 'Contact Information'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.frankstonLocation?.contactInformation || 'Contact Information'}</h3>
                     <p className="text-muted-foreground mb-2">
                       <span className="font-medium">Phone:</span> 03 9781 4133
                     </p>
@@ -83,7 +83,7 @@ export default function FrankstonLocation() {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.consultingHours || 'Consulting Hours'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.frankstonLocation?.consultingHours || 'Consulting Hours'}</h3>
                     <p className="text-muted-foreground mb-2">
                       <span className="font-medium">Monday and Wednesday:</span> 9:00 AM - 5:00 PM
                     </p>
@@ -91,17 +91,17 @@ export default function FrankstonLocation() {
                       Consultations are by appointment only. Please call our office to schedule an appointment.
                     </p>
                     <p className="text-muted-foreground">
-                      <span className="font-medium">{'Note'}:</span> {t.frankstonLocation?.urgentAppointments || 'Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.'}
+                      <span className="font-medium">{'Note'}:</span> {t.locations?.frankstonLocation?.urgentAppointments || 'Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.'}
                     </p>
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.appointmentProcess || 'Appointment Process'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.frankstonLocation?.appointmentProcess || 'Appointment Process'}</h3>
                     <p className="text-muted-foreground mb-2">
-                      {t.frankstonLocation?.appointmentProcessDetails1 || 'Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.'}
+                      {t.locations?.frankstonLocation?.appointmentProcessDetails1 || 'Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.'}
                     </p>
                     <p className="text-muted-foreground">
-                      {t.frankstonLocation?.appointmentProcessDetails2 || 'All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.'}
+                      {t.locations?.frankstonLocation?.appointmentProcessDetails2 || 'All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.'}
                     </p>
                   </div>
                 </div>
@@ -123,17 +123,17 @@ export default function FrankstonLocation() {
                 </div>
 
                 <div className="card p-6 rounded-lg shadow-md bg-card">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.gettingHere || 'Getting Here'}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.frankstonLocation?.gettingHere || 'Getting Here'}</h3>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-lg font-medium mb-2">{t.frankstonLocation?.byPublicTransport || 'By Public Transport'}</h4>
+                      <h4 className="text-lg font-medium mb-2">{t.locations?.frankstonLocation?.byPublicTransport || 'By Public Transport'}</h4>
                       <p className="text-muted-foreground">
-                        <a href="https://www.peninsulaph.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{t.frankstonLocation?.peninsulaPrivateHospital || 'Peninsula Private Hospital'}</a> {t.frankstonLocation?.byPublicTransportDetails || 'is accessible via bus services that stop nearby. Several bus routes connect the hospital to Frankston train station and surrounding suburbs.'}
+                        <a href="https://www.peninsulaph.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">{t.locations?.frankstonLocation?.peninsulaPrivateHospital || 'Peninsula Private Hospital'}</a> {t.locations?.frankstonLocation?.byPublicTransportDetails || 'is accessible via bus services that stop nearby. Several bus routes connect the hospital to Frankston train station and surrounding suburbs.'}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-medium mb-2">{t.frankstonLocation?.byCar || 'By Car'}</h4>
+                      <h4 className="text-lg font-medium mb-2">{t.locations?.frankstonLocation?.byCar || 'By Car'}</h4>
                       <p className="text-muted-foreground">
                         Free on-site parking is available for patients at <a href="https://www.peninsulaph.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Peninsula Private Hospital</a>. McClelland Drive serves as the main entrance to the parking area, and disabled parking is available close to the main entrance. The hospital is easily accessible from Cranbourne Road and McClelland Drive, with convenient access from the Mornington Peninsula Freeway.
                       </p>
@@ -149,15 +149,15 @@ export default function FrankstonLocation() {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.frankstonLocation?.therapeuticInterventions?.title || 'Therapeutic Interventions'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{t.locations?.frankstonLocation?.therapeuticInterventions?.title || 'Therapeutic Interventions'}</h2>
               <p className="text-muted-foreground">
-                {t.frankstonLocation?.therapeuticInterventions?.subtitle || 'Tailored treatment plans for your specific needs'}
+                {t.locations?.frankstonLocation?.therapeuticInterventions?.subtitle || 'Tailored treatment plans for your specific needs'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.frankstonLocation?.therapeuticInterventions?.description || 'Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, Dr Aliashkevich collaborates closely with other specialists in Frankston and Mornington Peninsula to develop a tailored therapeutic plan designed to address your specific needs.'}
+                {t.locations?.frankstonLocation?.therapeuticInterventions?.description || 'Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, Dr Aliashkevich collaborates closely with other specialists in Frankston and Mornington Peninsula to develop a tailored therapeutic plan designed to address your specific needs.'}
               </p>
             </div>
 
@@ -170,9 +170,9 @@ export default function FrankstonLocation() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.therapeuticInterventions?.interventionalProcedures?.title || 'Interventional Procedures'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.frankstonLocation?.therapeuticInterventions?.interventionalProcedures?.title || 'Interventional Procedures'}</h3>
                 <p className="text-muted-foreground">
-                  {t.frankstonLocation?.therapeuticInterventions?.interventionalProcedures?.description || 'In addition to traditional medical therapies, Dr Aliashkevich can offer a variety of minimally invasive interventional procedures to target pain and inflammation directly at the source, providing relief and promoting healing.'}
+                  {t.locations?.frankstonLocation?.therapeuticInterventions?.interventionalProcedures?.description || 'In addition to traditional medical therapies, Dr Aliashkevich can offer a variety of minimally invasive interventional procedures to target pain and inflammation directly at the source, providing relief and promoting healing.'}
                 </p>
               </div>
 
@@ -184,9 +184,9 @@ export default function FrankstonLocation() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.therapeuticInterventions?.physicalTherapy?.title || 'Physical Therapy and Hydrotherapy'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.frankstonLocation?.therapeuticInterventions?.physicalTherapy?.title || 'Physical Therapy and Hydrotherapy'}</h3>
                 <p className="text-muted-foreground">
-                  {t.frankstonLocation?.therapeuticInterventions?.physicalTherapy?.description || 'Personalised exercise programmes to improve posture, strength, flexibility, and mobility. These therapies can be crucial components of both non-surgical management and post-operative rehabilitation.'}
+                  {t.locations?.frankstonLocation?.therapeuticInterventions?.physicalTherapy?.description || 'Personalised exercise programmes to improve posture, strength, flexibility, and mobility. These therapies can be crucial components of both non-surgical management and post-operative rehabilitation.'}
                 </p>
               </div>
 
@@ -198,9 +198,9 @@ export default function FrankstonLocation() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.therapeuticInterventions?.rehabilitation?.title || 'Rehabilitation'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.frankstonLocation?.therapeuticInterventions?.rehabilitation?.title || 'Rehabilitation'}</h3>
                 <p className="text-muted-foreground">
-                  {t.frankstonLocation?.therapeuticInterventions?.rehabilitation?.description || 'Critical component for postoperative recovery to maximise function, independence, and quality of life. Dr. Aliashkevich works with rehabilitation specialists to ensure comprehensive care throughout your recovery journey.'}
+                  {t.locations?.frankstonLocation?.therapeuticInterventions?.rehabilitation?.description || 'Critical component for postoperative recovery to maximise function, independence, and quality of life. Dr. Aliashkevich works with rehabilitation specialists to ensure comprehensive care throughout your recovery journey.'}
                 </p>
               </div>
             </div>
