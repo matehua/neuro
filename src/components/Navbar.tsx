@@ -25,6 +25,7 @@ export default function Navbar() {
         { name: t.nav.expertiseSubmenu.roboticSpine, path: "/expertise/robotic-spine-surgery" },
       ]
     },
+    { name: t.nav.appointments, path: "/appointments" },
     {
       name: t.patientResources.title,
       path: "/patient-resources",
@@ -35,7 +36,6 @@ export default function Navbar() {
         { name: t.nav.faq, path: "/faq" },
       ]
     },
-    { name: t.nav.appointments, path: "/appointments" },
     {
       name: t.nav.gpResources,
       path: "/gp-resources",
