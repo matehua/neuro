@@ -315,7 +315,8 @@ export const en = {
       exerciseLibrary: "Exercise Library",
       assessmentTools: "Assessment Tools",
       patientDashboard: "Patient Dashboard",
-      comprehensiveSolution: "Individual Spine Health Program"
+      comprehensiveSolution: "Individual Spine Health Program",
+      faq: "Frequently Asked Questions"
     },
     individualSpineHealthProgram: {
       title: "Individual Spine Health Program",

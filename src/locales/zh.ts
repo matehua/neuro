@@ -604,7 +604,8 @@ export const zh = {
       exerciseLibrary: "运动库",
       assessmentTools: "评估工具",
       patientDashboard: "患者仪表板",
-      comprehensiveSolution: "个人脊柱健康计划"
+      comprehensiveSolution: "个人脊柱健康计划",
+      faq: "常见问题"
     },
     spineHealthApp: {
       title: "脊柱健康应用",

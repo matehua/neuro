@@ -32,6 +32,7 @@ export default function Navbar() {
         { name: t.patientResources.submenu.comprehensiveSolution, path: "/patient-resources/individual-spine-health-program" },
         { name: t.patientResources.submenu.conditionInfo, path: "/patient-resources/condition-information" },
         { name: t.patientResources.submenu.exerciseLibrary, path: "/patient-resources/exercise-library" },
+        { name: t.nav.faq, path: "/faq" },
       ]
     },
     { name: t.nav.appointments, path: "/appointments" },
@@ -52,7 +53,6 @@ export default function Navbar() {
         { name: t.nav.locationsSubmenu.surreyHills, path: "/locations/surrey-hills" },
       ]
     },
-    { name: t.nav.faq, path: "/faq" },
     { name: t.nav.contact, path: "/contact" }
   ];
 
