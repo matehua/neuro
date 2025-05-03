@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageHeader from "@/components/PageHeader";
 import Layout from "@/components/Layout";
@@ -56,11 +55,6 @@ export default function ReferralProtocols() {
 
   return (
     <Layout>
-      <Helmet>
-        <title>GP Referral and Triage Protocols | Dr. Ales Aliashkevich</title>
-        <meta name="description" content="Guidelines for efficient referrals to neurosurgical services, including urgent referral criteria, standard referral guidelines, and triage categories." />
-      </Helmet>
-
       <PageHeader
         title={t.gpResources.referralProtocols.title}
         subtitle={t.gpResources.referralProtocols.subtitle}
@@ -81,7 +75,7 @@ export default function ReferralProtocols() {
                 <TabsTrigger value="process">Referral Process</TabsTrigger>
                 <TabsTrigger value="triage">Triage Categories</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="urgent" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -106,7 +100,7 @@ export default function ReferralProtocols() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="standard" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -136,7 +130,7 @@ export default function ReferralProtocols() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="process" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -185,7 +179,7 @@ export default function ReferralProtocols() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="triage" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -205,7 +199,7 @@ export default function ReferralProtocols() {
                         </ul>
                         <p className="mt-2 text-sm italic">Direct to emergency department with neurosurgical notification</p>
                       </div>
-                      
+
                       <div className="p-4 border border-orange-300 bg-orange-50 dark:bg-orange-950/20 rounded-md">
                         <h3 className="font-bold text-orange-700 dark:text-orange-400">Urgent (1-2 weeks)</h3>
                         <ul className="list-disc pl-6 mt-2">
@@ -216,7 +210,7 @@ export default function ReferralProtocols() {
                           <li>Pituitary tumors with visual field defects</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 border border-yellow-300 bg-yellow-50 dark:bg-yellow-950/20 rounded-md">
                         <h3 className="font-bold text-yellow-700 dark:text-yellow-400">Semi-Urgent (2-4 weeks)</h3>
                         <ul className="list-disc pl-6 mt-2">
@@ -227,7 +221,7 @@ export default function ReferralProtocols() {
                           <li>Spinal instability without neurological deficit</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 border border-green-300 bg-green-50 dark:bg-green-950/20 rounded-md">
                         <h3 className="font-bold text-green-700 dark:text-green-400">Routine (4-6 weeks)</h3>
                         <ul className="list-disc pl-6 mt-2">

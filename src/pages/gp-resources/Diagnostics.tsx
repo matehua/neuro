@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageHeader from "@/components/PageHeader";
 import Layout from "@/components/Layout";
@@ -56,11 +55,6 @@ export default function Diagnostics() {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Neurosurgical Diagnostics | Dr. Ales Aliashkevich</title>
-        <meta name="description" content="Guidance on appropriate imaging and diagnostic tests for neurosurgical conditions, helping to ensure patients receive the right investigations before specialist consultation." />
-      </Helmet>
-
       <PageHeader
         title={t.gpResources.diagnostics.title}
         subtitle={t.gpResources.diagnostics.subtitle}
@@ -81,7 +75,7 @@ export default function Diagnostics() {
                 <TabsTrigger value="specialized">Specialized Tests</TabsTrigger>
                 <TabsTrigger value="interpreting">Interpreting Results</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="imaging" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -89,7 +83,7 @@ export default function Diagnostics() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">{t.gpResources.diagnostics.imagingGuidelines.description}</p>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Spine Imaging</h3>
                     <div className="space-y-4">
                       <div className="p-4 bg-muted rounded-md">
@@ -102,7 +96,7 @@ export default function Diagnostics() {
                           <li><strong>For osteoporosis/fracture assessment:</strong> CT scan</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">Cervical Spine</h4>
                         <ul className="list-disc pl-6 mt-2">
@@ -114,7 +108,7 @@ export default function Diagnostics() {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Brain Imaging</h3>
                     <div className="space-y-4">
                       <div className="p-4 bg-muted rounded-md">
@@ -125,7 +119,7 @@ export default function Diagnostics() {
                           <li><strong>For surgical planning:</strong> Add functional MRI and tractography</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">Cerebrovascular Disease</h4>
                         <ul className="list-disc pl-6 mt-2">
@@ -134,7 +128,7 @@ export default function Diagnostics() {
                           <li><strong>For carotid stenosis:</strong> Carotid duplex ultrasound followed by CT angiography if significant stenosis detected</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">Hydrocephalus</h4>
                         <ul className="list-disc pl-6 mt-2">
@@ -144,7 +138,7 @@ export default function Diagnostics() {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="mt-6 p-4 border border-primary/20 rounded-md">
                       <p className="font-semibold">Important considerations:</p>
                       <ul className="list-disc pl-6 mt-2">
@@ -156,7 +150,7 @@ export default function Diagnostics() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="neurological" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -164,7 +158,7 @@ export default function Diagnostics() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">{t.gpResources.diagnostics.neurologicalAssessment.description}</p>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Radiculopathy Assessment</h3>
                     <div className="p-4 bg-muted rounded-md mb-6">
                       <h4 className="font-semibold">Key Elements:</h4>
@@ -175,7 +169,7 @@ export default function Diagnostics() {
                         <li><strong>Provocative tests:</strong> Straight leg raise (lumbar), Spurling's test (cervical)</li>
                         <li><strong>Document pain distribution:</strong> Note if axial, radicular, or both</li>
                       </ul>
-                      
+
                       <h4 className="font-semibold mt-4">Common Patterns:</h4>
                       <ul className="list-disc pl-6 mt-2">
                         <li><strong>L4 radiculopathy:</strong> Quadriceps weakness, diminished knee reflex, medial leg numbness</li>
@@ -185,7 +179,7 @@ export default function Diagnostics() {
                         <li><strong>C7 radiculopathy:</strong> Triceps/wrist flexion weakness, diminished triceps reflex, middle finger numbness</li>
                       </ul>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Myelopathy Assessment</h3>
                     <div className="p-4 bg-muted rounded-md mb-6">
                       <h4 className="font-semibold">Key Elements:</h4>
@@ -196,7 +190,7 @@ export default function Diagnostics() {
                         <li><strong>Proprioception:</strong> Romberg test, joint position sense</li>
                         <li><strong>Bladder/bowel function:</strong> Ask about urgency, incontinence</li>
                       </ul>
-                      
+
                       <h4 className="font-semibold mt-4">Myelopathy Severity Scales:</h4>
                       <p className="mt-2">Consider using the modified Japanese Orthopaedic Association (mJOA) scale to quantify severity:</p>
                       <ul className="list-disc pl-6 mt-2">
@@ -205,7 +199,7 @@ export default function Diagnostics() {
                         <li><strong>Severe myelopathy:</strong> mJOA score &lt;12</li>
                       </ul>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Brain Tumor Assessment</h3>
                     <div className="p-4 bg-muted rounded-md">
                       <h4 className="font-semibold">Key Elements:</h4>
@@ -221,7 +215,7 @@ export default function Diagnostics() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="specialized" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -229,7 +223,7 @@ export default function Diagnostics() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">{t.gpResources.diagnostics.specializedTests.description}</p>
-                    
+
                     <div className="space-y-6 mt-4">
                       <div className="p-4 bg-muted rounded-md">
                         <h3 className="font-bold">Electrophysiological Studies</h3>
@@ -244,10 +238,10 @@ export default function Diagnostics() {
                               <li>Monitoring progression of nerve damage</li>
                             </ul>
                           </li>
-                          <li><strong>Timing:</strong> Most valuable when performed >3 weeks after symptom onset</li>
+                          <li><strong>Timing:</strong> Most valuable when performed more than 3 weeks after symptom onset</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h3 className="font-bold">Advanced Imaging Techniques</h3>
                         <ul className="list-disc pl-6 mt-2">
@@ -277,7 +271,7 @@ export default function Diagnostics() {
                           </li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h3 className="font-bold">CSF Analysis</h3>
                         <p className="mt-2">Consider in the following scenarios:</p>
@@ -288,7 +282,7 @@ export default function Diagnostics() {
                           <li><strong>Normal pressure hydrocephalus:</strong> CSF tap test can be both diagnostic and predictive of shunt response</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h3 className="font-bold">Vascular Studies</h3>
                         <ul className="list-disc pl-6 mt-2">
@@ -307,7 +301,7 @@ export default function Diagnostics() {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <div className="mt-6 p-4 border border-primary/20 rounded-md">
                       <p className="font-semibold">When to refer for specialized testing:</p>
                       <p className="mt-2">Rather than ordering these specialized tests directly, consider referral to neurosurgery first. Our team can coordinate the most appropriate advanced testing based on the clinical presentation and initial imaging findings.</p>
@@ -315,7 +309,7 @@ export default function Diagnostics() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="interpreting" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -323,7 +317,7 @@ export default function Diagnostics() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">{t.gpResources.diagnostics.interpretingResults.description}</p>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Spine Imaging Interpretation</h3>
                     <div className="p-4 bg-muted rounded-md mb-6">
                       <h4 className="font-semibold">Key Considerations:</h4>
@@ -358,7 +352,7 @@ export default function Diagnostics() {
                         </li>
                       </ul>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Brain Imaging Interpretation</h3>
                     <div className="p-4 bg-muted rounded-md mb-6">
                       <h4 className="font-semibold">Key Considerations:</h4>
@@ -389,7 +383,7 @@ export default function Diagnostics() {
                         </li>
                       </ul>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">When to Seek Neurosurgical Input</h3>
                     <div className="p-4 bg-muted rounded-md">
                       <ul className="list-disc pl-6 mt-2">
@@ -407,7 +401,7 @@ export default function Diagnostics() {
                         <li><strong>Determining surgical candidacy</strong> for degenerative spine conditions</li>
                       </ul>
                     </div>
-                    
+
                     <div className="mt-6 p-4 border border-primary/20 rounded-md">
                       <p className="font-semibold">Radiological-Clinical Mismatch:</p>
                       <p className="mt-2">Remember that imaging findings must be interpreted in the context of clinical presentation. When in doubt, neurosurgical consultation can help determine the clinical significance of radiological findings and guide appropriate management.</p>

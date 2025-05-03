@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageHeader from "@/components/PageHeader";
 import Layout from "@/components/Layout";
@@ -56,11 +55,6 @@ export default function CareCoordination() {
 
   return (
     <Layout>
-      <Helmet>
-        <title>Multidisciplinary Care Coordination | Dr. Ales Aliashkevich</title>
-        <meta name="description" content="Collaborative approaches to neurosurgical patient management, outlining how we collaborate with other healthcare providers and how GPs can participate in coordinated care." />
-      </Helmet>
-
       <PageHeader
         title={t.gpResources.careCoordination.title}
         subtitle={t.gpResources.careCoordination.subtitle}
@@ -81,7 +75,7 @@ export default function CareCoordination() {
                 <TabsTrigger value="postoperative">Postoperative Follow-Up</TabsTrigger>
                 <TabsTrigger value="shared">Shared Care Models</TabsTrigger>
               </TabsList>
-              
+
               <TabsContent value="team" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -89,7 +83,7 @@ export default function CareCoordination() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">{t.gpResources.careCoordination.teamApproach.description}</p>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Our Multidisciplinary Team</h3>
                     <div className="space-y-4">
                       <div className="p-4 bg-muted rounded-md">
@@ -101,7 +95,7 @@ export default function CareCoordination() {
                           <li><strong>Neuroradiologists:</strong> Provide expert interpretation of neuroimaging and interventional procedures</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">Extended Care Team</h4>
                         <ul className="list-disc pl-6 mt-2">
@@ -113,7 +107,7 @@ export default function CareCoordination() {
                           <li><strong>Psychiatrists/Psychologists:</strong> For psychological support and management of comorbid mental health conditions</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">The GP's Crucial Role</h4>
                         <p className="mt-2">General practitioners are integral members of our multidisciplinary team, providing:</p>
@@ -127,7 +121,7 @@ export default function CareCoordination() {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Communication Pathways</h3>
                     <div className="p-4 bg-muted rounded-md">
                       <p>We prioritize clear communication with referring GPs through:</p>
@@ -139,7 +133,7 @@ export default function CareCoordination() {
                         <li><strong>GP hotline</strong> for rapid access to neurosurgical advice: (03) 9008 4200</li>
                       </ul>
                     </div>
-                    
+
                     <div className="mt-6 p-4 border border-primary/20 rounded-md">
                       <p className="font-semibold">Multidisciplinary Case Conferences:</p>
                       <p className="mt-2">For complex cases, we hold regular multidisciplinary team meetings. Referring GPs are welcome to participate in these discussions, either in person or via telehealth. Please contact our office if you would like to be involved in case discussions for your patients.</p>
@@ -147,7 +141,7 @@ export default function CareCoordination() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="preoperative" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -155,7 +149,7 @@ export default function CareCoordination() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">{t.gpResources.careCoordination.preoperativeManagement.description}</p>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Preoperative Optimization</h3>
                     <div className="space-y-4">
                       <div className="p-4 bg-muted rounded-md">
@@ -170,7 +164,7 @@ export default function CareCoordination() {
                           <li><strong>Infection risk reduction:</strong> Treat any active infections, ensure appropriate vaccinations are up to date</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">Medication Management</h4>
                         <p className="mt-2">Guidelines for common medications before neurosurgery:</p>
@@ -190,7 +184,7 @@ export default function CareCoordination() {
                           <li><strong>Herbal supplements:</strong> Stop most herbal supplements 2 weeks before surgery</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">Psychosocial Preparation</h4>
                         <ul className="list-disc pl-6 mt-2">
@@ -201,19 +195,19 @@ export default function CareCoordination() {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Preoperative Testing</h3>
                     <div className="p-4 bg-muted rounded-md">
                       <p>Standard preoperative tests typically include:</p>
                       <ul className="list-disc pl-6 mt-2">
                         <li><strong>Blood tests:</strong> CBC, electrolytes, renal function, coagulation studies</li>
-                        <li><strong>ECG:</strong> For patients >45 years or with cardiovascular risk factors</li>
+                        <li><strong>ECG:</strong> For patients over 45 years or with cardiovascular risk factors</li>
                         <li><strong>Chest X-ray:</strong> For patients with pulmonary disease or symptoms</li>
                         <li><strong>Additional tests</strong> based on individual risk factors and procedure complexity</li>
                       </ul>
                       <p className="mt-2">GPs can facilitate these tests in the community setting when appropriate, with results forwarded to our office before the patient's preoperative assessment.</p>
                     </div>
-                    
+
                     <div className="mt-6 p-4 border border-primary/20 rounded-md">
                       <p className="font-semibold">Preoperative Checklist for GPs:</p>
                       <p className="mt-2">We provide a comprehensive preoperative checklist for GPs to ensure all aspects of preparation are addressed. This can be downloaded from our website or requested from our office. For complex patients, we welcome direct discussion with our preoperative assessment team.</p>
@@ -221,7 +215,7 @@ export default function CareCoordination() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="postoperative" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -229,7 +223,7 @@ export default function CareCoordination() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">{t.gpResources.careCoordination.postoperativeFollowUp.description}</p>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Discharge Planning and Communication</h3>
                     <div className="p-4 bg-muted rounded-md mb-6">
                       <p>Following neurosurgical procedures, we provide:</p>
@@ -241,7 +235,7 @@ export default function CareCoordination() {
                         <li><strong>Recommended timeline for GP review</strong> (typically 7-10 days post-discharge)</li>
                       </ul>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Common Postoperative Concerns</h3>
                     <div className="space-y-4">
                       <div className="p-4 bg-muted rounded-md">
@@ -254,7 +248,7 @@ export default function CareCoordination() {
                           <li><strong>Red flags:</strong> Increasing headache, new neurological deficits, CSF leak, signs of infection, seizures</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">Spine Surgery Follow-Up</h4>
                         <ul className="list-disc pl-6 mt-2">
@@ -267,7 +261,7 @@ export default function CareCoordination() {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Rehabilitation Coordination</h3>
                     <div className="p-4 bg-muted rounded-md">
                       <p>GPs play a vital role in coordinating rehabilitation services:</p>
@@ -280,7 +274,7 @@ export default function CareCoordination() {
                       </ul>
                       <p className="mt-2">Our team can provide procedure-specific rehabilitation protocols and recommendations to guide these referrals.</p>
                     </div>
-                    
+
                     <div className="mt-6 p-4 border border-primary/20 rounded-md">
                       <p className="font-semibold">When to Contact the Neurosurgical Team:</p>
                       <ul className="list-disc pl-6 mt-2">
@@ -295,7 +289,7 @@ export default function CareCoordination() {
                   </CardContent>
                 </Card>
               </TabsContent>
-              
+
               <TabsContent value="shared" className="mt-6">
                 <Card>
                   <CardHeader>
@@ -303,7 +297,7 @@ export default function CareCoordination() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">{t.gpResources.careCoordination.sharedCareModels.description}</p>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Structured Shared Care Approaches</h3>
                     <div className="space-y-4">
                       <div className="p-4 bg-muted rounded-md">
@@ -317,7 +311,7 @@ export default function CareCoordination() {
                           <li><strong>Regular neurosurgical review</strong> (typically every 6-12 months) for patients with progressive conditions</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">Brain Tumor Surveillance</h4>
                         <p className="mt-2">For patients with stable brain tumors requiring monitoring:</p>
@@ -329,7 +323,7 @@ export default function CareCoordination() {
                           <li><strong>Joint monitoring for quality of life impacts</strong> and functional changes</li>
                         </ul>
                       </div>
-                      
+
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">Post-Surgical Long-Term Follow-Up</h4>
                         <p className="mt-2">Following successful neurosurgical intervention:</p>
@@ -342,7 +336,7 @@ export default function CareCoordination() {
                         </ul>
                       </div>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Tools to Support Shared Care</h3>
                     <div className="p-4 bg-muted rounded-md">
                       <ul className="list-disc pl-6 mt-2">
@@ -353,7 +347,7 @@ export default function CareCoordination() {
                         <li><strong>Patient-Held Records:</strong> Encouraging patients to maintain their own health records to facilitate information sharing</li>
                       </ul>
                     </div>
-                    
+
                     <h3 className="font-bold text-lg mt-6 mb-3">Collaborative Research Opportunities</h3>
                     <div className="p-4 bg-muted rounded-md">
                       <p>We welcome GP participation in neurosurgical research:</p>
@@ -365,7 +359,7 @@ export default function CareCoordination() {
                       </ul>
                       <p className="mt-2">Interested GPs are encouraged to contact our research coordinator for current opportunities.</p>
                     </div>
-                    
+
                     <div className="mt-6 p-4 border border-primary/20 rounded-md">
                       <p className="font-semibold">Developing a Shared Care Agreement:</p>
                       <p className="mt-2">For patients with complex neurosurgical conditions requiring ongoing management, we offer formalized shared care agreements. These documents outline the roles and responsibilities of the neurosurgical team, GP, and other involved specialists, ensuring coordinated care and clear communication pathways. Please contact our office to discuss establishing such an agreement for your patients.</p>

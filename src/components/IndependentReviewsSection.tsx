@@ -1,3 +1,4 @@
+import React from "react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Star } from "lucide-react";

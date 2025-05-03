@@ -1,6 +1,5 @@
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
 import { useLanguage } from "@/contexts/LanguageContext";
 import PageHeader from "@/components/PageHeader";
 import Layout from "@/components/Layout";
@@ -16,11 +15,6 @@ export default function GPResources() {
 
   return (
     <Layout>
-      <Helmet>
-        <title>GP Resources | Dr. Ales Aliashkevich</title>
-        <meta name="description" content="Resources for General Practitioners to support optimal patient care and streamlined referrals to our neurosurgical practice." />
-      </Helmet>
-
       <PageHeader
         title={t.gpResources.title}
         subtitle={t.gpResources.subtitle}
@@ -44,9 +38,9 @@ export default function GPResources() {
               </CardHeader>
               <CardContent>
                 <p>{t.gpResources.referralProtocols.description}</p>
-                <img 
-                  src="/images/gp-resources/referral-protocols.jpg" 
-                  alt="Referral Protocols" 
+                <img
+                  src="/images/gp-resources/referral-protocols.jpg"
+                  alt="Referral Protocols"
                   className="w-full h-48 object-cover rounded-md mt-4"
                 />
               </CardContent>
@@ -64,9 +58,9 @@ export default function GPResources() {
               </CardHeader>
               <CardContent>
                 <p>{t.gpResources.diagnostics.description}</p>
-                <img 
-                  src="/images/gp-resources/diagnostics.jpg" 
-                  alt="Neurosurgical Diagnostics" 
+                <img
+                  src="/images/gp-resources/diagnostics.jpg"
+                  alt="Neurosurgical Diagnostics"
                   className="w-full h-48 object-cover rounded-md mt-4"
                 />
               </CardContent>
@@ -84,9 +78,9 @@ export default function GPResources() {
               </CardHeader>
               <CardContent>
                 <p>{t.gpResources.careCoordination.description}</p>
-                <img 
-                  src="/images/gp-resources/care-coordination.jpg" 
-                  alt="Multidisciplinary Care Coordination" 
+                <img
+                  src="/images/gp-resources/care-coordination.jpg"
+                  alt="Multidisciplinary Care Coordination"
                   className="w-full h-48 object-cover rounded-md mt-4"
                 />
               </CardContent>
@@ -104,9 +98,9 @@ export default function GPResources() {
               </CardHeader>
               <CardContent>
                 <p>{t.gpResources.emergencies.description}</p>
-                <img 
-                  src="/images/gp-resources/emergencies.jpg" 
-                  alt="Emergencies and Red Flags" 
+                <img
+                  src="/images/gp-resources/emergencies.jpg"
+                  alt="Emergencies and Red Flags"
                   className="w-full h-48 object-cover rounded-md mt-4"
                 />
               </CardContent>

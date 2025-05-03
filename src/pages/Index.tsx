@@ -1,14 +1,12 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import React, { useEffect } from "react";
+import Layout from "@/components/Layout";
 import HeroSection from "@/components/HeroSection";
 import IndependentReviewsSection from "@/components/IndependentReviewsSection";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
-
-
+import CTASection from "@/components/CTASection";
 
 export default function Index() {
   const { t } = useLanguage();
@@ -18,12 +16,8 @@ export default function Index() {
     window.scrollTo(0, 0);
   }, []);
 
-
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-
+    <Layout>
       <main className="flex-1">
         {/* Hero Section */}
         <HeroSection />
@@ -334,29 +328,8 @@ export default function Index() {
 
 
         {/* CTA Section */}
-        <section className="relative py-24 bg-primary/5">
-          <div className="container">
-            <div className="max-w-3xl mx-auto text-center animate-fade-in">
-              <h2 className="text-3xl md:text-4xl font-bold mb-6">
-                {t.home.cta.title}
-              </h2>
-              <p className="text-muted-foreground mb-8">
-                {t.home.cta.description}
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center gap-4">
-                <Button asChild size="lg">
-                  <Link to="/appointments">{t.home.cta.bookNow}</Link>
-                </Button>
-                <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">{t.nav.contact}</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <CTASection className="py-24" />
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

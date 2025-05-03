@@ -1,6 +1,6 @@
-import { ReactNode, useEffect } from 'react';
+import React, { ReactNode, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import { useLanguage } from '@/contexts/LanguageContext';
+import { useLanguage, SupportedLanguage } from '@/contexts/LanguageContext';
 
 interface LanguageWrapperProps {
   children: ReactNode;
@@ -8,13 +8,13 @@ interface LanguageWrapperProps {
 
 export default function LanguageWrapper({ children }: LanguageWrapperProps) {
   const { lang } = useParams<{ lang: string }>();
-  const { setLanguage } = useLanguage();
+  const { setLanguage, isLanguageLoaded } = useLanguage();
 
   useEffect(() => {
-    if (lang && (lang === 'en' || lang === 'zh')) {
-      setLanguage(lang);
+    if (isLanguageLoaded && lang && (lang === 'en' || lang === 'zh')) {
+      setLanguage(lang as SupportedLanguage);
     }
-  }, [lang, setLanguage]);
+  }, [lang, setLanguage, isLanguageLoaded]);
 
   return <>{children}</>;
 }

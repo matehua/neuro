@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Select,
   SelectContent,
@@ -7,12 +7,10 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-// Globe icon removed as per requirements
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useLanguage, SupportedLanguage } from "@/contexts/LanguageContext";
 
 type Language = {
-  code: string;
+  code: SupportedLanguage;
   name: string;
   flag: string;
 };
@@ -23,10 +21,8 @@ const languages: Language[] = [
 ];
 
 export default function LanguageSelector() {
-  const { language, setLanguage } = useLanguage();
+  const { language, setLanguage, isLanguageLoaded } = useLanguage();
   const [mounted, setMounted] = useState(false);
-  const location = useLocation();
-  const navigate = useNavigate();
 
   // This effect is to ensure hydration doesn't cause issues
   useEffect(() => {
@@ -34,30 +30,14 @@ export default function LanguageSelector() {
   }, []);
 
   const handleLanguageChange = (value: string) => {
-    // Only proceed if the language is actually changing
-    if (value !== language) {
-      setLanguage(value);
-
-      // Update the URL to reflect the language change
-      const currentPath = location.pathname;
-
-      // If we're already on a language-specific route, replace the language part
-      if (currentPath.match(/^\/(en|zh)\//)) {
-        const newPath = currentPath.replace(/^\/(en|zh)/, `/${value}`);
-        navigate(newPath);
-      }
-      // If we're on a default route, add the language prefix
-      else if (currentPath === '/') {
-        navigate(`/${value}`);
-      }
-      // For other routes, add the language prefix
-      else {
-        navigate(`/${value}${currentPath}`);
-      }
+    // Only proceed if the language is actually changing and is a supported language
+    if (value !== language && (value === "en" || value === "zh")) {
+      setLanguage(value as SupportedLanguage);
     }
   };
 
-  if (!mounted) {
+  // Don't render until client-side hydration is complete and language is loaded
+  if (!mounted || !isLanguageLoaded) {
     return null;
   }
 
@@ -73,11 +53,11 @@ export default function LanguageSelector() {
           </div>
         </SelectTrigger>
         <SelectContent align="start" className="w-[120px]">
-          {languages.map((language) => (
-            <SelectItem key={language.code} value={language.code} className="cursor-pointer">
+          {languages.map((lang) => (
+            <SelectItem key={lang.code} value={lang.code} className="cursor-pointer">
               <div className="flex items-center space-x-2">
-                <span className="text-base">{language.flag}</span>
-                <span>{language.name}</span>
+                <span className="text-base">{lang.flag}</span>
+                <span>{lang.name}</span>
               </div>
             </SelectItem>
           ))}

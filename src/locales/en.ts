@@ -1477,6 +1477,27 @@ export const en = {
         description: "How we prioritize referrals based on clinical presentation:"
       }
     },
+    emergencies: {
+      title: "Emergencies & Red Flags",
+      subtitle: "Critical neurosurgical conditions requiring urgent assessment and intervention",
+      description: "This guide helps identify neurosurgical emergencies requiring immediate attention and outlines key assessment and management steps for primary care practitioners.",
+      redFlags: {
+        title: "Neurosurgical Red Flags",
+        description: "Signs and symptoms that should prompt immediate consideration of a neurosurgical emergency:"
+      },
+      assessment: {
+        title: "Emergency Assessment Protocol",
+        description: "Focused assessment approach for suspected neurosurgical emergencies:"
+      },
+      management: {
+        title: "Immediate Management Steps",
+        description: "Critical interventions while arranging urgent neurosurgical consultation:"
+      },
+      contactProtocol: {
+        title: "Emergency Contact Protocol",
+        description: "How to efficiently communicate with the neurosurgical team in emergencies:"
+      }
+    },
     diagnostics: {
       title: "Neurosurgical Diagnostics",
       subtitle: "Guidance on appropriate imaging and diagnostic tests",

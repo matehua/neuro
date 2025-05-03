@@ -1,5 +1,5 @@
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
@@ -80,7 +80,18 @@ export default function Navbar() {
 
   return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5")}>
       <nav className="container flex justify-between items-center">
-        <div className="flex items-center">
+        <div className="flex items-center gap-4">
+          <Link to="/" className="flex items-center">
+            <img
+              src="/logo/logo.png"
+              alt="miNEURO Logo"
+              className="h-10 w-auto"
+              onError={(e) => {
+                const target = e.target as HTMLImageElement;
+                target.src = "/logo/logo-placeholder.png";
+              }}
+            />
+          </Link>
           <LanguageSelector />
         </div>
 
@@ -146,7 +157,20 @@ export default function Navbar() {
           <div className="flex flex-col h-full justify-between">
             <div>
               <div className="flex justify-between items-center mb-8">
-                <LanguageSelector />
+                <div className="flex items-center gap-4">
+                  <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+                    <img
+                      src="/logo/logo.png"
+                      alt="miNEURO Logo"
+                      className="h-10 w-auto"
+                      onError={(e) => {
+                        const target = e.target as HTMLImageElement;
+                        target.src = "/logo/logo-placeholder.png";
+                      }}
+                    />
+                  </Link>
+                  <LanguageSelector />
+                </div>
                 <Button
                   variant="ghost"
                   size="icon"
