@@ -41,7 +41,6 @@ export default function Footer() {
                 { name: t.patientResources.title, path: "/patient-resources" },
                 { name: t.nav.appointments, path: "/appointments" },
                 { name: t.nav.locations, path: "/locations" },
-                { name: t.nav.faq, path: "/faq" },
                 { name: t.nav.contact, path: "/contact" },
               ].map((link) => (
                 <li key={link.name}>
