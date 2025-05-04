@@ -1,69 +1,111 @@
-# Welcome to your Lovable project
+# miNEURO Website
 
-## Project info
+This is the official repository for the miNEURO website, a neurosurgery and spine surgery practice website built with modern web technologies.
+
+## Project Info
 
 **URL**: https://lovable.dev/projects/96f629c9-6031-4f68-8bd0-680a3c64b6e3
 
-## How can I edit this code?
+## Documentation
 
-There are several ways of editing your application.
+Comprehensive documentation is available in the `docs/` directory:
 
-**Use Lovable**
+- [Getting Started](./docs/getting-started.md) - Setup and development workflow
+- [Project Structure](./docs/project-structure.md) - Overview of the codebase organization
+- [Accessibility Guidelines](./docs/accessibility.md) - Ensuring the website is accessible to all users
+- [Internationalization Guide](./docs/internationalization.md) - Working with multiple languages
+- [Deployment Guide](./docs/deployment.md) - How to deploy the website
+- [Contributing Guidelines](./docs/contributing.md) - How to contribute to the project
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/96f629c9-6031-4f68-8bd0-680a3c64b6e3) and start prompting.
+### Component Documentation
 
-Changes made via Lovable will be committed automatically to this repo.
+- [Components Overview](./docs/components/overview.md) - Introduction to the component system
+- [Layout Component](./docs/components/layout.md) - Main layout wrapper
+- [SafeImage Component](./docs/components/safeimage.md) - Enhanced image component
 
-**Use your preferred IDE**
+## Technologies
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+This project is built with:
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+- [Vite](https://vitejs.dev/) - Build tool and development server
+- [TypeScript](https://www.typescriptlang.org/) - Type-safe JavaScript
+- [React](https://reactjs.org/) - UI library
+- [React Router](https://reactrouter.com/) - Client-side routing
+- [shadcn/ui](https://ui.shadcn.com/) - Component library built on Radix UI
+- [Tailwind CSS](https://tailwindcss.com/) - Utility-first CSS framework
+- [React Query](https://tanstack.com/query/latest) - Data fetching and state management
 
-Follow these steps:
+## Getting Started
+
+### Prerequisites
+
+- [Node.js](https://nodejs.org/) (v16 or later)
+- [npm](https://www.npmjs.com/) (v7 or later)
+
+### Installation
 
 ```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+# Step 1: Clone the repository
+git clone https://github.com/r70pro/neuro.git
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+# Step 2: Navigate to the project directory
+cd neuro
 
-# Step 3: Install the necessary dependencies.
-npm i
+# Step 3: Install dependencies
+npm install
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
+# Step 4: Start the development server
 npm run dev
 ```
 
-**Edit a file directly in GitHub**
+The website should now be running at [http://localhost:5173](http://localhost:5173).
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+## Available Scripts
 
-**Use GitHub Codespaces**
+- `npm run dev` - Start the development server
+- `npm run build` - Build the project for production
+- `npm run preview` - Preview the production build locally
+- `npm run lint` - Run ESLint to check for code issues
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## Editing Options
 
-## What technologies are used for this project?
+### Use Lovable
 
-This project is built with .
+Visit the [Lovable Project](https://lovable.dev/projects/96f629c9-6031-4f68-8bd0-680a3c64b6e3) and start prompting.
+Changes made via Lovable will be committed automatically to this repo.
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+### Use your preferred IDE
 
-## How can I deploy this project?
+Clone this repo and push changes. Pushed changes will also be reflected in Lovable.
 
-Simply open [Lovable](https://lovable.dev/projects/96f629c9-6031-4f68-8bd0-680a3c64b6e3) and click on Share -> Publish.
+### Edit a file directly in GitHub
 
-## I want to use a custom domain - is that possible?
+- Navigate to the desired file(s)
+- Click the "Edit" button (pencil icon) at the top right of the file view
+- Make your changes and commit the changes
 
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
+### Use GitHub Codespaces
+
+- Navigate to the main page of your repository
+- Click on the "Code" button (green button) near the top right
+- Select the "Codespaces" tab
+- Click on "New codespace" to launch a new Codespace environment
+- Edit files directly within the Codespace and commit and push your changes
+
+## Deployment
+
+### Quick Deployment
+
+Open [Lovable](https://lovable.dev/projects/96f629c9-6031-4f68-8bd0-680a3c64b6e3) and click on Share -> Publish.
+
+### Custom Domain
+
+For custom domain setup, we recommend using Netlify. See the [Deployment Guide](./docs/deployment.md) and [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/) for more details.
+
+## Contributing
+
+Please read our [Contributing Guidelines](./docs/contributing.md) before submitting pull requests or opening issues.
+
+## License
+
+This project is proprietary and confidential. Unauthorized copying, distribution, or use is strictly prohibited.
