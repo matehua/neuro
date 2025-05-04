@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from "react";
 import {
   Select,
@@ -52,18 +51,18 @@ export default function LanguageSelector() {
         defaultValue={language}
       >
         <SelectTrigger
-          className="w-[120px] h-10 rounded-md border-none bg-transparent hover:bg-transparent focus:ring-0 focus:bg-transparent"
+          className="w-auto h-10 rounded-md border-none bg-transparent hover:bg-transparent focus:ring-0 focus:bg-transparent"
           aria-label="Select Language"
           aria-describedby="language-description"
         >
           <div className="flex items-center gap-2">
             <span className="text-base" aria-hidden="true">{currentLanguage.flag}</span>
-            <SelectValue placeholder="Select language" />
+            <span>{currentLanguage.name}</span>
           </div>
         </SelectTrigger>
         <SelectContent
           align="start"
-          className="w-[120px]"
+          className="w-auto min-w-[120px]"
           position="popper"
           sideOffset={5}
         >
