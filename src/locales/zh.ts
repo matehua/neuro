@@ -607,6 +607,212 @@ export const zh = {
       comprehensiveSolution: "个人脊柱健康计划",
       faq: "常见问题"
     },
+    individualSpineHealthProgram: {
+      title: "个人脊柱健康计划",
+      subtitle: "通过评估、教育和进度跟踪，开启您个性化的脊柱健康之旅。",
+      startAssessment: "开始评估",
+      exploreFeatures: "探索功能",
+      journey: {
+        title: "您的个人脊柱健康之旅",
+        description: "我们的个人脊柱健康计划将评估工具、个性化建议和进度跟踪结合在一个集成平台中，帮助您有效理解和管理您的脊柱状况。",
+        approach: "这种循证方法旨在：",
+        assess: "评估：通过详细评估确定您的病情的具体性质",
+        educate: "教育：提供关于您的病情的科学验证信息",
+        recommend: "推荐：提供个性化的运动和生活方式建议",
+        track: "跟踪：监控您的进度并相应调整建议",
+        support: "支持：通过专家资源指导您的脊柱健康之旅",
+        howItWorks: "工作原理"
+      },
+      keyFeatures: {
+        title: "主要功能",
+        assessment: {
+          title: "全面评估",
+          description: "对您的症状和病情进行详细评估",
+          content: "我们的评估工具通过详细的问卷调查、疼痛映射和功能测试，帮助确定您的病情的具体性质。",
+          button: "进行评估"
+        },
+        education: {
+          title: "循证教育",
+          description: "通过科学验证的信息了解您的病情",
+          content: "我们的教育内容由神经外科专家开发，基于生物力学和神经生理学的最新研究。",
+          button: "探索疾病"
+        },
+        exercisePlans: {
+          title: "个性化运动计划",
+          description: "根据您的特定病情获取定制的运动建议",
+          content: "我们的系统根据您的评估结果创建量身定制的运动计划，旨在加强您的脊柱，改善活动能力，减轻疼痛。",
+          button: "查看运动库"
+        },
+        progressTracking: {
+          title: "进度跟踪",
+          description: "随时间监控您的改善情况",
+          content: "跟踪您的疼痛水平、活动能力改善、运动完成情况和神经症状，以查看您的进度并相应调整您的计划。",
+          button: "查看仪表板"
+        },
+        goalSetting: {
+          title: "目标设定",
+          description: "设定并实现有意义的健康目标",
+          content: "为疼痛减轻、活动能力增加或活动恢复定义个性化目标，并跟踪您实现这些目标的进度。",
+          button: "设定目标"
+        },
+        healthcareIntegration: {
+          title: "医疗整合",
+          description: "与您的医疗团队分享信息",
+          content: "安全地与阿利什凯维奇医生或其他医疗提供者分享您的进度、运动坚持情况和症状变化，以增强您的护理。",
+          button: "分享信息"
+        }
+      },
+      howItWorks: {
+        title: "工作原理",
+        tabs: {
+          assess: "评估",
+          learn: "学习",
+          exercise: "运动",
+          track: "跟踪"
+        },
+        assess: {
+          title: "全面评估",
+          description1: "从我们详细的评估开始，评估您的症状、病史和功能能力。您甚至可以上传影像结果以进行更精确的分析。",
+          description2: "我们的评估包括：",
+          items: [
+            "详细的症状问卷",
+            "疼痛映射工具",
+            "功能运动测试",
+            "病史分析",
+            "影像结果整合"
+          ],
+          button: "开始评估"
+        },
+        learn: {
+          title: "循证教育",
+          description1: "获取关于您特定病情的全面信息，包括原因、症状和治疗选择。我们的教育内容包括交互式图表、视频和详细解释。",
+          description2: "教育资源包括：",
+          items: [
+            "交互式解剖模型",
+            "特定病情信息",
+            "治疗选择解释",
+            "疼痛科学教育",
+            "生物力学基础"
+          ],
+          button: "探索疾病"
+        },
+        exercise: {
+          title: "个性化运动计划",
+          description1: "根据您的评估结果接收定制的运动计划。每个运动包括视频演示、逐步说明和修改选项。",
+          description2: "运动功能包括：",
+          items: [
+            "视频演示",
+            "详细说明",
+            "进度跟踪",
+            "难度调整",
+            "基于反馈的修改"
+          ],
+          button: "查看运动"
+        },
+        track: {
+          title: "进度跟踪和目标设定",
+          description1: "使用我们全面的跟踪工具随时间监控您的改善情况。设定个性化目标并跟踪您实现这些目标的进度。",
+          description2: "跟踪功能包括：",
+          items: [
+            "疼痛水平监控",
+            "活动能力改善跟踪",
+            "运动完成记录",
+            "症状变化记录",
+            "目标实现可视化"
+          ],
+          button: "查看仪表板"
+        }
+      },
+      assessmentTools: {
+        title: "评估工具",
+        tabs: {
+          pain: "疼痛",
+          functional: "功能",
+          history: "病史",
+          imaging: "影像"
+        },
+        pain: {
+          title: "疼痛评估",
+          description: "帮助我们了解您的疼痛模式和症状",
+          content: "我们的疼痛评估工具帮助确定您疼痛的位置、强度、性质和触发因素。这些信息对于准确诊断和治疗计划至关重要。",
+          items: [
+            "使用交互式身体地图指示疼痛位置",
+            "在标准化量表上评估疼痛强度",
+            "描述疼痛性质和模式",
+            "确定加重或改善症状的活动",
+            "随时间跟踪疼痛变化"
+          ],
+          timeToComplete: "完成大约需要5-10分钟",
+          button: "开始疼痛评估"
+        },
+        functional: {
+          title: "功能评估",
+          description: "评估您的病情如何影响您的日常活动",
+          content: "我们的功能评估评估您的脊柱病情如何影响您执行日常活动、工作任务和娱乐活动的能力。",
+          items: [
+            "完成标准化功能评估问卷",
+            "记录运动测试视频（带隐私控制）",
+            "评估对工作、家庭和娱乐活动的影响",
+            "评估运动范围限制",
+            "随时间跟踪功能改善"
+          ],
+          timeToComplete: "完成大约需要10-15分钟",
+          button: "开始功能评估"
+        },
+        history: {
+          title: "病史",
+          description: "分享相关的医疗背景信息",
+          content: "我们的病史评估收集关于您过去和当前健康状况、治疗和药物的重要信息，这些可能与您的脊柱病情相关。",
+          items: [
+            "创建安全的医疗档案",
+            "记录以前的脊柱病情和治疗",
+            "列出当前药物和补充剂",
+            "记录相关医疗状况",
+            "分享脊柱病情的家族史"
+          ],
+          timeToComplete: "完成大约需要10-15分钟",
+          button: "开始病史"
+        },
+        imaging: {
+          title: "影像上传",
+          description: "分享您现有的影像研究",
+          content: "我们的影像上传功能允许您安全地与我们的团队分享您现有的影像研究，以便更全面地评估您的病情。",
+          items: [
+            "安全上传影像研究（MRI、CT、X光）",
+            "提供放射科医师报告",
+            "与您的医疗团队分享结果",
+            "获取专家对您影像的解释",
+            "将影像整合到您的评估中"
+          ],
+          timeToComplete: "完成大约需要5-10分钟",
+          button: "上传影像"
+        }
+      },
+      successStories: {
+        title: "个人脊柱健康计划成功案例",
+        sarah: {
+          name: "莎拉，42岁",
+          condition: "椎间盘突出",
+          testimonial: "在与椎间盘突出斗争多年后，这个全面解决方案帮助我了解了我的病情，并提供了真正有效的运动。我的疼痛显著减轻，我又能享受我以为再也不能做的活动了。"
+        },
+        michael: {
+          name: "迈克尔，56岁",
+          condition: "脊柱狭窄",
+          testimonial: "个性化运动计划对我的脊柱狭窄是一个改变游戏规则的方案。系统根据我的反馈调整了我的运动，教育内容帮助我理解为什么某些动作有益而其他动作则不然。"
+        },
+        emma: {
+          name: "艾玛，35岁",
+          condition: "慢性颈部疼痛",
+          testimonial: "能够随时间跟踪我的进度非常激励人心。我可以看到我的疼痛水平如何降低，我的运动范围如何改善。目标设定功能帮助我保持对恢复之旅的承诺。"
+        }
+      },
+      readyToTakeControl: {
+        title: "准备掌控您的脊柱健康？",
+        description: "今天开始您的个性化脊柱健康之旅。我们的个人脊柱健康计划将帮助您了解您的病情，提供个性化建议，并随时间跟踪您的进度。",
+        startAssessment: "开始评估",
+        scheduleConsultation: "安排咨询"
+      }
+    },
     spineHealthApp: {
       title: "脊柱健康应用",
       subtitle: "您个性化的慢性颈部和背部问题理解和管理指南。",
@@ -754,7 +960,7 @@ export const zh = {
       viewDetails: "查看详情",
       features: "功能"
     },
-    individualSpineHealthProgram: {
+    spineHealthProgram: {
       title: "个人脊柱健康计划",
       subtitle: "通过评估、教育和进度跟踪，开启您个性化的脊柱健康之旅。",
       startAssessment: "开始评估",
@@ -1357,6 +1563,80 @@ export const zh = {
     termsConditions: "条款和条件",
     privacyPolicy: "隐私政策"
   },
+  independentReviews: {
+    title: "独立患者评价",
+    description: "阿利什凯维奇医生在多个独立评价平台上获得了优秀的反馈。了解患者对他们体验的评价。",
+    note: "这些评价反映了接受阿利什凯维奇医生治疗的真实患者的体验。我们为我们在神经外科护理方面的卓越声誉感到自豪。",
+    readMore: "阅读更多患者评价"
+  },
+  medicolegal: {
+    title: "医疗法律服务",
+    subtitle: "为法律和保险目的提供专业医疗法律评估和报告。",
+    assessmentsReports: {
+      title: "评估和报告",
+      description: "阿利什凯维奇医生已完成部长批准的美国医学协会永久性损伤评估指南（第4版和第5版AMA指南）应用培训计划，专注于脊柱和神经系统。他为脑部、脊柱和神经损伤提供准确和全面的医疗法律评估，并可以作为所有神经外科疾病的可信专家证人。"
+    },
+    flexibleArrangements: {
+      title: "灵活安排",
+      description1: "阿利什凯维奇医生可以及时、经济高效地满足您的需求。我们的费用基于提供的材料数量、伤害的复杂性和请求的紧急程度。",
+      description2: "我们的地点网络和灵活的时间安排允许我们为最紧急的情况安排甚至周末预约，并响应短期截止日期。"
+    },
+    contactInfo: {
+      title: "联系信息",
+      description: "如果您对我们的医疗法律服务有任何疑问，请致电我们的主办公室或发送电子邮件给我们。",
+      phone: "电话",
+      phoneNumber: "03 9008 4200",
+      email: "电子邮件",
+      emailAddress: "info@mineuro.com.au"
+    },
+    locations: {
+      title: "我们的地点",
+      description1: "所有医疗法律预约均由我们位于萨里山的主办公室预订。它位于距离火车站步行2分钟的地方，并有充足的街边停车位。",
+      mainOffice: {
+        title: "主办公室",
+        address: "miNEURO咨询套房\n套房4，地面层，619 Canterbury Road\nSURREY HILLS VIC 3127",
+        contactInfo: "请致电03 9008 4200，我们将为您的客户协调最方便和最容易到达的预约。"
+      },
+      additionalLocations: {
+        title: "其他地点",
+        locations: [
+          {
+            name: "莫宁顿",
+            address: "Nepean专科中心\n1050 Nepean Highway"
+          },
+          {
+            name: "邦多拉",
+            address: "UniHill咨询套房\n4层32号套房，240 Plenty Road"
+          },
+          {
+            name: "弗兰克斯顿",
+            address: "Frankston私立医院\n525 McClelland Drive"
+          },
+          {
+            name: "韦里比",
+            address: "咨询室\n297 Princes Highway"
+          },
+          {
+            name: "海德堡",
+            address: "咨询套房，7层\n10 Martin Street"
+          },
+          {
+            name: "穆尼庞兹",
+            address: "Moonee Ponds专科中心\n827 Mt Alexander Road"
+          },
+          {
+            name: "丹德农",
+            address: "Dandenong神经病学和专科集团\n136 David Street"
+          },
+          {
+            name: "桑伯里",
+            address: "Lake Imaging\n17-19 Horne Street"
+          }
+        ]
+      }
+    },
+    contactUs: "联系我们"
+  },
   gpResources: {
     title: "全科医生资源",
     subtitle: "为全科医生提供支持最佳患者护理和简化转诊的资源。",
@@ -1398,7 +1678,7 @@ export const zh = {
         description: "常见表现的神经学检查关键要素："
       },
       specializedTests: {
-        title: "专业诊断测试",
+        title: "專業診斷測試",
         description: "何时考虑额外的诊断检查："
       },
       interpretingResults: {

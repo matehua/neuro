@@ -19,14 +19,14 @@ export default function CareCoordination() {
     {
       title: "Case 1: Complex Cervical Spine Surgery",
       description: "A 62-year-old woman with multilevel cervical stenosis and myelopathy, complicated by osteoporosis, diabetes, and anxiety about surgery.",
-      approach: "Preoperative coordination between neurosurgery, endocrinology for diabetes management, and bone health specialist for osteoporosis optimization. Anesthesiology consultation for complex airway assessment. Psychology referral for pre-surgical anxiety management.",
+      approach: "Preoperative coordination between neurosurgery, endocrinology for diabetes management, and bone health specialist for osteoporosis optimisation. Anaesthesiology consultation for complex airway assessment. Psychology referral for pre-surgical anxiety management.",
       gpRole: "GP coordinated medication adjustments, monitored blood glucose levels, and provided psychological support between specialist appointments.",
       outcome: "Successful C3-C6 laminoplasty with minimal complications. Postoperative care coordinated between neurosurgery, rehabilitation medicine, and GP, with clear communication channels established for ongoing management."
     },
     {
       title: "Case 2: Elderly Patient with Brain Tumor",
       description: "A 78-year-old man with multiple comorbidities (hypertension, atrial fibrillation, mild dementia) diagnosed with a large meningioma causing progressive weakness.",
-      approach: "Multidisciplinary tumor board discussion involving neurosurgery, geriatrics, anesthesiology, and radiation oncology to determine optimal management. Decision for surgical resection with tailored perioperative care plan.",
+      approach: "Multidisciplinary tumor board discussion involving neurosurgery, geriatrics, anaesthesiology, and radiation oncology to determine optimal management. Decision for surgical resection with tailored perioperative care plan.",
       gpRole: "GP provided comprehensive medical history, managed anticoagulation cessation, and coordinated preoperative cardiac clearance. Postoperatively, GP monitored cognitive function and managed medication adjustments.",
       outcome: "Complete tumor resection with excellent recovery. Geriatric rehabilitation followed by home-based care with regular GP monitoring. Shared electronic health record facilitated communication between all providers."
     },
@@ -91,7 +91,7 @@ export default function CareCoordination() {
                         <ul className="list-disc pl-6 mt-2">
                           <li><strong>Neurosurgeon:</strong> Dr. Ales Aliashkevich provides surgical expertise and overall management of neurosurgical conditions</li>
                           <li><strong>Neurosurgical Nurse Coordinator:</strong> Facilitates patient care, education, and communication between team members</li>
-                          <li><strong>Anesthesiologists:</strong> Specialized in neuroanesthesia for complex brain and spine procedures</li>
+                          <li><strong>Anaesthesiologists:</strong> Specialised in neuroanaesthesia for complex brain and spine procedures</li>
                           <li><strong>Neuroradiologists:</strong> Provide expert interpretation of neuroimaging and interventional procedures</li>
                         </ul>
                       </div>
@@ -103,7 +103,7 @@ export default function CareCoordination() {
                           <li><strong>Rehabilitation Specialists:</strong> Physiatrists, physiotherapists, and occupational therapists for pre and post-surgical rehabilitation</li>
                           <li><strong>Pain Management Specialists:</strong> For complex pain conditions and perioperative pain management</li>
                           <li><strong>Oncologists:</strong> For patients with brain or spinal tumors requiring adjuvant therapy</li>
-                          <li><strong>Endocrinologists:</strong> For pituitary disorders and metabolic optimization before surgery</li>
+                          <li><strong>Endocrinologists:</strong> For pituitary disorders and metabolic optimisation before surgery</li>
                           <li><strong>Psychiatrists/Psychologists:</strong> For psychological support and management of comorbid mental health conditions</li>
                         </ul>
                       </div>
@@ -138,6 +138,14 @@ export default function CareCoordination() {
                       <p className="font-semibold">Multidisciplinary Case Conferences:</p>
                       <p className="mt-2">For complex cases, we hold regular multidisciplinary team meetings. Referring GPs are welcome to participate in these discussions, either in person or via telehealth. Please contact our office if you would like to be involved in case discussions for your patients.</p>
                     </div>
+
+                    <div className="mt-6">
+                      <img
+                        src="/images/gp-resources/care-coordination-2.jpg"
+                        alt="Medical professional with laptop"
+                        className="w-full rounded-md object-cover h-64"
+                      />
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -150,17 +158,17 @@ export default function CareCoordination() {
                   <CardContent>
                     <p className="mb-4">{t.gpResources.careCoordination.preoperativeManagement.description}</p>
 
-                    <h3 className="font-bold text-lg mt-6 mb-3">Preoperative Optimization</h3>
+                    <h3 className="font-bold text-lg mt-6 mb-3">Preoperative Optimisation</h3>
                     <div className="space-y-4">
                       <div className="p-4 bg-muted rounded-md">
-                        <h4 className="font-semibold">Medical Optimization</h4>
-                        <p className="mt-2">GPs play a crucial role in optimizing patients' medical status before neurosurgery:</p>
+                        <h4 className="font-semibold">Medical Optimisation</h4>
+                        <p className="mt-2">GPs play a crucial role in optimising patients' medical status before neurosurgery:</p>
                         <ul className="list-disc pl-6 mt-2">
-                          <li><strong>Cardiovascular assessment:</strong> Optimize blood pressure control, manage arrhythmias, consider cardiology referral for high-risk patients</li>
+                          <li><strong>Cardiovascular assessment:</strong> Optimise blood pressure control, manage arrhythmias, consider cardiology referral for high-risk patients</li>
                           <li><strong>Diabetes management:</strong> Aim for HbA1c &lt;8% when possible, establish clear perioperative diabetes management plan</li>
-                          <li><strong>Respiratory optimization:</strong> Address COPD/asthma, encourage smoking cessation (ideally 6-8 weeks before surgery), consider pulmonary function tests for high-risk patients</li>
+                          <li><strong>Respiratory optimisation:</strong> Address COPD/asthma, encourage smoking cessation (ideally 6-8 weeks before surgery), consider pulmonary function tests for high-risk patients</li>
                           <li><strong>Anticoagulation management:</strong> Follow our perioperative anticoagulation protocol (available on request) for patients on anticoagulants or antiplatelets</li>
-                          <li><strong>Nutrition and hydration:</strong> Address malnutrition, optimize protein intake, correct electrolyte abnormalities</li>
+                          <li><strong>Nutrition and hydration:</strong> Address malnutrition, optimise protein intake, correct electrolyte abnormalities</li>
                           <li><strong>Infection risk reduction:</strong> Treat any active infections, ensure appropriate vaccinations are up to date</li>
                         </ul>
                       </div>
@@ -211,6 +219,14 @@ export default function CareCoordination() {
                     <div className="mt-6 p-4 border border-primary/20 rounded-md">
                       <p className="font-semibold">Preoperative Checklist for GPs:</p>
                       <p className="mt-2">We provide a comprehensive preoperative checklist for GPs to ensure all aspects of preparation are addressed. This can be downloaded from our website or requested from our office. For complex patients, we welcome direct discussion with our preoperative assessment team.</p>
+                    </div>
+
+                    <div className="mt-6">
+                      <img
+                        src="/images/gp-resources/care-coordination-3.jpg"
+                        alt="Medical team meeting"
+                        className="w-full rounded-md object-cover h-64"
+                      />
                     </div>
                   </CardContent>
                 </Card>

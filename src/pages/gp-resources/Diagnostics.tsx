@@ -72,7 +72,7 @@ export default function Diagnostics() {
               <TabsList className="grid w-full grid-cols-2 md:grid-cols-4">
                 <TabsTrigger value="imaging">Imaging Guidelines</TabsTrigger>
                 <TabsTrigger value="neurological">Neurological Assessment</TabsTrigger>
-                <TabsTrigger value="specialized">Specialized Tests</TabsTrigger>
+                <TabsTrigger value="specialized">Specialised Tests</TabsTrigger>
                 <TabsTrigger value="interpreting">Interpreting Results</TabsTrigger>
               </TabsList>
 
@@ -147,6 +147,14 @@ export default function Diagnostics() {
                         <li>For urgent cases, please call our office to discuss expedited imaging options</li>
                       </ul>
                     </div>
+
+                    <div className="mt-6">
+                      <img
+                        src="/images/gp-resources/diagnostics-2.jpg"
+                        alt="Medical imaging review"
+                        className="w-full rounded-md object-cover h-64"
+                      />
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -219,7 +227,7 @@ export default function Diagnostics() {
               <TabsContent value="specialized" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.diagnostics.specializedTests.title}</CardTitle>
+                    <CardTitle>Specialised Diagnostic Tests</CardTitle>
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">{t.gpResources.diagnostics.specializedTests.description}</p>
@@ -303,8 +311,16 @@ export default function Diagnostics() {
                     </div>
 
                     <div className="mt-6 p-4 border border-primary/20 rounded-md">
-                      <p className="font-semibold">When to refer for specialized testing:</p>
-                      <p className="mt-2">Rather than ordering these specialized tests directly, consider referral to neurosurgery first. Our team can coordinate the most appropriate advanced testing based on the clinical presentation and initial imaging findings.</p>
+                      <p className="font-semibold">When to refer for specialised testing:</p>
+                      <p className="mt-2">Rather than ordering these specialised tests directly, consider referral to neurosurgery first. Our team can coordinate the most appropriate advanced testing based on the clinical presentation and initial imaging findings.</p>
+                    </div>
+
+                    <div className="mt-6">
+                      <img
+                        src="/images/gp-resources/diagnostics-3.jpg"
+                        alt="Medical professional with laptop"
+                        className="w-full rounded-md object-cover h-64"
+                      />
                     </div>
                   </CardContent>
                 </Card>

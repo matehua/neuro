@@ -97,6 +97,14 @@ export default function ReferralProtocols() {
                       <p className="font-semibold">For emergency conditions requiring same-day assessment:</p>
                       <p className="mt-2">Contact our office directly at (03) 9008 4200 and request to speak with the on-call neurosurgeon, or direct the patient to the nearest emergency department and we can provide telephone consultation to the ED team.</p>
                     </div>
+
+                    <div className="mt-6">
+                      <img
+                        src="/images/gp-resources/referral-protocols-2.jpg"
+                        alt="Doctor consultation for urgent referrals"
+                        className="w-full rounded-md object-cover h-64"
+                      />
+                    </div>
                   </CardContent>
                 </Card>
               </TabsContent>
@@ -126,6 +134,14 @@ export default function ReferralProtocols() {
                         <li><strong>Brain tumors:</strong> MRI with contrast</li>
                         <li><strong>Cerebrovascular conditions:</strong> MRI/MRA or CT/CTA as appropriate</li>
                       </ul>
+                    </div>
+
+                    <div className="mt-6">
+                      <img
+                        src="/images/gp-resources/referral-protocols-3.jpg"
+                        alt="Medical consultation for referrals"
+                        className="w-full rounded-md object-cover h-64"
+                      />
                     </div>
                   </CardContent>
                 </Card>

@@ -1,6 +1,5 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
 import PageHeader from "@/components/PageHeader";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { AlertTriangle, Phone, Clock, Stethoscope, Brain, Activity } from "lucide-react";
 
 export default function Emergencies() {
-  const { t } = useLanguage();
+  // No translations needed for this page
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -87,7 +86,7 @@ export default function Emergencies() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">The following signs and symptoms should prompt immediate consideration of a neurosurgical emergency:</p>
-                    
+
                     <div className="space-y-6">
                       <div className="p-4 border border-red-300 bg-red-50 dark:bg-red-950/20 rounded-md">
                         <h3 className="font-bold text-red-700 dark:text-red-400">Spinal Emergencies</h3>
@@ -121,6 +120,14 @@ export default function Emergencies() {
                           <li><strong>Patients with ventriculoperitoneal shunts:</strong> Risk of shunt malfunction</li>
                         </ul>
                       </div>
+
+                      <div className="mt-6">
+                        <img
+                          src="/images/gp-resources/emergencies-2.jpg"
+                          alt="Medical emergency response"
+                          className="w-full rounded-md object-cover h-64"
+                        />
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -136,7 +143,7 @@ export default function Emergencies() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">When a neurosurgical emergency is suspected, a focused assessment should be performed while arranging urgent referral:</p>
-                    
+
                     <div className="space-y-6">
                       <div className="p-4 border border-primary/30 bg-primary/5 rounded-md">
                         <h3 className="font-bold text-primary">Rapid Neurological Assessment</h3>
@@ -161,7 +168,7 @@ export default function Emergencies() {
                           <li><strong>Lower limb power:</strong> Assess bilateral lower limb strength</li>
                           <li><strong>Straight leg raise:</strong> Often limited or painful</li>
                         </ul>
-                        <p className="mt-2 text-sm font-medium">Note: Post-void residual bladder volume >100ml is highly suggestive of cauda equina syndrome in the appropriate clinical context</p>
+                        <p className="mt-2 text-sm font-medium">Note: Post-void residual bladder volume &gt;100ml is highly suggestive of cauda equina syndrome in the appropriate clinical context</p>
                       </div>
 
                       <div className="p-4 border border-primary/30 bg-primary/5 rounded-md">
@@ -190,7 +197,7 @@ export default function Emergencies() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">While arranging urgent transfer to an emergency department, consider these immediate management steps:</p>
-                    
+
                     <div className="space-y-6">
                       <div className="p-4 border border-primary/30 bg-primary/5 rounded-md">
                         <h3 className="font-bold text-primary">General Measures</h3>
@@ -225,6 +232,14 @@ export default function Emergencies() {
                         </ul>
                         <p className="mt-2 text-sm font-medium">Note: Do not delay transfer to obtain imaging if this will significantly delay neurosurgical assessment and treatment</p>
                       </div>
+
+                      <div className="mt-6">
+                        <img
+                          src="/images/gp-resources/emergencies-3.jpg"
+                          alt="Emergency medical response"
+                          className="w-full rounded-md object-cover h-64"
+                        />
+                      </div>
                     </div>
                   </CardContent>
                 </Card>
@@ -240,7 +255,7 @@ export default function Emergencies() {
                   </CardHeader>
                   <CardContent>
                     <p className="mb-4">When a neurosurgical emergency is suspected, prompt communication with the neurosurgical team is essential:</p>
-                    
+
                     <div className="space-y-6">
                       <div className="p-4 border border-red-300 bg-red-50 dark:bg-red-950/20 rounded-md">
                         <h3 className="font-bold text-red-700 dark:text-red-400 flex items-center gap-2">

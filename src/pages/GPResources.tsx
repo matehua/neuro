@@ -18,7 +18,7 @@ export default function GPResources() {
       <PageHeader
         title={t.gpResources.title}
         subtitle={t.gpResources.subtitle}
-        backgroundImage="/images/gp-resources-hero.jpg"
+        backgroundImage="/images/gp-resources/gp-resources-hero.jpg"
       />
 
       <section className="py-16 bg-background">
@@ -39,7 +39,7 @@ export default function GPResources() {
               <CardContent>
                 <p>{t.gpResources.referralProtocols.description}</p>
                 <img
-                  src="/images/gp-resources/referral-protocols.jpg"
+                  src="/images/gp-resources/referral-protocols-1.jpg"
                   alt="Referral Protocols"
                   className="w-full h-48 object-cover rounded-md mt-4"
                 />
@@ -59,7 +59,7 @@ export default function GPResources() {
               <CardContent>
                 <p>{t.gpResources.diagnostics.description}</p>
                 <img
-                  src="/images/gp-resources/diagnostics.jpg"
+                  src="/images/gp-resources/diagnostics-1.jpg"
                   alt="Neurosurgical Diagnostics"
                   className="w-full h-48 object-cover rounded-md mt-4"
                 />
@@ -79,7 +79,7 @@ export default function GPResources() {
               <CardContent>
                 <p>{t.gpResources.careCoordination.description}</p>
                 <img
-                  src="/images/gp-resources/care-coordination.jpg"
+                  src="/images/gp-resources/care-coordination-1.jpg"
                   alt="Multidisciplinary Care Coordination"
                   className="w-full h-48 object-cover rounded-md mt-4"
                 />
@@ -99,7 +99,7 @@ export default function GPResources() {
               <CardContent>
                 <p>{t.gpResources.emergencies.description}</p>
                 <img
-                  src="/images/gp-resources/emergencies.jpg"
+                  src="/images/gp-resources/emergencies-1.jpg"
                   alt="Emergencies and Red Flags"
                   className="w-full h-48 object-cover rounded-md mt-4"
                 />

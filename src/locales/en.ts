@@ -1511,7 +1511,7 @@ export const en = {
         description: "Key elements of neurological examination for common presentations:"
       },
       specializedTests: {
-        title: "Specialized Diagnostic Tests",
+        title: "Specialised Diagnostic Tests",
         description: "When to consider additional diagnostic investigations:"
       },
       interpretingResults: {
@@ -1540,7 +1540,7 @@ export const en = {
         description: "Frameworks for collaborative management between specialists and primary care:"
       }
     },
-    emergencies: {
+    emergencyGuidelines: {
       title: "Emergencies and Red Flags",
       subtitle: "Recognizing and managing neurosurgical emergencies",
       description: "This section provides guidance on identifying neurosurgical emergencies and red flag symptoms that require immediate attention, along with initial management steps before specialist intervention.",

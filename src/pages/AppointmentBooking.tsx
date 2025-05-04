@@ -26,7 +26,21 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProcedureProps } from "@/components/ProcedureCard";
 
 // Sample clinic data
-const proceduresData: any[] = [
+interface ClinicData {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  capacity: number;
+  size: number;
+  recoveryTime: number;
+  complexity: number;
+  image: string;
+  location: string;
+  features: string[];
+}
+
+const proceduresData: ClinicData[] = [
   {
     id: "1",
     name: "Surrey Hills Clinic",
