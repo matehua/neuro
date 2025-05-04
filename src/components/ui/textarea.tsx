@@ -1,20 +1,62 @@
 import * as React from "react"
-
+import { generateId } from "@/lib/accessibility"
 import { cn } from "@/lib/utils"
 
-export type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>
+export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  /** Error message to display and announce to screen readers */
+  error?: string;
+  /** Description for the textarea field */
+  description?: string;
+}
 
 const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, ...props }, ref) => {
+  ({ className, error, description, id, ...props }, ref) => {
+    // Generate unique IDs for accessibility
+    const textareaId = id || generateId('textarea');
+    const errorId = error ? `${textareaId}-error` : undefined;
+    const descriptionId = description ? `${textareaId}-description` : undefined;
+
+    // Combine description and error IDs for aria-describedby
+    const ariaDescribedBy = [
+      descriptionId,
+      errorId,
+      props['aria-describedby']
+    ].filter(Boolean).join(' ') || undefined;
+
     return (
-      <textarea
-        className={cn(
-          "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
-          className
+      <div className="w-full">
+        <textarea
+          id={textareaId}
+          className={cn(
+            "flex min-h-[80px] w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50",
+            error && "border-destructive focus-visible:ring-destructive",
+            className
+          )}
+          ref={ref}
+          aria-invalid={error ? true : undefined}
+          aria-describedby={ariaDescribedBy}
+          {...props}
+        />
+
+        {description && (
+          <div
+            id={descriptionId}
+            className="text-sm text-muted-foreground mt-1"
+          >
+            {description}
+          </div>
         )}
-        ref={ref}
-        {...props}
-      />
+
+        {error && (
+          <div
+            id={errorId}
+            className="text-sm text-destructive mt-1"
+            role="alert"
+          >
+            {error}
+          </div>
+        )}
+      </div>
     )
   }
 )

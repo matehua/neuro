@@ -2,6 +2,7 @@
 import { useEffect, useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SafeImage from "@/components/SafeImage";
 import { X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -198,10 +199,11 @@ export default function Gallery() {
                   style={{ animationDelay: `${index * 50}ms` }}
                   onClick={() => setSelectedImage(image.id)}
                 >
-                  <img
+                  <SafeImage
                     src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    fallbackSrc="/images/medical-consulting.jpg"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end p-4">
                     <p className="text-white">{image.alt}</p>
@@ -235,10 +237,11 @@ export default function Gallery() {
 
             <div className="max-w-5xl max-h-[80vh] overflow-hidden">
               {filteredImages.find(img => img.id === selectedImage) && (
-                <img
-                  src={filteredImages.find(img => img.id === selectedImage)?.src}
-                  alt={filteredImages.find(img => img.id === selectedImage)?.alt}
+                <SafeImage
+                  src={filteredImages.find(img => img.id === selectedImage)?.src || ""}
+                  alt={filteredImages.find(img => img.id === selectedImage)?.alt || ""}
                   className="max-w-full max-h-[80vh] object-contain"
+                  fallbackSrc="/images/medical-consulting.jpg"
                 />
               )}
             </div>

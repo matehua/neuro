@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import SafeImage from "@/components/SafeImage";
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function ImageGuidedSurgery() {
@@ -46,10 +47,11 @@ export default function ImageGuidedSurgery() {
                 </p>
 
                 <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
-                  <img
+                  <SafeImage
                     src="/images/brain-tumour-image-guided-surgery-minimally-invasive-advanced-neurosurgery-aliashkevich-mineuro.jpg"
                     alt="Advanced image-guided neurosurgery technology used by Dr. Aliashkevich for precise brain tumour removal"
                     className="w-full h-full object-cover"
+                    fallbackSrc="/images/medical-consulting.jpg"
                   />
                 </div>
 

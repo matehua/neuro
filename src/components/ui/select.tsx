@@ -10,24 +10,70 @@ const SelectGroup = SelectPrimitive.Group
 
 const SelectValue = SelectPrimitive.Value
 
+export interface SelectTriggerProps extends React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> {
+  /** Error message to display and announce to screen readers */
+  error?: string;
+  /** Description for the select field */
+  description?: string;
+}
+
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
->(({ className, children, ...props }, ref) => (
-  <SelectPrimitive.Trigger
-    ref={ref}
-    className={cn(
-      "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
-      className
-    )}
-    {...props}
-  >
-    {children}
-    <SelectPrimitive.Icon asChild>
-      <ChevronDown className="h-4 w-4 opacity-50" />
-    </SelectPrimitive.Icon>
-  </SelectPrimitive.Trigger>
-))
+  SelectTriggerProps
+>(({ className, children, error, description, ...props }, ref) => {
+  // Generate unique IDs for accessibility
+  const selectId = props.id || `select-${React.useId()}`;
+  const errorId = error ? `${selectId}-error` : undefined;
+  const descriptionId = description ? `${selectId}-description` : undefined;
+
+  // Combine description and error IDs for aria-describedby
+  const ariaDescribedBy = [
+    descriptionId,
+    errorId,
+    props['aria-describedby']
+  ].filter(Boolean).join(' ') || undefined;
+
+  return (
+    <div className="w-full">
+      <SelectPrimitive.Trigger
+        ref={ref}
+        id={selectId}
+        className={cn(
+          "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1",
+          error && "border-destructive focus:ring-destructive",
+          className
+        )}
+        aria-invalid={error ? true : undefined}
+        aria-describedby={ariaDescribedBy}
+        {...props}
+      >
+        {children}
+        <SelectPrimitive.Icon asChild>
+          <ChevronDown className="h-4 w-4 opacity-50" aria-hidden="true" />
+        </SelectPrimitive.Icon>
+      </SelectPrimitive.Trigger>
+
+      {description && (
+        <div
+          id={descriptionId}
+          className="text-sm text-muted-foreground mt-1"
+        >
+          {description}
+        </div>
+      )}
+
+      {error && (
+        <div
+          id={errorId}
+          className="text-sm text-destructive mt-1"
+          role="alert"
+        >
+          {error}
+        </div>
+      )}
+    </div>
+  );
+})
 SelectTrigger.displayName = SelectPrimitive.Trigger.displayName
 
 const SelectScrollUpButton = React.forwardRef<
@@ -121,7 +167,7 @@ const SelectItem = React.forwardRef<
     )}
     {...props}
   >
-    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
+    <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center" aria-hidden="true">
       <SelectPrimitive.ItemIndicator>
         <Check className="h-4 w-4" />
       </SelectPrimitive.ItemIndicator>

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
 import HeroSection from "@/components/HeroSection";
 import IndependentReviewsSection from "@/components/IndependentReviewsSection";
+import SafeImage from "@/components/SafeImage";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
@@ -47,10 +48,11 @@ export default function Index() {
               </div>
 
               <div className="relative rounded-lg overflow-hidden shadow-xl">
-                <img
+                <SafeImage
                   src="/images/Ales-Aliashkevich-operating-theatre-spine-brain-image-guided-neurosurgery.jpg"
                   alt="Dr Ales Aliashkevich - Neurosurgeon and Spine Surgeon"
                   className="w-full h-auto object-cover"
+                  fallbackSrc="/images/medical-consulting.jpg"
                 />
               </div>
             </div>
@@ -75,10 +77,11 @@ export default function Index() {
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in" style={{ animationDelay: '100ms' }}>
                 <div className="flex justify-center mb-4">
-                  <img
+                  <SafeImage
                     src="/images/brain-abstract-icon.png"
                     alt="Icon representing minimally invasive neurosurgical procedures"
                     className="h-16 w-16 object-contain"
+                    fallbackSrc="/images/medical-consulting.jpg"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.minimallyInvasive.title}</h3>
@@ -94,10 +97,11 @@ export default function Index() {
 
               <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in" style={{ animationDelay: '200ms' }}>
                 <div className="flex justify-center mb-4">
-                  <img
+                  <SafeImage
                     src="/images/brain-png-18-transparent-1024x820.png"
                     alt="Icon representing advanced radiological imaging for neurosurgical navigation"
                     className="h-16 w-16 object-contain"
+                    fallbackSrc="/images/medical-consulting.jpg"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.advancedImaging.title}</h3>
@@ -113,10 +117,11 @@ export default function Index() {
 
               <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in" style={{ animationDelay: '300ms' }}>
                 <div className="flex justify-center mb-4">
-                  <img
+                  <SafeImage
                     src="/images/brain-artificial-intelligence-neurosurgeon-spine-surgeon-neurosurgery-advanced-technology-maximum-precision-robotic.png"
                     alt="Advantages over Traditional Open Surgery"
                     className="h-16 w-16 object-contain"
+                    fallbackSrc="/images/medical-consulting.jpg"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.roboticSurgery.title}</h3>
@@ -132,10 +137,11 @@ export default function Index() {
 
               <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in" style={{ animationDelay: '400ms' }}>
                 <div className="flex justify-center mb-4">
-                  <img
+                  <SafeImage
                     src="/images/brain-tumour-image-guided-surgery-minimally-invasive-advanced-neurosurgery-aliashkevich-mineuro.jpg"
                     alt="Image showing image-guided technology applications in neurosurgery"
                     className="h-16 w-16 object-contain"
+                    fallbackSrc="/images/medical-consulting.jpg"
                   />
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.patientRecovery.title}</h3>

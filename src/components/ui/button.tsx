@@ -39,16 +39,33 @@ const buttonVariants = cva(
 export interface ButtonProps
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
-  asChild?: boolean
+  asChild?: boolean;
+  /** Accessible label for the button when the visual text is not descriptive enough */
+  accessibleLabel?: string;
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-  ({ className, variant, size, asChild = false, ...props }, ref) => {
+  ({ className, variant, size, asChild = false, accessibleLabel, ...props }, ref) => {
     const Comp = asChild ? Slot : "button"
+
+    // Enhance accessibility
+    const ariaProps: Record<string, any> = {};
+
+    // If an accessible label is provided, use it for screen readers
+    if (accessibleLabel) {
+      ariaProps['aria-label'] = accessibleLabel;
+    }
+
+    // If the button is disabled, explain why if a reason is provided
+    if (props.disabled && props['aria-disabled-reason']) {
+      ariaProps['aria-describedby'] = props['aria-disabled-reason'];
+    }
+
     return (
       <Comp
         className={cn(buttonVariants({ variant, size, className }))}
         ref={ref}
+        {...ariaProps}
         {...props}
       />
     )

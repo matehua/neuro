@@ -5,19 +5,30 @@ interface SafeImageProps {
   alt: string;
   fallbackSrc?: string;
   className?: string;
+  loading?: 'lazy' | 'eager';
+  decoding?: 'async' | 'auto' | 'sync';
+  role?: string;
+  longDesc?: string;
+  isDecorative?: boolean;
 }
 
+/**
+ * SafeImage component with enhanced accessibility features
+ * Handles image loading errors gracefully by displaying a fallback image
+ */
 const SafeImage: React.FC<SafeImageProps> = ({
   src,
   alt,
   fallbackSrc = "/images/medical-consulting.jpg",
-  className = ""
+  className = "",
+  loading = 'lazy',
+  decoding = 'async',
+  role,
+  longDesc,
+  isDecorative = false
 }) => {
   const [imgSrc, setImgSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
-
-  // Add cache-busting parameter
-  const cacheBustedSrc = `${imgSrc}${imgSrc.includes('?') ? '&' : '?'}v=${Date.now()}`;
 
   const handleError = () => {
     if (!hasError) {
@@ -27,12 +38,21 @@ const SafeImage: React.FC<SafeImageProps> = ({
     }
   };
 
+  // Determine appropriate role and alt text based on whether the image is decorative
+  const imgRole = isDecorative ? 'presentation' : (role || undefined);
+  const imgAlt = isDecorative ? '' : alt;
+
   return (
     <img
-      src={hasError ? imgSrc : cacheBustedSrc}
-      alt={alt}
+      src={imgSrc}
+      alt={imgAlt}
       className={className}
       onError={handleError}
+      loading={loading}
+      decoding={decoding}
+      role={imgRole}
+      longDesc={longDesc}
+      aria-hidden={isDecorative}
     />
   );
 };

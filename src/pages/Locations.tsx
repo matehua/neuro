@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SafeImage from "@/components/SafeImage";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Clock } from "lucide-react";
@@ -138,10 +139,11 @@ export default function Locations() {
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
                 <div>
                   <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl">
-                    <img
+                    <SafeImage
                       src={primaryLocation.image || "/images/location-placeholder.jpg"}
                       alt={primaryLocation.name}
                       className="w-full h-full object-cover"
+                      fallbackSrc="/images/location-placeholder.jpg"
                     />
                   </div>
                 </div>

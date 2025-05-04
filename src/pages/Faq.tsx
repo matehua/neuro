@@ -3,6 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import SafeImage from "@/components/SafeImage";
 import {
   Accordion,
   AccordionContent,
@@ -263,46 +264,51 @@ export default function Faq() {
                     {/* Category-specific images */}
                     {category.title === "Cervical Disc Replacement" && (
                       <div className="relative rounded-lg overflow-hidden mb-6 shadow-md max-w-md mx-auto">
-                        <img
+                        <SafeImage
                           src="/images/cervical-disc-implants-examples-arthroplasty-disc-replacement-cervical-lumbar-spine-neurosurgery.jpg"
                           alt="Various cervical disc implant models used in disc replacement surgery by Dr. Aliashkevich"
                           className="w-full h-auto max-h-[200px] object-cover"
+                          fallbackSrc="/images/medical-consulting.jpg"
                         />
                       </div>
                     )}
                     {category.title === "Lumbar Disc Replacement" && (
                       <div className="relative rounded-lg overflow-hidden mb-6 shadow-md max-w-md mx-auto">
-                        <img
+                        <SafeImage
                           src="/images/lumbar-disc-implants-examples-arthroplasty-replacement-cervical-lumbar-spine-advanced-technology-robotic-spine.jpg"
                           alt="Various lumbar disc implant models used in disc replacement surgery by Dr. Aliashkevich"
                           className="w-full h-auto max-h-[200px] object-cover"
+                          fallbackSrc="/images/medical-consulting.jpg"
                         />
                       </div>
                     )}
                     {category.title === "Advanced Robotic and Minimally Invasive Techniques" && (
                       <div className="relative rounded-lg overflow-hidden mb-6 shadow-md max-w-md mx-auto">
-                        <img
+                        <SafeImage
                           src="/images/robotic-spine-surgery-lumbar-fusion-minimally-invasive-Mazor-Stryker-NuVasive-Renaissance-navigation-neurosurgery.jpg"
                           alt="Advanced robotic spine surgery equipment used for minimally invasive procedures"
                           className="w-full h-auto max-h-[200px] object-cover"
+                          fallbackSrc="/images/medical-consulting.jpg"
                         />
                       </div>
                     )}
                     {category.title === "Pain Management and Recovery" && (
                       <div className="relative rounded-lg overflow-hidden mb-6 shadow-md max-w-md mx-auto">
-                        <img
+                        <SafeImage
                           src="/images/lumbar-disc-replacement-recovery-physiotherapy-care-spine.jpg"
                           alt="Patient undergoing physical therapy and rehabilitation after spine surgery"
                           className="w-full h-auto max-h-[200px] object-cover"
+                          fallbackSrc="/images/medical-consulting.jpg"
                         />
                       </div>
                     )}
                     {category.title === "Insurance, Costs and Practical Information" && (
                       <div className="relative rounded-lg overflow-hidden mb-6 shadow-md max-w-md mx-auto">
-                        <img
+                        <SafeImage
                           src="/images/medical-consulting.jpg"
                           alt="Dr. Aliashkevich consulting with a patient about insurance coverage and treatment options"
                           className="w-full h-auto max-h-[200px] object-cover"
+                          fallbackSrc="/images/medical-consulting.jpg"
                         />
                       </div>
                     )}

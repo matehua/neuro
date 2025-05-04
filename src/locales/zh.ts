@@ -1,4 +1,222 @@
 export const zh = {
+  consultingRooms: {
+    hero: {
+      title: "在萨里山扩展您的医疗实践",
+      subtitle: "专业环境",
+      description: "在萨里山的miNEURO医疗咨询套房租用全套设备的医疗咨询室。对于医疗专业人士来说，我们的先进空间位于主要医疗设施和交通枢纽附近，是理想之选。无论您需要临时还是永久设置，我们在充满活力的购物区的黄金位置提供现代化和便捷的工作空间，以提供一流的患者护理。",
+      scheduleViewing: "安排参观"
+    },
+    features: {
+      convenientLocation: {
+        title: "便捷位置",
+        description: "我们的设施距离繁忙的博士山医疗中心、Epworth东部医院、几家全科诊所和繁忙的购物/商业/交通区域仅几分钟车程。"
+      },
+      fullyEquipped: {
+        title: "全套设备的房间",
+        description: "我们的咨询室配备了现代医疗设备、经验丰富的接待人员、检查台、人体工学座椅、电脑、洗手池和高速互联网接入。"
+      },
+      flexibleTerms: {
+        title: "灵活的租赁条款",
+        description: "我们提供灵活的租赁条款，包括临时、短期和长期租赁选项，以满足您的需求。"
+      },
+      customization: {
+        title: "定制选项",
+        description: "无论您需要额外的医疗设备还是特定的房间配置，我们都提供定制选项以满足您的要求。"
+      },
+      receptionistSupport: {
+        title: "接待支持",
+        description: "从迎接患者到管理预约和询问，我们经验丰富的接待人员在这里协助您提供卓越的患者护理。"
+      },
+      professionalEnvironment: {
+        title: "专业环境",
+        description: "从温馨的接待区到设备齐全的咨询室，我们优先考虑为所有入住者创造积极的体验。"
+      }
+    },
+    whyChoose: {
+      title: "为什么选择我们的套房",
+      description: "在miNEURO医疗咨询室，我们致力于为医疗专业人士提供量身定制的资源和支持，以满足医疗专业人士的多样化需求。我们的设施在萨里山黄金位置提供临时或永久全套设备的先进医疗咨询套房出租，靠近主要医疗机构、繁华的购物区和便捷的交通枢纽。这为寻求现代化和便捷工作空间以提供优质患者服务的医疗专业人士创造了理想选择。"
+    },
+    facilities: {
+      title: "设施",
+      consultingRooms: {
+        title: "咨询室",
+        description: "我们的咨询室经过精心设计和配备，以支持各种医疗专科。每个房间都配有现代医疗设备，包括检查台、洗手池、人体工学座椅和充足的储物空间。"
+      },
+      waitingArea: {
+        title: "舒适的等候区",
+        description: "我们温馨的等候区旨在为患者及其陪同人员提供舒适和便利。配备舒适的座椅、阅读材料、带有清凉饮料的冰箱、电视、高保真音响系统和柔和的照明，我们的等候区为等待预约的患者创造了一个宁静的氛围。"
+      },
+      amenities: {
+        title: "设施使用",
+        description: "我们的设施提供基本设施的使用，以支持您的实践运营。它们包括患者和工作人员的洗手间以及茶水设施，确保患者在访问期间感到舒适。"
+      },
+      technology: {
+        title: "技术基础设施",
+        description: "每个咨询室都提供高速互联网接入，使医疗专业人士能够无缝访问电子医疗记录和研究资源，并与同事沟通。萨里山医疗咨询室拥有先进的技术基础设施，以支持现代医疗实践。它包括安全的高速NBN网络连接、电信系统、闭路电视、警报和视频会议功能，以促进医疗专业人士之间的沟通和协作。"
+      },
+      accessibility: {
+        title: "无障碍设施",
+        description: "我们致力于为所有个人提供包容的环境。我们的设施专为行动不便的患者设计，配有宽敞的门、轮椅坡道、扶手和无障碍洗手间设施。我们努力确保每位患者都能舒适和有尊严地使用我们的服务。"
+      },
+      kitchenette: {
+        title: "小厨房",
+        description: "我们的小厨房允许我们全天准备和享用茶点。无论您需要在预约之间快速喝杯咖啡，还是需要小吃来补充能量，我们的小厨房都提供了完美的空间来放松和补充能量。它配备了基本的电器，包括冰箱、微波炉、烤面包机、三明治机和沸水/冷水龙头。"
+      }
+    },
+    location: {
+      title: "位置",
+      description: "我们的咨询套房战略性地位于萨里山坎特伯雷路619号，为寻求便捷和无障碍工作空间的医疗专业人士提供黄金位置。位于距离繁忙的博士山医疗中心仅几分钟车程的地方，我们的设施提供便捷的医疗服务和与其他医疗专业人士的合作机会。",
+      nearbyHospitals: "附近的Epworth东部医院是一家领先的私立医院，以其全面的医疗服务和卓越的诊断和治疗设施而闻名。我们的房间为所有医疗专业人士提供便捷的医院资源、专科咨询和诊断服务。附近还有几家全科诊所，提供全面的医疗解决方案和患者转诊。"
+    },
+    surroundings: {
+      title: "周边设施",
+      description: "在我们设施100米半径内，享受各种餐饮选择，包括当地餐馆和咖啡馆、娱乐区、游乐场、邮局和新的Coles超市。无论您需要在预约之间快速喝杯咖啡，与同事共进午餐，还是购买食材，附近都有现成的设施。",
+      retail: "探索附近的各种零售商店，为租户和患者在预约前后办理事务提供便利。从药房到便利店，我们的位置可以轻松获取基本设施。"
+    },
+    transportation: {
+      title: "便捷的交通选择",
+      publicTransport: "新的Union火车站步行即可到达，使医疗提供者和患者都能便捷地到达我们的设施。无论您是从市区还是邻近郊区通勤，我们的位置都提供通过公共交通的便捷访问。新建的Union站将您连接到主要火车线路。多条本地巴士路线提供额外的交通选择。",
+      driving: "位于坎特伯雷路上，我们的设施享有与主要道路的良好连接，包括东部高速公路、Warrigal路、Union路和Whitehorse路。无论您是从市区还是邻近郊区通勤，我们的位置都通过完善的道路网络提供便捷访问。"
+    },
+    neighborhood: {
+      title: "安全和友好的社区",
+      description: "萨里山以其安全和友好的社区氛围而闻名，为医疗专业人士提供有利的环境进行实践，为患者寻求医疗护理。我们的位置为租户和患者提供安心，确保在访问期间获得积极的体验。"
+    },
+    parking: {
+      title: "停车",
+      description: "租户在其临时时间内可使用现场安全的后门停车场，提供便捷的进入我们的场所。周围街道或Union火车站有充足的免费停车空间。"
+    },
+    pricing: {
+      title: "价格",
+      description: "我们灵活的租赁选项旨在提供负担能力和便利性，让您专注于提供卓越的患者护理。"
+    },
+    contact: {
+      title: "联系我们",
+      description: "联系我们了解更多关于我们的设施，安排参观或询问我们的租赁选项。加入我们，在萨里山将您的实践提升到新的高度。我们的设施促进协作和网络机会，提供支持专业成长和发展的环境。",
+      address: "Suite 4, 619 Canterbury Road, Surrey Hills VIC 3127",
+      email: "info@mineuro.com.au",
+      phone: "03 90084200"
+    },
+    gallery: {
+      title: "设施图库",
+      description: "我们的萨里山医疗咨询设施拥有现代化、全套设备的咨询室，旨在为医疗从业者及其患者提供专业和舒适的环境。浏览我们的图库，查看我们的入口、接待区、等候室、咨询套房和设施。"
+    },
+    form: {
+      title: "咨询室查询",
+      firstName: "名字",
+      lastName: "姓氏",
+      specialty: "医疗专科",
+      email: "电子邮件",
+      phone: "电话",
+      preferredLocation: "首选位置",
+      selectLocation: "选择位置",
+      locations: {
+        surreyHills: "萨里山",
+        mornington: "莫宁顿",
+        frankston: "弗兰克斯顿"
+      },
+      rentalFrequency: "会话频率",
+      selectFrequency: "选择频率",
+      frequencies: {
+        weekly: "每周",
+        fortnightly: "每两周",
+        monthly: "每月",
+        casual: "临时"
+      },
+      preferredDays: "首选日期",
+      days: {
+        monday: "星期一",
+        tuesday: "星期二",
+        wednesday: "星期三",
+        thursday: "星期四",
+        friday: "星期五"
+      },
+      additionalRequirements: "额外要求",
+      additionalRequirementsPlaceholder: "请说明您可能有的任何额外要求或问题",
+      submit: "提交查询",
+      confirmation: "我们将在1-2个工作日内联系您，讨论您的要求和可用性。",
+      thankYou: "感谢您的查询。我们将很快联系您。"
+    },
+    cta: {
+      title: "有问题？",
+      description: "如果您对我们的咨询室选项有任何问题，或想安排参观，请随时联系我们。",
+      contactUs: "联系我们"
+    }
+  },
+  expertiseCards: {
+    brainConditions: {
+      title: "脑部疾病",
+      description: "脑肿瘤（胶质瘤、脑膜瘤、前庭神经鞘瘤、垂体腺瘤等）、脑积水、脑动脉瘤、动静脉畸形、海绵状血管瘤、癫痫、三叉神经痛、Chiari畸形。"
+    },
+    spinalProblems: {
+      title: "脊柱问题",
+      description: "颈部和背部疼痛、坐骨神经痛、臂丛神经痛、脊柱狭窄、椎间盘突出、脊椎滑脱、脊椎炎、硬膜外脓肿、不稳定、脊髓病变、脊髓压迫、脊柱肿瘤、脊柱血管畸形。"
+    },
+    nerveProblems: {
+      title: "神经问题",
+      description: "神经肿瘤（神经鞘瘤、神经纤维瘤、神经瘤）、神经疼痛、神经损伤、神经压迫（腕管综合征、肘管综合征）、神经和肌肉活检。"
+    },
+    medicolegalReports: {
+      title: "医疗法律报告",
+      description: "根据AMA永久性损伤指南评估损伤程度、工作能力、工伤赔偿、交通事故伤害、责任调查。"
+    }
+  },
+  minimallyInvasive: {
+    subtitle: "相信少即是多的神经外科医生",
+    title: "为什么选择微创手术？",
+    description1: "任何神经外科医生和脊柱外科医生的最终目标是通过提供关于可用治疗选择的良好建议来改善患者的生活质量甚至寿命。在最先进的脑部、脊髓或脊柱病理学中，需要手术来恢复身体结构之间的正常解剖关系。",
+    description2: "手术和麻醉学的发展使得实现这一目标并成功管理以前无法治疗的疾病成为可能。然而，仍有很大的改进空间，特别是在脑部和脊柱手术领域。",
+    description3: "微创手术代表了手术理念的逻辑演变，专注于患者安全和满意度。手术理念包括",
+    principle1: "准确识别问题",
+    principle2: "安全进入病理区域，对周围组织造成最小伤害",
+    principle3: "有效但精细地修复复杂结构，即使它们位于身体深处",
+    buttonText: "微创手术"
+  },
+  discReplacement: {
+    subtitle: "慢性颈部和背部疼痛",
+    title: "颈椎和腰椎关节成形术（人工椎间盘置换）",
+    description1: "椎间盘的自然老化（退化）或创伤可能影响其活动性并导致其缓冲功能减弱。它可能表现为对神经结构的压力，导致颈部、背部、手臂、肩膀、臀部、腿部和足部疼痛、麻木或无力。",
+    description2: "椎间盘置换（关节成形术）旨在恢复受影响节段的减震功能，同时减压神经结构。与已经确立的髋关节和膝关节置换手术类似，人工椎间盘假体的发展也可能显著改善患者的生活质量并达到高水平的患者满意度。",
+    description3: "关节成形术保留运动并减少对上下椎间盘的负荷，保护它们免受加速退化。多项研究表明，在适当选择的候选人中，与脊柱融合相比，关节成形术后患者结果更好，患者满意度更高，再手术率更低，并发症更少，成本更低。",
+    buttonText: "椎间盘置换"
+  },
+  nav: {
+    home: "首页",
+    expertise: "专业领域",
+    expertiseSubmenu: {
+      cervicalDisc: "颈椎间盘置换",
+      lumbarDisc: "腰椎间盘置换",
+      imageGuided: "影像引导手术",
+      roboticSpine: "机器人辅助脊柱手术"
+    },
+    appointments: "预约",
+    gpResources: "全科医生资源",
+    gpResourcesSubmenu: {
+      main: "全科医生资源",
+      referralProtocols: "转诊和分诊协议",
+      diagnostics: "神经外科诊断",
+      careCoordination: "多学科护理",
+      emergencies: "紧急情况和危险信号"
+    },
+    medicolegal: "医疗法律咨询",
+    locations: "诊所位置",
+    locationsSubmenu: {
+      mornington: "莫宁顿",
+      frankston: "弗兰克斯顿",
+      mooneePonds: "穆尼庞兹",
+      sunbury: "桑伯里",
+      werribee: "韦里比",
+      bundoora: "邦多拉",
+      dandenong: "丹德农",
+      heidelberg: "海德堡",
+      wantirna: "万蒂尔纳",
+      surreyHills: "萨里山"
+    },
+    faq: "常见问题",
+    contact: "联系我们",
+    consultingRooms: "诊室租赁",
+    bookNow: "立即预约"
+  },
   hero: {
     subtitle: "脑部和脊柱手术的黄金标准",
     title: "神经外科专业知识和创新技术，实现卓越的脑部和脊柱手术结果",
@@ -17,6 +235,276 @@ export const zh = {
     subscribe: "订阅",
     allRights: "版权所有。"
   },
+  patientResources: {
+    title: "患者资源",
+    subtitle: "为患者提供治疗前、治疗中和治疗后的有用信息和资源。",
+    submenu: {
+      spineHealthApp: "脊柱健康应用",
+      conditionInfo: "疾病信息",
+      exerciseLibrary: "运动库",
+      assessmentTools: "评估工具",
+      patientDashboard: "患者仪表板",
+      comprehensiveSolution: "个性化脊柱健康计划",
+      faq: "常见问题"
+    },
+    individualSpineHealthProgram: {
+      title: "个性化脊柱健康计划",
+      subtitle: "通过评估、教育和进度跟踪，开启您个性化的脊柱健康之旅。",
+      startAssessment: "开始评估",
+      exploreFeatures: "探索功能",
+      journey: {
+        title: "您的个性化脊柱健康之旅",
+        description: "我们的个性化脊柱健康计划将评估工具、个性化建议和进度跟踪结合在一个集成平台中，帮助您有效理解和管理您的脊柱疾病。",
+        approach: "这种循证方法旨在：",
+        assess: "评估：通过详细评估确定您的具体病情",
+        educate: "教育：提供关于您的病情的科学验证信息",
+        recommend: "建议：提供个性化的运动和生活方式建议",
+        track: "跟踪：监控您的进度并相应调整建议",
+        support: "支持：通过专家资源指导您的脊柱健康之旅",
+        howItWorks: "工作原理"
+      },
+      keyFeatures: {
+        title: "主要功能",
+        assessment: {
+          title: "全面评估",
+          description: "对您的症状和病情进行详细评估",
+          content: "我们的评估工具通过详细问卷、疼痛映射和功能测试帮助确定您的具体病情。",
+          button: "进行评估"
+        },
+        education: {
+          title: "循证教育",
+          description: "通过科学验证的信息了解您的病情",
+          content: "我们的教育内容由神经外科专家开发，基于生物力学和神经生理学的最新研究。",
+          button: "探索疾病"
+        },
+        exercisePlans: {
+          title: "个性化运动计划",
+          description: "根据您的具体病情获取定制的运动建议",
+          content: "我们的系统根据您的评估结果创建量身定制的运动计划，旨在加强您的脊柱，改善活动能力，减轻疼痛。",
+          button: "查看运动库"
+        },
+        progressTracking: {
+          title: "进度跟踪",
+          description: "随时间监控您的改善情况",
+          content: "跟踪您的疼痛水平、活动能力改善、运动完成情况和神经症状，查看您的进度并相应调整您的计划。",
+          button: "查看仪表板"
+        },
+        goalSetting: {
+          title: "目标设定",
+          description: "设定并实现有意义的健康目标",
+          content: "为疼痛减轻、活动能力增加或活动恢复定义个性化目标，并跟踪您实现这些目标的进度。",
+          button: "设定目标"
+        },
+        healthcareIntegration: {
+          title: "医疗保健集成",
+          description: "与您的医疗团队共享信息",
+          content: "安全地与阿利什凯维奇医生或其他医疗提供者共享您的进度、运动坚持情况和症状变化，以增强您的护理。",
+          button: "共享信息"
+        }
+      },
+      howItWorks: {
+        title: "工作原理",
+        tabs: {
+          assess: "评估",
+          learn: "学习",
+          exercise: "运动",
+          track: "跟踪"
+        },
+        assess: {
+          title: "全面评估",
+          description1: "从我们的详细评估开始，评估您的症状、病史和功能能力。您甚至可以上传影像结果以进行更精确的分析。",
+          description2: "我们的评估包括：",
+          items: [
+            "详细症状问卷",
+            "疼痛映射工具",
+            "功能运动测试",
+            "病史分析",
+            "影像结果整合"
+          ],
+          button: "开始评估"
+        },
+        learn: {
+          title: "循证教育",
+          description1: "获取关于您特定病情的全面信息，包括原因、症状和治疗选择。我们的教育内容包括交互式图表、视频和详细解释。",
+          description2: "教育资源包括：",
+          items: [
+            "交互式解剖模型",
+            "特定病情信息",
+            "治疗选择解释",
+            "疼痛科学教育",
+            "生物力学基础"
+          ],
+          button: "探索疾病"
+        },
+        exercise: {
+          title: "个性化运动计划",
+          description1: "根据您的评估结果接收定制的运动计划。每个运动包括视频演示、逐步说明和修改选项。",
+          description2: "运动功能包括：",
+          items: [
+            "视频演示",
+            "详细说明",
+            "进度跟踪",
+            "难度调整",
+            "基于反馈的修改"
+          ],
+          button: "查看运动"
+        },
+        track: {
+          title: "进度跟踪和目标设定",
+          description1: "通过我们的综合跟踪工具监控您的改善情况。设定个性化目标并跟踪您实现这些目标的进度。",
+          description2: "跟踪功能包括：",
+          items: [
+            "疼痛水平监控",
+            "活动能力改善跟踪",
+            "运动完成记录",
+            "症状变化记录",
+            "目标实现可视化"
+          ],
+          button: "查看仪表板"
+        }
+      },
+      assessmentTools: {
+        title: "评估工具",
+        tabs: {
+          pain: "疼痛",
+          functional: "功能",
+          history: "病史",
+          imaging: "影像"
+        },
+        pain: {
+          title: "疼痛评估",
+          description: "帮助我们了解您的疼痛模式和症状",
+          content: "我们的疼痛评估工具帮助确定疼痛的位置、强度、性质和触发因素。这些信息对于准确诊断和治疗计划至关重要。",
+          items: [
+            "使用交互式身体地图指示疼痛位置",
+            "在标准化量表上评估疼痛强度",
+            "描述疼痛性质和模式",
+            "确定加重或改善症状的活动",
+            "跟踪疼痛随时间的变化"
+          ],
+          timeToComplete: "完成大约需要5-10分钟",
+          button: "开始疼痛评估"
+        },
+        functional: {
+          title: "功能评估",
+          description: "评估您的病情如何影响您的日常活动",
+          content: "我们的功能评估评估您的脊柱病情如何影响您执行日常活动、工作任务和娱乐活动的能力。",
+          items: [
+            "完成标准化功能评估问卷",
+            "记录运动测试视频（带隐私控制）",
+            "评估对工作、家庭和娱乐活动的影响",
+            "评估运动范围限制",
+            "随时间跟踪功能改善"
+          ],
+          timeToComplete: "完成大约需要10-15分钟",
+          button: "开始功能评估"
+        },
+        history: {
+          title: "病史",
+          description: "分享相关医疗背景信息",
+          content: "我们的病史评估收集关于您过去和当前健康状况、治疗和可能与您的脊柱病情相关的药物的重要信息。",
+          items: [
+            "创建安全的医疗档案",
+            "记录以前的脊柱病情和治疗",
+            "列出当前药物和补充剂",
+            "记录相关医疗状况",
+            "分享脊柱病情的家族史"
+          ],
+          timeToComplete: "完成大约需要10-15分钟",
+          button: "开始病史"
+        },
+        imaging: {
+          title: "影像上传",
+          description: "分享您现有的影像研究",
+          content: "我们的影像上传功能允许您安全地与我们的团队分享您现有的影像研究，以便对您的病情进行更全面的评估。",
+          items: [
+            "安全上传影像研究（MRI、CT、X光）",
+            "提供放射科医师报告",
+            "与您的医疗团队分享结果",
+            "跟踪影像随时间的变化",
+            "接收专家解释"
+          ],
+          timeToComplete: "完成大约需要5-10分钟",
+          button: "上传影像"
+        }
+      }
+    },
+    spineHealthApp: {
+      title: "脊柱健康应用",
+      subtitle: "您个性化的慢性颈部和背部问题理解和管理指南。",
+      description: "我们的循证应用程序帮助您了解您的病情，跟踪您的进度，并接收个性化的运动建议。",
+      features: {
+        education: "循证教育",
+        exercises: "个性化运动计划",
+        assessment: "全面评估",
+        tracking: "进度跟踪",
+        goals: "目标设定"
+      }
+    },
+    conditionInfo: {
+      title: "脊柱疾病库",
+      subtitle: "关于常见脊柱疾病、其原因、症状和治疗选择的全面信息。",
+      searchPlaceholder: "搜索疾病...",
+      exploreConditions: "探索脊柱疾病",
+      understandingAnatomy: "了解脊柱解剖",
+      notSureAboutCondition: "不确定您的病情？",
+      takeAssessment: "进行我们的全面评估，获取关于您症状的个性化见解。"
+    },
+    exerciseLibrary: {
+      title: "运动库",
+      subtitle: "探索我们由神经外科专家设计的全面脊柱特定运动集合。",
+      searchPlaceholder: "搜索运动...",
+      categories: {
+        all: "所有运动",
+        neck: "颈部运动",
+        upperBack: "上背部运动",
+        lowerBack: "下背部运动",
+        core: "核心强化",
+        mobility: "活动能力运动",
+        stretching: "拉伸运动",
+        posture: "姿势矫正"
+      },
+      difficulty: {
+        all: "所有级别",
+        beginner: "初级",
+        intermediate: "中级",
+        advanced: "高级"
+      },
+      equipment: {
+        all: "所有设备",
+        none: "无设备",
+        resistanceBand: "阻力带",
+        weights: "重量",
+        stabilityBall: "稳定球",
+        foam: "泡沫轴",
+        chair: "椅子"
+      }
+    },
+    resources: {
+      newPatientForms: "新患者表格",
+      newPatientFormsDesc: "下载并填写这些表格，在您的首次预约前节省时间。",
+      insuranceInfo: "保险信息",
+      insuranceInfoDesc: "了解接受的保险计划和付款选项。",
+      preparingForAppointment: "为您的预约做准备",
+      preparingForAppointmentDesc: "神经外科咨询需要带什么和如何准备。",
+      brainConditions: "脑部疾病",
+      brainConditionsDesc: "关于阿利什凯维奇医生治疗的常见脑部疾病的信息。",
+      spineConditions: "脊柱疾病",
+      spineConditionsDesc: "关于常见脊柱疾病和可用治疗的信息。",
+      minimallyInvasive: "微创手术",
+      minimallyInvasiveDesc: "了解我们的微创神经外科方法。",
+      preSurgeryInstructions: "手术前说明",
+      preSurgeryInstructionsDesc: "手术前需要遵循的重要指南。",
+      postSurgeryCare: "手术后护理",
+      postSurgeryCareDesc: "神经外科手术后的恢复信息和护理说明。",
+      hospitalInfo: "医院信息",
+      hospitalInfoDesc: "关于我们附属医院和手术设施的详细信息。",
+      supportGroups: "支持小组",
+      supportGroupsDesc: "与有类似神经外科疾病的其他人联系。",
+      rehabilitationResources: "康复资源",
+      rehabilitationResourcesDesc: "帮助您在神经外科手术后恢复的资源。"
+    }
+  },
   appointmentForm: {
     title: "预约咨询",
     checkIn: "预约日期",
@@ -28,6 +516,86 @@ export const zh = {
     selectDate: "选择日期",
     checkAvailability: "查看可用性",
     appointmentConfirmed: "预约已确认！"
+  },
+  gpResources: {
+    title: "全科医生资源",
+    subtitle: "为全科医生提供支持最佳患者护理和简化转诊的资源。",
+    overview: {
+      title: "全科医生资源",
+      description: "欢迎访问我们专为全科医生设计的资源部分。我们开发了这些资源，以支持您为神经外科疾病患者提供最佳护理，并促进向我们诊所的高效转诊。我们的目标是加强初级保健和专科神经外科服务之间的协作。"
+    },
+    referralProtocols: {
+      title: "全科医生转诊和分诊协议",
+      subtitle: "高效转诊至神经外科服务的指南",
+      description: "这些协议旨在帮助您确定何时将患者转诊至神经外科服务，转诊中应包含哪些信息，以及如何识别需要紧急关注的病例。",
+      urgentReferrals: {
+        title: "紧急转诊标准",
+        description: "需要立即或紧急神经外科咨询的情况："
+      },
+      standardReferrals: {
+        title: "标准转诊指南",
+        description: "神经外科转诊中建议包含的信息："
+      },
+      referralProcess: {
+        title: "转诊流程",
+        description: "如何将患者转诊至我们的神经外科诊所："
+      },
+      triageCategories: {
+        title: "分诊类别",
+        description: "我们如何根据临床表现优先处理转诊："
+      }
+    },
+    diagnostics: {
+      title: "神经外科诊断",
+      subtitle: "神经外科疾病的诊断方法和工具",
+      description: "了解神经外科疾病的诊断方法和工具，以及何时考虑转诊至神经外科专家。",
+      commonTests: {
+        title: "常见神经外科测试",
+        description: "神经外科评估中常用的诊断测试："
+      },
+      imagingGuidelines: {
+        title: "影像指南",
+        description: "神经外科疾病的影像指南："
+      },
+      clinicalAssessment: {
+        title: "临床评估",
+        description: "神经外科疾病的临床评估要点："
+      }
+    },
+    careCoordination: {
+      title: "多学科护理",
+      subtitle: "协调神经外科患者的多学科护理",
+      description: "了解如何协调神经外科患者的多学科护理，以及我们如何与初级保健提供者合作。",
+      teamApproach: {
+        title: "团队方法",
+        description: "我们的多学科团队方法："
+      },
+      communicationChannels: {
+        title: "沟通渠道",
+        description: "与我们的神经外科团队沟通的方式："
+      },
+      careTransitions: {
+        title: "护理过渡",
+        description: "管理神经外科患者护理过渡的最佳实践："
+      }
+    },
+    emergencies: {
+      title: "紧急情况和危险信号",
+      subtitle: "识别需要紧急神经外科干预的情况",
+      description: "了解需要紧急神经外科干预的危险信号和症状，以及如何处理这些情况。",
+      redFlags: {
+        title: "神经外科危险信号",
+        description: "需要紧急评估的神经外科危险信号："
+      },
+      emergencyManagement: {
+        title: "紧急管理",
+        description: "神经外科紧急情况的初始管理："
+      },
+      contactInformation: {
+        title: "紧急联系信息",
+        description: "紧急神经外科咨询的联系信息："
+      }
+    }
   },
   testimonials: {
     title: "患者见证",

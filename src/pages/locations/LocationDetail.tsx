@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SafeImage from "@/components/SafeImage";
 import { Button } from "@/components/ui/button";
 import { MapPin, Phone, Clock, Calendar, Car, Train, Bus, Mail } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -247,10 +248,11 @@ export default function LocationDetail() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               <div>
                 <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
-                  <img
+                  <SafeImage
                     src={locationData.image || "/images/location-placeholder.jpg"}
                     alt={locationData.name}
                     className="w-full h-full object-cover"
+                    fallbackSrc="/images/location-placeholder.jpg"
                   />
                 </div>
 

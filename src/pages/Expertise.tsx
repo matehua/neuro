@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
+import SafeImage from "@/components/SafeImage";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CTASection from "@/components/CTASection";
 
@@ -290,10 +291,11 @@ export default function Expertise() {
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
               <div className="relative rounded-xl overflow-hidden shadow-lg">
-                <img
+                <SafeImage
                   src="/images/robotic-operating-theatre-spine-brain-navigation-microsurgery.jpg"
                   alt="Image-guided navigation system for neurosurgery"
                   className="w-full h-auto"
+                  fallbackSrc="/images/medical-consulting.jpg"
                 />
               </div>
               <div>
