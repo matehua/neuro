@@ -342,6 +342,26 @@ export default function PatientResources() {
                   <Link to="/patient-resources/cervical-spine-exercises">View Exercises</Link>
                 </Button>
               </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-4">Spine-Safe Exercises for Degenerative Disc Disease</h3>
+                <p className="text-muted-foreground mb-4">
+                  Biomechanically sound exercises with detailed muscle engagement and psychophysiological benefits for managing DDD.
+                </p>
+                <Button asChild className="w-full">
+                  <Link to="/patient-resources/spine-safe-exercises">View Exercises</Link>
+                </Button>
+              </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-4">Hidden Risks of Exercising While on Pain Medications</h3>
+                <p className="text-muted-foreground mb-4">
+                  A neurosurgeon's perspective on why exercising under the influence of pain medications may be unsafe for your spine.
+                </p>
+                <Button asChild className="w-full">
+                  <Link to="/patient-resources/exercise-pain-medication-risks">Read Article</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
