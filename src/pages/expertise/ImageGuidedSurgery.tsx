@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import SafeImage from "@/components/SafeImage";
@@ -15,10 +14,8 @@ export default function ImageGuidedSurgery() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-
-      <main className="flex-1 pt-20">
+    <Layout pageTitle="Image-Guided Surgery">
+      <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
           <div className="container relative z-10">
@@ -76,6 +73,15 @@ export default function ImageGuidedSurgery() {
                   This individual model has to be registered to the actual patient position on the operating table using infrared cameras or electromagnetic fields. Special optical reflective markers on the surgical instruments can be tracked by the computer and position of the tool can be displayed on the screen or in the operating microscope.
                 </p>
 
+                <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
+                  <SafeImage
+                    src="/images/operating-theatre-spine-brain-image-guided-neurosurgeon-microsurgery-maximum-precision-robotic-spine-Epworth-Richmond.jpg"
+                    alt="Operating theatre setup for image-guided neurosurgery with advanced navigation technology"
+                    className="w-full h-full object-cover"
+                    fallbackSrc="/images/medical-consulting.jpg"
+                  />
+                </div>
+
                 <h2 className="text-2xl font-bold mb-6">Applications in Neurosurgery</h2>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div className="card p-6 rounded-lg shadow-md bg-card">
@@ -129,6 +135,15 @@ export default function ImageGuidedSurgery() {
                   <li>Reduced overall cost of treatment</li>
                 </ul>
 
+                <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
+                  <SafeImage
+                    src="/images/Ales-Aliashkevich-operating-theatre-spine-brain-image-guided-neurosurgery.jpg"
+                    alt="Dr. Ales Aliashkevich performing image-guided neurosurgery with advanced navigation technology"
+                    className="w-full h-full object-cover"
+                    fallbackSrc="/images/medical-consulting.jpg"
+                  />
+                </div>
+
                 <h2 className="text-2xl font-bold mb-6">Advanced Imaging Technologies</h2>
                 <p className="text-muted-foreground mb-4">
                   <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> utilizes several cutting-edge imaging technologies in his practice:
@@ -163,6 +178,15 @@ export default function ImageGuidedSurgery() {
                   </div>
                 </div>
 
+                <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
+                  <SafeImage
+                    src="/images/brain-tumour-navigated-image-guided-surgery-miNEURO-Aliashekvich-robotic.jpg"
+                    alt="Advanced neuronavigation system used for image-guided brain surgery"
+                    className="w-full h-full object-cover"
+                    fallbackSrc="/images/medical-consulting.jpg"
+                  />
+                </div>
+
                 <h2 className="text-2xl font-bold mb-6">Why Choose Dr. Aliashkevich for Image-Guided Surgery?</h2>
                 <p className="text-muted-foreground mb-4">
                   <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> is highly experienced in image-guided neurosurgical procedures and offers:
@@ -173,7 +197,49 @@ export default function ImageGuidedSurgery() {
                   <li>Personalized treatment plans tailored to each patient's unique anatomy and condition</li>
                   <li>Comprehensive pre-operative planning using advanced imaging</li>
                   <li>Commitment to achieving optimal surgical outcomes with minimal invasiveness</li>
+                  <li>Experience with complex brain and spine pathologies requiring precise navigation</li>
+                  <li>Access to state-of-the-art imaging and navigation equipment</li>
+                  <li>Ongoing education and training in the latest image-guided techniques</li>
                 </ul>
+
+                <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
+                  <SafeImage
+                    src="/images/Aliashkevich-operating-spine-brain-image-guided-neurosurgeon-robotic-spine-Mazor-surgery.jpg"
+                    alt="Dr. Aliashkevich performing image-guided spine surgery with robotic assistance"
+                    className="w-full h-full object-cover"
+                    fallbackSrc="/images/medical-consulting.jpg"
+                  />
+                </div>
+
+                <h2 className="text-2xl font-bold mb-6">Robotic Spine Surgery: The Evolution of Image-Guided Technology</h2>
+                <p className="text-muted-foreground mb-6">
+                  Robotic technology is the logical step in the evolution of image-guided surgical systems, which contributes to the surgical toolset of minimally invasive approaches. Robotic spine surgery combines the precision of image-guided navigation with robotic assistance to further enhance surgical accuracy and patient outcomes.
+                </p>
+
+                <p className="text-muted-foreground mb-6">
+                  The robotic system works in conjunction with image-guided navigation to provide:
+                </p>
+
+                <ul className="list-disc list-inside text-muted-foreground mb-8 space-y-2">
+                  <li>Enhanced precision in screw placement</li>
+                  <li>Reduced radiation exposure for both patient and surgical team</li>
+                  <li>Improved surgical planning capabilities</li>
+                  <li>Increased stability during the procedure</li>
+                  <li>Potential for smaller incisions and less tissue disruption</li>
+                </ul>
+
+                <p className="text-muted-foreground mb-6">
+                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> utilizes robotic assistance for appropriate spine procedures, combining the benefits of image-guided navigation with robotic precision for optimal patient outcomes.
+                </p>
+
+                <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
+                  <SafeImage
+                    src="/images/robotic-spine-surgery-lumbar-fusion-minimally-invasive-Mazor-Stryker-NuVasive-Renaissance-navigation-neurosurgery.jpg"
+                    alt="Robotic spine surgery system used in conjunction with image-guided navigation"
+                    className="w-full h-full object-cover"
+                    fallbackSrc="/images/medical-consulting.jpg"
+                  />
+                </div>
               </div>
 
               {/* Sidebar */}
@@ -188,9 +254,10 @@ export default function ImageGuidedSurgery() {
                       <li>Deep-seated or complex brain tumours</li>
                       <li>Tumours near critical brain structures</li>
                       <li>Complex spinal conditions requiring instrumentation</li>
-                      <li>Vascular abnormalities</li>
+                      <li>Vascular abnormalities (cavernomas, AVMs, aneurysms)</li>
                       <li>Need for minimally invasive approaches</li>
                       <li>Previous failed surgeries requiring precise revision</li>
+                      <li>Epilepsy requiring precise electrode placement</li>
                     </ul>
                     <p className="text-muted-foreground mb-4">
                       <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> will evaluate your specific condition to determine if image-guided surgery is appropriate for your case.
@@ -201,11 +268,37 @@ export default function ImageGuidedSurgery() {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
+                    <h3 className="text-xl font-semibold mb-3 text-primary">Epilepsy Surgery</h3>
+                    <p className="text-muted-foreground mb-4">
+                      Image-guided technology is particularly valuable in epilepsy surgery, where:
+                    </p>
+                    <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
+                      <li>Precise electrode placement is critical for monitoring brain activity</li>
+                      <li>Epileptogenic focus may be difficult to distinguish from normal tissue</li>
+                      <li>Preservation of eloquent brain areas is essential</li>
+                      <li>Minimally invasive approaches reduce risk and recovery time</li>
+                    </ul>
+                    <p className="text-muted-foreground mb-4">
+                      Thorough preoperative assessment combined with image-guided navigation allows for safe and effective treatment of seizure disorders.
+                    </p>
+                  </div>
+
+                  <div className="card p-6 rounded-lg shadow-md bg-card">
                     <h3 className="text-xl font-semibold mb-3 text-primary">Related Procedures</h3>
                     <ul className="space-y-2">
                       <li>
                         <Link to="/expertise/robotic-spine-surgery" className="text-primary hover:underline">
                           Robotic Spine Surgery
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/expertise/brain-tumour-surgery" className="text-primary hover:underline">
+                          Brain Tumour Surgery
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/expertise/minimally-invasive-spine-surgery" className="text-primary hover:underline">
+                          Minimally Invasive Spine Surgery
                         </Link>
                       </li>
                       <li>
@@ -225,6 +318,21 @@ export default function ImageGuidedSurgery() {
                     <h3 className="text-xl font-semibold mb-3 text-primary">Patient Resources</h3>
                     <ul className="space-y-2">
                       <li>
+                        <Link to="/patient-resources/brain-conditions" className="text-primary hover:underline">
+                          Brain Conditions
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/patient-resources/spine-conditions" className="text-primary hover:underline">
+                          Spine Conditions
+                        </Link>
+                      </li>
+                      <li>
+                        <Link to="/patient-resources/surgical-technologies" className="text-primary hover:underline">
+                          Surgical Technologies
+                        </Link>
+                      </li>
+                      <li>
                         <Link to="/faq" className="text-primary hover:underline">
                           Frequently Asked Questions
                         </Link>
@@ -232,11 +340,6 @@ export default function ImageGuidedSurgery() {
                       <li>
                         <Link to="/appointments" className="text-primary hover:underline">
                           Preparing for Your Appointment
-                        </Link>
-                      </li>
-                      <li>
-                        <Link to="/contact" className="text-primary hover:underline">
-                          Contact Us
                         </Link>
                       </li>
                     </ul>
@@ -267,8 +370,6 @@ export default function ImageGuidedSurgery() {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }
