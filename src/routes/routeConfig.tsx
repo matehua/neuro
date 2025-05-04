@@ -46,6 +46,7 @@ const CervicalSpineExercises = lazyLoad(() => import('@/pages/patient-resources/
 const SpineSafeExercises = lazyLoad(() => import('@/pages/patient-resources/SpineSafeExercises'));
 const ExercisePainMedRisks = lazyLoad(() => import('@/pages/patient-resources/ExercisePainMedRisks'));
 const AgeSpecificSpineRecommendations = lazyLoad(() => import('@/pages/patient-resources/AgeSpecificSpineRecommendations'));
+const YouthfulSpine = lazyLoad(() => import('@/pages/patient-resources/YouthfulSpine'));
 const TestImages = lazyLoad(() => import('@/pages/TestImages'));
 const CervicalDiscReplacement = lazyLoad(() => import('@/pages/expertise/CervicalDiscReplacement'));
 const LumbarDiscReplacement = lazyLoad(() => import('@/pages/expertise/LumbarDiscReplacement'));
@@ -103,6 +104,7 @@ export const baseRoutes: RouteConfig[] = [
   { path: "/patient-resources/spine-safe-exercises", element: <SpineSafeExercises /> },
   { path: "/patient-resources/exercise-pain-medication-risks", element: <ExercisePainMedRisks /> },
   { path: "/patient-resources/age-specific-spine-recommendations", element: <AgeSpecificSpineRecommendations /> },
+  { path: "/patient-resources/youthful-spine", element: <YouthfulSpine /> },
   { path: "/patient-resources/lifestyle-modifications", element: <LifestyleModifications /> },
   { path: "/test-images", element: <TestImages /> },
   { path: "/technologies", element: <Navigate to="/expertise" replace /> },
