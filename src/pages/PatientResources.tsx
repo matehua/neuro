@@ -332,6 +332,16 @@ export default function PatientResources() {
                   <Link to="/patient-resources/cervical-spine-injury">View Recovery Guide</Link>
                 </Button>
               </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-4">Cervical Spine Exercises for Pain Medication Transition</h3>
+                <p className="text-muted-foreground mb-4">
+                  Evidence-based exercises to safely reintroduce cervical spine function while transitioning off pain medications.
+                </p>
+                <Button asChild className="w-full">
+                  <Link to="/patient-resources/cervical-spine-exercises">View Exercises</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
