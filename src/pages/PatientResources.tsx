@@ -362,6 +362,16 @@ export default function PatientResources() {
                   <Link to="/patient-resources/exercise-pain-medication-risks">Read Article</Link>
                 </Button>
               </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-4">Age-Specific Recommendations for a Youthful Spine</h3>
+                <p className="text-muted-foreground mb-4">
+                  Tailored spine care strategies for every age group, from your 20s to your 80s and beyond, to maintain optimal spinal health.
+                </p>
+                <Button asChild className="w-full">
+                  <Link to="/patient-resources/age-specific-spine-recommendations">View Guide</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
