@@ -312,6 +312,26 @@ export default function PatientResources() {
                   <Link to="/patient-resources/spine-conditions-library#anatomy">View Anatomy</Link>
                 </Button>
               </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-4">Expert Guide to Spine & Brain Health</h3>
+                <p className="text-muted-foreground mb-4">
+                  Science-backed strategies for understanding, managing, and preventing chronic spinal and neurological conditions.
+                </p>
+                <Button asChild className="w-full">
+                  <Link to="/patient-resources/spine-and-brain-health">Read Guide</Link>
+                </Button>
+              </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card hover:shadow-lg transition-shadow">
+                <h3 className="text-xl font-semibold mb-4">Cervical Spine Injury Recovery</h3>
+                <p className="text-muted-foreground mb-4">
+                  Comprehensive guide for management and rehabilitation after mild cervical spine injury with exercise recommendations.
+                </p>
+                <Button asChild className="w-full">
+                  <Link to="/patient-resources/cervical-spine-injury">View Recovery Guide</Link>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
