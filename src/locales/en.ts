@@ -16,8 +16,8 @@ export const en = {
         description: "Our consulting rooms are equipped with modern medical equipment, experienced reception staff, examination tables, ergonomic seating, computers, sinks, and high-speed internet access."
       },
       flexibleTerms: {
-        title: "Flexible Lease Terms",
-        description: "We offer flexible lease terms, including sessional, short-term and long-term rental options, to accommodate your needs."
+        title: "Flexible Licence Terms",
+        description: "We offer flexible licence terms, including sessional, short-term and long-term rental options, to accommodate your needs."
       },
       customization: {
         title: "Customisation Options",
@@ -25,7 +25,7 @@ export const en = {
       },
       receptionistSupport: {
         title: "Receptionist Support",
-        description: "From greeting patients to managing appointments and inquiries, our experienced receptionists are here to assist you in providing exceptional patient care."
+        description: "From greeting patients to managing appointments and enquiries, our experienced receptionists are here to assist you in providing exceptional patient care."
       },
       professionalEnvironment: {
         title: "Professional Environment",
@@ -78,9 +78,9 @@ export const en = {
       publicTransport: "With the new Union train station within walking distance, accessing our facility is convenient for healthcare providers and patients. Whether you're commuting from the city or neighbouring suburbs, our location offers easy access via public transportation. The newly built Union Station connects you to major train lines. Multiple local bus routes provide additional transportation options.",
       driving: "Situated on Canterbury Road, our facility enjoys excellent connectivity to major roadways, including the Eastern Freeway, Warrigal Road, Union Road and Whitehorse Road. Whether you're commuting from the city or neighbouring suburbs, our location offers easy access via well-connected road networks."
     },
-    neighborhood: {
+    neighbourhood: {
       title: "Safe and Welcoming Neighbourhood",
-      description: "Surrey Hills is renowned for its safe and welcoming community atmosphere, providing a conducive environment for healthcare professionals to practice and patients to seek medical care. Our location offers peace of mind for tenants and patients, ensuring a positive experience during their visit."
+      description: "Surrey Hills is renowned for its safe and welcoming community atmosphere, providing a conducive environment for healthcare professionals to practise and patients to seek medical care. Our location offers peace of mind for tenants and patients, ensuring a positive experience during their visit."
     },
     parking: {
       title: "Parking",
@@ -102,7 +102,7 @@ export const en = {
       description: "Our Surrey Hills medical consulting facility features modern, fully-equipped consulting rooms designed to provide a professional and comfortable environment for healthcare practitioners and their patients. Browse through our gallery to see our entrance, reception area, waiting rooms, consulting suites, and amenities."
     },
     form: {
-      title: "Consulting Room Inquiry",
+      title: "Consulting Room Enquiry",
       firstName: "First Name",
       lastName: "Last Name",
       specialty: "Medical Specialty",
@@ -133,9 +133,9 @@ export const en = {
       },
       additionalRequirements: "Additional Requirements",
       additionalRequirementsPlaceholder: "Please specify any additional requirements or questions you may have",
-      submit: "Submit Inquiry",
+      submit: "Submit Enquiry",
       confirmation: "We will contact you within 1-2 business days to discuss your requirements and availability.",
-      thankYou: "Thank you for your inquiry. We will contact you shortly."
+      thankYou: "Thank you for your enquiry. We will contact you shortly."
     },
     cta: {
       title: "Have Questions?",
@@ -175,7 +175,7 @@ export const en = {
   discReplacement: {
     subtitle: "CHRONIC NECK AND BACK PAIN",
     title: "Cervical and Lumbar Arthroplasty (Artificial Disc Replacement)",
-    description1: "Natural aging of the disc (degeneration) or trauma can affect its mobility and cause a reduction of its cushioning function. It may manifest in pressure on the neural structures and result in neck, back, arm, shoulder, hip, leg and foot pain, numbness or weakness.",
+    description1: "Natural ageing of the disc (degeneration) or trauma can affect its mobility and cause a reduction of its cushioning function. It may manifest in pressure on the neural structures and result in neck, back, arm, shoulder, hip, leg and foot pain, numbness or weakness.",
     description2: "Disc replacement (arthroplasty) is aimed at restoring the shock-absorbing function of the affected segment with simultaneous decompression of the neural structures. Similar to the well-established hip and knee joint replacement procedures, the evolution of artificial disc prostheses may also result in a dramatic improvement in patients' quality of life and achieve high levels of patient satisfaction.",
     description3: "Arthroplasty preserves motion and reduces the load on the discs above and below protecting them against accelerated degeneration. Multiple investigations have shown superior patient outcomes, higher patient satisfaction rates, reduced rate of re-operations, fewer complications and reduced costs after arthroplasty when compared with spinal fusion in properly selected candidates.",
     buttonText: "DISC REPLACEMENT"
@@ -198,7 +198,7 @@ export const en = {
       careCoordination: "Multidisciplinary Care",
       emergencies: "Emergencies & Red Flags"
     },
-    medicolegal: "Medicolegal",
+    medicolegal: "Medico-Legal",
     locations: "Locations",
     locationsSubmenu: {
       mornington: "Mornington",
@@ -322,11 +322,11 @@ export const en = {
       exerciseLibrary: "Exercise Library",
       assessmentTools: "Assessment Tools",
       patientDashboard: "Patient Dashboard",
-      comprehensiveSolution: "Individual Spine Health Program",
+      comprehensiveSolution: "Individual Spine Health Programme",
       faq: "Frequently Asked Questions"
     },
-    individualSpineHealthProgram: {
-      title: "Individual Spine Health Program",
+    individualSpineHealthProgramme: {
+      title: "Individual Spine Health Programme",
       subtitle: "Your personalised journey to better spine health through assessment, education, and progress tracking.",
       startAssessment: "Start Assessment",
       exploreFeatures: "Explore Features",
@@ -429,14 +429,14 @@ export const en = {
         },
         track: {
           title: "Progress Tracking & Goal Setting",
-          description1: "Monitor your improvement over time with our comprehensive tracking tools. Set personalized goals and track your progress toward achieving them.",
+          description1: "Monitor your improvement over time with our comprehensive tracking tools. Set personalised goals and track your progress toward achieving them.",
           description2: "Tracking features include:",
           items: [
             "Pain level monitoring",
             "Mobility improvement tracking",
             "Exercise completion logging",
             "Symptom change documentation",
-            "Goal achievement visualization"
+            "Goal achievement visualisation"
           ],
           button: "View Dashboard"
         }
@@ -455,7 +455,7 @@ export const en = {
           content: "Our pain assessment tools help identify the location, intensity, quality, and triggers of your pain. This information is crucial for accurate diagnosis and treatment planning.",
           items: [
             "Use interactive body maps to indicate pain locations",
-            "Rate pain intensity on standardized scales",
+            "Rate pain intensity on standardised scales",
             "Describe pain qualities and patterns",
             "Identify activities that worsen or improve symptoms",
             "Track changes in pain over time"
@@ -468,7 +468,7 @@ export const en = {
           description: "Evaluate how your condition affects your daily activities",
           content: "Our functional assessment evaluates how your spine condition impacts your ability to perform daily activities, work tasks, and recreational activities.",
           items: [
-            "Complete standardized functional assessment questionnaires",
+            "Complete standardised functional assessment questionnaires",
             "Record video of movement tests (with privacy controls)",
             "Evaluate impact on work, home, and recreational activities",
             "Assess range of motion limitations",
@@ -512,7 +512,7 @@ export const en = {
           title: "Evidence-Based Approach",
           description: "Our assessment tools are developed based on the latest neurosurgical research and validated clinical measures, ensuring you receive scientifically sound evaluations."
         },
-        personalizedInsights: {
+        personalisedInsights: {
           title: "Personalised Insights",
           description: "Receive tailored insights specific to your condition, symptoms, and functional limitations, rather than generic recommendations that may not address your unique needs."
         },
@@ -546,9 +546,9 @@ export const en = {
           title: "Progress Tracking",
           description: "Monitor your improvement over time",
           painTracking: "Pain Level Tracking",
-          painVisualization: "Pain level visualization will appear here",
+          painVisualization: "Pain level visualisation will appear here",
           mobilityImprovement: "Mobility Improvement",
-          mobilityVisualization: "Mobility improvement visualization will appear here",
+          mobilityVisualization: "Mobility improvement visualisation will appear here",
           symptomJournal: "Symptom Journal",
           recordChanges: "Record changes in your symptoms and track patterns over time.",
           date: "Date",
@@ -625,7 +625,7 @@ export const en = {
         }
       },
       successStories: {
-        title: "Individual Spine Health Program Success Stories",
+        title: "Individual Spine Health Programme Success Stories",
         sarah: {
           name: "Sarah, 42",
           condition: "Herniated Disc",
@@ -655,18 +655,18 @@ export const en = {
       },
       readyToTakeControl: {
         title: "Ready to Take Control of Your Spine Health?",
-        description: "Start your personalised journey to better spine health today. Our Individual Spine Health Program will help you understand your condition, provide personalised recommendations, and track your progress over time.",
+        description: "Start your personalised journey to better spine health today. Our Individual Spine Health Programme will help you understand your condition, provide personalised recommendations, and track your progress over time.",
         startAssessment: "Start Assessment",
         scheduleConsultation: "Schedule Consultation"
       }
     },
     spineHealthApp: {
       title: "Spine Health App",
-      subtitle: "Your personalized guide to understanding and managing chronic neck and back problems.",
-      description: "Our evidence-based application helps you understand your condition, track your progress, and receive personalized exercise recommendations.",
+      subtitle: "Your personalised guide to understanding and managing chronic neck and back problems.",
+      description: "Our evidence-based application helps you understand your condition, track your progress, and receive personalised exercise recommendations.",
       features: {
         education: "Evidence-Based Education",
-        exercises: "Personalized Exercise Plans",
+        exercises: "Personalised Exercise Plans",
         assessment: "Comprehensive Assessment",
         tracking: "Progress Tracking",
         goals: "Goal Setting"
@@ -679,7 +679,7 @@ export const en = {
       exploreConditions: "Explore Spine Conditions",
       understandingAnatomy: "Understanding Spine Anatomy",
       notSureAboutCondition: "Not Sure About Your Condition?",
-      takeAssessment: "Take our comprehensive assessment to get personalized insights about your symptoms."
+      takeAssessment: "Take our comprehensive assessment to get personalised insights about your symptoms."
     },
     exerciseLibrary: {
       title: "Exercise Library",
@@ -708,7 +708,7 @@ export const en = {
         enhances: "Enhances Posture",
         reduces: "Reduces Pain"
       },
-      getPersonalized: "Get Your Personalized Exercise Plan"
+      getPersonalised: "Get Your Personalised Exercise Plan"
     },
     assessmentTools: {
       title: "Assessment Tools",
@@ -722,7 +722,7 @@ export const en = {
     },
     patientDashboard: {
       title: "Patient Dashboard",
-      subtitle: "Track your progress and manage your personalized care plan.",
+      subtitle: "Track your progress and manage your personalised care plan.",
       login: "Login to Your Account",
       register: "Create an Account",
       features: {
@@ -766,8 +766,8 @@ export const en = {
       mentalHealthSupportDesc: "Resources for managing the emotional aspects of neurosurgical conditions."
     },
     educationalMaterials: "Educational Materials",
-    brainTumors: "Understanding Brain Tumours",
-    brainTumorsDesc: "A comprehensive guide to brain tumour types, symptoms, and treatment options.",
+    brainTumours: "Understanding Brain Tumours",
+    brainTumoursDesc: "A comprehensive guide to brain tumour types, symptoms, and treatment options.",
     spineRecovery: "Spine Surgery Recovery Guide",
     spineRecoveryDesc: "What to expect during recovery from various types of spine surgery.",
     painManagement: "Pain Management Strategies",
@@ -1024,7 +1024,7 @@ export const en = {
       consultationProcess: {
         title: "Consultation Process",
         description1: "Before the actual appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging, nerve conduction tests, EMG, and other radiological and neurophysiological investigations.",
-        description2: "During your initial consultation, Dr. Aliashkevich will review your medical history, perform a thorough examination, and discuss your symptoms and concerns. If you have brought imaging studies, these will be reviewed. Dr. Aliashkevich will then discuss treatment options and develop a personalized care plan.",
+        description2: "During your initial consultation, Dr. Aliashkevich will review your medical history, perform a thorough examination, and discuss your symptoms and concerns. If you have brought imaging studies, these will be reviewed. Dr. Aliashkevich will then discuss treatment options and develop a personalised care plan.",
         description3: "You will receive a reminder SMS confirming the appointment time and location 2 or 3 days in advance."
       },
       telehealth: {
@@ -1052,7 +1052,7 @@ export const en = {
     },
     investigations: {
       title: "Radiological and Neurophysiological Investigations",
-      description1: "Understanding the problem is essential in finding the best possible solution. Good quality radiological investigations play an important role in visualizing any structural changes and abnormalities.",
+      description1: "Understanding the problem is essential in finding the best possible solution. Good quality radiological investigations play an important role in visualising any structural changes and abnormalities.",
       description2: "After taking your history and performing examinations, your imaging will be reviewed and discussed with you. Very often, additional and more detailed radiological investigations will be required. These may include:",
       items: [
         "MRI (magnetic resonance imaging) including weight-bearing scans and MR angiography",
@@ -1068,7 +1068,7 @@ export const en = {
     treatmentOptions: {
       title: "Discussion of Treatment Options",
       description1: "Not infrequently, patients may have 2 or more separate clinical problems affecting the same part of the body, e.g. simultaneous involvement of several nerve roots or cervical nerve root compression and peripheral neuropathy.",
-      description2: "In these situations, identifying the cause of your symptoms may require diagnostic injections. They involve nerve block using local anesthetic and steroids under X-Ray or CT guidance. Sometimes, they also provide relief of your symptoms and can be utilized as both diagnostic and therapeutic procedures.",
+      description2: "In these situations, identifying the cause of your symptoms may require diagnostic injections. They involve nerve block using local anaesthetic and steroids under X-Ray or CT guidance. Sometimes, they also provide relief of your symptoms and can be utilised as both diagnostic and therapeutic procedures.",
       description3: "Once the cause of your problem is identified, we will discuss suitable management options. In most situations, there is more than one option available and surgery will be only the last resort when every other form of conservative treatment fails to improve your condition.",
       description4: "Our primary goal would be to avoid operation and to focus on other available strategies. This approach is proven as the safest and most effective in many scenarios. However, there are situations when surgery is the final and necessary step to improve a patient's condition and quality of life."
     },
@@ -1138,11 +1138,11 @@ export const en = {
   },
 
   medicolegal: {
-    title: "Medicolegal Services",
-    subtitle: "Expert medicolegal assessments and reports for legal and insurance purposes.",
+    title: "Medico-Legal Services",
+    subtitle: "Expert medico-legal assessments and reports for legal and insurance purposes.",
     assessmentsReports: {
       title: "Assessments and Reports",
-      description: "Dr. Aliashkevich has accomplished a Ministerially approved training program in the application of the American Medical Association Guides to the Evaluation of Permanent Impairment (4th and 5th Editions AMA Guides) for the spine and nervous system. He provides accurate and comprehensive medicolegal assessments for brain, spine, and nerve injuries and can be a trusted expert witness for all neurosurgical conditions."
+      description: "Dr. Aliashkevich has accomplished a Ministerially approved training programme in the application of the American Medical Association Guides to the Evaluation of Permanent Impairment (4th and 5th Editions AMA Guides) for the spine and nervous system. He provides accurate and comprehensive medico-legal assessments for brain, spine, and nerve injuries and can be a trusted expert witness for all neurosurgical conditions."
     },
     independentExaminations: {
       title: "Independent and Joint Medical Examinations",
@@ -1187,11 +1187,11 @@ export const en = {
     },
     independentReports: {
       title: "Independent Examinations and Reports",
-      description1: "Dr. Ales Aliashkevich specialises in brain, spine and nerve injuries and has more than 17 years of experience in the provision of medicolegal services. He can offer independent examinations, comprehensive reports, thorough file reviews, teleconferences, consultations and expert witness opinions on a wide range of neurosurgical conditions. As an actively practising surgeon, he appreciates the value of advanced modern diagnostic modalities, such as state-of-the-art radiological and neurophysiological investigations.",
-      description2: "His assessments are always in line with the current evidence-based treatment recommendations, considering the values of multidisciplinary approaches and availability of minimally-invasive and motion-preserving surgical techniques. The meticulous collection of history and great attention to the details of clinical presentation and investigations sets him apart from the majority of other medicolegal service providers."
+      description1: "Dr. Ales Aliashkevich specialises in brain, spine and nerve injuries and has more than 17 years of experience in the provision of medico-legal services. He can offer independent examinations, comprehensive reports, thorough file reviews, teleconferences, consultations and expert witness opinions on a wide range of neurosurgical conditions. As an actively practising surgeon, he appreciates the value of advanced modern diagnostic modalities, such as state-of-the-art radiological and neurophysiological investigations.",
+      description2: "His assessments are always in line with the current evidence-based treatment recommendations, considering the values of multidisciplinary approaches and availability of minimally-invasive and motion-preserving surgical techniques. The meticulous collection of history and great attention to the details of clinical presentation and investigations sets him apart from the majority of other medico-legal service providers."
     },
     impairmentAssessmentDetails: {
-      title: "Medicolegal Impairment Assessment",
+      title: "Medico-Legal Impairment Assessment",
       description1: "Dr. Aliashkevich is certified by the Australian Medical Association (AMA) Victoria and the Personal Injury Education Foundation (PIEF) in Impairment Assessment using the American Medical Association Guides to the Evaluation of Permanent Impairment 4th Edition and other prescribed methods, as applied to relevant Victorian legislation. He completed courses to assess impairments for TAC, WorkCover and the purposes of Part VBA of the Wrongs Act 1958 (personal injury).",
       description2: "He is accredited for assessing the spine using both the methodology from Chapter 3 of the Guides and modification to those criteria by the Spinal Impairment Guides Modification Document (SIGMD). He can perform an expert apportionment to disentangle what impairment may or may not be related to a compensable event."
     },
@@ -1229,18 +1229,18 @@ export const en = {
     },
     contactInfo: {
       title: "Contact Information",
-      description: "If you have any questions about our medicolegal services, please call our main office or email us.",
+      description: "If you have any questions about our medico-legal services, please call our main office or email us.",
       phone: "Phone",
       phoneNumber: "03 9008 4200",
       email: "Email",
       emailAddress: "info@mineuro.com.au"
     },
     assessmentProcess: {
-      title: "Medicolegal Assessment Process",
+      title: "Medico-Legal Assessment Process",
       description: "Medical examinations form a crucial part of the personal injury and compensation claim assessment. Dr. Aliashkevich provides unbiased independent expert reviews with appropriate qualifications, deep knowledge of the problem, and specific training to provide impairment ratings.",
       beforeAppointment: {
         title: "Before the Appointment",
-        description1: "To reduce the discomfort of the examination and collect as much information about the injury and its consequences, our medicolegal assistant will provide a registration form, health questionnaire, and consent form well in advance before the appointment.",
+        description1: "To reduce the discomfort of the examination and collect as much information about the injury and its consequences, our medico-legal assistant will provide a registration form, health questionnaire, and consent form well in advance before the appointment.",
         description2: "Claimants are welcome to have a support person, carer, or legal guardian. A professional interpreter can be arranged if required. We can also arrange for a chaperone to be present during the examination."
       },
       duringAppointment: {
@@ -1250,13 +1250,13 @@ export const en = {
       },
       afterAppointment: {
         title: "After the Appointment",
-        description1: "Medicolegal reports provide significantly more detail than usual specialist letters. They are legal documents that can be used as evidence in courts. In complex cases, reports can be 30-50 pages long.",
-        description2: "After the report is finalized, it will be sent directly to the requesting party. As a general rule, Dr. Aliashkevich doesn't mind for his reports to be forwarded to the claimants or their general practitioners if they help with future treatment planning."
+        description1: "Medico-legal reports provide significantly more detail than usual specialist letters. They are legal documents that can be used as evidence in courts. In complex cases, reports can be 30-50 pages long.",
+        description2: "After the report is finalised, it will be sent directly to the requesting party. As a general rule, Dr. Aliashkevich doesn't mind for his reports to be forwarded to the claimants or their general practitioners if they help with future treatment planning."
       }
     },
     locations: {
       title: "Our Locations",
-      description1: "All medicolegal appointments are booked by our main office in Surrey Hills. It is located within 2 minutes walking distance from the train station and has plenty of on-street parking available.",
+      description1: "All medico-legal appointments are booked by our main office in Surrey Hills. It is located within 2 minutes walking distance from the train station and has plenty of on-street parking available.",
       mainOffice: {
         title: "Main Office",
         address: "miNEURO Consulting Suites\nSuite 4, Ground Floor, 619 Canterbury Road\nSURREY HILLS VIC 3127",
@@ -1330,7 +1330,7 @@ export const en = {
   locations: {
     morningtonLocation: {
       subtitle: "Dr. Ales Aliashkevich, neurosurgeon and spine surgeon, has been providing care to patients on Mornington Peninsula since 2012. He offers consultations at Mornington Specialist Centre and operates at Peninsula Private and The Bays Hospitals.",
-      expertise: "With expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions, radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems, Dr. Aliashkevich brings specialized care closer to residents of Mornington and surrounding areas.",
+      expertise: "With expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions, radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems, Dr. Aliashkevich brings specialised care closer to residents of Mornington and surrounding areas.",
       locationDetails: "Everything you need to know about our Mornington consulting location",
       address: "Address",
       contactInformation: "Contact Information",
@@ -1510,7 +1510,7 @@ export const en = {
         title: "Neurological Assessment",
         description: "Key elements of neurological examination for common presentations:"
       },
-      specializedTests: {
+      specialisedTests: {
         title: "Specialised Diagnostic Tests",
         description: "When to consider additional diagnostic investigations:"
       },
@@ -1542,7 +1542,7 @@ export const en = {
     },
     emergencyGuidelines: {
       title: "Emergencies and Red Flags",
-      subtitle: "Recognizing and managing neurosurgical emergencies",
+      subtitle: "Recognising and managing neurosurgical emergencies",
       description: "This section provides guidance on identifying neurosurgical emergencies and red flag symptoms that require immediate attention, along with initial management steps before specialist intervention.",
       redFlags: {
         title: "Neurosurgical Red Flags",
