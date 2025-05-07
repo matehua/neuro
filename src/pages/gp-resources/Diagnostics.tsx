@@ -230,7 +230,7 @@ export default function Diagnostics() {
                     <CardTitle>Specialised Diagnostic Tests</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.diagnostics.specializedTests.description}</p>
+                    <p className="mb-4">{t.gpResources.diagnostics.specialisedTests.description}</p>
 
                     <div className="space-y-6 mt-4">
                       <div className="p-4 bg-muted rounded-md">
