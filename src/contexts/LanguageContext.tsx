@@ -1,8 +1,7 @@
-
 import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { en } from '../locales/en';
-import { zh } from '../locales/zh';
+import { en } from '@/locales/en';
+import { zh } from '@/locales/zh';
 
 type Translations = typeof en;
 

@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 
-interface SafeImageProps {
+interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   src: string;
   alt: string;
   fallbackSrc?: string;
-  className?: string;
-  loading?: 'lazy' | 'eager';
-  decoding?: 'async' | 'auto' | 'sync';
-  role?: string;
-  longDesc?: string;
   isDecorative?: boolean;
 }
 
@@ -20,12 +15,12 @@ const SafeImage: React.FC<SafeImageProps> = ({
   src,
   alt,
   fallbackSrc = "/images/medical-consulting.jpg",
+  isDecorative = false,
   className = "",
   loading = 'lazy',
   decoding = 'async',
   role,
-  longDesc,
-  isDecorative = false
+  ...props
 }) => {
   const [imgSrc, setImgSrc] = useState(src);
   const [hasError, setHasError] = useState(false);
@@ -51,8 +46,8 @@ const SafeImage: React.FC<SafeImageProps> = ({
       loading={loading}
       decoding={decoding}
       role={imgRole}
-      longDesc={longDesc}
       aria-hidden={isDecorative}
+      {...props}
     />
   );
 };

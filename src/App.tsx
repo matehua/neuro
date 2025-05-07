@@ -1,13 +1,12 @@
-
 import React, { useState, useEffect } from "react";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { LanguageProvider } from "./contexts/LanguageContext";
-import { getAllRoutes } from "./routes/routeConfig";
-import ScreenReaderAnnouncer from "./components/ScreenReaderAnnouncer";
+import { LanguageProvider } from "@/contexts/LanguageContext";
+import { getAllRoutes } from "@/routes/routeConfig";
+import ScreenReaderAnnouncer from "@/components/ScreenReaderAnnouncer";
 
 // Create a react-query client
 const queryClient = new QueryClient();

@@ -31,10 +31,10 @@ export function meetsContrastStandards(foreground: string, background: string): 
 export function getContrastRatio(foreground: string, background: string): number {
   const fgLuminance = getLuminance(foreground);
   const bgLuminance = getLuminance(background);
-  
+
   const lighter = Math.max(fgLuminance, bgLuminance);
   const darker = Math.min(fgLuminance, bgLuminance);
-  
+
   return (lighter + 0.05) / (darker + 0.05);
 }
 
@@ -46,30 +46,18 @@ export function getContrastRatio(foreground: string, background: string): number
 function getLuminance(color: string): number {
   // Remove # if present
   color = color.replace('#', '');
-  
+
   // Convert to RGB
   const r = parseInt(color.substring(0, 2), 16) / 255;
   const g = parseInt(color.substring(2, 4), 16) / 255;
   const b = parseInt(color.substring(4, 6), 16) / 255;
-  
+
   // Calculate luminance
   const R = r <= 0.03928 ? r / 12.92 : Math.pow((r + 0.055) / 1.055, 2.4);
   const G = g <= 0.03928 ? g / 12.92 : Math.pow((g + 0.055) / 1.055, 2.4);
   const B = b <= 0.03928 ? b / 12.92 : Math.pow((b + 0.055) / 1.055, 2.4);
-  
-  return 0.2126 * R + 0.7152 * G + 0.0722 * B;
-}
 
-/**
- * Creates props for a skip link that allows keyboard users to skip to main content
- * @returns Props object for a skip link
- */
-export function getSkipLinkProps() {
-  return {
-    href: '#main-content',
-    className: 'sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:p-4 focus:bg-background focus:text-foreground focus:outline-none focus:ring-2 focus:ring-ring',
-    children: 'Skip to main content',
-  };
+  return 0.2126 * R + 0.7152 * G + 0.0722 * B;
 }
 
 /**
@@ -80,7 +68,7 @@ export function getSkipLinkProps() {
 export function announceToScreenReader(message: string, priority: 'polite' | 'assertive' = 'polite'): void {
   // Find or create the announcement element
   let announcer = document.getElementById('screen-reader-announcer');
-  
+
   if (!announcer) {
     announcer = document.createElement('div');
     announcer.id = 'screen-reader-announcer';
@@ -89,13 +77,13 @@ export function announceToScreenReader(message: string, priority: 'polite' | 'as
     announcer.classList.add('sr-only');
     document.body.appendChild(announcer);
   }
-  
+
   // Set the priority
   announcer.setAttribute('aria-live', priority);
-  
+
   // Clear the announcer and then set the new message
   announcer.textContent = '';
-  
+
   // Use setTimeout to ensure the DOM update happens
   setTimeout(() => {
     announcer.textContent = message;

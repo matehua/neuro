@@ -3,10 +3,10 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
-import ThemeToggle from "./ThemeToggle";
-import LanguageSelector from "./LanguageSelector";
-import SafeImage from "./SafeImage";
-import SkipLink from "./SkipLink";
+import ThemeToggle from "@/components/ThemeToggle";
+import LanguageSelector from "@/components/LanguageSelector";
+import SafeImage from "@/components/SafeImage";
+import SkipLink from "@/components/SkipLink";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
@@ -80,7 +80,8 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [scrolled]);
 
-  return <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5")}>
+  return (
+    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5")}>
       <SkipLink />
       <nav className="container flex justify-between items-center" aria-label="Main navigation">
         <div className="flex items-center gap-4">
@@ -296,5 +297,6 @@ export default function Navbar() {
           </div>
         </div>
       </div>
-    </header>;
+    </header>
+  );
 }

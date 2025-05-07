@@ -1,9 +1,8 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SkipLink from "@/components/SkipLink";
 import { announceToScreenReader } from "@/lib/accessibility";
-import { useEffect } from "react";
 
 interface LayoutProps {
   children: React.ReactNode;
