@@ -237,10 +237,10 @@ export default function PatientResources() {
                 </ul>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <Button asChild>
-                    <Link to="/patient-resources/individual-spine-health-program">Explore Spine Health App</Link>
+                    <Link to="/patient-resources/individual-spine-health-programme">Explore Spine Health App</Link>
                   </Button>
                   <Button asChild variant="outline">
-                    <Link to="/patient-resources/individual-spine-health-program#assessment">Take Assessment</Link>
+                    <Link to="/patient-resources/individual-spine-health-programme#assessment">Take Assessment</Link>
                   </Button>
                 </div>
               </div>
@@ -254,12 +254,12 @@ export default function PatientResources() {
             <h2 className="text-3xl font-bold text-center mb-12">Expanded Patient Resources</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
               <div className="card p-6 rounded-lg shadow-md bg-card hover:shadow-lg transition-shadow">
-                <h3 className="text-xl font-semibold mb-4">Individual Spine Health Program</h3>
+                <h3 className="text-xl font-semibold mb-4">Individual Spine Health Programme</h3>
                 <p className="text-muted-foreground mb-4">
                   Our all-in-one platform for assessment, personalised recommendations, and progress tracking to manage your spine health effectively.
                 </p>
                 <Button asChild className="w-full">
-                  <Link to="/patient-resources/individual-spine-health-program">Access Program</Link>
+                  <Link to="/patient-resources/individual-spine-health-programme">Access Programme</Link>
                 </Button>
               </div>
 
@@ -398,7 +398,7 @@ export default function PatientResources() {
                 />
               </div>
               <div>
-                <h2 className="text-3xl font-bold mb-6">Individual Spine Health Program</h2>
+                <h2 className="text-3xl font-bold mb-6">Individual Spine Health Programme</h2>
                 <p className="text-muted-foreground mb-4">
                   Our integrated approach combines assessment tools, personalised recommendations, and progress tracking in one platform to help you understand and manage your spine condition effectively.
                 </p>
@@ -414,7 +414,7 @@ export default function PatientResources() {
                   <li>Integration with your healthcare team</li>
                 </ul>
                 <Button asChild size="lg">
-                  <Link to="/patient-resources/individual-spine-health-program">Explore Individual Spine Health Program</Link>
+                  <Link to="/patient-resources/individual-spine-health-programme">Explore Individual Spine Health Programme</Link>
                 </Button>
               </div>
             </div>
