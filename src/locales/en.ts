@@ -192,7 +192,6 @@ export const en = {
     appointments: "Appointments",
     gpResources: "GP Resources",
     gpResourcesSubmenu: {
-      main: "GP Resources",
       referralProtocols: "Referral & Triage Protocols",
       diagnostics: "Neurosurgical Diagnostics",
       careCoordination: "Multidisciplinary Care",
