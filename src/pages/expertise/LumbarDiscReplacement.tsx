@@ -319,7 +319,7 @@ export default function LumbarDiscReplacement() {
                       <li>Severe osteoporosis</li>
                       <li>Active infection</li>
                       <li>Certain types of deformity (scoliosis, spondylolisthesis)</li>
-                      <li>Obesity (BMI > 35)</li>
+                      <li>Obesity (BMI {'>'} 35)</li>
                     </ul>
 
                     <p className="text-muted-foreground mb-4">
