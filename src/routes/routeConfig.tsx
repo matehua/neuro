@@ -39,7 +39,7 @@ const ConditionInformation = lazyLoad(() => import('@/pages/patient-resources/Co
 const ExerciseLibrary = lazyLoad(() => import('@/pages/patient-resources/ExerciseLibrary'));
 const LifestyleModifications = lazyLoad(() => import('@/pages/patient-resources/LifestyleModifications'));
 const SpineConditionsLibrary = lazyLoad(() => import('@/pages/patient-resources/SpineConditionsLibrary'));
-const IndividualSpineHealthProgram = lazyLoad(() => import('@/pages/patient-resources/IndividualSpineHealthProgram'));
+const IndividualSpineHealthProgramme = lazyLoad(() => import('@/pages/patient-resources/IndividualSpineHealthProgramme'));
 const SpineAndBrainHealth = lazyLoad(() => import('@/pages/patient-resources/SpineAndBrainHealth'));
 const CervicalSpineInjury = lazyLoad(() => import('@/pages/patient-resources/CervicalSpineInjury'));
 const CervicalSpineExercises = lazyLoad(() => import('@/pages/patient-resources/CervicalSpineExercises'));
@@ -97,7 +97,8 @@ export const baseRoutes: RouteConfig[] = [
   { path: "/patient-resources/assessment-tools", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
   { path: "/patient-resources/patient-dashboard", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
   { path: "/patient-resources/comprehensive-solution", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
-  { path: "/patient-resources/individual-spine-health-programme", element: <IndividualSpineHealthProgram /> },
+  { path: "/patient-resources/individual-spine-health-program", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
+  { path: "/patient-resources/individual-spine-health-programme", element: <IndividualSpineHealthProgramme /> },
   { path: "/patient-resources/spine-and-brain-health", element: <SpineAndBrainHealth /> },
   { path: "/patient-resources/cervical-spine-injury", element: <CervicalSpineInjury /> },
   { path: "/patient-resources/cervical-spine-exercises", element: <CervicalSpineExercises /> },
