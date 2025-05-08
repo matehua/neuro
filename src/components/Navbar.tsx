@@ -32,7 +32,7 @@ export default function Navbar() {
       name: t.patientResources.title,
       path: "/patient-resources",
       submenu: [
-        { name: t.patientResources.submenu.comprehensiveSolution, path: "/patient-resources/individual-spine-health-program" },
+        { name: t.patientResources.submenu.comprehensiveSolution, path: "/patient-resources/individual-spine-health-programme" },
         { name: t.patientResources.submenu.conditionInfo, path: "/patient-resources/condition-information" },
         { name: t.patientResources.submenu.exerciseLibrary, path: "/patient-resources/exercise-library" },
         { name: t.nav.faq, path: "/faq" },
