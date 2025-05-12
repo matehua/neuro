@@ -42,7 +42,6 @@ export default function Navbar() {
       name: t.nav.gpResources,
       path: "/gp-resources",
       submenu: [
-        { name: t.nav.gpResourcesSubmenu.main, path: "/gp-resources" },
         { name: t.nav.gpResourcesSubmenu.referralProtocols, path: "/gp-resources/referral-protocols" },
         { name: t.nav.gpResourcesSubmenu.diagnostics, path: "/gp-resources/diagnostics" },
         { name: t.nav.gpResourcesSubmenu.careCoordination, path: "/gp-resources/care-coordination" },
@@ -107,6 +106,30 @@ export default function Navbar() {
                 aria-haspopup={link.submenu ? 'true' : undefined}
                 role="menuitem"
                 tabIndex={0}
+                onClick={(e) => {
+                  // Only prevent default if clicking on the dropdown arrow area
+                  const rect = e.currentTarget.getBoundingClientRect();
+                  const isClickNearRightEdge = (e.clientX > rect.right - 20);
+
+                  if (link.submenu && isClickNearRightEdge) {
+                    e.preventDefault();
+
+                    // Toggle submenu visibility
+                    const submenu = e.currentTarget.nextElementSibling as HTMLElement;
+                    if (submenu) {
+                      const isVisible = submenu.classList.contains('opacity-100');
+                      if (isVisible) {
+                        submenu.classList.remove('opacity-100', 'visible');
+                        submenu.classList.add('opacity-0', 'invisible');
+                        e.currentTarget.setAttribute('aria-expanded', 'false');
+                      } else {
+                        submenu.classList.remove('opacity-0', 'invisible');
+                        submenu.classList.add('opacity-100', 'visible');
+                        e.currentTarget.setAttribute('aria-expanded', 'true');
+                      }
+                    }
+                  }
+                }}
                 onKeyDown={(e) => {
                   // Handle keyboard navigation
                   if (link.submenu && (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown')) {
@@ -132,6 +155,7 @@ export default function Navbar() {
                 }}
               >
                 {link.name}
+                {link.submenu && <span className="ml-1 inline-block">▾</span>}
               </Link>
 
               {/* Dropdown for items with submenu */}
@@ -155,7 +179,7 @@ export default function Navbar() {
                           if (e.key === 'Escape') {
                             e.preventDefault();
                             // Close submenu and focus parent
-                            const parent = e.currentTarget.closest('li')?.querySelector('a[aria-haspopup="true"]') as HTMLElement;
+                            const parent = e.currentTarget.closest('li')?.querySelector('[aria-haspopup="true"]') as HTMLElement;
                             if (parent) {
                               parent.focus();
                               parent.setAttribute('aria-expanded', 'false');
@@ -255,12 +279,33 @@ export default function Navbar() {
                       <Link
                         to={link.path}
                         className="text-lg font-medium transition-colors hover:text-primary block"
-                        onClick={() => !link.submenu && setMobileMenuOpen(false)}
-                        aria-expanded={link.submenu ? 'true' : 'false'}
+                        onClick={(e) => {
+                          // For mobile, we'll use a different approach
+                          // If there's a submenu and the submenu is not visible, show it
+                          if (link.submenu) {
+                            const submenu = e.currentTarget.nextElementSibling as HTMLElement;
+                            if (submenu) {
+                              const isVisible = submenu.style.display === 'block';
+                              if (isVisible) {
+                                // If submenu is visible, navigate to the page
+                                setMobileMenuOpen(false);
+                              } else {
+                                // If submenu is not visible, show it and prevent navigation
+                                e.preventDefault();
+                                submenu.style.display = 'block';
+                              }
+                            }
+                          } else {
+                            // If no submenu, just close the mobile menu
+                            setMobileMenuOpen(false);
+                          }
+                        }}
+                        aria-expanded={link.submenu ? 'true' : undefined}
                         aria-haspopup={link.submenu ? 'true' : undefined}
                         role="menuitem"
                       >
                         {link.name}
+                        {link.submenu && <span className="ml-1 inline-block float-right">▾</span>}
                       </Link>
 
                       {/* Mobile submenu */}
@@ -268,6 +313,7 @@ export default function Navbar() {
                         <div
                           className="pl-6 mt-2 space-y-2"
                           role="menu"
+                          style={{ display: 'none' }}
                           aria-label={`${link.name} submenu`}
                         >
                           {link.submenu.map((subItem) => (
