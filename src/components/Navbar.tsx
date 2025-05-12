@@ -105,6 +105,21 @@ export default function Navbar() {
                 aria-haspopup={link.submenu ? 'true' : undefined}
                 role="menuitem"
                 tabIndex={0}
+                onMouseEnter={(e) => {
+                  if (link.submenu) {
+                    // Close all other open submenus when hovering over a different menu item
+                    document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
+                      if (item !== e.currentTarget) {
+                        item.setAttribute('aria-expanded', 'false');
+                        const otherSubmenu = item.nextElementSibling as HTMLElement;
+                        if (otherSubmenu) {
+                          otherSubmenu.classList.remove('opacity-100', 'visible');
+                          otherSubmenu.classList.add('opacity-0', 'invisible');
+                        }
+                      }
+                    });
+                  }
+                }}
                 onClick={(e) => {
                   // Only prevent default if clicking on the dropdown arrow area
                   const rect = e.currentTarget.getBoundingClientRect();
@@ -122,6 +137,19 @@ export default function Navbar() {
                         submenu.classList.add('opacity-0', 'invisible');
                         e.currentTarget.setAttribute('aria-expanded', 'false');
                       } else {
+                        // Close all other submenus first
+                        document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
+                          if (item !== e.currentTarget) {
+                            item.setAttribute('aria-expanded', 'false');
+                            const otherSubmenu = item.nextElementSibling as HTMLElement;
+                            if (otherSubmenu) {
+                              otherSubmenu.classList.remove('opacity-100', 'visible');
+                              otherSubmenu.classList.add('opacity-0', 'invisible');
+                            }
+                          }
+                        });
+
+                        // Then open this submenu
                         submenu.classList.remove('opacity-0', 'invisible');
                         submenu.classList.add('opacity-100', 'visible');
                         e.currentTarget.setAttribute('aria-expanded', 'true');
@@ -142,6 +170,19 @@ export default function Navbar() {
                         submenu.classList.add('opacity-0', 'invisible');
                         e.currentTarget.setAttribute('aria-expanded', 'false');
                       } else {
+                        // Close all other submenus first
+                        document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
+                          if (item !== e.currentTarget) {
+                            item.setAttribute('aria-expanded', 'false');
+                            const otherSubmenu = item.nextElementSibling as HTMLElement;
+                            if (otherSubmenu) {
+                              otherSubmenu.classList.remove('opacity-100', 'visible');
+                              otherSubmenu.classList.add('opacity-0', 'invisible');
+                            }
+                          }
+                        });
+
+                        // Then open this submenu
                         submenu.classList.remove('opacity-0', 'invisible');
                         submenu.classList.add('opacity-100', 'visible');
                         e.currentTarget.setAttribute('aria-expanded', 'true');
@@ -291,6 +332,15 @@ export default function Navbar() {
                               } else {
                                 // If submenu is not visible, show it and prevent navigation
                                 e.preventDefault();
+
+                                // Close all other open submenus first
+                                document.querySelectorAll('.pl-6.mt-2.space-y-2').forEach(menu => {
+                                  if (menu !== submenu) {
+                                    (menu as HTMLElement).style.display = 'none';
+                                  }
+                                });
+
+                                // Then show this submenu
                                 submenu.style.display = 'block';
                               }
                             }
