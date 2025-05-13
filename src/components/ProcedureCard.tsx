@@ -23,11 +23,11 @@ export default function ProcedureCard({ procedure }: { procedure: ProcedureProps
   const [isHovered, setIsHovered] = useState(false);
 
   // Use translated name and description if available
-  const translatedName = language !== 'en' && t.procedureDescriptions[procedure.id]?.name
+  const translatedName = language !== 'en' && t.procedureDescriptions && t.procedureDescriptions[procedure.id]?.name
     ? t.procedureDescriptions[procedure.id].name
     : procedure.name;
 
-  const translatedDescription = language !== 'en' && t.procedureDescriptions[procedure.id]?.description
+  const translatedDescription = language !== 'en' && t.procedureDescriptions && t.procedureDescriptions[procedure.id]?.description
     ? t.procedureDescriptions[procedure.id].description
     : procedure.description;
 
@@ -84,7 +84,7 @@ export default function ProcedureCard({ procedure }: { procedure: ProcedureProps
           ))}
           {procedure.benefits.length > 3 && (
             <div className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">
-              +{procedure.benefits.length - 3} {t.patientResources.filters.more}
+              +{procedure.benefits.length - 3} {t.patientResources?.filters?.more || "more"}
             </div>
           )}
         </div>
@@ -95,7 +95,7 @@ export default function ProcedureCard({ procedure }: { procedure: ProcedureProps
             <span className="text-muted-foreground text-sm"> / consultation</span>
           </div>
           <Button asChild className="btn-primary">
-            <Link to={`/expertise/${procedure.id}`}>{t.patientResources.filters.viewDetails}</Link>
+            <Link to={`/expertise/${procedure.id}`}>{t.patientResources?.filters?.viewDetails || "View Details"}</Link>
           </Button>
         </div>
       </div>

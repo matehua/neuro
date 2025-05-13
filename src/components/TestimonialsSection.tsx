@@ -15,27 +15,27 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    name: "Sophia Martinez",
-    location: "New York, USA",
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop&crop=faces",
-    content: "My family and I had the most wonderful stay at MareSereno. The apartment was immaculate, with breathtaking sea views. The staff went above and beyond to make our vacation special.",
+    name: "Sarah Thompson",
+    location: "Melbourne, Australia",
+    avatar: "/images/testimonials/patient-1.jpg",
+    content: "Dr. Aliashkevich's expertise in minimally invasive spine surgery changed my life. After years of chronic back pain and failed treatments, his precise diagnosis and surgical approach led to a remarkable recovery. I'm now pain-free and back to my active lifestyle.",
     rating: 5
   },
   {
     id: 2,
-    name: "Marco Rossi",
-    location: "Rome, Italy",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop&crop=faces",
-    content: "Absolutely perfect location, steps away from the beach. The apartment had everything we needed and more. The modern amenities combined with the traditional coastal charm created a truly magical experience.",
+    name: "Michael Chen",
+    location: "Sydney, Australia",
+    avatar: "/images/testimonials/patient-2.jpg",
+    content: "The cervical disc replacement procedure Dr. Aliashkevich performed was truly life-changing. His attention to detail, clear explanations, and exceptional surgical skills resulted in immediate relief from my neck pain and arm numbness. The recovery was much faster than I expected.",
     rating: 5
   },
   {
     id: 3,
-    name: "Emma Johnson",
-    location: "London, UK",
-    avatar: "https://images.unsplash.com/photo-1569913486515-b74bf7751574?w=150&h=150&fit=crop&crop=faces",
-    content: "We spent a wonderful week at this beachfront paradise. The sunrise views from our terrace were worth the trip alone. Exceptionally clean and beautifully designed spaces.",
-    rating: 4
+    name: "Emily Wilson",
+    location: "Brisbane, Australia",
+    avatar: "/images/testimonials/patient-3.jpg",
+    content: "After being told by multiple surgeons that my complex spinal condition was inoperable, Dr. Aliashkevich offered hope with his innovative approach. His use of advanced imaging and robotic technology made a significant difference. Six months post-surgery, I'm enjoying activities I thought I'd never do again.",
+    rating: 5
   },
 ];
 
