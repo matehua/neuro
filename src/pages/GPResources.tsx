@@ -5,6 +5,7 @@ import PageHeader from "@/components/PageHeader";
 import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
+import OptimizedImage from "@/components/OptimizedImage";
 
 export default function GPResources() {
   const { t } = useLanguage();
@@ -38,7 +39,7 @@ export default function GPResources() {
               </CardHeader>
               <CardContent>
                 <p>{t.gpResources.referralProtocols.description}</p>
-                <img
+                <OptimizedImage
                   src="/images/gp-resources/referral-protocols-1.jpg"
                   alt="Referral Protocols"
                   className="w-full h-48 object-cover rounded-md mt-4"
@@ -58,7 +59,7 @@ export default function GPResources() {
               </CardHeader>
               <CardContent>
                 <p>{t.gpResources.diagnostics.description}</p>
-                <img
+                <OptimizedImage
                   src="/images/gp-resources/diagnostics-1.jpg"
                   alt="Neurosurgical Diagnostics"
                   className="w-full h-48 object-cover rounded-md mt-4"
@@ -78,7 +79,7 @@ export default function GPResources() {
               </CardHeader>
               <CardContent>
                 <p>{t.gpResources.careCoordination.description}</p>
-                <img
+                <OptimizedImage
                   src="/images/gp-resources/care-coordination-1.jpg"
                   alt="Multidisciplinary Care Coordination"
                   className="w-full h-48 object-cover rounded-md mt-4"
@@ -98,7 +99,7 @@ export default function GPResources() {
               </CardHeader>
               <CardContent>
                 <p>{t.gpResources.emergencies.description}</p>
-                <img
+                <OptimizedImage
                   src="/images/gp-resources/emergencies-1.jpg"
                   alt="Emergencies and Red Flags"
                   className="w-full h-48 object-cover rounded-md mt-4"
