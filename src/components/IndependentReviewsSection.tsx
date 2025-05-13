@@ -30,11 +30,11 @@ export default function IndependentReviewsSection() {
       url: "https://www.ratemds.com/doctor-ratings/3604748/Dr-Ales-Aliashkevich-Melbourne-VIC.html/"
     },
     {
-      name: "Trustpilot",
-      logo: "/images/review-platforms/trustpilot-logo.png",
+      name: "TrustIndex",
+      logo: "/images/review-platforms/trustindex-logo.png",
       rating: 4.9,
       count: 96,
-      url: "https://www.trustpilot.com/review/mineuro.com.au"
+      url: "https://www.trustindex.io/reviews/mineuro.com.au"
     },
     {
       name: "ThreeBestRated",
