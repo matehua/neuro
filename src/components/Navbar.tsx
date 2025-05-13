@@ -110,11 +110,16 @@ export default function Navbar() {
                     // Close all other open submenus when hovering over a different menu item
                     document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
                       if (item !== e.currentTarget) {
+                        // First change aria-expanded attribute
                         item.setAttribute('aria-expanded', 'false');
+
+                        // Then update classes with a small delay to prevent layout shifts
                         const otherSubmenu = item.nextElementSibling as HTMLElement;
                         if (otherSubmenu) {
-                          otherSubmenu.classList.remove('opacity-100', 'visible');
-                          otherSubmenu.classList.add('opacity-0', 'invisible');
+                          requestAnimationFrame(() => {
+                            otherSubmenu.classList.remove('opacity-100', 'visible');
+                            otherSubmenu.classList.add('opacity-0', 'invisible');
+                          });
                         }
                       }
                     });
@@ -133,11 +138,15 @@ export default function Navbar() {
                     if (submenu) {
                       const isVisible = submenu.classList.contains('opacity-100');
                       if (isVisible) {
-                        submenu.classList.remove('opacity-100', 'visible');
-                        submenu.classList.add('opacity-0', 'invisible');
+                        // First change aria-expanded attribute
                         e.currentTarget.setAttribute('aria-expanded', 'false');
+                        // Then update classes with a small delay to prevent layout shifts
+                        requestAnimationFrame(() => {
+                          submenu.classList.remove('opacity-100', 'visible');
+                          submenu.classList.add('opacity-0', 'invisible');
+                        });
                       } else {
-                        // Close all other submenus first
+                        // First close all other submenus
                         document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
                           if (item !== e.currentTarget) {
                             item.setAttribute('aria-expanded', 'false');
@@ -149,10 +158,14 @@ export default function Navbar() {
                           }
                         });
 
-                        // Then open this submenu
-                        submenu.classList.remove('opacity-0', 'invisible');
-                        submenu.classList.add('opacity-100', 'visible');
+                        // Then update aria-expanded attribute
                         e.currentTarget.setAttribute('aria-expanded', 'true');
+
+                        // Finally update classes with a small delay to prevent layout shifts
+                        requestAnimationFrame(() => {
+                          submenu.classList.remove('opacity-0', 'invisible');
+                          submenu.classList.add('opacity-100', 'visible');
+                        });
                       }
                     }
                   }
@@ -166,11 +179,15 @@ export default function Navbar() {
                     if (submenu) {
                       const isVisible = submenu.classList.contains('opacity-100');
                       if (isVisible) {
-                        submenu.classList.remove('opacity-100', 'visible');
-                        submenu.classList.add('opacity-0', 'invisible');
+                        // First change aria-expanded attribute
                         e.currentTarget.setAttribute('aria-expanded', 'false');
+                        // Then update classes with a small delay to prevent layout shifts
+                        requestAnimationFrame(() => {
+                          submenu.classList.remove('opacity-100', 'visible');
+                          submenu.classList.add('opacity-0', 'invisible');
+                        });
                       } else {
-                        // Close all other submenus first
+                        // First close all other submenus
                         document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
                           if (item !== e.currentTarget) {
                             item.setAttribute('aria-expanded', 'false');
@@ -182,13 +199,18 @@ export default function Navbar() {
                           }
                         });
 
-                        // Then open this submenu
-                        submenu.classList.remove('opacity-0', 'invisible');
-                        submenu.classList.add('opacity-100', 'visible');
+                        // Then update aria-expanded attribute
                         e.currentTarget.setAttribute('aria-expanded', 'true');
-                        // Focus the first submenu item
-                        const firstItem = submenu.querySelector('a') as HTMLElement;
-                        if (firstItem) firstItem.focus();
+
+                        // Finally update classes with a small delay to prevent layout shifts
+                        requestAnimationFrame(() => {
+                          submenu.classList.remove('opacity-0', 'invisible');
+                          submenu.classList.add('opacity-100', 'visible');
+
+                          // Focus the first submenu item after the animation frame
+                          const firstItem = submenu.querySelector('a') as HTMLElement;
+                          if (firstItem) firstItem.focus();
+                        });
                       }
                     }
                   }
@@ -201,7 +223,7 @@ export default function Navbar() {
               {/* Dropdown for items with submenu */}
               {link.submenu && (
                 <div
-                  className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-card ring-1 ring-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 z-50"
+                  className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-card ring-1 ring-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50"
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby={`${link.name.toLowerCase()}-menu`}
@@ -222,11 +244,16 @@ export default function Navbar() {
                             const parent = e.currentTarget.closest('li')?.querySelector('[aria-haspopup="true"]') as HTMLElement;
                             if (parent) {
                               parent.focus();
+                              // First change aria-expanded attribute
                               parent.setAttribute('aria-expanded', 'false');
+
+                              // Then update classes with a small delay to prevent layout shifts
                               const submenu = parent.nextElementSibling as HTMLElement;
                               if (submenu) {
-                                submenu.classList.remove('opacity-100', 'visible');
-                                submenu.classList.add('opacity-0', 'invisible');
+                                requestAnimationFrame(() => {
+                                  submenu.classList.remove('opacity-100', 'visible');
+                                  submenu.classList.add('opacity-0', 'invisible');
+                                });
                               }
                             }
                           } else if (e.key === 'ArrowDown') {
