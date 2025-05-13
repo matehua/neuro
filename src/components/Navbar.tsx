@@ -76,7 +76,7 @@ export default function Navbar() {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    
+
     // Close submenu when clicking outside
     const handleClickOutside = (e: MouseEvent) => {
       if (activeSubmenu && !(e.target as Element).closest('.nav-item-with-submenu')) {
@@ -84,7 +84,7 @@ export default function Navbar() {
       }
     };
     document.addEventListener('click', handleClickOutside);
-    
+
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener('click', handleClickOutside);
@@ -93,20 +93,40 @@ export default function Navbar() {
 
   // Function to toggle submenu
   const toggleSubmenu = (name: string, e: React.MouseEvent) => {
-    e.preventDefault();
-    setActiveSubmenu(activeSubmenu === name ? null : name);
+    // Check if the click was on the dropdown arrow or near the right edge
+    const target = e.currentTarget as HTMLElement;
+    const rect = target.getBoundingClientRect();
+    const isClickNearRightEdge = (e.clientX > rect.right - 30);
+
+    if (isClickNearRightEdge) {
+      // If clicking near the right edge (dropdown arrow), toggle the submenu
+      e.preventDefault();
+      setActiveSubmenu(activeSubmenu === name ? null : name);
+    }
+    // If clicking elsewhere on the link, the default navigation will occur
   };
 
   // Function to handle keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent, name: string, hasSubmenu: boolean) => {
-    if (hasSubmenu && (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown')) {
+    if (hasSubmenu && e.key === 'ArrowDown') {
+      // Arrow down always opens the submenu
       e.preventDefault();
-      setActiveSubmenu(activeSubmenu === name ? null : name);
+      setActiveSubmenu(name);
+    } else if (hasSubmenu && (e.key === 'Enter' || e.key === ' ')) {
+      // Enter or Space navigates to the page if submenu is open, otherwise opens submenu
+      if (activeSubmenu === name) {
+        // Submenu is open, let the navigation happen
+        return;
+      } else {
+        // Submenu is closed, open it
+        e.preventDefault();
+        setActiveSubmenu(name);
+      }
     }
   };
 
   return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", 
+    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300",
       scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5")}>
       <SkipLink />
       <nav className="container flex justify-between items-center" aria-label="Main navigation">
@@ -128,7 +148,8 @@ export default function Navbar() {
             <li key={link.name} className={`relative nav-item-with-submenu ${activeSubmenu === link.name ? 'active' : ''}`} role="none">
               {link.submenu ? (
                 <>
-                  <button
+                  <Link
+                    to={link.path}
                     className="font-medium transition-colors hover:text-primary flex items-center after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
                     onClick={(e) => toggleSubmenu(link.name, e)}
                     onKeyDown={(e) => handleKeyDown(e, link.name, true)}
@@ -139,8 +160,8 @@ export default function Navbar() {
                   >
                     {link.name}
                     <span className="ml-1 inline-block">▾</span>
-                  </button>
-                  
+                  </Link>
+
                   {/* Dropdown for items with submenu */}
                   <div
                     className={`absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-card ring-1 ring-border transition-opacity duration-200 z-50 ${
@@ -248,10 +269,17 @@ export default function Navbar() {
                         to={link.path}
                         className="text-lg font-medium transition-colors hover:text-primary block"
                         onClick={(e) => {
-                          if (link.submenu) {
+                          // Check if the click was on the dropdown arrow
+                          const target = e.currentTarget as HTMLElement;
+                          const rect = target.getBoundingClientRect();
+                          const isClickNearRightEdge = (e.clientX > rect.right - 40);
+
+                          if (link.submenu && isClickNearRightEdge) {
+                            // If clicking on the dropdown arrow, toggle submenu
                             e.preventDefault();
                             setActiveSubmenu(activeSubmenu === link.name ? null : link.name);
                           } else {
+                            // Otherwise navigate to the page
                             setMobileMenuOpen(false);
                           }
                         }}
