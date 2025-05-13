@@ -42,7 +42,8 @@ export default function GPResources() {
                 <OptimizedImage
                   src="/images/gp-resources/referral-protocols-1.jpg"
                   alt="Referral Protocols"
-                  className="w-full h-48 object-cover rounded-md mt-4"
+                  className="w-full h-48 rounded-md mt-4"
+                  objectFit="cover"
                 />
               </CardContent>
               <CardFooter>
@@ -62,7 +63,8 @@ export default function GPResources() {
                 <OptimizedImage
                   src="/images/gp-resources/diagnostics-1.jpg"
                   alt="Neurosurgical Diagnostics"
-                  className="w-full h-48 object-cover rounded-md mt-4"
+                  className="w-full h-48 rounded-md mt-4"
+                  objectFit="cover"
                 />
               </CardContent>
               <CardFooter>
@@ -82,7 +84,8 @@ export default function GPResources() {
                 <OptimizedImage
                   src="/images/gp-resources/care-coordination-1.jpg"
                   alt="Multidisciplinary Care Coordination"
-                  className="w-full h-48 object-cover rounded-md mt-4"
+                  className="w-full h-48 rounded-md mt-4"
+                  objectFit="cover"
                 />
               </CardContent>
               <CardFooter>
@@ -102,7 +105,8 @@ export default function GPResources() {
                 <OptimizedImage
                   src="/images/gp-resources/emergencies-1.jpg"
                   alt="Emergencies and Red Flags"
-                  className="w-full h-48 object-cover rounded-md mt-4"
+                  className="w-full h-48 rounded-md mt-4"
+                  objectFit="cover"
                 />
               </CardContent>
               <CardFooter>

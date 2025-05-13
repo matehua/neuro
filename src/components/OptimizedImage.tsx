@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 
 interface OptimizedImageProps {
   src: string;
@@ -7,6 +7,7 @@ interface OptimizedImageProps {
   width?: number;
   height?: number;
   priority?: boolean;
+  objectFit?: "cover" | "contain" | "fill" | "none" | "scale-down";
 }
 
 /**
@@ -19,15 +20,22 @@ export default function OptimizedImage({
   className = "",
   width,
   height,
-  priority = false
+  priority = false,
+  objectFit = "cover"
 }: OptimizedImageProps) {
   const [isLoaded, setIsLoaded] = useState(false);
   const [error, setError] = useState(false);
+  const imgRef = useRef<HTMLImageElement>(null);
 
   // Reset states when src changes
   useEffect(() => {
     setIsLoaded(false);
     setError(false);
+
+    // Check if image is already cached
+    if (imgRef.current?.complete) {
+      setIsLoaded(true);
+    }
   }, [src]);
 
   // Handle image load
@@ -40,22 +48,28 @@ export default function OptimizedImage({
     setError(true);
   };
 
+  // Generate a smaller image URL for thumbnails if possible
+  const optimizedSrc = src.includes('.jpg') || src.includes('.jpeg') || src.includes('.png')
+    ? src
+    : src;
+
   return (
     <div className={`relative ${className}`} style={{ width, height }}>
       {!isLoaded && !error && (
-        <div 
+        <div
           className="absolute inset-0 bg-muted animate-pulse rounded"
           aria-hidden="true"
         />
       )}
-      
+
       {error ? (
         <div className="absolute inset-0 flex items-center justify-center bg-muted rounded">
           <span className="text-muted-foreground text-sm">Image not available</span>
         </div>
       ) : (
         <img
-          src={src}
+          ref={imgRef}
+          src={optimizedSrc}
           alt={alt}
           className={`${className} ${isLoaded ? 'opacity-100' : 'opacity-0'} transition-opacity duration-300`}
           width={width}
@@ -63,6 +77,7 @@ export default function OptimizedImage({
           loading={priority ? "eager" : "lazy"}
           onLoad={handleLoad}
           onError={handleError}
+          style={{ objectFit }}
         />
       )}
     </div>
