@@ -9,34 +9,11 @@ import SkipLink from "@/components/SkipLink";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
-// Add custom styles for the GP Resources menu item
-const navbarStyles = `
-  /* Fix for GP Resources menu item */
-  .gp-resources-item {
-    position: static !important; /* Override relative positioning */
-  }
-
-  .gp-resources-submenu {
-    position: fixed !important;
-    top: 60px !important; /* Position below the navbar with a fixed distance */
-    left: 50% !important; /* Center horizontally */
-    transform: translateX(-50%) !important; /* Center horizontally */
-    z-index: 100 !important; /* Ensure it's above other elements */
-    transition: opacity 0.3s ease !important; /* Smooth transition for opacity only */
-    width: auto !important; /* Allow the width to be determined by content */
-    min-width: 200px !important; /* Ensure minimum width */
-  }
-
-  /* Adjust position when scrolled */
-  .scrolled .gp-resources-submenu {
-    top: 50px !important; /* Adjust for smaller navbar when scrolled */
-  }
-`;
-
 export default function Navbar() {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
 
   const navLinks = [
     { name: t.nav.home, path: "/" },
@@ -99,21 +76,38 @@ export default function Navbar() {
       }
     };
     window.addEventListener("scroll", handleScroll);
-
-    // Add custom styles to the document
-    const styleElement = document.createElement('style');
-    styleElement.textContent = navbarStyles;
-    document.head.appendChild(styleElement);
-
+    
+    // Close submenu when clicking outside
+    const handleClickOutside = (e: MouseEvent) => {
+      if (activeSubmenu && !(e.target as Element).closest('.nav-item-with-submenu')) {
+        setActiveSubmenu(null);
+      }
+    };
+    document.addEventListener('click', handleClickOutside);
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
-      // Clean up styles when component unmounts
-      document.head.removeChild(styleElement);
+      document.removeEventListener('click', handleClickOutside);
     };
-  }, [scrolled]);
+  }, [scrolled, activeSubmenu]);
+
+  // Function to toggle submenu
+  const toggleSubmenu = (name: string, e: React.MouseEvent) => {
+    e.preventDefault();
+    setActiveSubmenu(activeSubmenu === name ? null : name);
+  };
+
+  // Function to handle keyboard navigation
+  const handleKeyDown = (e: React.KeyboardEvent, name: string, hasSubmenu: boolean) => {
+    if (hasSubmenu && (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown')) {
+      e.preventDefault();
+      setActiveSubmenu(activeSubmenu === name ? null : name);
+    }
+  };
 
   return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md scrolled" : "bg-transparent py-5")}>
+    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", 
+      scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5")}>
       <SkipLink />
       <nav className="container flex justify-between items-center" aria-label="Main navigation">
         <div className="flex items-center gap-4">
@@ -131,279 +125,56 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-8" role="menubar">
           {navLinks.map(link => (
-            <li key={link.name} className={`relative group ${link.name === t.nav.gpResources ? 'gp-resources-item' : ''}`} role="none">
-              <Link
-                to={link.path}
-                className="font-medium transition-colors hover:text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
-                aria-expanded={link.submenu ? 'false' : undefined}
-                aria-haspopup={link.submenu ? 'true' : undefined}
-                role="menuitem"
-                tabIndex={0}
-                onMouseEnter={(e) => {
-                  if (link.submenu) {
-                    // Special handling for GP Resources menu item
-                    if (link.name === t.nav.gpResources) {
-                      // Close all other open submenus when hovering over GP Resources
-                      document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
-                        if (item !== e.currentTarget) {
-                          // First change aria-expanded attribute
-                          item.setAttribute('aria-expanded', 'false');
-
-                          // Then update classes immediately for GP Resources
-                          const otherSubmenu = item.nextElementSibling as HTMLElement;
-                          if (otherSubmenu) {
-                            otherSubmenu.classList.remove('opacity-100', 'visible');
-                            otherSubmenu.classList.add('opacity-0', 'invisible');
-                          }
-                        }
-                      });
-                    } else {
-                      // Regular handling for other menu items
-                      // Close all other open submenus when hovering over a different menu item
-                      document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
-                        if (item !== e.currentTarget) {
-                          // First change aria-expanded attribute
-                          item.setAttribute('aria-expanded', 'false');
-
-                          // Then update classes with a small delay to prevent layout shifts
-                          const otherSubmenu = item.nextElementSibling as HTMLElement;
-                          if (otherSubmenu) {
-                            requestAnimationFrame(() => {
-                              otherSubmenu.classList.remove('opacity-100', 'visible');
-                              otherSubmenu.classList.add('opacity-0', 'invisible');
-                            });
-                          }
-                        }
-                      });
-                    }
-                  }
-                }}
-                onClick={(e) => {
-                  // Only prevent default if clicking on the dropdown arrow area
-                  const rect = e.currentTarget.getBoundingClientRect();
-                  const isClickNearRightEdge = (e.clientX > rect.right - 20);
-
-                  if (link.submenu && isClickNearRightEdge) {
-                    e.preventDefault();
-
-                    // Special handling for GP Resources menu item
-                    if (link.name === t.nav.gpResources) {
-                      // Toggle submenu visibility
-                      const submenu = e.currentTarget.nextElementSibling as HTMLElement;
-                      if (submenu) {
-                        const isVisible = submenu.classList.contains('opacity-100');
-                        if (isVisible) {
-                          // First change aria-expanded attribute
-                          e.currentTarget.setAttribute('aria-expanded', 'false');
-                          // Then update classes
-                          submenu.classList.remove('opacity-100', 'visible');
-                          submenu.classList.add('opacity-0', 'invisible');
-                        } else {
-                          // First close all other submenus
-                          document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
-                            if (item !== e.currentTarget) {
-                              item.setAttribute('aria-expanded', 'false');
-                              const otherSubmenu = item.nextElementSibling as HTMLElement;
-                              if (otherSubmenu) {
-                                otherSubmenu.classList.remove('opacity-100', 'visible');
-                                otherSubmenu.classList.add('opacity-0', 'invisible');
-                              }
-                            }
-                          });
-
-                          // Then update aria-expanded attribute
-                          e.currentTarget.setAttribute('aria-expanded', 'true');
-
-                          // Finally update classes
-                          submenu.classList.remove('opacity-0', 'invisible');
-                          submenu.classList.add('opacity-100', 'visible');
-                        }
-                      }
-                    } else {
-                      // Regular handling for other menu items
-                      // Toggle submenu visibility
-                      const submenu = e.currentTarget.nextElementSibling as HTMLElement;
-                      if (submenu) {
-                        const isVisible = submenu.classList.contains('opacity-100');
-                        if (isVisible) {
-                          // First change aria-expanded attribute
-                          e.currentTarget.setAttribute('aria-expanded', 'false');
-                          // Then update classes with a small delay to prevent layout shifts
-                          requestAnimationFrame(() => {
-                            submenu.classList.remove('opacity-100', 'visible');
-                            submenu.classList.add('opacity-0', 'invisible');
-                          });
-                        } else {
-                          // First close all other submenus
-                          document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
-                            if (item !== e.currentTarget) {
-                              item.setAttribute('aria-expanded', 'false');
-                              const otherSubmenu = item.nextElementSibling as HTMLElement;
-                              if (otherSubmenu) {
-                                otherSubmenu.classList.remove('opacity-100', 'visible');
-                                otherSubmenu.classList.add('opacity-0', 'invisible');
-                              }
-                            }
-                          });
-
-                          // Then update aria-expanded attribute
-                          e.currentTarget.setAttribute('aria-expanded', 'true');
-
-                          // Finally update classes with a small delay to prevent layout shifts
-                          requestAnimationFrame(() => {
-                            submenu.classList.remove('opacity-0', 'invisible');
-                            submenu.classList.add('opacity-100', 'visible');
-                          });
-                        }
-                      }
-                    }
-                  }
-                }}
-                onKeyDown={(e) => {
-                  // Handle keyboard navigation
-                  if (link.submenu && (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown')) {
-                    e.preventDefault();
-
-                    // Special handling for GP Resources menu item
-                    if (link.name === t.nav.gpResources) {
-                      // Toggle submenu visibility
-                      const submenu = e.currentTarget.nextElementSibling as HTMLElement;
-                      if (submenu) {
-                        const isVisible = submenu.classList.contains('opacity-100');
-                        if (isVisible) {
-                          // First change aria-expanded attribute
-                          e.currentTarget.setAttribute('aria-expanded', 'false');
-                          // Then update classes
-                          submenu.classList.remove('opacity-100', 'visible');
-                          submenu.classList.add('opacity-0', 'invisible');
-                        } else {
-                          // First close all other submenus
-                          document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
-                            if (item !== e.currentTarget) {
-                              item.setAttribute('aria-expanded', 'false');
-                              const otherSubmenu = item.nextElementSibling as HTMLElement;
-                              if (otherSubmenu) {
-                                otherSubmenu.classList.remove('opacity-100', 'visible');
-                                otherSubmenu.classList.add('opacity-0', 'invisible');
-                              }
-                            }
-                          });
-
-                          // Then update aria-expanded attribute
-                          e.currentTarget.setAttribute('aria-expanded', 'true');
-
-                          // Finally update classes
-                          submenu.classList.remove('opacity-0', 'invisible');
-                          submenu.classList.add('opacity-100', 'visible');
-
-                          // Focus the first submenu item
-                          const firstItem = submenu.querySelector('a') as HTMLElement;
-                          if (firstItem) firstItem.focus();
-                        }
-                      }
-                    } else {
-                      // Regular handling for other menu items
-                      // Toggle submenu visibility
-                      const submenu = e.currentTarget.nextElementSibling as HTMLElement;
-                      if (submenu) {
-                        const isVisible = submenu.classList.contains('opacity-100');
-                        if (isVisible) {
-                          // First change aria-expanded attribute
-                          e.currentTarget.setAttribute('aria-expanded', 'false');
-                          // Then update classes with a small delay to prevent layout shifts
-                          requestAnimationFrame(() => {
-                            submenu.classList.remove('opacity-100', 'visible');
-                            submenu.classList.add('opacity-0', 'invisible');
-                          });
-                        } else {
-                          // First close all other submenus
-                          document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
-                            if (item !== e.currentTarget) {
-                              item.setAttribute('aria-expanded', 'false');
-                              const otherSubmenu = item.nextElementSibling as HTMLElement;
-                              if (otherSubmenu) {
-                                otherSubmenu.classList.remove('opacity-100', 'visible');
-                                otherSubmenu.classList.add('opacity-0', 'invisible');
-                              }
-                            }
-                          });
-
-                          // Then update aria-expanded attribute
-                          e.currentTarget.setAttribute('aria-expanded', 'true');
-
-                          // Finally update classes with a small delay to prevent layout shifts
-                          requestAnimationFrame(() => {
-                            submenu.classList.remove('opacity-0', 'invisible');
-                            submenu.classList.add('opacity-100', 'visible');
-
-                            // Focus the first submenu item after the animation frame
-                            const firstItem = submenu.querySelector('a') as HTMLElement;
-                            if (firstItem) firstItem.focus();
-                          });
-                        }
-                      }
-                    }
-                  }
-                }}
-              >
-                {link.name}
-                {link.submenu && <span className="ml-1 inline-block">▾</span>}
-              </Link>
-
-              {/* Dropdown for items with submenu */}
-              {link.submenu && (
-                <div
-                  className={`absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-card ring-1 ring-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50 ${link.name === t.nav.gpResources ? 'gp-resources-submenu' : ''}`}
-                  role="menu"
-                  aria-orientation="vertical"
-                  aria-labelledby={`${link.name.toLowerCase()}-menu`}
-                >
-                  <div className="py-1">
-                    {link.submenu.map((subItem, index) => (
-                      <Link
-                        key={subItem.name}
-                        to={subItem.path}
-                        className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary"
-                        role="menuitem"
-                        tabIndex={-1}
-                        onKeyDown={(e) => {
-                          // Handle keyboard navigation within submenu
-                          if (e.key === 'Escape') {
-                            e.preventDefault();
-                            // Close submenu and focus parent
-                            const parent = e.currentTarget.closest('li')?.querySelector('[aria-haspopup="true"]') as HTMLElement;
-                            if (parent) {
-                              parent.focus();
-                              // First change aria-expanded attribute
-                              parent.setAttribute('aria-expanded', 'false');
-
-                              // Then update classes with a small delay to prevent layout shifts
-                              const submenu = parent.nextElementSibling as HTMLElement;
-                              if (submenu) {
-                                requestAnimationFrame(() => {
-                                  submenu.classList.remove('opacity-100', 'visible');
-                                  submenu.classList.add('opacity-0', 'invisible');
-                                });
-                              }
-                            }
-                          } else if (e.key === 'ArrowDown') {
-                            e.preventDefault();
-                            // Focus next item
-                            const nextItem = e.currentTarget.parentElement?.nextElementSibling?.querySelector('a') as HTMLElement;
-                            if (nextItem) nextItem.focus();
-                          } else if (e.key === 'ArrowUp') {
-                            e.preventDefault();
-                            // Focus previous item
-                            const prevItem = e.currentTarget.parentElement?.previousElementSibling?.querySelector('a') as HTMLElement;
-                            if (prevItem) prevItem.focus();
-                          }
-                        }}
-                      >
-                        {subItem.name}
-                      </Link>
-                    ))}
+            <li key={link.name} className={`relative nav-item-with-submenu ${activeSubmenu === link.name ? 'active' : ''}`} role="none">
+              {link.submenu ? (
+                <>
+                  <button
+                    className="font-medium transition-colors hover:text-primary flex items-center after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                    onClick={(e) => toggleSubmenu(link.name, e)}
+                    onKeyDown={(e) => handleKeyDown(e, link.name, true)}
+                    aria-expanded={activeSubmenu === link.name}
+                    aria-haspopup="true"
+                    role="menuitem"
+                    tabIndex={0}
+                  >
+                    {link.name}
+                    <span className="ml-1 inline-block">▾</span>
+                  </button>
+                  
+                  {/* Dropdown for items with submenu */}
+                  <div
+                    className={`absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-card ring-1 ring-border transition-opacity duration-200 z-50 ${
+                      activeSubmenu === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+                    }`}
+                    role="menu"
+                    aria-orientation="vertical"
+                    aria-labelledby={`${link.name.toLowerCase()}-menu`}
+                  >
+                    <div className="py-1">
+                      {link.submenu.map((subItem) => (
+                        <Link
+                          key={subItem.name}
+                          to={subItem.path}
+                          className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary"
+                          role="menuitem"
+                          tabIndex={activeSubmenu === link.name ? 0 : -1}
+                          onClick={() => setActiveSubmenu(null)}
+                        >
+                          {subItem.name}
+                        </Link>
+                      ))}
+                    </div>
                   </div>
-                </div>
+                </>
+              ) : (
+                <Link
+                  to={link.path}
+                  className="font-medium transition-colors hover:text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                  role="menuitem"
+                  tabIndex={0}
+                >
+                  {link.name}
+                </Link>
               )}
             </li>
           ))}
@@ -477,36 +248,14 @@ export default function Navbar() {
                         to={link.path}
                         className="text-lg font-medium transition-colors hover:text-primary block"
                         onClick={(e) => {
-                          // For mobile, we'll use a different approach
-                          // If there's a submenu and the submenu is not visible, show it
                           if (link.submenu) {
-                            const submenu = e.currentTarget.nextElementSibling as HTMLElement;
-                            if (submenu) {
-                              const isVisible = submenu.style.display === 'block';
-                              if (isVisible) {
-                                // If submenu is visible, navigate to the page
-                                setMobileMenuOpen(false);
-                              } else {
-                                // If submenu is not visible, show it and prevent navigation
-                                e.preventDefault();
-
-                                // Close all other open submenus first
-                                document.querySelectorAll('.pl-6.mt-2.space-y-2').forEach(menu => {
-                                  if (menu !== submenu) {
-                                    (menu as HTMLElement).style.display = 'none';
-                                  }
-                                });
-
-                                // Then show this submenu
-                                submenu.style.display = 'block';
-                              }
-                            }
+                            e.preventDefault();
+                            setActiveSubmenu(activeSubmenu === link.name ? null : link.name);
                           } else {
-                            // If no submenu, just close the mobile menu
                             setMobileMenuOpen(false);
                           }
                         }}
-                        aria-expanded={link.submenu ? 'true' : undefined}
+                        aria-expanded={link.submenu ? activeSubmenu === link.name : undefined}
                         aria-haspopup={link.submenu ? 'true' : undefined}
                         role="menuitem"
                       >
@@ -517,9 +266,8 @@ export default function Navbar() {
                       {/* Mobile submenu */}
                       {link.submenu && (
                         <div
-                          className="pl-6 mt-2 space-y-2"
+                          className={`pl-6 mt-2 space-y-2 ${activeSubmenu === link.name ? 'block' : 'hidden'}`}
                           role="menu"
-                          style={{ display: 'none' }}
                           aria-label={`${link.name} submenu`}
                         >
                           {link.submenu.map((subItem) => (
