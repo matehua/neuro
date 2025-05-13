@@ -9,6 +9,30 @@ import SkipLink from "@/components/SkipLink";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
 
+// Add custom styles for the GP Resources menu item
+const navbarStyles = `
+  /* Fix for GP Resources menu item */
+  .gp-resources-item {
+    position: static !important; /* Override relative positioning */
+  }
+
+  .gp-resources-submenu {
+    position: fixed !important;
+    top: 60px !important; /* Position below the navbar with a fixed distance */
+    left: 50% !important; /* Center horizontally */
+    transform: translateX(-50%) !important; /* Center horizontally */
+    z-index: 100 !important; /* Ensure it's above other elements */
+    transition: opacity 0.3s ease !important; /* Smooth transition for opacity only */
+    width: auto !important; /* Allow the width to be determined by content */
+    min-width: 200px !important; /* Ensure minimum width */
+  }
+
+  /* Adjust position when scrolled */
+  .scrolled .gp-resources-submenu {
+    top: 50px !important; /* Adjust for smaller navbar when scrolled */
+  }
+`;
+
 export default function Navbar() {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -75,11 +99,21 @@ export default function Navbar() {
       }
     };
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+
+    // Add custom styles to the document
+    const styleElement = document.createElement('style');
+    styleElement.textContent = navbarStyles;
+    document.head.appendChild(styleElement);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      // Clean up styles when component unmounts
+      document.head.removeChild(styleElement);
+    };
   }, [scrolled]);
 
   return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5")}>
+    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300", scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md scrolled" : "bg-transparent py-5")}>
       <SkipLink />
       <nav className="container flex justify-between items-center" aria-label="Main navigation">
         <div className="flex items-center gap-4">
@@ -97,7 +131,7 @@ export default function Navbar() {
         {/* Desktop Navigation */}
         <ul className="hidden md:flex space-x-8" role="menubar">
           {navLinks.map(link => (
-            <li key={link.name} className="relative group" role="none">
+            <li key={link.name} className={`relative group ${link.name === t.nav.gpResources ? 'gp-resources-item' : ''}`} role="none">
               <Link
                 to={link.path}
                 className="font-medium transition-colors hover:text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
@@ -107,22 +141,41 @@ export default function Navbar() {
                 tabIndex={0}
                 onMouseEnter={(e) => {
                   if (link.submenu) {
-                    // Close all other open submenus when hovering over a different menu item
-                    document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
-                      if (item !== e.currentTarget) {
-                        // First change aria-expanded attribute
-                        item.setAttribute('aria-expanded', 'false');
+                    // Special handling for GP Resources menu item
+                    if (link.name === t.nav.gpResources) {
+                      // Close all other open submenus when hovering over GP Resources
+                      document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
+                        if (item !== e.currentTarget) {
+                          // First change aria-expanded attribute
+                          item.setAttribute('aria-expanded', 'false');
 
-                        // Then update classes with a small delay to prevent layout shifts
-                        const otherSubmenu = item.nextElementSibling as HTMLElement;
-                        if (otherSubmenu) {
-                          requestAnimationFrame(() => {
+                          // Then update classes immediately for GP Resources
+                          const otherSubmenu = item.nextElementSibling as HTMLElement;
+                          if (otherSubmenu) {
                             otherSubmenu.classList.remove('opacity-100', 'visible');
                             otherSubmenu.classList.add('opacity-0', 'invisible');
-                          });
+                          }
                         }
-                      }
-                    });
+                      });
+                    } else {
+                      // Regular handling for other menu items
+                      // Close all other open submenus when hovering over a different menu item
+                      document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
+                        if (item !== e.currentTarget) {
+                          // First change aria-expanded attribute
+                          item.setAttribute('aria-expanded', 'false');
+
+                          // Then update classes with a small delay to prevent layout shifts
+                          const otherSubmenu = item.nextElementSibling as HTMLElement;
+                          if (otherSubmenu) {
+                            requestAnimationFrame(() => {
+                              otherSubmenu.classList.remove('opacity-100', 'visible');
+                              otherSubmenu.classList.add('opacity-0', 'invisible');
+                            });
+                          }
+                        }
+                      });
+                    }
                   }
                 }}
                 onClick={(e) => {
@@ -133,39 +186,75 @@ export default function Navbar() {
                   if (link.submenu && isClickNearRightEdge) {
                     e.preventDefault();
 
-                    // Toggle submenu visibility
-                    const submenu = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (submenu) {
-                      const isVisible = submenu.classList.contains('opacity-100');
-                      if (isVisible) {
-                        // First change aria-expanded attribute
-                        e.currentTarget.setAttribute('aria-expanded', 'false');
-                        // Then update classes with a small delay to prevent layout shifts
-                        requestAnimationFrame(() => {
+                    // Special handling for GP Resources menu item
+                    if (link.name === t.nav.gpResources) {
+                      // Toggle submenu visibility
+                      const submenu = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (submenu) {
+                        const isVisible = submenu.classList.contains('opacity-100');
+                        if (isVisible) {
+                          // First change aria-expanded attribute
+                          e.currentTarget.setAttribute('aria-expanded', 'false');
+                          // Then update classes
                           submenu.classList.remove('opacity-100', 'visible');
                           submenu.classList.add('opacity-0', 'invisible');
-                        });
-                      } else {
-                        // First close all other submenus
-                        document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
-                          if (item !== e.currentTarget) {
-                            item.setAttribute('aria-expanded', 'false');
-                            const otherSubmenu = item.nextElementSibling as HTMLElement;
-                            if (otherSubmenu) {
-                              otherSubmenu.classList.remove('opacity-100', 'visible');
-                              otherSubmenu.classList.add('opacity-0', 'invisible');
+                        } else {
+                          // First close all other submenus
+                          document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
+                            if (item !== e.currentTarget) {
+                              item.setAttribute('aria-expanded', 'false');
+                              const otherSubmenu = item.nextElementSibling as HTMLElement;
+                              if (otherSubmenu) {
+                                otherSubmenu.classList.remove('opacity-100', 'visible');
+                                otherSubmenu.classList.add('opacity-0', 'invisible');
+                              }
                             }
-                          }
-                        });
+                          });
 
-                        // Then update aria-expanded attribute
-                        e.currentTarget.setAttribute('aria-expanded', 'true');
+                          // Then update aria-expanded attribute
+                          e.currentTarget.setAttribute('aria-expanded', 'true');
 
-                        // Finally update classes with a small delay to prevent layout shifts
-                        requestAnimationFrame(() => {
+                          // Finally update classes
                           submenu.classList.remove('opacity-0', 'invisible');
                           submenu.classList.add('opacity-100', 'visible');
-                        });
+                        }
+                      }
+                    } else {
+                      // Regular handling for other menu items
+                      // Toggle submenu visibility
+                      const submenu = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (submenu) {
+                        const isVisible = submenu.classList.contains('opacity-100');
+                        if (isVisible) {
+                          // First change aria-expanded attribute
+                          e.currentTarget.setAttribute('aria-expanded', 'false');
+                          // Then update classes with a small delay to prevent layout shifts
+                          requestAnimationFrame(() => {
+                            submenu.classList.remove('opacity-100', 'visible');
+                            submenu.classList.add('opacity-0', 'invisible');
+                          });
+                        } else {
+                          // First close all other submenus
+                          document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
+                            if (item !== e.currentTarget) {
+                              item.setAttribute('aria-expanded', 'false');
+                              const otherSubmenu = item.nextElementSibling as HTMLElement;
+                              if (otherSubmenu) {
+                                otherSubmenu.classList.remove('opacity-100', 'visible');
+                                otherSubmenu.classList.add('opacity-0', 'invisible');
+                              }
+                            }
+                          });
+
+                          // Then update aria-expanded attribute
+                          e.currentTarget.setAttribute('aria-expanded', 'true');
+
+                          // Finally update classes with a small delay to prevent layout shifts
+                          requestAnimationFrame(() => {
+                            submenu.classList.remove('opacity-0', 'invisible');
+                            submenu.classList.add('opacity-100', 'visible');
+                          });
+                        }
                       }
                     }
                   }
@@ -174,43 +263,84 @@ export default function Navbar() {
                   // Handle keyboard navigation
                   if (link.submenu && (e.key === 'Enter' || e.key === ' ' || e.key === 'ArrowDown')) {
                     e.preventDefault();
-                    // Toggle submenu visibility
-                    const submenu = e.currentTarget.nextElementSibling as HTMLElement;
-                    if (submenu) {
-                      const isVisible = submenu.classList.contains('opacity-100');
-                      if (isVisible) {
-                        // First change aria-expanded attribute
-                        e.currentTarget.setAttribute('aria-expanded', 'false');
-                        // Then update classes with a small delay to prevent layout shifts
-                        requestAnimationFrame(() => {
+
+                    // Special handling for GP Resources menu item
+                    if (link.name === t.nav.gpResources) {
+                      // Toggle submenu visibility
+                      const submenu = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (submenu) {
+                        const isVisible = submenu.classList.contains('opacity-100');
+                        if (isVisible) {
+                          // First change aria-expanded attribute
+                          e.currentTarget.setAttribute('aria-expanded', 'false');
+                          // Then update classes
                           submenu.classList.remove('opacity-100', 'visible');
                           submenu.classList.add('opacity-0', 'invisible');
-                        });
-                      } else {
-                        // First close all other submenus
-                        document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
-                          if (item !== e.currentTarget) {
-                            item.setAttribute('aria-expanded', 'false');
-                            const otherSubmenu = item.nextElementSibling as HTMLElement;
-                            if (otherSubmenu) {
-                              otherSubmenu.classList.remove('opacity-100', 'visible');
-                              otherSubmenu.classList.add('opacity-0', 'invisible');
+                        } else {
+                          // First close all other submenus
+                          document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
+                            if (item !== e.currentTarget) {
+                              item.setAttribute('aria-expanded', 'false');
+                              const otherSubmenu = item.nextElementSibling as HTMLElement;
+                              if (otherSubmenu) {
+                                otherSubmenu.classList.remove('opacity-100', 'visible');
+                                otherSubmenu.classList.add('opacity-0', 'invisible');
+                              }
                             }
-                          }
-                        });
+                          });
 
-                        // Then update aria-expanded attribute
-                        e.currentTarget.setAttribute('aria-expanded', 'true');
+                          // Then update aria-expanded attribute
+                          e.currentTarget.setAttribute('aria-expanded', 'true');
 
-                        // Finally update classes with a small delay to prevent layout shifts
-                        requestAnimationFrame(() => {
+                          // Finally update classes
                           submenu.classList.remove('opacity-0', 'invisible');
                           submenu.classList.add('opacity-100', 'visible');
 
-                          // Focus the first submenu item after the animation frame
+                          // Focus the first submenu item
                           const firstItem = submenu.querySelector('a') as HTMLElement;
                           if (firstItem) firstItem.focus();
-                        });
+                        }
+                      }
+                    } else {
+                      // Regular handling for other menu items
+                      // Toggle submenu visibility
+                      const submenu = e.currentTarget.nextElementSibling as HTMLElement;
+                      if (submenu) {
+                        const isVisible = submenu.classList.contains('opacity-100');
+                        if (isVisible) {
+                          // First change aria-expanded attribute
+                          e.currentTarget.setAttribute('aria-expanded', 'false');
+                          // Then update classes with a small delay to prevent layout shifts
+                          requestAnimationFrame(() => {
+                            submenu.classList.remove('opacity-100', 'visible');
+                            submenu.classList.add('opacity-0', 'invisible');
+                          });
+                        } else {
+                          // First close all other submenus
+                          document.querySelectorAll('[aria-haspopup="true"][aria-expanded="true"]').forEach(item => {
+                            if (item !== e.currentTarget) {
+                              item.setAttribute('aria-expanded', 'false');
+                              const otherSubmenu = item.nextElementSibling as HTMLElement;
+                              if (otherSubmenu) {
+                                otherSubmenu.classList.remove('opacity-100', 'visible');
+                                otherSubmenu.classList.add('opacity-0', 'invisible');
+                              }
+                            }
+                          });
+
+                          // Then update aria-expanded attribute
+                          e.currentTarget.setAttribute('aria-expanded', 'true');
+
+                          // Finally update classes with a small delay to prevent layout shifts
+                          requestAnimationFrame(() => {
+                            submenu.classList.remove('opacity-0', 'invisible');
+                            submenu.classList.add('opacity-100', 'visible');
+
+                            // Focus the first submenu item after the animation frame
+                            const firstItem = submenu.querySelector('a') as HTMLElement;
+                            if (firstItem) firstItem.focus();
+                          });
+                        }
                       }
                     }
                   }
@@ -223,7 +353,7 @@ export default function Navbar() {
               {/* Dropdown for items with submenu */}
               {link.submenu && (
                 <div
-                  className="absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-card ring-1 ring-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50"
+                  className={`absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-card ring-1 ring-border opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50 ${link.name === t.nav.gpResources ? 'gp-resources-submenu' : ''}`}
                   role="menu"
                   aria-orientation="vertical"
                   aria-labelledby={`${link.name.toLowerCase()}-menu`}
