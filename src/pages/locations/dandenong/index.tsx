@@ -486,48 +486,70 @@ export default function DandenongLocation() {
               </p>
             </div>
 
-            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <div className="relative h-48 rounded-lg overflow-hidden shadow-md mb-6">
                   <img
-                    src="/images/dandenong-neurology-specialist-consulting-services-neurosurgeon-spine-surgeon.jpg"
-                    alt="Dandenong Neurology Specialist Consulting Services"
+                    src="/images/peninsula-private-hospital-entrance-consulting-ales-aliashkevich-neurosurgeon-spine.jpg"
+                    alt="Peninsula Private Hospital"
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.nearbyHospitals?.dandenongHospital?.title || 'Dandenong Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.title || 'Peninsula Private Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.dandenongLocation?.nearbyHospitals?.dandenongHospital?.description || 'Dandenong Hospital is a major public hospital serving Melbourne\'s southeastern suburbs. Dr. Aliashkevich performs neurosurgical procedures at this hospital, which offers comprehensive care for patients with various neurological and spinal conditions.'}
+                  {t.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.description || 'Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr. Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.dandenongLocation?.nearbyHospitals?.dandenongHospital?.address?.split('：')[1] || '135 David Street, Dandenong VIC 3175'}<br />
-                  <span className="font-medium">Phone:</span> {t.dandenongLocation?.nearbyHospitals?.dandenongHospital?.phone?.split('：')[1] || '(03) 9554 1000'}
+                  <span className="font-medium">Address:</span> {t.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.address?.split('：')[1] || '525 McClelland Drive, Frankston VIC 3199'}<br />
+                  <span className="font-medium">Phone:</span> {t.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.phone?.split('：')[1] || '(03) 9788 3333'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://monashhealth.org/locations/dandenong-hospital/" target="_blank" rel="noopener noreferrer">{t.hospitals?.dandenongHospital?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.peninsulaph.com.au/" target="_blank" rel="noopener noreferrer">{t.hospitals?.peninsulaPrivate?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <div className="relative h-48 rounded-lg overflow-hidden shadow-md mb-6">
                   <img
-                    src="/images/dandenong-neurology-consulting-rooms-ales-aliashkevich-neurosurgeon-spine-surgeon.jpg"
-                    alt="Dandenong Neurology Consulting Rooms"
+                    src="/images/neurosurgery-spine-surgery-operating-theatre-microscope-image-guided-surgery.jpg"
+                    alt="Epworth Eastern Hospital"
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.nearbyHospitals?.jessieMcphersonPrivateHospital?.title || 'Jessie McPherson Private Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.hospitals?.epworthEastern?.title || 'Epworth Eastern Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.dandenongLocation?.nearbyHospitals?.jessieMcphersonPrivateHospital?.description || 'Jessie McPherson Private Hospital is a private healthcare facility located within Monash Medical Centre in Clayton. Dr. Aliashkevich performs selected neurosurgical procedures at this hospital, which offers personalized care in a comfortable environment.'}
+                  {t.hospitals?.epworthEastern?.description || 'Epworth Eastern Hospital is a leading private hospital in Melbourne\'s eastern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.dandenongLocation?.nearbyHospitals?.jessieMcphersonPrivateHospital?.address?.split('：')[1] || '246 Clayton Road, Clayton VIC 3168'}<br />
-                  <span className="font-medium">Phone:</span> {t.dandenongLocation?.nearbyHospitals?.jessieMcphersonPrivateHospital?.phone?.split('：')[1] || '(03) 9594 2011'}
+                  <span className="font-medium">Address:</span> {t.hospitals?.epworthEastern?.address?.split(':')[1]?.trim() || '1 Arnold Street, Box Hill VIC 3128'}<br />
+                  <span className="font-medium">Phone:</span> {t.hospitals?.epworthEastern?.phone?.split(':')[1]?.trim() || '(03) 8807 7100'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://monashhealth.org/locations/jessie-mcpherson-private-hospital/" target="_blank" rel="noopener noreferrer">{t.hospitals?.jessieMcphersonPrivate?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.epworth.org.au/locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
+                </Button>
+              </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <div className="relative h-48 rounded-lg overflow-hidden shadow-md mb-6">
+                  <img
+                    src="/images/mornington-yacht-club-peninsula-the-bays-cloudy-sky.jpg"
+                    alt="The Bays Hospital"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.nearbyHospitals?.baysHospital?.title || 'The Bays Hospital'}</h3>
+                <p className="text-muted-foreground mb-4">
+                  {t.dandenongLocation?.nearbyHospitals?.baysHospital?.description || 'The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.'}
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  <span className="font-medium">Address:</span> {t.dandenongLocation?.nearbyHospitals?.baysHospital?.address?.split('：')[1] || 'Vale Street, Mornington VIC 3931'}<br />
+                  <span className="font-medium">Phone:</span> {t.dandenongLocation?.nearbyHospitals?.baysHospital?.phone?.split('：')[1] || '(03) 5975 2009'}
+                </p>
+                <Button asChild variant="outline" className="w-full">
+                  <a href="https://www.thebays.com.au/" target="_blank" rel="noopener noreferrer">{t.hospitals?.baysHospital?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
             </div>

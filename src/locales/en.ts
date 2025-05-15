@@ -1668,5 +1668,35 @@ export const en = {
         description: "Recommendations for ongoing management after emergency intervention:"
       }
     }
+  },
+
+  dandenongLocation: {
+    expertNeurosurgery: "Expert Neurosurgical Consultations in Dandenong",
+    subtitle: "Helping You Live Pain-Free",
+    introduction1: "Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, a neurosurgeon and spine surgeon, has cared for patients in Dandenong, Eastern Melbourne suburbs and Mornington Peninsula area since 2012. He offers consultations, procedures and operations at major Melbourne Hospitals, with expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions.",
+    introduction2: "Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout Melbourne's southeastern region, eliminating the need to travel to central Melbourne for specialized care.",
+    nearbyHospitals: {
+      title: "Nearby Hospitals",
+      subtitle: "Dr. Aliashkevich operates at these hospitals near Dandenong",
+      description: "In addition to consultations at his Dandenong location, Dr. Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.",
+      peninsulaPrivateHospital: {
+        title: "Peninsula Private Hospital",
+        description: "Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr. Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.",
+        address: "525 McClelland Drive, Frankston VIC 3199",
+        phone: "(03) 9788 3333"
+      },
+      epworthEasternHospital: {
+        title: "Epworth Eastern Hospital",
+        description: "Epworth Eastern Hospital is a leading private hospital in Melbourne's eastern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.",
+        address: "1 Arnold Street, Box Hill VIC 3128",
+        phone: "(03) 8807 7100"
+      },
+      baysHospital: {
+        title: "The Bays Hospital",
+        description: "The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.",
+        address: "Vale Street, Mornington VIC 3931",
+        phone: "(03) 5975 2009"
+      }
+    }
   }
 };
