@@ -1328,6 +1328,63 @@ export const en = {
   },
 
   locations: {
+    langwarrinLocation: {
+      expertNeurosurgery: "Expert Neurosurgery and Spine Care in Langwarrin",
+      peninsulaConsultingSuites: "PENINSULA CONSULTING SUITES",
+      subtitle: "Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, neurosurgeon and spine surgeon, offers consultations at Peninsula Consulting Suites in Langwarrin, providing convenient access to specialized care for patients in the southeastern suburbs of Melbourne.",
+      expertise: "Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout the Langwarrin and surrounding areas, eliminating the need to travel to Melbourne for specialized care.",
+      locationDetails: "Everything you need to know about our Langwarrin consulting location",
+      address: "Address",
+      contactInformation: "Contact Information",
+      consultingHours: "Consulting Hours",
+      urgentAppointments: "Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.",
+      appointmentProcess: "Appointment Process",
+      appointmentProcessDetails1: "Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.",
+      appointmentProcessDetails2: "All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.",
+      gettingHere: "Getting Here",
+      byPublicTransport: "By Public Transport",
+      byPublicTransportDetails: "Peninsula Consulting Suites is accessible via bus services that stop nearby. Several bus routes connect the clinic to Frankston train station and surrounding suburbs.",
+      byCar: "By Car",
+      byCarDetails: "Free on-site parking is available for patients at Peninsula Consulting Suites. The clinic is easily accessible from Cranbourne-Frankston Road, with convenient access from the Mornington Peninsula Freeway and Peninsula Link.",
+      facilityImages: {
+        title: "Our Facility",
+        subtitle: "Take a look at our modern, comfortable consulting rooms at Peninsula Consulting Suites"
+      },
+      therapeuticInterventions: {
+        title: "Therapeutic Interventions",
+        subtitle: "Tailored treatment plans for your specific needs",
+        description: "Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, Dr Aliashkevich collaborates closely with other specialists in Langwarrin and surrounding areas to develop a tailored therapeutic plan designed to address your specific needs.",
+        interventionalProcedures: {
+          title: "Interventional Procedures",
+          description: "In addition to traditional medical therapies, Dr Aliashkevich can offer a variety of minimally invasive interventional procedures to target pain and inflammation directly at the source, providing relief and promoting healing."
+        },
+        physicalTherapy: {
+          title: "Physical Therapy and Hydrotherapy",
+          description: "Personalised exercise programmes to improve posture, strength, flexibility, and mobility. These therapies can be crucial components of both non-surgical management and post-operative rehabilitation."
+        },
+        rehabilitation: {
+          title: "Rehabilitation",
+          description: "Critical component for postoperative recovery to maximise function, independence, and quality of life. Dr. Aliashkevich works with rehabilitation specialists to ensure comprehensive care throughout your recovery journey."
+        }
+      },
+      nearbyAmenities: {
+        title: "Nearby Amenities",
+        subtitle: "Convenient local facilities for patients visiting our Langwarrin location",
+        description: "Our Langwarrin consulting location at Peninsula Consulting Suites is surrounded by a variety of convenient amenities. Whether you need to grab a coffee before your appointment, find a place for lunch afterward, or run errands while in the area, you'll find everything you need nearby.",
+        shopping: {
+          title: "Shopping"
+        },
+        diningOptions: {
+          title: "Dining Options"
+        },
+        pharmacies: {
+          title: "Pharmacies & Healthcare"
+        },
+        parks: {
+          title: "Parks & Recreation"
+        }
+      }
+    },
     morningtonLocation: {
       subtitle: "Dr. Ales Aliashkevich, neurosurgeon and spine surgeon, has been providing care to patients on Mornington Peninsula since 2012. He offers consultations at Mornington Specialist Centre and operates at Peninsula Private and The Bays Hospitals.",
       expertise: "With expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions, radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems, Dr. Aliashkevich brings specialised care closer to residents of Mornington and surrounding areas.",

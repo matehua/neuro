@@ -241,6 +241,143 @@ export default function LangwarrinLocation() {
           </div>
         </section>
 
+        {/* Nearby Amenities Section */}
+        <section className="py-16">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl font-bold mb-4">{t.locations?.langwarrinLocation?.nearbyAmenities?.title || 'Nearby Amenities'}</h2>
+              <p className="text-muted-foreground">
+                {t.locations?.langwarrinLocation?.nearbyAmenities?.subtitle || 'Convenient local facilities for patients visiting our Langwarrin location'}
+              </p>
+            </div>
+
+            <div className="mt-8 max-w-3xl mx-auto mb-12">
+              <p className="text-muted-foreground text-center">
+                {t.locations?.langwarrinLocation?.nearbyAmenities?.description || 'Our Langwarrin consulting location at Peninsula Consulting Suites is surrounded by a variety of convenient amenities. Whether you need to grab a coffee before your appointment, find a place for lunch afterward, or run errands while in the area, you\'ll find everything you need nearby.'}
+              </p>
+            </div>
+
+            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <h3 className="text-xl font-semibold mb-4 text-primary flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
+                  </svg>
+                  {t.locations?.langwarrinLocation?.nearbyAmenities?.shopping?.title || 'Shopping'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Langwarrin Shopping Centre</span> - Located just 500m away, offering a variety of shops, supermarkets, and services.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Karingal Hub Shopping Centre</span> - A major shopping center approximately 5 minutes drive away with over 120 specialty stores.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Langwarrin Plaza</span> - A convenient shopping plaza with essential services and retail outlets.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <h3 className="text-xl font-semibold mb-4 text-primary flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                  </svg>
+                  {t.locations?.langwarrinLocation?.nearbyAmenities?.diningOptions?.title || 'Dining Options'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Café Langwarrin</span> - A popular local café offering great coffee and light meals, perfect for before or after your appointment.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Langwarrin Hotel</span> - A family-friendly pub with a bistro serving lunch and dinner.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Various Takeaway Options</span> - Several takeaway restaurants are located nearby, offering a range of cuisines.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <h3 className="text-xl font-semibold mb-4 text-primary flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
+                  </svg>
+                  {t.locations?.langwarrinLocation?.nearbyAmenities?.pharmacies?.title || 'Pharmacies & Healthcare'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Langwarrin Pharmacy</span> - Located within walking distance, offering prescription services and healthcare products.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Langwarrin Medical Centre</span> - A comprehensive medical center with general practitioners and allied health services.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Pathology Services</span> - Several pathology collection centers are available nearby for any required tests.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <h3 className="text-xl font-semibold mb-4 text-primary flex items-center">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                  </svg>
+                  {t.locations?.langwarrinLocation?.nearbyAmenities?.parks?.title || 'Parks & Recreation'}
+                </h3>
+                <ul className="space-y-3">
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Lloyd Park</span> - A peaceful park with walking paths, perfect for a relaxing stroll before or after your appointment.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Langwarrin Flora and Fauna Reserve</span> - A beautiful nature reserve with walking trails and native wildlife.
+                    </p>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="text-primary mr-2">•</span>
+                    <p className="text-muted-foreground">
+                      <span className="font-medium">Cruden Farm</span> - Historic gardens open to the public on select days, located nearby.
+                    </p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Other Consulting Locations Section */}
         <section className="py-16 bg-primary/5">
           <div className="container">
