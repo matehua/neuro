@@ -463,6 +463,142 @@ export default function LangwarrinLocation() {
             </div>
           </div>
         </section>
+
+        {/* Nearby Hospitals Section */}
+        <section className="py-16">
+          <div className="container">
+            <div className="mb-12">
+              <h2 className="text-3xl font-bold mb-4">{t.locations?.langwarrinLocation?.nearbyHospitals?.title || 'Nearby Hospitals'}</h2>
+              <p className="text-muted-foreground">
+                {t.locations?.langwarrinLocation?.nearbyHospitals?.subtitle || 'Dr. Aliashkevich operates at these hospitals near Langwarrin'}
+              </p>
+            </div>
+
+            <div className="mt-8 max-w-3xl mx-auto mb-12">
+              <p className="text-muted-foreground text-center">
+                {t.locations?.langwarrinLocation?.nearbyHospitals?.description || 'In addition to consultations at Peninsula Consulting Suites, Dr. Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.'}
+              </p>
+            </div>
+
+            <div className="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <div className="relative h-48 rounded-lg overflow-hidden shadow-md mb-6">
+                  <img
+                    src="/images/peninsula-private-hospital-entrance-consulting-ales-aliashkevich-neurosurgeon-spine.jpg"
+                    alt="Peninsula Private Hospital"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.title || 'Peninsula Private Hospital'}</h3>
+                <p className="text-muted-foreground mb-4">
+                  {t.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.description || 'Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr. Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.'}
+                </p>
+                <p className="text-muted-foreground">
+                  {t.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.address || '<span className="font-medium">Address:</span> 525 McClelland Drive, Frankston VIC 3199'}<br />
+                  {t.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.phone || '<span className="font-medium">Phone:</span> (03) 9788 3333'}
+                </p>
+              </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <div className="relative h-48 rounded-lg overflow-hidden shadow-md mb-6">
+                  <img
+                    src="/images/mornington-yacht-club-peninsula-the-bays-cloudy-sky.jpg"
+                    alt="The Bays Hospital"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.title || 'The Bays Hospital'}</h3>
+                <p className="text-muted-foreground mb-4">
+                  {t.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.description || 'The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.'}
+                </p>
+                <p className="text-muted-foreground">
+                  {t.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.address || '<span className="font-medium">Address:</span> Vale Street, Mornington VIC 3931'}<br />
+                  {t.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.phone || '<span className="font-medium">Phone:</span> (03) 5975 2009'}
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Insurance and Surgery Funding Section */}
+        <section className="py-16 bg-primary/5">
+          <div className="container">
+            <div className="text-center max-w-3xl mx-auto mb-12">
+              <h2 className="text-3xl font-bold mb-4">{t.locations?.langwarrinLocation?.insuranceAndFunding?.title || 'Insurances and Surgery Funding'}</h2>
+              <p className="text-muted-foreground">
+                {t.locations?.langwarrinLocation?.insuranceAndFunding?.subtitle || 'TAC and WorkCover Welcome'}
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.insuranceAndFunding?.privateHealthInsurance?.title || 'Private Health Insurance'}</h3>
+                <p className="text-muted-foreground mb-4">
+                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.privateHealthInsurance?.description1 || 'Patients must have valid private health/hospital insurance with no waiting periods. Extras are not applicable for inpatient hospital treatment. The health funds don\'t contribute to consultation and outpatient treatment fees.'}
+                </p>
+                <p className="text-muted-foreground">
+                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.privateHealthInsurance?.description2 || 'Please note that so-called basic and bronze covers may not cover spinal surgery or neurosurgery in private hospitals. Cervical and lumbar artificial disc replacement (arthroplasty) falls into the Joint Replacement Category, which is usually included in Silver and Gold policies. Patients need to check their policy for coverage levels, exclusions, and inclusions.'}
+                </p>
+              </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.title || 'TAC and WorkCover'}</h3>
+                <p className="text-muted-foreground mb-4">
+                  <strong>TAC:</strong> {t.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.tac || 'Claim details and consultation approval from TAC. Patients must pay the consultation fee upfront and claim reimbursement from their insurer.'}
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  <strong>WorkCover:</strong> {t.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.workCover || 'Claim details and consultation approval from the WorkSafe insurer. Patients must pay the consultation fee upfront and claim reimbursement from their insurer.'}
+                </p>
+                <p className="text-muted-foreground">
+                  <strong>Veteran Affairs/Military:</strong> {t.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.veteranAffairs || 'Both "Gold Card" and "White Card" patients are eligible. For "White Card" holders, a condition must be covered by DVA.'}
+                </p>
+              </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.insuranceAndFunding?.uninsuredPatients?.title || 'Uninsured Patients'}</h3>
+                <p className="text-muted-foreground mb-4">
+                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.uninsuredPatients?.description1 || 'Self-funded patients can be provided with a quote for all surgical, anaesthetic and hospital costs. For example, the minimum amount required for a single-segment spinal surgery not requiring any implants in a private hospital in Victoria can be around $15,000 – $20,000.'}
+                </p>
+                <p className="text-muted-foreground">
+                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.uninsuredPatients?.description2 || 'This amount may include hospital and operating theatre fees, surgeon, assistant, anaesthetist, specialised care from a perioperative physician, and HDU or ICU care. Dr Aliashkevich has no affiliation with a public hospital, so unless a patient is willing to pay for surgery in a private hospital, he cannot undertake surgery on someone without appropriate insurance. For all other uninsured referrals, please get in touch with the closest public hospital directly.'}
+                </p>
+              </div>
+
+              <div className="card p-6 rounded-lg shadow-md bg-card">
+                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.title || 'Patients\' Privacy'}</h3>
+                <p className="text-muted-foreground mb-4">
+                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.description1 || 'Dr Aliashkevich pays great respect to patient\'s privacy and provides a safe environment. The goal is to build and maintain trust between the neurosurgeon and the patient. Patients\' comfort is as important as their treatment, and we ensure that anything you discuss with Dr Aliashkevich is kept private.'}
+                </p>
+                <p className="text-muted-foreground mb-4">
+                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.description2 || 'Any files and all personal information are kept secure. Patients can give consent to share their health information, for example, when attending other medical practitioners. Dr Aliashkevich will never release any information to insurers or other parties without consent.'}
+                </p>
+                <p className="text-muted-foreground">
+                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.description3 || 'At the end of every patient\'s visit, our office emails a summary of their conditions, including the diagnosis, history, examination findings, radiological results and recommended action plan.'}
+                </p>
+              </div>
+            </div>
+
+            <div className="text-center">
+              <h2 className="text-2xl font-bold mb-6">{t.locations?.langwarrinLocation?.readyToSchedule?.title || 'Ready to Schedule an Appointment?'}</h2>
+              <p className="text-lg mb-8 max-w-2xl mx-auto text-muted-foreground">
+                {t.locations?.langwarrinLocation?.readyToSchedule?.description || 'Don\'t wait to seek help if you are struggling with pain, a neurosurgical or a spinal condition. Schedule a consultation with Dr Ales Aliashkevich at Peninsula Consulting Suites in Langwarrin and take the first step toward improved health and well-being. We\'re here to support you every step of the way to recovery.'}
+              </p>
+              <div className="flex flex-col sm:flex-row justify-center gap-4">
+                <Button asChild size="lg">
+                  <Link to="/appointments">{t.locations?.langwarrinLocation?.readyToSchedule?.bookAppointment || 'Book an Appointment'}</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/locations">{t.locations?.langwarrinLocation?.readyToSchedule?.viewAllLocations || 'View All Locations'}</Link>
+                </Button>
+                <Button asChild variant="outline" size="lg">
+                  <Link to="/contact">{t.locations?.langwarrinLocation?.readyToSchedule?.contactUs || 'Contact Us'}</Link>
+                </Button>
+              </div>
+            </div>
+          </div>
+        </section>
       </main>
 
       <Footer />

@@ -1383,6 +1383,56 @@ export const en = {
         parks: {
           title: "Parks & Recreation"
         }
+      },
+      nearbyHospitals: {
+        title: "Nearby Hospitals",
+        subtitle: "Dr. Aliashkevich operates at these hospitals near Langwarrin",
+        description: "In addition to consultations at Peninsula Consulting Suites, Dr. Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.",
+        peninsulaPrivateHospital: {
+          title: "Peninsula Private Hospital",
+          description: "Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr. Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.",
+          address: "<span class=\"font-medium\">Address:</span> 525 McClelland Drive, Frankston VIC 3199",
+          phone: "<span class=\"font-medium\">Phone:</span> (03) 9788 3333"
+        },
+        baysHospital: {
+          title: "The Bays Hospital",
+          description: "The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.",
+          address: "<span class=\"font-medium\">Address:</span> Vale Street, Mornington VIC 3931",
+          phone: "<span class=\"font-medium\">Phone:</span> (03) 5975 2009"
+        }
+      },
+      insuranceAndFunding: {
+        title: "Insurances and Surgery Funding",
+        subtitle: "TAC and WorkCover Welcome",
+        privateHealthInsurance: {
+          title: "Private Health Insurance",
+          description1: "Patients must have valid private health/hospital insurance with no waiting periods. Extras are not applicable for inpatient hospital treatment. The health funds don't contribute to consultation and outpatient treatment fees.",
+          description2: "Please note that so-called basic and bronze covers may not cover spinal surgery or neurosurgery in private hospitals. Cervical and lumbar artificial disc replacement (arthroplasty) falls into the Joint Replacement Category, which is usually included in Silver and Gold policies. Patients need to check their policy for coverage levels, exclusions, and inclusions."
+        },
+        tacAndWorkCover: {
+          title: "TAC and WorkCover",
+          tac: "Claim details and consultation approval from TAC. Patients must pay the consultation fee upfront and claim reimbursement from their insurer.",
+          workCover: "Claim details and consultation approval from the WorkSafe insurer. Patients must pay the consultation fee upfront and claim reimbursement from their insurer.",
+          veteranAffairs: "Both \"Gold Card\" and \"White Card\" patients are eligible. For \"White Card\" holders, a condition must be covered by DVA."
+        },
+        uninsuredPatients: {
+          title: "Uninsured Patients",
+          description1: "Self-funded patients can be provided with a quote for all surgical, anaesthetic and hospital costs. For example, the minimum amount required for a single-segment spinal surgery not requiring any implants in a private hospital in Victoria can be around $15,000 – $20,000.",
+          description2: "This amount may include hospital and operating theatre fees, surgeon, assistant, anaesthetist, specialised care from a perioperative physician, and HDU or ICU care. Dr Aliashkevich has no affiliation with a public hospital, so unless a patient is willing to pay for surgery in a private hospital, he cannot undertake surgery on someone without appropriate insurance. For all other uninsured referrals, please get in touch with the closest public hospital directly."
+        },
+        patientsPrivacy: {
+          title: "Patients' Privacy",
+          description1: "Dr Aliashkevich pays great respect to patient's privacy and provides a safe environment. The goal is to build and maintain trust between the neurosurgeon and the patient. Patients' comfort is as important as their treatment, and we ensure that anything you discuss with Dr Aliashkevich is kept private.",
+          description2: "Any files and all personal information are kept secure. Patients can give consent to share their health information, for example, when attending other medical practitioners. Dr Aliashkevich will never release any information to insurers or other parties without consent.",
+          description3: "At the end of every patient's visit, our office emails a summary of their conditions, including the diagnosis, history, examination findings, radiological results and recommended action plan."
+        }
+      },
+      readyToSchedule: {
+        title: "Ready to Schedule an Appointment?",
+        description: "Don't wait to seek help if you are struggling with pain, a neurosurgical or a spinal condition. Schedule a consultation with Dr Ales Aliashkevich at Peninsula Consulting Suites in Langwarrin and take the first step toward improved health and well-being. We're here to support you every step of the way to recovery.",
+        bookAppointment: "Book an Appointment",
+        viewAllLocations: "View All Locations",
+        contactUs: "Contact Us"
       }
     },
     morningtonLocation: {
