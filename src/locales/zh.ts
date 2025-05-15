@@ -752,6 +752,29 @@ export const zh = {
       subtitle: "帮助您无痛生活",
       introduction1: "您是否正在为颈部或背部问题而苦恼？您是否需要神经外科或脊柱疾病的专业咨询和治疗？阿利什凯维奇医生，一位神经外科医生和脊柱外科医生，自2012年以来一直为丹德农、墨尔本东部郊区和莫宁顿半岛地区的患者提供护理。他在墨尔本主要医院提供咨询、手术和操作，专长于各种神经外科和脊柱疾病的先进微创治疗。",
       introduction2: "阿利什凯维奇医生专门治疗神经根病、脊髓病、脑部、脊柱和神经肿瘤或椎间盘问题。这个地点为墨尔本东南部地区的患者提供便捷的专业神经外科护理，无需前往墨尔本中心寻求专科护理。",
+      nearbyHospitals: {
+        title: "附近医院",
+        subtitle: "阿利什凯维奇医生在这些医院进行手术",
+        description: "除了在丹德农地点进行咨询外，阿利什凯维奇医生还在该地区的几家医院进行手术。这些设施配备了用于神经外科和脊柱手术的最先进技术。",
+        peninsulaPrivateHospital: {
+          title: "Peninsula私立医院",
+          description: "Peninsula私立医院是莫宁顿半岛上一家领先的私立医疗机构，提供全面的外科和医疗服务。阿利什凯维奇医生在这家医院进行神经外科和脊柱手术，该医院配备了用于复杂手术的先进技术。",
+          address: "525 McClelland Drive, Frankston VIC 3199",
+          phone: "(03) 9788 3333"
+        },
+        epworthEasternHospital: {
+          title: "Epworth东部医院",
+          description: "Epworth东部医院是墨尔本东部郊区的一家领先私立医院，提供全面的医疗和外科服务。阿利什凯维奇医生在这家设施进行神经外科和脊柱手术，该设施配备了用于复杂手术的先进技术。",
+          address: "1 Arnold Street, Box Hill VIC 3128",
+          phone: "(03) 8807 7100"
+        },
+        baysHospital: {
+          title: "The Bays莫宁顿医院",
+          description: "莫宁顿的The Bays医院是一家非营利性社区医院，提供广泛的医疗和外科服务。阿利什凯维奇医生在这家设施进行选定的神经外科手术，该设施在以社区为中心的环境中提供个性化护理。",
+          address: "Vale Street, Mornington VIC 3931",
+          phone: "(03) 5975 2009"
+        }
+      },
       nearbyAmenities: {
         title: "附近设施",
         subtitle: "为访问我们丹德农地点的患者提供便捷的本地设施",
@@ -1002,7 +1025,7 @@ export const zh = {
       description: "联系我们了解更多关于我们的设施，安排参观或询问我们的租赁选项。加入我们，在萨里山将您的实践提升到新的高度。我们的设施促进协作和网络机会，提供支持专业成长和发展的环境。",
       address: "Suite 4, 619 Canterbury Road, Surrey Hills VIC 3127",
       email: "info@mineuro.com.au",
-      phone: "03 90084200"
+      phone: "电话: 03 9008 4200   传真: 03 9923 6688   电子邮件: info@mineuro.com.au   Argus: argus@mineuro.com.au   HealthLink: mineuros"
     },
     gallery: {
       title: "设施图库",
@@ -1872,8 +1895,7 @@ export const zh = {
     phone: "电话",
     email: "电子邮件",
     receptionHours: "接待时间",
-    morningHours: "上午：9:00 - 12:00",
-    afternoonHours: "下午：2:00 - 5:00",
+    officeHours: "星期一 - 星期五: 8:30 AM - 5:30 PM",
     sendMessage: "给我们发送消息",
     fullName: "全名",
     phoneNumber: "电话号码",
@@ -2153,7 +2175,7 @@ export const zh = {
       title: "联系信息",
       description: "如果您对我们的医疗法律服务有任何疑问，请致电我们的主办公室或发送电子邮件给我们。",
       phone: "电话",
-      phoneNumber: "03 9008 4200",
+      phoneNumber: "电话: 03 9008 4200   传真: 03 9923 6688   电子邮件: info@mineuro.com.au   Argus: argus@mineuro.com.au   HealthLink: mineuros",
       email: "电子邮件",
       emailAddress: "info@mineuro.com.au"
     },

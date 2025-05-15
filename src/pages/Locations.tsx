@@ -21,8 +21,8 @@ export default function Locations() {
       id: "surrey-hills",
       name: "SURREY HILLS",
       address: "miNEURO Consulting Suites, Suite 4, 619 Canterbury Road, SURREY HILLS VIC 3127",
-      phone: "(03) 90084200",
-      hours: "Monday - Friday: 9:00 AM - 5:00 PM",
+      phone: "(03) 9008 4200",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: true,
       image: "/images/miNEURO-brain-spine-advanced-technology-precision-miniamlly-invasive-neurosurgery-Melbourne-Surrey-Hills-entrance.jpg"
     },
@@ -30,8 +30,8 @@ export default function Locations() {
       id: "mornington",
       name: "MORNINGTON",
       address: "Nepean Specialist Centre, 1050 Nepean Highway, MORNINGTON 3931",
-      phone: "(03) 5975 4583",
-      hours: "Tuesday & Thursday: 9:00 AM - 5:00 PM",
+      phone: "(03) 9008 4200",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: false,
       image: "/images/neurosurgery-mornington-specialist-centre-reception-consulting.jpg"
     },
@@ -39,8 +39,8 @@ export default function Locations() {
       id: "bundoora",
       name: "BUNDOORA",
       address: "UniHill Consulting Suites, Level 4 Suite 32, 240 Plenty Road, BUNDOORA 3083",
-      phone: "(03) 9467 3344",
-      hours: "Thursday: 9:00 AM - 5:00 PM (fortnightly)",
+      phone: "(03) 9008 4200",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: false,
       image: "/images/bundoora-unihill-specialist-consulting-building-240-plenty-road.jpg"
     },
@@ -48,8 +48,8 @@ export default function Locations() {
       id: "frankston",
       name: "FRANKSTON",
       address: "Peninsula Private Hospital, Mezzanine Consulting Suites, 525 McClelland Drive, FRANKSTON 3199",
-      phone: "(03) 9781 4133",
-      hours: "Monday & Wednesday: 9:00 AM - 5:00 PM",
+      phone: "(03) 9008 4200",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: false,
       image: "/images/peninsula-private-hospital-entrance-consulting-ales-aliashkevich-neurosurgeon-spine.jpg"
     },
@@ -58,7 +58,7 @@ export default function Locations() {
       name: "LANGWARRIN",
       address: "Peninsula Consulting Suites, Suite 3, 35-37 Cranbourne-Frankston Road, LANGWARRIN VIC 3910",
       phone: "(03) 9008 4200",
-      hours: "Tuesday & Thursday: 9:00 AM - 5:00 PM",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: false,
       image: "/images/langwarrin-consulting-peninsula-rheumatology-entrance-neurosurgery.jpg"
     },
@@ -66,8 +66,8 @@ export default function Locations() {
       id: "werribee",
       name: "WERRIBEE",
       address: "Consulting Rooms, 297 Princes Highway, WERRIBEE 3030",
-      phone: "(03) 9741 9200",
-      hours: "Tuesday: 9:00 AM - 5:00 PM (fortnightly)",
+      phone: "(03) 9008 4200",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: false,
       image: "/images/werribee-consulting-rooms-neurosurgery-entrance.jpg"
     },
@@ -75,8 +75,8 @@ export default function Locations() {
       id: "heidelberg",
       name: "HEIDELBERG",
       address: "Warringal Private Hospital Consulting Rooms, Level 5, 10 Martin Street, HEIDELBERG 3084",
-      phone: "(03) 9457 5566",
-      hours: "Friday: 9:00 AM - 5:00 PM (fortnightly)",
+      phone: "(03) 9008 4200",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: false,
       image: "/images/heidelberg-consulting-rooms-neurosurgeon-spine-surgeon-10-martin-medical.jpg"
     },
@@ -84,8 +84,8 @@ export default function Locations() {
       id: "moonee-ponds",
       name: "MOONEE PONDS",
       address: "Moonee Ponds Specialist Centre, 827 Mt Alexander Road, MOONEE PONDS 3039",
-      phone: "(03) 9370 4333",
-      hours: "Friday: 9:00 AM - 5:00 PM",
+      phone: "(03) 9008 4200",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: false,
       image: "/images/moonee-ponds-specialist-centre-entrance-scaled.jpg"
     },
@@ -93,8 +93,8 @@ export default function Locations() {
       id: "sunbury",
       name: "SUNBURY",
       address: "Lake Imaging, 17-19 Horne Street, SUNBURY 3429",
-      phone: "(03) 9744 5566",
-      hours: "Wednesday: 9:00 AM - 5:00 PM (fortnightly)",
+      phone: "(03) 9008 4200",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: false,
       image: "/images/sunbury-lake-imaging-consulting-neurosurgery.jpg"
     },
@@ -102,8 +102,8 @@ export default function Locations() {
       id: "dandenong",
       name: "DANDENONG",
       address: "Dandenong Neurology & Specialists Group, 136 David Street, DANDENONG 3175",
-      phone: "(03) 9792 4321",
-      hours: "Monday: 9:00 AM - 5:00 PM (fortnightly)",
+      phone: "(03) 9008 4200",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: false,
       image: "/images/dandenong-neurology-specialist-consulting-building-neurosurgeon-spine-surgeon.jpg"
     },
@@ -111,8 +111,8 @@ export default function Locations() {
       id: "wantirna",
       name: "WANTIRNA",
       address: "Knox Audiology Specialist Medical Suites, 230 Mountain Highway, WANTIRNA 3152",
-      phone: "(03) 9800 0000",
-      hours: "Wednesday: 9:00 AM - 5:00 PM (fortnightly)",
+      phone: "(03) 9008 4200",
+      hours: "Monday - Friday: 8:30 AM - 5:30 PM",
       isPrimary: false,
       image: "/images/wantirna-consulting-rooms-knox-audiology-neurosurgeon-spine-surgeon-entrance.jpg"
     }

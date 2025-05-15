@@ -66,6 +66,9 @@ function getLuminance(color: string): number {
  * @param priority The priority of the announcement ('polite' or 'assertive')
  */
 export function announceToScreenReader(message: string, priority: 'polite' | 'assertive' = 'polite'): void {
+  // Only proceed if we're in a browser environment and message is not empty
+  if (typeof document === 'undefined' || !message) return;
+
   // Find or create the announcement element
   let announcer = document.getElementById('screen-reader-announcer');
 
@@ -74,7 +77,17 @@ export function announceToScreenReader(message: string, priority: 'polite' | 'as
     announcer.id = 'screen-reader-announcer';
     announcer.setAttribute('aria-live', priority);
     announcer.setAttribute('aria-atomic', 'true');
+    announcer.setAttribute('role', 'status');
     announcer.classList.add('sr-only');
+    announcer.style.position = 'absolute';
+    announcer.style.width = '1px';
+    announcer.style.height = '1px';
+    announcer.style.padding = '0';
+    announcer.style.margin = '-1px';
+    announcer.style.overflow = 'hidden';
+    announcer.style.clip = 'rect(0, 0, 0, 0)';
+    announcer.style.whiteSpace = 'nowrap';
+    announcer.style.border = '0';
     document.body.appendChild(announcer);
   }
 
@@ -86,7 +99,9 @@ export function announceToScreenReader(message: string, priority: 'polite' | 'as
 
   // Use setTimeout to ensure the DOM update happens
   setTimeout(() => {
-    announcer.textContent = message;
+    if (announcer && message) {
+      announcer.textContent = message;
+    }
   }, 50);
 }
 
@@ -97,9 +112,41 @@ export function announceToScreenReader(message: string, priority: 'polite' | 'as
  */
 export function handleKeyboardActivation(callback: () => void) {
   return (event: React.KeyboardEvent) => {
-    if (event.key === 'Enter' || event.key === ' ') {
+    if (event.key === 'Enter' || event.key === ' ' || event.key === 'Spacebar') {
       event.preventDefault();
       callback();
+    }
+  };
+}
+
+/**
+ * Focus trap for modal dialogs and other components that need to trap focus
+ * @param containerRef Reference to the container element
+ * @param isActive Whether the focus trap is active
+ * @returns A keyboard event handler function for the container
+ */
+export function useFocusTrap(containerRef: React.RefObject<HTMLElement>, isActive: boolean) {
+  return (event: React.KeyboardEvent) => {
+    if (!isActive || !containerRef.current) return;
+
+    if (event.key === 'Tab') {
+      const focusableElements = containerRef.current.querySelectorAll(
+        'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+      );
+
+      const firstElement = focusableElements[0] as HTMLElement;
+      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+
+      // If shift+tab on first element, move to last element
+      if (event.shiftKey && document.activeElement === firstElement) {
+        event.preventDefault();
+        lastElement.focus();
+      }
+      // If tab on last element, move to first element
+      else if (!event.shiftKey && document.activeElement === lastElement) {
+        event.preventDefault();
+        firstElement.focus();
+      }
     }
   };
 }

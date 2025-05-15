@@ -68,11 +68,11 @@ export default function Footer() {
               </li>
               <li className="flex items-center">
                 <Phone className="w-5 h-5 mr-2 text-primary" />
-                <span className="text-muted-foreground">(03) 90084200</span>
+                <span className="text-muted-foreground">(03) 9008 4200</span>
               </li>
               <li className="flex items-center">
                 <Mail className="w-5 h-5 mr-2 text-primary" />
-                <span className="text-muted-foreground">reception@mineuro.com.au</span>
+                <span className="text-muted-foreground">info@mineuro.com.au</span>
               </li>
             </ul>
           </div>
@@ -93,7 +93,7 @@ export default function Footer() {
                 <Link to="/locations/moonee-ponds" className="text-muted-foreground hover:text-primary transition-colors">{t.nav.locationsSubmenu.mooneePonds}</Link>
               </li>
               <li>
-                <Link to="/locations" className="text-primary hover:underline">{t.appointments?.locations?.viewAllLocations || "View All Locations"}</Link>
+                <Link to="/locations" className="text-primary hover:underline">View All Locations</Link>
               </li>
             </ul>
           </div>
@@ -102,8 +102,8 @@ export default function Footer() {
         <div className="border-t border-border pt-8 mt-8 text-center text-muted-foreground">
           <p>&copy; {currentYear} Dr. Ales Aliashkevich | miNEURO Brain and Spine Surgery. {t.footer.allRights}</p>
           <div className="mt-2 space-x-4">
-            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">{t.appointment?.confirmation?.privacyPolicy || "Privacy Policy"}</Link>
-            <Link to="/terms-conditions" className="text-muted-foreground hover:text-primary transition-colors">{t.appointment?.confirmation?.termsConditions || "Terms & Conditions"}</Link>
+            <Link to="/privacy-policy" className="text-muted-foreground hover:text-primary transition-colors">Privacy Policy</Link>
+            <Link to="/terms-conditions" className="text-muted-foreground hover:text-primary transition-colors">Terms & Conditions</Link>
           </div>
         </div>
       </div>

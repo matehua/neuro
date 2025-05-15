@@ -908,8 +908,7 @@ export const en = {
     phone: "Phone",
     email: "Email",
     receptionHours: "Reception Hours",
-    morningHours: "Morning: 9:00 AM - 12:00 PM",
-    afternoonHours: "Afternoon: 2:00 PM - 5:00 PM",
+    officeHours: "Monday - Friday: 8:30 AM - 5:30 PM",
     sendMessage: "Send Us a Message",
     fullName: "Full Name",
     phoneNumber: "Phone Number",
@@ -1121,9 +1120,11 @@ export const en = {
       mainOffice: {
         title: "Main Office - Surrey Hills",
         address: "miNEURO Consulting Suites\nSuite 4, Ground Floor, 619 Canterbury Road\nSURREY HILLS VIC 3127",
-        phone: "03 9008 4200",
-        fax: "03 9923 6688",
-        email: "info@mineuro.com.au",
+        phone: "Ph: 03 9008 4200",
+        fax: "Fax: 03 9923 6688",
+        email: "Email: info@mineuro.com.au",
+        argus: "Argus: argus@mineuro.com.au",
+        healthLink: "HealthLink: mineuros",
         viewDetails: "See Surrey Hills Location Details"
       },
       allLocations: "All Consulting Locations",
@@ -1692,7 +1693,7 @@ export const en = {
         phone: "(03) 8807 7100"
       },
       baysHospital: {
-        title: "The Bays Hospital",
+        title: "The Bays Hospital Mornington",
         description: "The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.",
         address: "Vale Street, Mornington VIC 3931",
         phone: "(03) 5975 2009"

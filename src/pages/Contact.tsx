@@ -114,7 +114,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.phone}</h3>
-                      <p className="text-muted-foreground">03 9008 4200</p>
+                      <p className="text-muted-foreground">Ph: 03 9008 4200</p>
                       <p className="text-muted-foreground mt-2">Urgent appointments available on request</p>
                     </div>
                   </div>
@@ -125,7 +125,7 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">Fax</h3>
-                      <p className="text-muted-foreground">03 9923 6688</p>
+                      <p className="text-muted-foreground">Fax: 03 9923 6688</p>
                     </div>
                   </div>
 
@@ -135,9 +135,9 @@ export default function Contact() {
                     </div>
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.email}</h3>
-                      <p className="text-muted-foreground">info@mineuro.com.au</p>
-                      <p className="text-muted-foreground">reception@mineuro.com.au</p>
-                      <p className="text-muted-foreground">referrals@mineuro.com.au</p>
+                      <p className="text-muted-foreground">Email: info@mineuro.com.au</p>
+                      <p className="text-muted-foreground">Argus: argus@mineuro.com.au</p>
+                      <p className="text-muted-foreground">HealthLink: mineuros</p>
                     </div>
                   </div>
 
@@ -148,8 +148,7 @@ export default function Contact() {
                     <div>
                       <h3 className="font-semibold mb-1">{t.contact.receptionHours}</h3>
                       <p className="text-muted-foreground">
-                        {t.contact.morningHours}<br />
-                        {t.contact.afternoonHours}<br />
+                        Monday - Friday: 8:30 AM - 5:30 PM<br />
                         Saturday - Sunday: Closed
                       </p>
                     </div>
@@ -476,9 +475,11 @@ export default function Contact() {
                 </p>
                 <p className="text-muted-foreground mb-4">
                   <strong>Address:</strong> Suite 4, Ground Floor, 619 Canterbury Road, SURREY HILLS VIC 3127<br />
-                  <strong>Phone:</strong> 03 9008 4200<br />
+                  <strong>Ph:</strong> 03 9008 4200<br />
                   <strong>Fax:</strong> 03 9923 6688<br />
-                  <strong>Email:</strong> info@mineuro.com.au
+                  <strong>Email:</strong> info@mineuro.com.au<br />
+                  <strong>Argus:</strong> argus@mineuro.com.au<br />
+                  <strong>HealthLink:</strong> mineuros
                 </p>
               </div>
             </div>

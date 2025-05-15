@@ -73,12 +73,12 @@
   * {
     @apply border-border;
   }
-  
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
   }
-  
+
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
   }
@@ -88,40 +88,40 @@
   .container {
     @apply px-4 md:px-6 lg:px-8 mx-auto;
   }
-  
+
   .btn-primary {
     @apply bg-primary text-primary-foreground rounded-full px-6 py-2.5 font-medium transition-all duration-300 hover:shadow-lg hover:shadow-primary/20 active:scale-[0.98];
   }
-  
+
   .section {
     @apply py-12 md:py-16 lg:py-24;
   }
-  
+
   .glass-card {
     @apply bg-white/70 dark:bg-black/30 backdrop-blur-lg border border-white/20 dark:border-white/10 rounded-xl shadow-lg;
   }
-  
+
   .wave-animation {
     animation: wave 12s linear infinite;
     animation-delay: -2s;
-    transform-origin: center bottom;
+    transform-origin: centre bottom;
   }
-  
+
   .page-transition-enter {
     opacity: 0;
     transform: translateY(10px);
   }
-  
+
   .page-transition-enter-active {
     opacity: 1;
     transform: translateY(0);
     transition: opacity 400ms, transform 400ms;
   }
-  
+
   .page-transition-exit {
     opacity: 1;
   }
-  
+
   .page-transition-exit-active {
     opacity: 0;
     transition: opacity 300ms;
