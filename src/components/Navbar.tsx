@@ -55,6 +55,7 @@ export default function Navbar() {
       submenu: [
         { name: t.nav.locationsSubmenu.mornington, path: "/locations/mornington" },
         { name: t.nav.locationsSubmenu.frankston, path: "/locations/frankston" },
+        { name: t.nav.locationsSubmenu.langwarrin || "Langwarrin", path: "/locations/langwarrin" },
         { name: t.nav.locationsSubmenu.mooneePonds, path: "/locations/moonee-ponds" },
         { name: t.nav.locationsSubmenu.sunbury, path: "/locations/sunbury" },
         { name: t.nav.locationsSubmenu.werribee, path: "/locations/werribee" },

@@ -58,6 +58,7 @@ const LocationDetail = lazyLoad(() => import('@/pages/locations/LocationDetail')
 const SurreyHillsLocation = lazyLoad(() => import('@/pages/locations/surrey-hills'));
 const MorningtonLocation = lazyLoad(() => import('@/pages/locations/mornington'));
 const FrankstonLocation = lazyLoad(() => import('@/pages/locations/frankston'));
+const LangwarrinLocation = lazyLoad(() => import('@/pages/locations/langwarrin'));
 const BundooraLocation = lazyLoad(() => import('@/pages/locations/bundoora'));
 const WerribeeLocation = lazyLoad(() => import('@/pages/locations/werribee'));
 const HeidelbergLocation = lazyLoad(() => import('@/pages/locations/heidelberg'));
@@ -119,6 +120,7 @@ export const baseRoutes: RouteConfig[] = [
   { path: "/locations/surrey-hills", element: <SurreyHillsLocation /> },
   { path: "/locations/mornington", element: <MorningtonLocation /> },
   { path: "/locations/frankston", element: <FrankstonLocation /> },
+  { path: "/locations/langwarrin", element: <LangwarrinLocation /> },
   { path: "/locations/bundoora", element: <BundooraLocation /> },
   { path: "/locations/werribee", element: <WerribeeLocation /> },
   { path: "/locations/heidelberg", element: <HeidelbergLocation /> },

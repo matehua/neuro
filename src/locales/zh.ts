@@ -192,7 +192,6 @@ export const zh = {
     appointments: "预约",
     gpResources: "全科医生资源",
     gpResourcesSubmenu: {
-      main: "全科医生资源",
       referralProtocols: "转诊和分诊协议",
       diagnostics: "神经外科诊断",
       careCoordination: "多学科护理",
@@ -203,6 +202,7 @@ export const zh = {
     locationsSubmenu: {
       mornington: "莫宁顿",
       frankston: "弗兰克斯顿",
+      langwarrin: "朗沃林",
       mooneePonds: "穆尼庞兹",
       sunbury: "桑伯里",
       werribee: "韦里比",

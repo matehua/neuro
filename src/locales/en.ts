@@ -19,7 +19,7 @@ export const en = {
         title: "Flexible Licence Terms",
         description: "We offer flexible licence terms, including sessional, short-term and long-term rental options, to accommodate your needs."
       },
-      customization: {
+      customisation: {
         title: "Customisation Options",
         description: "Whether you require additional medical equipment or specific room configurations, we offer customisation options to suit your requirements."
       },
@@ -202,6 +202,7 @@ export const en = {
     locationsSubmenu: {
       mornington: "Mornington",
       frankston: "Frankston",
+      langwarrin: "Langwarrin",
       mooneePonds: "Moonee Ponds",
       sunbury: "Sunbury",
       werribee: "Werribee",
@@ -294,7 +295,7 @@ export const en = {
         },
         patientRecovery: {
           title: "Image-Guided Applications",
-          description: "Successful treatment of brain or spinal tumors and other pathologies often requires maximum removal with minimal impact on the surrounding healthy tissues."
+          description: "Successful treatment of brain or spinal tumours and other pathologies often requires maximum removal with minimal impact on the surrounding healthy tissues."
         },
         bar: {
           title: "Robotic Spine Surgery",
@@ -369,7 +370,7 @@ export const en = {
         goalSetting: {
           title: "Goal Setting",
           description: "Set and achieve meaningful health objectives",
-          content: "Define personalized goals for pain reduction, increased mobility, or activity resumption, and track your progress toward achieving them.",
+          content: "Define personalised goals for pain reduction, increased mobility, or activity resumption, and track your progress toward achieving them.",
           button: "Set Goals"
         },
         healthcareIntegration: {

@@ -54,6 +54,15 @@ export default function Locations() {
       image: "/images/peninsula-private-hospital-entrance-consulting-ales-aliashkevich-neurosurgeon-spine.jpg"
     },
     {
+      id: "langwarrin",
+      name: "LANGWARRIN",
+      address: "Peninsula Consulting Suites, Suite 3, 35-37 Cranbourne-Frankston Road, LANGWARRIN VIC 3910",
+      phone: "(03) 9008 4200",
+      hours: "Tuesday & Thursday: 9:00 AM - 5:00 PM",
+      isPrimary: false,
+      image: "/images/langwarrin-consulting-peninsula-rheumatology-entrance-neurosurgery.jpg"
+    },
+    {
       id: "werribee",
       name: "WERRIBEE",
       address: "Consulting Rooms, 297 Princes Highway, WERRIBEE 3030",
@@ -125,7 +134,7 @@ export default function Locations() {
                 Consulting Locations | Dr Ales Aliashkevich - Neurosurgeon & Spine Surgeon
               </h1>
               <p className="text-muted-foreground">
-                Dr Ales Aliashkevich consults at multiple locations across Melbourne and Victoria, including Surrey Hills, Mornington, Bundoora, and more.
+                Dr Ales Aliashkevich consults at multiple locations across Melbourne and Victoria, including Surrey Hills, Mornington, Langwarrin, Frankston, Bundoora, and more.
               </p>
             </div>
           </div>
