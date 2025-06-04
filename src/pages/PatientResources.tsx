@@ -117,28 +117,32 @@ export default function PatientResources() {
   // Educational materials
   const educationalMaterials = [
     {
-      title: t.patientResources.brainTumors,
-      description: t.patientResources.brainTumorsDesc,
+      title: "Understanding Brain Tumours",
+      description: "A comprehensive guide to brain tumour types, symptoms, and treatment options.",
       icon: <FileDown className="h-6 w-6 text-primary" />,
-      link: "#"
+      link: "/pdfs/brain-tumours-guide.html",
+      downloadName: "Brain_Tumours_Guide.html"
     },
     {
-      title: t.patientResources.spineRecovery,
-      description: t.patientResources.spineRecoveryDesc,
+      title: "Spine Surgery Recovery Guide",
+      description: "What to expect during recovery from various types of spine surgery.",
       icon: <FileDown className="h-6 w-6 text-primary" />,
-      link: "#"
+      link: "/pdfs/spine-surgery-recovery-guide.html",
+      downloadName: "Spine_Surgery_Recovery_Guide.html"
     },
     {
-      title: t.patientResources.painManagement,
-      description: t.patientResources.painManagementDesc,
+      title: "Pain Management Strategies",
+      description: "Techniques and approaches for managing pain before and after neurosurgery.",
       icon: <FileDown className="h-6 w-6 text-primary" />,
-      link: "#"
+      link: "/pdfs/pain-management-strategies.html",
+      downloadName: "Pain_Management_Strategies.html"
     },
     {
-      title: t.patientResources.discReplacement,
-      description: t.patientResources.discReplacementDesc,
+      title: "Artificial Disc Replacement Guide",
+      description: "Information about cervical and lumbar disc replacement procedures.",
       icon: <FileDown className="h-6 w-6 text-primary" />,
-      link: "#"
+      link: "/pdfs/artificial-disc-replacement-guide.html",
+      downloadName: "Artificial_Disc_Replacement_Guide.html"
     }
   ];
 
@@ -201,7 +205,13 @@ export default function PatientResources() {
                   </div>
                   <p className="text-muted-foreground mb-4">{material.description}</p>
                   <Button asChild variant="ghost" className="text-primary p-0 h-auto">
-                    <Link to={material.link}>{t.patientResources.downloadPDF}</Link>
+                    <a
+                      href={material.link}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      View Guide
+                    </a>
                   </Button>
                 </div>
               ))}
