@@ -75,14 +75,15 @@ export default function Index() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in" style={{ animationDelay: '100ms' }}>
+              <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in hover:shadow-lg transition-shadow duration-300" style={{ animationDelay: '100ms' }}>
                 <div className="flex justify-center mb-4">
-                  <SafeImage
-                    src="/images/brain-abstract-icon.png"
-                    alt="Icon representing minimally invasive neurosurgical procedures"
-                    className="h-16 w-16 object-contain"
-                    fallbackSrc="/images/medical-consulting.jpg"
-                  />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                    <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L13.09 8.26L20 9L13.09 9.74L12 16L10.91 9.74L4 9L10.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M8 21L9.5 16.5L14 18L9.5 19.5L8 21Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 3L17 6L20 7L17 8L16 11L15 8L12 7L15 6L16 3Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.minimallyInvasive.title}</h3>
                 <p className="text-muted-foreground text-center">
@@ -95,14 +96,17 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in" style={{ animationDelay: '200ms' }}>
+              <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in hover:shadow-lg transition-shadow duration-300" style={{ animationDelay: '200ms' }}>
                 <div className="flex justify-center mb-4">
-                  <SafeImage
-                    src="/images/brain-png-18-transparent-1024x820.png"
-                    alt="Icon representing advanced radiological imaging for neurosurgical navigation"
-                    className="h-16 w-16 object-contain"
-                    fallbackSrc="/images/medical-consulting.jpg"
-                  />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                    <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2"/>
+                      <circle cx="12" cy="12" r="6" stroke="currentColor" strokeWidth="2"/>
+                      <circle cx="12" cy="12" r="2" fill="currentColor"/>
+                      <path d="M12 2v4M12 18v4M22 12h-4M6 12H2" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                      <path d="M19.07 4.93l-2.83 2.83M7.76 16.24l-2.83 2.83M19.07 19.07l-2.83-2.83M7.76 7.76L4.93 4.93" stroke="currentColor" strokeWidth="2" strokeLinecap="round"/>
+                    </svg>
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.advancedImaging.title}</h3>
                 <p className="text-muted-foreground text-center">
@@ -115,14 +119,16 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in" style={{ animationDelay: '300ms' }}>
+              <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in hover:shadow-lg transition-shadow duration-300" style={{ animationDelay: '300ms' }}>
                 <div className="flex justify-center mb-4">
-                  <SafeImage
-                    src="/images/brain-artificial-intelligence-neurosurgeon-spine-surgeon-neurosurgery-advanced-technology-maximum-precision-robotic.png"
-                    alt="Advantages over Traditional Open Surgery"
-                    className="h-16 w-16 object-contain"
-                    fallbackSrc="/images/medical-consulting.jpg"
-                  />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                    <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M12 2L15.09 8.26L22 9L15.09 9.74L12 16L8.91 9.74L2 9L8.91 8.26L12 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M8 12v7a2 2 0 002 2h4a2 2 0 002-2v-7" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M16 12h2a2 2 0 012 2v3a2 2 0 01-2 2h-2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M8 12H6a2 2 0 00-2 2v3a2 2 0 002 2h2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                    </svg>
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.roboticSurgery.title}</h3>
                 <p className="text-muted-foreground text-center">
@@ -135,14 +141,22 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in" style={{ animationDelay: '400ms' }}>
+              <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in hover:shadow-lg transition-shadow duration-300" style={{ animationDelay: '400ms' }}>
                 <div className="flex justify-center mb-4">
-                  <SafeImage
-                    src="/images/brain-tumour-image-guided-surgery-minimally-invasive-advanced-neurosurgery-aliashkevich-mineuro.jpg"
-                    alt="Image showing image-guided technology applications in neurosurgery"
-                    className="h-16 w-16 object-contain"
-                    fallbackSrc="/images/medical-consulting.jpg"
-                  />
+                  <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary/20 to-primary/10 flex items-center justify-center">
+                    <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M9 12l2 2 4-4" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                      <path d="M21 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M3 12c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M12 21c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M12 3c.552 0 1-.448 1-1s-.448-1-1-1-1 .448-1 1 .448 1 1 1z" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M18.364 18.364c.39.39 1.024.39 1.414 0s.39-1.024 0-1.414-.024-.39-1.414 0-.39 1.024 0 1.414z" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M4.222 4.222c.39.39 1.024.39 1.414 0s.39-1.024 0-1.414-1.024-.39-1.414 0-.39 1.024 0 1.414z" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M18.364 5.636c.39-.39.39-1.024 0-1.414s-1.024-.39-1.414 0-.39 1.024 0 1.414 1.024.39 1.414 0z" stroke="currentColor" strokeWidth="2"/>
+                      <path d="M4.222 19.778c.39-.39.39-1.024 0-1.414s-1.024-.39-1.414 0-.39 1.024 0 1.414 1.024.39 1.414 0z" stroke="currentColor" strokeWidth="2"/>
+                      <circle cx="12" cy="12" r="3" stroke="currentColor" strokeWidth="2"/>
+                    </svg>
+                  </div>
                 </div>
                 <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.patientRecovery.title}</h3>
                 <p className="text-muted-foreground text-center">
