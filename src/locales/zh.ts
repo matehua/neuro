@@ -1005,6 +1005,18 @@ export const zh = {
       }
     }
   },
+  patientResources: {
+    title: "患者资源",
+    subtitle: "为患者提供治疗前、治疗中和治疗后的有用信息和资源。",
+    submenu: {
+      spineHealthApp: "脊柱健康应用",
+      conditionInfo: "疾病信息",
+      exerciseLibrary: "运动库",
+      assessmentTools: "评估工具",
+      patientDashboard: "患者仪表板",
+      comprehensiveSolution: "个人脊柱健康计划",
+      faq: "常见问题"
+    },
     individualSpineHealthProgram: {
       title: "个人脊柱健康计划",
       subtitle: "通过评估、教育和进度跟踪，开启您个性化的脊柱健康之旅。",
