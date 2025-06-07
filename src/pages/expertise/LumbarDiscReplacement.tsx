@@ -4,9 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SafeImage from "@/components/SafeImage";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function LumbarDiscReplacement() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -155,7 +158,7 @@ export default function LumbarDiscReplacement() {
 
                 <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
                   <SafeImage
-                    src="/images/lumbar-disc-implants-examples-arthroplasty-disc-replacement-lumbar-spine-neurosurgery.jpg"
+                    src="/images/lumbar-disc-implants-examples-arthroplasty-replacement-cervical-lumbar-spine-advanced-technology-robotic-spine.jpg"
                     alt="Various lumbar disc implant models used in disc replacement surgery"
                     className="w-full h-full object-cover"
                     fallbackSrc="/images/medical-consulting.jpg"
@@ -201,7 +204,7 @@ export default function LumbarDiscReplacement() {
 
                 <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
                   <SafeImage
-                    src="/images/recovery-arthroplasty-disc-replacement-lumbar-advanced-technology-maximum-precision-robotic-spine.jpg"
+                    src="/images/recovery-arthroplasty-disc-replacement-cervical-lumbar-advanced-technology-maximum-precision-robotic-spine.jpg"
                     alt="Patient recovery after lumbar disc replacement surgery"
                     className="w-full h-full object-cover"
                     fallbackSrc="/images/medical-consulting.jpg"
@@ -241,7 +244,7 @@ export default function LumbarDiscReplacement() {
 
                 <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
                   <SafeImage
-                    src="/images/fusion-compare-arthroplasty-disc-replacement-lumbar-advanced-technology-maximum-precision-robotic-spine.jpg"
+                    src="/images/ALIF-compare-arthroplasty-disc-replacement-cervical-lumbar-advanced-technology-maximum-precision-robotic-spine.jpg"
                     alt="Comparison between lumbar disc replacement and fusion procedure"
                     className="w-full h-full object-cover"
                     fallbackSrc="/images/medical-consulting.jpg"
@@ -271,7 +274,7 @@ export default function LumbarDiscReplacement() {
 
                 <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
                   <SafeImage
-                    src="/images/lumbar-disc-replacement-research-outcomes-spine-surgery-neurosurgery.jpg"
+                    src="/images/robotic-spine-surgery-radiology-successful-neurosurgery-spine-surgery-advanced-technology-maximum-precision.jpg"
                     alt="Research outcomes for lumbar disc replacement showing long-term benefits"
                     className="w-full h-full object-cover"
                     fallbackSrc="/images/medical-consulting.jpg"
