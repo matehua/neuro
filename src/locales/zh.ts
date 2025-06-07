@@ -910,24 +910,6 @@ export const zh = {
     email: "电子邮件",
     phone: "电话"
   },
-  expertiseCards: {
-    brainConditions: {
-      title: "脑部疾病",
-      description: "脑肿瘤（胶质瘤、脑膜瘤、前庭神经鞘瘤、垂体腺瘤等）、脑积水、脑动脉瘤、动静脉畸形、海绵状血管瘤、癫痫、三叉神经痛、Chiari畸形。"
-    },
-    spinalProblems: {
-      title: "脊柱问题",
-      description: "颈部和背部疼痛、坐骨神经痛、臂丛神经痛、脊柱狭窄、椎间盘突出、脊椎滑脱、脊椎炎、硬膜外脓肿、不稳定、脊髓病变、脊髓压迫、脊柱肿瘤、脊柱血管畸形。"
-    },
-    nerveProblems: {
-      title: "神经问题",
-      description: "神经肿瘤（神经鞘瘤、神经纤维瘤、神经瘤）、神经疼痛、神经损伤、神经压迫（腕管综合征、肘管综合征）、神经和肌肉活检。"
-    },
-    medicolegalReports: {
-      title: "医疗法律报告",
-      description: "根据AMA永久性损伤指南评估损伤程度、工作能力、工伤赔偿、交通事故伤害、责任调查。"
-    }
-  },
   technologiesPage: {
     title: "我们的先进技术",
     subtitle: "探索我们的微创神经外科技术和设备。",
@@ -1023,18 +1005,6 @@ export const zh = {
       }
     }
   },
-  patientResources: {
-    title: "患者资源",
-    subtitle: "为患者提供治疗前、治疗中和治疗后的有用信息和资源。",
-    submenu: {
-      spineHealthApp: "脊柱健康应用",
-      conditionInfo: "疾病信息",
-      exerciseLibrary: "运动库",
-      assessmentTools: "评估工具",
-      patientDashboard: "患者仪表板",
-      comprehensiveSolution: "个人脊柱健康计划",
-      faq: "常见问题"
-    },
     individualSpineHealthProgram: {
       title: "个人脊柱健康计划",
       subtitle: "通过评估、教育和进度跟踪，开启您个性化的脊柱健康之旅。",
@@ -1830,43 +1800,6 @@ export const zh = {
       }
     }
   },
-  nav: {
-    home: "首页",
-    expertise: "专业领域",
-    expertiseSubmenu: {
-      cervicalDisc: "颈椎间盘置换",
-      lumbarDisc: "腰椎间盘置换",
-      imageGuided: "影像引导手术",
-      roboticSpine: "机器人辅助脊柱手术"
-    },
-    appointments: "预约",
-    gpResources: "全科医生资源",
-    gpResourcesSubmenu: {
-      main: "全科医生资源",
-      referralProtocols: "转诊和分诊协议",
-      diagnostics: "神经外科诊断",
-      careCoordination: "多学科护理",
-      emergencies: "紧急情况和危险信号"
-    },
-    medicolegal: "医疗法律咨询",
-    locations: "诊所位置",
-    locationsSubmenu: {
-      mornington: "莫宁顿",
-      frankston: "弗兰克斯顿",
-      mooneePonds: "穆尼庞兹",
-      sunbury: "桑伯里",
-      werribee: "韦里比",
-      bundoora: "邦多拉",
-      dandenong: "丹德农",
-      heidelberg: "海德堡",
-      wantirna: "万蒂尔纳",
-      surreyHills: "萨里山"
-    },
-    faq: "常见问题",
-    contact: "联系我们",
-    consultingRooms: "诊室租赁",
-    bookNow: "立即预约"
-  },
   gallery: {
     title: "医疗图库",
     subtitle: "通过详细图像探索我们的设施和手术。",
@@ -2063,97 +1996,5 @@ export const zh = {
       }
     },
     contactUs: "联系我们"
-  },
-  gpResources: {
-    title: "全科医生资源",
-    subtitle: "为全科医生提供支持最佳患者护理和简化转诊的资源。",
-    overview: {
-      title: "全科医生资源",
-      description: "欢迎访问我们专为全科医生设计的资源部分。我们开发了这些资源，以支持您为神经外科疾病患者提供最佳护理，并促进向我们诊所的高效转诊。我们的目标是加强初级保健和专科神经外科服务之间的协作。"
-    },
-    referralProtocols: {
-      title: "全科医生转诊和分诊协议",
-      subtitle: "高效转诊至神经外科服务的指南",
-      description: "这些协议旨在帮助您确定何时将患者转诊至神经外科服务，转诊中应包含哪些信息，以及如何识别需要紧急关注的病例。",
-      urgentReferrals: {
-        title: "紧急转诊标准",
-        description: "需要立即或紧急神经外科咨询的情况："
-      },
-      standardReferrals: {
-        title: "标准转诊指南",
-        description: "神经外科转诊中建议包含的信息："
-      },
-      referralProcess: {
-        title: "转诊流程",
-        description: "如何将患者转诊至我们的神经外科诊所："
-      },
-      triageCategories: {
-        title: "分诊类别",
-        description: "我们如何根据临床表现优先处理转诊："
-      }
-    },
-    diagnostics: {
-      title: "神经外科诊断",
-      subtitle: "适当影像和诊断测试的指导",
-      description: "本部分提供有关各种神经外科疾病最适当诊断测试的信息，帮助确保患者在专科咨询前接受正确的检查。",
-      imagingGuidelines: {
-        title: "影像指南",
-        description: "常见神经外科疾病的推荐影像模式："
-      },
-      neurologicalAssessment: {
-        title: "神经学评估",
-        description: "常见表现的神经学检查关键要素："
-      },
-      specializedTests: {
-        title: "專業診斷測試",
-        description: "何时考虑额外的诊断检查："
-      },
-      interpretingResults: {
-        title: "结果解读",
-        description: "神经外科影像中常见发现的解读指导："
-      }
-    },
-    careCoordination: {
-      title: "多学科护理协调",
-      subtitle: "神经外科患者管理的协作方法",
-      description: "神经外科疾病的有效管理通常需要多学科方法。本部分概述了我们如何与其他医疗提供者合作，以及全科医生如何参与协调护理。",
-      teamApproach: {
-        title: "团队护理",
-        description: "我们对神经外科疾病的多学科方法："
-      },
-      preoperativeManagement: {
-        title: "术前管理",
-        description: "神经外科手术前患者准备的建议："
-      },
-      postoperativeFollowUp: {
-        title: "术后随访",
-        description: "神经外科手术后患者监测指南："
-      },
-      sharedCareModels: {
-        title: "共享护理模式",
-        description: "专科医生和初级保健之间协作管理的框架："
-      }
-    },
-    emergencies: {
-      title: "紧急情况和危险信号",
-      subtitle: "识别和管理神经外科紧急情况",
-      description: "本部分提供有关识别需要立即关注的神经外科紧急情况和危险信号症状的指导，以及专科干预前的初步管理步骤。",
-      redFlags: {
-        title: "神经外科危险信号",
-        description: "需要紧急评估的警告信号："
-      },
-      initialManagement: {
-        title: "初步管理",
-        description: "管理神经外科紧急情况的第一步："
-      },
-      whenToRefer: {
-        title: "何时转诊至急诊科",
-        description: "急诊科转诊与直接专科联系的标准："
-      },
-      followUpCare: {
-        title: "后续护理",
-        description: "紧急干预后持续管理的建议："
-      }
-    }
   }
 };
