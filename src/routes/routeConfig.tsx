@@ -51,6 +51,7 @@ const PiriformisSyndrome = lazyLoad(() => import('@/pages/patient-resources/cond
 const ThoracicOutletSyndrome = lazyLoad(() => import('@/pages/patient-resources/conditions/ThoracicOutletSyndrome'));
 const OccipitalNeuralgia = lazyLoad(() => import('@/pages/patient-resources/conditions/OccipitalNeuralgia'));
 const Spondylosis = lazyLoad(() => import('@/pages/patient-resources/conditions/Spondylosis'));
+const ParsDefects = lazyLoad(() => import('@/pages/patient-resources/conditions/ParsDefects'));
 const IndividualSpineHealthProgramme = lazyLoad(() => import('@/pages/patient-resources/IndividualSpineHealthProgramme'));
 const SpineAndBrainHealth = lazyLoad(() => import('@/pages/patient-resources/SpineAndBrainHealth'));
 const CervicalSpineInjury = lazyLoad(() => import('@/pages/patient-resources/CervicalSpineInjury'));
@@ -118,6 +119,7 @@ export const baseRoutes: RouteConfig[] = [
   { path: "/patient-resources/conditions/thoracic-outlet-syndrome", element: <ThoracicOutletSyndrome /> },
   { path: "/patient-resources/conditions/occipital-neuralgia", element: <OccipitalNeuralgia /> },
   { path: "/patient-resources/conditions/spondylosis", element: <Spondylosis /> },
+  { path: "/patient-resources/conditions/pars-defects", element: <ParsDefects /> },
   { path: "/patient-resources/exercise-library", element: <ExerciseLibrary /> },
   { path: "/patient-resources/assessment-tools", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
   { path: "/patient-resources/patient-dashboard", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },

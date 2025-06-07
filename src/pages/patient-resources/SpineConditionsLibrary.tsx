@@ -647,6 +647,36 @@ export default function SpineConditionsLibrary() {
                       </Button>
                     </CardFooter>
                   </Card>
+
+                  <Card className="bg-card shadow-md">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src="/images/spine-conditions/spondylolisthesis.jpg"
+                        alt="Pars Defects (Spondylolysis)"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle>Pars Defects (Spondylolysis)</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        Comprehensive guide to pars defects (spondylolysis) - stress fractures in the pars interarticularis affecting young athletes. Learn about anatomy, biomechanics, causes, symptoms, diagnosis, and treatment options from conservative management to advanced surgical repair techniques.
+                      </p>
+                      <h4 className="font-semibold mb-2">Key Characteristics:</h4>
+                      <ul className="list-disc pl-5 text-muted-foreground mb-4">
+                        <li>Stress fractures in pars interarticularis</li>
+                        <li>Common in young athletes (10-18 years)</li>
+                        <li>Extension-related back pain patterns</li>
+                        <li>Excellent healing potential with early treatment</li>
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/patient-resources/conditions/pars-defects">Complete Guide</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
                 </div>
               </TabsContent>
             </Tabs>
