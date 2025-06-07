@@ -9,9 +9,12 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CTASection from "@/components/CTASection";
 import { generatePageSEO, generateMedicalPracticeStructuredData, PRACTICE_INFO } from "@/lib/seo";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function Index() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -30,30 +33,65 @@ export default function Index() {
         <HeroSection />
 
         {/* Welcome Section */}
-        <section id="welcome" className="section">
-          <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <section id="welcome" className={deviceInfo.isMobile ? "mobile-section" : "section"}>
+          <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+            <div className={cn(
+              "items-center",
+              deviceInfo.isMobile
+                ? "grid grid-cols-1 gap-mobile-lg"
+                : "grid grid-cols-1 lg:grid-cols-2 gap-12"
+            )}>
               <div className="animate-fade-in [animation-delay:100ms]">
-                <span className="text-sm text-primary font-medium uppercase tracking-wider">
+                <span className={cn(
+                  "text-primary font-medium uppercase tracking-wider",
+                  deviceInfo.isMobile ? "mobile-text" : "text-sm"
+                )}>
                   {t.home.welcome.subtitle}
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-6">
+                <h2 className={cn(
+                  "font-bold mt-2 mb-mobile-lg",
+                  deviceInfo.isMobile
+                    ? "mobile-3xl"
+                    : "text-3xl md:text-4xl mb-6"
+                )}>
                   {t.home.welcome.title}
                 </h2>
-                <p className="text-muted-foreground mb-6">
+                <p className={cn(
+                  "text-muted-foreground mb-mobile-lg",
+                  deviceInfo.isMobile ? "mobile-text" : "mb-6"
+                )}>
                   {t.home.welcome.description1}
                 </p>
-                <p className="text-muted-foreground mb-8">
-                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Ales Aliashkevich</a> {t.home.welcome.description2}
+                <p className={cn(
+                  "text-muted-foreground mb-mobile-lg",
+                  deviceInfo.isMobile ? "mobile-text" : "mb-8"
+                )}>
+                  <a
+                    href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
+                    className={cn(
+                      "text-primary touch-feedback",
+                      deviceInfo.isMobile ? "" : "hover:underline"
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Dr Ales Aliashkevich
+                  </a> {t.home.welcome.description2}
                 </p>
                 <Button asChild className="btn-primary">
                   <Link to="/expertise">
-                    {t.home.welcome.learnMore} <ArrowRight className="ml-2 h-4 w-4" />
+                    {t.home.welcome.learnMore} <ArrowRight className={cn(
+                      "ml-2",
+                      deviceInfo.isMobile ? "h-5 w-5" : "h-4 w-4"
+                    )} />
                   </Link>
                 </Button>
               </div>
 
-              <div className="relative rounded-lg overflow-hidden shadow-xl">
+              <div className={cn(
+                "relative rounded-lg overflow-hidden shadow-xl",
+                deviceInfo.isMobile && "order-first"
+              )}>
                 <SafeImage
                   src="/images/Ales-Aliashkevich-operating-theatre-spine-brain-image-guided-neurosurgery.jpg"
                   alt="Dr Ales Aliashkevich - Neurosurgeon and Spine Surgeon"
@@ -66,21 +104,42 @@ export default function Index() {
         </section>
 
         {/* Features Section */}
-        <section className="section bg-card">
-          <div className="container">
-            <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
-              <span className="text-sm text-primary font-medium uppercase tracking-wider">
+        <section className={cn(
+          "bg-card",
+          deviceInfo.isMobile ? "mobile-section" : "section"
+        )}>
+          <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+            <div className={cn(
+              "text-center mx-auto animate-fade-in mb-mobile-xl",
+              deviceInfo.isMobile ? "max-w-full" : "max-w-3xl mb-12"
+            )}>
+              <span className={cn(
+                "text-primary font-medium uppercase tracking-wider",
+                deviceInfo.isMobile ? "mobile-text" : "text-sm"
+              )}>
                 {t.home.advancedTechnologies.subtitle}
               </span>
-              <h2 className="text-3xl md:text-4xl font-bold mt-2 mb-4">
+              <h2 className={cn(
+                "font-bold mt-2 mb-mobile-md",
+                deviceInfo.isMobile
+                  ? "mobile-3xl"
+                  : "text-3xl md:text-4xl mb-4"
+              )}>
                 {t.home.advancedTechnologies.title}
               </h2>
-              <p className="text-muted-foreground">
+              <p className={cn(
+                "text-muted-foreground",
+                deviceInfo.isMobile ? "mobile-text" : ""
+              )}>
                 {t.home.advancedTechnologies.description}
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className={cn(
+              deviceInfo.isMobile
+                ? "grid grid-cols-1 gap-mobile-lg"
+                : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            )}>
               <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ animationDelay: '100ms' }}>
                 <div className="flex justify-center mb-4">
                   <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-blue-500/20 via-primary/15 to-purple-500/20 flex items-center justify-center shadow-lg backdrop-blur-sm border border-primary/10">
