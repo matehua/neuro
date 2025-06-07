@@ -6,9 +6,12 @@ import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import OptimizedImage from "@/components/OptimizedImage";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function GPResources() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
     window.scrollTo(0, 0);

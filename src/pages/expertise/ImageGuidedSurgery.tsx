@@ -4,9 +4,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import SafeImage from "@/components/SafeImage";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function ImageGuidedSurgery() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
     // Scroll to top when component mounts
