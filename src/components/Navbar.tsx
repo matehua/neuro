@@ -8,12 +8,43 @@ import SafeImage from "@/components/SafeImage";
 import SkipLink from "@/components/SkipLink";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDeviceDetection, useSwipeGesture } from "@/hooks/use-mobile";
 
 export default function Navbar() {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
+  const deviceInfo = useDeviceDetection();
+
+  // Enhanced mobile menu close function
+  const closeMobileMenu = () => {
+    setMobileMenuOpen(false);
+    setActiveSubmenu(null);
+    // Remove scroll lock from body
+    document.body.classList.remove('mobile-no-scroll');
+  };
+
+  // Enhanced mobile menu open function
+  const openMobileMenu = () => {
+    setMobileMenuOpen(true);
+    // Prevent body scroll when mobile menu is open
+    document.body.classList.add('mobile-no-scroll');
+  };
+
+  // Swipe gesture for closing mobile menu
+  const swipeHandlers = useSwipeGesture(
+    () => {
+      // Swipe left to close menu
+      if (mobileMenuOpen) {
+        closeMobileMenu();
+      }
+    },
+    undefined, // No right swipe action
+    undefined, // No up swipe action
+    undefined, // No down swipe action
+    100 // Threshold for swipe detection
+  );
 
   const navLinks = [
     { name: t.nav.home, path: "/" },
@@ -215,8 +246,8 @@ export default function Navbar() {
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="rounded-full"
+            onClick={() => mobileMenuOpen ? closeMobileMenu() : openMobileMenu()}
+            className="mobile-button rounded-full touch-feedback"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
@@ -227,22 +258,29 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={cn("fixed inset-0 z-40 bg-background/80 backdrop-blur-sm md:hidden transition-opacity duration-300",
+        className={cn("fixed inset-0 z-40 bg-background/80 mobile-backdrop md:hidden transition-opacity duration-300",
         mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation menu"
         id="mobile-menu"
+        onClick={(e) => {
+          // Close menu when clicking on backdrop
+          if (e.target === e.currentTarget) {
+            closeMobileMenu();
+          }
+        }}
       >
         <div
-          className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-card shadow-xl p-6 transition-transform duration-300 ease-in-out",
+          className={cn("fixed inset-y-0 right-0 w-4/5 max-w-sm bg-card shadow-xl mobile-safe-area transition-transform duration-300 ease-in-out",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full")}
+          {...swipeHandlers}
         >
-          <div className="flex flex-col h-full justify-between">
+          <div className="flex flex-col h-full justify-between p-mobile-lg">
             <div>
-              <div className="flex justify-between items-center mb-8">
-                <div className="flex items-center gap-4">
-                  <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
+              <div className="flex justify-between items-center mb-mobile-xl">
+                <div className="flex items-center gap-mobile-md">
+                  <Link to="/" onClick={closeMobileMenu} className="flex items-center touch-feedback">
                     <SafeImage
                       src="/logo/logo.png"
                       alt="miNEURO Logo"
@@ -255,25 +293,25 @@ export default function Navbar() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="rounded-full ml-2"
+                  onClick={closeMobileMenu}
+                  className="mobile-button rounded-full touch-feedback"
                   aria-label="Close menu"
                 >
                   <X className="h-6 w-6" aria-hidden="true" />
                 </Button>
               </div>
               <nav aria-label="Mobile navigation">
-                <ul className="space-y-6" role="menu">
+                <ul className="space-y-mobile-lg" role="menu">
                   {navLinks.map(link => (
                     <li key={link.name} role="none">
                       <Link
                         to={link.path}
-                        className="text-lg font-medium transition-colors hover:text-primary block"
+                        className="mobile-text font-medium transition-colors hover:text-primary block mobile-button touch-feedback py-mobile-md"
                         onClick={(e) => {
                           // Check if the click was on the dropdown arrow
                           const target = e.currentTarget as HTMLElement;
                           const rect = target.getBoundingClientRect();
-                          const isClickNearRightEdge = (e.clientX > rect.right - 40);
+                          const isClickNearRightEdge = (e.clientX > rect.right - 44); // Larger touch target
 
                           if (link.submenu && isClickNearRightEdge) {
                             // If clicking on the dropdown arrow, toggle submenu
@@ -281,7 +319,7 @@ export default function Navbar() {
                             setActiveSubmenu(activeSubmenu === link.name ? null : link.name);
                           } else {
                             // Otherwise navigate to the page
-                            setMobileMenuOpen(false);
+                            closeMobileMenu();
                           }
                         }}
                         aria-expanded={link.submenu ? activeSubmenu === link.name : undefined}
@@ -289,13 +327,22 @@ export default function Navbar() {
                         role="menuitem"
                       >
                         {link.name}
-                        {link.submenu && <span className="ml-1 inline-block float-right">▾</span>}
+                        {link.submenu && (
+                          <span className="ml-1 inline-block float-right text-xl leading-none touch-target">
+                            {activeSubmenu === link.name ? '▴' : '▾'}
+                          </span>
+                        )}
                       </Link>
 
                       {/* Mobile submenu */}
                       {link.submenu && (
                         <div
-                          className={`pl-6 mt-2 space-y-2 ${activeSubmenu === link.name ? 'block' : 'hidden'}`}
+                          className={cn(
+                            "pl-mobile-lg mt-mobile-sm space-y-mobile-sm transition-all duration-200 overflow-hidden",
+                            activeSubmenu === link.name
+                              ? 'max-h-96 opacity-100'
+                              : 'max-h-0 opacity-0'
+                          )}
                           role="menu"
                           aria-label={`${link.name} submenu`}
                         >
@@ -303,8 +350,8 @@ export default function Navbar() {
                             <Link
                               key={subItem.name}
                               to={subItem.path}
-                              className="block text-sm text-muted-foreground hover:text-primary"
-                              onClick={() => setMobileMenuOpen(false)}
+                              className="block mobile-text text-muted-foreground hover:text-primary mobile-button touch-feedback py-mobile-sm"
+                              onClick={closeMobileMenu}
                               role="menuitem"
                             >
                               {subItem.name}
@@ -318,8 +365,8 @@ export default function Navbar() {
               </nav>
             </div>
 
-            <Button asChild className="w-full btn-primary mt-6">
-              <Link to="/appointments" onClick={() => setMobileMenuOpen(false)}>
+            <Button asChild className="w-full btn-primary mobile-button touch-feedback mt-mobile-xl">
+              <Link to="/appointments" onClick={closeMobileMenu}>
                 {t.nav.bookNow}
               </Link>
             </Button>

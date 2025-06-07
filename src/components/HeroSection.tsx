@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 /**
  * HeroSection component for the homepage with parallax scrolling effect
@@ -11,6 +13,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 export default function HeroSection() {
   const { t } = useLanguage();
   const [scrollY, setScrollY] = useState(0);
+  const deviceInfo = useDeviceDetection();
 
   // Generate unique IDs for accessibility
   const headingId = 'hero-heading';
@@ -25,13 +28,16 @@ export default function HeroSection() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Calculate parallax effect
-  const backgroundY = scrollY * 0.5;
-  const contentY = scrollY * 0.2;
+  // Calculate parallax effect - reduced on mobile for better performance
+  const backgroundY = deviceInfo.isMobile ? scrollY * 0.2 : scrollY * 0.5;
+  const contentY = deviceInfo.isMobile ? scrollY * 0.1 : scrollY * 0.2;
 
   return (
     <section
-      className="relative h-screen overflow-hidden"
+      className={cn(
+        "relative overflow-hidden mobile-safe-area",
+        deviceInfo.isMobile ? "h-screen min-h-[600px]" : "h-screen"
+      )}
       id={sectionId}
       aria-labelledby={headingId}
     >
@@ -40,8 +46,10 @@ export default function HeroSection() {
         className="absolute inset-0 bg-cover bg-center"
         style={{
           backgroundImage: "url('/images/hero-neurosurgeon-section-weightlifting-body-spine art.jpg')",
-          transform: `translateY(${backgroundY}px)`,
-          backgroundPosition: `center ${50 + scrollY * 0.05}%`
+          transform: deviceInfo.isMobile ? 'none' : `translateY(${backgroundY}px)`,
+          backgroundPosition: deviceInfo.isMobile
+            ? 'center center'
+            : `center ${50 + scrollY * 0.05}%`
         }}
         role="img"
         aria-label="Dr. Ales Aliashkevich - Neurosurgeon specializing in spine health and body strength rehabilitation"
@@ -55,24 +63,57 @@ export default function HeroSection() {
 
       {/* Content */}
       <div
-        className="relative h-full flex flex-col justify-center items-center text-center px-4"
-        style={{ transform: `translateY(${contentY}px)` }}
+        className={cn(
+          "relative h-full flex flex-col justify-center items-center text-center",
+          deviceInfo.isMobile ? "px-mobile-lg" : "px-4"
+        )}
+        style={{
+          transform: deviceInfo.isMobile ? 'none' : `translateY(${contentY}px)`
+        }}
       >
-        <div className="max-w-3xl animate-fade-in">
-          <span className="inline-block text-white/90 text-lg mb-4 tracking-wide border-b border-white/30 pb-2">
+        <div className={cn(
+          "max-w-3xl",
+          deviceInfo.isMobile ? "mobile-fade-in" : "animate-fade-in"
+        )}>
+          <span className={cn(
+            "inline-block text-white/90 tracking-wide border-b border-white/30 pb-2 mb-mobile-md",
+            deviceInfo.isMobile ? "mobile-text" : "text-lg mb-4"
+          )}>
             {t.hero.subtitle}
           </span>
           <h1
             id={headingId}
-            className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6"
+            className={cn(
+              "font-bold text-white mb-mobile-lg",
+              deviceInfo.isMobile
+                ? "mobile-4xl leading-tight"
+                : "text-4xl md:text-5xl lg:text-6xl mb-6"
+            )}
           >
             Dr. Ales Aliashkevich
           </h1>
-          <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+          <p className={cn(
+            "text-white/90 max-w-2xl mx-auto mb-mobile-xl",
+            deviceInfo.isMobile ? "mobile-text" : "text-lg mb-8"
+          )}>
             {t.hero.description}
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Button asChild size="lg" className="min-w-[200px] rounded-full bg-primary text-white transform transition-all duration-300 hover:translate-y-[-2px]">
+          <div className={cn(
+            "flex items-center justify-center",
+            deviceInfo.isMobile
+              ? "flex-col gap-mobile-md"
+              : "flex-col sm:flex-row gap-4"
+          )}>
+            <Button
+              asChild
+              size={deviceInfo.isMobile ? "default" : "lg"}
+              className={cn(
+                "rounded-full bg-primary text-white mobile-button touch-feedback",
+                deviceInfo.isMobile
+                  ? "w-full min-h-[48px]"
+                  : "min-w-[200px] transform transition-all duration-300 hover:translate-y-[-2px]"
+              )}
+            >
               <Link
                 to="/appointments"
                 aria-label={t.hero.bookConsultation}
@@ -80,7 +121,17 @@ export default function HeroSection() {
                 {t.hero.bookConsultation}
               </Link>
             </Button>
-            <Button asChild variant="outline" size="lg" className="min-w-[200px] rounded-full bg-transparent text-white border-white transform transition-all duration-300 hover:translate-y-[-2px] hover:bg-white/10">
+            <Button
+              asChild
+              variant="outline"
+              size={deviceInfo.isMobile ? "default" : "lg"}
+              className={cn(
+                "rounded-full bg-transparent text-white border-white mobile-button touch-feedback",
+                deviceInfo.isMobile
+                  ? "w-full min-h-[48px] hover:bg-white/20"
+                  : "min-w-[200px] transform transition-all duration-300 hover:translate-y-[-2px] hover:bg-white/10"
+              )}
+            >
               <Link
                 to="/expertise"
                 aria-label={t.hero.exploreTreatments}
@@ -93,14 +144,27 @@ export default function HeroSection() {
       </div>
 
       {/* Scroll down indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-white animate-bounce">
+      <div className={cn(
+        "absolute left-1/2 transform -translate-x-1/2 text-white animate-bounce",
+        deviceInfo.isMobile ? "bottom-mobile-lg" : "bottom-10"
+      )}>
         <a
           href="#welcome"
-          className="flex flex-col items-center opacity-70 hover:opacity-100 transition-opacity"
+          className={cn(
+            "flex flex-col items-center opacity-70 transition-opacity touch-feedback",
+            deviceInfo.isMobile ? "touch-target" : "hover:opacity-100"
+          )}
           aria-label="Scroll down to welcome section"
         >
-          <span className="text-sm mb-2">{t.hero.scrollDown}</span>
-          <ChevronDown className="h-6 w-6" />
+          <span className={cn(
+            "mb-2",
+            deviceInfo.isMobile ? "mobile-sm" : "text-sm"
+          )}>
+            {t.hero.scrollDown}
+          </span>
+          <ChevronDown className={cn(
+            deviceInfo.isMobile ? "h-5 w-5" : "h-6 w-6"
+          )} />
         </a>
       </div>
 
