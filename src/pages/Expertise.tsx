@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import SafeImage from "@/components/SafeImage";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CTASection from "@/components/CTASection";
+import { generatePageSEO, generateMedicalProcedureStructuredData } from "@/lib/seo";
 
 export default function Expertise() {
   const { t } = useLanguage();
@@ -14,8 +15,31 @@ export default function Expertise() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Generate SEO data for expertise page with structured data
+  const expertiseSeoData = generatePageSEO('expertise', {
+    structuredData: {
+      "@context": "https://schema.org",
+      "@type": "MedicalWebPage",
+      "name": "Neurosurgery Expertise - Dr. Ales Aliashkevich",
+      "description": "Comprehensive neurosurgical expertise including brain surgery, spine surgery, minimally invasive procedures, and advanced surgical techniques.",
+      "medicalAudience": ["Patient", "Physician"],
+      "about": [
+        generateMedicalProcedureStructuredData({
+          name: "Brain Tumor Surgery",
+          description: "Advanced surgical treatment for brain tumors using image-guided techniques",
+          bodyLocation: "Brain"
+        }),
+        generateMedicalProcedureStructuredData({
+          name: "Spine Surgery",
+          description: "Minimally invasive spine surgery including disc replacement and fusion procedures",
+          bodyLocation: "Spine"
+        })
+      ]
+    }
+  });
+
   return (
-    <Layout>
+    <Layout pageType="expertise" seoData={expertiseSeoData}>
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">

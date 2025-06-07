@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://mineuro.com.au/sitemap.xml
+
+# Disallow admin or private areas (if any)
+# Disallow: /admin/
+# Disallow: /private/
+
+# Allow all search engines to crawl the site
+# This is a medical practice website providing public information
+
+# Crawl-delay (optional, can help with server load)
+# Crawl-delay: 1

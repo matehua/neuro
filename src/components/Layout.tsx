@@ -3,20 +3,29 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SkipLink from "@/components/SkipLink";
 import { announceToScreenReader } from "@/lib/accessibility";
+import { useSEO, SEOData } from "@/hooks/useSEO";
+import { generatePageSEO } from "@/lib/seo";
 
 interface LayoutProps {
   children: React.ReactNode;
   /** Title for the current page, will be announced to screen readers */
   pageTitle?: string;
+  /** SEO data for the page */
+  seoData?: SEOData;
+  /** Page type for default SEO configuration */
+  pageType?: string;
 }
 
-export default function Layout({ children, pageTitle }: LayoutProps) {
+export default function Layout({ children, pageTitle, seoData, pageType = 'default' }: LayoutProps) {
+  // Generate SEO data if not provided
+  const finalSeoData = seoData || generatePageSEO(pageType, pageTitle ? { title: `${pageTitle} | miNEURO` } : {});
+
+  // Apply SEO data
+  useSEO(finalSeoData);
+
   // Announce page title to screen readers when it changes
   useEffect(() => {
     if (pageTitle) {
-      // Update document title
-      document.title = `${pageTitle} | miNEURO`;
-
       // Announce page change to screen readers
       announceToScreenReader(`Navigated to ${pageTitle} page`);
     }

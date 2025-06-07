@@ -8,6 +8,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CTASection from "@/components/CTASection";
+import { generatePageSEO, generateMedicalPracticeStructuredData, PRACTICE_INFO } from "@/lib/seo";
 
 export default function Index() {
   const { t } = useLanguage();
@@ -17,8 +18,13 @@ export default function Index() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Generate comprehensive SEO data for homepage
+  const homeSeoData = generatePageSEO('home', {
+    structuredData: generateMedicalPracticeStructuredData(PRACTICE_INFO)
+  });
+
   return (
-    <Layout>
+    <Layout pageType="home" seoData={homeSeoData}>
       <main className="flex-1">
         {/* Hero Section */}
         <HeroSection />

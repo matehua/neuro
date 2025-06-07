@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -14,6 +13,7 @@ import {
 } from "@/components/ui/select";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
+import { generatePageSEO } from "@/lib/seo";
 
 export default function Appointments() {
   const { t } = useLanguage();
@@ -23,11 +23,12 @@ export default function Appointments() {
     window.scrollTo(0, 0);
   }, []);
 
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+  // Generate SEO data for appointments page
+  const appointmentsSeoData = generatePageSEO('appointments');
 
-      <main className="flex-1 pt-20">
+  return (
+    <Layout pageType="appointments" seoData={appointmentsSeoData}>
+      <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
           <div className="container relative z-10">
@@ -558,8 +559,6 @@ export default function Appointments() {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }
