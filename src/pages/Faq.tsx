@@ -11,9 +11,12 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function Faq() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -198,13 +201,30 @@ export default function Faq() {
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
-          <div className="container relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
+        <section className={cn(
+          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background mobile-safe-area",
+          deviceInfo.isMobile ? "py-mobile-xl" : "py-20"
+        )}>
+          <div className={cn(
+            "relative z-10",
+            deviceInfo.isMobile ? "mobile-container" : "container"
+          )}>
+            <div className={cn(
+              "text-center mx-auto",
+              deviceInfo.isMobile ? "max-w-full" : "max-w-3xl"
+            )}>
+              <h1 className={cn(
+                "font-bold mt-2 mb-mobile-lg",
+                deviceInfo.isMobile
+                  ? "mobile-4xl"
+                  : "text-4xl md:text-5xl mb-6"
+              )}>
                 {t.nav.faq}
               </h1>
-              <p className="text-muted-foreground">
+              <p className={cn(
+                "text-muted-foreground",
+                deviceInfo.isMobile ? "mobile-text" : ""
+              )}>
                 {t.contact.faqSubtitle}
               </p>
             </div>
@@ -232,13 +252,28 @@ export default function Faq() {
         </section>
 
         {/* FAQ Content */}
-        <section className="py-8">
-          <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
+        <section className={deviceInfo.isMobile ? "mobile-section" : "py-8"}>
+          <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+            <div className={cn(
+              deviceInfo.isMobile
+                ? "grid grid-cols-1 gap-mobile-lg"
+                : "grid grid-cols-1 lg:grid-cols-4 gap-8"
+            )}>
               {/* Categories sidebar */}
-              <div className="lg:col-span-1">
-                <div className="sticky top-24 space-y-2">
-                  <h2 className="text-xl font-bold mb-4">Categories</h2>
+              <div className={cn(
+                deviceInfo.isMobile ? "order-2" : "lg:col-span-1"
+              )}>
+                <div className={cn(
+                  deviceInfo.isMobile
+                    ? "space-y-mobile-sm"
+                    : "sticky top-24 space-y-2"
+                )}>
+                  <h2 className={cn(
+                    "font-bold mb-mobile-md",
+                    deviceInfo.isMobile ? "mobile-subheading" : "text-xl mb-4"
+                  )}>
+                    Categories
+                  </h2>
                   {faqCategories.map((category, index) => (
                     <Button
                       key={index}
@@ -253,10 +288,21 @@ export default function Faq() {
               </div>
 
               {/* FAQ accordions */}
-              <div className="lg:col-span-3 space-y-12">
+              <div className={cn(
+                deviceInfo.isMobile
+                  ? "order-1 space-y-mobile-xl"
+                  : "lg:col-span-3 space-y-12"
+              )}>
                 {faqCategories.map((category, categoryIndex) => (
                   <div key={categoryIndex} id={`category-${categoryIndex}`}>
-                    <h2 className="text-2xl font-bold mb-3">{category.title}</h2>
+                    <h2 className={cn(
+                      "font-bold mb-mobile-sm",
+                      deviceInfo.isMobile
+                        ? "mobile-2xl"
+                        : "text-2xl mb-3"
+                    )}>
+                      {category.title}
+                    </h2>
                     {category.description && (
                       <p className="text-muted-foreground mb-6">{category.description}</p>
                     )}

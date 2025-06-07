@@ -3,6 +3,7 @@ import * as SelectPrimitive from "@radix-ui/react-select"
 import { Check, ChevronDown, ChevronUp } from "lucide-react"
 
 import { cn } from "@/lib/utils"
+import { useDeviceDetection } from "@/hooks/use-mobile"
 
 const Select = SelectPrimitive.Root
 
@@ -21,6 +22,8 @@ const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   SelectTriggerProps
 >(({ className, children, error, description, ...props }, ref) => {
+  const deviceInfo = useDeviceDetection();
+
   // Generate unique IDs for accessibility
   const selectId = props.id || `select-${React.useId()}`;
   const errorId = error ? `${selectId}-error` : undefined;
@@ -39,7 +42,10 @@ const SelectTrigger = React.forwardRef<
         ref={ref}
         id={selectId}
         className={cn(
-          "flex h-10 w-full items-center justify-between rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 mobile:min-h-[44px] mobile:text-base touch-manipulation",
+          "flex w-full items-center justify-between rounded-md border border-input bg-background ring-offset-background placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50 [&>span]:line-clamp-1 touch-manipulation",
+          deviceInfo.isMobile
+            ? "h-12 px-mobile-md py-mobile-sm text-base min-h-[44px]"
+            : "h-10 px-3 py-2 text-sm",
           error && "border-destructive focus:ring-destructive",
           className
         )}
@@ -49,7 +55,10 @@ const SelectTrigger = React.forwardRef<
       >
         {children}
         <SelectPrimitive.Icon asChild>
-          <ChevronDown className="h-4 w-4 opacity-50" aria-hidden="true" />
+          <ChevronDown className={cn(
+            "opacity-50",
+            deviceInfo.isMobile ? "h-5 w-5" : "h-4 w-4"
+          )} aria-hidden="true" />
         </SelectPrimitive.Icon>
       </SelectPrimitive.Trigger>
 
