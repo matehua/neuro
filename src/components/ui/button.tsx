@@ -6,7 +6,7 @@ import { cva, type VariantProps } from "class-variance-authority"
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0",
+  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 touch-manipulation select-none",
   {
     variants: {
       variant: {
@@ -23,10 +23,12 @@ const buttonVariants = cva(
         heroSolid: "bg-sea text-white hover:bg-sea-dark dark:bg-sea-dark dark:hover:bg-sea transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-[1.02]",
       },
       size: {
-        default: "h-10 px-4 py-2",
-        sm: "h-9 rounded-md px-3",
-        lg: "h-11 rounded-md px-8",
-        icon: "h-10 w-10",
+        default: "h-10 px-4 py-2 mobile:min-h-[44px]",
+        sm: "h-9 rounded-md px-3 mobile:min-h-[40px]",
+        lg: "h-11 rounded-md px-8 mobile:min-h-[48px]",
+        icon: "h-10 w-10 mobile:min-h-[44px] mobile:min-w-[44px]",
+        mobile: "min-h-[44px] px-4 py-2",
+        "mobile-lg": "min-h-[48px] px-6 py-3",
       },
     },
     defaultVariants: {

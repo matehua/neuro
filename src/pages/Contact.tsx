@@ -8,9 +8,12 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function Contact() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -57,16 +60,33 @@ export default function Contact() {
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
-          <div className="container relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
+        <section className={cn(
+          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background mobile-safe-area",
+          deviceInfo.isMobile ? "py-mobile-xl" : "py-20"
+        )}>
+          <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+            <div className={cn(
+              "text-center max-w-3xl mx-auto",
+              deviceInfo.isMobile ? "px-mobile-md" : ""
+            )}>
+              <h1 className={cn(
+                "font-bold mt-2 mb-mobile-lg",
+                deviceInfo.isMobile
+                  ? "mobile-4xl"
+                  : "text-4xl md:text-5xl mb-6"
+              )}>
                 {t.contact.title}
               </h1>
-              <p className="text-muted-foreground mb-4">
+              <p className={cn(
+                "text-muted-foreground mb-mobile-md",
+                deviceInfo.isMobile ? "mobile-text" : "mb-4"
+              )}>
                 {t.contact.subtitle}
               </p>
-              <p className="text-muted-foreground">
+              <p className={cn(
+                "text-muted-foreground",
+                deviceInfo.isMobile ? "mobile-text" : ""
+              )}>
                 Our staff will assist to coordinate an appointment at the location most convenient and accessible for you. Urgent appointments are available on request.
               </p>
             </div>
@@ -74,12 +94,23 @@ export default function Contact() {
         </section>
 
         {/* Contact Information & Form */}
-        <section className="section">
-          <div className="container">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+        <section className={deviceInfo.isMobile ? "mobile-section" : "section"}>
+          <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+            <div className={cn(
+              deviceInfo.isMobile
+                ? "grid grid-cols-1 gap-mobile-xl"
+                : "grid grid-cols-1 lg:grid-cols-2 gap-12"
+            )}>
               {/* Contact Information */}
-              <div className="animate-fade-in [animation-delay:100ms]">
-                <h2 className="text-2xl font-bold mb-6">{t.contact.getInTouch}</h2>
+              <div className={cn(
+                deviceInfo.isMobile ? "mobile-fade-in" : "animate-fade-in [animation-delay:100ms]"
+              )}>
+                <h2 className={cn(
+                  "font-bold mb-mobile-lg",
+                  deviceInfo.isMobile ? "mobile-heading" : "text-2xl mb-6"
+                )}>
+                  {t.contact.getInTouch}
+                </h2>
 
                 <div className="relative rounded-xl overflow-hidden mb-8 shadow-lg">
                   <img
@@ -89,33 +120,83 @@ export default function Contact() {
                   />
                 </div>
 
-                <div className="glass-card p-6 space-y-6 mb-8">
+                <div className={cn(
+                  "glass-card space-y-mobile-lg mb-mobile-xl",
+                  deviceInfo.isMobile ? "p-mobile-lg" : "p-6 space-y-6 mb-8"
+                )}>
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <MapPin className="h-5 w-5 text-primary" />
+                    <div className={cn(
+                      "flex-shrink-0 rounded-full bg-primary/10 flex items-center justify-center",
+                      deviceInfo.isMobile
+                        ? "h-12 w-12 mr-mobile-md"
+                        : "h-10 w-10 mr-4"
+                    )}>
+                      <MapPin className={cn(
+                        "text-primary",
+                        deviceInfo.isMobile ? "h-6 w-6" : "h-5 w-5"
+                      )} />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">{t.contact.address}</h3>
-                      <p className="text-muted-foreground">
+                      <h3 className={cn(
+                        "font-semibold mb-1",
+                        deviceInfo.isMobile ? "mobile-subheading" : ""
+                      )}>
+                        {t.contact.address}
+                      </h3>
+                      <p className={cn(
+                        "text-muted-foreground",
+                        deviceInfo.isMobile ? "mobile-text" : ""
+                      )}>
                         miNEURO Consulting Suites<br />
                         Suite 4, Ground Floor, 619 Canterbury Road<br />
                         SURREY HILLS VIC 3127<br />
                         Australia
                       </p>
-                      <p className="text-muted-foreground mt-2">
+                      <p className={cn(
+                        "text-muted-foreground mt-2",
+                        deviceInfo.isMobile ? "mobile-text" : ""
+                      )}>
                         Our main office is located in Surrey Hills, within 2 minutes walking distance from the train station.
                       </p>
                     </div>
                   </div>
 
                   <div className="flex items-start">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-primary/10 flex items-center justify-center mr-4">
-                      <Phone className="h-5 w-5 text-primary" />
+                    <div className={cn(
+                      "flex-shrink-0 rounded-full bg-primary/10 flex items-center justify-center",
+                      deviceInfo.isMobile
+                        ? "h-12 w-12 mr-mobile-md"
+                        : "h-10 w-10 mr-4"
+                    )}>
+                      <Phone className={cn(
+                        "text-primary",
+                        deviceInfo.isMobile ? "h-6 w-6" : "h-5 w-5"
+                      )} />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">{t.contact.phone}</h3>
-                      <p className="text-muted-foreground">Ph: 03 9008 4200</p>
-                      <p className="text-muted-foreground mt-2">Urgent appointments available on request</p>
+                      <h3 className={cn(
+                        "font-semibold mb-1",
+                        deviceInfo.isMobile ? "mobile-subheading" : ""
+                      )}>
+                        {t.contact.phone}
+                      </h3>
+                      <a
+                        href="tel:+61390084200"
+                        className={cn(
+                          "text-muted-foreground transition-colors touch-feedback",
+                          deviceInfo.isMobile
+                            ? "mobile-text block"
+                            : "hover:text-primary"
+                        )}
+                      >
+                        Ph: 03 9008 4200
+                      </a>
+                      <p className={cn(
+                        "text-muted-foreground mt-2",
+                        deviceInfo.isMobile ? "mobile-text" : ""
+                      )}>
+                        Urgent appointments available on request
+                      </p>
                     </div>
                   </div>
 
@@ -270,24 +351,57 @@ export default function Contact() {
                   Our staff will assist to coordinate an appointment at the location most convenient and accessible for you. If you have any questions about our services, please call our main office on 03 9008 4200 or email us at info@mineuro.com.au.
                 </p>
 
-                <div className="glass-card p-6">
+                <div className={cn(
+                  "glass-card",
+                  deviceInfo.isMobile ? "p-mobile-lg" : "p-6"
+                )}>
                   {!isSubmitted ? (
-                    <form onSubmit={handleSubmit} className="space-y-6">
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="name">{t.contact.fullName}</Label>
+                    <form
+                      onSubmit={handleSubmit}
+                      className={cn(
+                        deviceInfo.isMobile ? "space-y-mobile-lg" : "space-y-6"
+                      )}
+                    >
+                      <div className={cn(
+                        deviceInfo.isMobile
+                          ? "grid grid-cols-1 gap-mobile-md"
+                          : "grid grid-cols-1 sm:grid-cols-2 gap-4"
+                      )}>
+                        <div className={cn(
+                          deviceInfo.isMobile ? "space-y-mobile-sm" : "space-y-2"
+                        )}>
+                          <Label
+                            htmlFor="name"
+                            className={cn(
+                              deviceInfo.isMobile ? "mobile-text font-medium" : ""
+                            )}
+                          >
+                            {t.contact.fullName}
+                          </Label>
                           <Input
                             id="name"
                             name="name"
                             value={formData.name}
                             onChange={handleInputChange}
                             placeholder="John Doe"
+                            className={cn(
+                              deviceInfo.isMobile ? "mobile-input" : ""
+                            )}
                             required
                           />
                         </div>
 
-                        <div className="space-y-2">
-                          <Label htmlFor="email">{t.contact.email}</Label>
+                        <div className={cn(
+                          deviceInfo.isMobile ? "space-y-mobile-sm" : "space-y-2"
+                        )}>
+                          <Label
+                            htmlFor="email"
+                            className={cn(
+                              deviceInfo.isMobile ? "mobile-text font-medium" : ""
+                            )}
+                          >
+                            {t.contact.email}
+                          </Label>
                           <Input
                             id="email"
                             name="email"
@@ -295,51 +409,106 @@ export default function Contact() {
                             value={formData.email}
                             onChange={handleInputChange}
                             placeholder="john@example.com"
+                            className={cn(
+                              deviceInfo.isMobile ? "mobile-input" : ""
+                            )}
                             required
                           />
                         </div>
                       </div>
 
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                        <div className="space-y-2">
-                          <Label htmlFor="phone">{t.contact.phoneNumber}</Label>
+                      <div className={cn(
+                        deviceInfo.isMobile
+                          ? "grid grid-cols-1 gap-mobile-md"
+                          : "grid grid-cols-1 sm:grid-cols-2 gap-4"
+                      )}>
+                        <div className={cn(
+                          deviceInfo.isMobile ? "space-y-mobile-sm" : "space-y-2"
+                        )}>
+                          <Label
+                            htmlFor="phone"
+                            className={cn(
+                              deviceInfo.isMobile ? "mobile-text font-medium" : ""
+                            )}
+                          >
+                            {t.contact.phoneNumber}
+                          </Label>
                           <Input
                             id="phone"
                             name="phone"
+                            type="tel"
                             value={formData.phone}
                             onChange={handleInputChange}
                             placeholder="03 1234 5678"
+                            className={cn(
+                              deviceInfo.isMobile ? "mobile-input" : ""
+                            )}
                           />
                         </div>
 
-                        <div className="space-y-2">
-                          <Label htmlFor="subject">{t.contact.subject}</Label>
+                        <div className={cn(
+                          deviceInfo.isMobile ? "space-y-mobile-sm" : "space-y-2"
+                        )}>
+                          <Label
+                            htmlFor="subject"
+                            className={cn(
+                              deviceInfo.isMobile ? "mobile-text font-medium" : ""
+                            )}
+                          >
+                            {t.contact.subject}
+                          </Label>
                           <Input
                             id="subject"
                             name="subject"
                             value={formData.subject}
                             onChange={handleInputChange}
                             placeholder="Appointment Inquiry"
+                            className={cn(
+                              deviceInfo.isMobile ? "mobile-input" : ""
+                            )}
                             required
                           />
                         </div>
                       </div>
 
-                      <div className="space-y-2">
-                        <Label htmlFor="message">{t.contact.message}</Label>
+                      <div className={cn(
+                        deviceInfo.isMobile ? "space-y-mobile-sm" : "space-y-2"
+                      )}>
+                        <Label
+                          htmlFor="message"
+                          className={cn(
+                            deviceInfo.isMobile ? "mobile-text font-medium" : ""
+                          )}
+                        >
+                          {t.contact.message}
+                        </Label>
                         <textarea
                           id="message"
                           name="message"
                           value={formData.message}
                           onChange={handleInputChange}
                           placeholder={t.contact.howCanWeHelp}
-                          className="w-full min-h-[150px] p-3 rounded-md border border-input bg-background"
+                          className={cn(
+                            "w-full p-3 rounded-md border border-input bg-background touch-manipulation",
+                            deviceInfo.isMobile
+                              ? "min-h-[120px] mobile-input text-base"
+                              : "min-h-[150px]"
+                          )}
                           required
                         />
                       </div>
 
-                      <Button type="submit" className="w-full btn-primary">
-                        <Send className="mr-2 h-4 w-4" />
+                      <Button
+                        type="submit"
+                        className={cn(
+                          "w-full btn-primary touch-feedback",
+                          deviceInfo.isMobile ? "mobile-button" : ""
+                        )}
+                      >
+                        <Send className={cn(
+                          "mr-2",
+                          deviceInfo.isMobile ? "h-5 w-5" : "h-4 w-4"
+                        )} />
                         {t.contact.send}
                       </Button>
                     </form>
@@ -361,19 +530,63 @@ export default function Contact() {
         </section>
 
         {/* Locations Section */}
-        <section className="py-16 bg-primary/5">
-          <div className="container">
-            <h2 className="text-2xl font-bold mb-8 text-center">{t.nav.locations}</h2>
-            <p className="text-center text-muted-foreground mb-8 max-w-3xl mx-auto">
-              <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> consults at multiple locations across Melbourne and Victoria for your convenience. Our staff will assist to coordinate an appointment at the location most convenient and accessible for you.
+        <section className={cn(
+          "bg-primary/5 mobile-safe-area",
+          deviceInfo.isMobile ? "py-mobile-xl" : "py-16"
+        )}>
+          <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+            <h2 className={cn(
+              "font-bold text-center mb-mobile-lg",
+              deviceInfo.isMobile ? "mobile-heading" : "text-2xl mb-8"
+            )}>
+              {t.nav.locations}
+            </h2>
+            <p className={cn(
+              "text-center text-muted-foreground max-w-3xl mx-auto mb-mobile-lg",
+              deviceInfo.isMobile
+                ? "mobile-text px-mobile-md"
+                : "mb-8"
+            )}>
+              <a
+                href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
+                className={cn(
+                  "text-primary transition-colors touch-feedback",
+                  deviceInfo.isMobile ? "" : "hover:underline"
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Dr. Aliashkevich
+              </a> consults at multiple locations across Melbourne and Victoria for your convenience. Our staff will assist to coordinate an appointment at the location most convenient and accessible for you.
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12">
-              <Button asChild variant="outline" className="h-auto py-4">
+            <div className={cn(
+              deviceInfo.isMobile
+                ? "grid grid-cols-1 gap-mobile-md mb-mobile-xl"
+                : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-12"
+            )}>
+              <Button
+                asChild
+                variant="outline"
+                className={cn(
+                  "h-auto touch-feedback",
+                  deviceInfo.isMobile ? "py-mobile-md mobile-button" : "py-4"
+                )}
+              >
                 <Link to="/locations/surrey-hills">
                   <div className="text-center">
-                    <h3 className="font-semibold">Surrey Hills</h3>
-                    <p className="text-xs text-muted-foreground">miNEURO Consulting Suites<br />Suite 4, 619 Canterbury Road<br />SURREY HILLS 3127</p>
+                    <h3 className={cn(
+                      "font-semibold",
+                      deviceInfo.isMobile ? "mobile-subheading" : ""
+                    )}>
+                      Surrey Hills
+                    </h3>
+                    <p className={cn(
+                      "text-muted-foreground",
+                      deviceInfo.isMobile ? "mobile-sm" : "text-xs"
+                    )}>
+                      miNEURO Consulting Suites<br />Suite 4, 619 Canterbury Road<br />SURREY HILLS 3127
+                    </p>
                   </div>
                 </Link>
               </Button>
