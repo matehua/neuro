@@ -6,9 +6,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Clock } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function Locations() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -127,13 +130,30 @@ export default function Locations() {
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
-          <div className="container relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
+        <section className={cn(
+          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background mobile-safe-area",
+          deviceInfo.isMobile ? "py-mobile-xl" : "py-20"
+        )}>
+          <div className={cn(
+            "relative z-10",
+            deviceInfo.isMobile ? "mobile-container" : "container"
+          )}>
+            <div className={cn(
+              "text-center mx-auto",
+              deviceInfo.isMobile ? "max-w-full" : "max-w-3xl"
+            )}>
+              <h1 className={cn(
+                "font-bold mt-2 mb-mobile-lg",
+                deviceInfo.isMobile
+                  ? "mobile-4xl"
+                  : "text-4xl md:text-5xl mb-6"
+              )}>
                 Consulting Locations | Dr Ales Aliashkevich - Neurosurgeon & Spine Surgeon
               </h1>
-              <p className="text-muted-foreground">
+              <p className={cn(
+                "text-muted-foreground",
+                deviceInfo.isMobile ? "mobile-text" : ""
+              )}>
                 Dr Ales Aliashkevich consults at multiple locations across Melbourne and Victoria, including Surrey Hills, Mornington, Langwarrin, Frankston, Bundoora, and more.
               </p>
             </div>
@@ -142,12 +162,27 @@ export default function Locations() {
 
         {/* Primary Location */}
         {primaryLocation && (
-          <section className="py-16">
-            <div className="container">
-              <h2 className="text-3xl font-bold mb-8 text-center">Primary Consulting Location</h2>
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+          <section className={deviceInfo.isMobile ? "mobile-section" : "py-16"}>
+            <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+              <h2 className={cn(
+                "font-bold text-center mb-mobile-lg",
+                deviceInfo.isMobile
+                  ? "mobile-3xl"
+                  : "text-3xl mb-8"
+              )}>
+                Primary Consulting Location
+              </h2>
+              <div className={cn(
+                "items-center",
+                deviceInfo.isMobile
+                  ? "grid grid-cols-1 gap-mobile-lg"
+                  : "grid grid-cols-1 lg:grid-cols-2 gap-12"
+              )}>
                 <div>
-                  <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl">
+                  <div className={cn(
+                    "relative w-full rounded-lg overflow-hidden shadow-xl",
+                    deviceInfo.isMobile ? "h-64" : "h-80"
+                  )}>
                     <SafeImage
                       src={primaryLocation.image || "/images/location-placeholder.jpg"}
                       alt={primaryLocation.name}
@@ -157,7 +192,14 @@ export default function Locations() {
                   </div>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold mb-4 text-primary">{primaryLocation.name}</h3>
+                  <h3 className={cn(
+                    "font-bold text-primary mb-mobile-md",
+                    deviceInfo.isMobile
+                      ? "mobile-2xl"
+                      : "text-2xl mb-4"
+                  )}>
+                    {primaryLocation.name}
+                  </h3>
                   <div className="space-y-4">
                     <div className="flex items-start gap-3">
                       <MapPin className="h-5 w-5 text-primary mt-1 flex-shrink-0" />
@@ -191,15 +233,47 @@ export default function Locations() {
         )}
 
         {/* All Locations */}
-        <section className="py-16 bg-primary/5">
-          <div className="container">
-            <h2 className="text-3xl font-bold mb-8 text-center">All Consulting Locations</h2>
-            <p className="text-center text-muted-foreground mb-8">Find the location most convenient for you</p>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <section className={cn(
+          "bg-primary/5",
+          deviceInfo.isMobile ? "mobile-section" : "py-16"
+        )}>
+          <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+            <h2 className={cn(
+              "font-bold text-center mb-mobile-lg",
+              deviceInfo.isMobile
+                ? "mobile-3xl"
+                : "text-3xl mb-8"
+            )}>
+              All Consulting Locations
+            </h2>
+            <p className={cn(
+              "text-center text-muted-foreground mb-mobile-lg",
+              deviceInfo.isMobile ? "mobile-text" : "mb-8"
+            )}>
+              Find the location most convenient for you
+            </p>
+            <div className={cn(
+              deviceInfo.isMobile
+                ? "grid grid-cols-1 gap-mobile-lg"
+                : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            )}>
               {locations.map(location => (
-                <div key={location.id} className="card p-6 rounded-lg shadow-md bg-card">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{location.name}</h3>
-                  <div className="space-y-3 mb-4">
+                <div key={location.id} className={cn(
+                  "card rounded-lg shadow-md bg-card",
+                  deviceInfo.isMobile ? "p-mobile-lg" : "p-6"
+                )}>
+                  <h3 className={cn(
+                    "font-semibold text-primary mb-mobile-sm",
+                    deviceInfo.isMobile
+                      ? "mobile-subheading"
+                      : "text-xl mb-3"
+                  )}>
+                    {location.name}
+                  </h3>
+                  <div className={cn(
+                    "mb-mobile-md",
+                    deviceInfo.isMobile ? "space-y-mobile-sm" : "space-y-3 mb-4"
+                  )}>
                     <div className="flex items-start gap-2">
                       <MapPin className="h-4 w-4 text-primary mt-1 flex-shrink-0" />
                       <p className="text-sm text-muted-foreground">{location.address}</p>
