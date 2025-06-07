@@ -3,9 +3,12 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Star } from "lucide-react";
 import SafeImage from "@/components/SafeImage";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function IndependentReviewsSection() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
 
   const reviewPlatforms = [
     {
@@ -53,34 +56,61 @@ export default function IndependentReviewsSection() {
 
   return (
     <section
-      className="section py-20 bg-white dark:bg-background"
+      className={cn(
+        "bg-white dark:bg-background mobile-safe-area",
+        deviceInfo.isMobile ? "mobile-section" : "section py-20"
+      )}
       id={sectionId}
       aria-labelledby={headingId}
     >
-      <div className="container">
-        <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
+      <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+        <div className={cn(
+          "text-center mx-auto animate-fade-in mb-mobile-xl",
+          deviceInfo.isMobile ? "max-w-full" : "max-w-3xl mb-12"
+        )}>
           <h2
             id={headingId}
-            className="text-3xl md:text-4xl font-bold mb-4"
+            className={cn(
+              "font-bold mb-mobile-md",
+              deviceInfo.isMobile
+                ? "mobile-3xl"
+                : "text-3xl md:text-4xl mb-4"
+            )}
           >
             {t.testimonials?.title || "Independent Patient Reviews"}
           </h2>
           <p
             id={descriptionId}
-            className="text-muted-foreground"
+            className={cn(
+              "text-muted-foreground",
+              deviceInfo.isMobile ? "mobile-text" : ""
+            )}
           >
             {t.testimonials?.description || "Dr. Aliashkevich has received excellent feedback across multiple independent review platforms. See what patients are saying about their experiences."}
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-10">
+        <div className={cn(
+          "mb-mobile-lg",
+          deviceInfo.isMobile
+            ? "grid grid-cols-1 gap-mobile-md"
+            : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-10"
+        )}>
           {reviewPlatforms.map((platform) => (
             <div
               key={platform.name}
-              className="card p-6 rounded-lg shadow-md bg-card hover:shadow-lg transition-shadow text-center"
+              className={cn(
+                "card rounded-lg shadow-md bg-card text-center transition-shadow",
+                deviceInfo.isMobile
+                  ? "p-mobile-md touch-feedback"
+                  : "p-6 hover:shadow-lg"
+              )}
               aria-labelledby={`${platform.name.toLowerCase()}-rating`}
             >
-              <div className="flex justify-center mb-4 h-12">
+              <div className={cn(
+                "flex justify-center",
+                deviceInfo.isMobile ? "mb-mobile-sm h-10" : "mb-4 h-12"
+              )}>
                 <SafeImage
                   src={platform.logo}
                   alt={`${platform.name} logo`}
@@ -88,14 +118,25 @@ export default function IndependentReviewsSection() {
                   fallbackSrc="/images/placeholder-logo.png"
                 />
               </div>
-              <div className="flex items-center justify-center mb-2">
+              <div className={cn(
+                "flex items-center justify-center",
+                deviceInfo.isMobile ? "mb-mobile-xs" : "mb-2"
+              )}>
                 <div
                   id={`${platform.name.toLowerCase()}-rating`}
-                  className="text-2xl font-bold text-primary"
+                  className={cn(
+                    "font-bold text-primary",
+                    deviceInfo.isMobile ? "mobile-xl" : "text-2xl"
+                  )}
                 >
                   {platform.rating}
                 </div>
-                <div className="text-sm text-muted-foreground ml-2">/ 5.0</div>
+                <div className={cn(
+                  "text-muted-foreground ml-2",
+                  deviceInfo.isMobile ? "mobile-text" : "text-sm"
+                )}>
+                  / 5.0
+                </div>
               </div>
               <div
                 className="flex justify-center mb-2"

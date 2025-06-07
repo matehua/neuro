@@ -2,6 +2,8 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 interface CTASectionProps {
   className?: string;
@@ -27,6 +29,7 @@ export default function CTASection({
   id,
 }: CTASectionProps) {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
 
   // Use provided text or default to translations
   const ctaTitle = title || t.home.cta.title;
@@ -41,23 +44,68 @@ export default function CTASection({
 
   return (
     <section
-      className={`py-16 ${bgClass} ${className}`}
+      className={cn(
+        bgClass,
+        deviceInfo.isMobile ? "mobile-section mobile-safe-area" : "py-16",
+        className
+      )}
       id={sectionId}
       aria-labelledby={headingId}
       aria-describedby={descriptionId}
     >
-      <div className="container">
-        <div className="text-center max-w-3xl mx-auto">
-          <h2 id={headingId} className="text-3xl font-bold mb-6">{ctaTitle}</h2>
-          <p id={descriptionId} className="text-muted-foreground mb-8">
+      <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+        <div className={cn(
+          "text-center mx-auto",
+          deviceInfo.isMobile ? "max-w-full" : "max-w-3xl"
+        )}>
+          <h2
+            id={headingId}
+            className={cn(
+              "font-bold mb-mobile-lg",
+              deviceInfo.isMobile ? "mobile-3xl" : "text-3xl mb-6"
+            )}
+          >
+            {ctaTitle}
+          </h2>
+          <p
+            id={descriptionId}
+            className={cn(
+              "text-muted-foreground mb-mobile-lg",
+              deviceInfo.isMobile ? "mobile-text" : "mb-8"
+            )}
+          >
             {ctaDescription}
           </p>
-          <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <Button asChild size="lg">
-              <Link to={primaryButtonLink} aria-describedby={descriptionId}>{primaryBtnText}</Link>
+          <div className={cn(
+            "justify-center",
+            deviceInfo.isMobile
+              ? "flex flex-col gap-mobile-md"
+              : "flex flex-col sm:flex-row gap-4"
+          )}>
+            <Button
+              asChild
+              size={deviceInfo.isMobile ? "default" : "lg"}
+            >
+              <Link
+                to={primaryButtonLink}
+                aria-describedby={descriptionId}
+                className="touch-feedback"
+              >
+                {primaryBtnText}
+              </Link>
             </Button>
-            <Button asChild variant="outline" size="lg">
-              <Link to={secondaryButtonLink} aria-describedby={descriptionId}>{secondaryBtnText}</Link>
+            <Button
+              asChild
+              variant="outline"
+              size={deviceInfo.isMobile ? "default" : "lg"}
+            >
+              <Link
+                to={secondaryButtonLink}
+                aria-describedby={descriptionId}
+                className="touch-feedback"
+              >
+                {secondaryBtnText}
+              </Link>
             </Button>
           </div>
         </div>
