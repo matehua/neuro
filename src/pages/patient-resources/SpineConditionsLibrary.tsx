@@ -167,23 +167,23 @@ export default function SpineConditionsLibrary() {
                       />
                     </div>
                     <CardHeader>
-                      <CardTitle>Cervical Radiculopathy</CardTitle>
+                      <CardTitle>Radiculopathy</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground mb-4">
-                        Occurs when a nerve root in the cervical spine becomes compressed or irritated, causing pain, numbness, tingling, or weakness that radiates into the shoulder, arm, or hand.
+                        Comprehensive guide to radiculopathy - nerve root compression affecting cervical, thoracic, and lumbar spine. Learn about causes, symptoms, diagnosis, and treatment options from conservative management to advanced surgical interventions.
                       </p>
                       <h4 className="font-semibold mb-2">Common Symptoms:</h4>
                       <ul className="list-disc pl-5 text-muted-foreground mb-4">
-                        <li>Sharp pain that radiates from the neck into the arm</li>
-                        <li>Specific pattern of numbness or weakness based on the affected nerve</li>
-                        <li>Pain that worsens with certain neck positions</li>
-                        <li>Reflexes may be diminished in the affected arm</li>
+                        <li>Dermatomal pain distribution patterns</li>
+                        <li>Numbness and tingling in specific areas</li>
+                        <li>Myotomal weakness patterns</li>
+                        <li>Reduced or absent reflexes</li>
                       </ul>
                     </CardContent>
                     <CardFooter>
                       <Button asChild variant="outline" className="w-full">
-                        <Link to="/patient-resources/conditions/cervical-radiculopathy">Learn More</Link>
+                        <Link to="/patient-resources/conditions/radiculopathy">Complete Guide</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -421,19 +421,19 @@ export default function SpineConditionsLibrary() {
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground mb-4">
-                        Not a condition itself, but a symptom of an underlying problem. Sciatica refers to pain that radiates along the sciatic nerve, which runs from your lower back through your hips and buttocks and down each leg.
+                        Comprehensive guide to sciatica - pain radiating along the sciatic nerve pathway. Learn about causes, symptoms, diagnosis, and treatment options from conservative management to advanced interventional procedures.
                       </p>
                       <h4 className="font-semibold mb-2">Common Symptoms:</h4>
                       <ul className="list-disc pl-5 text-muted-foreground mb-4">
-                        <li>Pain that radiates from the lower back to the buttock and down the back of the leg</li>
-                        <li>Pain that ranges from mild to severe, often described as sharp or burning</li>
-                        <li>Numbness, tingling, or muscle weakness in the affected leg</li>
-                        <li>Pain that worsens with sitting or certain movements</li>
+                        <li>Sharp, shooting pain from lower back to leg</li>
+                        <li>Numbness, tingling, or burning sensations</li>
+                        <li>Muscle weakness in affected leg or foot</li>
+                        <li>Pain worsens with sitting, coughing, or sneezing</li>
                       </ul>
                     </CardContent>
                     <CardFooter>
                       <Button asChild variant="outline" className="w-full">
-                        <Link to="/patient-resources/conditions/sciatica">Learn More</Link>
+                        <Link to="/patient-resources/conditions/sciatica">Complete Guide</Link>
                       </Button>
                     </CardFooter>
                   </Card>
