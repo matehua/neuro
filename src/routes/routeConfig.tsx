@@ -43,6 +43,10 @@ const HerniatedDisc = lazyLoad(() => import('@/pages/patient-resources/condition
 const SpinalStenosis = lazyLoad(() => import('@/pages/patient-resources/conditions/SpinalStenosis'));
 const Sciatica = lazyLoad(() => import('@/pages/patient-resources/conditions/Sciatica'));
 const Radiculopathy = lazyLoad(() => import('@/pages/patient-resources/conditions/Radiculopathy'));
+const Arthrosis = lazyLoad(() => import('@/pages/patient-resources/conditions/Arthrosis'));
+const Discopathy = lazyLoad(() => import('@/pages/patient-resources/conditions/Discopathy'));
+const FacetArthropathy = lazyLoad(() => import('@/pages/patient-resources/conditions/FacetArthropathy'));
+const SacroiliacArthropathy = lazyLoad(() => import('@/pages/patient-resources/conditions/SacroiliacArthropathy'));
 const IndividualSpineHealthProgramme = lazyLoad(() => import('@/pages/patient-resources/IndividualSpineHealthProgramme'));
 const SpineAndBrainHealth = lazyLoad(() => import('@/pages/patient-resources/SpineAndBrainHealth'));
 const CervicalSpineInjury = lazyLoad(() => import('@/pages/patient-resources/CervicalSpineInjury'));
@@ -102,6 +106,10 @@ export const baseRoutes: RouteConfig[] = [
   { path: "/patient-resources/conditions/spinal-stenosis", element: <SpinalStenosis /> },
   { path: "/patient-resources/conditions/sciatica", element: <Sciatica /> },
   { path: "/patient-resources/conditions/radiculopathy", element: <Radiculopathy /> },
+  { path: "/patient-resources/conditions/arthrosis", element: <Arthrosis /> },
+  { path: "/patient-resources/conditions/discopathy", element: <Discopathy /> },
+  { path: "/patient-resources/conditions/facet-arthropathy", element: <FacetArthropathy /> },
+  { path: "/patient-resources/conditions/sacroiliac-arthropathy", element: <SacroiliacArthropathy /> },
   { path: "/patient-resources/exercise-library", element: <ExerciseLibrary /> },
   { path: "/patient-resources/assessment-tools", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
   { path: "/patient-resources/patient-dashboard", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },

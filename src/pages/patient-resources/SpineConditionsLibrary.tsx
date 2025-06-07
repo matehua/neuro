@@ -137,23 +137,23 @@ export default function SpineConditionsLibrary() {
                       />
                     </div>
                     <CardHeader>
-                      <CardTitle>Cervical Spondylosis</CardTitle>
+                      <CardTitle>Arthrosis (Spondylosis)</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground mb-4">
-                        Age-related wear and tear affecting the spinal discs and joints in your neck, leading to degenerative changes that can cause pain, stiffness, and sometimes nerve compression.
+                        Comprehensive guide to spinal arthrosis and spondylosis - degenerative changes affecting spinal joints, discs, and bones. Learn about causes, symptoms, diagnosis, and treatment options from conservative management to advanced surgical interventions.
                       </p>
-                      <h4 className="font-semibold mb-2">Common Symptoms:</h4>
+                      <h4 className="font-semibold mb-2">Common Features:</h4>
                       <ul className="list-disc pl-5 text-muted-foreground mb-4">
-                        <li>Neck pain and stiffness that worsens with activity</li>
-                        <li>Headaches that originate from the neck</li>
-                        <li>Grinding sensation with neck movement</li>
-                        <li>Limited range of motion in the neck</li>
+                        <li>Disc space narrowing and degeneration</li>
+                        <li>Bone spur (osteophyte) formation</li>
+                        <li>Facet joint arthritis and stiffness</li>
+                        <li>Progressive symptoms with age</li>
                       </ul>
                     </CardContent>
                     <CardFooter>
                       <Button asChild variant="outline" className="w-full">
-                        <Link to="/patient-resources/conditions/cervical-spondylosis">Learn More</Link>
+                        <Link to="/patient-resources/conditions/arthrosis">Complete Guide</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -293,7 +293,7 @@ export default function SpineConditionsLibrary() {
                     </CardContent>
                     <CardFooter>
                       <Button asChild variant="outline" className="w-full">
-                        <Link to="/patient-resources/conditions/thoracic-facet-joint-syndrome">Learn More</Link>
+                        <Link to="/patient-resources/conditions/facet-arthropathy">Complete Guide</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -434,6 +434,96 @@ export default function SpineConditionsLibrary() {
                     <CardFooter>
                       <Button asChild variant="outline" className="w-full">
                         <Link to="/patient-resources/conditions/sciatica">Complete Guide</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+
+                  <Card className="bg-card shadow-md">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src="/images/spine-conditions/degenerative-disc-disease.jpg"
+                        alt="Discopathy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle>Discopathy (Degenerative Disc Disease)</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        Comprehensive guide to discopathy and degenerative disc disease affecting cervical, thoracic, and lumbar spine. Learn about disc degeneration process, causes, symptoms, diagnosis, and treatment options from conservative management to advanced surgical interventions.
+                      </p>
+                      <h4 className="font-semibold mb-2">Common Features:</h4>
+                      <ul className="list-disc pl-5 text-muted-foreground mb-4">
+                        <li>Progressive disc dehydration and height loss</li>
+                        <li>Chronic axial pain patterns</li>
+                        <li>Morning stiffness and activity-related symptoms</li>
+                        <li>Gradual onset over months to years</li>
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/patient-resources/conditions/discopathy">Complete Guide</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+
+                  <Card className="bg-card shadow-md">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src="/images/spine-conditions/facet-joints.jpg"
+                        alt="Facet Arthropathy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle>Facet Arthropathy (Facet Joint Syndrome)</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        Comprehensive guide to facet arthropathy and facet joint syndrome affecting cervical, thoracic, and lumbar spine. Learn about facet joint degeneration, causes, symptoms, diagnosis, and treatment options from conservative management to advanced interventional procedures including radiofrequency ablation.
+                      </p>
+                      <h4 className="font-semibold mb-2">Key Characteristics:</h4>
+                      <ul className="list-disc pl-5 text-muted-foreground mb-4">
+                        <li>Axial (localized) pain patterns</li>
+                        <li>Pain worse with spinal extension and rotation</li>
+                        <li>Relief with forward flexion</li>
+                        <li>Excellent response to targeted treatments</li>
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/patient-resources/conditions/facet-arthropathy">Complete Guide</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+
+                  <Card className="bg-card shadow-md">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src="/images/spine-conditions/sacroiliac-joint-pain.jpg"
+                        alt="Sacroiliac Arthropathy"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle>Sacroiliac Arthropathy (SI Joint Dysfunction)</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        Comprehensive guide to sacroiliac arthropathy and SI joint dysfunction affecting the connection between spine and pelvis. Learn about SI joint anatomy, biomechanics, causes, symptoms, diagnosis, and treatment options from conservative management to advanced interventional procedures and surgical fusion.
+                      </p>
+                      <h4 className="font-semibold mb-2">Key Characteristics:</h4>
+                      <ul className="list-disc pl-5 text-muted-foreground mb-4">
+                        <li>Unilateral lower back and buttock pain</li>
+                        <li>Pain below L5 level with groin referral</li>
+                        <li>Positive provocative tests</li>
+                        <li>Excellent response to targeted injections</li>
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/patient-resources/conditions/sacroiliac-arthropathy">Complete Guide</Link>
                       </Button>
                     </CardFooter>
                   </Card>
