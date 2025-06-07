@@ -18,9 +18,11 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDeviceDetection } from "@/hooks/use-mobile";
 
 export default function AppointmentForm() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
   const [startDate, setStartDate] = useState<Date>();
   const [endDate, setEndDate] = useState<Date>();
   const [adults, setAdults] = useState("2");
@@ -66,15 +68,41 @@ export default function AppointmentForm() {
   return (
     <form
       onSubmit={handleSubmit}
-      className="glass-card p-6 space-y-6 animate-fade-in [animation-delay:200ms]"
+      className={cn(
+        "glass-card animate-fade-in [animation-delay:200ms]",
+        deviceInfo.isMobile
+          ? "p-mobile-lg space-y-mobile-lg"
+          : "p-6 space-y-6"
+      )}
     >
-      <h3 className="text-2xl font-bold text-center mb-6">{t.appointmentForm.title}</h3>
+      <h3 className={cn(
+        "font-bold text-center mb-mobile-lg",
+        deviceInfo.isMobile
+          ? "mobile-2xl"
+          : "text-2xl mb-6"
+      )}>
+        {t.appointmentForm.title}
+      </h3>
 
-      <div className="space-y-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div className={cn(
+        deviceInfo.isMobile ? "space-y-mobile-md" : "space-y-4"
+      )}>
+        <div className={cn(
+          deviceInfo.isMobile
+            ? "grid grid-cols-1 gap-mobile-md"
+            : "grid grid-cols-1 md:grid-cols-2 gap-4"
+        )}>
           {/* Appointment Date */}
-          <div className="space-y-2">
-            <label htmlFor="check-in" className="block text-sm font-medium">
+          <div className={cn(
+            deviceInfo.isMobile ? "space-y-mobile-sm" : "space-y-2"
+          )}>
+            <label
+              htmlFor="check-in"
+              className={cn(
+                "block font-medium",
+                deviceInfo.isMobile ? "mobile-text" : "text-sm"
+              )}
+            >
               {t.appointmentForm.checkIn}
             </label>
             <Popover>
@@ -83,15 +111,25 @@ export default function AppointmentForm() {
                   id="check-in"
                   variant="outline"
                   className={cn(
-                    "w-full justify-start text-left font-normal",
-                    !startDate && "text-muted-foreground"
+                    "w-full justify-start text-left font-normal touch-target",
+                    !startDate && "text-muted-foreground",
+                    deviceInfo.isMobile && "mobile-input"
                   )}
                 >
-                  <CalendarIcon className="mr-2 h-4 w-4" />
+                  <CalendarIcon className={cn(
+                    "mr-2",
+                    deviceInfo.isMobile ? "h-5 w-5" : "h-4 w-4"
+                  )} />
                   {startDate ? format(startDate, "PPP") : <span>{t.appointmentForm.selectDate}</span>}
                 </Button>
               </PopoverTrigger>
-              <PopoverContent className="w-auto p-0" align="start">
+              <PopoverContent
+                className={cn(
+                  "w-auto p-0",
+                  deviceInfo.isMobile && "mobile-safe-area"
+                )}
+                align="start"
+              >
                 <Calendar
                   mode="single"
                   selected={startDate}
