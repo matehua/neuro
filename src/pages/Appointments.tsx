@@ -14,9 +14,12 @@ import {
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import { generatePageSEO } from "@/lib/seo";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function Appointments() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
     // Scroll to top when component mounts
