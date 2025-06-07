@@ -5,9 +5,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SafeImage from "@/components/SafeImage";
+import { useDeviceDetection } from "@/hooks/use-mobile";
+import { cn } from "@/lib/utils";
 
 export default function Medicolegal() {
   const { t } = useLanguage();
+  const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -20,17 +23,37 @@ export default function Medicolegal() {
 
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
-          <div className="container relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
+        <section className={cn(
+          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background mobile-safe-area",
+          deviceInfo.isMobile ? "py-mobile-xl" : "py-20"
+        )}>
+          <div className={cn(
+            "relative z-10",
+            deviceInfo.isMobile ? "mobile-container" : "container"
+          )}>
+            <div className={cn(
+              "text-center mx-auto",
+              deviceInfo.isMobile ? "max-w-full" : "max-w-3xl"
+            )}>
+              <h1 className={cn(
+                "font-bold mt-2 mb-mobile-lg",
+                deviceInfo.isMobile
+                  ? "mobile-4xl"
+                  : "text-4xl md:text-5xl mb-6"
+              )}>
                 {t.medicolegal?.title || 'Medicolegal Services'}
               </h1>
-              <p className="text-muted-foreground mb-8">
+              <p className={cn(
+                "text-muted-foreground mb-mobile-lg",
+                deviceInfo.isMobile ? "mobile-text" : "mb-8"
+              )}>
                 {t.medicolegal?.subtitle || 'Expert medicolegal assessments and reports for legal and insurance purposes.'}
               </p>
-              <div className="flex justify-center gap-4">
-                <Button asChild className="bg-primary hover:bg-primary/90 text-white">
+              <div className={cn(
+                "justify-center",
+                deviceInfo.isMobile ? "flex" : "flex gap-4"
+              )}>
+                <Button asChild className="bg-primary hover:bg-primary/90 text-white touch-feedback">
                   <Link to="/contact">{t.medicolegal?.contactUs || 'Contact Us'}</Link>
                 </Button>
               </div>
