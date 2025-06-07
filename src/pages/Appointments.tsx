@@ -33,71 +33,197 @@ export default function Appointments() {
     <Layout pageType="appointments" seoData={appointmentsSeoData}>
       <main className="flex-1">
         {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
-          <div className="container relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
+        <section className={cn(
+          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background mobile-safe-area",
+          deviceInfo.isMobile ? "py-mobile-xl" : "py-20"
+        )}>
+          <div className={cn(
+            "relative z-10",
+            deviceInfo.isMobile ? "mobile-container" : "container"
+          )}>
+            <div className={cn(
+              "text-center mx-auto",
+              deviceInfo.isMobile ? "max-w-full" : "max-w-3xl"
+            )}>
+              <h1 className={cn(
+                "font-bold mt-2 mb-mobile-lg",
+                deviceInfo.isMobile
+                  ? "mobile-4xl"
+                  : "text-4xl md:text-5xl mb-6"
+              )}>
                 {t.appointments.title}
               </h1>
-              <p className="text-muted-foreground mb-6">
+              <p className={cn(
+                "text-muted-foreground mb-mobile-lg",
+                deviceInfo.isMobile ? "mobile-text" : "mb-6"
+              )}>
                 {t.appointments.subtitle}
               </p>
-              <p className="text-muted-foreground">
-                {t.appointments.description1} <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Ales Aliashkevich</a> {t.appointments.description2}
+              <p className={cn(
+                "text-muted-foreground",
+                deviceInfo.isMobile ? "mobile-text" : ""
+              )}>
+                {t.appointments.description1} <a
+                  href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
+                  className={cn(
+                    "text-primary transition-colors touch-feedback",
+                    deviceInfo.isMobile ? "" : "hover:underline"
+                  )}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Dr Ales Aliashkevich
+                </a> {t.appointments.description2}
               </p>
             </div>
           </div>
         </section>
 
         {/* Appointment Process */}
-        <section className="py-16 bg-primary/5">
-          <div className="container">
-            <h2 className="text-3xl font-bold mb-8 text-center">{t.appointments.process.title}</h2>
-            <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
+        <section className={cn(
+          "bg-primary/5",
+          deviceInfo.isMobile ? "mobile-section" : "py-16"
+        )}>
+          <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
+            <h2 className={cn(
+              "font-bold text-center mb-mobile-lg",
+              deviceInfo.isMobile
+                ? "mobile-3xl"
+                : "text-3xl mb-8"
+            )}>
+              {t.appointments.process.title}
+            </h2>
+            <p className={cn(
+              "text-center text-muted-foreground mx-auto mb-mobile-xl",
+              deviceInfo.isMobile
+                ? "mobile-text max-w-full"
+                : "mb-12 max-w-3xl"
+            )}>
               {t.appointments.process.subtitle}
             </p>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className={cn(
+              "grid gap-mobile-lg",
+              deviceInfo.isMobile
+                ? "grid-cols-1"
+                : "grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            )}>
               {/* Initial Consultation */}
-              <div className="card p-6 rounded-lg shadow-md bg-card flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-primary">1</span>
+              <div className={cn(
+                "card rounded-lg shadow-md bg-card flex flex-col items-center text-center",
+                deviceInfo.isMobile ? "p-mobile-lg" : "p-6"
+              )}>
+                <div className={cn(
+                  "rounded-full bg-primary/10 flex items-center justify-center mb-mobile-md",
+                  deviceInfo.isMobile ? "w-12 h-12" : "w-16 h-16 mb-4"
+                )}>
+                  <span className={cn(
+                    "font-bold text-primary",
+                    deviceInfo.isMobile ? "text-lg" : "text-2xl"
+                  )}>1</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.appointments.process.steps.initialConsultation.title}</h3>
-                <p className="text-muted-foreground">
+                <h3 className={cn(
+                  "font-semibold text-primary mb-mobile-sm",
+                  deviceInfo.isMobile
+                    ? "mobile-subheading"
+                    : "text-xl mb-3"
+                )}>
+                  {t.appointments.process.steps.initialConsultation.title}
+                </h3>
+                <p className={cn(
+                  "text-muted-foreground",
+                  deviceInfo.isMobile ? "mobile-text" : ""
+                )}>
                   {t.appointments.process.steps.initialConsultation.description}
                 </p>
               </div>
 
               {/* Investigations */}
-              <div className="card p-6 rounded-lg shadow-md bg-card flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-primary">2</span>
+              <div className={cn(
+                "card rounded-lg shadow-md bg-card flex flex-col items-center text-center",
+                deviceInfo.isMobile ? "p-mobile-lg" : "p-6"
+              )}>
+                <div className={cn(
+                  "rounded-full bg-primary/10 flex items-center justify-center mb-mobile-md",
+                  deviceInfo.isMobile ? "w-12 h-12" : "w-16 h-16 mb-4"
+                )}>
+                  <span className={cn(
+                    "font-bold text-primary",
+                    deviceInfo.isMobile ? "text-lg" : "text-2xl"
+                  )}>2</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.appointments.process.steps.investigations.title}</h3>
-                <p className="text-muted-foreground">
+                <h3 className={cn(
+                  "font-semibold text-primary mb-mobile-sm",
+                  deviceInfo.isMobile
+                    ? "mobile-subheading"
+                    : "text-xl mb-3"
+                )}>
+                  {t.appointments.process.steps.investigations.title}
+                </h3>
+                <p className={cn(
+                  "text-muted-foreground",
+                  deviceInfo.isMobile ? "mobile-text" : ""
+                )}>
                   {t.appointments.process.steps.investigations.description}
                 </p>
               </div>
 
               {/* Discussion of Options */}
-              <div className="card p-6 rounded-lg shadow-md bg-card flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-primary">3</span>
+              <div className={cn(
+                "card rounded-lg shadow-md bg-card flex flex-col items-center text-center",
+                deviceInfo.isMobile ? "p-mobile-lg" : "p-6"
+              )}>
+                <div className={cn(
+                  "rounded-full bg-primary/10 flex items-center justify-center mb-mobile-md",
+                  deviceInfo.isMobile ? "w-12 h-12" : "w-16 h-16 mb-4"
+                )}>
+                  <span className={cn(
+                    "font-bold text-primary",
+                    deviceInfo.isMobile ? "text-lg" : "text-2xl"
+                  )}>3</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.appointments.process.steps.discussionOptions.title}</h3>
-                <p className="text-muted-foreground">
+                <h3 className={cn(
+                  "font-semibold text-primary mb-mobile-sm",
+                  deviceInfo.isMobile
+                    ? "mobile-subheading"
+                    : "text-xl mb-3"
+                )}>
+                  {t.appointments.process.steps.discussionOptions.title}
+                </h3>
+                <p className={cn(
+                  "text-muted-foreground",
+                  deviceInfo.isMobile ? "mobile-text" : ""
+                )}>
                   {t.appointments.process.steps.discussionOptions.description}
                 </p>
               </div>
 
               {/* Treatment Decisions */}
-              <div className="card p-6 rounded-lg shadow-md bg-card flex flex-col items-center text-center">
-                <div className="w-16 h-16 rounded-full bg-primary/10 flex items-center justify-center mb-4">
-                  <span className="text-2xl font-bold text-primary">4</span>
+              <div className={cn(
+                "card rounded-lg shadow-md bg-card flex flex-col items-center text-center",
+                deviceInfo.isMobile ? "p-mobile-lg" : "p-6"
+              )}>
+                <div className={cn(
+                  "rounded-full bg-primary/10 flex items-center justify-center mb-mobile-md",
+                  deviceInfo.isMobile ? "w-12 h-12" : "w-16 h-16 mb-4"
+                )}>
+                  <span className={cn(
+                    "font-bold text-primary",
+                    deviceInfo.isMobile ? "text-lg" : "text-2xl"
+                  )}>4</span>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.appointments.process.steps.treatmentDecisions.title}</h3>
-                <p className="text-muted-foreground">
+                <h3 className={cn(
+                  "font-semibold text-primary mb-mobile-sm",
+                  deviceInfo.isMobile
+                    ? "mobile-subheading"
+                    : "text-xl mb-3"
+                )}>
+                  {t.appointments.process.steps.treatmentDecisions.title}
+                </h3>
+                <p className={cn(
+                  "text-muted-foreground",
+                  deviceInfo.isMobile ? "mobile-text" : ""
+                )}>
                   {t.appointments.process.steps.treatmentDecisions.description}
                 </p>
               </div>
