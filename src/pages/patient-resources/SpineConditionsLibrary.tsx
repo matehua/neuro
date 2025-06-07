@@ -217,6 +217,36 @@ export default function SpineConditionsLibrary() {
                       </Button>
                     </CardFooter>
                   </Card>
+
+                  <Card className="bg-card shadow-md">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src="/images/spine-conditions/cervical-radiculopathy.jpg"
+                        alt="Occipital Neuralgia"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle>Occipital Neuralgia</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        Comprehensive guide to occipital neuralgia - a distinct headache disorder involving irritation of the occipital nerves. Learn about nerve anatomy, pain mechanisms, causes, symptoms, diagnosis, and treatment options from conservative management to advanced interventional procedures and surgical decompression.
+                      </p>
+                      <h4 className="font-semibold mb-2">Key Characteristics:</h4>
+                      <ul className="list-disc pl-5 text-muted-foreground mb-4">
+                        <li>Sharp, shooting pain in back of head</li>
+                        <li>Electric shock-like sensations</li>
+                        <li>Scalp tenderness and hypersensitivity</li>
+                        <li>Excellent response to nerve blocks</li>
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/patient-resources/conditions/occipital-neuralgia">Complete Guide</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
                 </div>
               </TabsContent>
 
@@ -294,6 +324,36 @@ export default function SpineConditionsLibrary() {
                     <CardFooter>
                       <Button asChild variant="outline" className="w-full">
                         <Link to="/patient-resources/conditions/facet-arthropathy">Complete Guide</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+
+                  <Card className="bg-card shadow-md">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src="/images/spine-conditions/cervical-radiculopathy.jpg"
+                        alt="Thoracic Outlet Syndrome"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle>Thoracic Outlet Syndrome</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        Comprehensive guide to thoracic outlet syndrome - compression of neurovascular structures in the thoracic outlet region. Learn about neurogenic, arterial, and venous types, causes, symptoms, diagnosis, and treatment options from conservative management to advanced surgical interventions.
+                      </p>
+                      <h4 className="font-semibold mb-2">Key Characteristics:</h4>
+                      <ul className="list-disc pl-5 text-muted-foreground mb-4">
+                        <li>Neck, shoulder, and arm pain</li>
+                        <li>Numbness and tingling in fingers</li>
+                        <li>Symptoms worse with arm elevation</li>
+                        <li>Excellent response to targeted treatments</li>
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/patient-resources/conditions/thoracic-outlet-syndrome">Complete Guide</Link>
                       </Button>
                     </CardFooter>
                   </Card>
@@ -524,6 +584,66 @@ export default function SpineConditionsLibrary() {
                     <CardFooter>
                       <Button asChild variant="outline" className="w-full">
                         <Link to="/patient-resources/conditions/sacroiliac-arthropathy">Complete Guide</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+
+                  <Card className="bg-card shadow-md">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src="/images/spine-conditions/sciatica.jpg"
+                        alt="Piriformis Syndrome"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle>Piriformis Syndrome</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        Comprehensive guide to piriformis syndrome, a neuromuscular condition where the piriformis muscle irritates the sciatic nerve. Learn about piriformis muscle anatomy, dysfunction mechanisms, causes, symptoms, diagnosis, and treatment options from conservative management to advanced interventional procedures and surgical release.
+                      </p>
+                      <h4 className="font-semibold mb-2">Key Characteristics:</h4>
+                      <ul className="list-disc pl-5 text-muted-foreground mb-4">
+                        <li>Deep buttock pain with radiation</li>
+                        <li>Pain worse with sitting and hip internal rotation</li>
+                        <li>Positive FAIR test and piriformis tenderness</li>
+                        <li>Excellent response to targeted stretching and injections</li>
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/patient-resources/conditions/piriformis-syndrome">Complete Guide</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
+
+                  <Card className="bg-card shadow-md">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src="/images/spine-conditions/cervical-spondylosis.jpg"
+                        alt="Spondylosis"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle>Spondylosis (Spinal Arthritis)</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        Comprehensive guide to spondylosis - age-related spinal degeneration affecting cervical, thoracic, and lumbar spine. Learn about degenerative changes, causes, symptoms, diagnosis, and treatment options from conservative management to advanced interventional procedures and surgical interventions.
+                      </p>
+                      <h4 className="font-semibold mb-2">Key Characteristics:</h4>
+                      <ul className="list-disc pl-5 text-muted-foreground mb-4">
+                        <li>Progressive spinal degeneration with aging</li>
+                        <li>Disc dehydration and osteophyte formation</li>
+                        <li>Chronic pain and stiffness patterns</li>
+                        <li>Excellent response to comprehensive treatment</li>
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/patient-resources/conditions/spondylosis">Complete Guide</Link>
                       </Button>
                     </CardFooter>
                   </Card>
