@@ -357,23 +357,23 @@ export default function SpineConditionsLibrary() {
                       />
                     </div>
                     <CardHeader>
-                      <CardTitle>Lumbar Spinal Stenosis</CardTitle>
+                      <CardTitle>Spinal Stenosis</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground mb-4">
-                        A narrowing of the spinal canal that puts pressure on the spinal cord and nerves, causing pain, numbness, and weakness in the back and legs, often worsening with walking or standing.
+                        Comprehensive guide to spinal stenosis affecting cervical, thoracic, and lumbar spine. Learn about causes, symptoms, diagnosis, and treatment options from conservative management to advanced surgical interventions.
                       </p>
                       <h4 className="font-semibold mb-2">Common Symptoms:</h4>
                       <ul className="list-disc pl-5 text-muted-foreground mb-4">
-                        <li>Back pain that radiates to the buttocks and legs</li>
-                        <li>Neurogenic claudication (leg pain with walking that improves with sitting)</li>
-                        <li>Numbness, weakness, or tingling in the legs</li>
-                        <li>Symptoms that worsen with standing or walking</li>
+                        <li>Neurogenic claudication (position-dependent leg pain)</li>
+                        <li>Pain relief with forward flexion ("shopping cart sign")</li>
+                        <li>Numbness, weakness, or tingling in extremities</li>
+                        <li>Myelopathy symptoms (cervical/thoracic stenosis)</li>
                       </ul>
                     </CardContent>
                     <CardFooter>
                       <Button asChild variant="outline" className="w-full">
-                        <Link to="/patient-resources/conditions/lumbar-spinal-stenosis">Learn More</Link>
+                        <Link to="/patient-resources/conditions/spinal-stenosis">Complete Guide</Link>
                       </Button>
                     </CardFooter>
                   </Card>

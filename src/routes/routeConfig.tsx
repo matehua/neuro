@@ -40,6 +40,7 @@ const ExerciseLibrary = lazyLoad(() => import('@/pages/patient-resources/Exercis
 const LifestyleModifications = lazyLoad(() => import('@/pages/patient-resources/LifestyleModifications'));
 const SpineConditionsLibrary = lazyLoad(() => import('@/pages/patient-resources/SpineConditionsLibrary'));
 const HerniatedDisc = lazyLoad(() => import('@/pages/patient-resources/conditions/HerniatedDisc'));
+const SpinalStenosis = lazyLoad(() => import('@/pages/patient-resources/conditions/SpinalStenosis'));
 const IndividualSpineHealthProgramme = lazyLoad(() => import('@/pages/patient-resources/IndividualSpineHealthProgramme'));
 const SpineAndBrainHealth = lazyLoad(() => import('@/pages/patient-resources/SpineAndBrainHealth'));
 const CervicalSpineInjury = lazyLoad(() => import('@/pages/patient-resources/CervicalSpineInjury'));
@@ -96,6 +97,7 @@ export const baseRoutes: RouteConfig[] = [
   { path: "/patient-resources/condition-information", element: <ConditionInformation /> },
   { path: "/patient-resources/spine-conditions-library", element: <SpineConditionsLibrary /> },
   { path: "/patient-resources/conditions/herniated-disc", element: <HerniatedDisc /> },
+  { path: "/patient-resources/conditions/spinal-stenosis", element: <SpinalStenosis /> },
   { path: "/patient-resources/exercise-library", element: <ExerciseLibrary /> },
   { path: "/patient-resources/assessment-tools", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
   { path: "/patient-resources/patient-dashboard", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
