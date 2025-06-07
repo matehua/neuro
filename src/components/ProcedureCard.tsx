@@ -5,6 +5,7 @@ import { Users, Clock, MapPin, Activity, Stethoscope, Microscope } from "lucide-
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { useDeviceDetection } from "@/hooks/use-mobile";
 
 export interface ProcedureProps {
   id: string;
@@ -20,6 +21,7 @@ export interface ProcedureProps {
 
 export default function ProcedureCard({ procedure }: { procedure: ProcedureProps }) {
   const { t, language } = useLanguage();
+  const deviceInfo = useDeviceDetection();
   const [isHovered, setIsHovered] = useState(false);
 
   // Use translated name and description if available
@@ -33,11 +35,21 @@ export default function ProcedureCard({ procedure }: { procedure: ProcedureProps
 
   return (
     <div
-      className="rounded-xl overflow-hidden shadow-lg transition-all duration-500 hover:shadow-xl bg-card group"
-      onMouseEnter={() => setIsHovered(true)}
-      onMouseLeave={() => setIsHovered(false)}
+      className={cn(
+        "rounded-xl overflow-hidden shadow-lg transition-all duration-500 bg-card group",
+        deviceInfo.isMobile
+          ? "touch-feedback"
+          : "hover:shadow-xl"
+      )}
+      onMouseEnter={() => !deviceInfo.isMobile && setIsHovered(true)}
+      onMouseLeave={() => !deviceInfo.isMobile && setIsHovered(false)}
+      onTouchStart={() => deviceInfo.isMobile && setIsHovered(true)}
+      onTouchEnd={() => deviceInfo.isMobile && setIsHovered(false)}
     >
-      <div className="relative overflow-hidden h-64">
+      <div className={cn(
+        "relative overflow-hidden",
+        deviceInfo.isMobile ? "h-48" : "h-64"
+      )}>
         <img
           src={procedure.image}
           alt={translatedName}
@@ -46,10 +58,21 @@ export default function ProcedureCard({ procedure }: { procedure: ProcedureProps
             isHovered ? "scale-110" : "scale-100"
           )}
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60 flex items-end p-6">
+        <div className={cn(
+          "absolute inset-0 bg-gradient-to-b from-transparent to-black/60 flex items-end",
+          deviceInfo.isMobile ? "p-mobile-md" : "p-6"
+        )}>
           <div>
-            <h3 className="text-white text-xl font-bold mb-1">{translatedName}</h3>
-            <div className="flex items-center text-white/80 text-sm mb-2">
+            <h3 className={cn(
+              "text-white font-bold mb-1",
+              deviceInfo.isMobile ? "mobile-lg" : "text-xl"
+            )}>
+              {translatedName}
+            </h3>
+            <div className={cn(
+              "flex items-center text-white/80 mb-2",
+              deviceInfo.isMobile ? "mobile-text" : "text-sm"
+            )}>
               <MapPin className="h-4 w-4 mr-1" />
               <span>{procedure.location}</span>
             </div>
