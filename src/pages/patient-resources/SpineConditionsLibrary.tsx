@@ -327,23 +327,23 @@ export default function SpineConditionsLibrary() {
                       />
                     </div>
                     <CardHeader>
-                      <CardTitle>Lumbar Disc Herniation</CardTitle>
+                      <CardTitle>Herniated Disc</CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="text-muted-foreground mb-4">
-                        Occurs when the soft center of a spinal disc pushes through a crack in the tougher exterior casing, potentially irritating nearby nerves and causing back pain and sciatica.
+                        Comprehensive guide to herniated discs affecting any level of the spine. Learn about causes, symptoms, diagnosis, and treatment options from conservative care to advanced surgical interventions.
                       </p>
                       <h4 className="font-semibold mb-2">Common Symptoms:</h4>
                       <ul className="list-disc pl-5 text-muted-foreground mb-4">
-                        <li>Lower back pain that may be mild or severe</li>
-                        <li>Sciatica (radiating pain down the leg)</li>
-                        <li>Numbness or tingling in the leg or foot</li>
-                        <li>Muscle weakness in the affected leg</li>
+                        <li>Back or neck pain depending on location</li>
+                        <li>Radiating pain (sciatica for lumbar, arm pain for cervical)</li>
+                        <li>Numbness or tingling in extremities</li>
+                        <li>Muscle weakness in affected areas</li>
                       </ul>
                     </CardContent>
                     <CardFooter>
                       <Button asChild variant="outline" className="w-full">
-                        <Link to="/patient-resources/conditions/lumbar-disc-herniation">Learn More</Link>
+                        <Link to="/patient-resources/conditions/herniated-disc">Complete Guide</Link>
                       </Button>
                     </CardFooter>
                   </Card>
