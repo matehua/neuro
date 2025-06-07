@@ -163,6 +163,71 @@ export const generateProcedureSEO = (
 };
 
 /**
+ * Generate structured data for medical practice
+ */
+export const generateMedicalPracticeStructuredData = (
+  practiceData: {
+    name: string;
+    description: string;
+    url: string;
+    telephone: string;
+    address: {
+      streetAddress: string;
+      addressLocality: string;
+      addressRegion: string;
+      postalCode: string;
+      addressCountry: string;
+    };
+    doctor: {
+      name: string;
+      specialty: string[];
+    };
+  }
+) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": practiceData.name,
+    "description": practiceData.description,
+    "url": practiceData.url,
+    "telephone": practiceData.telephone,
+    "address": {
+      "@type": "PostalAddress",
+      ...practiceData.address
+    },
+    "medicalSpecialty": practiceData.doctor.specialty,
+    "physician": {
+      "@type": "Physician",
+      "name": practiceData.doctor.name,
+      "medicalSpecialty": practiceData.doctor.specialty
+    }
+  };
+};
+
+/**
+ * Generate structured data for medical procedures
+ */
+export const generateMedicalProcedureStructuredData = (
+  procedureData: {
+    name: string;
+    description: string;
+    bodyLocation: string;
+    preparation?: string;
+    followup?: string;
+  }
+) => {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MedicalProcedure",
+    "name": procedureData.name,
+    "description": procedureData.description,
+    "bodyLocation": procedureData.bodyLocation,
+    "preparation": procedureData.preparation,
+    "followup": procedureData.followup
+  };
+};
+
+/**
  * Generate breadcrumb structured data
  */
 export const generateBreadcrumbStructuredData = (breadcrumbs: Array<{ name: string; url: string }>) => {
