@@ -608,7 +608,7 @@ export default function MooneePondsLocation() {
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <div className="relative h-48 rounded-lg overflow-hidden shadow-md mb-6">
                   <img
-                    src="/images/neurosurgery-spine-surgery-operating-theatre-microscope-image-guided-surgery.jpg"
+                    src="/images/Epworth-Eastern-Hospital-Building.jpg"
                     alt="Epworth Eastern Hospital"
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
