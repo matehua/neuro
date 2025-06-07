@@ -39,12 +39,12 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/images/brain-advanced-technology-precision-mineuro-miniamlly-invasive-neurosurgery-Melbourne.jpg')",
+          backgroundImage: "url('/images/hero-neurosurgeon-section-weightlifting-body-spine art.jpg')",
           transform: `translateY(${backgroundY}px)`,
           backgroundPosition: `center ${50 + scrollY * 0.05}%`
         }}
         role="img"
-        aria-label="Dr. Ales Aliashkevich performing neurosurgery with advanced image-guided technology"
+        aria-label="Dr. Ales Aliashkevich - Neurosurgeon specializing in spine health and body strength rehabilitation"
       />
 
       {/* Gradient overlay */}
