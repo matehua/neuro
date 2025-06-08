@@ -1,7 +1,6 @@
 import React, { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import SkipLink from "@/components/SkipLink";
 import { announceToScreenReader } from "@/lib/accessibility";
 import { useSEO, SEOData } from "@/hooks/useSEO";
 import { generatePageSEO } from "@/lib/seo";
@@ -33,7 +32,6 @@ export default function Layout({ children, pageTitle, seoData, pageType = 'defau
 
   return (
     <div className="min-h-screen flex flex-col">
-      <SkipLink />
       <Navbar />
       <main id="main-content" className="flex-1 pt-20" tabIndex={-1}>
         {pageTitle && (

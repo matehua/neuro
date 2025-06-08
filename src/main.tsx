@@ -5,14 +5,27 @@ import App from './App.tsx';
 import './index.css';
 import { initializePerformanceMonitoring } from './lib/performance';
 import { initializeAccessibility } from './lib/accessibility';
+import { initializeMobileOptimizations } from './lib/mobile-optimization';
+import { initializeSecurity } from './lib/security';
 
-// Initialize performance and accessibility monitoring
+// Initialize all app features for production readiness
 function initializeApp() {
   // Initialize performance monitoring
   initializePerformanceMonitoring();
 
   // Initialize accessibility features
   initializeAccessibility();
+
+  // Initialize mobile optimizations
+  initializeMobileOptimizations();
+
+  // Initialize security measures
+  initializeSecurity({
+    enableCSP: true,
+    enableXSSProtection: true,
+    enableClickjacking: true,
+    logSecurityEvents: process.env.NODE_ENV === 'development'
+  });
 
   // Report web vitals
   reportWebVitals();

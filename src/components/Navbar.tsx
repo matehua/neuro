@@ -8,43 +8,13 @@ import SafeImage from "@/components/SafeImage";
 import SkipLink from "@/components/SkipLink";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection, useSwipeGesture } from "@/hooks/use-mobile";
 
 export default function Navbar() {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState<string | null>(null);
-  const deviceInfo = useDeviceDetection();
-
-  // Enhanced mobile menu close function
-  const closeMobileMenu = () => {
-    setMobileMenuOpen(false);
-    setActiveSubmenu(null);
-    // Remove scroll lock from body
-    document.body.classList.remove('mobile-no-scroll');
-  };
-
-  // Enhanced mobile menu open function
-  const openMobileMenu = () => {
-    setMobileMenuOpen(true);
-    // Prevent body scroll when mobile menu is open
-    document.body.classList.add('mobile-no-scroll');
-  };
-
-  // Swipe gesture for closing mobile menu
-  const swipeHandlers = useSwipeGesture(
-    () => {
-      // Swipe left to close menu
-      if (mobileMenuOpen) {
-        closeMobileMenu();
-      }
-    },
-    undefined, // No right swipe action
-    undefined, // No up swipe action
-    undefined, // No down swipe action
-    100 // Threshold for swipe detection
-  );
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
   const navLinks = [
     { name: t.nav.home, path: "/" },
@@ -120,8 +90,27 @@ export default function Navbar() {
     return () => {
       window.removeEventListener("scroll", handleScroll);
       document.removeEventListener('click', handleClickOutside);
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+      }
     };
-  }, [scrolled, activeSubmenu]);
+  }, [scrolled, activeSubmenu, hoverTimeout]);
+
+  // Function to handle submenu hover with delay
+  const handleSubmenuEnter = (name: string) => {
+    if (hoverTimeout) {
+      clearTimeout(hoverTimeout);
+      setHoverTimeout(null);
+    }
+    setActiveSubmenu(name);
+  };
+
+  const handleSubmenuLeave = () => {
+    const timeout = setTimeout(() => {
+      setActiveSubmenu(null);
+    }, 150); // 150ms delay before closing
+    setHoverTimeout(timeout);
+  };
 
   // Function to toggle submenu
   const toggleSubmenu = (name: string, e: React.MouseEvent) => {
@@ -158,8 +147,8 @@ export default function Navbar() {
   };
 
   return (
-    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300",
-      scrolled ? "bg-white/80 dark:bg-card/80 backdrop-blur-lg py-3 shadow-md" : "bg-transparent py-5")}>
+    <header className={cn("fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-0",
+      scrolled ? "bg-white/95 dark:bg-card/95 backdrop-blur-lg py-3 shadow-md" : "bg-white/90 dark:bg-card/90 backdrop-blur-sm py-5")}>
       <SkipLink />
       <nav className="container flex justify-between items-center" aria-label="Main navigation">
         <div className="flex items-center gap-4">
@@ -168,22 +157,23 @@ export default function Navbar() {
               src="/logo/logo.png"
               alt="miNEURO Logo"
               className="h-10 w-auto"
-              fallbackSrc="/logo/logo-placeholder.png"
+              fallbackSrc="/logo/logo-white.png"
             />
           </Link>
           <LanguageSelector />
         </div>
 
         {/* Desktop Navigation */}
-        <ul className="hidden md:flex space-x-8" role="menubar">
+        <ul className="hidden lg:flex items-center space-x-6" role="menubar">
           {navLinks.map(link => (
             <li key={link.name} className={`relative nav-item-with-submenu ${activeSubmenu === link.name ? 'active' : ''}`} role="none">
               {link.submenu ? (
                 <>
                   <Link
                     to={link.path}
-                    className="font-medium transition-colors hover:text-primary flex items-center after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
-                    onClick={(e) => toggleSubmenu(link.name, e)}
+                    className="font-medium transition-colors hover:text-primary flex items-center text-base whitespace-nowrap"
+                    onMouseEnter={() => handleSubmenuEnter(link.name)}
+                    onMouseLeave={handleSubmenuLeave}
                     onKeyDown={(e) => handleKeyDown(e, link.name, true)}
                     aria-expanded={activeSubmenu === link.name}
                     aria-haspopup="true"
@@ -191,17 +181,19 @@ export default function Navbar() {
                     tabIndex={0}
                   >
                     {link.name}
-                    <span className="ml-1 inline-block">▾</span>
+                    <span className="ml-1 inline-block text-sm">▾</span>
                   </Link>
 
                   {/* Dropdown for items with submenu */}
                   <div
                     className={`absolute left-0 mt-2 w-56 rounded-md shadow-lg bg-card ring-1 ring-border transition-opacity duration-200 z-50 ${
-                      activeSubmenu === link.name ? 'opacity-100 visible' : 'opacity-0 invisible pointer-events-none'
+                      activeSubmenu === link.name ? 'opacity-100 visible' : 'opacity-0 invisible'
                     }`}
                     role="menu"
                     aria-orientation="vertical"
                     aria-labelledby={`${link.name.toLowerCase()}-menu`}
+                    onMouseEnter={() => handleSubmenuEnter(link.name)}
+                    onMouseLeave={handleSubmenuLeave}
                   >
                     <div className="py-1">
                       {link.submenu.map((subItem) => (
@@ -222,7 +214,7 @@ export default function Navbar() {
               ) : (
                 <Link
                   to={link.path}
-                  className="font-medium transition-colors hover:text-primary after:absolute after:bottom-0 after:left-0 after:right-0 after:h-0.5 after:w-0 after:bg-primary after:transition-all hover:after:w-full"
+                  className="font-medium transition-colors hover:text-primary text-base whitespace-nowrap"
                   role="menuitem"
                   tabIndex={0}
                 >
@@ -233,7 +225,7 @@ export default function Navbar() {
           ))}
         </ul>
 
-        <div className="hidden md:flex items-center space-x-2">
+        <div className="hidden lg:flex items-center space-x-2">
           <ThemeToggle />
           <Button asChild className="btn-primary">
             <Link to="/appointments">{t.nav.bookNow}</Link>
@@ -241,13 +233,13 @@ export default function Navbar() {
         </div>
 
         {/* Mobile Navigation */}
-        <div className="md:hidden flex items-center space-x-2">
+        <div className="lg:hidden flex items-center space-x-2">
           <ThemeToggle />
           <Button
             variant="ghost"
             size="icon"
-            onClick={() => mobileMenuOpen ? closeMobileMenu() : openMobileMenu()}
-            className="mobile-button rounded-full touch-feedback"
+            onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+            className="rounded-full"
             aria-label={mobileMenuOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileMenuOpen}
           >
@@ -258,34 +250,27 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       <div
-        className={cn("fixed inset-0 z-40 bg-background/80 mobile-backdrop md:hidden transition-opacity duration-300",
+        className={cn("fixed inset-0 z-40 bg-background/80 backdrop-blur-sm lg:hidden transition-opacity duration-300",
         mobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none")}
         role="dialog"
         aria-modal="true"
         aria-label="Mobile navigation menu"
         id="mobile-menu"
-        onClick={(e) => {
-          // Close menu when clicking on backdrop
-          if (e.target === e.currentTarget) {
-            closeMobileMenu();
-          }
-        }}
       >
         <div
-          className={cn("fixed inset-y-0 right-0 w-4/5 max-w-sm bg-card shadow-xl mobile-safe-area transition-transform duration-300 ease-in-out",
+          className={cn("fixed inset-y-0 right-0 w-3/4 max-w-sm bg-card shadow-xl p-6 transition-transform duration-300 ease-in-out",
           mobileMenuOpen ? "translate-x-0" : "translate-x-full")}
-          {...swipeHandlers}
         >
-          <div className="flex flex-col h-full justify-between p-mobile-lg">
+          <div className="flex flex-col h-full justify-between">
             <div>
-              <div className="flex justify-between items-center mb-mobile-xl">
-                <div className="flex items-center gap-mobile-md">
-                  <Link to="/" onClick={closeMobileMenu} className="flex items-center touch-feedback">
+              <div className="flex justify-between items-center mb-8">
+                <div className="flex items-center gap-4">
+                  <Link to="/" onClick={() => setMobileMenuOpen(false)} className="flex items-center">
                     <SafeImage
                       src="/logo/logo.png"
                       alt="miNEURO Logo"
                       className="h-10 w-auto"
-                      fallbackSrc="/logo/logo-placeholder.png"
+                      fallbackSrc="/logo/logo-white.png"
                     />
                   </Link>
                   <LanguageSelector />
@@ -293,25 +278,25 @@ export default function Navbar() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  onClick={closeMobileMenu}
-                  className="mobile-button rounded-full touch-feedback"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="rounded-full ml-2"
                   aria-label="Close menu"
                 >
                   <X className="h-6 w-6" aria-hidden="true" />
                 </Button>
               </div>
               <nav aria-label="Mobile navigation">
-                <ul className="space-y-mobile-lg" role="menu">
+                <ul className="space-y-6" role="menu">
                   {navLinks.map(link => (
                     <li key={link.name} role="none">
                       <Link
                         to={link.path}
-                        className="mobile-text font-medium transition-colors hover:text-primary block mobile-button touch-feedback py-mobile-md"
+                        className="text-lg font-medium transition-colors hover:text-primary block"
                         onClick={(e) => {
                           // Check if the click was on the dropdown arrow
                           const target = e.currentTarget as HTMLElement;
                           const rect = target.getBoundingClientRect();
-                          const isClickNearRightEdge = (e.clientX > rect.right - 44); // Larger touch target
+                          const isClickNearRightEdge = (e.clientX > rect.right - 40);
 
                           if (link.submenu && isClickNearRightEdge) {
                             // If clicking on the dropdown arrow, toggle submenu
@@ -319,7 +304,7 @@ export default function Navbar() {
                             setActiveSubmenu(activeSubmenu === link.name ? null : link.name);
                           } else {
                             // Otherwise navigate to the page
-                            closeMobileMenu();
+                            setMobileMenuOpen(false);
                           }
                         }}
                         aria-expanded={link.submenu ? activeSubmenu === link.name : undefined}
@@ -327,22 +312,13 @@ export default function Navbar() {
                         role="menuitem"
                       >
                         {link.name}
-                        {link.submenu && (
-                          <span className="ml-1 inline-block float-right text-xl leading-none touch-target">
-                            {activeSubmenu === link.name ? '▴' : '▾'}
-                          </span>
-                        )}
+                        {link.submenu && <span className="ml-1 inline-block float-right">▾</span>}
                       </Link>
 
                       {/* Mobile submenu */}
                       {link.submenu && (
                         <div
-                          className={cn(
-                            "pl-mobile-lg mt-mobile-sm space-y-mobile-sm transition-all duration-200 overflow-hidden",
-                            activeSubmenu === link.name
-                              ? 'max-h-96 opacity-100'
-                              : 'max-h-0 opacity-0'
-                          )}
+                          className={`pl-6 mt-2 space-y-2 ${activeSubmenu === link.name ? 'block' : 'hidden'}`}
                           role="menu"
                           aria-label={`${link.name} submenu`}
                         >
@@ -350,8 +326,8 @@ export default function Navbar() {
                             <Link
                               key={subItem.name}
                               to={subItem.path}
-                              className="block mobile-text text-muted-foreground hover:text-primary mobile-button touch-feedback py-mobile-sm"
-                              onClick={closeMobileMenu}
+                              className="block text-sm text-muted-foreground hover:text-primary"
+                              onClick={() => setMobileMenuOpen(false)}
                               role="menuitem"
                             >
                               {subItem.name}
@@ -365,8 +341,8 @@ export default function Navbar() {
               </nav>
             </div>
 
-            <Button asChild className="w-full btn-primary mobile-button touch-feedback mt-mobile-xl">
-              <Link to="/appointments" onClick={closeMobileMenu}>
+            <Button asChild className="w-full btn-primary mt-6">
+              <Link to="/appointments" onClick={() => setMobileMenuOpen(false)}>
                 {t.nav.bookNow}
               </Link>
             </Button>

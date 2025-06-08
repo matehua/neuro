@@ -19,6 +19,19 @@ export default defineConfig(({ mode }) => ({
       "@": path.resolve(__dirname, "./src"),
     },
   },
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      'react-router-dom',
+      '@tanstack/react-query',
+      'lucide-react',
+      'date-fns',
+      'clsx',
+      'tailwind-merge'
+    ],
+    exclude: ['lovable-tagger']
+  },
   build: {
     rollupOptions: {
       output: {

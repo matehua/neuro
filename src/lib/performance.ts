@@ -3,6 +3,8 @@
  * Provides tools for measuring and improving application performance
  */
 
+import React from 'react';
+
 /**
  * Performance metrics interface
  */
@@ -71,8 +73,8 @@ export class PerformanceMonitor {
         const entries = list.getEntries();
         const lastEntry = entries[entries.length - 1];
         this.logMetric('LCP', lastEntry.startTime, lastEntry.startTime, {
-          element: (lastEntry as any).element?.tagName,
-          url: (lastEntry as any).url
+          element: (lastEntry as PerformanceEntry & { element?: { tagName: string } }).element?.tagName,
+          url: (lastEntry as PerformanceEntry & { url?: string }).url
         });
       });
       lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
@@ -83,8 +85,8 @@ export class PerformanceMonitor {
         const entries = list.getEntries();
         entries.forEach((entry) => {
           this.logMetric('FID', entry.startTime, entry.startTime + entry.duration, {
-            processingStart: (entry as any).processingStart,
-            processingEnd: (entry as any).processingEnd
+            processingStart: (entry as PerformanceEntry & { processingStart?: number }).processingStart,
+            processingEnd: (entry as PerformanceEntry & { processingEnd?: number }).processingEnd
           });
         });
       });
@@ -238,7 +240,7 @@ export function measureComponentRender<T extends Record<string, unknown>>(
       return () => {
         monitor.endMeasure(`${name} Mount`);
       };
-    }, [monitor, name]);
+    }, []);
 
     React.useEffect(() => {
       monitor.startMeasure(`${name} Render`);
@@ -260,7 +262,7 @@ export function usePerformanceMetric(name: string, dependencies: React.Dependenc
     return () => {
       monitor.endMeasure(name);
     };
-  }, [monitor, name, ...dependencies]);
+  }, dependencies);
 
   return {
     startMeasure: (metricName: string) => monitor.startMeasure(metricName),

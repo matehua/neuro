@@ -80,7 +80,7 @@ export function useDeviceDetection() {
       const orientation = height > width ? 'portrait' : 'landscape';
 
       // Determine screen size category
-      let screenSize: typeof deviceInfo.screenSize = 'unknown';
+      let screenSize: 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'unknown' = 'unknown';
       if (width < 475) screenSize = 'xs';
       else if (width < 640) screenSize = 'sm';
       else if (width < 768) screenSize = 'md';

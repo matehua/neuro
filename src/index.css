@@ -74,6 +74,13 @@
     @apply border-border;
   }
 
+  html, body {
+    margin: 0;
+    padding: 0;
+    border: none;
+    outline: none;
+  }
+
   body {
     @apply bg-background text-foreground antialiased;
     font-family: 'Inter', sans-serif;
@@ -81,6 +88,13 @@
 
   h1, h2, h3, h4, h5, h6 {
     font-family: 'Playfair Display', serif;
+  }
+
+  /* Remove any browser default progress bars or loading indicators */
+  ::-webkit-progress-bar,
+  ::-webkit-progress-value,
+  progress {
+    display: none !important;
   }
 }
 
@@ -285,7 +299,7 @@
 
   .skip-link {
     position: absolute;
-    top: -40px;
+    top: -100px;
     left: 6px;
     background: hsl(var(--primary));
     color: hsl(var(--primary-foreground));
@@ -294,10 +308,14 @@
     border-radius: 4px;
     z-index: 1000;
     transition: top 0.3s;
+    opacity: 0;
+    pointer-events: none;
   }
 
   .skip-link:focus {
     top: 6px;
+    opacity: 1;
+    pointer-events: auto;
   }
 
   /* Focus management */
@@ -397,4 +415,5 @@
       page-break-before: always;
     }
   }
+
 }

@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
+import SafeImage from "@/components/SafeImage";
 import { MapPin, Phone, Mail, Clock, Send, Check, FileText, CreditCard, Building, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -113,10 +114,11 @@ export default function Contact() {
                 </h2>
 
                 <div className="relative rounded-xl overflow-hidden mb-8 shadow-lg">
-                  <img
-                    src="/images/medical-consulting-room-lease-Surrey-Hills-miNEURO-reception-desk.jpg"
+                  <SafeImage
+                    src="/images/neurosurgical-consultation-suite-Surrey-Hills-miNEURO-reception-desk.jpg"
                     alt="miNEURO Consulting Suites Reception"
                     className="w-full h-auto"
+                    fallbackSrc="/images/medical-consulting.jpg"
                   />
                 </div>
 
@@ -340,10 +342,11 @@ export default function Contact() {
                 <h2 className="text-2xl font-bold mb-6">{t.contact.sendMessage}</h2>
 
                 <div className="relative rounded-xl overflow-hidden mb-8 shadow-lg">
-                  <img
-                    src="/images/medical-consulting-room-lease-Surrey-Hills-miNEURO-waiting-area.jpg"
+                  <SafeImage
+                    src="/images/neurosurgical-consultation-suite-Surrey-Hills-miNEURO-waiting-area.jpg"
                     alt="miNEURO Consulting Suites Waiting Area"
                     className="w-full h-auto"
+                    fallbackSrc="/images/medical-consulting.jpg"
                   />
                 </div>
 
@@ -675,10 +678,11 @@ export default function Contact() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
               <div className="relative rounded-xl overflow-hidden shadow-lg">
-                <img
+                <SafeImage
                   src="/images/miNEURO-brain-spine-advanced-technology-precision-miniamlly-invasive-neurosurgery-Melbourne-Surrey-Hills-entrance.jpg"
                   alt="miNEURO Consulting Suites Entrance"
                   className="w-full h-auto"
+                  fallbackSrc="/images/medical-consulting.jpg"
                 />
               </div>
               <div className="flex flex-col justify-center">
