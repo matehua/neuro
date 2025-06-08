@@ -677,6 +677,36 @@ export default function SpineConditionsLibrary() {
                       </Button>
                     </CardFooter>
                   </Card>
+
+                  <Card className="bg-card shadow-md">
+                    <div className="relative h-48 overflow-hidden">
+                      <img
+                        src="/images/spine-conditions/spondylolisthesis.jpg"
+                        alt="Spondylolisthesis"
+                        className="w-full h-full object-cover"
+                      />
+                    </div>
+                    <CardHeader>
+                      <CardTitle>Spondylolisthesis</CardTitle>
+                    </CardHeader>
+                    <CardContent>
+                      <p className="text-muted-foreground mb-4">
+                        Comprehensive guide to spondylolisthesis - forward slippage of one vertebra over another. Learn about classification systems, Meyerding grading, causes, symptoms, diagnosis, and treatment options from conservative management to advanced surgical interventions including decompression and fusion procedures.
+                      </p>
+                      <h4 className="font-semibold mb-2">Key Characteristics:</h4>
+                      <ul className="list-disc pl-5 text-muted-foreground mb-4">
+                        <li>Forward vertebral displacement</li>
+                        <li>Most common at L4-L5 and L5-S1 levels</li>
+                        <li>Neurogenic claudication symptoms</li>
+                        <li>Excellent surgical outcomes when indicated</li>
+                      </ul>
+                    </CardContent>
+                    <CardFooter>
+                      <Button asChild variant="outline" className="w-full">
+                        <Link to="/patient-resources/conditions/spondylolisthesis">Complete Guide</Link>
+                      </Button>
+                    </CardFooter>
+                  </Card>
                 </div>
               </TabsContent>
             </Tabs>

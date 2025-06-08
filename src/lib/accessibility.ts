@@ -150,3 +150,30 @@ export function useFocusTrap(containerRef: React.RefObject<HTMLElement>, isActiv
     }
   };
 }
+
+/**
+ * Initialize accessibility features
+ */
+export function initializeAccessibility(): void {
+  // Add skip link if not present
+  if (typeof document !== 'undefined' && !document.querySelector('.skip-link')) {
+    const skipLink = document.createElement('a');
+    skipLink.href = '#main-content';
+    skipLink.className = 'skip-link';
+    skipLink.textContent = 'Skip to main content';
+    document.body.insertBefore(skipLink, document.body.firstChild);
+  }
+
+  // Add focus-visible polyfill behavior
+  if (typeof document !== 'undefined') {
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Tab') {
+        document.body.classList.add('keyboard-navigation');
+      }
+    });
+
+    document.addEventListener('mousedown', () => {
+      document.body.classList.remove('keyboard-navigation');
+    });
+  }
+}

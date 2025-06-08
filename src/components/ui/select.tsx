@@ -25,7 +25,8 @@ const SelectTrigger = React.forwardRef<
   const deviceInfo = useDeviceDetection();
 
   // Generate unique IDs for accessibility
-  const selectId = props.id || `select-${React.useId()}`;
+  const uniqueId = React.useId();
+  const selectId = props.id || `select-${uniqueId}`;
   const errorId = error ? `${selectId}-error` : undefined;
   const descriptionId = description ? `${selectId}-description` : undefined;
 

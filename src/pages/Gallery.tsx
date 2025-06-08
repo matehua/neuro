@@ -1,5 +1,5 @@
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useCallback } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SafeImage from "@/components/SafeImage";
@@ -106,7 +106,7 @@ export default function Gallery() {
   };
 
   // Handle lightbox navigation
-  const navigateGallery = (direction: "prev" | "next") => {
+  const navigateGallery = useCallback((direction: "prev" | "next") => {
     if (selectedImage === null) return;
 
     const currentIndex = filteredImages.findIndex(img => img.id === selectedImage);
@@ -119,7 +119,7 @@ export default function Gallery() {
     }
 
     setSelectedImage(filteredImages[newIndex].id);
-  };
+  }, [selectedImage, filteredImages]);
 
   // Handle keyboard navigation for lightbox
   useEffect(() => {

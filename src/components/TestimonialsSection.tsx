@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight, Star } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -44,7 +44,7 @@ export default function TestimonialsSection() {
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
-  const nextTestimonial = () => {
+  const nextTestimonial = useCallback(() => {
     if (isAnimating) return;
 
     setIsAnimating(true);
@@ -53,7 +53,7 @@ export default function TestimonialsSection() {
     setTimeout(() => {
       setIsAnimating(false);
     }, 500);
-  };
+  }, [isAnimating]);
 
   const prevTestimonial = () => {
     if (isAnimating) return;

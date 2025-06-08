@@ -51,7 +51,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
     const Comp = asChild ? Slot : "button"
 
     // Enhance accessibility
-    const ariaProps: Record<string, any> = {};
+    const ariaProps: Record<string, string> = {};
 
     // If an accessible label is provided, use it for screen readers
     if (accessibleLabel) {
