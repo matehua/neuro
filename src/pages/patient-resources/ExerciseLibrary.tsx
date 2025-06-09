@@ -1,6 +1,5 @@
 import { useEffect, useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -21,8 +20,7 @@ import {
   DialogClose
 } from "@/components/ui/dialog";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { useQuery } from "@tanstack/react-query";
-import { useState as useStateReact, useEffect as useEffectReact } from "react";
+import SafeImage from "@/components/SafeImage";
 
 // Define types for our exercise data
 interface Exercise {
@@ -66,11 +64,11 @@ export default function ExerciseLibrary() {
   }, []);
 
   // Fetch exercise data using simple fetch
-  const [exerciseData, setExerciseData] = useStateReact<ExerciseData | null>(null);
-  const [isLoading, setIsLoading] = useStateReact(true);
-  const [error, setError] = useStateReact<Error | null>(null);
+  const [exerciseData, setExerciseData] = useState<ExerciseData | null>(null);
+  const [isLoading, setIsLoading] = useState(true);
+  const [error, setError] = useState<Error | null>(null);
 
-  useEffectReact(() => {
+  useEffect(() => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
@@ -160,10 +158,13 @@ export default function ExerciseLibrary() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-
-      <main className="flex-1 pt-20">
+    <Layout pageTitle="Exercise Library" seoData={{
+      title: "Exercise Library | Spine Health Exercises | miNEURO",
+      description: "Comprehensive collection of spine-specific exercises designed by neurosurgical experts to help strengthen your spine and reduce pain.",
+      keywords: "spine exercises, back exercises, neck exercises, core strengthening, posture exercises, physical therapy"
+    }}>
+      <div className="min-h-screen flex flex-col">
+        <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-16 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
           <div className="container relative z-10">
@@ -307,10 +308,11 @@ export default function ExerciseLibrary() {
                     {filteredExercises.map((exercise) => (
                       <Card key={exercise.id} className="bg-card shadow-md hover:shadow-lg transition-shadow overflow-hidden">
                         <div className="relative aspect-video w-full overflow-hidden group">
-                          <img
+                          <SafeImage
                             src={exercise.image}
                             alt={exercise.name}
                             className="w-full h-full object-cover transition-transform group-hover:scale-105"
+                            fallbackSrc="/images/exercises/placeholder.jpg"
                           />
                           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                             <Button variant="secondary" size="icon" className="rounded-full" onClick={() => openExerciseDetail(exercise)}>
@@ -364,10 +366,11 @@ export default function ExerciseLibrary() {
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mt-4">
                 <div>
-                  <img
+                  <SafeImage
                     src={selectedExercise.image}
                     alt={selectedExercise.name}
                     className="w-full h-auto rounded-lg object-cover mb-4"
+                    fallbackSrc="/images/exercises/placeholder.jpg"
                   />
                   {selectedExercise.videoUrl && (
                     <div className="mt-4">
@@ -557,9 +560,8 @@ export default function ExerciseLibrary() {
             </div>
           </div>
         </section>
-      </main>
-
-      <Footer />
-    </div>
+        </main>
+      </div>
+    </Layout>
   );
 }

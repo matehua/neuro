@@ -382,6 +382,94 @@
           ],
           "biomechanicalPrinciples": "This exercise strengthens the cervical extensors and helps balance the strength between anterior and posterior neck muscles.",
           "scientificValue": "Research shows that balanced neck strengthening exercises improve cervical stability and reduce the risk of neck injury."
+        },
+        {
+          "id": "scapular-retraction-with-neck-retraction",
+          "name": "Scapular Retraction with Neck Retraction",
+          "description": "Combines scapular and neck retraction to improve posture and strengthen upper back and neck muscles.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/scapular-retraction-with-neck-retraction.jpg",
+          "videoUrl": "/videos/exercises/scapular-retraction-with-neck-retraction.mp4",
+          "targetAreas": ["Neck", "Upper Back", "Rhomboids", "Trapezius"],
+          "relatedConditions": ["Forward Head Posture", "Upper Cross Syndrome", "Neck Pain"],
+          "instructions": [
+            "Sit or stand with good posture",
+            "Simultaneously perform a chin tuck and squeeze shoulder blades together",
+            "Hold both positions for 5-10 seconds",
+            "Release slowly and return to starting position",
+            "Repeat 10-15 times, 2-3 times daily"
+          ],
+          "cautions": [
+            "Coordinate both movements smoothly",
+            "Don't force either movement",
+            "Stop if you experience increased pain",
+            "Maintain normal breathing throughout"
+          ],
+          "biomechanicalPrinciples": "This combined exercise addresses multiple components of upper crossed syndrome by strengthening both cervical and thoracic postural muscles simultaneously.",
+          "scientificValue": "Studies show that combined postural exercises are more effective than isolated exercises for improving overall spinal alignment and reducing pain."
+        },
+        {
+          "id": "neck-mobility-with-rotation",
+          "name": "Neck Mobility with Rotation",
+          "description": "Combines multiple neck movements to improve overall mobility and coordination.",
+          "difficulty": "advanced",
+          "image": "/images/exercises/neck-mobility-with-rotation.jpg",
+          "videoUrl": "/videos/exercises/neck-mobility-with-rotation.mp4",
+          "targetAreas": ["Cervical Spine", "Neck Muscles", "Upper Trapezius"],
+          "relatedConditions": ["Neck Stiffness", "Cervical Spondylosis", "Reduced Mobility"],
+          "instructions": [
+            "Start in a neutral seated or standing position",
+            "Slowly turn head to the right, then tilt ear toward shoulder",
+            "Return to center, then repeat sequence to the left",
+            "Add gentle extension and flexion movements",
+            "Perform 5-8 repetitions in each direction",
+            "Complete 2 sets, 1-2 times daily"
+          ],
+          "cautions": [
+            "Move very slowly and smoothly",
+            "Stay within comfortable range of motion",
+            "Stop if you experience dizziness or increased pain",
+            "Not recommended for acute cervical injuries"
+          ],
+          "biomechanicalPrinciples": "Multi-planar cervical movements promote healthy joint mechanics and maintain functional range of motion across all cervical segments.",
+          "scientificValue": "Research indicates that multi-directional mobility exercises effectively maintain cervical function and prevent age-related stiffness."
+        },
+        {
+          "id": "deep-neck-flexor-activation",
+          "name": "Deep Neck Flexor Activation",
+          "description": "Targets the deep neck flexor muscles to improve cervical stability and posture.",
+          "difficulty": "advanced",
+          "image": "/images/exercises/deep-neck-flexor-activation.jpg",
+          "videoUrl": "/videos/exercises/deep-neck-flexor-activation.mp4",
+          "targetAreas": ["Deep Neck Flexors", "Longus Colli", "Longus Capitis"],
+          "relatedConditions": ["Cervical Instability", "Forward Head Posture", "Neck Pain"],
+          "instructions": [
+            "Lie on your back with knees bent",
+            "Place a small towel under your neck",
+            "Gently nod your head as if saying 'yes'",
+            "Feel the deep muscles at the front of your neck engage",
+            "Hold for 10 seconds while breathing normally",
+            "Relax and repeat 10 times, 2 sets daily"
+          ],
+          "cautions": [
+            "This is a very subtle movement",
+            "Don't lift your head off the surface",
+            "Focus on the deep muscle activation",
+            "Stop if you experience increased pain or headache"
+          ],
+          "biomechanicalPrinciples": "Deep neck flexor activation specifically targets the longus colli and longus capitis muscles, which are crucial for cervical stability and proper head positioning.",
+          "scientificValue": "Clinical research demonstrates that deep neck flexor training significantly improves cervical stability and reduces neck pain in patients with cervical dysfunction.",
+          "contraindications": [
+            "Acute cervical spine injury",
+            "Severe cervical instability",
+            "Recent cervical surgery",
+            "Active cervical radiculopathy with neurological symptoms"
+          ],
+          "modifications": [
+            "Beginners: Start with 5-second holds",
+            "Advanced: Progress to 15-second holds",
+            "Alternative: Perform in sitting position with back support"
+          ]
         }
       ]
     },
@@ -496,6 +584,303 @@
           ],
           "biomechanicalPrinciples": "Band pull-aparts strengthen the posterior chain muscles while promoting scapular retraction and external rotation. The elastic resistance provides variable load throughout the range of motion.",
           "scientificValue": "Research shows that resistance band exercises effectively strengthen the posterior deltoids and rhomboids, helping to counteract forward head posture and rounded shoulders."
+        },
+        {
+          "id": "seated-rows",
+          "name": "Seated Rows",
+          "description": "Strengthens the upper and mid-back muscles using resistance bands or cables to improve posture and reduce upper back pain.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/seated-rows.jpg",
+          "videoUrl": "/videos/exercises/seated-rows.mp4",
+          "targetAreas": ["Latissimus Dorsi", "Rhomboids", "Middle Trapezius", "Posterior Deltoids"],
+          "relatedConditions": ["Upper Back Weakness", "Poor Posture", "Thoracic Kyphosis", "Rounded Shoulders"],
+          "instructions": [
+            "Sit with legs extended, resistance band around feet",
+            "Hold handles with arms extended forward",
+            "Keep your back straight and core engaged",
+            "Pull handles toward your lower ribs, squeezing shoulder blades together",
+            "Hold for 2 seconds at the end position",
+            "Slowly return to starting position with control",
+            "Repeat 12-15 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Maintain proper spinal alignment throughout",
+            "Don't round your back during the movement",
+            "Choose appropriate resistance level",
+            "Stop if you experience shoulder or back pain"
+          ],
+          "biomechanicalPrinciples": "Seated rows target the latissimus dorsi and rhomboids while promoting scapular retraction and thoracic extension. This exercise helps counteract the effects of prolonged sitting and forward head posture.",
+          "scientificValue": "Studies demonstrate that rowing exercises effectively strengthen the posterior chain and improve postural alignment in individuals with upper crossed syndrome."
+        },
+        {
+          "id": "thoracic-extension-foam-roller",
+          "name": "Thoracic Extension on Foam Roller",
+          "description": "Improves thoracic spine mobility and reduces stiffness using a foam roller to promote extension.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/thoracic-extension-foam-roller.jpg",
+          "videoUrl": "/videos/exercises/thoracic-extension-foam-roller.mp4",
+          "targetAreas": ["Thoracic Spine", "Erector Spinae", "Intercostals", "Chest Muscles"],
+          "relatedConditions": ["Thoracic Kyphosis", "Upper Back Pain", "Reduced Mobility", "Poor Posture"],
+          "instructions": [
+            "Place foam roller horizontally under your mid-back",
+            "Support your head with your hands, elbows wide",
+            "Slowly lean back over the roller, extending your thoracic spine",
+            "Hold for 30 seconds, breathing deeply",
+            "Move the roller up or down 2 inches and repeat",
+            "Cover the entire thoracic region",
+            "Perform 1-2 times daily"
+          ],
+          "cautions": [
+            "Don't roll over the lower back or neck",
+            "Move slowly and avoid bouncing",
+            "Stop if you experience increased pain",
+            "Support your head to avoid neck strain"
+          ],
+          "biomechanicalPrinciples": "Foam rolling promotes thoracic extension by providing a fulcrum for spinal movement while simultaneously releasing fascial restrictions in the thoracic region.",
+          "scientificValue": "Research shows that foam rolling combined with extension exercises effectively improves thoracic mobility and reduces pain in individuals with thoracic kyphosis."
+        },
+        {
+          "id": "prone-t-raises",
+          "name": "Prone T Raises",
+          "description": "Strengthens the middle trapezius and rhomboids while lying prone to improve scapular stability.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/prone-t-raises.jpg",
+          "videoUrl": "/videos/exercises/prone-t-raises.mp4",
+          "targetAreas": ["Middle Trapezius", "Rhomboids", "Posterior Deltoids", "Lower Trapezius"],
+          "relatedConditions": ["Upper Back Weakness", "Rounded Shoulders", "Poor Posture", "Scapular Dyskinesis"],
+          "instructions": [
+            "Lie face down on a table or bed with arms hanging over the edge",
+            "Extend arms out to the sides to form a 'T' shape",
+            "Keep thumbs pointing up toward the ceiling",
+            "Slowly lift arms up, squeezing shoulder blades together",
+            "Hold for 2-3 seconds at the top",
+            "Lower arms slowly with control",
+            "Repeat 10-12 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Start without weights, progress gradually",
+            "Keep movements slow and controlled",
+            "Don't lift arms higher than shoulder level",
+            "Stop if you experience shoulder or neck pain"
+          ],
+          "biomechanicalPrinciples": "Prone T raises specifically target the middle trapezius and rhomboids in their optimal line of pull, promoting scapular retraction and stability.",
+          "scientificValue": "Clinical studies show that prone strengthening exercises effectively improve scapular muscle strength and reduce symptoms of upper crossed syndrome."
+        },
+        {
+          "id": "prone-y-raises",
+          "name": "Prone Y Raises",
+          "description": "Strengthens the lower trapezius and serratus anterior while lying prone to improve scapular upward rotation.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/prone-y-raises.jpg",
+          "videoUrl": "/videos/exercises/prone-y-raises.mp4",
+          "targetAreas": ["Lower Trapezius", "Serratus Anterior", "Rhomboids", "Posterior Deltoids"],
+          "relatedConditions": ["Scapular Dyskinesis", "Shoulder Impingement", "Upper Back Weakness", "Poor Posture"],
+          "instructions": [
+            "Lie face down with arms extended overhead in a 'Y' position",
+            "Keep thumbs pointing up toward the ceiling",
+            "Slowly lift arms up, focusing on squeezing lower shoulder blades",
+            "Hold for 2-3 seconds at the top",
+            "Lower arms slowly with control",
+            "Keep your forehead on the surface throughout",
+            "Repeat 10-12 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Start without weights, progress gradually",
+            "Keep movements slow and controlled",
+            "Don't lift your head during the exercise",
+            "Stop if you experience shoulder or neck discomfort"
+          ],
+          "biomechanicalPrinciples": "Prone Y raises target the lower trapezius in its optimal line of pull, promoting scapular upward rotation and posterior tilt, which are essential for healthy shoulder mechanics.",
+          "scientificValue": "Research demonstrates that lower trapezius strengthening exercises significantly improve scapular kinematics and reduce shoulder impingement symptoms."
+        },
+        {
+          "id": "prone-w-raises",
+          "name": "Prone W Raises",
+          "description": "Strengthens the rotator cuff and rhomboids while lying prone to improve shoulder stability.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/prone-w-raises.jpg",
+          "videoUrl": "/videos/exercises/prone-w-raises.mp4",
+          "targetAreas": ["Rotator Cuff", "Rhomboids", "Middle Trapezius", "Posterior Deltoids"],
+          "relatedConditions": ["Shoulder Impingement", "Rotator Cuff Weakness", "Upper Back Pain", "Poor Posture"],
+          "instructions": [
+            "Lie face down with arms bent at 90 degrees, forming a 'W' shape",
+            "Keep elbows at shoulder level, forearms pointing down",
+            "Slowly lift arms up, rotating forearms toward the ceiling",
+            "Squeeze shoulder blades together at the top",
+            "Hold for 2-3 seconds",
+            "Lower arms slowly with control",
+            "Repeat 10-12 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Start without weights, progress gradually",
+            "Keep elbows at shoulder level throughout",
+            "Don't force the range of motion",
+            "Stop if you experience shoulder pain or discomfort"
+          ],
+          "biomechanicalPrinciples": "Prone W raises combine scapular retraction with external rotation, targeting both the rhomboids and rotator cuff muscles to improve shoulder stability and function.",
+          "scientificValue": "Clinical evidence shows that combined scapular and rotator cuff strengthening exercises effectively reduce shoulder impingement and improve functional outcomes."
+        },
+        {
+          "id": "thoracic-rotation",
+          "name": "Thoracic Rotation",
+          "description": "Improves rotational mobility of the thoracic spine to reduce stiffness and enhance spinal function.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/thoracic-rotation.jpg",
+          "videoUrl": "/videos/exercises/thoracic-rotation.mp4",
+          "targetAreas": ["Thoracic Spine", "Erector Spinae", "Obliques", "Intercostals"],
+          "relatedConditions": ["Thoracic Stiffness", "Upper Back Pain", "Reduced Rotational Mobility", "Poor Posture"],
+          "instructions": [
+            "Lie on your side with knees bent at 90 degrees",
+            "Extend arms straight out in front of you",
+            "Keeping bottom arm on the ground, slowly rotate top arm toward the ceiling",
+            "Follow your hand with your eyes and head",
+            "Hold for 2-3 seconds at end range",
+            "Return to starting position slowly",
+            "Repeat 8-10 times each side, 2 sets"
+          ],
+          "cautions": [
+            "Move slowly and within comfortable range",
+            "Keep your knees together throughout",
+            "Don't force the rotation",
+            "Stop if you experience increased pain"
+          ],
+          "biomechanicalPrinciples": "Thoracic rotation exercises promote healthy segmental motion in the thoracic spine while maintaining stability in the lumbar region through the bent-knee position.",
+          "scientificValue": "Research shows that thoracic rotation exercises effectively improve spinal mobility and reduce pain in individuals with thoracic dysfunction."
+        },
+        {
+          "id": "wall-slides",
+          "name": "Wall Slides",
+          "description": "Improves scapular mobility and strengthens the serratus anterior and lower trapezius against a wall.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/wall-slides.jpg",
+          "videoUrl": "/videos/exercises/wall-slides.mp4",
+          "targetAreas": ["Serratus Anterior", "Lower Trapezius", "Upper Back", "Rhomboids"],
+          "relatedConditions": ["Scapular Dyskinesis", "Shoulder Impingement", "Poor Posture", "Upper Back Weakness"],
+          "instructions": [
+            "Stand with your back against a wall",
+            "Place arms against the wall with elbows bent at 90 degrees",
+            "Keep your lower back, upper back, and arms in contact with the wall",
+            "Slowly slide your arms up the wall as high as possible",
+            "Hold for 2 seconds at the top",
+            "Slowly return to starting position",
+            "Repeat 10-15 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Maintain contact with the wall throughout",
+            "Don't arch your lower back",
+            "Move slowly and with control",
+            "Stop if you experience shoulder or neck pain"
+          ],
+          "biomechanicalPrinciples": "Wall slides promote proper scapular upward rotation and posterior tilt while maintaining spinal alignment, helping to retrain optimal movement patterns.",
+          "scientificValue": "Studies demonstrate that wall slide exercises effectively improve scapular kinematics and reduce symptoms of shoulder impingement syndrome."
+        },
+        {
+          "id": "shoulder-external-rotation",
+          "name": "Shoulder External Rotation",
+          "description": "Strengthens the external rotators of the shoulder to improve stability and posture.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/shoulder-external-rotation.jpg",
+          "videoUrl": "/videos/exercises/shoulder-external-rotation.mp4",
+          "targetAreas": ["Infraspinatus", "Teres Minor", "Posterior Deltoid", "Rhomboids"],
+          "relatedConditions": ["Rotator Cuff Weakness", "Shoulder Impingement", "Upper Cross Syndrome", "Poor Posture"],
+          "instructions": [
+            "Stand or sit with elbow bent at 90 degrees, close to your side",
+            "Hold a resistance band or light weight",
+            "Keep your elbow against your side throughout",
+            "Slowly rotate your forearm away from your body",
+            "Hold for 2 seconds at end range",
+            "Return to starting position slowly",
+            "Repeat 12-15 times, 2-3 sets each arm"
+          ],
+          "cautions": [
+            "Keep elbow close to your side",
+            "Use light resistance initially",
+            "Move slowly and with control",
+            "Stop if you experience shoulder pain"
+          ],
+          "biomechanicalPrinciples": "External rotation exercises strengthen the posterior rotator cuff muscles, which are often weak in individuals with forward head posture and rounded shoulders.",
+          "scientificValue": "Clinical research shows that external rotation strengthening effectively improves shoulder stability and reduces impingement symptoms."
+        },
+        {
+          "id": "lat-pulldown",
+          "name": "Lat Pulldown",
+          "description": "Strengthens the latissimus dorsi and other upper back muscles using resistance bands or cables.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/lat-pulldown.jpg",
+          "videoUrl": "/videos/exercises/lat-pulldown.mp4",
+          "targetAreas": ["Latissimus Dorsi", "Rhomboids", "Middle Trapezius", "Biceps"],
+          "relatedConditions": ["Upper Back Weakness", "Poor Posture", "Shoulder Instability", "Thoracic Kyphosis"],
+          "instructions": [
+            "Sit or kneel with resistance band anchored overhead",
+            "Hold handles with arms extended overhead",
+            "Keep your chest up and core engaged",
+            "Pull handles down toward your chest, squeezing shoulder blades",
+            "Hold for 2 seconds at the bottom",
+            "Slowly return to starting position with control",
+            "Repeat 10-12 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Don't pull the band behind your neck",
+            "Maintain proper spinal alignment",
+            "Choose appropriate resistance level",
+            "Stop if you experience shoulder or back pain"
+          ],
+          "biomechanicalPrinciples": "Lat pulldowns target the latissimus dorsi and promote scapular depression and retraction, helping to improve posture and shoulder stability.",
+          "scientificValue": "Research demonstrates that lat pulldown exercises effectively strengthen the posterior chain and improve functional movement patterns."
+        },
+        {
+          "id": "face-pulls",
+          "name": "Face Pulls",
+          "description": "Targets the posterior deltoids, middle trapezius, and external rotators of the shoulder to improve posture.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/face-pulls.jpg",
+          "videoUrl": "/videos/exercises/face-pulls.mp4",
+          "targetAreas": ["Posterior Deltoids", "Middle Trapezius", "Rotator Cuff", "Rhomboids"],
+          "relatedConditions": ["Rounded Shoulders", "Upper Cross Syndrome", "Shoulder Impingement", "Poor Posture"],
+          "instructions": [
+            "Stand with resistance band at face level",
+            "Hold handles with arms extended forward",
+            "Pull handles toward your face, separating hands",
+            "Focus on squeezing shoulder blades together",
+            "Hold for 2 seconds at end position",
+            "Slowly return to starting position",
+            "Repeat 12-15 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Keep elbows high throughout the movement",
+            "Don't use excessive resistance",
+            "Maintain good posture throughout",
+            "Stop if you experience shoulder discomfort"
+          ],
+          "biomechanicalPrinciples": "Face pulls combine horizontal abduction with external rotation, targeting multiple muscles involved in postural correction and shoulder stability.",
+          "scientificValue": "Studies show that face pull exercises effectively strengthen the posterior chain and improve postural alignment in individuals with upper crossed syndrome."
+        },
+        {
+          "id": "reverse-fly",
+          "name": "Reverse Fly",
+          "description": "Strengthens the posterior deltoids and rhomboids using light weights or resistance bands to improve posture.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/reverse-fly.jpg",
+          "videoUrl": "/videos/exercises/reverse-fly.mp4",
+          "targetAreas": ["Posterior Deltoids", "Rhomboids", "Middle Trapezius", "Lower Trapezius"],
+          "relatedConditions": ["Rounded Shoulders", "Upper Back Weakness", "Poor Posture", "Thoracic Kyphosis"],
+          "instructions": [
+            "Stand or sit with light weights or resistance band",
+            "Extend arms forward at shoulder height",
+            "Keep a slight bend in your elbows",
+            "Slowly pull arms apart, squeezing shoulder blades together",
+            "Hold for 2 seconds at end range",
+            "Return to starting position with control",
+            "Repeat 12-15 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Use light resistance initially",
+            "Keep movements slow and controlled",
+            "Don't arch your back during the exercise",
+            "Stop if you experience shoulder or neck pain"
+          ],
+          "biomechanicalPrinciples": "Reverse flies target the posterior deltoids and rhomboids in their optimal line of pull, promoting scapular retraction and improved posture.",
+          "scientificValue": "Research demonstrates that reverse fly exercises effectively strengthen the posterior chain and reduce forward head posture when performed regularly."
         },
         {
           "id": "seated-rows",
@@ -783,6 +1168,160 @@
           ],
           "biomechanicalPrinciples": "Lumbar rotation stretches promote mobility in the lumbar facet joints and help reduce muscle tension in the lower back and hips.",
           "scientificValue": "Research indicates that gentle lumbar rotation exercises can help improve spinal mobility and reduce lower back stiffness."
+        },
+        {
+          "id": "superman",
+          "name": "Superman Exercise",
+          "description": "Strengthens the erector spinae and gluteal muscles to improve posterior chain strength and spinal extension.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/superman.jpg",
+          "videoUrl": "/videos/exercises/superman.mp4",
+          "targetAreas": ["Erector Spinae", "Gluteal Muscles", "Lower Back", "Posterior Chain"],
+          "relatedConditions": ["Lower Back Weakness", "Poor Posture", "Gluteal Weakness", "Spinal Extension Deficit"],
+          "instructions": [
+            "Lie face down with arms extended overhead",
+            "Keep your forehead on the ground",
+            "Simultaneously lift your arms, chest, and legs off the ground",
+            "Hold for 2-5 seconds at the top",
+            "Lower slowly back to starting position",
+            "Repeat 10-15 times, 2-3 sets",
+            "Perform 3-4 times per week"
+          ],
+          "cautions": [
+            "Don't lift too high - small movements are effective",
+            "Keep your neck in neutral alignment",
+            "Stop if you experience increased back pain",
+            "Start with shorter holds and progress gradually",
+            "Don't hold your breath during the exercise"
+          ],
+          "biomechanicalPrinciples": "The superman exercise promotes spinal extension while strengthening the erector spinae and gluteal muscles, helping to counteract the effects of prolonged sitting and forward posture.",
+          "scientificValue": "Studies demonstrate that superman exercises effectively strengthen the posterior chain and improve spinal extension strength, which is crucial for maintaining proper posture and preventing lower back pain.",
+          "contraindications": [
+            "Acute lower back injury",
+            "Severe spinal stenosis",
+            "Recent spinal surgery",
+            "Acute disc herniation"
+          ],
+          "modifications": [
+            "Beginners: Lift arms only, then legs only",
+            "Advanced: Add resistance or hold longer",
+            "Alternative: Perform on exercise ball for added challenge"
+          ]
+        },
+        {
+          "id": "prone-press-ups",
+          "name": "Prone Press-Ups",
+          "description": "Promotes spinal extension and helps centralize disc material in cases of disc herniation or bulging.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/prone-press-ups.jpg",
+          "videoUrl": "/videos/exercises/prone-press-ups.mp4",
+          "targetAreas": ["Lumbar Spine", "Erector Spinae", "Hip Flexors"],
+          "relatedConditions": ["Disc Herniation", "Disc Bulge", "Lower Back Pain", "Sciatica"],
+          "instructions": [
+            "Lie face down with hands under your shoulders",
+            "Keep your hips and pelvis on the ground",
+            "Slowly press up with your arms, extending your back",
+            "Go only as high as comfortable",
+            "Hold for 2-3 seconds",
+            "Lower slowly back down",
+            "Repeat 10 times, 3-4 times daily"
+          ],
+          "cautions": [
+            "Keep your hips on the ground throughout",
+            "Don't force the extension",
+            "Stop if symptoms worsen or centralize",
+            "Progress gradually over several days",
+            "Consult a healthcare provider for disc problems"
+          ],
+          "biomechanicalPrinciples": "Prone press-ups promote spinal extension and can help centralize disc material by creating a posterior-to-anterior pressure gradient in the disc space.",
+          "scientificValue": "Research based on McKenzie method principles shows that repeated spinal extension can help reduce disc protrusion and centralize symptoms in appropriate cases.",
+          "contraindications": [
+            "Spinal stenosis",
+            "Spondylolisthesis",
+            "Acute inflammatory conditions",
+            "Symptoms that worsen with extension"
+          ]
+        },
+        {
+          "id": "glute-bridges-lower-back",
+          "name": "Glute Bridges",
+          "description": "Strengthens the gluteal muscles and hamstrings while promoting hip extension and core stability.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/glute-bridges.jpg",
+          "videoUrl": "/videos/exercises/glute-bridges.mp4",
+          "targetAreas": ["Gluteal Muscles", "Hamstrings", "Core", "Lower Back"],
+          "relatedConditions": ["Gluteal Weakness", "Lower Back Pain", "Hip Flexor Tightness", "Poor Posture"],
+          "instructions": [
+            "Lie on your back with knees bent, feet flat on floor",
+            "Keep your arms at your sides for stability",
+            "Squeeze your glutes and lift your hips up",
+            "Create a straight line from knees to shoulders",
+            "Hold for 2-3 seconds at the top",
+            "Lower slowly back to starting position",
+            "Repeat 15-20 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Don't arch your back excessively",
+            "Focus on squeezing your glutes, not pushing with your back",
+            "Keep your knees aligned over your feet",
+            "Don't hold your breath during the exercise"
+          ],
+          "biomechanicalPrinciples": "Glute bridges strengthen the gluteal muscles and promote hip extension while maintaining a neutral spine, helping to improve the strength of muscles that support the lower back.",
+          "scientificValue": "Research shows that glute bridge exercises effectively strengthen the gluteal muscles and can help reduce lower back pain by improving hip extension strength and reducing compensatory movements."
+        },
+        {
+          "id": "single-leg-glute-bridge",
+          "name": "Single Leg Glute Bridge",
+          "description": "Advanced version of glute bridges that challenges stability and strengthens each side independently.",
+          "difficulty": "advanced",
+          "image": "/images/exercises/single-leg-glute-bridge.jpg",
+          "videoUrl": "/videos/exercises/single-leg-glute-bridge.mp4",
+          "targetAreas": ["Gluteal Muscles", "Hamstrings", "Core", "Hip Stabilizers"],
+          "relatedConditions": ["Gluteal Weakness", "Hip Instability", "Lower Back Pain", "Leg Length Discrepancy"],
+          "instructions": [
+            "Lie on your back with one knee bent, one leg extended",
+            "Keep your arms at your sides for stability",
+            "Squeeze your glute and lift your hips up on the bent leg side",
+            "Keep the extended leg straight and in line with your body",
+            "Hold for 2-3 seconds at the top",
+            "Lower slowly and repeat",
+            "Perform 8-12 repetitions each side, 2-3 sets"
+          ],
+          "cautions": [
+            "Don't let your hips drop or rotate",
+            "Keep your pelvis level throughout",
+            "Start with regular glute bridges before progressing",
+            "Stop if you experience back or hip pain"
+          ],
+          "biomechanicalPrinciples": "Single leg glute bridges challenge unilateral strength and stability, helping to identify and correct imbalances between sides while promoting core stability.",
+          "scientificValue": "Studies show that unilateral exercises like single leg glute bridges effectively improve strength imbalances and enhance functional stability."
+        },
+        {
+          "id": "wall-sit",
+          "name": "Wall Sit",
+          "description": "Strengthens the quadriceps, glutes, and core while promoting proper spinal alignment against a wall.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/wall-sit.jpg",
+          "videoUrl": "/videos/exercises/wall-sit.mp4",
+          "targetAreas": ["Quadriceps", "Gluteal Muscles", "Core", "Lower Back"],
+          "relatedConditions": ["Lower Back Pain", "Quadriceps Weakness", "Poor Posture", "Hip Weakness"],
+          "instructions": [
+            "Stand with your back against a wall",
+            "Walk your feet forward 12-18 inches",
+            "Slide down the wall until your thighs are parallel to the floor",
+            "Keep your knees at 90 degrees",
+            "Hold for 20-60 seconds",
+            "Slide back up the wall slowly",
+            "Repeat 3-5 times"
+          ],
+          "cautions": [
+            "Don't let your knees go past your toes",
+            "Keep your back flat against the wall",
+            "Start with shorter holds and progress gradually",
+            "Stop if you experience knee or back pain"
+          ],
+          "biomechanicalPrinciples": "Wall sits strengthen the lower extremity muscles while promoting proper spinal alignment and core engagement in a functional position.",
+          "scientificValue": "Research shows that wall sit exercises effectively strengthen the quadriceps and glutes while improving postural endurance."
         }
       ]
     },
@@ -946,6 +1485,139 @@
           ],
           "biomechanicalPrinciples": "The dead bug exercise challenges core stability in an anti-extension pattern while promoting reciprocal movement patterns.",
           "scientificValue": "Research demonstrates that dead bug exercises effectively activate deep core muscles while maintaining spinal neutrality."
+        },
+        {
+          "id": "mcgill-curl-up",
+          "name": "McGill Curl-Up",
+          "description": "A spine-sparing core exercise that minimizes disc pressure while strengthening abdominals, developed by spine biomechanics expert Dr. Stuart McGill.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/mcgill-curl-up.jpg",
+          "videoUrl": "/videos/exercises/mcgill-curl-up.mp4",
+          "targetAreas": ["Core", "Rectus Abdominis", "Transverse Abdominis"],
+          "relatedConditions": ["Lumbar Disc Herniation", "Core Weakness", "Lower Back Pain", "Spinal Instability"],
+          "instructions": [
+            "Lie on your back with one knee bent, one leg straight",
+            "Place hands under your lower back to maintain natural curve",
+            "Slowly lift your head and shoulders off the ground",
+            "Hold for 7-8 seconds while breathing normally",
+            "Lower slowly back to starting position",
+            "Repeat 8 times, then switch leg positions",
+            "Perform 2-3 sets daily"
+          ],
+          "cautions": [
+            "Keep your lower back supported with your hands",
+            "Don't pull on your neck or head",
+            "Move slowly and with control",
+            "Stop if you experience increased back pain",
+            "Maintain the natural lumbar curve throughout"
+          ],
+          "biomechanicalPrinciples": "The McGill curl-up maintains the natural lumbar curve while activating the rectus abdominis, reducing disc pressure by up to 40% compared to traditional sit-ups. This exercise promotes proper spine-hip dissociation.",
+          "scientificValue": "Research by Dr. Stuart McGill demonstrates this exercise effectively strengthens the core while minimizing spinal stress, making it ideal for individuals with disc problems. Studies show significant reduction in disc compression forces.",
+          "contraindications": [
+            "Acute disc herniation with severe symptoms",
+            "Recent abdominal surgery",
+            "Severe osteoporosis",
+            "Active inflammatory conditions"
+          ],
+          "modifications": [
+            "Beginners: Start with 3-5 second holds",
+            "Advanced: Progress to 10-second holds",
+            "Alternative: Perform with both knees bent if one leg straight is uncomfortable"
+          ]
+        },
+        {
+          "id": "side-plank",
+          "name": "Side Plank",
+          "description": "Strengthens the lateral core muscles and improves spinal stability, particularly effective for addressing lateral imbalances and scoliosis.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/side-plank.jpg",
+          "videoUrl": "/videos/exercises/side-plank.mp4",
+          "targetAreas": ["Lateral Core", "Quadratus Lumborum", "Obliques", "Gluteus Medius"],
+          "relatedConditions": ["Scoliosis", "Lateral Shift", "Core Weakness", "Hip Weakness"],
+          "instructions": [
+            "Lie on your side with forearm on the ground, elbow under shoulder",
+            "Stack your feet and lift your hips off the ground",
+            "Create a straight line from head to feet",
+            "Engage your core and squeeze your glutes",
+            "Hold for 15-30 seconds initially",
+            "Lower slowly and repeat on other side",
+            "Progress to longer holds as strength improves"
+          ],
+          "cautions": [
+            "Keep your body in a straight line - don't sag or pike",
+            "Don't let your hips drop or rotate",
+            "Breathe normally during the hold",
+            "Start with shorter holds and progress gradually",
+            "Stop if you experience shoulder or back pain"
+          ],
+          "biomechanicalPrinciples": "Side planks specifically target the quadratus lumborum and lateral core muscles, which are crucial for lateral spinal stability and preventing lateral shifts. This exercise also activates the gluteus medius for hip stability.",
+          "scientificValue": "Studies show that side plank exercises effectively strengthen the lateral core and can help reduce scoliotic curves when performed regularly. Research indicates significant improvement in lateral trunk strength and stability.",
+          "contraindications": [
+            "Acute shoulder injury",
+            "Severe scoliosis with pain",
+            "Recent spinal surgery",
+            "Acute lower back injury"
+          ],
+          "modifications": [
+            "Beginners: Perform with knees on ground",
+            "Advanced: Add leg lifts or arm movements",
+            "Alternative: Perform against a wall for support"
+          ]
+        },
+        {
+          "id": "modified-side-plank",
+          "name": "Modified Side Plank",
+          "description": "A gentler version of the side plank that still effectively strengthens the lateral core muscles for beginners or those with limitations.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/modified-side-plank.jpg",
+          "videoUrl": "/videos/exercises/modified-side-plank.mp4",
+          "targetAreas": ["Lateral Core", "Obliques", "Quadratus Lumborum"],
+          "relatedConditions": ["Core Weakness", "Scoliosis", "Lateral Shift", "Beginner Fitness"],
+          "instructions": [
+            "Lie on your side with forearm on the ground",
+            "Keep your knees on the ground for support",
+            "Lift your hips to create a straight line from head to knees",
+            "Engage your core muscles",
+            "Hold for 10-20 seconds",
+            "Lower slowly and repeat on other side",
+            "Progress to full side plank as strength improves"
+          ],
+          "cautions": [
+            "Keep your body aligned from head to knees",
+            "Don't let your hips sag",
+            "Breathe normally during the hold",
+            "Progress gradually to avoid strain"
+          ],
+          "biomechanicalPrinciples": "Modified side planks reduce the load on the lateral core while still providing effective strengthening for the quadratus lumborum and obliques.",
+          "scientificValue": "Research shows that modified side planks are effective for building lateral core strength in individuals who cannot perform full side planks initially."
+        },
+        {
+          "id": "pallof-press",
+          "name": "Pallof Press",
+          "description": "Strengthens the core's ability to resist rotation, improving anti-rotational stability and functional strength.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/pallof-press.jpg",
+          "videoUrl": "/videos/exercises/pallof-press.mp4",
+          "targetAreas": ["Core", "Obliques", "Transverse Abdominis", "Deep Stabilizers"],
+          "relatedConditions": ["Core Weakness", "Rotational Instability", "Lower Back Pain", "Athletic Performance"],
+          "instructions": [
+            "Stand with resistance band anchored at chest level",
+            "Hold handle with both hands at your chest",
+            "Step away from anchor to create tension",
+            "Press the band straight out from your chest",
+            "Hold for 10 seconds while resisting rotation",
+            "Slowly return to chest",
+            "Repeat 10 times, then switch sides"
+          ],
+          "cautions": [
+            "Keep your core engaged throughout",
+            "Don't let the band pull you into rotation",
+            "Maintain good posture with shoulders back",
+            "Choose appropriate resistance level",
+            "Keep your feet planted firmly"
+          ],
+          "biomechanicalPrinciples": "The Pallof press trains the core to resist rotational forces (anti-rotation), which is essential for spinal stability during functional movements and sports activities.",
+          "scientificValue": "Research shows that anti-rotation exercises like the Pallof press effectively improve core stability, reduce lower back pain, and enhance athletic performance by training functional movement patterns."
         }
       ]
     },
