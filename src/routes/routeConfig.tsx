@@ -90,6 +90,7 @@ const Diagnostics = lazyLoad(() => import('@/pages/gp-resources/Diagnostics'));
 const CareCoordination = lazyLoad(() => import('@/pages/gp-resources/CareCoordination'));
 const Emergencies = lazyLoad(() => import('@/pages/gp-resources/Emergencies'));
 const NotFound = lazyLoad(() => import('@/pages/NotFound'));
+const TestExercises = lazyLoad(() => import('@/test-exercises'));
 
 // Define route structure
 export interface RouteConfig {
@@ -166,6 +167,7 @@ export const baseRoutes: RouteConfig[] = [
   { path: "/gp-resources/diagnostics", element: <Diagnostics /> },
   { path: "/gp-resources/care-coordination", element: <CareCoordination /> },
   { path: "/gp-resources/emergencies", element: <Emergencies /> },
+  { path: "/test-exercises", element: <TestExercises /> },
   { path: "*", element: <NotFound /> }
 ];
 

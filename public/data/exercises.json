@@ -3,60 +3,94 @@
     {
       "id": "neck",
       "name": "Neck Exercises",
-      "description": "Exercises designed to strengthen and improve mobility in the neck region.",
+      "description": "Exercises designed to strengthen and improve mobility in the cervical spine region, targeting the complex network of muscles, ligaments, and joints that support the head and neck.",
       "exercises": [
         {
           "id": "cervical-retraction",
           "name": "Cervical Retraction",
-          "description": "Gently pull your chin back while keeping your gaze level. Hold for 5-10 seconds and repeat 10 times.",
+          "description": "A gentle exercise to improve neck posture and reduce strain on the cervical spine by strengthening deep neck flexors.",
           "difficulty": "beginner",
           "image": "/images/exercises/cervical-retraction.jpg",
+          "videoUrl": "/videos/exercises/cervical-retraction.mp4",
+          "targetAreas": ["Deep Neck Flexors", "Upper Cervical Spine", "Suboccipital Muscles"],
+          "relatedConditions": ["Forward Head Posture", "Cervical Disc Herniation", "Neck Pain", "Upper Cross Syndrome"],
           "instructions": [
-            "Sit or stand with good posture",
-            "Keep your gaze level and shoulders relaxed",
-            "Gently tuck your chin in, creating a 'double chin'",
-            "Hold for 5-10 seconds",
-            "Release and return to the starting position",
-            "Repeat 10 times, 3 sets daily"
+            "Sit or stand with good posture, shoulders relaxed",
+            "Keep your gaze level and jaw relaxed",
+            "Gently tuck your chin in, creating a 'double chin' effect",
+            "Imagine pulling your head back over your shoulders",
+            "Hold for 5-10 seconds while breathing normally",
+            "Release slowly and return to starting position",
+            "Repeat 10 times, perform 3 sets daily"
           ],
           "cautions": [
             "Avoid pushing your head forward after each repetition",
             "Don't tilt your head up or down during the movement",
-            "Stop if you experience increased pain or dizziness"
+            "Stop if you experience increased pain, dizziness, or tingling",
+            "Move slowly and avoid jerky movements"
+          ],
+          "biomechanicalPrinciples": "This exercise activates the deep cervical flexors (longus colli and longus capitis) while inhibiting overactive superficial neck muscles. It helps restore the natural cervical lordosis and improves the length-tension relationship of cervical musculature.",
+          "scientificValue": "Research shows that cervical retraction exercises significantly improve deep neck flexor strength and endurance, reduce forward head posture, and decrease neck pain in office workers and patients with cervical dysfunction.",
+          "contraindications": [
+            "Acute cervical spine injury or recent surgery",
+            "Severe cervical instability",
+            "Active cervical radiculopathy with neurological symptoms",
+            "Severe osteoporosis of the cervical spine"
+          ],
+          "modifications": [
+            "Beginners: Perform against a wall for support",
+            "Advanced: Add gentle resistance with hand pressure",
+            "Seated variation: Perform while sitting with back support"
           ]
         },
         {
           "id": "neck-rotation",
           "name": "Neck Rotation",
-          "description": "Slowly turn your head to look over each shoulder. Move within a comfortable range and avoid forcing the movement.",
+          "description": "Gentle rotation of the neck to improve range of motion and reduce stiffness in the cervical spine.",
           "difficulty": "beginner",
           "image": "/images/exercises/neck-rotation.jpg",
+          "videoUrl": "/videos/exercises/neck-rotation.mp4",
+          "targetAreas": ["Cervical Rotators", "Sternocleidomastoid", "Upper Trapezius", "Scalenes"],
+          "relatedConditions": ["Neck Stiffness", "Cervical Spondylosis", "Whiplash", "Torticollis"],
           "instructions": [
             "Sit or stand with good posture",
             "Keep your shoulders relaxed and facing forward",
             "Slowly turn your head to look over your right shoulder",
+            "Move only as far as comfortable without forcing",
             "Hold for 5 seconds",
-            "Return to center",
+            "Return to center slowly",
             "Repeat on the left side",
             "Perform 10 repetitions on each side, 2-3 times daily"
           ],
           "cautions": [
-            "Move slowly and controlled",
+            "Move slowly and controlled - avoid quick movements",
             "Stay within a pain-free range of motion",
             "Avoid jerking or forcing the movement",
-            "Stop if you experience dizziness or increased pain"
+            "Stop if you experience dizziness, pain, or neurological symptoms"
+          ],
+          "biomechanicalPrinciples": "Cervical rotation involves complex coupling motions at multiple spinal segments. This exercise promotes healthy arthrokinematics of the atlantoaxial and subaxial cervical joints while maintaining proper muscle activation patterns.",
+          "scientificValue": "Studies demonstrate that controlled cervical rotation exercises improve joint mobility, reduce muscle tension, and help maintain healthy cervical spine function when performed regularly.",
+          "contraindications": [
+            "Acute cervical injury or inflammation",
+            "Cervical arterial insufficiency",
+            "Severe cervical stenosis",
+            "Recent cervical fusion surgery"
           ]
         },
         {
           "id": "neck-side-bend",
           "name": "Neck Side Bend",
-          "description": "Gently tilt your head toward your shoulder without raising your shoulder. Hold and repeat on both sides.",
+          "description": "Lateral flexion of the neck to stretch the side neck muscles and improve mobility.",
           "difficulty": "beginner",
           "image": "/images/exercises/neck-side-bend.jpg",
+          "videoUrl": "/videos/exercises/neck-side-bend.mp4",
+          "targetAreas": ["Scalenes", "Upper Trapezius", "Levator Scapulae", "Lateral Cervical Muscles"],
+          "relatedConditions": ["Neck Pain", "Cervical Radiculopathy", "Muscle Tension", "Lateral Neck Stiffness"],
           "instructions": [
             "Sit or stand with good posture",
             "Keep both shoulders relaxed and down",
             "Slowly tilt your right ear toward your right shoulder",
+            "Do not lift your shoulder to meet your ear",
             "Hold for 15-30 seconds, feeling a gentle stretch",
             "Return to center",
             "Repeat on the left side",
@@ -66,41 +100,59 @@
             "Don't raise your shoulders during the stretch",
             "Keep the movement gentle and controlled",
             "Avoid bouncing or forcing the stretch",
-            "Stop if you experience increased pain or numbness"
-          ]
+            "Stop if you experience increased pain, numbness, or tingling"
+          ],
+          "biomechanicalPrinciples": "Lateral cervical flexion stretches the contralateral scalenes, upper trapezius, and levator scapulae while promoting mobility in the cervical facet joints. This movement helps maintain balanced muscle length and joint mobility.",
+          "scientificValue": "Research indicates that lateral neck stretches effectively reduce muscle tension and improve cervical range of motion, particularly beneficial for individuals with unilateral neck pain or muscle imbalances."
         },
         {
           "id": "neck-extension",
           "name": "Neck Extension",
-          "description": "Gently tilt your head back to look up at the ceiling. Move within a comfortable range.",
+          "description": "Controlled backward movement of the head to strengthen posterior neck muscles and improve cervical extension.",
           "difficulty": "intermediate",
           "image": "/images/exercises/neck-extension.jpg",
+          "videoUrl": "/videos/exercises/neck-extension.mp4",
+          "targetAreas": ["Posterior Neck Muscles", "Suboccipitals", "Upper Trapezius", "Cervical Extensors"],
+          "relatedConditions": ["Forward Head Posture", "Neck Pain", "Cervical Hypomobility", "Upper Cross Syndrome"],
           "instructions": [
             "Sit or stand with good posture",
             "Keep your shoulders relaxed and jaw relaxed",
             "Slowly tilt your head back to look up at the ceiling",
+            "Move only within a comfortable range",
             "Hold for 5 seconds",
-            "Return to the neutral position",
+            "Return to the neutral position slowly",
             "Repeat 10 times, 2 times daily"
           ],
           "cautions": [
             "Avoid excessive extension that causes pain",
             "Move slowly and controlled",
-            "Stop if you experience dizziness or increased pain",
+            "Stop if you experience dizziness, pain, or neurological symptoms",
             "This exercise may not be suitable for all neck conditions - consult your healthcare provider"
+          ],
+          "biomechanicalPrinciples": "Cervical extension strengthens the posterior neck muscles and helps counteract forward head posture. This movement promotes proper cervical lordosis and balanced muscle activation.",
+          "scientificValue": "Clinical studies show that controlled cervical extension exercises can improve neck strength and reduce forward head posture when performed as part of a comprehensive exercise program.",
+          "contraindications": [
+            "Severe cervical stenosis",
+            "Cervical arterial insufficiency",
+            "Recent cervical surgery",
+            "Acute cervical injury"
           ]
         },
         {
           "id": "isometric-neck-flexion",
           "name": "Isometric Neck Flexion",
-          "description": "Place your palm on your forehead and push your head forward while resisting with your hand. Hold for 5-10 seconds.",
+          "description": "Strengthens the anterior neck muscles through gentle resistance without movement, improving cervical stability.",
           "difficulty": "intermediate",
           "image": "/images/exercises/isometric-neck-flexion.jpg",
+          "videoUrl": "/videos/exercises/isometric-neck-flexion.mp4",
+          "targetAreas": ["Deep Neck Flexors", "Sternocleidomastoid", "Scalenes", "Longus Colli"],
+          "relatedConditions": ["Neck Weakness", "Cervical Instability", "Forward Head Posture", "Whiplash Recovery"],
           "instructions": [
             "Sit or stand with good posture",
             "Place your palm on your forehead",
             "Push your head forward while resisting with your hand (no movement should occur)",
-            "Hold the contraction for 5-10 seconds",
+            "Apply moderate, steady pressure",
+            "Hold the contraction for 5-10 seconds while breathing normally",
             "Relax for 5 seconds",
             "Repeat 10 times, 1-2 times daily"
           ],
@@ -108,20 +160,26 @@
             "Maintain a steady breathing pattern during the exercise",
             "Apply moderate resistance - this should not cause pain",
             "Keep your shoulders relaxed throughout",
-            "Stop if you experience increased pain or headache"
-          ]
+            "Stop if you experience increased pain, headache, or dizziness"
+          ],
+          "biomechanicalPrinciples": "Isometric contractions strengthen muscles without joint movement, allowing for safe strengthening of the cervical flexors while minimizing stress on injured or sensitive structures.",
+          "scientificValue": "Research demonstrates that isometric neck exercises effectively improve muscle strength and endurance while being well-tolerated by patients with neck pain and dysfunction."
         },
         {
           "id": "isometric-neck-extension",
           "name": "Isometric Neck Extension",
-          "description": "Place your hands behind your head and push back while resisting with your hands. Hold for 5-10 seconds.",
+          "description": "Strengthens the posterior neck muscles through gentle resistance without movement, improving cervical stability and posture.",
           "difficulty": "intermediate",
           "image": "/images/exercises/isometric-neck-extension.jpg",
+          "videoUrl": "/videos/exercises/isometric-neck-extension.mp4",
+          "targetAreas": ["Cervical Extensors", "Upper Trapezius", "Suboccipitals", "Semispinalis"],
+          "relatedConditions": ["Neck Weakness", "Cervical Instability", "Forward Head Posture", "Upper Cross Syndrome"],
           "instructions": [
             "Sit or stand with good posture",
-            "Place your hands behind your head",
+            "Place your hands behind your head, interlacing fingers",
             "Push your head backward while resisting with your hands (no movement should occur)",
-            "Hold the contraction for 5-10 seconds",
+            "Apply moderate, steady pressure",
+            "Hold the contraction for 5-10 seconds while breathing normally",
             "Relax for 5 seconds",
             "Repeat 10 times, 1-2 times daily"
           ],
@@ -129,20 +187,26 @@
             "Maintain a steady breathing pattern during the exercise",
             "Apply moderate resistance - this should not cause pain",
             "Keep your shoulders relaxed throughout",
-            "Stop if you experience increased pain or headache"
-          ]
+            "Stop if you experience increased pain, headache, or dizziness"
+          ],
+          "biomechanicalPrinciples": "Isometric extension exercises strengthen the posterior cervical muscles, helping to counteract forward head posture and improve cervical lordosis.",
+          "scientificValue": "Clinical evidence supports the use of isometric neck exercises for improving muscle strength and reducing neck pain in patients with cervical dysfunction."
         },
         {
           "id": "isometric-neck-lateral-flexion",
           "name": "Isometric Neck Lateral Flexion",
-          "description": "Place your palm on the side of your head and push toward your shoulder while resisting with your hand. Hold for 5-10 seconds.",
+          "description": "Strengthens the lateral neck muscles through gentle resistance without movement, improving cervical stability in all planes.",
           "difficulty": "intermediate",
           "image": "/images/exercises/isometric-neck-lateral-flexion.jpg",
+          "videoUrl": "/videos/exercises/isometric-neck-lateral-flexion.mp4",
+          "targetAreas": ["Scalenes", "Sternocleidomastoid", "Lateral Cervical Muscles", "Upper Trapezius"],
+          "relatedConditions": ["Neck Weakness", "Cervical Instability", "Lateral Neck Pain", "Muscle Imbalances"],
           "instructions": [
             "Sit or stand with good posture",
             "Place your right palm on the right side of your head",
             "Push your head toward your right shoulder while resisting with your hand (no movement should occur)",
-            "Hold the contraction for 5-10 seconds",
+            "Apply moderate, steady pressure",
+            "Hold the contraction for 5-10 seconds while breathing normally",
             "Relax for 5 seconds",
             "Repeat on the left side",
             "Perform 10 repetitions on each side, 1-2 times daily"
@@ -151,20 +215,26 @@
             "Maintain a steady breathing pattern during the exercise",
             "Apply moderate resistance - this should not cause pain",
             "Keep your shoulders relaxed throughout",
-            "Stop if you experience increased pain or headache"
-          ]
+            "Stop if you experience increased pain, headache, or neurological symptoms"
+          ],
+          "biomechanicalPrinciples": "Lateral isometric exercises strengthen the scalenes and other lateral cervical muscles, promoting balanced muscle development and improved cervical stability in the frontal plane.",
+          "scientificValue": "Research shows that multi-directional isometric neck exercises effectively improve overall cervical muscle strength and functional stability."
         },
         {
           "id": "chin-tucks",
           "name": "Chin Tucks",
-          "description": "Draw your chin straight back while keeping your gaze level. This exercise helps improve posture and relieve neck strain.",
+          "description": "Strengthens deep neck flexors and helps correct forward head posture by retraining proper cervical alignment.",
           "difficulty": "beginner",
           "image": "/images/exercises/chin-tucks.jpg",
+          "videoUrl": "/videos/exercises/chin-tucks.mp4",
+          "targetAreas": ["Deep Neck Flexors", "Longus Colli", "Longus Capitis"],
+          "relatedConditions": ["Forward Head Posture", "Neck Pain", "Upper Cross Syndrome", "Cervical Lordosis Loss"],
           "instructions": [
             "Sit or stand with your back straight",
             "Keep your shoulders relaxed and down",
             "Without tilting your head, gently draw your chin straight back",
-            "Hold for 5 seconds",
+            "Imagine making a 'double chin'",
+            "Hold for 5 seconds while breathing normally",
             "Release and return to the starting position",
             "Repeat 10 times, 3-5 times daily"
           ],
@@ -172,27 +242,169 @@
             "Avoid tilting your head up or down during the movement",
             "Keep the movement gentle and controlled",
             "This should feel like you're making a 'double chin'",
-            "Stop if you experience increased pain"
-          ]
+            "Stop if you experience increased pain or dizziness"
+          ],
+          "biomechanicalPrinciples": "Chin tucks activate the deep cervical flexors while lengthening the suboccipital muscles and upper cervical extensors. This exercise helps restore proper cervical lordosis and improves the stability of the cervical spine.",
+          "scientificValue": "Clinical studies show that chin tuck exercises significantly improve deep neck flexor strength, reduce forward head posture, and decrease neck pain in patients with cervical dysfunction."
+        },
+        {
+          "id": "upper-trapezius-stretch",
+          "name": "Upper Trapezius Stretch",
+          "description": "Stretches the upper trapezius muscle to relieve tension and improve neck mobility.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/upper-trapezius-stretch.jpg",
+          "videoUrl": "/videos/exercises/upper-trapezius-stretch.mp4",
+          "targetAreas": ["Upper Trapezius", "Neck", "Lateral Cervical Muscles"],
+          "relatedConditions": ["Neck Tension", "Headaches", "Upper Cross Syndrome", "Muscle Spasms"],
+          "instructions": [
+            "Sit or stand with good posture",
+            "Tilt your head to the right, bringing your right ear toward your right shoulder",
+            "Place your right hand gently on the left side of your head",
+            "Apply gentle pressure to increase the stretch",
+            "Hold for 20-30 seconds",
+            "Return to center and repeat on the other side",
+            "Perform 3 repetitions on each side, 2 times daily"
+          ],
+          "cautions": [
+            "Apply only gentle pressure - never force the stretch",
+            "Keep your shoulders relaxed and down",
+            "Stop if you experience increased pain or neurological symptoms",
+            "Avoid bouncing or jerky movements"
+          ],
+          "biomechanicalPrinciples": "This stretch targets the upper trapezius fibers that run from the occiput to the shoulder, helping to reduce tension and restore normal muscle length.",
+          "scientificValue": "Research shows that upper trapezius stretches effectively reduce muscle tension, improve cervical range of motion, and decrease tension-type headaches."
+        },
+        {
+          "id": "neck-clock",
+          "name": "Neck Clock Exercise",
+          "description": "Controlled movement of the head in a circular pattern to improve neck mobility.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/neck-clock.jpg",
+          "videoUrl": "/videos/exercises/neck-clock.mp4",
+          "targetAreas": ["Cervical Spine", "Neck Muscles", "Upper Trapezius"],
+          "relatedConditions": ["Neck Stiffness", "Cervical Spondylosis", "Reduced Mobility"],
+          "instructions": [
+            "Sit or stand with good posture",
+            "Imagine your head is the center of a clock face",
+            "Slowly move your head to look at 12 o'clock (straight up)",
+            "Continue moving clockwise to 3 o'clock (right side)",
+            "Move to 6 o'clock (down) and 9 o'clock (left side)",
+            "Complete 5 slow clockwise circles",
+            "Repeat 5 times counterclockwise",
+            "Perform 2 times daily"
+          ],
+          "cautions": [
+            "Move very slowly and smoothly",
+            "Stay within a comfortable range of motion",
+            "Stop if you experience dizziness or increased pain",
+            "Avoid this exercise if you have severe cervical instability"
+          ],
+          "biomechanicalPrinciples": "The neck clock exercise promotes multi-directional cervical mobility while maintaining controlled movement patterns. It helps improve coordination and range of motion in all planes of cervical movement.",
+          "scientificValue": "Studies show that controlled multi-directional neck exercises improve overall cervical mobility and reduce stiffness when performed regularly."
+        },
+        {
+          "id": "levator-scapulae-stretch",
+          "name": "Levator Scapulae Stretch",
+          "description": "Stretches the levator scapulae muscle to relieve tension in the neck and upper back.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/levator-scapulae-stretch.jpg",
+          "videoUrl": "/videos/exercises/levator-scapulae-stretch.mp4",
+          "targetAreas": ["Levator Scapulae", "Neck", "Upper Back"],
+          "relatedConditions": ["Neck Pain", "Upper Back Pain", "Tension Headaches"],
+          "instructions": [
+            "Sit or stand with good posture",
+            "Turn your head 45 degrees to the right",
+            "Look down toward your right armpit",
+            "Place your right hand on the back of your head",
+            "Gently pull your head further into the stretch",
+            "Hold for 20-30 seconds",
+            "Repeat on the left side",
+            "Perform 3 repetitions on each side, 2 times daily"
+          ],
+          "cautions": [
+            "Apply only gentle pressure with your hand",
+            "Don't force the stretch beyond comfortable limits",
+            "Stop if you experience increased pain or neurological symptoms",
+            "Keep your shoulders relaxed throughout"
+          ],
+          "biomechanicalPrinciples": "This stretch targets the levator scapulae muscle that runs from the upper cervical vertebrae to the superior angle of the scapula. The combined neck rotation and side bending optimally lengthens this muscle.",
+          "scientificValue": "Research demonstrates that levator scapulae stretches effectively reduce neck pain and improve cervical range of motion, particularly in individuals with upper crossed syndrome."
+        },
+        {
+          "id": "neck-flexor-strengthening",
+          "name": "Neck Flexor Strengthening",
+          "description": "Strengthens the anterior neck muscles to improve posture and stability.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/neck-flexor-strengthening.jpg",
+          "videoUrl": "/videos/exercises/neck-flexor-strengthening.mp4",
+          "targetAreas": ["Anterior Neck", "Deep Neck Flexors"],
+          "relatedConditions": ["Forward Head Posture", "Neck Weakness", "Cervical Instability"],
+          "instructions": [
+            "Lie on your back with knees bent",
+            "Place a small towel under your neck for support",
+            "Gently lift your head 1-2 inches off the ground",
+            "Keep your chin tucked (double chin position)",
+            "Hold for 5-10 seconds",
+            "Lower your head slowly",
+            "Repeat 10 times, 2 sets daily"
+          ],
+          "cautions": [
+            "Keep the movement small and controlled",
+            "Don't lift your head too high",
+            "Stop if you experience increased neck pain",
+            "Avoid this exercise if you have acute cervical injury"
+          ],
+          "biomechanicalPrinciples": "This exercise specifically targets the deep cervical flexors (longus colli and longus capitis) which are often weak in individuals with forward head posture.",
+          "scientificValue": "Clinical studies show that specific neck flexor strengthening exercises significantly improve cervical stability and reduce forward head posture."
+        },
+        {
+          "id": "neck-extensor-strengthening",
+          "name": "Neck Extensor Strengthening",
+          "description": "Strengthens the posterior neck muscles to improve posture and stability.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/neck-extensor-strengthening.jpg",
+          "videoUrl": "/videos/exercises/neck-extensor-strengthening.mp4",
+          "targetAreas": ["Posterior Neck", "Upper Trapezius", "Suboccipitals"],
+          "relatedConditions": ["Forward Head Posture", "Neck Weakness", "Cervical Instability"],
+          "instructions": [
+            "Lie face down with a pillow under your chest",
+            "Let your head hang over the edge of the bed or table",
+            "Slowly lift your head to neutral position",
+            "Hold for 5-10 seconds",
+            "Lower your head slowly",
+            "Repeat 10 times, 2 sets daily"
+          ],
+          "cautions": [
+            "Start with small movements",
+            "Don't extend your neck beyond neutral",
+            "Stop if you experience dizziness or increased pain",
+            "Use a spotter if needed for safety"
+          ],
+          "biomechanicalPrinciples": "This exercise strengthens the cervical extensors and helps balance the strength between anterior and posterior neck muscles.",
+          "scientificValue": "Research shows that balanced neck strengthening exercises improve cervical stability and reduce the risk of neck injury."
         }
       ]
     },
     {
       "id": "upper-back",
       "name": "Upper Back Exercises",
-      "description": "Exercises targeting the upper back muscles to improve posture and reduce tension.",
+      "description": "Exercises targeting the thoracic spine and upper back muscles to improve posture, reduce tension, and strengthen the posterior chain.",
       "exercises": [
         {
           "id": "prone-cobra",
           "name": "Prone Cobra",
-          "description": "Lie face down and lift your chest off the ground while squeezing your shoulder blades together.",
+          "description": "Strengthens the upper back muscles and improves posture by targeting the thoracic extensors and scapular stabilizers.",
           "difficulty": "beginner",
           "image": "/images/exercises/prone-cobra.jpg",
+          "videoUrl": "/videos/exercises/prone-cobra.mp4",
+          "targetAreas": ["Thoracic Extensors", "Rhomboids", "Lower Trapezius", "Posterior Deltoids"],
+          "relatedConditions": ["Thoracic Kyphosis", "Upper Back Pain", "Poor Posture", "Rounded Shoulders"],
           "instructions": [
             "Lie face down with arms at your sides, palms facing down",
             "Rest your forehead on the floor",
             "Gently squeeze your shoulder blades together",
             "Slowly lift your head and chest off the floor",
+            "Keep your neck in neutral alignment",
             "Hold for 5-10 seconds",
             "Lower back down slowly",
             "Repeat 10 times, 2 times daily"
@@ -201,19 +413,25 @@
             "Keep your neck in a neutral position (look at the floor, not up)",
             "Lift only as high as comfortable without pain",
             "Avoid excessive arching of the lower back",
-            "Stop if you experience increased pain"
-          ]
+            "Stop if you experience increased pain or discomfort"
+          ],
+          "biomechanicalPrinciples": "The prone cobra activates the thoracic extensors and scapular retractors while promoting thoracic extension. This exercise helps counteract the effects of prolonged sitting and forward head posture.",
+          "scientificValue": "Research demonstrates that prone extension exercises effectively strengthen the thoracic extensors and improve postural alignment in individuals with thoracic kyphosis and upper crossed syndrome."
         },
         {
           "id": "scapular-retraction",
           "name": "Scapular Retraction",
-          "description": "Squeeze your shoulder blades together and hold. This exercise helps improve posture and strengthen upper back muscles.",
+          "description": "Strengthens the rhomboids and middle trapezius to improve posture and reduce upper back pain.",
           "difficulty": "beginner",
           "image": "/images/exercises/scapular-retraction.jpg",
+          "videoUrl": "/videos/exercises/scapular-retraction.mp4",
+          "targetAreas": ["Rhomboids", "Middle Trapezius", "Lower Trapezius"],
+          "relatedConditions": ["Rounded Shoulders", "Upper Back Pain", "Poor Posture", "Scapular Dyskinesis"],
           "instructions": [
             "Sit or stand with good posture",
             "Arms can be at your sides or bent at 90 degrees",
             "Gently squeeze your shoulder blades together and down",
+            "Imagine trying to hold a pencil between your shoulder blades",
             "Hold for 5 seconds",
             "Release and return to the starting position",
             "Repeat 15 times, 2-3 times daily"
@@ -223,14 +441,19 @@
             "Keep your neck relaxed",
             "Maintain normal breathing throughout",
             "Stop if you experience increased pain"
-          ]
+          ],
+          "biomechanicalPrinciples": "Scapular retraction strengthens the middle trapezius and rhomboids while promoting proper scapular positioning. This exercise helps counteract protracted shoulders and improves thoracic posture.",
+          "scientificValue": "Studies show that scapular retraction exercises effectively improve scapular stability, reduce forward head posture, and decrease upper back pain in office workers and patients with postural dysfunction."
         },
         {
           "id": "wall-angels",
           "name": "Wall Angels",
-          "description": "Stand with your back against a wall and move your arms up and down in a snow angel pattern while maintaining contact with the wall.",
+          "description": "Improves thoracic mobility and strengthens the muscles between the shoulder blades while promoting proper spinal alignment.",
           "difficulty": "intermediate",
           "image": "/images/exercises/wall-angels.jpg",
+          "videoUrl": "/videos/exercises/wall-angels.mp4",
+          "targetAreas": ["Serratus Anterior", "Lower Trapezius", "Rhomboids", "Thoracic Extensors"],
+          "relatedConditions": ["Thoracic Kyphosis", "Rounded Shoulders", "Shoulder Impingement", "Poor Posture"],
           "instructions": [
             "Stand with your back, head, and arms against a wall",
             "Bend your elbows at 90 degrees with the backs of your hands against the wall",
@@ -244,28 +467,194 @@
             "Move slowly and with control",
             "Don't force the range of motion",
             "Stop if you experience shoulder or neck pain"
-          ]
+          ],
+          "biomechanicalPrinciples": "Wall angels promote thoracic extension and scapular upward rotation while maintaining proper spinal alignment. This exercise helps improve shoulder blade mobility and strengthens the serratus anterior.",
+          "scientificValue": "Research indicates that wall angel exercises effectively improve thoracic mobility, shoulder function, and postural alignment in individuals with upper crossed syndrome."
         },
         {
           "id": "band-pull-aparts",
           "name": "Band Pull-Aparts",
-          "description": "Hold a resistance band with both hands and pull it apart by moving your arms outward, focusing on squeezing your shoulder blades together.",
+          "description": "Strengthens the posterior deltoids and rhomboids using resistance band training to improve posture and shoulder stability.",
           "difficulty": "beginner",
           "image": "/images/exercises/band-pull-aparts.jpg",
+          "videoUrl": "/videos/exercises/band-pull-aparts.mp4",
+          "targetAreas": ["Rhomboids", "Posterior Deltoids", "Middle Trapezius", "External Rotators"],
+          "relatedConditions": ["Rounded Shoulders", "Upper Back Pain", "Shoulder Impingement", "Poor Posture"],
           "instructions": [
             "Hold a resistance band with both hands at shoulder height, arms extended forward",
             "Keep your shoulders down and relaxed",
             "Pull the band apart by moving your arms outward to the sides",
             "Focus on squeezing your shoulder blades together",
-            "Slowly return to the starting position",
+            "Slowly return to the starting position with control",
             "Repeat 15 times, 2-3 sets daily"
           ],
           "cautions": [
             "Choose an appropriate resistance level - the band should provide challenge but not cause pain",
             "Keep your wrists straight throughout the movement",
             "Maintain good posture with shoulders relaxed",
-            "Stop if you experience increased pain"
-          ]
+            "Stop if you experience increased pain or shoulder discomfort"
+          ],
+          "biomechanicalPrinciples": "Band pull-aparts strengthen the posterior chain muscles while promoting scapular retraction and external rotation. The elastic resistance provides variable load throughout the range of motion.",
+          "scientificValue": "Research shows that resistance band exercises effectively strengthen the posterior deltoids and rhomboids, helping to counteract forward head posture and rounded shoulders."
+        },
+        {
+          "id": "seated-rows",
+          "name": "Seated Rows",
+          "description": "Strengthens the upper and mid-back muscles using resistance bands or cables.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/seated-rows.jpg",
+          "videoUrl": "/videos/exercises/seated-rows.mp4",
+          "targetAreas": ["Latissimus Dorsi", "Rhomboids", "Middle Trapezius"],
+          "relatedConditions": ["Upper Back Weakness", "Poor Posture", "Thoracic Kyphosis"],
+          "instructions": [
+            "Sit with legs extended, resistance band around feet",
+            "Hold handles with arms extended forward",
+            "Keep your back straight and core engaged",
+            "Pull handles toward your lower ribs",
+            "Squeeze shoulder blades together",
+            "Slowly return to starting position",
+            "Repeat 12-15 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Maintain good posture throughout the movement",
+            "Don't round your back during the exercise",
+            "Choose appropriate resistance level",
+            "Stop if you experience shoulder or back pain"
+          ],
+          "biomechanicalPrinciples": "Seated rows strengthen the posterior chain muscles while promoting proper scapular retraction and thoracic extension.",
+          "scientificValue": "Studies demonstrate that rowing exercises effectively improve upper back strength and postural alignment."
+        },
+        {
+          "id": "prone-t-raises",
+          "name": "Prone T Raises",
+          "description": "Strengthens the middle trapezius and rhomboids while lying prone.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/prone-t-raises.jpg",
+          "videoUrl": "/videos/exercises/prone-t-raises.mp4",
+          "targetAreas": ["Middle Trapezius", "Rhomboids", "Posterior Deltoids"],
+          "relatedConditions": ["Upper Back Weakness", "Rounded Shoulders", "Poor Posture"],
+          "instructions": [
+            "Lie face down with arms extended to sides (T position)",
+            "Keep your forehead on the ground",
+            "Lift your arms off the ground while squeezing shoulder blades",
+            "Hold for 2-3 seconds",
+            "Lower arms slowly",
+            "Repeat 10-12 times, 2 sets"
+          ],
+          "cautions": [
+            "Keep movements slow and controlled",
+            "Don't lift arms too high",
+            "Stop if you experience neck or back pain",
+            "Start without weights and progress gradually"
+          ],
+          "biomechanicalPrinciples": "T raises specifically target the middle trapezius and rhomboids in their optimal line of pull, promoting scapular retraction and stability.",
+          "scientificValue": "Research shows that prone T raises effectively activate the middle trapezius and improve scapular stability."
+        },
+        {
+          "id": "prone-y-raises",
+          "name": "Prone Y Raises",
+          "description": "Strengthens the lower trapezius and serratus anterior while lying prone.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/prone-y-raises.jpg",
+          "videoUrl": "/videos/exercises/prone-y-raises.mp4",
+          "targetAreas": ["Lower Trapezius", "Serratus Anterior", "Rhomboids"],
+          "relatedConditions": ["Scapular Dyskinesis", "Shoulder Impingement", "Upper Back Weakness"],
+          "instructions": [
+            "Lie face down with arms extended overhead in Y position",
+            "Keep your forehead on the ground",
+            "Lift your arms off the ground while squeezing shoulder blades down",
+            "Hold for 2-3 seconds",
+            "Lower arms slowly",
+            "Repeat 10-12 times, 2 sets"
+          ],
+          "cautions": [
+            "Keep movements slow and controlled",
+            "Focus on pulling shoulder blades down and back",
+            "Stop if you experience neck or shoulder pain",
+            "Start without weights and progress gradually"
+          ],
+          "biomechanicalPrinciples": "Y raises target the lower trapezius and serratus anterior, promoting proper scapular upward rotation and depression.",
+          "scientificValue": "Clinical studies show that Y raises effectively strengthen the lower trapezius and improve scapular kinematics."
+        },
+        {
+          "id": "thoracic-extension-foam-roller",
+          "name": "Thoracic Extension on Foam Roller",
+          "description": "Improves thoracic spine mobility and reduces stiffness using a foam roller.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/thoracic-extension-foam-roller.jpg",
+          "videoUrl": "/videos/exercises/thoracic-extension-foam-roller.mp4",
+          "targetAreas": ["Thoracic Spine", "Erector Spinae", "Intercostals"],
+          "relatedConditions": ["Thoracic Kyphosis", "Upper Back Pain", "Reduced Mobility"],
+          "instructions": [
+            "Place foam roller horizontally under your upper back",
+            "Support your head with your hands",
+            "Slowly extend backward over the foam roller",
+            "Hold for 30 seconds",
+            "Move the roller up or down slightly and repeat",
+            "Perform for 2-3 minutes total"
+          ],
+          "cautions": [
+            "Move slowly and avoid bouncing",
+            "Don't roll on your lower back",
+            "Stop if you experience increased pain",
+            "Use a softer roller if you're a beginner"
+          ],
+          "biomechanicalPrinciples": "Foam rolling promotes thoracic extension and helps mobilize stiff thoracic segments while reducing muscle tension.",
+          "scientificValue": "Research shows that foam rolling effectively improves thoracic mobility and reduces upper back stiffness."
+        },
+        {
+          "id": "face-pulls",
+          "name": "Face Pulls",
+          "description": "Targets the posterior deltoids, middle trapezius, and external rotators of the shoulder.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/face-pulls.jpg",
+          "videoUrl": "/videos/exercises/face-pulls.mp4",
+          "targetAreas": ["Posterior Deltoids", "Middle Trapezius", "Rotator Cuff"],
+          "relatedConditions": ["Rounded Shoulders", "Upper Cross Syndrome", "Shoulder Impingement"],
+          "instructions": [
+            "Attach resistance band at face height",
+            "Hold handles with arms extended forward",
+            "Pull handles toward your face",
+            "Separate hands as you pull back",
+            "Squeeze shoulder blades together",
+            "Slowly return to starting position",
+            "Repeat 12-15 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Keep your core engaged throughout",
+            "Don't use too much resistance initially",
+            "Focus on proper form over speed",
+            "Stop if you experience shoulder pain"
+          ],
+          "biomechanicalPrinciples": "Face pulls combine horizontal abduction with external rotation, targeting multiple muscles involved in proper shoulder and scapular function.",
+          "scientificValue": "Studies demonstrate that face pulls effectively strengthen the posterior deltoids and improve shoulder stability."
+        },
+        {
+          "id": "thoracic-rotation",
+          "name": "Thoracic Rotation",
+          "description": "Improves rotational mobility of the thoracic spine.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/thoracic-rotation.jpg",
+          "videoUrl": "/videos/exercises/thoracic-rotation.mp4",
+          "targetAreas": ["Thoracic Spine", "Erector Spinae", "Obliques"],
+          "relatedConditions": ["Thoracic Stiffness", "Upper Back Pain", "Reduced Rotational Mobility"],
+          "instructions": [
+            "Start on hands and knees",
+            "Place one hand behind your head",
+            "Rotate your upper body toward the ceiling",
+            "Follow your elbow with your eyes",
+            "Return to starting position slowly",
+            "Repeat 10 times each direction",
+            "Perform 2 sets"
+          ],
+          "cautions": [
+            "Move slowly and within comfortable range",
+            "Keep your hips stable during rotation",
+            "Stop if you experience increased pain",
+            "Don't force the movement"
+          ],
+          "biomechanicalPrinciples": "Thoracic rotation exercises promote segmental mobility in the thoracic spine while maintaining lumbar stability.",
+          "scientificValue": "Research shows that thoracic rotation exercises effectively improve spinal mobility and reduce stiffness."
         }
       ]
     },
@@ -337,7 +726,63 @@
             "Avoid pulling your knee too forcefully",
             "Keep your neck relaxed (you may use a small pillow)",
             "Stop if you experience increased pain"
-          ]
+          ],
+          "biomechanicalPrinciples": "Knee-to-chest stretches promote lumbar flexion and help decompress the posterior elements of the spine while stretching the hip flexors and lower back muscles.",
+          "scientificValue": "Research demonstrates that knee-to-chest stretches effectively reduce lower back pain and improve lumbar flexibility when performed regularly as part of a comprehensive exercise program."
+        },
+        {
+          "id": "child-pose",
+          "name": "Child's Pose",
+          "description": "A gentle stretch for the lower back, hips, and thighs that helps relieve tension.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/child-pose.jpg",
+          "videoUrl": "/videos/exercises/child-pose.mp4",
+          "targetAreas": ["Lower Back", "Hips", "Thighs"],
+          "relatedConditions": ["Lower Back Pain", "Lumbar Stiffness", "Stress-Related Back Pain"],
+          "instructions": [
+            "Start on your hands and knees",
+            "Sit back on your heels",
+            "Extend your arms forward on the ground",
+            "Lower your forehead toward the floor",
+            "Hold for 30-60 seconds",
+            "Breathe deeply and relax",
+            "Return to starting position slowly"
+          ],
+          "cautions": [
+            "Avoid this position if you have knee problems",
+            "Don't force the stretch",
+            "Use a pillow under your knees if needed",
+            "Stop if you experience increased pain"
+          ],
+          "biomechanicalPrinciples": "Child's pose promotes gentle lumbar flexion and hip flexion while providing a relaxing stretch for the entire posterior chain.",
+          "scientificValue": "Studies show that child's pose effectively reduces lower back tension and promotes relaxation when used as part of a stretching routine."
+        },
+        {
+          "id": "lumbar-rotation",
+          "name": "Lumbar Rotation",
+          "description": "Improves rotational mobility of the lumbar spine and helps relieve tension.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/lumbar-rotation.jpg",
+          "videoUrl": "/videos/exercises/lumbar-rotation.mp4",
+          "targetAreas": ["Lumbar Spine", "Obliques", "Hip Rotators"],
+          "relatedConditions": ["Lower Back Pain", "Lumbar Stiffness", "Facet Joint Pain"],
+          "instructions": [
+            "Lie on your back with knees bent",
+            "Keep your shoulders flat on the ground",
+            "Slowly lower both knees to one side",
+            "Hold for 15-30 seconds",
+            "Return to center",
+            "Repeat on the other side",
+            "Perform 3 repetitions each side"
+          ],
+          "cautions": [
+            "Keep both shoulders on the ground",
+            "Move slowly and within comfortable range",
+            "Stop if you experience increased pain",
+            "Don't force the rotation"
+          ],
+          "biomechanicalPrinciples": "Lumbar rotation stretches promote mobility in the lumbar facet joints and help reduce muscle tension in the lower back and hips.",
+          "scientificValue": "Research indicates that gentle lumbar rotation exercises can help improve spinal mobility and reduce lower back stiffness."
         }
       ]
     },
@@ -390,7 +835,117 @@
             "Avoid arching your back or rotating your hips",
             "Start with arm or leg extensions separately if the full exercise is too challenging",
             "Stop if you experience increased pain"
-          ]
+          ],
+          "biomechanicalPrinciples": "Bird dog exercises challenge the core stabilizers in an anti-extension and anti-rotation pattern while promoting co-contraction of the deep spinal muscles.",
+          "scientificValue": "Studies show that bird dog exercises effectively activate the transverse abdominis, multifidus, and other core stabilizers, improving spinal stability and reducing lower back pain."
+        },
+        {
+          "id": "abdominal-bracing",
+          "name": "Abdominal Bracing",
+          "description": "Activates the deep core muscles to improve stability and protect the spine during daily activities.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/abdominal-bracing.jpg",
+          "videoUrl": "/videos/exercises/abdominal-bracing.mp4",
+          "targetAreas": ["Transverse Abdominis", "Multifidus", "Pelvic Floor", "Diaphragm"],
+          "relatedConditions": ["Core Weakness", "Lower Back Pain", "Lumbar Instability", "Postural Dysfunction"],
+          "instructions": [
+            "Lie on your back with knees bent and feet flat on the floor",
+            "Place one hand on your chest and one on your lower abdomen",
+            "Breathe normally and gently draw your belly button toward your spine",
+            "Tighten your abdominal muscles as if preparing for a gentle punch",
+            "Maintain normal breathing while holding the contraction",
+            "Hold for 10 seconds, then relax",
+            "Repeat 10 times, 3 times daily"
+          ],
+          "cautions": [
+            "Don't hold your breath during the exercise",
+            "Avoid excessive muscle tension - use only 30% of maximum effort",
+            "Keep your back in a neutral position",
+            "Stop if you experience increased pain or discomfort"
+          ],
+          "biomechanicalPrinciples": "Abdominal bracing activates the deep stabilizing muscles of the core, creating intra-abdominal pressure that supports the spine and improves segmental stability.",
+          "scientificValue": "Research demonstrates that abdominal bracing exercises effectively improve core stability, reduce lower back pain, and enhance functional movement patterns when performed regularly."
+        },
+        {
+          "id": "modified-plank",
+          "name": "Modified Plank",
+          "description": "A gentler version of the plank that still effectively strengthens the core muscles.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/modified-plank.jpg",
+          "videoUrl": "/videos/exercises/modified-plank.mp4",
+          "targetAreas": ["Core", "Shoulders", "Back"],
+          "relatedConditions": ["Core Weakness", "Lower Back Pain", "Poor Posture"],
+          "instructions": [
+            "Start on your hands and knees",
+            "Lower to your forearms",
+            "Keep your knees on the ground",
+            "Maintain a straight line from head to knees",
+            "Engage your core muscles",
+            "Hold for 15-30 seconds",
+            "Repeat 3 times with rest between holds"
+          ],
+          "cautions": [
+            "Keep your hips level - don't sag or pike",
+            "Breathe normally during the hold",
+            "Start with shorter holds and progress gradually",
+            "Stop if you experience back or shoulder pain"
+          ],
+          "biomechanicalPrinciples": "The modified plank reduces the load on the core while still providing effective strengthening for beginners or those with limitations.",
+          "scientificValue": "Research shows that modified planks effectively activate core muscles while being more accessible for individuals with lower fitness levels."
+        },
+        {
+          "id": "supine-toe-taps",
+          "name": "Supine Toe Taps",
+          "description": "Strengthens the lower abdominals while maintaining a stable spine.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/supine-toe-taps.jpg",
+          "videoUrl": "/videos/exercises/supine-toe-taps.mp4",
+          "targetAreas": ["Lower Abdominals", "Core", "Hip Flexors"],
+          "relatedConditions": ["Core Weakness", "Lower Back Pain", "Diastasis Recti"],
+          "instructions": [
+            "Lie on your back with knees bent at 90 degrees",
+            "Keep your lower back pressed into the floor",
+            "Slowly lower one foot to tap the floor",
+            "Return to starting position",
+            "Repeat with the other foot",
+            "Alternate for 10 taps per leg",
+            "Perform 2 sets"
+          ],
+          "cautions": [
+            "Keep your lower back pressed into the floor throughout",
+            "Move slowly and with control",
+            "Stop if your back starts to arch",
+            "Start with smaller movements if needed"
+          ],
+          "biomechanicalPrinciples": "Toe taps challenge the core's ability to maintain spinal stability while the hip flexors are working dynamically.",
+          "scientificValue": "Studies show that supine toe taps effectively activate the transverse abdominis and improve core stability."
+        },
+        {
+          "id": "dead-bug",
+          "name": "Dead Bug",
+          "description": "A safe core exercise that maintains neutral spine position while challenging stability.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/dead-bug.jpg",
+          "videoUrl": "/videos/exercises/dead-bug.mp4",
+          "targetAreas": ["Core", "Transverse Abdominis", "Hip Flexors"],
+          "relatedConditions": ["Lower Back Pain", "Core Weakness", "Lumbar Instability"],
+          "instructions": [
+            "Lie on your back with arms reaching toward ceiling",
+            "Bend hips and knees to 90 degrees",
+            "Keep lower back pressed into floor",
+            "Slowly extend opposite arm and leg",
+            "Return to starting position",
+            "Repeat with other arm and leg",
+            "Perform 10 repetitions each side"
+          ],
+          "cautions": [
+            "Keep your lower back pressed into the floor",
+            "Move slowly and with control",
+            "Stop if you feel your back arching",
+            "Start with arm or leg movements separately if needed"
+          ],
+          "biomechanicalPrinciples": "The dead bug exercise challenges core stability in an anti-extension pattern while promoting reciprocal movement patterns.",
+          "scientificValue": "Research demonstrates that dead bug exercises effectively activate deep core muscles while maintaining spinal neutrality."
         }
       ]
     },
@@ -440,7 +995,62 @@
             "Maintain good posture throughout - don't arch your lower back",
             "Use a cushion under your knee if needed for comfort",
             "Stop if you experience increased pain"
-          ]
+          ],
+          "biomechanicalPrinciples": "Hip flexor stretches target the iliopsoas and rectus femoris muscles, helping to reduce anterior pelvic tilt and lower back tension.",
+          "scientificValue": "Research shows that hip flexor stretches can effectively reduce lower back pain and improve hip mobility when performed regularly."
+        },
+        {
+          "id": "spinal-twist",
+          "name": "Spinal Twist",
+          "description": "Improves rotational mobility of the entire spine while seated.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/spinal-twist.jpg",
+          "videoUrl": "/videos/exercises/spinal-twist.mp4",
+          "targetAreas": ["Entire Spine", "Obliques", "Erector Spinae"],
+          "relatedConditions": ["Spinal Stiffness", "General Back Pain", "Reduced Rotational Mobility"],
+          "instructions": [
+            "Sit tall in a chair with feet flat on the floor",
+            "Place your right hand on your left knee",
+            "Place your left hand behind you for support",
+            "Slowly rotate your torso to the left",
+            "Hold for 15-30 seconds",
+            "Return to center and repeat on the other side",
+            "Perform 3 repetitions each direction"
+          ],
+          "cautions": [
+            "Keep your feet planted on the floor",
+            "Move slowly and within comfortable range",
+            "Don't force the rotation",
+            "Stop if you experience increased pain"
+          ],
+          "biomechanicalPrinciples": "Spinal twists promote rotational mobility throughout the spine while maintaining proper alignment and core engagement.",
+          "scientificValue": "Studies show that rotational mobility exercises help maintain spinal health and reduce stiffness when performed regularly."
+        },
+        {
+          "id": "shoulder-rolls",
+          "name": "Shoulder Rolls",
+          "description": "Improves shoulder mobility and reduces tension in the upper back and neck.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/shoulder-rolls.jpg",
+          "videoUrl": "/videos/exercises/shoulder-rolls.mp4",
+          "targetAreas": ["Shoulders", "Upper Back", "Neck"],
+          "relatedConditions": ["Shoulder Stiffness", "Upper Back Tension", "Neck Pain"],
+          "instructions": [
+            "Sit or stand with good posture",
+            "Slowly roll your shoulders up toward your ears",
+            "Roll them back and down in a circular motion",
+            "Complete 10 circles in one direction",
+            "Reverse direction for 10 more circles",
+            "Perform 2-3 times daily"
+          ],
+          "cautions": [
+            "Keep movements slow and controlled",
+            "Don't force the movement if painful",
+            "Focus on full range of motion",
+            "Stop if you experience increased pain"
+          ],
+          "biomechanicalPrinciples": "Shoulder rolls promote mobility in the glenohumeral and scapulothoracic joints while reducing muscle tension.",
+          "scientificValue": "Research indicates that shoulder mobility exercises effectively reduce upper body tension and improve range of motion."
         }
       ]
     },
@@ -490,7 +1100,345 @@
             "Pull only to the point of a gentle stretch, not pain",
             "Keep your lower back pressed into the floor",
             "Stop if you experience increased pain or sciatic symptoms"
-          ]
+          ],
+          "biomechanicalPrinciples": "Piriformis stretches help reduce tension in the deep hip rotators and can alleviate compression of the sciatic nerve that may pass through or near the piriformis muscle.",
+          "scientificValue": "Clinical evidence supports the use of piriformis stretches in managing piriformis syndrome and reducing sciatic pain when combined with other therapeutic interventions."
+        },
+        {
+          "id": "calf-stretch",
+          "name": "Calf Stretch",
+          "description": "Stretches the calf muscles to improve ankle mobility and reduce tension in the lower legs.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/calf-stretch.jpg",
+          "videoUrl": "/videos/exercises/calf-stretch.mp4",
+          "targetAreas": ["Calves", "Achilles Tendon"],
+          "relatedConditions": ["Calf Tightness", "Plantar Fasciitis", "Achilles Tendinopathy"],
+          "instructions": [
+            "Stand facing a wall with hands against it",
+            "Step your right foot back 2-3 feet",
+            "Keep your right heel on the ground",
+            "Lean forward into the wall",
+            "Feel the stretch in your right calf",
+            "Hold for 20-30 seconds",
+            "Switch legs and repeat",
+            "Perform 3 repetitions each leg"
+          ],
+          "cautions": [
+            "Keep your back heel firmly on the ground",
+            "Don't bounce during the stretch",
+            "Stop if you experience sharp pain",
+            "Adjust distance from wall as needed"
+          ],
+          "biomechanicalPrinciples": "Calf stretches target the gastrocnemius and soleus muscles, improving ankle dorsiflexion and reducing tension in the posterior lower leg.",
+          "scientificValue": "Research shows that regular calf stretching can improve ankle mobility and reduce the risk of lower leg injuries."
+        },
+        {
+          "id": "chest-stretch",
+          "name": "Chest Stretch",
+          "description": "Stretches the chest muscles to improve posture and reduce tension in the upper body.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/chest-stretch.jpg",
+          "videoUrl": "/videos/exercises/chest-stretch.mp4",
+          "targetAreas": ["Chest", "Anterior Shoulders"],
+          "relatedConditions": ["Rounded Shoulders", "Upper Cross Syndrome", "Poor Posture"],
+          "instructions": [
+            "Stand in a doorway with your arm against the frame",
+            "Place your forearm vertically against the doorframe",
+            "Step forward with the opposite foot",
+            "Feel the stretch across your chest",
+            "Hold for 20-30 seconds",
+            "Switch arms and repeat",
+            "Perform 3 repetitions each arm"
+          ],
+          "cautions": [
+            "Don't force the stretch beyond comfortable limits",
+            "Keep your shoulder blade pulled back",
+            "Stop if you experience shoulder pain",
+            "Adjust arm height for different muscle fibers"
+          ],
+          "biomechanicalPrinciples": "Chest stretches help lengthen the pectoralis major and minor muscles, counteracting the effects of prolonged sitting and forward head posture.",
+          "scientificValue": "Studies demonstrate that chest stretches effectively improve posture and reduce upper body tension when combined with strengthening exercises."
+        },
+        {
+          "id": "hip-flexor-stretch-stretching",
+          "name": "Hip Flexor Stretch",
+          "description": "Stretches the hip flexor muscles to improve hip mobility and reduce tension in the lower back.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/hip-flexor-stretch-stretching.jpg",
+          "videoUrl": "/videos/exercises/hip-flexor-stretch-stretching.mp4",
+          "targetAreas": ["Hip Flexors", "Psoas", "Lower Back"],
+          "relatedConditions": ["Hip Flexor Tightness", "Lower Back Pain", "Anterior Pelvic Tilt"],
+          "instructions": [
+            "Kneel on your right knee with left foot forward",
+            "Keep your torso upright",
+            "Push your hips forward gently",
+            "Feel the stretch in the front of your right hip",
+            "Hold for 20-30 seconds",
+            "Switch sides and repeat",
+            "Perform 3 repetitions each side"
+          ],
+          "cautions": [
+            "Keep your front knee over your ankle",
+            "Don't arch your lower back excessively",
+            "Use a cushion under your knee if needed",
+            "Stop if you experience increased pain"
+          ],
+          "biomechanicalPrinciples": "Hip flexor stretches target the iliopsoas and rectus femoris muscles, helping to reduce anterior pelvic tilt and lower back tension.",
+          "scientificValue": "Research shows that hip flexor stretches can effectively reduce lower back pain and improve hip mobility when performed regularly."
+        }
+      ]
+    },
+    {
+      "id": "posture",
+      "name": "Posture Exercises",
+      "description": "Exercises specifically designed to improve posture, correct alignment issues, and strengthen postural muscles.",
+      "exercises": [
+        {
+          "id": "wall-stand",
+          "name": "Wall Stand",
+          "description": "Improves overall posture by aligning the spine against a wall.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/wall-stand.jpg",
+          "videoUrl": "/videos/exercises/wall-stand.mp4",
+          "targetAreas": ["Entire Spine", "Core", "Gluteal Muscles"],
+          "relatedConditions": ["Poor Posture", "Forward Head", "Rounded Shoulders"],
+          "instructions": [
+            "Stand with your back against a wall",
+            "Place your feet 6 inches away from the wall",
+            "Press your lower back, upper back, and head against the wall",
+            "Hold this position for 30 seconds to 2 minutes",
+            "Focus on maintaining this alignment",
+            "Step away from the wall and try to maintain the position",
+            "Repeat 3-5 times daily"
+          ],
+          "cautions": [
+            "Don't force your head back if it causes neck pain",
+            "Start with shorter holds and progress gradually",
+            "Stop if you experience increased pain",
+            "Focus on quality of position over duration"
+          ],
+          "biomechanicalPrinciples": "Wall stands help establish proper spinal alignment and strengthen the postural muscles needed to maintain good posture.",
+          "scientificValue": "Research shows that postural awareness exercises like wall stands can effectively improve posture and reduce pain associated with poor alignment."
+        },
+        {
+          "id": "doorway-stretch",
+          "name": "Doorway Stretch",
+          "description": "Stretches the chest muscles to improve posture and reduce rounded shoulders.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/doorway-stretch.jpg",
+          "videoUrl": "/videos/exercises/doorway-stretch.mp4",
+          "targetAreas": ["Chest", "Anterior Shoulders"],
+          "relatedConditions": ["Rounded Shoulders", "Upper Cross Syndrome", "Poor Posture"],
+          "instructions": [
+            "Stand in a doorway with arms at 90 degrees",
+            "Place your forearms against the doorframe",
+            "Step forward with one foot",
+            "Feel the stretch across your chest",
+            "Hold for 30 seconds",
+            "Relax and repeat 3 times",
+            "Perform 2-3 times daily"
+          ],
+          "cautions": [
+            "Don't force the stretch beyond comfortable limits",
+            "Keep your core engaged",
+            "Stop if you experience shoulder pain",
+            "Adjust arm height for different angles"
+          ],
+          "biomechanicalPrinciples": "Doorway stretches help lengthen tight chest muscles that contribute to rounded shoulder posture.",
+          "scientificValue": "Studies demonstrate that chest stretches are effective in improving posture when combined with strengthening exercises."
+        },
+        {
+          "id": "brugger-relief-position",
+          "name": "Brugger Relief Position",
+          "description": "A position that helps counteract the effects of prolonged sitting and improves posture.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/brugger-relief-position.jpg",
+          "videoUrl": "/videos/exercises/brugger-relief-position.mp4",
+          "targetAreas": ["Upper Back", "Shoulders", "Chest"],
+          "relatedConditions": ["Rounded Shoulders", "Upper Cross Syndrome", "Poor Posture"],
+          "instructions": [
+            "Sit at the edge of your chair",
+            "Spread your legs slightly apart",
+            "Turn your palms forward",
+            "Lift your chest and pull your shoulder blades back",
+            "Tuck your chin slightly",
+            "Hold for 10-30 seconds",
+            "Repeat every 30 minutes during prolonged sitting"
+          ],
+          "cautions": [
+            "Don't overextend your back",
+            "Keep the movement gentle and controlled",
+            "Stop if you experience increased pain",
+            "Focus on opening the chest and shoulders"
+          ],
+          "biomechanicalPrinciples": "The Brugger position helps activate postural muscles and counteract the effects of prolonged flexed postures.",
+          "scientificValue": "Research shows that regular postural breaks using positions like Brugger relief can reduce musculoskeletal discomfort and improve posture."
+        },
+        {
+          "id": "postural-awareness",
+          "name": "Postural Awareness Exercise",
+          "description": "Develops awareness of proper posture throughout daily activities.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/postural-awareness.jpg",
+          "videoUrl": "/videos/exercises/postural-awareness.mp4",
+          "targetAreas": ["Entire Body", "Postural Muscles"],
+          "relatedConditions": ["Poor Posture", "Postural Fatigue", "Chronic Pain"],
+          "instructions": [
+            "Set reminders throughout the day to check your posture",
+            "When reminded, assess your head, shoulder, and spine position",
+            "Correct any slouching or forward head posture",
+            "Hold the corrected position for 30 seconds",
+            "Take note of how proper posture feels",
+            "Gradually increase awareness throughout the day"
+          ],
+          "cautions": [
+            "Don't overcorrect into an exaggerated position",
+            "Make gradual adjustments rather than sudden changes",
+            "Focus on comfort and sustainability",
+            "Consult a healthcare provider for persistent pain"
+          ],
+          "biomechanicalPrinciples": "Postural awareness exercises help retrain the nervous system to recognize and maintain optimal alignment patterns.",
+          "scientificValue": "Research demonstrates that postural awareness training effectively improves posture and reduces musculoskeletal pain."
+        },
+        {
+          "id": "ergonomic-positioning",
+          "name": "Ergonomic Positioning",
+          "description": "Optimizes workspace setup to support good posture during work activities.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/ergonomic-positioning.jpg",
+          "videoUrl": "/videos/exercises/ergonomic-positioning.mp4",
+          "targetAreas": ["Entire Body", "Workplace Posture"],
+          "relatedConditions": ["Work-Related Pain", "Poor Posture", "Repetitive Strain"],
+          "instructions": [
+            "Adjust chair height so feet are flat on the floor",
+            "Position monitor at eye level to avoid neck strain",
+            "Keep elbows at 90 degrees when typing",
+            "Support your lower back with a lumbar cushion if needed",
+            "Take regular breaks to stand and move",
+            "Perform postural exercises every hour"
+          ],
+          "cautions": [
+            "Make gradual adjustments to avoid discomfort",
+            "Ensure adequate lighting to prevent leaning forward",
+            "Use proper lifting techniques for any objects",
+            "Seek professional ergonomic assessment if pain persists"
+          ],
+          "biomechanicalPrinciples": "Proper ergonomics reduces mechanical stress on the musculoskeletal system and promotes neutral joint positions.",
+          "scientificValue": "Studies show that ergonomic interventions significantly reduce work-related musculoskeletal disorders and improve productivity."
+        },
+        {
+          "id": "mirror-feedback",
+          "name": "Mirror Feedback Exercise",
+          "description": "Uses visual feedback to improve postural awareness and alignment.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/mirror-feedback.jpg",
+          "videoUrl": "/videos/exercises/mirror-feedback.mp4",
+          "targetAreas": ["Entire Body", "Postural Alignment"],
+          "relatedConditions": ["Poor Posture", "Postural Asymmetry", "Body Awareness"],
+          "instructions": [
+            "Stand sideways in front of a full-length mirror",
+            "Observe your natural posture from the side",
+            "Note any forward head, rounded shoulders, or excessive curves",
+            "Slowly correct your posture while watching in the mirror",
+            "Hold the corrected position for 30 seconds",
+            "Turn to face the mirror and check for symmetry",
+            "Practice this daily for 5-10 minutes"
+          ],
+          "cautions": [
+            "Don't overcorrect into an unnatural position",
+            "Focus on gradual, sustainable improvements",
+            "Be patient with postural changes - they take time",
+            "Seek professional guidance for significant asymmetries"
+          ],
+          "biomechanicalPrinciples": "Visual feedback enhances proprioceptive awareness and helps establish new motor patterns for improved posture.",
+          "scientificValue": "Research indicates that visual feedback training effectively improves postural control and body awareness."
+        }
+      ]
+    },
+    {
+      "id": "strengthening",
+      "name": "Strengthening Exercises",
+      "description": "Exercises designed to build strength in key muscle groups that support spinal health and overall function.",
+      "exercises": [
+        {
+          "id": "glute-bridges",
+          "name": "Glute Bridges",
+          "description": "Strengthens the gluteal muscles and posterior chain to support the lower back.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/glute-bridges.jpg",
+          "videoUrl": "/videos/exercises/glute-bridges.mp4",
+          "targetAreas": ["Gluteal Muscles", "Hamstrings", "Core"],
+          "relatedConditions": ["Lower Back Pain", "Gluteal Weakness", "Hip Dysfunction"],
+          "instructions": [
+            "Lie on your back with knees bent and feet flat on the floor",
+            "Keep your arms at your sides for stability",
+            "Squeeze your glutes and lift your hips off the ground",
+            "Create a straight line from knees to shoulders",
+            "Hold for 2-3 seconds at the top",
+            "Lower slowly back to the starting position",
+            "Repeat 15-20 times, 2-3 sets"
+          ],
+          "cautions": [
+            "Don't arch your back excessively",
+            "Focus on squeezing your glutes, not pushing with your feet",
+            "Keep your core engaged throughout",
+            "Stop if you experience increased back pain"
+          ],
+          "biomechanicalPrinciples": "Glute bridges strengthen the posterior chain muscles while promoting proper hip extension patterns and reducing compensatory lower back movement.",
+          "scientificValue": "Research shows that glute strengthening exercises effectively reduce lower back pain and improve functional movement patterns."
+        },
+        {
+          "id": "clamshells",
+          "name": "Clamshells",
+          "description": "Strengthens the hip external rotators and gluteal muscles.",
+          "difficulty": "beginner",
+          "image": "/images/exercises/clamshells.jpg",
+          "videoUrl": "/videos/exercises/clamshells.mp4",
+          "targetAreas": ["Hip External Rotators", "Gluteal Muscles"],
+          "relatedConditions": ["Hip Weakness", "Lower Back Pain", "Knee Pain"],
+          "instructions": [
+            "Lie on your side with knees bent at 90 degrees",
+            "Keep your feet together",
+            "Lift your top knee while keeping feet in contact",
+            "Hold for 2 seconds at the top",
+            "Lower slowly back to starting position",
+            "Repeat 15 times, then switch sides",
+            "Perform 2 sets on each side"
+          ],
+          "cautions": [
+            "Don't roll backward during the movement",
+            "Keep your core engaged to maintain stability",
+            "Move slowly and with control",
+            "Stop if you experience hip or back pain"
+          ],
+          "biomechanicalPrinciples": "Clamshells target the gluteus medius and deep hip rotators, which are crucial for hip stability and proper lower extremity alignment.",
+          "scientificValue": "Studies demonstrate that hip strengthening exercises like clamshells effectively improve hip stability and reduce lower back pain."
+        },
+        {
+          "id": "side-plank",
+          "name": "Side Plank",
+          "description": "Strengthens the lateral core muscles and improves spinal stability.",
+          "difficulty": "intermediate",
+          "image": "/images/exercises/side-plank.jpg",
+          "videoUrl": "/videos/exercises/side-plank.mp4",
+          "targetAreas": ["Obliques", "Quadratus Lumborum", "Lateral Core"],
+          "relatedConditions": ["Core Weakness", "Lower Back Pain", "Lateral Instability"],
+          "instructions": [
+            "Lie on your side with your forearm on the ground",
+            "Stack your feet and lift your hips off the ground",
+            "Create a straight line from head to feet",
+            "Hold for 15-30 seconds",
+            "Lower slowly and repeat on the other side",
+            "Perform 3 holds on each side"
+          ],
+          "cautions": [
+            "Don't let your hips sag or pike up",
+            "Keep your shoulder directly over your elbow",
+            "Breathe normally during the hold",
+            "Start with shorter holds and progress gradually"
+          ],
+          "biomechanicalPrinciples": "Side planks challenge the lateral core muscles in an anti-lateral flexion pattern, promoting spinal stability in the frontal plane.",
+          "scientificValue": "Research shows that side plank exercises effectively strengthen the quadratus lumborum and obliques, improving lateral spinal stability."
         }
       ]
     }

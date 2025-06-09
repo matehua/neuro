@@ -22,6 +22,7 @@ import {
 } from "@/components/ui/dialog";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { useQuery } from "@tanstack/react-query";
+import { useState as useStateReact, useEffect as useEffectReact } from "react";
 
 // Define types for our exercise data
 interface Exercise {
@@ -30,8 +31,15 @@ interface Exercise {
   description: string;
   difficulty: string;
   image: string;
+  videoUrl?: string;
+  targetAreas: string[];
+  relatedConditions: string[];
   instructions: string[];
   cautions: string[];
+  biomechanicalPrinciples?: string;
+  scientificValue?: string;
+  contraindications?: string[];
+  modifications?: string[];
 }
 
 interface Category {
@@ -57,17 +65,38 @@ export default function ExerciseLibrary() {
     window.scrollTo(0, 0);
   }, []);
 
-  // Fetch exercise data
-  const { data: exerciseData, isLoading, error } = useQuery<ExerciseData>({
-    queryKey: ['exerciseData'],
-    queryFn: async () => {
-      const response = await fetch('/data/exercises.json');
-      if (!response.ok) {
-        throw new Error('Failed to fetch exercise data');
+  // Fetch exercise data using simple fetch
+  const [exerciseData, setExerciseData] = useStateReact<ExerciseData | null>(null);
+  const [isLoading, setIsLoading] = useStateReact(true);
+  const [error, setError] = useStateReact<Error | null>(null);
+
+  useEffectReact(() => {
+    const fetchData = async () => {
+      try {
+        setIsLoading(true);
+        const response = await fetch(`/data/exercises.json?v=${Date.now()}`, {
+          cache: 'no-cache',
+          headers: {
+            'Cache-Control': 'no-cache',
+            'Pragma': 'no-cache'
+          }
+        });
+        if (!response.ok) {
+          throw new Error('Failed to fetch exercise data');
+        }
+        const data = await response.json();
+        setExerciseData(data);
+        setError(null);
+      } catch (err) {
+
+        setError(err as Error);
+      } finally {
+        setIsLoading(false);
       }
-      return response.json();
-    }
-  });
+    };
+
+    fetchData();
+  }, []);
 
   // Define exercise categories
   const categories = [
@@ -142,6 +171,7 @@ export default function ExerciseLibrary() {
               <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
                 Exercise Library
               </h1>
+
               <p className="text-muted-foreground mb-8">
                 Explore our comprehensive collection of spine-specific exercises designed by neurosurgical experts to help strengthen your spine and reduce pain.
               </p>
@@ -198,6 +228,50 @@ export default function ExerciseLibrary() {
                     ))}
                   </SelectContent>
                 </Select>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Safety Warning Section */}
+        <section className="py-8 bg-red-50 dark:bg-red-950/20 border-l-4 border-red-500">
+          <div className="container">
+            <div className="max-w-4xl mx-auto">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0">
+                  <div className="w-8 h-8 bg-red-500 rounded-full flex items-center justify-center">
+                    <span className="text-white font-bold text-sm">⚠️</span>
+                  </div>
+                </div>
+                <div>
+                  <h3 className="text-xl font-bold text-red-700 dark:text-red-400 mb-4">Important Safety Guidelines</h3>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 text-sm">
+                    <div>
+                      <h4 className="font-semibold text-red-600 dark:text-red-400 mb-2">Before Starting Any Exercise:</h4>
+                      <ul className="space-y-1 text-muted-foreground">
+                        <li>• Consult your healthcare provider before beginning any exercise program</li>
+                        <li>• Stop immediately if you experience increased pain, dizziness, or numbness</li>
+                        <li>• Never exercise while taking strong pain medications that may mask injury</li>
+                        <li>• Avoid exercises during acute injury or inflammation phases</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-red-600 dark:text-red-400 mb-2">Medical Conditions Requiring Caution:</h4>
+                      <ul className="space-y-1 text-muted-foreground">
+                        <li>• Recent spinal surgery or fractures</li>
+                        <li>• Severe osteoporosis or bone density issues</li>
+                        <li>• Active infections or inflammatory conditions</li>
+                        <li>• Cardiovascular conditions or uncontrolled blood pressure</li>
+                      </ul>
+                    </div>
+                  </div>
+                  <div className="mt-4 p-4 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg border border-yellow-200 dark:border-yellow-800">
+                    <p className="text-sm text-yellow-800 dark:text-yellow-200">
+                      <strong>Remember:</strong> These exercises are for educational purposes only and should not replace professional medical advice.
+                      Always work with qualified healthcare professionals for personalized treatment plans.
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -293,16 +367,51 @@ export default function ExerciseLibrary() {
                   <img
                     src={selectedExercise.image}
                     alt={selectedExercise.name}
-                    className="w-full h-auto rounded-lg object-cover"
+                    className="w-full h-auto rounded-lg object-cover mb-4"
                   />
+                  {selectedExercise.videoUrl && (
+                    <div className="mt-4">
+                      <h4 className="font-semibold mb-2">Video Demonstration</h4>
+                      <video
+                        controls
+                        className="w-full rounded-lg"
+                        poster={selectedExercise.image}
+                      >
+                        <source src={selectedExercise.videoUrl} type="video/mp4" />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  )}
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold mb-2">Description</h3>
-                  <p className="text-muted-foreground mb-6">{selectedExercise.description}</p>
+                  <p className="text-muted-foreground mb-4">{selectedExercise.description}</p>
+
+                  {selectedExercise.targetAreas && selectedExercise.targetAreas.length > 0 && (
+                    <div className="mb-4">
+                      <h4 className="font-semibold mb-2">Target Areas</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedExercise.targetAreas.map((area, index) => (
+                          <Badge key={index} variant="secondary">{area}</Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+
+                  {selectedExercise.relatedConditions && selectedExercise.relatedConditions.length > 0 && (
+                    <div className="mb-6">
+                      <h4 className="font-semibold mb-2">Related Conditions</h4>
+                      <div className="flex flex-wrap gap-2">
+                        {selectedExercise.relatedConditions.map((condition, index) => (
+                          <Badge key={index} variant="outline">{condition}</Badge>
+                        ))}
+                      </div>
+                    </div>
+                  )}
 
                   <Accordion type="single" collapsible className="w-full">
                     <AccordionItem value="instructions">
-                      <AccordionTrigger className="text-lg font-semibold">Instructions</AccordionTrigger>
+                      <AccordionTrigger className="text-lg font-semibold">Step-by-Step Instructions</AccordionTrigger>
                       <AccordionContent>
                         <ol className="list-decimal pl-5 space-y-2">
                           {selectedExercise.instructions.map((instruction, index) => (
@@ -312,8 +421,26 @@ export default function ExerciseLibrary() {
                       </AccordionContent>
                     </AccordionItem>
 
+                    {selectedExercise.biomechanicalPrinciples && (
+                      <AccordionItem value="biomechanics">
+                        <AccordionTrigger className="text-lg font-semibold">Biomechanical Principles</AccordionTrigger>
+                        <AccordionContent>
+                          <p className="text-muted-foreground">{selectedExercise.biomechanicalPrinciples}</p>
+                        </AccordionContent>
+                      </AccordionItem>
+                    )}
+
+                    {selectedExercise.scientificValue && (
+                      <AccordionItem value="scientific">
+                        <AccordionTrigger className="text-lg font-semibold">Scientific Evidence</AccordionTrigger>
+                        <AccordionContent>
+                          <p className="text-muted-foreground">{selectedExercise.scientificValue}</p>
+                        </AccordionContent>
+                      </AccordionItem>
+                    )}
+
                     <AccordionItem value="cautions">
-                      <AccordionTrigger className="text-lg font-semibold">Cautions & Contraindications</AccordionTrigger>
+                      <AccordionTrigger className="text-lg font-semibold">Cautions & Safety Guidelines</AccordionTrigger>
                       <AccordionContent>
                         <ul className="list-disc pl-5 space-y-2">
                           {selectedExercise.cautions.map((caution, index) => (
@@ -322,6 +449,32 @@ export default function ExerciseLibrary() {
                         </ul>
                       </AccordionContent>
                     </AccordionItem>
+
+                    {selectedExercise.contraindications && selectedExercise.contraindications.length > 0 && (
+                      <AccordionItem value="contraindications">
+                        <AccordionTrigger className="text-lg font-semibold text-red-600">⚠️ Contraindications</AccordionTrigger>
+                        <AccordionContent>
+                          <ul className="list-disc pl-5 space-y-2">
+                            {selectedExercise.contraindications.map((contraindication, index) => (
+                              <li key={index} className="text-red-600">{contraindication}</li>
+                            ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    )}
+
+                    {selectedExercise.modifications && selectedExercise.modifications.length > 0 && (
+                      <AccordionItem value="modifications">
+                        <AccordionTrigger className="text-lg font-semibold">Exercise Modifications</AccordionTrigger>
+                        <AccordionContent>
+                          <ul className="list-disc pl-5 space-y-2">
+                            {selectedExercise.modifications.map((modification, index) => (
+                              <li key={index} className="text-muted-foreground">{modification}</li>
+                            ))}
+                          </ul>
+                        </AccordionContent>
+                      </AccordionItem>
+                    )}
                   </Accordion>
                 </div>
               </div>
