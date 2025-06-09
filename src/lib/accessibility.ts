@@ -12,9 +12,9 @@ export function generateId(prefix: string = 'id'): string {
 }
 
 /**
- * Checks if a color contrast ratio meets WCAG AA standards
- * @param foreground Foreground color in hex format (e.g., "#ffffff")
- * @param background Background color in hex format (e.g., "#000000")
+ * Checks if a colour contrast ratio meets WCAG AA standards
+ * @param foreground Foreground colour in hex format (e.g., "#ffffff")
+ * @param background Background colour in hex format (e.g., "#000000")
  * @returns Boolean indicating if the contrast ratio meets WCAG AA standards
  */
 export function meetsContrastStandards(foreground: string, background: string): boolean {
@@ -23,9 +23,9 @@ export function meetsContrastStandards(foreground: string, background: string): 
 }
 
 /**
- * Calculates the contrast ratio between two colors
- * @param foreground Foreground color in hex format (e.g., "#ffffff")
- * @param background Background color in hex format (e.g., "#000000")
+ * Calculates the contrast ratio between two colours
+ * @param foreground Foreground colour in hex format (e.g., "#ffffff")
+ * @param background Background colour in hex format (e.g., "#000000")
  * @returns The contrast ratio as a number
  */
 export function getContrastRatio(foreground: string, background: string): number {
@@ -39,8 +39,8 @@ export function getContrastRatio(foreground: string, background: string): number
 }
 
 /**
- * Calculates the relative luminance of a color
- * @param color Color in hex format (e.g., "#ffffff")
+ * Calculates the relative luminance of a colour
+ * @param color Colour in hex format (e.g., "#ffffff")
  * @returns The relative luminance as a number
  */
 function getLuminance(color: string): number {
@@ -164,7 +164,7 @@ export function initializeAccessibility(): void {
     document.body.insertBefore(skipLink, document.body.firstChild);
   }
 
-  // Add focus-visible polyfill behavior
+  // Add focus-visible polyfill behaviour
   if (typeof document !== 'undefined') {
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Tab') {

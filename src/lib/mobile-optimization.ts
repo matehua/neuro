@@ -1,55 +1,55 @@
 /**
- * Mobile Optimization Utilities
+ * Mobile Optimisation Utilities
  * Comprehensive mobile performance and security enhancements
  */
 
 /**
- * Mobile performance optimization class
+ * Mobile performance optimisation class
  */
-export class MobileOptimizer {
-  private static instance: MobileOptimizer;
+export class MobileOptimiser {
+  private static instance: MobileOptimiser;
   private touchStartTime: number = 0;
-  private isInitialized: boolean = false;
+  private isInitialised: boolean = false;
 
   private constructor() {
-    this.initialize();
+    this.initialise();
   }
 
-  static getInstance(): MobileOptimizer {
-    if (!MobileOptimizer.instance) {
-      MobileOptimizer.instance = new MobileOptimizer();
+  static getInstance(): MobileOptimiser {
+    if (!MobileOptimiser.instance) {
+      MobileOptimiser.instance = new MobileOptimiser();
     }
-    return MobileOptimizer.instance;
+    return MobileOptimiser.instance;
   }
 
   /**
-   * Initialize mobile optimizations
+   * Initialise mobile optimisations
    */
-  private initialize(): void {
-    if (typeof window === 'undefined' || this.isInitialized) return;
+  private initialise(): void {
+    if (typeof window === 'undefined' || this.isInitialised) return;
 
-    // Optimize touch events
-    this.optimizeTouchEvents();
-    
-    // Optimize viewport
-    this.optimizeViewport();
-    
-    // Optimize scrolling
-    this.optimizeScrolling();
-    
-    // Optimize images for mobile
-    this.optimizeImages();
-    
+    // Optimise touch events
+    this.optimiseTouchEvents();
+
+    // Optimise viewport
+    this.optimiseViewport();
+
+    // Optimise scrolling
+    this.optimiseScrolling();
+
+    // Optimise images for mobile
+    this.optimiseImages();
+
     // Add mobile-specific security measures
     this.addMobileSecurity();
-    
-    this.isInitialized = true;
+
+    this.isInitialised = true;
   }
 
   /**
-   * Optimize touch events for better performance
+   * Optimise touch events for better performance
    */
-  private optimizeTouchEvents(): void {
+  private optimiseTouchEvents(): void {
     // Add passive event listeners for better scroll performance
     const passiveEvents = ['touchstart', 'touchmove', 'wheel'];
     
@@ -57,7 +57,7 @@ export class MobileOptimizer {
       document.addEventListener(event, () => {}, { passive: true });
     });
 
-    // Optimize touch delay
+    // Optimise touch delay
     document.addEventListener('touchstart', (e) => {
       this.touchStartTime = Date.now();
     }, { passive: true });
@@ -74,9 +74,9 @@ export class MobileOptimizer {
   }
 
   /**
-   * Optimize viewport settings
+   * Optimise viewport settings
    */
-  private optimizeViewport(): void {
+  private optimiseViewport(): void {
     // Ensure proper viewport meta tag
     let viewport = document.querySelector('meta[name="viewport"]') as HTMLMetaElement;
     
@@ -91,13 +91,13 @@ export class MobileOptimizer {
   }
 
   /**
-   * Optimize scrolling performance
+   * Optimise scrolling performance
    */
-  private optimizeScrolling(): void {
+  private optimiseScrolling(): void {
     // Add smooth scrolling behavior
     document.documentElement.style.scrollBehavior = 'smooth';
     
-    // Optimize scroll performance with CSS
+    // Optimise scroll performance with CSS
     const style = document.createElement('style');
     style.textContent = `
       * {
@@ -110,13 +110,13 @@ export class MobileOptimizer {
         -webkit-tap-highlight-color: transparent;
       }
       
-      /* Optimize touch targets */
+      /* Optimise touch targets */
       button, a, input, select, textarea {
         min-height: 44px;
         min-width: 44px;
       }
       
-      /* Optimize animations for mobile */
+      /* Optimise animations for mobile */
       @media (prefers-reduced-motion: no-preference) {
         * {
           animation-duration: 0.3s;
@@ -128,9 +128,9 @@ export class MobileOptimizer {
   }
 
   /**
-   * Optimize images for mobile devices
+   * Optimise images for mobile devices
    */
-  private optimizeImages(): void {
+  private optimiseImages(): void {
     // Add intersection observer for lazy loading
     if ('IntersectionObserver' in window) {
       const imageObserver = new IntersectionObserver((entries) => {
@@ -216,9 +216,9 @@ export class MobileOptimizer {
   }
 
   /**
-   * Optimize font loading for mobile
+   * Optimise font loading for mobile
    */
-  public optimizeFonts(): void {
+  public optimiseFonts(): void {
     // Add font-display: swap for better performance
     const style = document.createElement('style');
     style.textContent = `
@@ -230,9 +230,9 @@ export class MobileOptimizer {
   }
 
   /**
-   * Add PWA-specific optimizations
+   * Add PWA-specific optimisations
    */
-  public optimizePWA(): void {
+  public optimisePWA(): void {
     // Add service worker registration
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
@@ -256,9 +256,9 @@ export class MobileOptimizer {
   }
 
   /**
-   * Optimize network requests for mobile
+   * Optimise network requests for mobile
    */
-  public optimizeNetwork(): void {
+  public optimiseNetwork(): void {
     // Add connection-aware loading
     if ('connection' in navigator) {
       const connection = (navigator as Navigator & { connection: { effectiveType: string } }).connection;
@@ -319,15 +319,15 @@ export class MobileOptimizer {
 }
 
 /**
- * Initialize mobile optimizations
+ * Initialise mobile optimisations
  */
-export function initializeMobileOptimizations(): void {
-  const optimizer = MobileOptimizer.getInstance();
-  optimizer.optimizeFonts();
-  optimizer.optimizePWA();
-  optimizer.optimizeNetwork();
-  optimizer.enhanceAccessibility();
-  optimizer.monitorPerformance();
+export function initialiseMobileOptimisations(): void {
+  const optimiser = MobileOptimiser.getInstance();
+  optimiser.optimiseFonts();
+  optimiser.optimisePWA();
+  optimiser.optimiseNetwork();
+  optimiser.enhanceAccessibility();
+  optimiser.monitorPerformance();
 }
 
 /**
@@ -369,9 +369,9 @@ export const MobileUtils = {
   },
 
   /**
-   * Optimize images for mobile screens
+   * Optimise images for mobile screens
    */
-  optimizeImageForMobile(img: HTMLImageElement): void {
+  optimiseImageForMobile(img: HTMLImageElement): void {
     const pixelRatio = this.getDevicePixelRatio();
     const width = img.clientWidth * pixelRatio;
     const height = img.clientHeight * pixelRatio;
@@ -388,4 +388,4 @@ export const MobileUtils = {
   }
 };
 
-export default MobileOptimizer;
+export default MobileOptimiser;

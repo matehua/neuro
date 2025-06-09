@@ -166,7 +166,7 @@ export const en = {
     title: "Why Minimally-Invasive Surgery?",
     description1: "The ultimate goal of any neurosurgeon and spine surgeon is to improve the patient's quality and even length of life by providing good recommendations regarding available treatment options. In the most advanced pathologies of the brain, spinal cord or spine, surgery is required to restore normal anatomical relationships between bodily structures.",
     description2: "The evolution of surgery and anaesthesiology allowed for achieving this goal and successfully managing previously untreatable conditions. However, there is still a lot of space for improvement, in particular in the field of brain and spine surgery.",
-    description3: "Minimally invasive procedures represent a logical evolution of surgical philosophy focusing on patient safety and satisfaction. The surgical philosophy of",
+    description3: "Minimally invasive procedures represent a logical evolution of surgical philosophy focussing on patient safety and satisfaction. The surgical philosophy of",
     principle1: "accurate identification of the problem",
     principle2: "safe access to the pathological area with minimal injury to the surrounding tissues",
     principle3: "effective but delicate repair of complex structures even if they are located deeply in the body",
@@ -546,9 +546,9 @@ export const en = {
           title: "Progress Tracking",
           description: "Monitor your improvement over time",
           painTracking: "Pain Level Tracking",
-          painVisualization: "Pain level visualisation will appear here",
+          painVisualisation: "Pain level visualisation will appear here",
           mobilityImprovement: "Mobility Improvement",
-          mobilityVisualization: "Mobility improvement visualisation will appear here",
+          mobilityVisualisation: "Mobility improvement visualisation will appear here",
           symptomJournal: "Symptom Journal",
           recordChanges: "Record changes in your symptoms and track patterns over time.",
           date: "Date",
@@ -988,7 +988,7 @@ export const en = {
         },
         investigations: {
           title: "Investigations",
-          description: "Understanding the problem is essential in finding the best possible solution. Good quality radiological investigations play an important role in visualizing any structural changes and abnormalities. Additional and more detailed radiological investigations may be required."
+          description: "Understanding the problem is essential in finding the best possible solution. Good quality radiological investigations play an important role in visualising any structural changes and abnormalities. Additional and more detailed radiological investigations may be required."
         },
         discussionOptions: {
           title: "Discussion of Options",
@@ -1332,8 +1332,8 @@ export const en = {
     langwarrinLocation: {
       expertNeurosurgery: "Expert Neurosurgery and Spine Care in Langwarrin",
       peninsulaConsultingSuites: "PENINSULA CONSULTING SUITES",
-      subtitle: "Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, neurosurgeon and spine surgeon, offers consultations at Peninsula Consulting Suites in Langwarrin, providing convenient access to specialized care for patients in the southeastern suburbs of Melbourne.",
-      expertise: "Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout the Langwarrin and surrounding areas, eliminating the need to travel to Melbourne for specialized care.",
+      subtitle: "Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, neurosurgeon and spine surgeon, offers consultations at Peninsula Consulting Suites in Langwarrin, providing convenient access to specialised care for patients in the southeastern suburbs of Melbourne.",
+      expertise: "Dr. Aliashkevich specialises in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout the Langwarrin and surrounding areas, eliminating the need to travel to Melbourne for specialised care.",
       locationDetails: "Everything you need to know about our Langwarrin consulting location",
       address: "Address",
       contactInformation: "Contact Information",
@@ -1397,7 +1397,7 @@ export const en = {
         },
         baysHospital: {
           title: "The Bays Hospital",
-          description: "The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.",
+          description: "The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalised care in a community-focussed environment.",
           address: "<span class=\"font-medium\">Address:</span> Vale Street, Mornington VIC 3931",
           phone: "<span class=\"font-medium\">Phone:</span> (03) 5975 2009"
         }
@@ -1595,7 +1595,7 @@ export const en = {
       },
       assessment: {
         title: "Emergency Assessment Protocol",
-        description: "Focused assessment approach for suspected neurosurgical emergencies:"
+        description: "Focussed assessment approach for suspected neurosurgical emergencies:"
       },
       management: {
         title: "Immediate Management Steps",
@@ -1675,7 +1675,7 @@ export const en = {
     expertNeurosurgery: "Expert Neurosurgical Consultations in Dandenong",
     subtitle: "Helping You Live Pain-Free",
     introduction1: "Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, a neurosurgeon and spine surgeon, has cared for patients in Dandenong, Eastern Melbourne suburbs and Mornington Peninsula area since 2012. He offers consultations, procedures and operations at major Melbourne Hospitals, with expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions.",
-    introduction2: "Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout Melbourne's southeastern region, eliminating the need to travel to central Melbourne for specialized care.",
+    introduction2: "Dr. Aliashkevich specialises in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout Melbourne's southeastern region, eliminating the need to travel to central Melbourne for specialised care.",
     nearbyHospitals: {
       title: "Nearby Hospitals",
       subtitle: "Dr. Aliashkevich operates at these hospitals near Dandenong",
@@ -1694,7 +1694,7 @@ export const en = {
       },
       baysHospital: {
         title: "The Bays Hospital Mornington",
-        description: "The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.",
+        description: "The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalised care in a community-focussed environment.",
         address: "Vale Street, Mornington VIC 3931",
         phone: "(03) 5975 2009"
       }

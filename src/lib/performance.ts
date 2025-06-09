@@ -1,5 +1,5 @@
 /**
- * Performance Monitoring and Optimization Utilities
+ * Performance Monitoring and Optimisation Utilities
  * Provides tools for measuring and improving application performance
  */
 
@@ -271,7 +271,7 @@ export function usePerformanceMetric(name: string, dependencies: React.Dependenc
 }
 
 /**
- * Debounce function for performance optimization
+ * Debounce function for performance optimisation
  */
 export function debounce<T extends (...args: unknown[]) => unknown>(
   func: T,
@@ -296,7 +296,7 @@ export function debounce<T extends (...args: unknown[]) => unknown>(
 }
 
 /**
- * Throttle function for performance optimization
+ * Throttle function for performance optimisation
  */
 export function throttle<T extends (...args: unknown[]) => unknown>(
   func: T,

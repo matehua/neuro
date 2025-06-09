@@ -1,7 +1,21 @@
 import React, { useEffect, useState } from 'react';
 
+interface Exercise {
+  name: string;
+  difficulty: string;
+}
+
+interface Category {
+  name: string;
+  exercises: Exercise[];
+}
+
+interface ExerciseData {
+  categories: Category[];
+}
+
 export default function TestExercises() {
-  const [data, setData] = useState<any>(null);
+  const [data, setData] = useState<ExerciseData | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -23,7 +37,7 @@ export default function TestExercises() {
       .then(data => {
         console.log('Loaded data:', data);
         console.log('Categories count:', data.categories?.length);
-        console.log('Total exercises:', data.categories?.reduce((total: number, cat: any) => total + cat.exercises.length, 0));
+        console.log('Total exercises:', data.categories?.reduce((total: number, cat: Category) => total + cat.exercises.length, 0));
         setData(data);
       })
       .catch(err => {
@@ -40,7 +54,7 @@ export default function TestExercises() {
     return <div>Loading...</div>;
   }
 
-  const totalExercises = data.categories.reduce((total: number, cat: any) => total + cat.exercises.length, 0);
+  const totalExercises = data.categories.reduce((total: number, cat: Category) => total + cat.exercises.length, 0);
 
   return (
     <div style={{ padding: '20px', fontFamily: 'monospace' }}>
@@ -49,11 +63,11 @@ export default function TestExercises() {
       <p>Total Exercises: {totalExercises}</p>
       
       <h2>Categories:</h2>
-      {data.categories.map((cat: any, i: number) => (
+      {data.categories.map((cat: Category, i: number) => (
         <div key={i} style={{ marginBottom: '10px', padding: '10px', border: '1px solid #ccc' }}>
           <h3>{cat.name} ({cat.exercises.length} exercises)</h3>
           <ul>
-            {cat.exercises.map((ex: any, j: number) => (
+            {cat.exercises.map((ex: Exercise, j: number) => (
               <li key={j}>{ex.name} - {ex.difficulty}</li>
             ))}
           </ul>

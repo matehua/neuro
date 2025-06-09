@@ -5,7 +5,7 @@ import App from './App.tsx';
 import './index.css';
 import { initializePerformanceMonitoring } from './lib/performance';
 import { initializeAccessibility } from './lib/accessibility';
-import { initializeMobileOptimizations } from './lib/mobile-optimization';
+import { initialiseMobileOptimisations } from './lib/mobile-optimization';
 import { initializeSecurity } from './lib/security';
 
 // Initialize all app features for production readiness
@@ -16,8 +16,8 @@ function initializeApp() {
   // Initialize accessibility features
   initializeAccessibility();
 
-  // Initialize mobile optimizations
-  initializeMobileOptimizations();
+  // Initialise mobile optimisations
+  initialiseMobileOptimisations();
 
   // Initialize security measures
   initializeSecurity({
