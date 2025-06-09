@@ -156,7 +156,6 @@ export default function PatientResources() {
         subtitle={t.patientResources.subtitle}
         backgroundImage="/images/patient-resources/spine-health-hero.jpg"
         enableParallax={true}
-        overlayOpacity={0.5}
       />
 
       <main className="flex-1">

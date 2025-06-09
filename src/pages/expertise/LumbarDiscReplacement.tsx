@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
+import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -18,20 +19,14 @@ export default function LumbarDiscReplacement() {
 
   return (
     <Layout pageTitle="Lumbar Disc Replacement">
+      <PageHeader
+        title="Lumbar Disc Replacement"
+        subtitle="Advanced motion-preserving treatment for lumbar disc disease"
+        backgroundImage="/images/LP-ESP-arthroplasty-disc-replacement-lumbar-kinetics-Aliashkevich-spine-neurosurgery-miNEURO-advanced-technology.jpg"
+        enableParallax={true}
+      />
+
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
-          <div className="container relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
-                Lumbar Disc Replacement
-              </h1>
-              <p className="text-muted-foreground">
-                Advanced motion-preserving treatment for lumbar disc disease
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Main Content */}
         <section className="py-16">

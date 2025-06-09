@@ -8,21 +8,19 @@ interface PageHeaderProps {
   backgroundImage?: string;
   className?: string;
   enableParallax?: boolean;
-  overlayOpacity?: number;
 }
 
 /**
  * PageHeader component for displaying page titles and optional subtitles
- * Features enhanced background images with dark overlay, parallax effects, and mobile optimization
- * Similar styling to HeroSection for consistency
+ * Features enhanced background images with dark blue overlay, parallax effects, and mobile optimization
+ * Uniform styling across all pages for consistency
  */
 export default function PageHeader({
   title,
   subtitle,
   backgroundImage,
   className = "",
-  enableParallax = false,
-  overlayOpacity = 0.6
+  enableParallax = false
 }: PageHeaderProps) {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -63,8 +61,8 @@ export default function PageHeader({
   return (
     <section
       className={cn(
-        "relative overflow-hidden mobile-safe-area",
-        deviceInfo.isMobile ? "py-16" : "py-20",
+        "relative overflow-hidden",
+        deviceInfo.isMobile ? "py-12" : "py-20",
         !hasBackground && 'bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background',
         backgroundImage && !imageLoaded && 'bg-muted',
         className
@@ -87,28 +85,25 @@ export default function PageHeader({
         />
       )}
 
-      {/* Dark overlay for better text contrast */}
+      {/* Gradient overlay for better text contrast */}
       {hasBackground && (
         <div
-          className="absolute inset-0 bg-black"
-          style={{ opacity: overlayOpacity }}
+          className="absolute inset-0 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background"
           aria-hidden="true"
         />
       )}
 
       {/* Content */}
       <div className={cn(
-        "relative z-10",
-        deviceInfo.isMobile ? "mobile-container" : "container"
+        "container relative z-10",
+        deviceInfo.isMobile ? "px-4" : ""
       )}>
-        <div className="text-center max-w-3xl mx-auto">
+        <div className="text-center max-w-4xl mx-auto">
           <h1
             id={headingId}
             className={cn(
-              "font-bold mt-2 mb-6",
-              deviceInfo.isMobile
-                ? "mobile-4xl"
-                : "text-4xl md:text-5xl",
+              "font-bold mb-6",
+              deviceInfo.isMobile ? "text-3xl" : "text-4xl md:text-5xl",
               textColorClass
             )}
           >
@@ -116,7 +111,8 @@ export default function PageHeader({
           </h1>
           {subtitle && (
             <p className={cn(
-              deviceInfo.isMobile ? "mobile-text" : "text-lg",
+              "mb-8",
+              deviceInfo.isMobile ? "text-base" : "text-lg",
               subtitleColorClass
             )}>
               {subtitle}

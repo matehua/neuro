@@ -37,7 +37,6 @@ export default function Appointments() {
         subtitle={`${t.appointments.subtitle} ${t.appointments.description1} Dr Ales Aliashkevich ${t.appointments.description2}`}
         backgroundImage="/images/neurosurgical-consultation-suite-Surrey-Hills-miNEURO-doctor-desk.jpg"
         enableParallax={true}
-        overlayOpacity={0.5}
       />
 
       <main className="flex-1">

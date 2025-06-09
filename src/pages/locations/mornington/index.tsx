@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from "lucide-react";
@@ -16,15 +15,33 @@ export default function MorningtonLocation() {
 
   return (
     <Layout>
-      <PageHeader
-        title={t.locations?.morningtonLocation?.expertNeurosurgery || 'Expert Neurosurgery and Spine Care'}
-        subtitle={`${t.locations?.morningtonLocation?.specialistConsultingRooms || 'MORNINGTON SPECIALIST CONSULTING ROOMS'} - ${t.locations?.morningtonLocation?.subtitle || 'Expert consultation and treatment for neurosurgical and spinal conditions on Mornington Peninsula since 2012.'}`}
-        backgroundImage="/images/mornington-aerial-view-beach-sheds-sea-shore.jpg"
-        enableParallax={true}
-        overlayOpacity={0.5}
-      />
-
       <main className="flex-1">
+        {/* Hero Section */}
+        <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
+          <div className="container relative z-10">
+            <div className="flex flex-col md:flex-row items-center gap-8">
+              <div className="md:w-1/2">
+                <h1 className="text-3xl font-bold mb-6">{t.locations?.morningtonLocation?.expertNeurosurgery || 'Expert Neurosurgery and Spine Care'}</h1>
+                <h2 className="text-xl text-primary mb-4">{t.locations?.morningtonLocation?.specialistConsultingRooms || 'MORNINGTON SPECIALIST CONSULTING ROOMS'}</h2>
+                <p className="text-muted-foreground mb-4">
+                  {t.locations?.morningtonLocation?.subtitle || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, neurosurgeon and spine surgeon, has been providing care to patients on Mornington Peninsula since 2012. He offers consultations at Mornington Specialist Centre and operates at Peninsula Private and The Bays Hospitals.'}
+                </p>
+                <p className="text-muted-foreground">
+                  {t.locations?.morningtonLocation?.expertise || 'With expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions, radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems, Dr. Aliashkevich brings specialized care closer to residents of Mornington and surrounding areas. This location provides convenient access to expert neurosurgical care for patients throughout the Mornington Peninsula region.'}
+                </p>
+              </div>
+              <div className="md:w-1/2">
+                <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl">
+                  <img
+                    src="/images/neurosurgery-mornington-specialist-centre-entrance-consulting.jpg"
+                    alt="Mornington Specialist Centre Entrance"
+                    className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
 
         {/* Location Details Section */}
         <section className="py-16">

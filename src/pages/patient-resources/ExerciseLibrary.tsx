@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Layout from "@/components/Layout";
+import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -163,20 +164,20 @@ export default function ExerciseLibrary() {
       description: "Comprehensive collection of spine-specific exercises designed by neurosurgical experts to help strengthen your spine and reduce pain.",
       keywords: "spine exercises, back exercises, neck exercises, core strengthening, posture exercises, physical therapy"
     }}>
+      <PageHeader
+        title="Exercise Library"
+        subtitle="Comprehensive collection of spine-specific exercises designed by neurosurgical experts to help strengthen your spine and reduce pain."
+        backgroundImage="/images/patient-resources/exercise-library-hero.jpg"
+        enableParallax={true}
+      />
+
       <div className="min-h-screen flex flex-col">
         <main className="flex-1">
-        {/* Hero Section */}
-        <section className="relative py-16 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
-          <div className="container relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
-                Exercise Library
-              </h1>
-
-              <p className="text-muted-foreground mb-8">
-                Explore our comprehensive collection of spine-specific exercises designed by neurosurgical experts to help strengthen your spine and reduce pain.
-              </p>
-              <div className="relative max-w-xl mx-auto">
+        {/* Search Section */}
+        <section className="py-8 bg-muted/30">
+          <div className="container">
+            <div className="text-center max-w-xl mx-auto">
+              <div className="relative">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
                 <Input
                   type="text"

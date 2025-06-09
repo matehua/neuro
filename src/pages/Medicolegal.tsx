@@ -24,7 +24,6 @@ export default function Medicolegal() {
         subtitle={t.medicolegal?.subtitle || 'Expert medicolegal assessments and reports for legal and insurance purposes.'}
         backgroundImage="/images/themis-statue-holding-a-scale-Q8JZGEY-min.jpg"
         enableParallax={true}
-        overlayOpacity={0.6}
       />
 
       <main className="flex-1">

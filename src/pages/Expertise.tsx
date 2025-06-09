@@ -49,7 +49,6 @@ export default function Expertise() {
         subtitle="Explore our neurosurgical specialties, from spine surgery to brain tumour removal."
         backgroundImage="/images/Ales-Aliashkevich-spine-brain-image-guided-neurosurgery-microsurgery-advanced-maximum-precision-robotic-spine-Melbourne.jpg"
         enableParallax={true}
-        overlayOpacity={0.6}
       />
 
       <main className="flex-1">

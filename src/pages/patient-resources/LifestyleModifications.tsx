@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
+import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -17,30 +17,15 @@ export default function LifestyleModifications() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <Layout pageTitle="Lifestyle & Activity Modifications">
+      <PageHeader
+        title="Lifestyle & Activity Modifications"
+        subtitle="Evidence-based recommendations to help manage spine conditions and improve quality of life through lifestyle changes."
+        backgroundImage="/images/patient-resources/proper-posture.jpg"
+        enableParallax={true}
+      />
 
-      <main className="flex-1 pt-20">
-        {/* Hero Section */}
-        <section className="relative py-16 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
-          <div className="absolute inset-0 overflow-hidden opacity-10">
-            <img
-              src="/images/patient-resources/proper-posture.jpg"
-              alt="Person with good posture"
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div className="container relative z-10">
-            <div className="text-center max-w-3xl mx-auto">
-              <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
-                Lifestyle & Activity Modifications
-              </h1>
-              <p className="text-muted-foreground mb-8">
-                Evidence-based recommendations to help manage spine conditions and improve quality of life through lifestyle changes.
-              </p>
-            </div>
-          </div>
-        </section>
+      <main className="flex-1">
 
         {/* Introduction Section */}
         <section className="py-12">
@@ -863,8 +848,6 @@ export default function LifestyleModifications() {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

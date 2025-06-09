@@ -62,7 +62,6 @@ export default function Contact() {
         subtitle={`${t.contact.subtitle} Our staff will assist to coordinate an appointment at the location most convenient and accessible for you. Urgent appointments are available on request.`}
         backgroundImage="/images/neurosurgical-consultation-suite-Surrey-Hills-miNEURO-reception.jpg"
         enableParallax={true}
-        overlayOpacity={0.5}
       />
 
       <main className="flex-1">

@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
+import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -42,61 +43,14 @@ export default function Sciatica() {
 
   return (
     <Layout pageTitle="Sciatica - Comprehensive Guide">
-      <main className="flex-1 pt-20">
-        {/* Hero Section */}
-        <section className={cn(
-          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background",
-          deviceInfo.isMobile ? "py-12" : "py-20"
-        )}>
-          <div className="absolute inset-0 overflow-hidden opacity-10">
-            <SafeImage
-              src="/images/spine-conditions/sciatica.jpg"
-              alt="Sciatica nerve anatomy"
-              className="w-full h-full object-cover"
-              fallbackSrc="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-            />
-          </div>
-          <div className={cn(
-            "container relative z-10",
-            deviceInfo.isMobile ? "px-4" : ""
-          )}>
-            <div className="text-center max-w-4xl mx-auto">
-              <Badge variant="secondary" className="mb-4">
-                Spine Conditions Library
-              </Badge>
-              <h1 className={cn(
-                "font-bold mb-6",
-                deviceInfo.isMobile ? "text-3xl" : "text-4xl md:text-5xl"
-              )}>
-                Sciatica: Complete Guide
-              </h1>
-              <p className={cn(
-                "text-muted-foreground mb-8",
-                deviceInfo.isMobile ? "text-base" : "text-lg"
-              )}>
-                Understanding sciatica: causes, symptoms, diagnosis, and comprehensive treatment options 
-                for sciatic nerve pain from conservative management to advanced interventional procedures.
-              </p>
-              <div className={cn(
-                "flex justify-center gap-4",
-                deviceInfo.isMobile ? "flex-col items-center" : "flex-row"
-              )}>
-                <Button asChild size={deviceInfo.isMobile ? "default" : "lg"}>
-                  <Link to="#assessment">
-                    <Target className="mr-2 h-4 w-4" />
-                    Take Assessment
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size={deviceInfo.isMobile ? "default" : "lg"}>
-                  <Link to="/contact">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Book Consultation
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+      <PageHeader
+        title="Sciatica: Complete Guide"
+        subtitle="Understanding sciatica: causes, symptoms, diagnosis, and comprehensive treatment options for sciatic nerve pain from conservative management to advanced interventional procedures."
+        backgroundImage="/images/spine-conditions/sciatica.jpg"
+        enableParallax={true}
+      />
+
+      <main className="flex-1">
 
         {/* Quick Facts Section */}
         <section className={cn(
