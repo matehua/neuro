@@ -1,8 +1,8 @@
 
-import { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
+import PageHeader from "@/components/PageHeader";
 import SafeImage from "@/components/SafeImage";
 import { MapPin, Phone, Mail, Clock, Send, Check, FileText, CreditCard, Building, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -56,43 +56,16 @@ export default function Contact() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <Layout>
+      <PageHeader
+        title={t.contact.title}
+        subtitle={`${t.contact.subtitle} Our staff will assist to coordinate an appointment at the location most convenient and accessible for you. Urgent appointments are available on request.`}
+        backgroundImage="/images/neurosurgical-consultation-suite-Surrey-Hills-miNEURO-reception.jpg"
+        enableParallax={true}
+        overlayOpacity={0.5}
+      />
 
-      <main className="flex-1 pt-20">
-        {/* Hero Section */}
-        <section className={cn(
-          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background mobile-safe-area",
-          deviceInfo.isMobile ? "py-mobile-xl" : "py-20"
-        )}>
-          <div className={deviceInfo.isMobile ? "mobile-container" : "container"}>
-            <div className={cn(
-              "text-center max-w-3xl mx-auto",
-              deviceInfo.isMobile ? "px-mobile-md" : ""
-            )}>
-              <h1 className={cn(
-                "font-bold mt-2 mb-mobile-lg",
-                deviceInfo.isMobile
-                  ? "mobile-4xl"
-                  : "text-4xl md:text-5xl mb-6"
-              )}>
-                {t.contact.title}
-              </h1>
-              <p className={cn(
-                "text-muted-foreground mb-mobile-md",
-                deviceInfo.isMobile ? "mobile-text" : "mb-4"
-              )}>
-                {t.contact.subtitle}
-              </p>
-              <p className={cn(
-                "text-muted-foreground",
-                deviceInfo.isMobile ? "mobile-text" : ""
-              )}>
-                Our staff will assist to coordinate an appointment at the location most convenient and accessible for you. Urgent appointments are available on request.
-              </p>
-            </div>
-          </div>
-        </section>
+      <main className="flex-1">
 
         {/* Contact Information & Form */}
         <section className={deviceInfo.isMobile ? "mobile-section" : "section"}>
@@ -709,8 +682,6 @@ export default function Contact() {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }

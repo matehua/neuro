@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
+import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
@@ -31,53 +32,15 @@ export default function Appointments() {
 
   return (
     <Layout pageType="appointments" seoData={appointmentsSeoData}>
+      <PageHeader
+        title={t.appointments.title}
+        subtitle={`${t.appointments.subtitle} ${t.appointments.description1} Dr Ales Aliashkevich ${t.appointments.description2}`}
+        backgroundImage="/images/neurosurgical-consultation-suite-Surrey-Hills-miNEURO-doctor-desk.jpg"
+        enableParallax={true}
+        overlayOpacity={0.5}
+      />
+
       <main className="flex-1">
-        {/* Hero Section */}
-        <section className={cn(
-          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background mobile-safe-area",
-          deviceInfo.isMobile ? "py-mobile-xl" : "py-20"
-        )}>
-          <div className={cn(
-            "relative z-10",
-            deviceInfo.isMobile ? "mobile-container" : "container"
-          )}>
-            <div className={cn(
-              "text-center mx-auto",
-              deviceInfo.isMobile ? "max-w-full" : "max-w-3xl"
-            )}>
-              <h1 className={cn(
-                "font-bold mt-2 mb-mobile-lg",
-                deviceInfo.isMobile
-                  ? "mobile-4xl"
-                  : "text-4xl md:text-5xl mb-6"
-              )}>
-                {t.appointments.title}
-              </h1>
-              <p className={cn(
-                "text-muted-foreground mb-mobile-lg",
-                deviceInfo.isMobile ? "mobile-text" : "mb-6"
-              )}>
-                {t.appointments.subtitle}
-              </p>
-              <p className={cn(
-                "text-muted-foreground",
-                deviceInfo.isMobile ? "mobile-text" : ""
-              )}>
-                {t.appointments.description1} <a
-                  href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
-                  className={cn(
-                    "text-primary transition-colors touch-feedback",
-                    deviceInfo.isMobile ? "" : "hover:underline"
-                  )}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Dr Ales Aliashkevich
-                </a> {t.appointments.description2}
-              </p>
-            </div>
-          </div>
-        </section>
 
         {/* Appointment Process */}
         <section className={cn(

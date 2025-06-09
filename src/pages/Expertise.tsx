@@ -1,5 +1,6 @@
 import React, { useEffect } from "react";
 import Layout from "@/components/Layout";
+import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import SafeImage from "@/components/SafeImage";
@@ -43,43 +44,29 @@ export default function Expertise() {
 
   return (
     <Layout pageType="expertise" seoData={expertiseSeoData}>
+      <PageHeader
+        title="Neurosurgical Expertise"
+        subtitle="Explore our neurosurgical specialties, from spine surgery to brain tumour removal."
+        backgroundImage="/images/Ales-Aliashkevich-spine-brain-image-guided-neurosurgery-microsurgery-advanced-maximum-precision-robotic-spine-Melbourne.jpg"
+        enableParallax={true}
+        overlayOpacity={0.6}
+      />
+
       <main className="flex-1">
-        {/* Hero Section */}
+        {/* Introduction Section */}
         <section className={cn(
-          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background mobile-safe-area",
+          "mobile-safe-area",
           deviceInfo.isMobile ? "py-mobile-xl" : "py-20"
         )}>
           <div className={cn(
-            "relative z-10",
             deviceInfo.isMobile ? "mobile-container" : "container"
           )}>
-            <div className={cn(
-              "flex items-center",
-              deviceInfo.isMobile
-                ? "flex-col gap-mobile-lg"
-                : "flex-col md:flex-row gap-8"
-            )}>
-              <div className={deviceInfo.isMobile ? "w-full" : "md:w-1/2"}>
-                <h1 className={cn(
-                  "font-bold text-primary mb-mobile-lg",
-                  deviceInfo.isMobile
-                    ? "mobile-4xl"
-                    : "text-3xl md:text-4xl mb-6"
-                )}>
-                  Neurosurgical Expertise
-                </h1>
-                <h2 className={cn(
-                  "text-foreground mb-mobile-md",
-                  deviceInfo.isMobile
-                    ? "mobile-subheading"
-                    : "text-xl mb-4"
-                )}>
-                  Explore our neurosurgical specialties, from spine surgery to brain tumour removal.
-                </h2>
-                <p className={cn(
-                  "text-muted-foreground mb-mobile-md",
-                  deviceInfo.isMobile ? "mobile-text" : "mb-4"
-                )}>
+            <div className="max-w-4xl mx-auto text-center">
+              <div className={cn(
+                "text-muted-foreground mb-mobile-md",
+                deviceInfo.isMobile ? "mobile-text" : "text-lg mb-8"
+              )}>
+                <p className="mb-4">
                   <a
                     href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
                     className={cn(
@@ -105,32 +92,25 @@ export default function Expertise() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
+                    Dr. Ales Aliashkevich
+                  </a> specialises in minimally invasive neurosurgery and spine surgery, utilising the latest technologies and techniques to provide the best possible outcomes for his patients. He is a strong advocate for motion-preserving spinal surgery and has been using cervical and lumbar disc replacement as an alternative to spinal fusion since 2012.
+                </p>
+                <p className="mb-4">
+                  <a
+                    href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
+                    className={cn(
+                      "text-primary transition-colors touch-feedback",
+                      deviceInfo.isMobile ? "" : "hover:underline"
+                    )}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     Dr Aliashkevich
                   </a> is skilled in using a range of advanced neurosurgical tools and will be able to select the most appropriate techniques for each patient's specific needs. He adapts to new technologies as they become available, continuously improving his ability to achieve the best treatment outcomes for all patients.
                 </p>
-                <p className={cn(
-                  "text-muted-foreground",
-                  deviceInfo.isMobile ? "mobile-text" : ""
-                )}>
+                <p>
                   He applies keyhole, image-guided, robotic and motion-preserving technology in all aspects of operative approaches. The validity of his approach has been confirmed by excellent surgery results with very low complication rates. Over the years, he has gained extensive experience in single and multilevel arthroplasty and hybrid procedures.
                 </p>
-              </div>
-              <div className={deviceInfo.isMobile ? "w-full" : "md:w-1/2"}>
-                <div className={cn(
-                  "relative w-full rounded-lg overflow-hidden shadow-xl",
-                  deviceInfo.isMobile ? "h-64" : "h-80"
-                )}>
-                  <img
-                    src="/images/Ales-Aliashkevich-spine-brain-image-guided-neurosurgery-microsurgery-advanced-maximum-precision-robotic-spine-Melbourne.jpg"
-                    alt="Dr. Ales Aliashkevich performing advanced neurosurgery with image-guided technology for maximum precision"
-                    className={cn(
-                      "w-full h-full object-cover",
-                      deviceInfo.isMobile
-                        ? ""
-                        : "transition-transform duration-500 hover:scale-105"
-                    )}
-                  />
-                </div>
               </div>
             </div>
           </div>

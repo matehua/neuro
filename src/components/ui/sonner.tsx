@@ -1,10 +1,45 @@
-import { useTheme } from "next-themes"
+import React, { useEffect, useState } from "react"
 import { Toaster as Sonner } from "sonner"
 
 type ToasterProps = React.ComponentProps<typeof Sonner>
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const { theme = "system" } = useTheme()
+  const [theme, setTheme] = useState<"light" | "dark" | "system">("system")
+
+  useEffect(() => {
+    // Check for theme in localStorage or system preference
+    const savedTheme = localStorage.getItem("theme")
+    if (savedTheme === "dark" || savedTheme === "light") {
+      setTheme(savedTheme)
+    } else {
+      // Check system preference
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+      setTheme(isDark ? "dark" : "light")
+    }
+
+    // Listen for theme changes
+    const handleThemeChange = () => {
+      const savedTheme = localStorage.getItem("theme")
+      if (savedTheme === "dark" || savedTheme === "light") {
+        setTheme(savedTheme)
+      } else {
+        const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+        setTheme(isDark ? "dark" : "light")
+      }
+    }
+
+    // Listen for storage changes (theme changes from other tabs)
+    window.addEventListener("storage", handleThemeChange)
+
+    // Listen for system theme changes
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
+    mediaQuery.addEventListener("change", handleThemeChange)
+
+    return () => {
+      window.removeEventListener("storage", handleThemeChange)
+      mediaQuery.removeEventListener("change", handleThemeChange)
+    }
+  }, [])
 
   return (
     <Sonner

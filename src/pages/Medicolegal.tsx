@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import Layout from "@/components/Layout";
+import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -18,49 +18,16 @@ export default function Medicolegal() {
   }, []);
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <Layout>
+      <PageHeader
+        title={t.medicolegal?.title || 'Medicolegal Services'}
+        subtitle={t.medicolegal?.subtitle || 'Expert medicolegal assessments and reports for legal and insurance purposes.'}
+        backgroundImage="/images/themis-statue-holding-a-scale-Q8JZGEY-min.jpg"
+        enableParallax={true}
+        overlayOpacity={0.6}
+      />
 
-      <main className="flex-1 pt-20">
-        {/* Hero Section */}
-        <section className={cn(
-          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background mobile-safe-area",
-          deviceInfo.isMobile ? "py-mobile-xl" : "py-20"
-        )}>
-          <div className={cn(
-            "relative z-10",
-            deviceInfo.isMobile ? "mobile-container" : "container"
-          )}>
-            <div className={cn(
-              "text-center mx-auto",
-              deviceInfo.isMobile ? "max-w-full" : "max-w-3xl"
-            )}>
-              <h1 className={cn(
-                "font-bold mt-2 mb-mobile-lg",
-                deviceInfo.isMobile
-                  ? "mobile-4xl"
-                  : "text-4xl md:text-5xl mb-6"
-              )}>
-                {t.medicolegal?.title || 'Medicolegal Services'}
-              </h1>
-              <p className={cn(
-                "text-muted-foreground mb-mobile-lg",
-                deviceInfo.isMobile ? "mobile-text" : "mb-8"
-              )}>
-                {t.medicolegal?.subtitle || 'Expert medicolegal assessments and reports for legal and insurance purposes.'}
-              </p>
-              <div className={cn(
-                "justify-center",
-                deviceInfo.isMobile ? "flex" : "flex gap-4"
-              )}>
-                <Button asChild className="bg-primary hover:bg-primary/90 text-white touch-feedback">
-                  <Link to="/contact">{t.medicolegal?.contactUs || 'Contact Us'}</Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-          <div className="absolute inset-0 bg-pattern opacity-5"></div>
-        </section>
+      <main className="flex-1">
 
         {/* Introduction Section */}
         <section className="py-16">
@@ -648,9 +615,7 @@ export default function Medicolegal() {
           </div>
         </section>
       </main>
-
-      <Footer />
-    </div>
+    </Layout>
   );
 }
 

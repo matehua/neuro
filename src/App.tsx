@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -15,9 +15,9 @@ const queryClient = new QueryClient();
 // Component to handle route changes for accessibility
 const RouteChangeAnnouncer = () => {
   const location = useLocation();
-  const [message, setMessage] = useState('');
+  const [message, setMessage] = React.useState('');
 
-  useEffect(() => {
+  React.useEffect(() => {
     // When the route changes, announce it to screen readers
     const path = location.pathname;
     const routeName = path === '/' ? 'Home' : path.split('/').filter(Boolean).join(' ');
