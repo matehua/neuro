@@ -207,9 +207,20 @@ export default function Index() {
                 </div>
               </div>
 
-              <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ animationDelay: '200ms' }}>
-                <div className="flex justify-center mb-4">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-emerald-500/20 via-primary/15 to-cyan-500/20 flex items-center justify-center shadow-lg backdrop-blur-sm border border-primary/10">
+              <div className={cn(
+                "card rounded-lg shadow-md bg-background animate-fade-in transition-all duration-300",
+                deviceInfo.isMobile
+                  ? "p-mobile-lg touch-feedback"
+                  : "p-6 hover:shadow-xl hover:scale-105"
+              )} style={{ animationDelay: '200ms' }}>
+                <div className={cn(
+                  "flex justify-center",
+                  deviceInfo.isMobile ? "mb-mobile-md" : "mb-4"
+                )}>
+                  <div className={cn(
+                    "rounded-2xl bg-gradient-to-br from-emerald-500/20 via-primary/15 to-cyan-500/20 flex items-center justify-center shadow-lg backdrop-blur-sm border border-primary/10",
+                    deviceInfo.isMobile ? "w-16 h-16" : "w-20 h-20"
+                  )}>
                     <svg className="w-10 h-10 text-primary drop-shadow-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <defs>
                         <linearGradient id="imagingGrad" x1="0%" y1="0%" x2="100%" y2="100%">
@@ -240,20 +251,48 @@ export default function Index() {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.advancedImaging.title}</h3>
-                <p className="text-muted-foreground text-center">
+                <h3 className={cn(
+                  "font-semibold text-center mb-mobile-sm",
+                  deviceInfo.isMobile
+                    ? "mobile-subheading"
+                    : "text-xl mb-3"
+                )}>{t.home.advancedTechnologies.features.advancedImaging.title}</h3>
+                <p className={cn(
+                  "text-muted-foreground text-center",
+                  deviceInfo.isMobile ? "mobile-text" : ""
+                )}>
                   {t.home.advancedTechnologies.features.advancedImaging.description}
                 </p>
-                <div className="mt-4 text-center">
-                  <Link to="/expertise" className="text-primary hover:underline">
+                <div className={cn(
+                  "text-center",
+                  deviceInfo.isMobile ? "mt-mobile-md" : "mt-4"
+                )}>
+                  <Link
+                    to="/expertise"
+                    className={cn(
+                      "text-primary touch-feedback",
+                      deviceInfo.isMobile ? "" : "hover:underline"
+                    )}
+                  >
                     {t.home.welcome.learnMore}
                   </Link>
                 </div>
               </div>
 
-              <div className="card p-6 rounded-lg shadow-md bg-background animate-fade-in hover:shadow-xl transition-all duration-300 hover:scale-105" style={{ animationDelay: '300ms' }}>
-                <div className="flex justify-center mb-4">
-                  <div className="w-20 h-20 rounded-2xl bg-gradient-to-br from-amber-500/20 via-primary/15 to-orange-500/20 flex items-center justify-center shadow-lg backdrop-blur-sm border border-primary/10">
+              <div className={cn(
+                "card rounded-lg shadow-md bg-background animate-fade-in transition-all duration-300",
+                deviceInfo.isMobile
+                  ? "p-mobile-lg touch-feedback"
+                  : "p-6 hover:shadow-xl hover:scale-105"
+              )} style={{ animationDelay: '300ms' }}>
+                <div className={cn(
+                  "flex justify-center",
+                  deviceInfo.isMobile ? "mb-mobile-md" : "mb-4"
+                )}>
+                  <div className={cn(
+                    "rounded-2xl bg-gradient-to-br from-amber-500/20 via-primary/15 to-orange-500/20 flex items-center justify-center shadow-lg backdrop-blur-sm border border-primary/10",
+                    deviceInfo.isMobile ? "w-16 h-16" : "w-20 h-20"
+                  )}>
                     <svg className="w-10 h-10 text-primary drop-shadow-sm" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                       <defs>
                         <linearGradient id="advantageGrad" x1="0%" y1="0%" x2="100%" y2="100%">
