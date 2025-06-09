@@ -87,7 +87,7 @@ export default function IndividualSpineHealthProgramme() {
                   src="/images/individual-spine-health-1.jpg"
                   alt="Individual spine health programme"
                   className="w-full h-auto"
-                  fallbackSrc="https://via.placeholder.com/800x600?text=Spine+Health+Programme"
+                  fallbackSrc="/images/patient-resources/spine-health-hero.jpg"
                 />
               </div>
             </div>

@@ -35,7 +35,7 @@ interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
 const SafeImage: React.FC<SafeImageProps> = ({
   src,
   alt,
-  fallbackSrc = "/placeholder.svg",
+  fallbackSrc = "/images/medical-consulting.jpg",
   isDecorative = false,
   className = "",
   loading = 'lazy',

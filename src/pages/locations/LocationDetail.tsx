@@ -249,10 +249,10 @@ export default function LocationDetail() {
               <div>
                 <div className="relative h-80 w-full rounded-lg overflow-hidden shadow-xl mb-8">
                   <SafeImage
-                    src={locationData.image || "/images/location-placeholder.jpg"}
+                    src={locationData.image || "/images/medical-consulting.jpg"}
                     alt={locationData.name}
                     className="w-full h-full object-cover"
-                    fallbackSrc="/images/location-placeholder.jpg"
+                    fallbackSrc="/images/medical-consulting.jpg"
                   />
                 </div>
 

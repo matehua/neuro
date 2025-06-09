@@ -154,7 +154,7 @@ export default function ConditionInformation() {
                         src={condition.image}
                         alt={translatedName}
                         className="w-full h-full object-cover"
-                        fallbackSrc={`https://via.placeholder.com/800x600?text=${translatedName.replace(/\s+/g, '+')}`}
+                        fallbackSrc="/images/conditions/spine-consultation.jpg"
                       />
                     </div>
                     <CardHeader>
@@ -206,7 +206,7 @@ export default function ConditionInformation() {
                   src="/images/conditions/spine-mri-scan.jpg"
                   alt={language === 'zh' ? "脊柱解剖图" : "Spine anatomy diagram"}
                   className="w-full h-auto"
-                  fallbackSrc="https://via.placeholder.com/800x600?text=Spine+Anatomy+Diagram"
+                  fallbackSrc="/images/spine-anatomy/vertebrae.jpg"
                 />
               </div>
             </div>

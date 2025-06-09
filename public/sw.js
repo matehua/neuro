@@ -11,7 +11,7 @@ const DYNAMIC_CACHE = 'mineuro-dynamic-v1.0.0';
 const STATIC_ASSETS = [
   '/',
   '/manifest.json',
-  '/favicon.ico',
+  '/logo/favicon-spine-health.jpg',
   '/logo/logo.png',
   '/logo/logo-white.png'
 ];

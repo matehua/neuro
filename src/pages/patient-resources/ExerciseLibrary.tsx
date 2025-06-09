@@ -312,7 +312,7 @@ export default function ExerciseLibrary() {
                             src={exercise.image}
                             alt={exercise.name}
                             className="w-full h-full object-cover transition-transform group-hover:scale-105"
-                            fallbackSrc="/images/exercises/placeholder.jpg"
+                            fallbackSrc="/images/exercises/postural-awareness-spine.jpg"
                           />
                           <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
                             <Button variant="secondary" size="icon" className="rounded-full" onClick={() => openExerciseDetail(exercise)}>
@@ -370,7 +370,7 @@ export default function ExerciseLibrary() {
                     src={selectedExercise.image}
                     alt={selectedExercise.name}
                     className="w-full h-auto rounded-lg object-cover mb-4"
-                    fallbackSrc="/images/exercises/placeholder.jpg"
+                    fallbackSrc="/images/exercises/postural-awareness-spine.jpg"
                   />
                   {selectedExercise.videoUrl && (
                     <div className="mt-4">

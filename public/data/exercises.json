@@ -12,8 +12,17 @@
           "difficulty": "beginner",
           "image": "/images/exercises/cervical-retraction.jpg",
           "videoUrl": "/videos/exercises/cervical-retraction.mp4",
-          "targetAreas": ["Deep Neck Flexors", "Upper Cervical Spine", "Suboccipital Muscles"],
-          "relatedConditions": ["Forward Head Posture", "Cervical Disc Herniation", "Neck Pain", "Upper Cross Syndrome"],
+          "targetAreas": [
+            "Deep Neck Flexors",
+            "Upper Cervical Spine",
+            "Suboccipital Muscles"
+          ],
+          "relatedConditions": [
+            "Forward Head Posture",
+            "Cervical Disc Herniation",
+            "Neck Pain",
+            "Upper Cross Syndrome"
+          ],
           "instructions": [
             "Sit or stand with good posture, shoulders relaxed",
             "Keep your gaze level and jaw relaxed",
@@ -50,8 +59,18 @@
           "difficulty": "beginner",
           "image": "/images/exercises/neck-rotation.jpg",
           "videoUrl": "/videos/exercises/neck-rotation.mp4",
-          "targetAreas": ["Cervical Rotators", "Sternocleidomastoid", "Upper Trapezius", "Scalenes"],
-          "relatedConditions": ["Neck Stiffness", "Cervical Spondylosis", "Whiplash", "Torticollis"],
+          "targetAreas": [
+            "Cervical Rotators",
+            "Sternocleidomastoid",
+            "Upper Trapezius",
+            "Scalenes"
+          ],
+          "relatedConditions": [
+            "Neck Stiffness",
+            "Cervical Spondylosis",
+            "Whiplash",
+            "Torticollis"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Keep your shoulders relaxed and facing forward",
@@ -84,8 +103,18 @@
           "difficulty": "beginner",
           "image": "/images/exercises/neck-side-bend.jpg",
           "videoUrl": "/videos/exercises/neck-side-bend.mp4",
-          "targetAreas": ["Scalenes", "Upper Trapezius", "Levator Scapulae", "Lateral Cervical Muscles"],
-          "relatedConditions": ["Neck Pain", "Cervical Radiculopathy", "Muscle Tension", "Lateral Neck Stiffness"],
+          "targetAreas": [
+            "Scalenes",
+            "Upper Trapezius",
+            "Levator Scapulae",
+            "Lateral Cervical Muscles"
+          ],
+          "relatedConditions": [
+            "Neck Pain",
+            "Cervical Radiculopathy",
+            "Muscle Tension",
+            "Lateral Neck Stiffness"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Keep both shoulders relaxed and down",
@@ -112,8 +141,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/neck-extension.jpg",
           "videoUrl": "/videos/exercises/neck-extension.mp4",
-          "targetAreas": ["Posterior Neck Muscles", "Suboccipitals", "Upper Trapezius", "Cervical Extensors"],
-          "relatedConditions": ["Forward Head Posture", "Neck Pain", "Cervical Hypomobility", "Upper Cross Syndrome"],
+          "targetAreas": [
+            "Posterior Neck Muscles",
+            "Suboccipitals",
+            "Upper Trapezius",
+            "Cervical Extensors"
+          ],
+          "relatedConditions": [
+            "Forward Head Posture",
+            "Neck Pain",
+            "Cervical Hypomobility",
+            "Upper Cross Syndrome"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Keep your shoulders relaxed and jaw relaxed",
@@ -145,8 +184,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/isometric-neck-flexion.jpg",
           "videoUrl": "/videos/exercises/isometric-neck-flexion.mp4",
-          "targetAreas": ["Deep Neck Flexors", "Sternocleidomastoid", "Scalenes", "Longus Colli"],
-          "relatedConditions": ["Neck Weakness", "Cervical Instability", "Forward Head Posture", "Whiplash Recovery"],
+          "targetAreas": [
+            "Deep Neck Flexors",
+            "Sternocleidomastoid",
+            "Scalenes",
+            "Longus Colli"
+          ],
+          "relatedConditions": [
+            "Neck Weakness",
+            "Cervical Instability",
+            "Forward Head Posture",
+            "Whiplash Recovery"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Place your palm on your forehead",
@@ -172,8 +221,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/isometric-neck-extension.jpg",
           "videoUrl": "/videos/exercises/isometric-neck-extension.mp4",
-          "targetAreas": ["Cervical Extensors", "Upper Trapezius", "Suboccipitals", "Semispinalis"],
-          "relatedConditions": ["Neck Weakness", "Cervical Instability", "Forward Head Posture", "Upper Cross Syndrome"],
+          "targetAreas": [
+            "Cervical Extensors",
+            "Upper Trapezius",
+            "Suboccipitals",
+            "Semispinalis"
+          ],
+          "relatedConditions": [
+            "Neck Weakness",
+            "Cervical Instability",
+            "Forward Head Posture",
+            "Upper Cross Syndrome"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Place your hands behind your head, interlacing fingers",
@@ -199,8 +258,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/isometric-neck-lateral-flexion.jpg",
           "videoUrl": "/videos/exercises/isometric-neck-lateral-flexion.mp4",
-          "targetAreas": ["Scalenes", "Sternocleidomastoid", "Lateral Cervical Muscles", "Upper Trapezius"],
-          "relatedConditions": ["Neck Weakness", "Cervical Instability", "Lateral Neck Pain", "Muscle Imbalances"],
+          "targetAreas": [
+            "Scalenes",
+            "Sternocleidomastoid",
+            "Lateral Cervical Muscles",
+            "Upper Trapezius"
+          ],
+          "relatedConditions": [
+            "Neck Weakness",
+            "Cervical Instability",
+            "Lateral Neck Pain",
+            "Muscle Imbalances"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Place your right palm on the right side of your head",
@@ -227,8 +296,17 @@
           "difficulty": "beginner",
           "image": "/images/exercises/chin-tucks.jpg",
           "videoUrl": "/videos/exercises/chin-tucks.mp4",
-          "targetAreas": ["Deep Neck Flexors", "Longus Colli", "Longus Capitis"],
-          "relatedConditions": ["Forward Head Posture", "Neck Pain", "Upper Cross Syndrome", "Cervical Lordosis Loss"],
+          "targetAreas": [
+            "Deep Neck Flexors",
+            "Longus Colli",
+            "Longus Capitis"
+          ],
+          "relatedConditions": [
+            "Forward Head Posture",
+            "Neck Pain",
+            "Upper Cross Syndrome",
+            "Cervical Lordosis Loss"
+          ],
           "instructions": [
             "Sit or stand with your back straight",
             "Keep your shoulders relaxed and down",
@@ -254,8 +332,17 @@
           "difficulty": "beginner",
           "image": "/images/exercises/upper-trapezius-stretch.jpg",
           "videoUrl": "/videos/exercises/upper-trapezius-stretch.mp4",
-          "targetAreas": ["Upper Trapezius", "Neck", "Lateral Cervical Muscles"],
-          "relatedConditions": ["Neck Tension", "Headaches", "Upper Cross Syndrome", "Muscle Spasms"],
+          "targetAreas": [
+            "Upper Trapezius",
+            "Neck",
+            "Lateral Cervical Muscles"
+          ],
+          "relatedConditions": [
+            "Neck Tension",
+            "Headaches",
+            "Upper Cross Syndrome",
+            "Muscle Spasms"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Tilt your head to the right, bringing your right ear toward your right shoulder",
@@ -281,8 +368,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/neck-clock.jpg",
           "videoUrl": "/videos/exercises/neck-clock.mp4",
-          "targetAreas": ["Cervical Spine", "Neck Muscles", "Upper Trapezius"],
-          "relatedConditions": ["Neck Stiffness", "Cervical Spondylosis", "Reduced Mobility"],
+          "targetAreas": [
+            "Cervical Spine",
+            "Neck Muscles",
+            "Upper Trapezius"
+          ],
+          "relatedConditions": [
+            "Neck Stiffness",
+            "Cervical Spondylosis",
+            "Reduced Mobility"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Imagine your head is the center of a clock face",
@@ -309,8 +404,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/levator-scapulae-stretch.jpg",
           "videoUrl": "/videos/exercises/levator-scapulae-stretch.mp4",
-          "targetAreas": ["Levator Scapulae", "Neck", "Upper Back"],
-          "relatedConditions": ["Neck Pain", "Upper Back Pain", "Tension Headaches"],
+          "targetAreas": [
+            "Levator Scapulae",
+            "Neck",
+            "Upper Back"
+          ],
+          "relatedConditions": [
+            "Neck Pain",
+            "Upper Back Pain",
+            "Tension Headaches"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Turn your head 45 degrees to the right",
@@ -337,8 +440,15 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/neck-flexor-strengthening.jpg",
           "videoUrl": "/videos/exercises/neck-flexor-strengthening.mp4",
-          "targetAreas": ["Anterior Neck", "Deep Neck Flexors"],
-          "relatedConditions": ["Forward Head Posture", "Neck Weakness", "Cervical Instability"],
+          "targetAreas": [
+            "Anterior Neck",
+            "Deep Neck Flexors"
+          ],
+          "relatedConditions": [
+            "Forward Head Posture",
+            "Neck Weakness",
+            "Cervical Instability"
+          ],
           "instructions": [
             "Lie on your back with knees bent",
             "Place a small towel under your neck for support",
@@ -364,8 +474,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/neck-extensor-strengthening.jpg",
           "videoUrl": "/videos/exercises/neck-extensor-strengthening.mp4",
-          "targetAreas": ["Posterior Neck", "Upper Trapezius", "Suboccipitals"],
-          "relatedConditions": ["Forward Head Posture", "Neck Weakness", "Cervical Instability"],
+          "targetAreas": [
+            "Posterior Neck",
+            "Upper Trapezius",
+            "Suboccipitals"
+          ],
+          "relatedConditions": [
+            "Forward Head Posture",
+            "Neck Weakness",
+            "Cervical Instability"
+          ],
           "instructions": [
             "Lie face down with a pillow under your chest",
             "Let your head hang over the edge of the bed or table",
@@ -390,8 +508,17 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/scapular-retraction-with-neck-retraction.jpg",
           "videoUrl": "/videos/exercises/scapular-retraction-with-neck-retraction.mp4",
-          "targetAreas": ["Neck", "Upper Back", "Rhomboids", "Trapezius"],
-          "relatedConditions": ["Forward Head Posture", "Upper Cross Syndrome", "Neck Pain"],
+          "targetAreas": [
+            "Neck",
+            "Upper Back",
+            "Rhomboids",
+            "Trapezius"
+          ],
+          "relatedConditions": [
+            "Forward Head Posture",
+            "Upper Cross Syndrome",
+            "Neck Pain"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Simultaneously perform a chin tuck and squeeze shoulder blades together",
@@ -415,8 +542,16 @@
           "difficulty": "advanced",
           "image": "/images/exercises/neck-mobility-with-rotation.jpg",
           "videoUrl": "/videos/exercises/neck-mobility-with-rotation.mp4",
-          "targetAreas": ["Cervical Spine", "Neck Muscles", "Upper Trapezius"],
-          "relatedConditions": ["Neck Stiffness", "Cervical Spondylosis", "Reduced Mobility"],
+          "targetAreas": [
+            "Cervical Spine",
+            "Neck Muscles",
+            "Upper Trapezius"
+          ],
+          "relatedConditions": [
+            "Neck Stiffness",
+            "Cervical Spondylosis",
+            "Reduced Mobility"
+          ],
           "instructions": [
             "Start in a neutral seated or standing position",
             "Slowly turn head to the right, then tilt ear toward shoulder",
@@ -441,8 +576,16 @@
           "difficulty": "advanced",
           "image": "/images/exercises/deep-neck-flexor-activation.jpg",
           "videoUrl": "/videos/exercises/deep-neck-flexor-activation.mp4",
-          "targetAreas": ["Deep Neck Flexors", "Longus Colli", "Longus Capitis"],
-          "relatedConditions": ["Cervical Instability", "Forward Head Posture", "Neck Pain"],
+          "targetAreas": [
+            "Deep Neck Flexors",
+            "Longus Colli",
+            "Longus Capitis"
+          ],
+          "relatedConditions": [
+            "Cervical Instability",
+            "Forward Head Posture",
+            "Neck Pain"
+          ],
           "instructions": [
             "Lie on your back with knees bent",
             "Place a small towel under your neck",
@@ -485,8 +628,18 @@
           "difficulty": "beginner",
           "image": "/images/exercises/prone-cobra.jpg",
           "videoUrl": "/videos/exercises/prone-cobra.mp4",
-          "targetAreas": ["Thoracic Extensors", "Rhomboids", "Lower Trapezius", "Posterior Deltoids"],
-          "relatedConditions": ["Thoracic Kyphosis", "Upper Back Pain", "Poor Posture", "Rounded Shoulders"],
+          "targetAreas": [
+            "Thoracic Extensors",
+            "Rhomboids",
+            "Lower Trapezius",
+            "Posterior Deltoids"
+          ],
+          "relatedConditions": [
+            "Thoracic Kyphosis",
+            "Upper Back Pain",
+            "Poor Posture",
+            "Rounded Shoulders"
+          ],
           "instructions": [
             "Lie face down with arms at your sides, palms facing down",
             "Rest your forehead on the floor",
@@ -513,8 +666,17 @@
           "difficulty": "beginner",
           "image": "/images/exercises/scapular-retraction.jpg",
           "videoUrl": "/videos/exercises/scapular-retraction.mp4",
-          "targetAreas": ["Rhomboids", "Middle Trapezius", "Lower Trapezius"],
-          "relatedConditions": ["Rounded Shoulders", "Upper Back Pain", "Poor Posture", "Scapular Dyskinesis"],
+          "targetAreas": [
+            "Rhomboids",
+            "Middle Trapezius",
+            "Lower Trapezius"
+          ],
+          "relatedConditions": [
+            "Rounded Shoulders",
+            "Upper Back Pain",
+            "Poor Posture",
+            "Scapular Dyskinesis"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Arms can be at your sides or bent at 90 degrees",
@@ -540,8 +702,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/wall-angels.jpg",
           "videoUrl": "/videos/exercises/wall-angels.mp4",
-          "targetAreas": ["Serratus Anterior", "Lower Trapezius", "Rhomboids", "Thoracic Extensors"],
-          "relatedConditions": ["Thoracic Kyphosis", "Rounded Shoulders", "Shoulder Impingement", "Poor Posture"],
+          "targetAreas": [
+            "Serratus Anterior",
+            "Lower Trapezius",
+            "Rhomboids",
+            "Thoracic Extensors"
+          ],
+          "relatedConditions": [
+            "Thoracic Kyphosis",
+            "Rounded Shoulders",
+            "Shoulder Impingement",
+            "Poor Posture"
+          ],
           "instructions": [
             "Stand with your back, head, and arms against a wall",
             "Bend your elbows at 90 degrees with the backs of your hands against the wall",
@@ -566,8 +738,18 @@
           "difficulty": "beginner",
           "image": "/images/exercises/band-pull-aparts.jpg",
           "videoUrl": "/videos/exercises/band-pull-aparts.mp4",
-          "targetAreas": ["Rhomboids", "Posterior Deltoids", "Middle Trapezius", "External Rotators"],
-          "relatedConditions": ["Rounded Shoulders", "Upper Back Pain", "Shoulder Impingement", "Poor Posture"],
+          "targetAreas": [
+            "Rhomboids",
+            "Posterior Deltoids",
+            "Middle Trapezius",
+            "External Rotators"
+          ],
+          "relatedConditions": [
+            "Rounded Shoulders",
+            "Upper Back Pain",
+            "Shoulder Impingement",
+            "Poor Posture"
+          ],
           "instructions": [
             "Hold a resistance band with both hands at shoulder height, arms extended forward",
             "Keep your shoulders down and relaxed",
@@ -592,8 +774,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/seated-rows.jpg",
           "videoUrl": "/videos/exercises/seated-rows.mp4",
-          "targetAreas": ["Latissimus Dorsi", "Rhomboids", "Middle Trapezius", "Posterior Deltoids"],
-          "relatedConditions": ["Upper Back Weakness", "Poor Posture", "Thoracic Kyphosis", "Rounded Shoulders"],
+          "targetAreas": [
+            "Latissimus Dorsi",
+            "Rhomboids",
+            "Middle Trapezius",
+            "Posterior Deltoids"
+          ],
+          "relatedConditions": [
+            "Upper Back Weakness",
+            "Poor Posture",
+            "Thoracic Kyphosis",
+            "Rounded Shoulders"
+          ],
           "instructions": [
             "Sit with legs extended, resistance band around feet",
             "Hold handles with arms extended forward",
@@ -619,8 +811,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/thoracic-extension-foam-roller.jpg",
           "videoUrl": "/videos/exercises/thoracic-extension-foam-roller.mp4",
-          "targetAreas": ["Thoracic Spine", "Erector Spinae", "Intercostals", "Chest Muscles"],
-          "relatedConditions": ["Thoracic Kyphosis", "Upper Back Pain", "Reduced Mobility", "Poor Posture"],
+          "targetAreas": [
+            "Thoracic Spine",
+            "Erector Spinae",
+            "Intercostals",
+            "Chest Muscles"
+          ],
+          "relatedConditions": [
+            "Thoracic Kyphosis",
+            "Upper Back Pain",
+            "Reduced Mobility",
+            "Poor Posture"
+          ],
           "instructions": [
             "Place foam roller horizontally under your mid-back",
             "Support your head with your hands, elbows wide",
@@ -646,8 +848,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/prone-t-raises.jpg",
           "videoUrl": "/videos/exercises/prone-t-raises.mp4",
-          "targetAreas": ["Middle Trapezius", "Rhomboids", "Posterior Deltoids", "Lower Trapezius"],
-          "relatedConditions": ["Upper Back Weakness", "Rounded Shoulders", "Poor Posture", "Scapular Dyskinesis"],
+          "targetAreas": [
+            "Middle Trapezius",
+            "Rhomboids",
+            "Posterior Deltoids",
+            "Lower Trapezius"
+          ],
+          "relatedConditions": [
+            "Upper Back Weakness",
+            "Rounded Shoulders",
+            "Poor Posture",
+            "Scapular Dyskinesis"
+          ],
           "instructions": [
             "Lie face down on a table or bed with arms hanging over the edge",
             "Extend arms out to the sides to form a 'T' shape",
@@ -673,8 +885,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/prone-y-raises.jpg",
           "videoUrl": "/videos/exercises/prone-y-raises.mp4",
-          "targetAreas": ["Lower Trapezius", "Serratus Anterior", "Rhomboids", "Posterior Deltoids"],
-          "relatedConditions": ["Scapular Dyskinesis", "Shoulder Impingement", "Upper Back Weakness", "Poor Posture"],
+          "targetAreas": [
+            "Lower Trapezius",
+            "Serratus Anterior",
+            "Rhomboids",
+            "Posterior Deltoids"
+          ],
+          "relatedConditions": [
+            "Scapular Dyskinesis",
+            "Shoulder Impingement",
+            "Upper Back Weakness",
+            "Poor Posture"
+          ],
           "instructions": [
             "Lie face down with arms extended overhead in a 'Y' position",
             "Keep thumbs pointing up toward the ceiling",
@@ -700,8 +922,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/prone-w-raises.jpg",
           "videoUrl": "/videos/exercises/prone-w-raises.mp4",
-          "targetAreas": ["Rotator Cuff", "Rhomboids", "Middle Trapezius", "Posterior Deltoids"],
-          "relatedConditions": ["Shoulder Impingement", "Rotator Cuff Weakness", "Upper Back Pain", "Poor Posture"],
+          "targetAreas": [
+            "Rotator Cuff",
+            "Rhomboids",
+            "Middle Trapezius",
+            "Posterior Deltoids"
+          ],
+          "relatedConditions": [
+            "Shoulder Impingement",
+            "Rotator Cuff Weakness",
+            "Upper Back Pain",
+            "Poor Posture"
+          ],
           "instructions": [
             "Lie face down with arms bent at 90 degrees, forming a 'W' shape",
             "Keep elbows at shoulder level, forearms pointing down",
@@ -727,8 +959,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/thoracic-rotation.jpg",
           "videoUrl": "/videos/exercises/thoracic-rotation.mp4",
-          "targetAreas": ["Thoracic Spine", "Erector Spinae", "Obliques", "Intercostals"],
-          "relatedConditions": ["Thoracic Stiffness", "Upper Back Pain", "Reduced Rotational Mobility", "Poor Posture"],
+          "targetAreas": [
+            "Thoracic Spine",
+            "Erector Spinae",
+            "Obliques",
+            "Intercostals"
+          ],
+          "relatedConditions": [
+            "Thoracic Stiffness",
+            "Upper Back Pain",
+            "Reduced Rotational Mobility",
+            "Poor Posture"
+          ],
           "instructions": [
             "Lie on your side with knees bent at 90 degrees",
             "Extend arms straight out in front of you",
@@ -754,8 +996,18 @@
           "difficulty": "beginner",
           "image": "/images/exercises/wall-slides.jpg",
           "videoUrl": "/videos/exercises/wall-slides.mp4",
-          "targetAreas": ["Serratus Anterior", "Lower Trapezius", "Upper Back", "Rhomboids"],
-          "relatedConditions": ["Scapular Dyskinesis", "Shoulder Impingement", "Poor Posture", "Upper Back Weakness"],
+          "targetAreas": [
+            "Serratus Anterior",
+            "Lower Trapezius",
+            "Upper Back",
+            "Rhomboids"
+          ],
+          "relatedConditions": [
+            "Scapular Dyskinesis",
+            "Shoulder Impingement",
+            "Poor Posture",
+            "Upper Back Weakness"
+          ],
           "instructions": [
             "Stand with your back against a wall",
             "Place arms against the wall with elbows bent at 90 degrees",
@@ -781,8 +1033,18 @@
           "difficulty": "beginner",
           "image": "/images/exercises/shoulder-external-rotation.jpg",
           "videoUrl": "/videos/exercises/shoulder-external-rotation.mp4",
-          "targetAreas": ["Infraspinatus", "Teres Minor", "Posterior Deltoid", "Rhomboids"],
-          "relatedConditions": ["Rotator Cuff Weakness", "Shoulder Impingement", "Upper Cross Syndrome", "Poor Posture"],
+          "targetAreas": [
+            "Infraspinatus",
+            "Teres Minor",
+            "Posterior Deltoid",
+            "Rhomboids"
+          ],
+          "relatedConditions": [
+            "Rotator Cuff Weakness",
+            "Shoulder Impingement",
+            "Upper Cross Syndrome",
+            "Poor Posture"
+          ],
           "instructions": [
             "Stand or sit with elbow bent at 90 degrees, close to your side",
             "Hold a resistance band or light weight",
@@ -808,8 +1070,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/lat-pulldown.jpg",
           "videoUrl": "/videos/exercises/lat-pulldown.mp4",
-          "targetAreas": ["Latissimus Dorsi", "Rhomboids", "Middle Trapezius", "Biceps"],
-          "relatedConditions": ["Upper Back Weakness", "Poor Posture", "Shoulder Instability", "Thoracic Kyphosis"],
+          "targetAreas": [
+            "Latissimus Dorsi",
+            "Rhomboids",
+            "Middle Trapezius",
+            "Biceps"
+          ],
+          "relatedConditions": [
+            "Upper Back Weakness",
+            "Poor Posture",
+            "Shoulder Instability",
+            "Thoracic Kyphosis"
+          ],
           "instructions": [
             "Sit or kneel with resistance band anchored overhead",
             "Hold handles with arms extended overhead",
@@ -835,8 +1107,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/face-pulls.jpg",
           "videoUrl": "/videos/exercises/face-pulls.mp4",
-          "targetAreas": ["Posterior Deltoids", "Middle Trapezius", "Rotator Cuff", "Rhomboids"],
-          "relatedConditions": ["Rounded Shoulders", "Upper Cross Syndrome", "Shoulder Impingement", "Poor Posture"],
+          "targetAreas": [
+            "Posterior Deltoids",
+            "Middle Trapezius",
+            "Rotator Cuff",
+            "Rhomboids"
+          ],
+          "relatedConditions": [
+            "Rounded Shoulders",
+            "Upper Cross Syndrome",
+            "Shoulder Impingement",
+            "Poor Posture"
+          ],
           "instructions": [
             "Stand with resistance band at face level",
             "Hold handles with arms extended forward",
@@ -862,8 +1144,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/reverse-fly.jpg",
           "videoUrl": "/videos/exercises/reverse-fly.mp4",
-          "targetAreas": ["Posterior Deltoids", "Rhomboids", "Middle Trapezius", "Lower Trapezius"],
-          "relatedConditions": ["Rounded Shoulders", "Upper Back Weakness", "Poor Posture", "Thoracic Kyphosis"],
+          "targetAreas": [
+            "Posterior Deltoids",
+            "Rhomboids",
+            "Middle Trapezius",
+            "Lower Trapezius"
+          ],
+          "relatedConditions": [
+            "Rounded Shoulders",
+            "Upper Back Weakness",
+            "Poor Posture",
+            "Thoracic Kyphosis"
+          ],
           "instructions": [
             "Stand or sit with light weights or resistance band",
             "Extend arms forward at shoulder height",
@@ -889,8 +1181,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/seated-rows.jpg",
           "videoUrl": "/videos/exercises/seated-rows.mp4",
-          "targetAreas": ["Latissimus Dorsi", "Rhomboids", "Middle Trapezius"],
-          "relatedConditions": ["Upper Back Weakness", "Poor Posture", "Thoracic Kyphosis"],
+          "targetAreas": [
+            "Latissimus Dorsi",
+            "Rhomboids",
+            "Middle Trapezius"
+          ],
+          "relatedConditions": [
+            "Upper Back Weakness",
+            "Poor Posture",
+            "Thoracic Kyphosis"
+          ],
           "instructions": [
             "Sit with legs extended, resistance band around feet",
             "Hold handles with arms extended forward",
@@ -916,8 +1216,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/prone-t-raises.jpg",
           "videoUrl": "/videos/exercises/prone-t-raises.mp4",
-          "targetAreas": ["Middle Trapezius", "Rhomboids", "Posterior Deltoids"],
-          "relatedConditions": ["Upper Back Weakness", "Rounded Shoulders", "Poor Posture"],
+          "targetAreas": [
+            "Middle Trapezius",
+            "Rhomboids",
+            "Posterior Deltoids"
+          ],
+          "relatedConditions": [
+            "Upper Back Weakness",
+            "Rounded Shoulders",
+            "Poor Posture"
+          ],
           "instructions": [
             "Lie face down with arms extended to sides (T position)",
             "Keep your forehead on the ground",
@@ -942,8 +1250,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/prone-y-raises.jpg",
           "videoUrl": "/videos/exercises/prone-y-raises.mp4",
-          "targetAreas": ["Lower Trapezius", "Serratus Anterior", "Rhomboids"],
-          "relatedConditions": ["Scapular Dyskinesis", "Shoulder Impingement", "Upper Back Weakness"],
+          "targetAreas": [
+            "Lower Trapezius",
+            "Serratus Anterior",
+            "Rhomboids"
+          ],
+          "relatedConditions": [
+            "Scapular Dyskinesis",
+            "Shoulder Impingement",
+            "Upper Back Weakness"
+          ],
           "instructions": [
             "Lie face down with arms extended overhead in Y position",
             "Keep your forehead on the ground",
@@ -968,8 +1284,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/thoracic-extension-foam-roller.jpg",
           "videoUrl": "/videos/exercises/thoracic-extension-foam-roller.mp4",
-          "targetAreas": ["Thoracic Spine", "Erector Spinae", "Intercostals"],
-          "relatedConditions": ["Thoracic Kyphosis", "Upper Back Pain", "Reduced Mobility"],
+          "targetAreas": [
+            "Thoracic Spine",
+            "Erector Spinae",
+            "Intercostals"
+          ],
+          "relatedConditions": [
+            "Thoracic Kyphosis",
+            "Upper Back Pain",
+            "Reduced Mobility"
+          ],
           "instructions": [
             "Place foam roller horizontally under your upper back",
             "Support your head with your hands",
@@ -994,8 +1318,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/face-pulls.jpg",
           "videoUrl": "/videos/exercises/face-pulls.mp4",
-          "targetAreas": ["Posterior Deltoids", "Middle Trapezius", "Rotator Cuff"],
-          "relatedConditions": ["Rounded Shoulders", "Upper Cross Syndrome", "Shoulder Impingement"],
+          "targetAreas": [
+            "Posterior Deltoids",
+            "Middle Trapezius",
+            "Rotator Cuff"
+          ],
+          "relatedConditions": [
+            "Rounded Shoulders",
+            "Upper Cross Syndrome",
+            "Shoulder Impingement"
+          ],
           "instructions": [
             "Attach resistance band at face height",
             "Hold handles with arms extended forward",
@@ -1021,8 +1353,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/thoracic-rotation.jpg",
           "videoUrl": "/videos/exercises/thoracic-rotation.mp4",
-          "targetAreas": ["Thoracic Spine", "Erector Spinae", "Obliques"],
-          "relatedConditions": ["Thoracic Stiffness", "Upper Back Pain", "Reduced Rotational Mobility"],
+          "targetAreas": [
+            "Thoracic Spine",
+            "Erector Spinae",
+            "Obliques"
+          ],
+          "relatedConditions": [
+            "Thoracic Stiffness",
+            "Upper Back Pain",
+            "Reduced Rotational Mobility"
+          ],
           "instructions": [
             "Start on hands and knees",
             "Place one hand behind your head",
@@ -1122,8 +1462,16 @@
           "difficulty": "beginner",
           "image": "/images/exercises/child-pose.jpg",
           "videoUrl": "/videos/exercises/child-pose.mp4",
-          "targetAreas": ["Lower Back", "Hips", "Thighs"],
-          "relatedConditions": ["Lower Back Pain", "Lumbar Stiffness", "Stress-Related Back Pain"],
+          "targetAreas": [
+            "Lower Back",
+            "Hips",
+            "Thighs"
+          ],
+          "relatedConditions": [
+            "Lower Back Pain",
+            "Lumbar Stiffness",
+            "Stress-Related Back Pain"
+          ],
           "instructions": [
             "Start on your hands and knees",
             "Sit back on your heels",
@@ -1149,8 +1497,16 @@
           "difficulty": "beginner",
           "image": "/images/exercises/lumbar-rotation.jpg",
           "videoUrl": "/videos/exercises/lumbar-rotation.mp4",
-          "targetAreas": ["Lumbar Spine", "Obliques", "Hip Rotators"],
-          "relatedConditions": ["Lower Back Pain", "Lumbar Stiffness", "Facet Joint Pain"],
+          "targetAreas": [
+            "Lumbar Spine",
+            "Obliques",
+            "Hip Rotators"
+          ],
+          "relatedConditions": [
+            "Lower Back Pain",
+            "Lumbar Stiffness",
+            "Facet Joint Pain"
+          ],
           "instructions": [
             "Lie on your back with knees bent",
             "Keep your shoulders flat on the ground",
@@ -1174,10 +1530,20 @@
           "name": "Superman Exercise",
           "description": "Strengthens the erector spinae and gluteal muscles to improve posterior chain strength and spinal extension.",
           "difficulty": "intermediate",
-          "image": "/images/exercises/superman.jpg",
+          "image": "/images/exercises/prone-leg-lift.jpg",
           "videoUrl": "/videos/exercises/superman.mp4",
-          "targetAreas": ["Erector Spinae", "Gluteal Muscles", "Lower Back", "Posterior Chain"],
-          "relatedConditions": ["Lower Back Weakness", "Poor Posture", "Gluteal Weakness", "Spinal Extension Deficit"],
+          "targetAreas": [
+            "Erector Spinae",
+            "Gluteal Muscles",
+            "Lower Back",
+            "Posterior Chain"
+          ],
+          "relatedConditions": [
+            "Lower Back Weakness",
+            "Poor Posture",
+            "Gluteal Weakness",
+            "Spinal Extension Deficit"
+          ],
           "instructions": [
             "Lie face down with arms extended overhead",
             "Keep your forehead on the ground",
@@ -1213,10 +1579,19 @@
           "name": "Prone Press-Ups",
           "description": "Promotes spinal extension and helps centralize disc material in cases of disc herniation or bulging.",
           "difficulty": "intermediate",
-          "image": "/images/exercises/prone-press-ups.jpg",
+          "image": "/images/exercises/prone-press-up.jpg",
           "videoUrl": "/videos/exercises/prone-press-ups.mp4",
-          "targetAreas": ["Lumbar Spine", "Erector Spinae", "Hip Flexors"],
-          "relatedConditions": ["Disc Herniation", "Disc Bulge", "Lower Back Pain", "Sciatica"],
+          "targetAreas": [
+            "Lumbar Spine",
+            "Erector Spinae",
+            "Hip Flexors"
+          ],
+          "relatedConditions": [
+            "Disc Herniation",
+            "Disc Bulge",
+            "Lower Back Pain",
+            "Sciatica"
+          ],
           "instructions": [
             "Lie face down with hands under your shoulders",
             "Keep your hips and pelvis on the ground",
@@ -1247,10 +1622,20 @@
           "name": "Glute Bridges",
           "description": "Strengthens the gluteal muscles and hamstrings while promoting hip extension and core stability.",
           "difficulty": "beginner",
-          "image": "/images/exercises/glute-bridges.jpg",
+          "image": "/images/exercises/glute-bridge-exercise.jpg",
           "videoUrl": "/videos/exercises/glute-bridges.mp4",
-          "targetAreas": ["Gluteal Muscles", "Hamstrings", "Core", "Lower Back"],
-          "relatedConditions": ["Gluteal Weakness", "Lower Back Pain", "Hip Flexor Tightness", "Poor Posture"],
+          "targetAreas": [
+            "Gluteal Muscles",
+            "Hamstrings",
+            "Core",
+            "Lower Back"
+          ],
+          "relatedConditions": [
+            "Gluteal Weakness",
+            "Lower Back Pain",
+            "Hip Flexor Tightness",
+            "Poor Posture"
+          ],
           "instructions": [
             "Lie on your back with knees bent, feet flat on floor",
             "Keep your arms at your sides for stability",
@@ -1274,10 +1659,20 @@
           "name": "Single Leg Glute Bridge",
           "description": "Advanced version of glute bridges that challenges stability and strengthens each side independently.",
           "difficulty": "advanced",
-          "image": "/images/exercises/single-leg-glute-bridge.jpg",
+          "image": "/images/exercises/glute-bridge-core.jpg",
           "videoUrl": "/videos/exercises/single-leg-glute-bridge.mp4",
-          "targetAreas": ["Gluteal Muscles", "Hamstrings", "Core", "Hip Stabilizers"],
-          "relatedConditions": ["Gluteal Weakness", "Hip Instability", "Lower Back Pain", "Leg Length Discrepancy"],
+          "targetAreas": [
+            "Gluteal Muscles",
+            "Hamstrings",
+            "Core",
+            "Hip Stabilizers"
+          ],
+          "relatedConditions": [
+            "Gluteal Weakness",
+            "Hip Instability",
+            "Lower Back Pain",
+            "Leg Length Discrepancy"
+          ],
           "instructions": [
             "Lie on your back with one knee bent, one leg extended",
             "Keep your arms at your sides for stability",
@@ -1301,10 +1696,20 @@
           "name": "Wall Sit",
           "description": "Strengthens the quadriceps, glutes, and core while promoting proper spinal alignment against a wall.",
           "difficulty": "intermediate",
-          "image": "/images/exercises/wall-sit.jpg",
+          "image": "/images/exercises/knee-sit.jpg",
           "videoUrl": "/videos/exercises/wall-sit.mp4",
-          "targetAreas": ["Quadriceps", "Gluteal Muscles", "Core", "Lower Back"],
-          "relatedConditions": ["Lower Back Pain", "Quadriceps Weakness", "Poor Posture", "Hip Weakness"],
+          "targetAreas": [
+            "Quadriceps",
+            "Gluteal Muscles",
+            "Core",
+            "Lower Back"
+          ],
+          "relatedConditions": [
+            "Lower Back Pain",
+            "Quadriceps Weakness",
+            "Poor Posture",
+            "Hip Weakness"
+          ],
           "instructions": [
             "Stand with your back against a wall",
             "Walk your feet forward 12-18 inches",
@@ -1385,8 +1790,18 @@
           "difficulty": "beginner",
           "image": "/images/exercises/abdominal-bracing.jpg",
           "videoUrl": "/videos/exercises/abdominal-bracing.mp4",
-          "targetAreas": ["Transverse Abdominis", "Multifidus", "Pelvic Floor", "Diaphragm"],
-          "relatedConditions": ["Core Weakness", "Lower Back Pain", "Lumbar Instability", "Postural Dysfunction"],
+          "targetAreas": [
+            "Transverse Abdominis",
+            "Multifidus",
+            "Pelvic Floor",
+            "Diaphragm"
+          ],
+          "relatedConditions": [
+            "Core Weakness",
+            "Lower Back Pain",
+            "Lumbar Instability",
+            "Postural Dysfunction"
+          ],
           "instructions": [
             "Lie on your back with knees bent and feet flat on the floor",
             "Place one hand on your chest and one on your lower abdomen",
@@ -1412,8 +1827,16 @@
           "difficulty": "beginner",
           "image": "/images/exercises/modified-plank.jpg",
           "videoUrl": "/videos/exercises/modified-plank.mp4",
-          "targetAreas": ["Core", "Shoulders", "Back"],
-          "relatedConditions": ["Core Weakness", "Lower Back Pain", "Poor Posture"],
+          "targetAreas": [
+            "Core",
+            "Shoulders",
+            "Back"
+          ],
+          "relatedConditions": [
+            "Core Weakness",
+            "Lower Back Pain",
+            "Poor Posture"
+          ],
           "instructions": [
             "Start on your hands and knees",
             "Lower to your forearms",
@@ -1439,8 +1862,16 @@
           "difficulty": "beginner",
           "image": "/images/exercises/supine-toe-taps.jpg",
           "videoUrl": "/videos/exercises/supine-toe-taps.mp4",
-          "targetAreas": ["Lower Abdominals", "Core", "Hip Flexors"],
-          "relatedConditions": ["Core Weakness", "Lower Back Pain", "Diastasis Recti"],
+          "targetAreas": [
+            "Lower Abdominals",
+            "Core",
+            "Hip Flexors"
+          ],
+          "relatedConditions": [
+            "Core Weakness",
+            "Lower Back Pain",
+            "Diastasis Recti"
+          ],
           "instructions": [
             "Lie on your back with knees bent at 90 degrees",
             "Keep your lower back pressed into the floor",
@@ -1466,8 +1897,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/dead-bug.jpg",
           "videoUrl": "/videos/exercises/dead-bug.mp4",
-          "targetAreas": ["Core", "Transverse Abdominis", "Hip Flexors"],
-          "relatedConditions": ["Lower Back Pain", "Core Weakness", "Lumbar Instability"],
+          "targetAreas": [
+            "Core",
+            "Transverse Abdominis",
+            "Hip Flexors"
+          ],
+          "relatedConditions": [
+            "Lower Back Pain",
+            "Core Weakness",
+            "Lumbar Instability"
+          ],
           "instructions": [
             "Lie on your back with arms reaching toward ceiling",
             "Bend hips and knees to 90 degrees",
@@ -1493,8 +1932,17 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/mcgill-curl-up.jpg",
           "videoUrl": "/videos/exercises/mcgill-curl-up.mp4",
-          "targetAreas": ["Core", "Rectus Abdominis", "Transverse Abdominis"],
-          "relatedConditions": ["Lumbar Disc Herniation", "Core Weakness", "Lower Back Pain", "Spinal Instability"],
+          "targetAreas": [
+            "Core",
+            "Rectus Abdominis",
+            "Transverse Abdominis"
+          ],
+          "relatedConditions": [
+            "Lumbar Disc Herniation",
+            "Core Weakness",
+            "Lower Back Pain",
+            "Spinal Instability"
+          ],
           "instructions": [
             "Lie on your back with one knee bent, one leg straight",
             "Place hands under your lower back to maintain natural curve",
@@ -1532,8 +1980,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/side-plank.jpg",
           "videoUrl": "/videos/exercises/side-plank.mp4",
-          "targetAreas": ["Lateral Core", "Quadratus Lumborum", "Obliques", "Gluteus Medius"],
-          "relatedConditions": ["Scoliosis", "Lateral Shift", "Core Weakness", "Hip Weakness"],
+          "targetAreas": [
+            "Lateral Core",
+            "Quadratus Lumborum",
+            "Obliques",
+            "Gluteus Medius"
+          ],
+          "relatedConditions": [
+            "Scoliosis",
+            "Lateral Shift",
+            "Core Weakness",
+            "Hip Weakness"
+          ],
           "instructions": [
             "Lie on your side with forearm on the ground, elbow under shoulder",
             "Stack your feet and lift your hips off the ground",
@@ -1571,8 +2029,17 @@
           "difficulty": "beginner",
           "image": "/images/exercises/modified-side-plank.jpg",
           "videoUrl": "/videos/exercises/modified-side-plank.mp4",
-          "targetAreas": ["Lateral Core", "Obliques", "Quadratus Lumborum"],
-          "relatedConditions": ["Core Weakness", "Scoliosis", "Lateral Shift", "Beginner Fitness"],
+          "targetAreas": [
+            "Lateral Core",
+            "Obliques",
+            "Quadratus Lumborum"
+          ],
+          "relatedConditions": [
+            "Core Weakness",
+            "Scoliosis",
+            "Lateral Shift",
+            "Beginner Fitness"
+          ],
           "instructions": [
             "Lie on your side with forearm on the ground",
             "Keep your knees on the ground for support",
@@ -1598,8 +2065,18 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/pallof-press.jpg",
           "videoUrl": "/videos/exercises/pallof-press.mp4",
-          "targetAreas": ["Core", "Obliques", "Transverse Abdominis", "Deep Stabilizers"],
-          "relatedConditions": ["Core Weakness", "Rotational Instability", "Lower Back Pain", "Athletic Performance"],
+          "targetAreas": [
+            "Core",
+            "Obliques",
+            "Transverse Abdominis",
+            "Deep Stabilizers"
+          ],
+          "relatedConditions": [
+            "Core Weakness",
+            "Rotational Instability",
+            "Lower Back Pain",
+            "Athletic Performance"
+          ],
           "instructions": [
             "Stand with resistance band anchored at chest level",
             "Hold handle with both hands at your chest",
@@ -1676,10 +2153,18 @@
           "name": "Spinal Twist",
           "description": "Improves rotational mobility of the entire spine while seated.",
           "difficulty": "beginner",
-          "image": "/images/exercises/spinal-twist.jpg",
+          "image": "/images/exercises/segmental-rotation.jpg",
           "videoUrl": "/videos/exercises/spinal-twist.mp4",
-          "targetAreas": ["Entire Spine", "Obliques", "Erector Spinae"],
-          "relatedConditions": ["Spinal Stiffness", "General Back Pain", "Reduced Rotational Mobility"],
+          "targetAreas": [
+            "Entire Spine",
+            "Obliques",
+            "Erector Spinae"
+          ],
+          "relatedConditions": [
+            "Spinal Stiffness",
+            "General Back Pain",
+            "Reduced Rotational Mobility"
+          ],
           "instructions": [
             "Sit tall in a chair with feet flat on the floor",
             "Place your right hand on your left knee",
@@ -1703,10 +2188,18 @@
           "name": "Shoulder Rolls",
           "description": "Improves shoulder mobility and reduces tension in the upper back and neck.",
           "difficulty": "beginner",
-          "image": "/images/exercises/shoulder-rolls.jpg",
+          "image": "/images/exercises/neck-rotation.jpg",
           "videoUrl": "/videos/exercises/shoulder-rolls.mp4",
-          "targetAreas": ["Shoulders", "Upper Back", "Neck"],
-          "relatedConditions": ["Shoulder Stiffness", "Upper Back Tension", "Neck Pain"],
+          "targetAreas": [
+            "Shoulders",
+            "Upper Back",
+            "Neck"
+          ],
+          "relatedConditions": [
+            "Shoulder Stiffness",
+            "Upper Back Tension",
+            "Neck Pain"
+          ],
           "instructions": [
             "Sit or stand with good posture",
             "Slowly roll your shoulders up toward your ears",
@@ -1781,10 +2274,17 @@
           "name": "Calf Stretch",
           "description": "Stretches the calf muscles to improve ankle mobility and reduce tension in the lower legs.",
           "difficulty": "beginner",
-          "image": "/images/exercises/calf-stretch.jpg",
+          "image": "/images/exercises/hamstring-stretch.jpg",
           "videoUrl": "/videos/exercises/calf-stretch.mp4",
-          "targetAreas": ["Calves", "Achilles Tendon"],
-          "relatedConditions": ["Calf Tightness", "Plantar Fasciitis", "Achilles Tendinopathy"],
+          "targetAreas": [
+            "Calves",
+            "Achilles Tendon"
+          ],
+          "relatedConditions": [
+            "Calf Tightness",
+            "Plantar Fasciitis",
+            "Achilles Tendinopathy"
+          ],
           "instructions": [
             "Stand facing a wall with hands against it",
             "Step your right foot back 2-3 feet",
@@ -1809,10 +2309,17 @@
           "name": "Chest Stretch",
           "description": "Stretches the chest muscles to improve posture and reduce tension in the upper body.",
           "difficulty": "beginner",
-          "image": "/images/exercises/chest-stretch.jpg",
+          "image": "/images/exercises/wall-angels.jpg",
           "videoUrl": "/videos/exercises/chest-stretch.mp4",
-          "targetAreas": ["Chest", "Anterior Shoulders"],
-          "relatedConditions": ["Rounded Shoulders", "Upper Cross Syndrome", "Poor Posture"],
+          "targetAreas": [
+            "Chest",
+            "Anterior Shoulders"
+          ],
+          "relatedConditions": [
+            "Rounded Shoulders",
+            "Upper Cross Syndrome",
+            "Poor Posture"
+          ],
           "instructions": [
             "Stand in a doorway with your arm against the frame",
             "Place your forearm vertically against the doorframe",
@@ -1836,10 +2343,18 @@
           "name": "Hip Flexor Stretch",
           "description": "Stretches the hip flexor muscles to improve hip mobility and reduce tension in the lower back.",
           "difficulty": "beginner",
-          "image": "/images/exercises/hip-flexor-stretch-stretching.jpg",
+          "image": "/images/exercises/hip-flexor-stretch.jpg",
           "videoUrl": "/videos/exercises/hip-flexor-stretch-stretching.mp4",
-          "targetAreas": ["Hip Flexors", "Psoas", "Lower Back"],
-          "relatedConditions": ["Hip Flexor Tightness", "Lower Back Pain", "Anterior Pelvic Tilt"],
+          "targetAreas": [
+            "Hip Flexors",
+            "Psoas",
+            "Lower Back"
+          ],
+          "relatedConditions": [
+            "Hip Flexor Tightness",
+            "Lower Back Pain",
+            "Anterior Pelvic Tilt"
+          ],
           "instructions": [
             "Kneel on your right knee with left foot forward",
             "Keep your torso upright",
@@ -1870,10 +2385,18 @@
           "name": "Wall Stand",
           "description": "Improves overall posture by aligning the spine against a wall.",
           "difficulty": "beginner",
-          "image": "/images/exercises/wall-stand.jpg",
+          "image": "/images/exercises/wall-slides.jpg",
           "videoUrl": "/videos/exercises/wall-stand.mp4",
-          "targetAreas": ["Entire Spine", "Core", "Gluteal Muscles"],
-          "relatedConditions": ["Poor Posture", "Forward Head", "Rounded Shoulders"],
+          "targetAreas": [
+            "Entire Spine",
+            "Core",
+            "Gluteal Muscles"
+          ],
+          "relatedConditions": [
+            "Poor Posture",
+            "Forward Head",
+            "Rounded Shoulders"
+          ],
           "instructions": [
             "Stand with your back against a wall",
             "Place your feet 6 inches away from the wall",
@@ -1897,10 +2420,17 @@
           "name": "Doorway Stretch",
           "description": "Stretches the chest muscles to improve posture and reduce rounded shoulders.",
           "difficulty": "beginner",
-          "image": "/images/exercises/doorway-stretch.jpg",
+          "image": "/images/exercises/wall-angels.jpg",
           "videoUrl": "/videos/exercises/doorway-stretch.mp4",
-          "targetAreas": ["Chest", "Anterior Shoulders"],
-          "relatedConditions": ["Rounded Shoulders", "Upper Cross Syndrome", "Poor Posture"],
+          "targetAreas": [
+            "Chest",
+            "Anterior Shoulders"
+          ],
+          "relatedConditions": [
+            "Rounded Shoulders",
+            "Upper Cross Syndrome",
+            "Poor Posture"
+          ],
           "instructions": [
             "Stand in a doorway with arms at 90 degrees",
             "Place your forearms against the doorframe",
@@ -1926,8 +2456,16 @@
           "difficulty": "beginner",
           "image": "/images/exercises/brugger-relief-position.jpg",
           "videoUrl": "/videos/exercises/brugger-relief-position.mp4",
-          "targetAreas": ["Upper Back", "Shoulders", "Chest"],
-          "relatedConditions": ["Rounded Shoulders", "Upper Cross Syndrome", "Poor Posture"],
+          "targetAreas": [
+            "Upper Back",
+            "Shoulders",
+            "Chest"
+          ],
+          "relatedConditions": [
+            "Rounded Shoulders",
+            "Upper Cross Syndrome",
+            "Poor Posture"
+          ],
           "instructions": [
             "Sit at the edge of your chair",
             "Spread your legs slightly apart",
@@ -1951,10 +2489,17 @@
           "name": "Postural Awareness Exercise",
           "description": "Develops awareness of proper posture throughout daily activities.",
           "difficulty": "beginner",
-          "image": "/images/exercises/postural-awareness.jpg",
+          "image": "/images/exercises/postural-awareness-spine.jpg",
           "videoUrl": "/videos/exercises/postural-awareness.mp4",
-          "targetAreas": ["Entire Body", "Postural Muscles"],
-          "relatedConditions": ["Poor Posture", "Postural Fatigue", "Chronic Pain"],
+          "targetAreas": [
+            "Entire Body",
+            "Postural Muscles"
+          ],
+          "relatedConditions": [
+            "Poor Posture",
+            "Postural Fatigue",
+            "Chronic Pain"
+          ],
           "instructions": [
             "Set reminders throughout the day to check your posture",
             "When reminded, assess your head, shoulder, and spine position",
@@ -1979,8 +2524,15 @@
           "difficulty": "beginner",
           "image": "/images/exercises/ergonomic-positioning.jpg",
           "videoUrl": "/videos/exercises/ergonomic-positioning.mp4",
-          "targetAreas": ["Entire Body", "Workplace Posture"],
-          "relatedConditions": ["Work-Related Pain", "Poor Posture", "Repetitive Strain"],
+          "targetAreas": [
+            "Entire Body",
+            "Workplace Posture"
+          ],
+          "relatedConditions": [
+            "Work-Related Pain",
+            "Poor Posture",
+            "Repetitive Strain"
+          ],
           "instructions": [
             "Adjust chair height so feet are flat on the floor",
             "Position monitor at eye level to avoid neck strain",
@@ -2005,8 +2557,15 @@
           "difficulty": "beginner",
           "image": "/images/exercises/mirror-feedback.jpg",
           "videoUrl": "/videos/exercises/mirror-feedback.mp4",
-          "targetAreas": ["Entire Body", "Postural Alignment"],
-          "relatedConditions": ["Poor Posture", "Postural Asymmetry", "Body Awareness"],
+          "targetAreas": [
+            "Entire Body",
+            "Postural Alignment"
+          ],
+          "relatedConditions": [
+            "Poor Posture",
+            "Postural Asymmetry",
+            "Body Awareness"
+          ],
           "instructions": [
             "Stand sideways in front of a full-length mirror",
             "Observe your natural posture from the side",
@@ -2037,10 +2596,18 @@
           "name": "Glute Bridges",
           "description": "Strengthens the gluteal muscles and posterior chain to support the lower back.",
           "difficulty": "beginner",
-          "image": "/images/exercises/glute-bridges.jpg",
+          "image": "/images/exercises/glute-bridge-exercise.jpg",
           "videoUrl": "/videos/exercises/glute-bridges.mp4",
-          "targetAreas": ["Gluteal Muscles", "Hamstrings", "Core"],
-          "relatedConditions": ["Lower Back Pain", "Gluteal Weakness", "Hip Dysfunction"],
+          "targetAreas": [
+            "Gluteal Muscles",
+            "Hamstrings",
+            "Core"
+          ],
+          "relatedConditions": [
+            "Lower Back Pain",
+            "Gluteal Weakness",
+            "Hip Dysfunction"
+          ],
           "instructions": [
             "Lie on your back with knees bent and feet flat on the floor",
             "Keep your arms at your sides for stability",
@@ -2064,10 +2631,17 @@
           "name": "Clamshells",
           "description": "Strengthens the hip external rotators and gluteal muscles.",
           "difficulty": "beginner",
-          "image": "/images/exercises/clamshells.jpg",
+          "image": "/images/exercises/clam-shell-exercise.jpg",
           "videoUrl": "/videos/exercises/clamshells.mp4",
-          "targetAreas": ["Hip External Rotators", "Gluteal Muscles"],
-          "relatedConditions": ["Hip Weakness", "Lower Back Pain", "Knee Pain"],
+          "targetAreas": [
+            "Hip External Rotators",
+            "Gluteal Muscles"
+          ],
+          "relatedConditions": [
+            "Hip Weakness",
+            "Lower Back Pain",
+            "Knee Pain"
+          ],
           "instructions": [
             "Lie on your side with knees bent at 90 degrees",
             "Keep your feet together",
@@ -2093,8 +2667,16 @@
           "difficulty": "intermediate",
           "image": "/images/exercises/side-plank.jpg",
           "videoUrl": "/videos/exercises/side-plank.mp4",
-          "targetAreas": ["Obliques", "Quadratus Lumborum", "Lateral Core"],
-          "relatedConditions": ["Core Weakness", "Lower Back Pain", "Lateral Instability"],
+          "targetAreas": [
+            "Obliques",
+            "Quadratus Lumborum",
+            "Lateral Core"
+          ],
+          "relatedConditions": [
+            "Core Weakness",
+            "Lower Back Pain",
+            "Lateral Instability"
+          ],
           "instructions": [
             "Lie on your side with your forearm on the ground",
             "Stack your feet and lift your hips off the ground",

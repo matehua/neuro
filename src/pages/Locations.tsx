@@ -184,10 +184,10 @@ export default function Locations() {
                     deviceInfo.isMobile ? "h-64" : "h-80"
                   )}>
                     <SafeImage
-                      src={primaryLocation.image || "/images/location-placeholder.jpg"}
+                      src={primaryLocation.image || "/images/medical-consulting.jpg"}
                       alt={primaryLocation.name}
                       className="w-full h-full object-cover"
-                      fallbackSrc="/images/location-placeholder.jpg"
+                      fallbackSrc="/images/medical-consulting.jpg"
                     />
                   </div>
                 </div>
