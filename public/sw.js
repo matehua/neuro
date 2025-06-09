@@ -12,8 +12,8 @@ const STATIC_ASSETS = [
   '/',
   '/manifest.json',
   '/favicon.ico',
-  '/images/logo/logo-192.png',
-  '/images/logo/logo-512.png'
+  '/logo/logo.png',
+  '/logo/logo-white.png'
 ];
 
 // Network-first resources
@@ -257,8 +257,8 @@ self.addEventListener('push', (event) => {
   const data = event.data.json();
   const options = {
     body: data.body,
-    icon: '/images/logo/logo-192.png',
-    badge: '/images/logo/logo-192.png',
+    icon: '/logo/logo.png',
+    badge: '/logo/logo.png',
     vibrate: [100, 50, 100],
     data: {
       dateOfArrival: Date.now(),

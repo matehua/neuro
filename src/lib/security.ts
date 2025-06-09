@@ -234,6 +234,11 @@ export class SecurityManager {
    * Check if URL is suspicious
    */
   private isSuspiciousURL(url: string): boolean {
+    // Allow relative URLs (starting with /) and trusted domains
+    if (url.startsWith('/') || url.startsWith('./') || url.startsWith('../')) {
+      return false;
+    }
+
     const suspiciousPatterns = [
       /^(?!https?:\/\/(localhost|127\.0\.0\.1|.*\.mineuro\.com\.au))/,
       /[<>'"]/,
