@@ -1,31 +1,413 @@
-# Deployment Guide
+# Deployment & Contributing Guide
 
-This document outlines the process for deploying the miNEURO website to various environments.
+Complete guide for deploying the miNEURO website and contributing to the project.
 
-## Deployment Options
+## Deployment
 
-The miNEURO website can be deployed using several methods:
+### Deployment Options
+
+The miNEURO website supports multiple deployment methods:
 
 1. **Lovable Platform** (recommended for development and staging)
 2. **Netlify** (recommended for production with custom domains)
-3. **Manual Deployment** (for custom hosting environments)
+3. **Static Hosting** (any static file server)
 
-## Prerequisites
+### Prerequisites
 
 Before deploying, ensure:
 
-1. All code changes are committed to the repository
-2. The application builds successfully locally (`npm run build`)
-3. All tests pass (if applicable)
-4. You have the necessary permissions for the deployment platform
+- ✅ All code changes are committed to the repository
+- ✅ Application builds successfully locally (`npm run build`)
+- ✅ All TypeScript errors are resolved
+- ✅ ESLint passes without errors
+- ✅ Images are optimized and properly referenced
 
-## Building the Project
-
-To build the project for production:
+### Building for Production
 
 ```bash
+# Install dependencies
+npm install
+
+# Build the project
 npm run build
+
+# Preview the build locally (optional)
+npm run preview
 ```
+
+### Build Output
+
+The build process generates:
+
+```
+dist/
+├── assets/           # Optimized JS/CSS bundles
+├── images/          # Copied image assets
+├── data/            # JSON data files
+├── pages/           # Markdown content
+├── index.html       # Main HTML file
+├── manifest.json    # PWA manifest
+├── robots.txt       # SEO robots file
+└── sitemap.xml      # SEO sitemap
+```
+
+### Deployment Methods
+
+#### 1. Lovable Platform (Recommended for Development)
+
+**Quick Deployment:**
+1. Open [Lovable Project](https://lovable.dev/projects/96f629c9-6031-4f68-8bd0-680a3c64b6e3)
+2. Click **Share** → **Publish**
+3. Website will be deployed automatically
+
+**Features:**
+- Automatic deployments on code changes
+- Preview deployments for branches
+- Built-in SSL certificates
+- Global CDN distribution
+
+#### 2. Netlify (Recommended for Production)
+
+**Setup:**
+1. Connect your GitHub repository to Netlify
+2. Configure build settings:
+   - **Build command**: `npm run build`
+   - **Publish directory**: `dist`
+   - **Node version**: `18.x`
+
+**Build Configuration (netlify.toml):**
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "18"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+```
+
+**Custom Domain Setup:**
+1. Add your domain in Netlify dashboard
+2. Configure DNS records as instructed
+3. SSL certificate will be automatically provisioned
+
+#### 3. Manual Deployment
+
+For custom hosting environments:
+
+```bash
+# Build the project
+npm run build
+
+# Upload the dist/ folder contents to your web server
+# Ensure your server is configured to serve index.html for all routes
+```
+
+**Server Configuration:**
+- Configure server to serve `index.html` for all routes (SPA routing)
+- Set up proper MIME types for static assets
+- Enable gzip compression for better performance
+- Configure caching headers for static assets
+
+### Environment Variables
+
+The application supports environment-specific configuration:
+
+```bash
+# Development
+VITE_APP_ENV=development
+VITE_API_URL=http://localhost:3000
+
+# Production
+VITE_APP_ENV=production
+VITE_API_URL=https://api.mineurosurgery.com
+```
+
+### Performance Optimization
+
+**Build Optimizations:**
+- Code splitting by routes and vendors
+- Tree shaking to remove unused code
+- Asset optimization and compression
+- Bundle analysis for size monitoring
+
+**Runtime Optimizations:**
+- Lazy loading for non-critical components
+- Image optimization with proper sizing
+- Service worker for caching (if enabled)
+- CDN distribution for global performance
+
+## Contributing
+
+### Getting Started
+
+1. **Fork the repository** on GitHub
+2. **Clone your fork** locally:
+   ```bash
+   git clone https://github.com/your-username/neuro.git
+   cd neuro
+   ```
+3. **Install dependencies**:
+   ```bash
+   npm install
+   ```
+4. **Start development server**:
+   ```bash
+   npm run dev
+   ```
+
+### Development Workflow
+
+#### Branching Strategy
+
+- `main`: Production-ready code
+- `feature/*`: New features or enhancements
+- `bugfix/*`: Bug fixes
+- `docs/*`: Documentation updates
+- `hotfix/*`: Critical production fixes
+
+#### Creating a Feature Branch
+
+```bash
+# Create and switch to a new feature branch
+git checkout -b feature/your-feature-name
+
+# Make your changes
+# ...
+
+# Commit your changes
+git add .
+git commit -m "feat: add new feature description"
+
+# Push to your fork
+git push origin feature/your-feature-name
+
+# Create a pull request on GitHub
+```
+
+### Code Standards
+
+#### TypeScript Guidelines
+
+```typescript
+// Use strict typing
+interface ComponentProps {
+  title: string;
+  optional?: boolean;
+}
+
+// Avoid 'any' type
+const processData = (data: unknown): ProcessedData => {
+  // Type guards and validation
+  if (typeof data === 'object' && data !== null) {
+    return data as ProcessedData;
+  }
+  throw new Error('Invalid data format');
+};
+
+// Use proper return types
+const fetchUserData = async (id: string): Promise<User> => {
+  // Implementation
+};
+```
+
+#### Component Guidelines
+
+```typescript
+// Use functional components with hooks
+export const Component: React.FC<Props> = ({ title, children }) => {
+  const [state, setState] = useState<StateType>(initialState);
+
+  const handleAction = useCallback(() => {
+    // Event handler logic
+  }, [dependencies]);
+
+  return (
+    <div className="component-wrapper">
+      <h2>{title}</h2>
+      {children}
+    </div>
+  );
+};
+
+// Export with proper naming
+export default Component;
+```
+
+#### Styling Guidelines
+
+```typescript
+// Use Tailwind CSS classes
+<div className="flex items-center justify-between p-4 bg-white rounded-lg shadow-md">
+  <h3 className="text-lg font-semibold text-gray-900">Title</h3>
+  <Button variant="outline" size="sm">Action</Button>
+</div>
+
+// Use cn() utility for conditional classes
+import { cn } from '@/lib/utils';
+
+<div className={cn(
+  "base-styles",
+  variant === 'primary' && "primary-styles",
+  isActive && "active-styles",
+  className
+)}>
+```
+
+### Testing Guidelines
+
+#### Component Testing
+
+```typescript
+import { render, screen, fireEvent } from '@testing-library/react';
+import { Component } from './Component';
+
+describe('Component', () => {
+  it('renders correctly', () => {
+    render(<Component title="Test Title" />);
+    expect(screen.getByText('Test Title')).toBeInTheDocument();
+  });
+
+  it('handles user interactions', () => {
+    const handleClick = jest.fn();
+    render(<Component onAction={handleClick} />);
+
+    fireEvent.click(screen.getByRole('button'));
+    expect(handleClick).toHaveBeenCalledTimes(1);
+  });
+});
+```
+
+#### Accessibility Testing
+
+```typescript
+// Test keyboard navigation
+fireEvent.keyDown(element, { key: 'Enter', code: 'Enter' });
+fireEvent.keyDown(element, { key: 'Tab', code: 'Tab' });
+
+// Test ARIA attributes
+expect(screen.getByRole('button')).toHaveAttribute('aria-expanded', 'false');
+expect(screen.getByLabelText('Close dialog')).toBeInTheDocument();
+```
+
+### Commit Message Guidelines
+
+Use conventional commit format:
+
+```
+type(scope): description
+
+[optional body]
+
+[optional footer]
+```
+
+**Types:**
+- `feat`: New feature
+- `fix`: Bug fix
+- `docs`: Documentation changes
+- `style`: Code style changes (formatting, etc.)
+- `refactor`: Code refactoring
+- `test`: Adding or updating tests
+- `chore`: Maintenance tasks
+
+**Examples:**
+```
+feat(components): add SafeImage component with error handling
+
+- Implements automatic fallback on image load errors
+- Adds accessibility attributes for decorative images
+- Includes lazy loading support
+
+Closes #123
+```
+
+### Pull Request Process
+
+1. **Ensure your branch is up to date**:
+   ```bash
+   git checkout main
+   git pull upstream main
+   git checkout feature/your-feature
+   git rebase main
+   ```
+
+2. **Run quality checks**:
+   ```bash
+   npm run lint
+   npm run build
+   npm run test  # if tests exist
+   ```
+
+3. **Create a detailed pull request**:
+   - Clear title and description
+   - Reference related issues
+   - Include screenshots for UI changes
+   - List breaking changes (if any)
+
+4. **Address review feedback**:
+   - Make requested changes
+   - Push updates to the same branch
+   - Respond to reviewer comments
+
+### Code Review Guidelines
+
+#### For Authors
+
+- Keep pull requests focused and small
+- Write clear commit messages
+- Include tests for new functionality
+- Update documentation as needed
+- Ensure accessibility compliance
+
+#### For Reviewers
+
+- Review for code quality and standards
+- Check for accessibility issues
+- Verify TypeScript types are correct
+- Test functionality locally if needed
+- Provide constructive feedback
+
+### Issue Reporting
+
+When reporting bugs or requesting features:
+
+1. **Search existing issues** first
+2. **Use issue templates** when available
+3. **Provide detailed information**:
+   - Steps to reproduce (for bugs)
+   - Expected vs actual behavior
+   - Browser/device information
+   - Screenshots or videos if helpful
+
+### Documentation
+
+- Update relevant documentation for new features
+- Keep README.md current
+- Document breaking changes
+- Include code examples in component documentation
+
+### Getting Help
+
+- Check existing documentation first
+- Search closed issues for similar problems
+- Ask questions in GitHub Discussions
+- Contact maintainers for urgent issues
+
+### License
+
+By contributing to this project, you agree that your contributions will be licensed under the project's license.
 
 This creates a `dist/` directory containing the optimized production build.
 
