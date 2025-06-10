@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ChevronDown } from "lucide-react";
@@ -42,7 +43,7 @@ export default function HeroSection() {
       aria-labelledby={headingId}
     >
       {/* Background image with parallax */}
-      <div className="absolute inset-0 overflow-hidden opacity-50">
+      <div className="absolute inset-0 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -57,9 +58,9 @@ export default function HeroSection() {
         />
       </div>
 
-      {/* Gradient overlay */}
+      {/* Gradient overlay - made more subtle */}
       <div
-        className="absolute inset-0 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background"
+        className="absolute inset-0 bg-gradient-to-r from-primary/20 to-white/80 dark:from-primary/30 dark:to-background/80"
         aria-hidden="true"
       />
 
