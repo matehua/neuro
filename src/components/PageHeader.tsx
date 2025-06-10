@@ -55,8 +55,8 @@ export default function PageHeader({
 
   // Determine styling based on background image presence
   const hasBackground = backgroundImage && imageLoaded;
-  const textColorClass = hasBackground ? 'text-white' : 'text-foreground';
-  const subtitleColorClass = hasBackground ? 'text-white/90' : 'text-muted-foreground';
+  const textColorClass = 'text-foreground';
+  const subtitleColorClass = 'text-muted-foreground';
 
   return (
     <section
@@ -71,18 +71,20 @@ export default function PageHeader({
     >
       {/* Background image with parallax */}
       {hasBackground && (
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: `url(${backgroundImage})`,
-            transform: enableParallax && !deviceInfo.isMobile ? `translateY(${backgroundY}px)` : 'none',
-            backgroundPosition: deviceInfo.isMobile
-              ? 'center center'
-              : enableParallax ? `center ${50 + scrollY * 0.02}%` : 'center center'
-          }}
-          role="img"
-          aria-label={`Background image for ${title}`}
-        />
+        <div className="absolute inset-0 overflow-hidden opacity-10">
+          <div
+            className="absolute inset-0 bg-cover bg-center"
+            style={{
+              backgroundImage: `url(${backgroundImage})`,
+              transform: enableParallax && !deviceInfo.isMobile ? `translateY(${backgroundY}px)` : 'none',
+              backgroundPosition: deviceInfo.isMobile
+                ? 'center center'
+                : enableParallax ? `center ${50 + scrollY * 0.02}%` : 'center center'
+            }}
+            role="img"
+            aria-label={`Background image for ${title}`}
+          />
+        </div>
       )}
 
       {/* Gradient overlay for better text contrast */}

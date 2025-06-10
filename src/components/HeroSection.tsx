@@ -42,22 +42,24 @@ export default function HeroSection() {
       aria-labelledby={headingId}
     >
       {/* Background image with parallax */}
-      <div
-        className="absolute inset-0 bg-cover bg-center"
-        style={{
-          backgroundImage: "url('/images/hero-neurosurgeon-section-weightlifting-body-spine art.jpg')",
-          transform: deviceInfo.isMobile ? 'none' : `translateY(${backgroundY}px)`,
-          backgroundPosition: deviceInfo.isMobile
-            ? 'center center'
-            : `center ${50 + scrollY * 0.05}%`
-        }}
-        role="img"
-        aria-label="Dr. Ales Aliashkevich - Neurosurgeon specializing in spine health and body strength rehabilitation"
-      />
+      <div className="absolute inset-0 overflow-hidden opacity-10">
+        <div
+          className="absolute inset-0 bg-cover bg-center"
+          style={{
+            backgroundImage: "url('/images/hero-neurosurgeon-section-weightlifting-body-spine art.jpg')",
+            transform: deviceInfo.isMobile ? 'none' : `translateY(${backgroundY}px)`,
+            backgroundPosition: deviceInfo.isMobile
+              ? 'center center'
+              : `center ${50 + scrollY * 0.05}%`
+          }}
+          role="img"
+          aria-label="Dr. Ales Aliashkevich - Neurosurgeon specializing in spine health and body strength rehabilitation"
+        />
+      </div>
 
       {/* Gradient overlay */}
       <div
-        className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/20 to-black/60"
+        className="absolute inset-0 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background"
         aria-hidden="true"
       />
 
@@ -76,7 +78,7 @@ export default function HeroSection() {
           deviceInfo.isMobile ? "mobile-fade-in" : "animate-fade-in"
         )}>
           <span className={cn(
-            "inline-block text-white/90 tracking-wide border-b border-white/30 pb-2 mb-mobile-md",
+            "inline-block text-foreground/90 tracking-wide border-b border-foreground/30 pb-2 mb-mobile-md",
             deviceInfo.isMobile ? "mobile-text" : "text-lg mb-4"
           )}>
             {t.hero.subtitle}
@@ -84,7 +86,7 @@ export default function HeroSection() {
           <h1
             id={headingId}
             className={cn(
-              "font-bold text-white mb-mobile-lg",
+              "font-bold text-foreground mb-mobile-lg",
               deviceInfo.isMobile
                 ? "mobile-4xl leading-tight"
                 : "text-4xl md:text-5xl lg:text-6xl mb-6"
@@ -93,7 +95,7 @@ export default function HeroSection() {
             Dr. Ales Aliashkevich
           </h1>
           <p className={cn(
-            "text-white/90 max-w-2xl mx-auto mb-mobile-xl",
+            "text-muted-foreground max-w-2xl mx-auto mb-mobile-xl",
             deviceInfo.isMobile ? "mobile-text" : "text-lg mb-8"
           )}>
             {t.hero.description}
@@ -126,10 +128,10 @@ export default function HeroSection() {
               variant="outline"
               size={deviceInfo.isMobile ? "default" : "lg"}
               className={cn(
-                "rounded-full bg-transparent text-white border-white mobile-button touch-feedback",
+                "rounded-full bg-transparent border-foreground mobile-button touch-feedback",
                 deviceInfo.isMobile
-                  ? "w-full min-h-[48px] hover:bg-white/20"
-                  : "min-w-[200px] transform transition-all duration-300 hover:translate-y-[-2px] hover:bg-white/10"
+                  ? "w-full min-h-[48px] hover:bg-foreground/10"
+                  : "min-w-[200px] transform transition-all duration-300 hover:translate-y-[-2px] hover:bg-foreground/10"
               )}
             >
               <Link
@@ -145,7 +147,7 @@ export default function HeroSection() {
 
       {/* Scroll down indicator */}
       <div className={cn(
-        "absolute left-1/2 transform -translate-x-1/2 text-white animate-bounce",
+        "absolute left-1/2 transform -translate-x-1/2 text-foreground animate-bounce",
         deviceInfo.isMobile ? "bottom-mobile-lg" : "bottom-10"
       )}>
         <a
