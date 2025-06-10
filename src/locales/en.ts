@@ -237,19 +237,16 @@ export const en = {
   },
   appointmentForm: {
     title: "Book Consultation",
-    checkIn: "Appointment Date",
-    checkOut: "Appointment Time",
-    adults: "Adult Patients",
-    children: "Child Patients",
-    adult: "Adult Patient",
-    child: "Child Patient",
+    appointmentDate: "Appointment Date",
+    appointmentTime: "Preferred Time",
     selectDate: "Select date",
+    selectTime: "Select time",
     checkAvailability: "Check Availability",
     appointmentConfirmed: "Appointment Confirmed!"
   },
   testimonials: {
     title: "Patient Testimonials",
-    description: "Discover why our patients trust Dr. Ales Aliashkevich for neurosurgical and spine procedures."
+    description: "Discover why our patients trust Dr Ales Aliashkevich for neurosurgical and spine procedures."
   },
   notFound: {
     title: "Page Not Found",
@@ -530,7 +527,7 @@ export const en = {
         },
         healthcareCollaboration: {
           title: "Healthcare Collaboration",
-          description: "Share your assessment results directly with Dr. Aliashkevich or other healthcare providers, facilitating better communication and more coordinated care across your healthcare team."
+          description: "Share your assessment results directly with Dr Aliashkevich or other healthcare providers, facilitating better communication and more coordinated care across your healthcare team."
         },
         foundation: "Our assessment tools provide the foundation for effective spine health management. By thoroughly understanding your condition, we can develop targeted interventions that address the specific factors contributing to your symptoms.",
         startAssessment: "Start Your Assessment"
@@ -782,15 +779,15 @@ export const en = {
     viewInstructions: "View Instructions",
     viewHospitals: "View Hospitals",
     filters: {
-      guests: "Condition",
-      anyGuests: "All conditions",
-      onePlus: "Brain conditions",
-      twoPlus: "Spine conditions",
-      threePlus: "Peripheral nerve conditions",
-      fourPlus: "Other neurosurgical conditions",
+      condition: "Condition",
+      allConditions: "All conditions",
+      brainConditions: "Brain conditions",
+      spineConditions: "Spine conditions",
+      nerveConditions: "Peripheral nerve conditions",
+      otherConditions: "Other neurosurgical conditions",
       location: "Clinic Location",
       allLocations: "All clinics",
-      priceRange: "Surgery Type",
+      surgeryType: "Surgery Type",
       showing: "Showing",
       of: "of",
       procedures: "treatment options",
@@ -975,7 +972,7 @@ export const en = {
   },
   appointments: {
     title: "Appointment with Neurosurgeon and Spine Surgeon",
-    subtitle: "Schedule a consultation with Dr. Ales Aliashkevich at one of our convenient locations across Melbourne and Victoria.",
+    subtitle: "Schedule a consultation with Dr Ales Aliashkevich at one of our convenient locations across Melbourne and Victoria.",
     description1: "The prospect of a neurosurgical procedure can be daunting, which is why Dr Ales Aliashkevich is committed to delivering personalised and compassionate care for each of his patient's unique situations.",
     description2: "He can offer face-to-face and telehealth appointments to recommend the most appropriate approach for each patient. Urgent appointments are available on request.",
     process: {
@@ -1143,19 +1140,19 @@ export const en = {
     subtitle: "Expert medico-legal assessments and reports for legal and insurance purposes.",
     assessmentsReports: {
       title: "Assessments and Reports",
-      description: "Dr. Aliashkevich has accomplished a Ministerially approved training programme in the application of the American Medical Association Guides to the Evaluation of Permanent Impairment (4th and 5th Editions AMA Guides) for the spine and nervous system. He provides accurate and comprehensive medico-legal assessments for brain, spine, and nerve injuries and can be a trusted expert witness for all neurosurgical conditions."
+      description: "Dr Aliashkevich has accomplished a Ministerially approved training programme in the application of the American Medical Association Guides to the Evaluation of Permanent Impairment (4th and 5th Editions AMA Guides) for the spine and nervous system. He provides accurate and comprehensive medico-legal assessments for brain, spine, and nerve injuries and can be a trusted expert witness for all neurosurgical conditions."
     },
     independentExaminations: {
       title: "Independent and Joint Medical Examinations",
-      description: "Dr. Aliashkevich provides independent medical examinations (IMEs) for a variety of purposes, including:",
+      description: "Dr Aliashkevich provides independent medical examinations (IMEs) for a variety of purposes, including:",
       types: {
         workCover: {
           title: "WorkCover Claims",
-          description: "Comprehensive assessments for work-related injuries affecting the brain, spine, or nervous system. Dr. Aliashkevich is an accredited WorkCover impairment assessor for the spine and nervous system."
+          description: "Comprehensive assessments for work-related injuries affecting the brain, spine, or nervous system. Dr Aliashkevich is an accredited WorkCover impairment assessor for the spine and nervous system."
         },
         transportAccident: {
           title: "Transport Accident Claims",
-          description: "Expert evaluation of neurological and spinal injuries resulting from motor vehicle accidents. Dr. Aliashkevich is an accredited TAC impairment assessor for the spine and nervous system."
+          description: "Expert evaluation of neurological and spinal injuries resulting from motor vehicle accidents. Dr Aliashkevich is an accredited TAC impairment assessor for the spine and nervous system."
         },
         publicLiability: {
           title: "Public Liability Claims",
@@ -1171,7 +1168,7 @@ export const en = {
       title: "Whole Person Impairment Assessment",
       amaCertified: {
         title: "AMA Certified Assessments",
-        description: "Dr. Aliashkevich is certified to conduct Whole Person Impairment (WPI) assessments based on the AMA or Comcare guidelines in matters where compensation is sought for the permanent impairment of part(s) of an individual's body. The impairment is calculated in terms of the extent to which an injury impacts your whole person."
+        description: "Dr Aliashkevich is certified to conduct Whole Person Impairment (WPI) assessments based on the AMA or Comcare guidelines in matters where compensation is sought for the permanent impairment of part(s) of an individual's body. The impairment is calculated in terms of the extent to which an injury impacts your whole person."
       },
       workCapacity: {
         title: "Work Capacity and Disability Assessments",
@@ -1183,17 +1180,17 @@ export const en = {
       },
       expertWitness: {
         title: "Expert Witness Opinions",
-        description: "If required, Dr. Aliashkevich can appear in court to provide an expert neurosurgical opinion. He can provide an expert opinion based on available medical records, imaging, neurophysiological testing results and other documentation."
+        description: "If required, Dr Aliashkevich can appear in court to provide an expert neurosurgical opinion. He can provide an expert opinion based on available medical records, imaging, neurophysiological testing results and other documentation."
       }
     },
     independentReports: {
       title: "Independent Examinations and Reports",
-      description1: "Dr. Ales Aliashkevich specialises in brain, spine and nerve injuries and has more than 17 years of experience in the provision of medico-legal services. He can offer independent examinations, comprehensive reports, thorough file reviews, teleconferences, consultations and expert witness opinions on a wide range of neurosurgical conditions. As an actively practising surgeon, he appreciates the value of advanced modern diagnostic modalities, such as state-of-the-art radiological and neurophysiological investigations.",
+      description1: "Dr Ales Aliashkevich specialises in brain, spine and nerve injuries and has more than 17 years of experience in the provision of medico-legal services. He can offer independent examinations, comprehensive reports, thorough file reviews, teleconferences, consultations and expert witness opinions on a wide range of neurosurgical conditions. As an actively practising surgeon, he appreciates the value of advanced modern diagnostic modalities, such as state-of-the-art radiological and neurophysiological investigations.",
       description2: "His assessments are always in line with the current evidence-based treatment recommendations, considering the values of multidisciplinary approaches and availability of minimally-invasive and motion-preserving surgical techniques. The meticulous collection of history and great attention to the details of clinical presentation and investigations sets him apart from the majority of other medico-legal service providers."
     },
     impairmentAssessmentDetails: {
       title: "Medico-Legal Impairment Assessment",
-      description1: "Dr. Aliashkevich is certified by the Australian Medical Association (AMA) Victoria and the Personal Injury Education Foundation (PIEF) in Impairment Assessment using the American Medical Association Guides to the Evaluation of Permanent Impairment 4th Edition and other prescribed methods, as applied to relevant Victorian legislation. He completed courses to assess impairments for TAC, WorkCover and the purposes of Part VBA of the Wrongs Act 1958 (personal injury).",
+      description1: "Dr Aliashkevich is certified by the Australian Medical Association (AMA) Victoria and the Personal Injury Education Foundation (PIEF) in Impairment Assessment using the American Medical Association Guides to the Evaluation of Permanent Impairment 4th Edition and other prescribed methods, as applied to relevant Victorian legislation. He completed courses to assess impairments for TAC, WorkCover and the purposes of Part VBA of the Wrongs Act 1958 (personal injury).",
       description2: "He is accredited for assessing the spine using both the methodology from Chapter 3 of the Guides and modification to those criteria by the Spinal Impairment Guides Modification Document (SIGMD). He can perform an expert apportionment to disentangle what impairment may or may not be related to a compensable event."
     },
     helpRecover: {
@@ -1238,7 +1235,7 @@ export const en = {
     },
     assessmentProcess: {
       title: "Medico-Legal Assessment Process",
-      description: "Medical examinations form a crucial part of the personal injury and compensation claim assessment. Dr. Aliashkevich provides unbiased independent expert reviews with appropriate qualifications, deep knowledge of the problem, and specific training to provide impairment ratings.",
+      description: "Medical examinations form a crucial part of the personal injury and compensation claim assessment. Dr Aliashkevich provides unbiased independent expert reviews with appropriate qualifications, deep knowledge of the problem, and specific training to provide impairment ratings.",
       beforeAppointment: {
         title: "Before the Appointment",
         description1: "To reduce the discomfort of the examination and collect as much information about the injury and its consequences, our medico-legal assistant will provide a registration form, health questionnaire, and consent form well in advance before the appointment.",
@@ -1252,7 +1249,7 @@ export const en = {
       afterAppointment: {
         title: "After the Appointment",
         description1: "Medico-legal reports provide significantly more detail than usual specialist letters. They are legal documents that can be used as evidence in courts. In complex cases, reports can be 30-50 pages long.",
-        description2: "After the report is finalised, it will be sent directly to the requesting party. As a general rule, Dr. Aliashkevich doesn't mind for his reports to be forwarded to the claimants or their general practitioners if they help with future treatment planning."
+        description2: "After the report is finalised, it will be sent directly to the requesting party. As a general rule, Dr Aliashkevich doesn't mind for his reports to be forwarded to the claimants or their general practitioners if they help with future treatment planning."
       }
     },
     locations: {
@@ -1306,11 +1303,11 @@ export const en = {
 
   hospitals: {
     title: "Our Hospitals",
-    subtitle: "Dr. Aliashkevich performs surgery at multiple hospitals across Melbourne",
-    description: "Dr. Aliashkevich performs surgery at multiple hospitals across Melbourne, including both private and public facilities. These hospitals are equipped with state-of-the-art technology to provide the highest level of care for patients.",
+    subtitle: "Dr Aliashkevich performs surgery at multiple hospitals across Melbourne",
+    description: "Dr Aliashkevich performs surgery at multiple hospitals across Melbourne, including both private and public facilities. These hospitals are equipped with state-of-the-art technology to provide the highest level of care for patients.",
     warringalPrivate: {
       title: "Warringal Private Hospital",
-      description: "Warringal Private Hospital is a leading private hospital in Melbourne's northern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.",
+      description: "Warringal Private Hospital is a leading private hospital in Melbourne's northern suburbs, offering comprehensive medical and surgical services. Dr Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.",
       address: "Address: 216 Burgundy Street, Heidelberg VIC 3084",
       phone: "Phone: (03) 9274 1300"
     },
@@ -1387,11 +1384,11 @@ export const en = {
       },
       nearbyHospitals: {
         title: "Nearby Hospitals",
-        subtitle: "Dr. Aliashkevich operates at these hospitals near Langwarrin",
-        description: "In addition to consultations at Peninsula Consulting Suites, Dr. Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.",
+        subtitle: "Dr Aliashkevich operates at these hospitals near Langwarrin",
+        description: "In addition to consultations at Peninsula Consulting Suites, Dr Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.",
         peninsulaPrivateHospital: {
           title: "Peninsula Private Hospital",
-          description: "Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr. Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.",
+          description: "Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.",
           address: "<span class=\"font-medium\">Address:</span> 525 McClelland Drive, Frankston VIC 3199",
           phone: "<span class=\"font-medium\">Phone:</span> (03) 9788 3333"
         },
@@ -1437,8 +1434,8 @@ export const en = {
       }
     },
     morningtonLocation: {
-      subtitle: "Dr. Ales Aliashkevich, neurosurgeon and spine surgeon, has been providing care to patients on Mornington Peninsula since 2012. He offers consultations at Mornington Specialist Centre and operates at Peninsula Private and The Bays Hospitals.",
-      expertise: "With expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions, radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems, Dr. Aliashkevich brings specialised care closer to residents of Mornington and surrounding areas.",
+      subtitle: "Dr Ales Aliashkevich, neurosurgeon and spine surgeon, has been providing care to patients on Mornington Peninsula since 2012. He offers consultations at Mornington Specialist Centre and operates at Peninsula Private and The Bays Hospitals.",
+      expertise: "With expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions, radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems, Dr Aliashkevich brings specialised care closer to residents of Mornington and surrounding areas.",
       locationDetails: "Everything you need to know about our Mornington consulting location",
       address: "Address",
       contactInformation: "Contact Information",
@@ -1465,7 +1462,7 @@ export const en = {
   technologiesPage: {
     title: "Our Advanced Technologies",
     subtitle: "Explore our minimally-invasive neurosurgical techniques and equipment.",
-    description: "At Dr. Aliashkevich's neurosurgical practice, we are dedicated to providing the most advanced neurosurgical technologies and equipment. From image-guided surgery to robotic-assisted spine surgery, every technology has been carefully selected to ensure maximum safety and optimal treatment outcomes.",
+    description: "At Dr Aliashkevich's neurosurgical practice, we are dedicated to providing the most advanced neurosurgical technologies and equipment. From image-guided surgery to robotic-assisted spine surgery, every technology has been carefully selected to ensure maximum safety and optimal treatment outcomes.",
     categories: {
       wellness: {
         title: "Minimally-Invasive Techniques",
@@ -1675,11 +1672,11 @@ export const en = {
     expertNeurosurgery: "Expert Neurosurgical Consultations in Dandenong",
     subtitle: "Helping You Live Pain-Free",
     introduction1: "Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, a neurosurgeon and spine surgeon, has cared for patients in Dandenong, Eastern Melbourne suburbs and Mornington Peninsula area since 2012. He offers consultations, procedures and operations at major Melbourne Hospitals, with expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions.",
-    introduction2: "Dr. Aliashkevich specialises in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout Melbourne's southeastern region, eliminating the need to travel to central Melbourne for specialised care.",
+    introduction2: "Dr Aliashkevich specialises in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout Melbourne's southeastern region, eliminating the need to travel to central Melbourne for specialised care.",
     nearbyHospitals: {
       title: "Nearby Hospitals",
-      subtitle: "Dr. Aliashkevich operates at these hospitals near Dandenong",
-      description: "In addition to consultations at his Dandenong location, Dr. Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.",
+      subtitle: "Dr Aliashkevich operates at these hospitals near Dandenong",
+      description: "In addition to consultations at his Dandenong location, Dr Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.",
       peninsulaPrivateHospital: {
         title: "Peninsula Private Hospital",
         description: "Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr. Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.",

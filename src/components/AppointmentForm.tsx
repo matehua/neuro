@@ -25,8 +25,6 @@ export default function AppointmentForm() {
   const deviceInfo = useDeviceDetection();
   const [startDate, setStartDate] = useState<Date>();
   const [endDate, setEndDate] = useState<Date>();
-  const [adults, setAdults] = useState("2");
-  const [children, setChildren] = useState("0");
   const [submitted, setSubmitted] = useState(false);
   const timerRef = useRef<number | null>(null);
 
@@ -97,18 +95,18 @@ export default function AppointmentForm() {
             deviceInfo.isMobile ? "space-y-mobile-sm" : "space-y-2"
           )}>
             <label
-              htmlFor="check-in"
+              htmlFor="appointment-date"
               className={cn(
                 "block font-medium",
                 deviceInfo.isMobile ? "mobile-text" : "text-sm"
               )}
             >
-              {t.appointmentForm.checkIn}
+              {t.appointmentForm.appointmentDate}
             </label>
             <Popover>
               <PopoverTrigger asChild>
                 <Button
-                  id="check-in"
+                  id="appointment-date"
                   variant="outline"
                   className={cn(
                     "w-full justify-start text-left font-normal touch-target",
@@ -144,13 +142,13 @@ export default function AppointmentForm() {
 
           {/* Appointment Time */}
           <div className="space-y-2">
-            <label htmlFor="check-out" className="block text-sm font-medium">
-              {t.appointmentForm.checkOut}
+            <label htmlFor="appointment-time" className="block text-sm font-medium">
+              {t.appointmentForm.appointmentTime}
             </label>
             <Popover>
               <PopoverTrigger asChild>
                 <Button
-                  id="check-out"
+                  id="appointment-time"
                   variant="outline"
                   className={cn(
                     "w-full justify-start text-left font-normal",
@@ -158,7 +156,7 @@ export default function AppointmentForm() {
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {endDate ? format(endDate, "PPP") : <span>{t.appointmentForm.selectDate}</span>}
+                  {endDate ? format(endDate, "PPP") : <span>{t.appointmentForm.selectTime}</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start">

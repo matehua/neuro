@@ -83,10 +83,8 @@ const proceduresData: ClinicData[] = [
 ];
 
 export default function AppointmentBooking() {
-  const [startDate, setStartDate] = useState<Date | undefined>(new Date());
-  const [endDate, setEndDate] = useState<Date | undefined>(addDays(new Date(), 7));
-  const [adults, setAdults] = useState("2");
-  const [children, setChildren] = useState("0");
+  const [appointmentDate, setAppointmentDate] = useState<Date | undefined>(new Date());
+  const [followUpDate, setFollowUpDate] = useState<Date | undefined>(addDays(new Date(), 7));
   const [selectedProcedure, setSelectedProcedure] = useState<ProcedureProps | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
   const [formData, setFormData] = useState({
@@ -112,9 +110,9 @@ export default function AppointmentBooking() {
     window.scrollTo(0, 0);
   }, []);
 
-  // Calculate sessions and total price
-  const sessionsCount = startDate && endDate ? differenceInDays(endDate, startDate) : 0;
-  const totalPrice = selectedProcedure ? selectedProcedure.price * sessionsCount : 0;
+  // Calculate consultation sessions and total cost
+  const sessionsCount = appointmentDate && followUpDate ? differenceInDays(followUpDate, appointmentDate) : 0;
+  const totalPrice = selectedProcedure ? selectedProcedure.price * Math.max(1, sessionsCount) : 0;
 
   // Handle form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -185,7 +183,7 @@ export default function AppointmentBooking() {
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
             <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
-            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
+            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-primary/30 blur-3xl" />
           </div>
         </section>
 

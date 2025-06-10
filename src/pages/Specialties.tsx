@@ -140,7 +140,7 @@ export default function Specialties() {
           {/* Decorative elements */}
           <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
             <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
-            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-sea-light blur-3xl" />
+            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-primary/30 blur-3xl" />
           </div>
         </section>
 

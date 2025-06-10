@@ -35,7 +35,7 @@ export default function Medicolegal() {
               <div>
                 <h2 className="text-3xl font-bold mb-6">Expert Medicolegal Assessments</h2>
                 <p className="text-muted-foreground mb-4">
-                  Dr. Ales Aliashkevich provides comprehensive medicolegal assessments for brain, spine, and nerve injuries. With extensive experience in neurosurgery and specialized training in impairment assessment, he delivers accurate and detailed reports for legal and insurance purposes.
+                  Dr Ales Aliashkevich provides comprehensive medicolegal assessments for brain, spine, and nerve injuries. With extensive experience in neurosurgery and specialized training in impairment assessment, he delivers accurate and detailed reports for legal and insurance purposes.
                 </p>
                 <p className="text-muted-foreground mb-6">
                   Our medicolegal services are designed to provide objective, evidence-based assessments that help resolve complex cases involving neurological and spinal injuries.
@@ -129,7 +129,7 @@ export default function Medicolegal() {
             <div className="text-center mb-12">
               <h2 className="text-3xl font-bold mb-4">{t.medicolegal?.independentReports?.title || 'Independent Examinations and Reports'}</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                {t.medicolegal?.independentReports?.description1 || 'Dr. Ales Aliashkevich specialises in brain, spine and nerve injuries and has more than 17 years of experience in the provision of medicolegal services.'}
+                {t.medicolegal?.independentReports?.description1 || 'Dr Ales Aliashkevich specialises in brain, spine and nerve injuries and has more than 17 years of experience in the provision of medicolegal services.'}
               </p>
             </div>
 
@@ -354,7 +354,7 @@ export default function Medicolegal() {
                   {t.medicolegal?.flexibleArrangements?.title || 'Flexible Arrangements'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.flexibleArrangements?.description1 || 'Dr. Ales Aliashkevich can assist in meeting your requirements timely and in a cost-effective manner. Our fees are based on the volume of the provided materials, the complexity of the injuries and urgency of the request.'}
+                  {t.medicolegal?.flexibleArrangements?.description1 || 'Dr Ales Aliashkevich can assist in meeting your requirements timely and in a cost-effective manner. Our fees are based on the volume of the provided materials, the complexity of the injuries and urgency of the request.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
                   {t.medicolegal?.flexibleArrangements?.description2 || 'Our network of locations and flexible timetabling allow us to arrange even weekend appointments for the most urgent cases and to respond to short-notice deadlines.'}
@@ -433,7 +433,7 @@ export default function Medicolegal() {
                   {t.medicolegal?.assessmentProcess?.afterAppointment?.description1 || 'Medicolegal reports provide significantly more detail than usual specialist letters. They are legal documents that can be used as evidence in courts. In complex cases, reports can be 30-50 pages long.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.assessmentProcess?.afterAppointment?.description2 || 'After the report is finalized, it will be sent directly to the requesting party. As a general rule, Dr. Aliashkevich doesn\'t mind for his reports to be forwarded to the claimants or their general practitioners if they help with future treatment planning.'}
+                  {t.medicolegal?.assessmentProcess?.afterAppointment?.description2 || 'After the report is finalized, it will be sent directly to the requesting party. As a general rule, Dr Aliashkevich doesn\'t mind for his reports to be forwarded to the claimants or their general practitioners if they help with future treatment planning.'}
                 </p>
                 <SafeImage
                   src="/images/treatment-discussion-neurosurgery-report-spine-brain-insurance-claim-medicolegal.jpg"

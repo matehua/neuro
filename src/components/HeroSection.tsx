@@ -42,7 +42,7 @@ export default function HeroSection() {
       aria-labelledby={headingId}
     >
       {/* Background image with parallax */}
-      <div className="absolute inset-0 overflow-hidden opacity-10">
+      <div className="absolute inset-0 overflow-hidden opacity-50">
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
@@ -53,7 +53,7 @@ export default function HeroSection() {
               : `center ${50 + scrollY * 0.05}%`
           }}
           role="img"
-          aria-label="Dr. Ales Aliashkevich - Neurosurgeon specializing in spine health and body strength rehabilitation"
+          aria-label="Dr Ales Aliashkevich - Neurosurgeon specialising in spine health and body strength rehabilitation"
         />
       </div>
 
@@ -92,7 +92,7 @@ export default function HeroSection() {
                 : "text-4xl md:text-5xl lg:text-6xl mb-6"
             )}
           >
-            Dr. Ales Aliashkevich
+            Neurosurgical Expertise and Innovative Technology for Superior Brain and Spine Surgery Results
           </h1>
           <p className={cn(
             "text-muted-foreground max-w-2xl mx-auto mb-mobile-xl",

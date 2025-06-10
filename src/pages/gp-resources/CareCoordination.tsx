@@ -89,7 +89,7 @@ export default function CareCoordination() {
                       <div className="p-4 bg-muted rounded-md">
                         <h4 className="font-semibold">Core Neurosurgical Team</h4>
                         <ul className="list-disc pl-6 mt-2">
-                          <li><strong>Neurosurgeon:</strong> Dr. Ales Aliashkevich provides surgical expertise and overall management of neurosurgical conditions</li>
+                          <li><strong>Neurosurgeon:</strong> Dr Ales Aliashkevich provides surgical expertise and overall management of neurosurgical conditions</li>
                           <li><strong>Neurosurgical Nurse Coordinator:</strong> Facilitates patient care, education, and communication between team members</li>
                           <li><strong>Anaesthesiologists:</strong> Specialised in neuroanaesthesia for complex brain and spine procedures</li>
                           <li><strong>Neuroradiologists:</strong> Provide expert interpretation of neuroimaging and interventional procedures</li>

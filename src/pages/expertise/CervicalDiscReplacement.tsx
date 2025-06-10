@@ -36,7 +36,7 @@ export default function CervicalDiscReplacement() {
                 </p>
 
                 <p className="text-muted-foreground mb-6">
-                  Dr. Ales Aliashkevich is a strong advocate for motion-preserving spinal surgery. He has been using cervical disc replacement in hundreds of patients with chronic neck pain, radiculopathy and myelopathy since 2006, achieving excellent results. Over the years, he has gained extensive experience in single and multilevel arthroplasty and hybrid procedures.
+                  Dr Ales Aliashkevich is a strong advocate for motion-preserving spinal surgery. He has been using cervical disc replacement in hundreds of patients with chronic neck pain, radiculopathy and myelopathy since 2006, achieving excellent results. Over the years, he has gained extensive experience in single and multilevel arthroplasty and hybrid procedures.
                 </p>
 
                 <h2 className="text-2xl font-bold mb-6">History of Cervical Disc Replacement</h2>
@@ -244,7 +244,7 @@ export default function CervicalDiscReplacement() {
                 </div>
 
                 <p className="text-muted-foreground mb-8">
-                  As a general rule, Dr. Aliashkevich would recommend considering cervical disc replacement as the preferred choice over fusion. Only if it is not feasible, e.g., in multi-level pathology, consideration may be given to a hybrid procedure where disc replacement in one level is combined with fusion in another.
+                  As a general rule, Dr Aliashkevich would recommend considering cervical disc replacement as the preferred choice over fusion. Only if it is not feasible, e.g., in multi-level pathology, consideration may be given to a hybrid procedure where disc replacement in one level is combined with fusion in another.
                 </p>
 
                 <h2 className="text-2xl font-bold mb-6">Long-Term Outcomes and Research</h2>
@@ -273,9 +273,9 @@ export default function CervicalDiscReplacement() {
                   />
                 </div>
 
-                <h2 className="text-2xl font-bold mb-6">Why Choose Dr. Aliashkevich for Cervical Disc Replacement?</h2>
+                <h2 className="text-2xl font-bold mb-6">Why Choose Dr Aliashkevich for Cervical Disc Replacement?</h2>
                 <p className="text-muted-foreground mb-4">
-                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> is highly experienced in cervical disc replacement surgery and offers:
+                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> is highly experienced in cervical disc replacement surgery and offers:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-8 space-y-2">
                   <li>Expertise in the latest artificial disc technologies</li>
@@ -319,7 +319,7 @@ export default function CervicalDiscReplacement() {
                     </ul>
 
                     <p className="text-muted-foreground mb-4">
-                      <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> will conduct a thorough evaluation to determine if you're a good candidate for this procedure.
+                      <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> will conduct a thorough evaluation to determine if you're a good candidate for this procedure.
                     </p>
                     <Button asChild className="w-full">
                       <Link to="/appointments">Schedule a Consultation</Link>
@@ -399,7 +399,7 @@ export default function CervicalDiscReplacement() {
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-6">Ready to Discuss Your Treatment Options?</h2>
               <p className="text-muted-foreground mb-8">
-                Contact us today to schedule a consultation with <a href="http://www.neurosurgeon.au" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Ales Aliashkevich</a> to learn more about cervical disc replacement and whether it might be right for you.
+                Contact us today to schedule a consultation with <a href="http://www.neurosurgeon.au" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Ales Aliashkevich</a> to learn more about cervical disc replacement and whether it might be right for you.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">

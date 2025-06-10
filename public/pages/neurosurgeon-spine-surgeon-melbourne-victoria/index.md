@@ -94,7 +94,7 @@ The ultimate goal of any neurosurgeon and spine surgeon is to improve the patien
   
 The evolution of surgery and anaesthesiology allowed for achieving this goal and successfully managing previously untreatable conditions. However, there is still a lot of space for improvement, in particular in the field of brain and spine surgery. For example, the long-term outcomes after operations on most invasive brain tumors or severe degenerative spinal conditions still leave much to be desired. Studies investigating patient satisfaction after spine surgeries show that the rate of negative outcomes could be as high as 50%. Improvement of surgery results is not possible without further development of less invasive but more efficient operative techniques.  
   
-Minimally invasive procedures represent a logical evolution of surgical philosophy focusing on patient safety and satisfaction. The surgical philosophy of Dr. Aliashkevich is based on three main principles:  
+Minimally invasive procedures represent a logical evolution of surgical philosophy focusing on patient safety and satisfaction. The surgical philosophy of Dr Aliashkevich is based on three main principles:
 – accurate identification of the problem;  
 – safe access to the pathological area with minimal injury to the surrounding tissues;  
 – effective but delicate repair of complex structures even if they are located deeply in the body.  

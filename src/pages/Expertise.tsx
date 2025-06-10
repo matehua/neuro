@@ -24,7 +24,7 @@ export default function Expertise() {
     structuredData: {
       "@context": "https://schema.org",
       "@type": "MedicalWebPage",
-      "name": "Neurosurgery Expertise - Dr. Ales Aliashkevich",
+      "name": "Neurosurgery Expertise - Dr Ales Aliashkevich",
       "description": "Comprehensive neurosurgical expertise including brain surgery, spine surgery, minimally invasive procedures, and advanced surgical techniques.",
       "medicalAudience": ["Patient", "Physician"],
       "about": [
@@ -75,7 +75,7 @@ export default function Expertise() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Dr. Ales Aliashkevich
+                    Dr Ales Aliashkevich
                   </a> specialises in minimally invasive neurosurgery and spine surgery, utilising the latest technologies and techniques to provide the best possible outcomes for his patients. He is a strong advocate for motion-preserving spinal surgery and has been using cervical and lumbar disc replacement as an alternative to spinal fusion since 2012.
                 </p>
                 <p className={cn(
@@ -91,7 +91,7 @@ export default function Expertise() {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Dr. Ales Aliashkevich
+                    Dr Ales Aliashkevich
                   </a> specialises in minimally invasive neurosurgery and spine surgery, utilising the latest technologies and techniques to provide the best possible outcomes for his patients. He is a strong advocate for motion-preserving spinal surgery and has been using cervical and lumbar disc replacement as an alternative to spinal fusion since 2012.
                 </p>
                 <p className="mb-4">
@@ -262,7 +262,7 @@ export default function Expertise() {
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl font-bold mb-6">Our Surgical Approach</h2>
               <p className="text-muted-foreground">
-                <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich's</a> surgical philosophy is based on three main principles that guide all procedures
+                <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich's</a> surgical philosophy is based on three main principles that guide all procedures
               </p>
             </div>
 

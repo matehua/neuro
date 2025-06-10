@@ -224,7 +224,7 @@ export default function RoboticSpineSurgery() {
 
                 <h2 className="text-2xl font-bold mb-6">Conditions Treated with Robotic Spine Surgery</h2>
                 <p className="text-muted-foreground mb-4">
-                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> utilizes robotic spine surgery to treat a variety of conditions, including:
+                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> utilizes robotic spine surgery to treat a variety of conditions, including:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div className="card p-6 rounded-lg shadow-md bg-card">
@@ -270,9 +270,9 @@ export default function RoboticSpineSurgery() {
                   </div>
                 </div>
 
-                <h2 className="text-2xl font-bold mb-6">Why Choose Dr. Aliashkevich for Robotic Spine Surgery?</h2>
+                <h2 className="text-2xl font-bold mb-6">Why Choose Dr Aliashkevich for Robotic Spine Surgery?</h2>
                 <p className="text-muted-foreground mb-4">
-                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> is at the forefront of robotic spine surgery and offers:
+                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> is at the forefront of robotic spine surgery and offers:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-8 space-y-2">
                   <li>Specialised training and expertise in robotic spine surgery systems</li>
@@ -318,7 +318,7 @@ export default function RoboticSpineSurgery() {
                       <li>Vertebral compression fractures</li>
                     </ul>
                     <p className="text-muted-foreground mb-4">
-                      <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> will evaluate your specific condition to determine if robotic spine surgery is appropriate for your case.
+                      <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> will evaluate your specific condition to determine if robotic spine surgery is appropriate for your case.
                     </p>
                     <Button asChild className="w-full">
                       <Link to="/appointments">Schedule a Consultation</Link>
@@ -413,7 +413,7 @@ export default function RoboticSpineSurgery() {
             <div className="text-center max-w-3xl mx-auto">
               <h2 className="text-3xl font-bold mb-6">Ready to Discuss Your Treatment Options?</h2>
               <p className="text-muted-foreground mb-8">
-                Contact us today to schedule a consultation with <a href="http://www.neurosurgeon.au" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Ales Aliashkevich</a> to learn more about how robotic spine surgery might benefit your specific condition.
+                Contact us today to schedule a consultation with <a href="http://www.neurosurgeon.au" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Ales Aliashkevich</a> to learn more about how robotic spine surgery might benefit your specific condition.
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">

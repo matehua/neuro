@@ -39,7 +39,7 @@ export default function LumbarDiscReplacement() {
                 </p>
 
                 <p className="text-muted-foreground mb-6">
-                  Dr. Ales Aliashkevich is a strong advocate for motion-preserving spinal surgery. He has been using lumbar disc replacement in patients with chronic back pain, radiculopathy, and degenerative disc disease since 2006, achieving excellent results. Over the years, he has gained extensive experience in single and multi-level arthroplasty and hybrid procedures.
+                  Dr Ales Aliashkevich is a strong advocate for motion-preserving spinal surgery. He has been using lumbar disc replacement in patients with chronic back pain, radiculopathy, and degenerative disc disease since 2006, achieving excellent results. Over the years, he has gained extensive experience in single and multi-level arthroplasty and hybrid procedures.
                 </p>
 
                 <h2 className="text-2xl font-bold mb-6">History of Lumbar Disc Replacement</h2>
@@ -247,7 +247,7 @@ export default function LumbarDiscReplacement() {
                 </div>
 
                 <p className="text-muted-foreground mb-8">
-                  As a general rule, Dr. Aliashkevich would recommend considering lumbar disc replacement as the preferred choice over fusion when appropriate. Only if it is not feasible, e.g., in multi-level pathology or severe facet joint disease, consideration may be given to fusion or a hybrid procedure.
+                  As a general rule, Dr Aliashkevich would recommend considering lumbar disc replacement as the preferred choice over fusion when appropriate. Only if it is not feasible, e.g., in multi-level pathology or severe facet joint disease, consideration may be given to fusion or a hybrid procedure.
                 </p>
 
                 <h2 className="text-2xl font-bold mb-6">Long-Term Outcomes and Research</h2>
@@ -276,9 +276,9 @@ export default function LumbarDiscReplacement() {
                   />
                 </div>
 
-                <h2 className="text-2xl font-bold mb-6">Why Choose Dr. Aliashkevich for Lumbar Disc Replacement?</h2>
+                <h2 className="text-2xl font-bold mb-6">Why Choose Dr Aliashkevich for Lumbar Disc Replacement?</h2>
                 <p className="text-muted-foreground mb-4">
-                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> is highly experienced in lumbar disc replacement surgery and offers:
+                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> is highly experienced in lumbar disc replacement surgery and offers:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-8 space-y-2">
                   <li>Expertise in the latest artificial disc technologies</li>

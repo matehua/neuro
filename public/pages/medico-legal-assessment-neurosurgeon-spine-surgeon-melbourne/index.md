@@ -54,7 +54,7 @@ AMA ACCREDITATION
 
 ## Medicolegal Impairment Assessment
 
-Dr Aliashkevich is certified by the Australian Medical Association (AMA) Victoria and the Personal Injury Education Foundation (PIEF) in Impairment Assessment using the American Medical Association Guides to the Evaluation of Permanent Impairment 4th Edition and other prescribed methods, as applied to relevant Victorian legislation. He completed courses to assess impairments for TAC, WorkCover and the purposes of Part VBA of the Wrongs Act 1958 (personal injury).   
+Dr Aliashkevich is certified by the Australian Medical Association (AMA) Victoria and the Personal Injury Education Foundation (PIEF) in Impairment Assessment using the American Medical Association Guides to the Evaluation of Permanent Impairment 4th Edition and other prescribed methods, as applied to relevant Victorian legislation. He completed courses to assess impairments for TAC, WorkCover and the purposes of Part VBA of the Wrongs Act 1958 (personal injury).
   
 He is accredited for assessing the spine using both the methodology from Chapter 3 of the Guides and modification to those criteria by the Spinal Impairment Guides Modification Document (SIGMD). He can perform an expert apportionment to disentangle what impairment may or may not be related to a compensable event.  
 

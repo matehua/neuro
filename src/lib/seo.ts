@@ -4,9 +4,9 @@ import { SEOData } from '@/hooks/useSEO';
 export const SEO_CONFIG = {
   siteName: 'miNEURO',
   siteUrl: 'https://mineuro.com.au',
-  defaultTitle: 'Dr. Ales Aliashkevich | Neurosurgeon & Spine Surgeon Melbourne Victoria',
-  defaultDescription: 'Dr. Ales Aliashkevich is a minimally invasive neurosurgeon and spine surgeon in Melbourne, Victoria, specializing in advanced brain and spine surgery techniques.',
-  defaultKeywords: 'neurosurgeon, spine surgeon, brain surgery, spine surgery, Melbourne, Victoria, minimally invasive, Dr. Ales Aliashkevich, miNEURO',
+  defaultTitle: 'Dr Ales Aliashkevich | Neurosurgeon & Spine Surgeon Melbourne Victoria',
+  defaultDescription: 'Dr Ales Aliashkevich is a minimally invasive neurosurgeon and spine surgeon in Melbourne, Victoria, specializing in advanced brain and spine surgery techniques.',
+  defaultKeywords: 'neurosurgeon, spine surgeon, brain surgery, spine surgery, Melbourne, Victoria, minimally invasive, Dr Ales Aliashkevich, miNEURO',
   defaultImage: '/og-image.png',
   twitterHandle: '@mineuro',
   author: 'miNEURO Brain and Spine Surgery',
@@ -29,7 +29,7 @@ export const PRACTICE_INFO = {
     addressCountry: 'Australia'
   },
   doctor: {
-    name: 'Dr. Ales Aliashkevich',
+    name: 'Dr Ales Aliashkevich',
     specialty: [
       'Neurosurgery',
       'Spine Surgery',
@@ -63,20 +63,20 @@ export const generatePageSEO = (
   // Page-specific SEO configurations
   const pageConfigs: Record<string, Partial<SEOData>> = {
     home: {
-      title: 'Dr. Ales Aliashkevich | Leading Neurosurgeon & Spine Surgeon Melbourne',
-      description: 'Expert neurosurgeon Dr. Ales Aliashkevich offers advanced brain and spine surgery in Melbourne. Specializing in minimally invasive procedures with cutting-edge technology.',
-      keywords: 'neurosurgeon Melbourne, spine surgeon Victoria, brain surgery, minimally invasive spine surgery, Dr. Ales Aliashkevich, miNEURO',
+      title: 'Dr Ales Aliashkevich | Leading Neurosurgeon & Spine Surgeon Melbourne',
+      description: 'Expert neurosurgeon Dr Ales Aliashkevich offers advanced brain and spine surgery in Melbourne. Specializing in minimally invasive procedures with cutting-edge technology.',
+      keywords: 'neurosurgeon Melbourne, spine surgeon Victoria, brain surgery, minimally invasive spine surgery, Dr Ales Aliashkevich, miNEURO',
     },
     
     appointments: {
-      title: 'Book Appointment | Dr. Ales Aliashkevich Neurosurgeon Melbourne',
-      description: 'Schedule your consultation with Dr. Ales Aliashkevich, leading neurosurgeon in Melbourne. Expert brain and spine surgery consultations available.',
+      title: 'Book Appointment | Dr Ales Aliashkevich Neurosurgeon Melbourne',
+      description: 'Schedule your consultation with Dr Ales Aliashkevich, leading neurosurgeon in Melbourne. Expert brain and spine surgery consultations available.',
       keywords: 'book neurosurgeon appointment Melbourne, spine surgeon consultation, brain surgery appointment',
     },
     
     expertise: {
       title: 'Neurosurgery Expertise | Advanced Brain & Spine Surgery Melbourne',
-      description: 'Discover Dr. Aliashkevich\'s expertise in neurosurgery, spine surgery, and minimally invasive procedures. Advanced surgical techniques for optimal patient outcomes.',
+      description: 'Discover Dr Aliashkevich\'s expertise in neurosurgery, spine surgery, and minimally invasive procedures. Advanced surgical techniques for optimal patient outcomes.',
       keywords: 'neurosurgery expertise, spine surgery techniques, minimally invasive neurosurgery, robotic spine surgery',
     },
     
@@ -94,7 +94,7 @@ export const generatePageSEO = (
     
     medicolegal: {
       title: 'Medico-Legal Reports | Expert Neurosurgical Assessments',
-      description: 'Professional medico-legal reports and expert assessments from Dr. Ales Aliashkevich. Comprehensive neurological and spinal injury evaluations.',
+      description: 'Professional medico-legal reports and expert assessments from Dr Ales Aliashkevich. Comprehensive neurological and spinal injury evaluations.',
       keywords: 'medico-legal reports, neurosurgical assessment, spinal injury evaluation, expert medical opinion',
     },
     
@@ -105,14 +105,14 @@ export const generatePageSEO = (
     },
     
     contact: {
-      title: 'Contact Dr. Ales Aliashkevich | Neurosurgeon Melbourne',
-      description: 'Contact Dr. Ales Aliashkevich\'s neurosurgery practice in Melbourne. Get in touch for consultations, appointments, and inquiries.',
+      title: 'Contact Dr Ales Aliashkevich | Neurosurgeon Melbourne',
+      description: 'Contact Dr Ales Aliashkevich\'s neurosurgery practice in Melbourne. Get in touch for consultations, appointments, and inquiries.',
       keywords: 'contact neurosurgeon Melbourne, spine surgeon contact, neurosurgery clinic contact',
     },
-    
+
     faq: {
       title: 'Frequently Asked Questions | Neurosurgery & Spine Surgery',
-      description: 'Common questions about neurosurgery, spine surgery, and treatments answered by Dr. Ales Aliashkevich\'s practice.',
+      description: 'Common questions about neurosurgery, spine surgery, and treatments answered by Dr Ales Aliashkevich\'s practice.',
       keywords: 'neurosurgery FAQ, spine surgery questions, brain surgery information',
     }
   };
@@ -137,8 +137,8 @@ export const generateLocationSEO = (
   
   return {
     ...baseLocationData,
-    title: `${locationName} Clinic | Dr. Ales Aliashkevich Neurosurgeon`,
-    description: `Visit Dr. Ales Aliashkevich's neurosurgery clinic in ${locationName}. Expert brain and spine surgery services with advanced facilities.`,
+    title: `${locationName} Clinic | Dr Ales Aliashkevich Neurosurgeon`,
+    description: `Visit Dr Ales Aliashkevich's neurosurgery clinic in ${locationName}. Expert brain and spine surgery services with advanced facilities.`,
     keywords: `neurosurgeon ${locationName}, spine surgeon ${locationName}, brain surgery clinic ${locationName}`,
     ...customData,
   };
@@ -155,8 +155,8 @@ export const generateProcedureSEO = (
   
   return {
     ...baseProcedureData,
-    title: `${procedureName} | Dr. Ales Aliashkevich Melbourne`,
-    description: `Expert ${procedureName} performed by Dr. Ales Aliashkevich in Melbourne. Advanced surgical techniques for optimal patient outcomes.`,
+    title: `${procedureName} | Dr Ales Aliashkevich Melbourne`,
+    description: `Expert ${procedureName} performed by Dr Ales Aliashkevich in Melbourne. Advanced surgical techniques for optimal patient outcomes.`,
     keywords: `${procedureName} Melbourne, ${procedureName} surgeon, minimally invasive ${procedureName}`,
     ...customData,
   };
