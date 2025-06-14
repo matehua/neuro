@@ -1732,5 +1732,108 @@ export const zh = {
       }
     },
     contactUs: "联系我们"
+  },
+
+  dandenongLocation: {
+    expertNeurosurgery: "丹德农专业神经外科咨询",
+    subtitle: "帮助您无痛生活",
+    introduction1: "您是否正在为颈部或背部问题而苦恼？您是否需要神经外科或脊柱疾病的专业咨询和治疗？阿利什凯维奇医生，一位神经外科医生和脊柱外科医生，自2012年以来一直为丹德农、墨尔本东部郊区和莫宁顿半岛地区的患者提供护理。他在墨尔本主要医院提供咨询、手术和操作，专长于各种神经外科和脊柱疾病的先进微创治疗。",
+    introduction2: "阿利什凯维奇医生专门治疗神经根病、脊髓病、脑部、脊柱和神经肿瘤或椎间盘问题。这个地点为墨尔本东南部地区的患者提供便捷的专业神经外科护理，无需前往墨尔本中心寻求专科护理。",
+    nearbyHospitals: {
+      title: "附近医院",
+      subtitle: "阿利什凯维奇医生在丹德农附近的这些医院进行手术",
+      description: "除了在丹德农地点进行咨询外，阿利什凯维奇医生还在该地区的几家医院进行手术。这些设施配备了最先进的神经外科和脊柱手术技术。",
+      peninsulaPrivateHospital: {
+        title: "半岛私立医院",
+        address: "525 McClelland Drive, Frankston VIC 3199",
+        description: "半岛私立医院是一家现代化的私立医院，提供全面的神经外科和脊柱手术服务。",
+        features: [
+          "最先进的手术室",
+          "专业神经外科设备",
+          "经验丰富的医疗团队",
+          "全面的康复服务"
+        ]
+      },
+      monashMedicalCentre: {
+        title: "莫纳什医疗中心",
+        address: "246 Clayton Road, Clayton VIC 3168",
+        description: "莫纳什医疗中心是维多利亚州领先的公立医院之一，提供复杂的神经外科手术。",
+        features: [
+          "三级创伤中心",
+          "先进的神经外科科室",
+          "研究和教学设施",
+          "24/7急诊服务"
+        ]
+      }
+    },
+    nearbyAmenities: {
+      title: "附近设施",
+      subtitle: "为访问我们丹德农地点的患者提供便捷的本地设施",
+      description: "我们的丹德农咨询地点位于丹德农神经病学和专科医生集团，周围有各种便捷的设施。无论您需要在预约前喝杯咖啡，预约后找个地方吃午餐，还是在您所在的区域办理事务，您都能在附近找到所需的一切。",
+      cafesRestaurants: {
+        title: "咖啡馆和餐厅",
+        mcdonalds: "麦当劳 - 位于David Street的快餐选择，距离诊所仅几分钟路程。",
+        subwayDandenong: "Subway - 位于丹德农购物中心的健康快餐选择。",
+        dandenongMarket: "丹德农市场 - 一个充满活力的市场，提供各种新鲜食品和国际美食选择。"
+      },
+      shopping: {
+        title: "购物",
+        dandenongPlaza: "丹德农广场 - 一个大型购物中心，拥有各种零售店、餐厅和服务。",
+        dandenongMarket: "丹德农市场 - 著名的多元文化市场，提供新鲜农产品、肉类、海鲜和国际食品。",
+        localShops: "当地商店 - David Street沿线有各种专业商店和服务。"
+      },
+      transport: {
+        title: "交通",
+        dandenongStation: "丹德农火车站 - 主要的交通枢纽，连接墨尔本市中心和东南郊区。",
+        busServices: "公交服务 - 多条公交线路服务该地区，提供便捷的本地交通。",
+        parking: "停车 - 诊所附近有充足的街边停车位。"
+      }
+    },
+    contactInfo: {
+      title: "联系信息",
+      address: "丹德农神经病学和专科医生集团\n136 David Street\nDANDENONG VIC 3175",
+      phone: "电话：03 9008 4200",
+      email: "电子邮件：info@mineuro.com.au",
+      bookingInfo: "所有预约都通过我们在萨里山的主办公室预订。请致电我们，我们将为您协调最方便和最容易到达的预约。"
+    }
+  },
+
+  hospitals: {
+    title: "我们的医院",
+    subtitle: "阿利什凯维奇医生在墨尔本的多家医院进行手术",
+    description: "阿利什凯维奇医生在墨尔本的多家医院进行手术，包括私立和公立设施。这些医院配备了最先进的技术，为患者提供最高水平的护理。",
+    warringalPrivate: {
+      title: "沃林加尔私立医院",
+      address: "216 Burgundy Street, Heidelberg VIC 3084",
+      description: "沃林加尔私立医院是一家现代化的私立医院，提供全面的神经外科和脊柱手术服务。",
+      features: [
+        "最先进的手术室",
+        "专业神经外科设备",
+        "经验丰富的医疗团队",
+        "全面的康复服务"
+      ]
+    },
+    peninsulaPrivate: {
+      title: "半岛私立医院",
+      address: "525 McClelland Drive, Frankston VIC 3199",
+      description: "半岛私立医院为莫宁顿半岛地区提供优质的神经外科护理。",
+      features: [
+        "现代化的神经外科科室",
+        "先进的影像设备",
+        "专业的康复服务",
+        "便捷的地理位置"
+      ]
+    },
+    monashMedical: {
+      title: "莫纳什医疗中心",
+      address: "246 Clayton Road, Clayton VIC 3168",
+      description: "莫纳什医疗中心是维多利亚州领先的公立医院之一，提供复杂的神经外科手术。",
+      features: [
+        "三级创伤中心",
+        "先进的神经外科科室",
+        "研究和教学设施",
+        "24/7急诊服务"
+      ]
+    }
   }
 };
