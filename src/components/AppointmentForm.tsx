@@ -161,7 +161,7 @@ export default function AppointmentForm() {
         {/* Number of Patients */}
         <div className="space-y-2">
           <label htmlFor="patients" className="block text-sm font-medium">
-            {t.appointmentForm.numberOfPatients || "Number of Patients"}
+            {t.appointmentForm.numberOfPatients ?? "Number of Patients"}
           </label>
           <Select defaultValue="1">
             <SelectTrigger id="patients" className="w-full">
