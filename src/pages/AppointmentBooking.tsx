@@ -87,6 +87,13 @@ export default function AppointmentBooking() {
   const [followUpDate, setFollowUpDate] = useState<Date | undefined>(addDays(new Date(), 7));
   const [selectedProcedure, setSelectedProcedure] = useState<ProcedureProps | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
+
+  // Additional state for appointment booking form
+  const [startDate, setStartDate] = useState<Date | undefined>(new Date());
+  const [endDate, setEndDate] = useState<Date | undefined>(addDays(new Date(), 1));
+  const [adults, setAdults] = useState<string>("1");
+  const [children, setChildren] = useState<string>("0");
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -112,7 +119,7 @@ export default function AppointmentBooking() {
 
   // Calculate consultation sessions and total cost
   const sessionsCount = appointmentDate && followUpDate ? differenceInDays(followUpDate, appointmentDate) : 0;
-  const totalPrice = selectedProcedure ? selectedProcedure.price * Math.max(1, sessionsCount) : 0;
+  const totalPrice = selectedProcedure ? (selectedProcedure.consultationFee || selectedProcedure.price || 0) * Math.max(1, sessionsCount) : 0;
 
   // Handle form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

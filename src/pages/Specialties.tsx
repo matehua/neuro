@@ -19,66 +19,90 @@ const allProcedures: ProcedureProps[] = [
     id: "cervical-disc-replacement",
     name: "Cervical Disc Replacement",
     description: "A motion-preserving surgery to relieve neck pain and restore normal activity. Preserves natural neck mobility and reduces adjacent segment degeneration.",
-    price: 180,
-    recoveryTime: 14,
+    consultationFee: 180,
+    patientType: "Adults with cervical disc disease",
+    recoveryTime: "14 days",
     complexity: 7,
     image: "/images/cervical-disc-implants-examples-arthroplasty-disc-replacement-cervical-lumbar-spine-neurosurgery.jpg",
     location: "Spine",
+    benefits: ["Minimally Invasive", "Motion Preserving", "Quick Recovery", "Advanced Technology", "High Success Rate", "Outpatient"],
+    // Backward compatibility
+    price: 180,
     features: ["Minimally Invasive", "Motion Preserving", "Quick Recovery", "Advanced Technology", "High Success Rate", "Outpatient"]
   },
   {
     id: "lumbar-disc-replacement",
     name: "Lumbar Disc Replacement",
     description: "A motion-preserving surgery to relieve back pain and restore quality of life. Alternative to fusion that maintains natural spine movement.",
-    price: 250,
-    recoveryTime: 28,
+    consultationFee: 250,
+    patientType: "Adults with lumbar disc disease",
+    recoveryTime: "28 days",
     complexity: 8,
     image: "/images/lumbar-disc-implants-examples-arthroplasty-replacement-cervical-lumbar-spine-advanced-technology-robotic-spine.jpg",
     location: "Spine",
+    benefits: ["Minimally Invasive", "Motion Preserving", "Advanced Technology", "High Success Rate", "Short Hospital Stay"],
+    // Backward compatibility
+    price: 250,
     features: ["Minimally Invasive", "Motion Preserving", "Advanced Technology", "High Success Rate", "Short Hospital Stay"]
   },
   {
     id: "image-guided-surgery",
     name: "Image-Guided Brain Surgery",
     description: "Using advanced navigation technology for improved surgical precision and safety when treating brain tumours and other conditions.",
-    price: 150,
-    recoveryTime: 21,
+    consultationFee: 150,
+    patientType: "Patients with brain tumours or complex brain conditions",
+    recoveryTime: "21 days",
     complexity: 9,
     image: "/images/brain-tumour-navigated-image-guided-surgery-miNEURO-Aliashekvich-robotic.jpg",
     location: "Brain",
+    benefits: ["Brain Surgery", "Precision Navigation", "Advanced Technology", "Minimally Invasive", "Complex Cases"],
+    // Backward compatibility
+    price: 150,
     features: ["Brain Surgery", "Precision Navigation", "Advanced Technology", "Minimally Invasive", "Complex Cases"]
   },
   {
     id: "robotic-spine-surgery",
     name: "Robotic Spine Surgery",
     description: "Robotic-assisted spine surgery offers unprecedented precision and control, making complex spine procedures safer and more effective.",
-    price: 350,
-    recoveryTime: 35,
+    consultationFee: 350,
+    patientType: "Patients requiring complex spine procedures",
+    recoveryTime: "35 days",
     complexity: 9,
     image: "/images/robotic-spine-surgery-lumbar-fusion-minimally-invasive-Mazor-Stryker-NuVasive-Renaissance-navigation-neurosurgery.jpg",
     location: "Spine",
+    benefits: ["Spine Surgery", "Robotic Assistance", "High Precision", "Minimally Invasive", "3D Planning", "Real-time Guidance"],
+    // Backward compatibility
+    price: 350,
     features: ["Spine Surgery", "Robotic Assistance", "High Precision", "Minimally Invasive", "3D Planning", "Real-time Guidance"]
   },
   {
     id: "brain-tumour-removal",
     name: "Brain Tumour Removal",
     description: "Safe removal of brain tumours using minimally-invasive techniques and image guidance to maximise preservation of healthy tissue.",
-    price: 120,
-    recoveryTime: 30,
+    consultationFee: 120,
+    patientType: "Patients with brain tumours",
+    recoveryTime: "30 days",
     complexity: 10,
     image: "/images/brain-tumour-image-guided-surgery-minimally-invasive-advanced-neurosurgery-aliashkevich-mineuro.jpg",
     location: "Brain",
+    benefits: ["Brain Surgery", "Tumour Removal", "Tissue Preservation", "Advanced Technology", "Precision Surgery"],
+    // Backward compatibility
+    price: 120,
     features: ["Brain Surgery", "Tumour Removal", "Tissue Preservation", "Advanced Technology", "Precision Surgery"]
   },
   {
     id: "peripheral-nerve-surgery",
     name: "Peripheral Nerve Surgery",
     description: "Minimally-invasive procedures to treat nerve pain, compression, and tumours affecting the peripheral nervous system.",
-    price: 160,
-    recoveryTime: 14,
+    consultationFee: 160,
+    patientType: "Patients with peripheral nerve conditions",
+    recoveryTime: "14 days",
     complexity: 6,
     image: "/images/nerve-spinal-cord-decompression-arthroplasty-disc-replacement-cervical-lumbar.jpg",
     location: "Nerve",
+    benefits: ["Nerve Decompression", "Tumour Removal", "Pain Relief", "Minimally Invasive", "Quick Recovery", "Outpatient"],
+    // Backward compatibility
+    price: 160,
     features: ["Nerve Decompression", "Tumour Removal", "Pain Relief", "Minimally Invasive", "Quick Recovery", "Outpatient"]
   },
 ];
@@ -102,7 +126,7 @@ export default function Specialties() {
     // Filter by complexity
     if (complexityFilter !== "all") {
       const complexity = parseInt(complexityFilter);
-      result = result.filter(proc => proc.complexity >= complexity);
+      result = result.filter(proc => proc.complexity && proc.complexity >= complexity);
     }
 
     // Filter by location
@@ -110,8 +134,13 @@ export default function Specialties() {
       result = result.filter(proc => proc.location === locationFilter);
     }
 
-    // Filter by recovery time range
-    result = result.filter(proc => proc.recoveryTime >= recoveryRange[0] && proc.recoveryTime <= recoveryRange[1]);
+    // Filter by recovery time range - convert string to number for comparison
+    result = result.filter(proc => {
+      const recoveryDays = typeof proc.recoveryTime === 'string'
+        ? parseInt(proc.recoveryTime.replace(/\D/g, '')) || 0
+        : proc.recoveryTime || 0;
+      return recoveryDays >= recoveryRange[0] && recoveryDays <= recoveryRange[1];
+    });
 
     setFilteredProcedures(result);
   }, [complexityFilter, locationFilter, recoveryRange]);
