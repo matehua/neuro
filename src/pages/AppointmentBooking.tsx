@@ -1,4 +1,3 @@
-
 import React, { useEffect, useState } from "react";
 import { format, addDays, differenceInDays } from "date-fns";
 import { Link } from "react-router-dom";
@@ -84,9 +83,10 @@ const proceduresData: ClinicData[] = [
 
 export default function AppointmentBooking() {
   const [appointmentDate, setAppointmentDate] = useState<Date | undefined>(new Date());
-  const [followUpDate, setFollowUpDate] = useState<Date | undefined>(addDays(new Date(), 7));
-  const [selectedProcedure, setSelectedProcedure] = useState<ProcedureProps | null>(null);
+  const [appointmentTime, setAppointmentTime] = useState<Date | undefined>(undefined);
+  const [selectedClinic, setSelectedClinic] = useState<ClinicData | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
+  const [numberOfPatients, setNumberOfPatients] = useState<string>("1");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
@@ -111,8 +111,8 @@ export default function AppointmentBooking() {
   }, []);
 
   // Calculate consultation sessions and total cost
-  const sessionsCount = appointmentDate && followUpDate ? differenceInDays(followUpDate, appointmentDate) : 0;
-  const totalPrice = selectedProcedure ? selectedProcedure.price * Math.max(1, sessionsCount) : 0;
+  const sessionsCount = appointmentDate && appointmentTime ? differenceInDays(appointmentTime, appointmentDate) : 0;
+  const totalPrice = selectedClinic ? selectedClinic.price * Math.max(1, sessionsCount) : 0;
 
   // Handle form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -137,11 +137,10 @@ export default function AppointmentBooking() {
     // Reset form after booking is confirmed
     setTimeout(() => {
       setCurrentStep(1);
-      setSelectedProcedure(null);
-      setStartDate(new Date());
-      setEndDate(addDays(new Date(), 7));
-      setAdults("2");
-      setChildren("0");
+      setSelectedClinic(null);
+      setAppointmentDate(new Date());
+      setAppointmentTime(undefined);
+      setNumberOfPatients("1");
       setFormData({
         firstName: "",
         lastName: "",
@@ -234,34 +233,34 @@ export default function AppointmentBooking() {
           {currentStep === 1 && (
             <div className="animate-fade-in [animation-delay:300ms]">
               <div className="max-w-4xl mx-auto">
-                {/* Date and Guests Selection */}
+                {/* Date & Patient Count Selection */}
                 <div className="glass-card p-6 mb-8">
                   <h2 className="text-xl font-semibold mb-4">Select Appointment Date and Time</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-                    {/* Check-in Date */}
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {/* Appointment Date */}
                     <div className="space-y-2">
-                      <label htmlFor="check-in" className="block text-sm font-medium">
+                      <label htmlFor="appointment-date" className="block text-sm font-medium">
                         Appointment Date
                       </label>
                       <Popover>
                         <PopoverTrigger asChild>
                           <Button
-                            id="check-in"
+                            id="appointment-date"
                             variant="outline"
                             className={cn(
                               "w-full justify-start text-left font-normal",
-                              !startDate && "text-muted-foreground"
+                              !appointmentDate && "text-muted-foreground"
                             )}
                           >
                             <CalendarIcon className="mr-2 h-4 w-4" />
-                            {startDate ? format(startDate, "PPP") : <span>Select date</span>}
+                            {appointmentDate ? format(appointmentDate, "PPP") : <span>Select date</span>}
                           </Button>
                         </PopoverTrigger>
                         <PopoverContent className="w-auto p-0" align="start">
                           <Calendar
                             mode="single"
-                            selected={startDate}
-                            onSelect={setStartDate}
+                            selected={appointmentDate}
+                            onSelect={setAppointmentDate}
                             initialFocus
                             disabled={(date) => date < new Date()}
                             className="pointer-events-auto"
@@ -269,71 +268,50 @@ export default function AppointmentBooking() {
                         </PopoverContent>
                       </Popover>
                     </div>
-
-                    {/* Check-out Date */}
+                    {/* Appointment Time */}
                     <div className="space-y-2">
-                      <label htmlFor="check-out" className="block text-sm font-medium">
+                      <label htmlFor="appointment-time" className="block text-sm font-medium">
                         Appointment Time
                       </label>
                       <Popover>
                         <PopoverTrigger asChild>
                           <Button
-                            id="check-out"
+                            id="appointment-time"
                             variant="outline"
                             className={cn(
                               "w-full justify-start text-left font-normal",
-                              !endDate && "text-muted-foreground"
+                              !appointmentTime && "text-muted-foreground"
                             )}
                           >
                             <CalendarIcon className="mr-2 h-4 w-4" />
-                            {endDate ? format(endDate, "PPP") : <span>Select date</span>}
+                            {appointmentTime ? format(appointmentTime, "PPP") : <span>Select time</span>}
                           </Button>
                         </PopoverTrigger>
                         <PopoverContent className="w-auto p-0" align="start">
                           <Calendar
                             mode="single"
-                            selected={endDate}
-                            onSelect={setEndDate}
+                            selected={appointmentTime}
+                            onSelect={setAppointmentTime}
                             initialFocus
-                            disabled={(date) => date < (startDate || new Date())}
+                            disabled={(date) => date < (appointmentDate || new Date())}
                             className="pointer-events-auto"
                           />
                         </PopoverContent>
                       </Popover>
                     </div>
-
-                    {/* Adults */}
+                    {/* Number of Patients */}
                     <div className="space-y-2">
-                      <label htmlFor="adults" className="block text-sm font-medium">
-                        Adults
+                      <label htmlFor="number-of-patients" className="block text-sm font-medium">
+                        Number of Patients
                       </label>
-                      <Select value={adults} onValueChange={setAdults}>
-                        <SelectTrigger id="adults" className="w-full">
+                      <Select value={numberOfPatients} onValueChange={setNumberOfPatients}>
+                        <SelectTrigger id="number-of-patients" className="w-full">
                           <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>
                           {[1, 2, 3, 4, 5, 6].map((num) => (
                             <SelectItem key={num} value={num.toString()}>
-                              {num} {num === 1 ? "Adult" : "Adults"}
-                            </SelectItem>
-                          ))}
-                        </SelectContent>
-                      </Select>
-                    </div>
-
-                    {/* Children */}
-                    <div className="space-y-2">
-                      <label htmlFor="children" className="block text-sm font-medium">
-                        Children
-                      </label>
-                      <Select value={children} onValueChange={setChildren}>
-                        <SelectTrigger id="children" className="w-full">
-                          <SelectValue placeholder="Select" />
-                        </SelectTrigger>
-                        <SelectContent>
-                          {[0, 1, 2, 3, 4].map((num) => (
-                            <SelectItem key={num} value={num.toString()}>
-                              {num} {num === 1 ? "Child" : "Children"}
+                              {num} {num === 1 ? "Patient" : "Patients"}
                             </SelectItem>
                           ))}
                         </SelectContent>
@@ -342,7 +320,7 @@ export default function AppointmentBooking() {
                   </div>
                 </div>
 
-                {/* Procedures Selection */}
+                {/* Clinic Selection */}
                 <h2 className="text-xl font-semibold mb-4">Select Your Clinic Location</h2>
                 <div className="space-y-6">
                   {proceduresData.map((procedure) => (
@@ -350,7 +328,7 @@ export default function AppointmentBooking() {
                       key={procedure.id}
                       className={cn(
                         "border rounded-xl overflow-hidden transition-all flex flex-col md:flex-row",
-                        selectedProcedure?.id === procedure.id
+                        selectedClinic?.id === procedure.id
                           ? "border-primary shadow-md"
                           : "border-border hover:border-primary/50"
                       )}
@@ -384,11 +362,11 @@ export default function AppointmentBooking() {
                             <span className="text-muted-foreground text-sm"> / consultation</span>
                           </div>
                           <Button
-                            variant={selectedProcedure?.id === procedure.id ? "default" : "outline"}
-                            className={selectedProcedure?.id === procedure.id ? "btn-primary" : ""}
-                            onClick={() => setSelectedProcedure(procedure)}
+                            variant={selectedClinic?.id === procedure.id ? "default" : "outline"}
+                            className={selectedClinic?.id === procedure.id ? "btn-primary" : ""}
+                            onClick={() => setSelectedClinic(procedure)}
                           >
-                            {selectedProcedure?.id === procedure.id ? (
+                            {selectedClinic?.id === procedure.id ? (
                               <>
                                 <Check className="mr-2 h-4 w-4" />
                                 Selected
@@ -406,7 +384,7 @@ export default function AppointmentBooking() {
                 <div className="flex justify-end mt-8">
                   <Button
                     className="btn-primary"
-                    disabled={!selectedProcedure}
+                    disabled={!selectedClinic}
                     onClick={() => setCurrentStep(2)}
                   >
                     Continue <ChevronRight className="ml-2 h-4 w-4" />
@@ -595,31 +573,30 @@ export default function AppointmentBooking() {
                   <div className="md:col-span-1">
                     <h2 className="text-xl font-semibold mb-4">Booking Summary</h2>
                     <div className="glass-card p-6 sticky top-24">
-                      {selectedProcedure && (
+                      {selectedClinic && (
                         <>
                           <div className="pb-4 border-b">
-                            <h3 className="font-medium mb-1">{selectedProcedure.name}</h3>
-                            <p className="text-sm text-muted-foreground">{selectedProcedure.location}</p>
+                            <h3 className="font-medium mb-1">{selectedClinic.name}</h3>
+                            <p className="text-sm text-muted-foreground">{selectedClinic.location}</p>
                           </div>
 
                           <div className="py-4 border-b space-y-2">
                             <div className="flex justify-between items-center">
                               <span>Appointment Date</span>
                               <span className="font-medium">
-                                {startDate ? format(startDate, "EEE, MMM d, yyyy") : "Not selected"}
+                                {appointmentDate ? format(appointmentDate, "EEE, MMM d, yyyy") : "Not selected"}
                               </span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span>Appointment Time</span>
                               <span className="font-medium">
-                                {endDate ? format(endDate, "EEE, MMM d, yyyy") : "Not selected"}
+                                {appointmentTime ? format(appointmentTime, "EEE, MMM d, yyyy") : "Not selected"}
                               </span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span>Patients</span>
                               <span className="font-medium">
-                                {adults} {parseInt(adults) === 1 ? "Adult" : "Adults"}
-                                {parseInt(children) > 0 && `, ${children} ${parseInt(children) === 1 ? "Child" : "Children"}`}
+                                {numberOfPatients} {parseInt(numberOfPatients) === 1 ? "Patient" : "Patients"}
                               </span>
                             </div>
                           </div>
@@ -627,9 +604,9 @@ export default function AppointmentBooking() {
                           <div className="py-4 border-b space-y-2">
                             <div className="flex justify-between items-center">
                               <span>
-                                ${selectedProcedure.price} x {sessionsCount} {sessionsCount === 1 ? "session" : "sessions"}
+                                ${selectedClinic.price} x {sessionsCount} {sessionsCount === 1 ? "session" : "sessions"}
                               </span>
-                              <span className="font-medium">${selectedProcedure.price * sessionsCount}</span>
+                              <span className="font-medium">${selectedClinic.price * sessionsCount}</span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span>Registration fee</span>
@@ -684,37 +661,36 @@ export default function AppointmentBooking() {
                         {/* Procedure Details */}
                         <div>
                           <h3 className="text-lg font-medium mb-4">Clinic Details</h3>
-                          {selectedProcedure && (
+                          {selectedClinic && (
                             <div className="space-y-4">
                               <div className="rounded-lg overflow-hidden">
                                 <img
-                                  src={selectedProcedure.image}
-                                  alt={selectedProcedure.name}
+                                  src={selectedClinic.image}
+                                  alt={selectedClinic.name}
                                   className="w-full h-48 object-cover"
                                 />
                               </div>
                               <div>
-                                <h4 className="font-semibold">{selectedProcedure.name}</h4>
-                                <p className="text-sm text-muted-foreground">{selectedProcedure.location}</p>
+                                <h4 className="font-semibold">{selectedClinic.name}</h4>
+                                <p className="text-sm text-muted-foreground">{selectedClinic.location}</p>
                               </div>
                               <div className="space-y-1 text-sm">
                                 <div className="flex justify-between">
                                   <span>Appointment Date:</span>
                                   <span className="font-medium">
-                                    {startDate ? format(startDate, "EEE, MMM d, yyyy") : "Not selected"}
+                                    {appointmentDate ? format(appointmentDate, "EEE, MMM d, yyyy") : "Not selected"}
                                   </span>
                                 </div>
                                 <div className="flex justify-between">
                                   <span>Appointment Time:</span>
                                   <span className="font-medium">
-                                    {endDate ? format(endDate, "EEE, MMM d, yyyy") : "Not selected"}
+                                    {appointmentTime ? format(appointmentTime, "EEE, MMM d, yyyy") : "Not selected"}
                                   </span>
                                 </div>
                                 <div className="flex justify-between">
                                   <span>Patients:</span>
                                   <span className="font-medium">
-                                    {adults} {parseInt(adults) === 1 ? "Adult" : "Adults"}
-                                    {parseInt(children) > 0 && `, ${children} ${parseInt(children) === 1 ? "Child" : "Children"}`}
+                                    {numberOfPatients} {parseInt(numberOfPatients) === 1 ? "Patient" : "Patients"}
                                   </span>
                                 </div>
                               </div>
@@ -784,13 +760,13 @@ export default function AppointmentBooking() {
                     <div className="glass-card p-6 mb-8">
                       <h3 className="text-lg font-medium mb-4">Price Summary</h3>
                       <div className="space-y-2">
-                        {selectedProcedure && (
+                        {selectedClinic && (
                           <>
                             <div className="flex justify-between items-center">
                               <span>
-                                ${selectedProcedure.price} x {sessionsCount} {sessionsCount === 1 ? "session" : "sessions"}
+                                ${selectedClinic.price} x {sessionsCount} {sessionsCount === 1 ? "session" : "sessions"}
                               </span>
-                              <span className="font-medium">${selectedProcedure.price * sessionsCount}</span>
+                              <span className="font-medium">${selectedClinic.price * sessionsCount}</span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span>Registration fee</span>
