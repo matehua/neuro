@@ -248,6 +248,17 @@ export const en = {
     title: "Patient Testimonials",
     description: "Discover why our patients trust Dr Ales Aliashkevich for neurosurgical and spine procedures."
   },
+  specialties: {
+    filters: {
+      location: "Treatment Area",
+      allLocations: "All Areas",
+      showing: "Showing",
+      of: "of",
+      procedures: "procedures",
+      noMatch: "No procedures match your filters",
+      adjustFilters: "Try adjusting your filters to see more results"
+    }
+  },
   notFound: {
     title: "Page Not Found",
     description: "We couldn't find the page you were looking for. Please return to the homepage or try another link.",

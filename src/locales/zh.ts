@@ -328,6 +328,17 @@ export const zh = {
     title: "患者见证",
     description: "了解为什么我们的患者信任阿利什凯维奇医生进行神经外科和脊柱手术。"
   },
+  specialties: {
+    filters: {
+      location: "治疗部位",
+      allLocations: "所有部位",
+      showing: "显示",
+      of: "共",
+      procedures: "个手术",
+      noMatch: "没有符合您筛选条件的手术",
+      adjustFilters: "请尝试调整筛选条件以查看更多结果"
+    }
+  },
   notFound: {
     title: "页面未找到",
     description: "我们找不到您要查找的页面。请返回首页或尝试其他链接。",
