@@ -163,7 +163,9 @@ export const zh = {
       subtitle: "Ales Aliashkevich 博士，墨尔本认证神经外科医生和脊柱外科医生",
       description: "提供最先进的神经外科治疗、脊柱手术和微创手术。专门从事椎间盘置换、图像引导手术和机器人脊柱手术。",
       bookConsultation: "预约咨询",
-      learnMore: "了解更多"
+      learnMore: "了解更多",
+      exploreTreatments: "探索治疗方案",
+      scrollDown: "向下滚动"
     },
     stats: {
       yearsExperience: "年经验",
@@ -245,5 +247,116 @@ export const zh = {
     allRightsReserved: "保留所有权利",
     privacyPolicy: "隐私政策",
     termsOfService: "服务条款"
+  },
+  consultingRooms: {
+    hero: {
+      title: "专业医疗咨询室",
+      subtitle: "现代化设备齐全的咨询环境",
+      description: "在我们最先进的咨询室中体验专业的医疗护理",
+      scheduleViewing: "安排参观"
+    },
+    features: {
+      convenientLocation: {
+        title: "便利位置",
+        description: "位于交通便利的市中心位置"
+      },
+      fullyEquipped: {
+        title: "设备齐全",
+        description: "配备最新医疗设备和技术"
+      },
+      flexibleTerms: {
+        title: "灵活条款",
+        description: "适合各种执业需求的租赁选择"
+      },
+      customization: {
+        title: "定制化",
+        description: "可根据您的专业需求定制空间"
+      },
+      receptionistSupport: {
+        title: "前台支持",
+        description: "专业的前台和行政支持服务"
+      },
+      professionalEnvironment: {
+        title: "专业环境",
+        description: "营造专业舒适的就诊环境"
+      }
+    }
+  },
+  expertiseCards: {
+    title: "专业技能",
+    subtitle: "先进的神经外科技术",
+    description: "了解我们的专业领域和先进治疗方法"
+  },
+  minimallyInvasive: {
+    title: "微创手术",
+    description: "使用最新技术的微创手术方法"
+  },
+  discReplacement: {
+    title: "椎间盘置换",
+    description: "先进的椎间盘置换技术"
+  },
+  imageGuided: {
+    title: "图像引导手术",
+    description: "精确的图像引导神经外科手术"
+  },
+  roboticSurgery: {
+    title: "机器人手术",
+    description: "最先进的机器人辅助手术"
+  },
+  brainSurgery: {
+    title: "脑部手术",
+    description: "专业的脑部神经外科手术"
+  },
+  spinalCare: {
+    title: "脊柱护理",
+    description: "全面的脊柱治疗和护理"
+  },
+  specialties: {
+    title: "专业领域",
+    subtitle: "神经外科专业技术",
+    description: "使用尖端技术进行脑部、脊柱和神经疾病的高级手术",
+    filters: {
+      complexity: "手术复杂度",
+      location: "手术部位",
+      recoveryTime: "恢复时间",
+      allLocations: "所有部位",
+      showing: "显示",
+      of: "共",
+      procedures: "项手术",
+      noMatch: "没有匹配的手术",
+      adjustFilters: "请调整筛选条件"
+    }
+  },
+  testimonials: {
+    title: "患者见证",
+    description: "听听我们患者的康复故事"
+  },
+  medicolegal: {
+    title: "医学法律评估",
+    subtitle: "专业的医学法律服务",
+    description: "为法律案件提供专业的神经外科医学评估"
+  },
+  faq: {
+    title: "常见问题",
+    subtitle: "常见问题解答",
+    description: "关于我们服务的常见问题和详细答案",
+    questions: {
+      whatIsNeurosurgery: {
+        question: "什么是神经外科？",
+        answer: "神经外科是专门治疗神经系统疾病的外科专业，包括大脑、脊髓和周围神经的手术治疗。"
+      },
+      howLongIsRecovery: {
+        question: "恢复需要多长时间？",
+        answer: "恢复时间因手术类型和个人情况而异，通常从几周到几个月不等。我们会为每位患者制定个性化的恢复计划。"
+      },
+      whatAreRisks: {
+        question: "手术有什么风险？",
+        answer: "所有手术都有一定风险，但我们使用最先进的技术和设备来最大限度地降低风险。我们会在术前详细讨论所有可能的风险。"
+      },
+      howToPrepare: {
+        question: "如何准备手术？",
+        answer: "我们会提供详细的术前指导，包括饮食要求、药物调整和必要的检查。我们的团队会确保您充分准备好手术。"
+      }
+    }
   }
 };
