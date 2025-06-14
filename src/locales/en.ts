@@ -236,13 +236,14 @@ export const en = {
     allRights: "All rights reserved."
   },
   appointmentForm: {
-    title: "Book Consultation",
+    title: "Book an Appointment",
     appointmentDate: "Appointment Date",
-    appointmentTime: "Preferred Time",
+    appointmentTime: "Appointment Time",
     selectDate: "Select date",
     selectTime: "Select time",
     checkAvailability: "Check Availability",
-    appointmentConfirmed: "Appointment Confirmed!"
+    appointmentConfirmed: "Appointment Confirmed",
+    numberOfPatients: "Number of Patients"
   },
   testimonials: {
     title: "Patient Testimonials",
