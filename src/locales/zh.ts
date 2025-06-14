@@ -1,3 +1,4 @@
+
 export const zh = {
   common: {
     loading: "加载中...",
@@ -154,46 +155,7 @@ export const zh = {
     contact: "联系",
     faq: "常见问题",
     consultingRooms: "咨询室",
-    gpResources: "全科医生资源",
-    bookNow: "立即预约",
-    expertiseSubmenu: {
-      cervicalDisc: "颈椎间盘置换",
-      lumbarDisc: "腰椎间盘置换",
-      imageGuided: "图像引导手术",
-      roboticSpine: "机器人脊柱手术"
-    },
-    gpResourcesSubmenu: {
-      referralGuidelines: "转诊指南",
-      clinicalResources: "临床资源",
-      educationalMaterials: "教育材料",
-      consultationProcess: "咨询过程",
-      referralProtocols: "转诊协议",
-      diagnostics: "诊断",
-      careCoordination: "护理协调",
-      emergencies: "紧急情况"
-    },
-    locationsSubmenu: {
-      melbournePrivate: "墨尔本私人手术中心",
-      melbourneNeurosurgery: "墨尔本神经外科",
-      bundoora: "邦多拉",
-      dandenong: "丹德农",
-      epworthEastern: "爱普沃斯东部",
-      consultation: "咨询地点",
-      surgery: "手术地点",
-      emergency: "紧急联系",
-      parking: "停车信息",
-      accessibility: "无障碍通道",
-      directions: "路线",
-      mornington: "莫宁顿",
-      frankston: "弗兰克斯顿",
-      langwarrin: "兰瓦林",
-      mooneePonds: "穆尼池塘",
-      sunbury: "森伯里",
-      werribee: "韦里比",
-      heidelberg: "海德堡",
-      wantirna: "万提尔纳",
-      surreyHills: "萨里山"
-    }
+    gpResources: "全科医生资源"
   },
   home: {
     hero: {
@@ -204,13 +166,6 @@ export const zh = {
       learnMore: "了解更多",
       exploreTreatments: "探索治疗方案",
       scrollDown: "向下滚动"
-    },
-    welcome: {
-      title: "欢迎来到高级神经外科",
-      subtitle: "脑部和脊柱疾病的专业护理",
-      description: "Ales Aliashkevich 博士使用最新的微创技术和先进技术提供全面的神经外科护理。",
-      learnMore: "了解更多",
-      bookAppointment: "预约"
     },
     stats: {
       yearsExperience: "年经验",
@@ -237,10 +192,6 @@ export const zh = {
         title: "机器人脊柱手术",
         description: "采用最新机器人技术的最先进脊柱手术。"
       }
-    },
-    featuredProcedures: {
-      title: "特色手术",
-      subtitle: "发现我们专业的神经外科治疗"
     },
     testimonials: {
       title: "患者见证",
@@ -275,55 +226,6 @@ export const zh = {
         ratemd: "RateMDs",
         threebestrated: "ThreeBestRated"
       }
-    },
-    advancedTechnologies: {
-      title: "先进技术",
-      subtitle: "尖端医疗技术",
-      description: "最先进的设备和创新技术"
-    }
-  },
-  appointments: {
-    title: "预约",
-    subtitle: "安排您的咨询",
-    description: "选择您的首选日期和时间",
-    description1: "我们的预约流程设计简单便捷",
-    description2: "选择您咨询的首选日期和时间",
-    bookingForm: {
-      title: "预约预订",
-      personalInfo: "个人信息",
-      appointmentDetails: "预约详情"
-    },
-    process: {
-      step1: "个人信息",
-      step2: "病史",
-      step3: "预约详情", 
-      step4: "确认"
-    },
-    appointmentInfo: {
-      title: "预约信息",
-      subtitle: "请提供您的详细信息",
-      firstName: "名",
-      lastName: "姓",
-      email: "电子邮件地址",
-      phone: "电话号码",
-      preferredDate: "首选日期",
-      preferredTime: "首选时间",
-      consultationType: "咨询类型",
-      urgency: "紧急程度",
-      reason: "就诊原因",
-      medicalHistory: "病史",
-      currentMedications: "当前用药",
-      insuranceProvider: "保险提供商",
-      referringDoctor: "转诊医生"
-    },
-    requestForm: {
-      title: "申请预约",
-      submit: "提交申请",
-      cancel: "取消",
-      required: "必填字段",
-      optional: "可选",
-      success: "预约申请提交成功",
-      error: "预约申请提交失败"
     }
   },
   appointmentForm: {
@@ -340,11 +242,9 @@ export const zh = {
     description: "提供高级神经外科和脊柱护理服务，由认证专家使用最新技术。",
     quickLinks: "快速链接",
     contactInfo: "联系信息",
-    contact: "联系我们",
     followUs: "关注我们",
     copyright: "版权所有",
     allRightsReserved: "保留所有权利",
-    allRights: "保留所有权利",
     privacyPolicy: "隐私政策",
     termsOfService: "服务条款"
   },
@@ -380,24 +280,6 @@ export const zh = {
         title: "专业环境",
         description: "营造专业舒适的就诊环境"
       }
-    }
-  },
-  procedureDescriptions: {
-    "cervical-disc-replacement": {
-      name: "颈椎间盘置换",
-      description: "颈部疼痛缓解的先进运动保留手术"
-    },
-    "lumbar-disc-replacement": {
-      name: "腰椎间盘置换",
-      description: "下背部疼痛的运动保留手术"
-    },
-    "brain-tumour-removal": {
-      name: "脑部手术",
-      description: "先进的脑肿瘤切除和神经外科手术"
-    },
-    "peripheral-nerve-surgery": {
-      name: "周围神经手术",
-      description: "神经压迫和损伤的手术治疗"
     }
   },
   expertiseCards: {
@@ -476,139 +358,5 @@ export const zh = {
         answer: "我们会提供详细的术前指导，包括饮食要求、药物调整和必要的检查。我们的团队会确保您充分准备好手术。"
       }
     }
-  },
-  technologiesPage: {
-    title: "先进技术",
-    description: "尖端医疗技术，实现卓越患者结果",
-    categories: {
-      wellness: {
-        title: "微创技术",
-        description: "减少组织损伤并促进更快恢复的先进手术方法",
-        items: [
-          {
-            title: "钥匙孔手术",
-            description: "通过小切口进行微创手术技术"
-          },
-          {
-            title: "内窥镜手术",
-            description: "用于精确治疗的先进内窥镜手术方法"
-          },
-          {
-            title: "运动保留",
-            description: "保持自然运动和功能的手术技术"
-          },
-          {
-            title: "组织保护",
-            description: "最大限度减少对健康周围组织损伤的方法"
-          }
-        ]
-      },
-      imagingTech: {
-        title: "图像引导技术",
-        description: "用于增强手术精度的实时成像和导航系统",
-        items: [
-          {
-            title: "术中导航",
-            description: "使用先进成像技术的实时手术导航"
-          },
-          {
-            title: "3D规划",
-            description: "使用3D成像进行全面术前规划"
-          },
-          {
-            title: "实时监控",
-            description: "手术过程中的持续监控以确保最佳安全性"
-          },
-          {
-            title: "精确定位",
-            description: "使用先进技术准确定位手术部位"
-          }
-        ]
-      },
-      services: {
-        title: "脊柱手术技术",
-        description: "复杂病情的先进脊柱手术程序",
-        items: [
-          {
-            title: "椎间盘置换",
-            description: "运动保留的人工椎间盘置换手术"
-          },
-          {
-            title: "脊柱融合",
-            description: "用于脊柱稳定性的先进融合技术"
-          },
-          {
-            title: "畸形矫正",
-            description: "脊柱畸形和对齐的手术矫正"
-          },
-          {
-            title: "微创入路",
-            description: "复杂脊柱手术的小切口方法"
-          }
-        ]
-      },
-      brainSurgery: {
-        title: "脑部手术技术",
-        description: "脑部疾病的先进神经外科手术",
-        items: [
-          {
-            title: "肿瘤切除",
-            description: "精确切除脑肿瘤并保护组织"
-          },
-          {
-            title: "血管手术",
-            description: "脑血管疾病和畸形的治疗"
-          },
-          {
-            title: "功能手术",
-            description: "改善神经功能和生活质量的手术"
-          },
-          {
-            title: "显微手术",
-            description: "使用显微镜可视化的超精密手术技术"
-          }
-        ]
-      }
-    }
-  },
-  hero: {
-    notFound: {
-      title: "页面未找到",
-      subtitle: "您要查找的页面不存在",
-      description: "您尝试访问的页面似乎已被移动或不存在。",
-      backHome: "返回主页"
-    },
-    title: "miNEURO - 高级神经外科和脊柱护理",
-    subtitle: "Ales Aliashkevich 博士，墨尔本认证神经外科医生和脊柱外科医生",
-    description: "提供最先进的神经外科治疗、脊柱手术和微创手术。专门从事椎间盘置换、图像引导手术和机器人脊柱手术。",
-    bookConsultation: "预约咨询",
-    learnMore: "了解更多",
-    exploreTreatments: "探索治疗方案",
-    scrollDown: "向下滚动"
-  },
-  notFound: {
-    title: "页面未找到",
-    subtitle: "您要查找的页面不存在",
-    description: "您尝试访问的页面似乎已被移动或不存在。",
-    backHome: "返回主页"
-  },
-  patientResources: {
-    title: "患者资源",
-    subtitle: "全面支持您的康复之旅",
-    description: "获取有用的资源、练习和信息来支持您的治疗和康复",
-    submenu: {
-      preOperative: "术前",
-      postOperative: "术后",
-      exercises: "练习",
-      education: "教育",
-      comprehensiveSolution: "综合解决方案",
-      conditionInfo: "病情信息",
-      exerciseLibrary: "运动库"
-    }
-  },
-  gallery: {
-    title: "图库",
-    subtitle: "我们的设施和设备",
-    description: "查看我们最先进的设施和先进的医疗设备"
   }
 };

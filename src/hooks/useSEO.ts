@@ -1,17 +1,25 @@
-
 import { useEffect } from 'react';
+import { generatePageSEO, SEO_CONFIG } from '@/lib/seo'; // SEO_CONFIG might not be directly needed here if generatePageSEO handles all canonical logic
 
 export interface SEOData {
-  title?: string;
-  description?: string;
-  keywords?: string;
-  canonicalUrl?: string;
+  title: string;
+  description: string;
+  keywords: string;
+  ogTitle?: string;
+  ogDescription?: string;
   ogImage?: string;
   ogType?: string;
-  twitterCard?: string;
-  jsonLd?: object;
+  twitterTitle?: string;
+  twitterDescription?: string;
+  twitterImage?: string;
+  canonical?: string;
+  structuredData?: Record<string, unknown>;
 }
 
+/**
+ * Custom hook for managing SEO metadata
+ * Updates document head with SEO tags
+ */
 export const useSEO = (seoData: SEOData) => {
   useEffect(() => {
     // Update document title
@@ -19,68 +27,111 @@ export const useSEO = (seoData: SEOData) => {
       document.title = seoData.title;
     }
 
-    // Update meta tags
+    // Helper function to update or create meta tags
     const updateMetaTag = (name: string, content: string, property?: boolean) => {
-      const selector = property ? `meta[property="${name}"]` : `meta[name="${name}"]`;
-      let meta = document.querySelector(selector) as HTMLMetaElement;
+      const attribute = property ? 'property' : 'name';
+      let element = document.querySelector(`meta[${attribute}="${name}"]`) as HTMLMetaElement;
       
-      if (!meta) {
-        meta = document.createElement('meta');
-        if (property) {
-          meta.setAttribute('property', name);
-        } else {
-          meta.setAttribute('name', name);
-        }
-        document.head.appendChild(meta);
+      if (!element) {
+        element = document.createElement('meta');
+        element.setAttribute(attribute, name);
+        document.head.appendChild(element);
       }
       
-      meta.content = content;
+      element.setAttribute('content', content);
     };
 
-    // Update meta tags based on SEO data
+    // Update basic meta tags
     if (seoData.description) {
       updateMetaTag('description', seoData.description);
-      updateMetaTag('og:description', seoData.description, true);
-      updateMetaTag('twitter:description', seoData.description);
     }
 
     if (seoData.keywords) {
       updateMetaTag('keywords', seoData.keywords);
     }
 
+    // Update Open Graph tags
+    if (seoData.ogTitle) {
+      updateMetaTag('og:title', seoData.ogTitle, true);
+    }
+
+    if (seoData.ogDescription) {
+      updateMetaTag('og:description', seoData.ogDescription, true);
+    }
+
     if (seoData.ogImage) {
       updateMetaTag('og:image', seoData.ogImage, true);
-      updateMetaTag('twitter:image', seoData.ogImage);
     }
 
     if (seoData.ogType) {
       updateMetaTag('og:type', seoData.ogType, true);
     }
 
-    if (seoData.twitterCard) {
-      updateMetaTag('twitter:card', seoData.twitterCard);
+    // Update Twitter Card tags
+    if (seoData.twitterTitle) {
+      updateMetaTag('twitter:title', seoData.twitterTitle);
+    }
+
+    if (seoData.twitterDescription) {
+      updateMetaTag('twitter:description', seoData.twitterDescription);
+    }
+
+    if (seoData.twitterImage) {
+      updateMetaTag('twitter:image', seoData.twitterImage);
     }
 
     // Update canonical URL
-    if (seoData.canonicalUrl) {
-      let canonical = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-      if (!canonical) {
-        canonical = document.createElement('link');
-        canonical.rel = 'canonical';
-        document.head.appendChild(canonical);
+    if (seoData.canonical) {
+      let canonicalElement = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
+      
+      if (!canonicalElement) {
+        canonicalElement = document.createElement('link');
+        canonicalElement.setAttribute('rel', 'canonical');
+        document.head.appendChild(canonicalElement);
       }
-      canonical.href = seoData.canonicalUrl;
+      
+      canonicalElement.setAttribute('href', seoData.canonical);
     }
 
-    // Update JSON-LD structured data
-    if (seoData.jsonLd) {
-      let script = document.querySelector('script[type="application/ld+json"]') as HTMLScriptElement;
-      if (!script) {
-        script = document.createElement('script');
-        script.type = 'application/ld+json';
-        document.head.appendChild(script);
+    // Add structured data
+    if (seoData.structuredData) {
+      const structuredDataId = 'structured-data-script';
+      const existingScript = document.getElementById(structuredDataId);
+      
+      if (existingScript) {
+        existingScript.remove();
       }
-      script.textContent = JSON.stringify(seoData.jsonLd);
+      
+      const script = document.createElement('script');
+      script.id = structuredDataId;
+      script.type = 'application/ld+json';
+      script.textContent = JSON.stringify(seoData.structuredData);
+      document.head.appendChild(script);
     }
+
+    // Cleanup function to remove added elements when component unmounts
+    return () => {
+      // Note: We don't remove meta tags on cleanup as they should persist
+      // until the next page navigation in a SPA
+    };
   }, [seoData]);
 };
+
+/**
+ * Hook for setting page-specific SEO data.
+ * It takes page-specific overrides and merges them with global defaults
+ * by calling generatePageSEO.
+ */
+export const usePageSEO = (pageData: Partial<SEOData>) => {
+  // `pageData` contains the specific overrides for the current page.
+  // These overrides (including a potential `canonical` path like '/about')
+  // are passed to `generatePageSEO` as `customData`.
+  // `generatePageSEO` (with an undefined `pageType`) will use global defaults
+  // from `SEO_CONFIG` and then layer `pageData` on top, correctly
+  // calculating the final `canonical` URL.
+  const seoDataToSet = generatePageSEO(undefined, pageData);
+  
+  useSEO(seoDataToSet);
+};
+
+export default useSEO;

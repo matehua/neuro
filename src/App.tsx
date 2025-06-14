@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Toaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -53,7 +52,7 @@ const AppContent = () => {
 };
 
 const App = () => {
-  // Initialize performance monitoring only once when app starts
+  // Initialize performance monitoring
   React.useEffect(() => {
     initializePerformanceMonitoring();
   }, []);

@@ -1,278 +1,843 @@
-import React, { useState } from "react";
-import { format } from "date-fns";
-import { CalendarDays } from "lucide-react";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import React, { useEffect, useState } from "react";
+import { format, addDays, differenceInDays } from "date-fns";
+import { Link } from "react-router-dom";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import { CalendarIcon, Users, CreditCard, Check, ChevronRight } from "lucide-react";
+import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
+import { Calendar } from "@/components/ui/calendar";
+import {
+  Popover,
+  PopoverContent,
+  PopoverTrigger,
+} from "@/components/ui/popover";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
-import { Calendar } from "@/components/ui/calendar";
-import { Popover, PopoverContent, PopoverTrigger } from "@/components/ui/popover";
-import { cn } from "@/lib/utils";
-import { toast } from "sonner";
-import Layout from "@/components/Layout";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { ProcedureProps } from "@/components/ProcedureCard";
+
+// Sample clinic data
+interface ClinicData {
+  id: string;
+  name: string;
+  description: string;
+  price: number;
+  capacity: number;
+  size: number;
+  recoveryTime: number;
+  complexity: number;
+  image: string;
+  location: string;
+  features: string[];
+}
+
+const proceduresData: ClinicData[] = [
+  {
+    id: "1",
+    name: "Surrey Hills Clinic",
+    description: "Our main clinic with comprehensive neurosurgical facilities and advanced diagnostic equipment.",
+    price: 180,
+    capacity: 2,
+    size: 45,
+    recoveryTime: 14,
+    complexity: 7,
+    image: "/images/miNEURO-brain-spine-advanced-technology-precision-miniamlly-invasive-neurosurgery-Melbourne-Surrey-Hills-entrance.jpg",
+    location: "Surrey Hills",
+    features: ["Advanced Imaging", "Consultation Rooms", "Disabled Access", "Free Parking", "Reception", "Waiting Area"]
+  },
+  {
+    id: "2",
+    name: "Mornington Clinic",
+    description: "Specialist neurosurgical clinic serving the Mornington Peninsula area with state-of-the-art facilities.",
+    price: 250,
+    capacity: 4,
+    size: 75,
+    recoveryTime: 14,
+    complexity: 7,
+    image: "/images/neurosurgery-mornington-specialist-centre-reception-consulting.jpg",
+    location: "Mornington",
+    features: ["Advanced Imaging", "Consultation Rooms", "Disabled Access", "Free Parking", "Reception", "Waiting Area"]
+  },
+  {
+    id: "3",
+    name: "Moonee Ponds Clinic",
+    description: "Modern neurosurgical clinic in Melbourne's northern suburbs with comprehensive facilities.",
+    price: 150,
+    capacity: 2,
+    size: 35,
+    recoveryTime: 14,
+    complexity: 7,
+    image: "/images/moonee-ponds-specialist-centre-waiting-area.jpg",
+    location: "Moonee Ponds",
+    features: ["Advanced Imaging", "Consultation Rooms", "Disabled Access", "Free Parking", "Reception"]
+  },
+];
 
 export default function AppointmentBooking() {
-  const [date, setDate] = useState<Date | undefined>(undefined);
+  const [appointmentDate, setAppointmentDate] = useState<Date | undefined>(new Date());
+  const [appointmentTime, setAppointmentTime] = useState<Date | undefined>(undefined);
+  const [selectedClinic, setSelectedClinic] = useState<ClinicData | null>(null);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [numberOfPatients, setNumberOfPatients] = useState<string>("1");
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
     phone: "",
-    preferredTime: "",
-    reason: "",
-    medicalHistory: "",
-    currentMedications: "",
-    insuranceProvider: "",
-    referringDoctor: "",
-    urgency: "routine",
-    consultationType: "new-patient"
+    address: "",
+    city: "",
+    zipCode: "",
+    country: "",
+    paymentMethod: "credit-card",
+    cardName: "",
+    cardNumber: "",
+    cardExpiry: "",
+    cardCvc: "",
+    specialRequests: ""
   });
+  const [isBookingConfirmed, setIsBookingConfirmed] = useState(false);
 
+  useEffect(() => {
+    // Scroll to top when component mounts
+    window.scrollTo(0, 0);
+  }, []);
+
+  // Calculate consultation sessions and total cost
+  const sessionsCount = appointmentDate && appointmentTime ? differenceInDays(appointmentTime, appointmentDate) : 0;
+  const totalPrice = selectedClinic ? selectedClinic.price * Math.max(1, sessionsCount) : 0;
+
+  // Handle form input changes
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
-    setFormData(prevData => ({
-      ...prevData,
-      [name]: value
-    }));
+    setFormData(prev => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  // Handle select changes
+  const handleSelectChange = (name: string, value: string) => {
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  // Submit booking
+  const handleSubmitBooking = (e: React.FormEvent) => {
     e.preventDefault();
-    try {
-      // Simulate API call
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      toast.success("Appointment request submitted successfully");
+
+    // In a real app, this would send the booking data to a server
+
+    // Show confirmation
+    setIsBookingConfirmed(true);
+
+    // Reset form after booking is confirmed
+    setTimeout(() => {
+      setCurrentStep(1);
+      setSelectedClinic(null);
+      setAppointmentDate(new Date());
+      setAppointmentTime(undefined);
+      setNumberOfPatients("1");
       setFormData({
         firstName: "",
         lastName: "",
         email: "",
         phone: "",
-        preferredTime: "",
-        reason: "",
-        medicalHistory: "",
-        currentMedications: "",
-        insuranceProvider: "",
-        referringDoctor: "",
-        urgency: "routine",
-        consultationType: "new-patient"
+        address: "",
+        city: "",
+        zipCode: "",
+        country: "",
+        paymentMethod: "credit-card",
+        cardName: "",
+        cardNumber: "",
+        cardExpiry: "",
+        cardCvc: "",
+        specialRequests: ""
       });
-      setDate(undefined);
-    } catch (error) {
-      toast.error("Failed to submit appointment request");
-    }
+      setIsBookingConfirmed(false);
+    }, 5000);
   };
 
-  const { t } = useLanguage();
-
   return (
-    <Layout pageTitle={t.appointments.title} pageType="appointments">
-      <section className="container py-12">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div>
-            <h1 className="text-3xl font-semibold mb-4">{t.appointments.title}</h1>
-            <p className="text-muted-foreground mb-6">{t.appointments.description1}. {t.appointments.description2}.</p>
+    <div className="min-h-screen flex flex-col">
+      <Navbar />
 
-            <Card className="shadow-md">
-              <CardHeader>
-                <CardTitle>{t.appointments.process.step1}</CardTitle>
-                <CardDescription>{t.appointments.appointmentInfo.subtitle}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="grid gap-4">
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <Label htmlFor="firstName">{t.appointments.appointmentInfo.firstName}</Label>
-                      <Input
-                        type="text"
-                        id="firstName"
-                        name="firstName"
-                        value={formData.firstName}
-                        onChange={handleInputChange}
-                        placeholder={t.appointments.appointmentInfo.firstName}
-                        required
-                      />
-                    </div>
-                    <div>
-                      <Label htmlFor="lastName">{t.appointments.appointmentInfo.lastName}</Label>
-                      <Input
-                        type="text"
-                        id="lastName"
-                        name="lastName"
-                        value={formData.lastName}
-                        onChange={handleInputChange}
-                        placeholder={t.appointments.appointmentInfo.lastName}
-                        required
-                      />
-                    </div>
+      <main className="flex-1 pt-20">
+        {/* Header Section */}
+        <section className="relative py-16 bg-gradient-to-r from-sea-light to-white dark:from-sea-dark dark:to-background overflow-hidden">
+          <div className="container relative z-10">
+            <div className="max-w-3xl mx-auto text-center animate-fade-in">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+                Book Your Consultation
+              </h1>
+              <p className="text-muted-foreground text-lg">
+                Complete your appointment booking in a few simple steps.
+              </p>
+            </div>
+          </div>
+
+          {/* Decorative elements */}
+          <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
+            <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
+            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-primary/30 blur-3xl" />
+          </div>
+        </section>
+
+        {/* Booking Steps */}
+        <section className="container py-8">
+          <div className="relative animate-fade-in [animation-delay:200ms]">
+            <div className="flex justify-between items-center mb-8">
+              {[1, 2, 3].map((step) => (
+                <div key={step} className="flex flex-col items-center relative z-10">
+                  <div
+                    className={cn(
+                      "w-10 h-10 rounded-full flex items-center justify-center mb-2 transition-colors",
+                      currentStep >= step
+                        ? "bg-primary text-white"
+                        : "bg-muted text-muted-foreground"
+                    )}
+                  >
+                    {currentStep > step ? (
+                      <Check className="h-5 w-5" />
+                    ) : (
+                      <span>{step}</span>
+                    )}
                   </div>
-                  <div>
-                    <Label htmlFor="email">{t.appointments.appointmentInfo.email}</Label>
-                    <Input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      placeholder={t.appointments.appointmentInfo.email}
-                      required
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="phone">{t.appointments.appointmentInfo.phone}</Label>
-                    <Input
-                      type="tel"
-                      id="phone"
-                      name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
-                      placeholder={t.appointments.appointmentInfo.phone}
-                      required
-                    />
-                  </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                      <Label>{t.appointments.appointmentInfo.preferredDate}</Label>
+                  <span
+                    className={cn(
+                      "text-sm font-medium",
+                      currentStep >= step
+                        ? "text-foreground"
+                        : "text-muted-foreground"
+                    )}
+                  >
+                    {step === 1 ? "Choose Clinic" : step === 2 ? "Patient Details" : "Confirmation"}
+                  </span>
+                </div>
+              ))}
+            </div>
+
+            {/* Progress line */}
+            <div className="absolute top-5 left-0 right-0 h-0.5 bg-muted z-0">
+              <div
+                className="h-full bg-primary transition-all duration-300"
+                style={{ width: `${((currentStep - 1) / 2) * 100}%` }}
+              />
+            </div>
+          </div>
+
+          {/* Step 1: Choose Room */}
+          {currentStep === 1 && (
+            <div className="animate-fade-in [animation-delay:300ms]">
+              <div className="max-w-4xl mx-auto">
+                {/* Date & Patient Count Selection */}
+                <div className="glass-card p-6 mb-8">
+                  <h2 className="text-xl font-semibold mb-4">Select Appointment Date and Time</h2>
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+                    {/* Appointment Date */}
+                    <div className="space-y-2">
+                      <label htmlFor="appointment-date" className="block text-sm font-medium">
+                        Appointment Date
+                      </label>
                       <Popover>
                         <PopoverTrigger asChild>
                           <Button
-                            variant={"outline"}
+                            id="appointment-date"
+                            variant="outline"
                             className={cn(
                               "w-full justify-start text-left font-normal",
-                              !date && "text-muted-foreground"
+                              !appointmentDate && "text-muted-foreground"
                             )}
                           >
-                            <CalendarDays className="mr-2 h-4 w-4" />
-                            {date ? format(date, "PPP") : <span>{t.appointmentForm.selectDate}</span>}
+                            <CalendarIcon className="mr-2 h-4 w-4" />
+                            {appointmentDate ? format(appointmentDate, "PPP") : <span>Select date</span>}
                           </Button>
                         </PopoverTrigger>
-                        <PopoverContent className="w-auto p-0" align="center" side="bottom">
+                        <PopoverContent className="w-auto p-0" align="start">
                           <Calendar
                             mode="single"
-                            selected={date}
-                            onSelect={setDate}
-                            disabled={(date) =>
-                              date < new Date()
-                            }
+                            selected={appointmentDate}
+                            onSelect={setAppointmentDate}
                             initialFocus
+                            disabled={(date) => date < new Date()}
+                            className="pointer-events-auto"
                           />
                         </PopoverContent>
                       </Popover>
                     </div>
-                    <div>
-                      <Label htmlFor="preferredTime">{t.appointments.appointmentInfo.preferredTime}</Label>
-                      <Input
-                        type="time"
-                        id="preferredTime"
-                        name="preferredTime"
-                        value={formData.preferredTime}
-                        onChange={handleInputChange}
-                        placeholder={t.appointmentForm.selectTime}
-                        required
-                      />
+                    {/* Appointment Time */}
+                    <div className="space-y-2">
+                      <label htmlFor="appointment-time" className="block text-sm font-medium">
+                        Appointment Time
+                      </label>
+                      <Popover>
+                        <PopoverTrigger asChild>
+                          <Button
+                            id="appointment-time"
+                            variant="outline"
+                            className={cn(
+                              "w-full justify-start text-left font-normal",
+                              !appointmentTime && "text-muted-foreground"
+                            )}
+                          >
+                            <CalendarIcon className="mr-2 h-4 w-4" />
+                            {appointmentTime ? format(appointmentTime, "PPP") : <span>Select time</span>}
+                          </Button>
+                        </PopoverTrigger>
+                        <PopoverContent className="w-auto p-0" align="start">
+                          <Calendar
+                            mode="single"
+                            selected={appointmentTime}
+                            onSelect={setAppointmentTime}
+                            initialFocus
+                            disabled={(date) => date < (appointmentDate || new Date())}
+                            className="pointer-events-auto"
+                          />
+                        </PopoverContent>
+                      </Popover>
+                    </div>
+                    {/* Number of Patients */}
+                    <div className="space-y-2">
+                      <label htmlFor="number-of-patients" className="block text-sm font-medium">
+                        Number of Patients
+                      </label>
+                      <Select value={numberOfPatients} onValueChange={setNumberOfPatients}>
+                        <SelectTrigger id="number-of-patients" className="w-full">
+                          <SelectValue placeholder="Select" />
+                        </SelectTrigger>
+                        <SelectContent>
+                          {[1, 2, 3, 4, 5, 6].map((num) => (
+                            <SelectItem key={num} value={num.toString()}>
+                              {num} {num === 1 ? "Patient" : "Patients"}
+                            </SelectItem>
+                          ))}
+                        </SelectContent>
+                      </Select>
                     </div>
                   </div>
-                  <div>
-                    <Label htmlFor="consultationType">{t.appointments.appointmentInfo.consultationType}</Label>
-                    <Select>
-                      <SelectTrigger className="w-[180px]">
-                        <SelectValue placeholder="Select type" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="new-patient">New Patient</SelectItem>
-                        <SelectItem value="follow-up">Follow-up</SelectItem>
-                      </SelectContent>
-                    </Select>
+                </div>
+
+                {/* Clinic Selection */}
+                <h2 className="text-xl font-semibold mb-4">Select Your Clinic Location</h2>
+                <div className="space-y-6">
+                  {proceduresData.map((procedure) => (
+                    <div
+                      key={procedure.id}
+                      className={cn(
+                        "border rounded-xl overflow-hidden transition-all flex flex-col md:flex-row",
+                        selectedClinic?.id === procedure.id
+                          ? "border-primary shadow-md"
+                          : "border-border hover:border-primary/50"
+                      )}
+                    >
+                      <div className="md:w-1/3 h-48 md:h-auto relative">
+                        <img
+                          src={procedure.image}
+                          alt={procedure.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      <div className="p-6 flex-1 flex flex-col">
+                        <div className="flex-1">
+                          <h3 className="text-lg font-semibold mb-2">{procedure.name}</h3>
+                          <p className="text-muted-foreground mb-4">{procedure.description}</p>
+                          <div className="flex flex-wrap gap-2 mb-4">
+                            <div className="text-sm bg-muted px-3 py-1 rounded-full">
+                              {procedure.capacity} Patients
+                            </div>
+                            <div className="text-sm bg-muted px-3 py-1 rounded-full">
+                              {procedure.location}
+                            </div>
+                            <div className="text-sm bg-muted px-3 py-1 rounded-full">
+                              Advanced Facilities
+                            </div>
+                          </div>
+                        </div>
+                        <div className="flex items-center justify-between mt-4">
+                          <div>
+                            <span className="text-xl font-bold">${procedure.price}</span>
+                            <span className="text-muted-foreground text-sm"> / consultation</span>
+                          </div>
+                          <Button
+                            variant={selectedClinic?.id === procedure.id ? "default" : "outline"}
+                            className={selectedClinic?.id === procedure.id ? "btn-primary" : ""}
+                            onClick={() => setSelectedClinic(procedure)}
+                          >
+                            {selectedClinic?.id === procedure.id ? (
+                              <>
+                                <Check className="mr-2 h-4 w-4" />
+                                Selected
+                              </>
+                            ) : (
+                              "Select"
+                            )}
+                          </Button>
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex justify-end mt-8">
+                  <Button
+                    className="btn-primary"
+                    disabled={!selectedClinic}
+                    onClick={() => setCurrentStep(2)}
+                  >
+                    Continue <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Step 2: Guest Details */}
+          {currentStep === 2 && (
+            <div className="animate-fade-in [animation-delay:300ms]">
+              <div className="max-w-4xl mx-auto">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  {/* Guest Information Form */}
+                  <div className="md:col-span-2">
+                    <h2 className="text-xl font-semibold mb-4">Patient Information</h2>
+                    <form className="space-y-6">
+                      <div className="glass-card p-6 space-y-6">
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="firstName">First Name</Label>
+                            <Input
+                              id="firstName"
+                              name="firstName"
+                              value={formData.firstName}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="lastName">Last Name</Label>
+                            <Input
+                              id="lastName"
+                              name="lastName"
+                              value={formData.lastName}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="email">Email</Label>
+                            <Input
+                              id="email"
+                              name="email"
+                              type="email"
+                              value={formData.email}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="phone">Phone</Label>
+                            <Input
+                              id="phone"
+                              name="phone"
+                              value={formData.phone}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="address">Address</Label>
+                          <Input
+                            id="address"
+                            name="address"
+                            value={formData.address}
+                            onChange={handleInputChange}
+                            required
+                          />
+                        </div>
+
+                        <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                          <div className="space-y-2">
+                            <Label htmlFor="city">City</Label>
+                            <Input
+                              id="city"
+                              name="city"
+                              value={formData.city}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="zipCode">Zip Code</Label>
+                            <Input
+                              id="zipCode"
+                              name="zipCode"
+                              value={formData.zipCode}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                          <div className="space-y-2">
+                            <Label htmlFor="country">Country</Label>
+                            <Input
+                              id="country"
+                              name="country"
+                              value={formData.country}
+                              onChange={handleInputChange}
+                              required
+                            />
+                          </div>
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="specialRequests">Special Requests</Label>
+                          <textarea
+                            id="specialRequests"
+                            name="specialRequests"
+                            value={formData.specialRequests}
+                            onChange={handleInputChange}
+                            className="w-full h-24 rounded-md border border-input bg-background px-3 py-2 text-sm"
+                            placeholder="Any special medical needs or notes for your appointment"
+                          />
+                        </div>
+                      </div>
+
+                      <h2 className="text-xl font-semibold mb-4">Payment Information</h2>
+                      <div className="glass-card p-6 space-y-6">
+                        <Tabs defaultValue="credit-card" onValueChange={(value) => handleSelectChange("paymentMethod", value)}>
+                          <TabsList className="grid w-full grid-cols-2">
+                            <TabsTrigger value="credit-card">Credit Card</TabsTrigger>
+                            <TabsTrigger value="pay-at-clinic">Pay at Clinic</TabsTrigger>
+                          </TabsList>
+                          <TabsContent value="credit-card" className="space-y-4 mt-4">
+                            <div className="space-y-2">
+                              <Label htmlFor="cardName">Name on Card</Label>
+                              <Input
+                                id="cardName"
+                                name="cardName"
+                                value={formData.cardName}
+                                onChange={handleInputChange}
+                              />
+                            </div>
+                            <div className="space-y-2">
+                              <Label htmlFor="cardNumber">Card Number</Label>
+                              <Input
+                                id="cardNumber"
+                                name="cardNumber"
+                                value={formData.cardNumber}
+                                onChange={handleInputChange}
+                                placeholder="0000 0000 0000 0000"
+                              />
+                            </div>
+                            <div className="grid grid-cols-2 gap-4">
+                              <div className="space-y-2">
+                                <Label htmlFor="cardExpiry">Expiry Date</Label>
+                                <Input
+                                  id="cardExpiry"
+                                  name="cardExpiry"
+                                  value={formData.cardExpiry}
+                                  onChange={handleInputChange}
+                                  placeholder="MM/YY"
+                                />
+                              </div>
+                              <div className="space-y-2">
+                                <Label htmlFor="cardCvc">CVC</Label>
+                                <Input
+                                  id="cardCvc"
+                                  name="cardCvc"
+                                  value={formData.cardCvc}
+                                  onChange={handleInputChange}
+                                  placeholder="123"
+                                />
+                              </div>
+                            </div>
+                          </TabsContent>
+                          <TabsContent value="pay-at-clinic" className="mt-4">
+                            <p className="text-muted-foreground">
+                              You will be required to provide a valid credit card upon arrival for security purposes,
+                              but payment will be collected during your visit to the clinic.
+                            </p>
+                          </TabsContent>
+                        </Tabs>
+                      </div>
+                    </form>
                   </div>
-                  <div>
-                    <Label htmlFor="urgency">{t.appointments.appointmentInfo.urgency}</Label>
-                    <Select>
-                      <SelectTrigger className="w-[180px]">
-                        <SelectValue placeholder="Select urgency" />
-                      </SelectTrigger>
-                      <SelectContent>
-                        <SelectItem value="routine">Routine</SelectItem>
-                        <SelectItem value="urgent">Urgent</SelectItem>
-                      </SelectContent>
-                    </Select>
+
+                  {/* Booking Summary */}
+                  <div className="md:col-span-1">
+                    <h2 className="text-xl font-semibold mb-4">Booking Summary</h2>
+                    <div className="glass-card p-6 sticky top-24">
+                      {selectedClinic && (
+                        <>
+                          <div className="pb-4 border-b">
+                            <h3 className="font-medium mb-1">{selectedClinic.name}</h3>
+                            <p className="text-sm text-muted-foreground">{selectedClinic.location}</p>
+                          </div>
+
+                          <div className="py-4 border-b space-y-2">
+                            <div className="flex justify-between items-center">
+                              <span>Appointment Date</span>
+                              <span className="font-medium">
+                                {appointmentDate ? format(appointmentDate, "EEE, MMM d, yyyy") : "Not selected"}
+                              </span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span>Appointment Time</span>
+                              <span className="font-medium">
+                                {appointmentTime ? format(appointmentTime, "EEE, MMM d, yyyy") : "Not selected"}
+                              </span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span>Patients</span>
+                              <span className="font-medium">
+                                {numberOfPatients} {parseInt(numberOfPatients) === 1 ? "Patient" : "Patients"}
+                              </span>
+                            </div>
+                          </div>
+
+                          <div className="py-4 border-b space-y-2">
+                            <div className="flex justify-between items-center">
+                              <span>
+                                ${selectedClinic.price} x {sessionsCount} {sessionsCount === 1 ? "session" : "sessions"}
+                              </span>
+                              <span className="font-medium">${selectedClinic.price * sessionsCount}</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span>Registration fee</span>
+                              <span className="font-medium">$50</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span>Consultation fee</span>
+                              <span className="font-medium">$30</span>
+                            </div>
+                          </div>
+
+                          <div className="pt-4">
+                            <div className="flex justify-between items-center font-bold">
+                              <span>Total</span>
+                              <span>${totalPrice + 50 + 30}</span>
+                            </div>
+                          </div>
+                        </>
+                      )}
+                    </div>
                   </div>
-                  <div>
-                    <Label htmlFor="reason">{t.appointments.appointmentInfo.reason}</Label>
-                    <Textarea
-                      id="reason"
-                      name="reason"
-                      value={formData.reason}
-                      onChange={handleInputChange}
-                      placeholder={t.appointments.appointmentInfo.reason}
-                      required
-                    />
+                </div>
+
+                <div className="flex justify-between mt-8">
+                  <Button
+                    variant="outline"
+                    onClick={() => setCurrentStep(1)}
+                  >
+                    Back
+                  </Button>
+                  <Button
+                    className="btn-primary"
+                    onClick={() => setCurrentStep(3)}
+                  >
+                    Review & Confirm <ChevronRight className="ml-2 h-4 w-4" />
+                  </Button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          {/* Step 3: Confirmation */}
+          {currentStep === 3 && (
+            <div className="animate-fade-in [animation-delay:300ms]">
+              <div className="max-w-4xl mx-auto">
+                {!isBookingConfirmed ? (
+                  <>
+                    <h2 className="text-xl font-semibold mb-6">Review Booking Details</h2>
+
+                    <div className="glass-card p-6 mb-8">
+                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                        {/* Procedure Details */}
+                        <div>
+                          <h3 className="text-lg font-medium mb-4">Clinic Details</h3>
+                          {selectedClinic && (
+                            <div className="space-y-4">
+                              <div className="rounded-lg overflow-hidden">
+                                <img
+                                  src={selectedClinic.image}
+                                  alt={selectedClinic.name}
+                                  className="w-full h-48 object-cover"
+                                />
+                              </div>
+                              <div>
+                                <h4 className="font-semibold">{selectedClinic.name}</h4>
+                                <p className="text-sm text-muted-foreground">{selectedClinic.location}</p>
+                              </div>
+                              <div className="space-y-1 text-sm">
+                                <div className="flex justify-between">
+                                  <span>Appointment Date:</span>
+                                  <span className="font-medium">
+                                    {appointmentDate ? format(appointmentDate, "EEE, MMM d, yyyy") : "Not selected"}
+                                  </span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span>Appointment Time:</span>
+                                  <span className="font-medium">
+                                    {appointmentTime ? format(appointmentTime, "EEE, MMM d, yyyy") : "Not selected"}
+                                  </span>
+                                </div>
+                                <div className="flex justify-between">
+                                  <span>Patients:</span>
+                                  <span className="font-medium">
+                                    {numberOfPatients} {parseInt(numberOfPatients) === 1 ? "Patient" : "Patients"}
+                                  </span>
+                                </div>
+                              </div>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* Guest Details */}
+                        <div>
+                          <h3 className="text-lg font-medium mb-4">Patient Details</h3>
+                          <div className="space-y-4">
+                            <div className="space-y-1 text-sm">
+                              <div className="flex justify-between">
+                                <span>Name:</span>
+                                <span className="font-medium">{formData.firstName} {formData.lastName}</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span>Email:</span>
+                                <span className="font-medium">{formData.email}</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span>Phone:</span>
+                                <span className="font-medium">{formData.phone}</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span>Address:</span>
+                                <span className="font-medium">{formData.address}</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span>City:</span>
+                                <span className="font-medium">{formData.city}</span>
+                              </div>
+                              <div className="flex justify-between">
+                                <span>Country:</span>
+                                <span className="font-medium">{formData.country}</span>
+                              </div>
+                            </div>
+
+                            {formData.specialRequests && (
+                              <div>
+                                <h4 className="font-medium mb-1">Medical Needs:</h4>
+                                <p className="text-sm text-muted-foreground">{formData.specialRequests}</p>
+                              </div>
+                            )}
+
+                            <div>
+                              <h4 className="font-medium mb-1">Payment Method:</h4>
+                              <p className="text-sm">
+                                {formData.paymentMethod === "credit-card" ? (
+                                  <span className="flex items-center">
+                                    <CreditCard className="h-4 w-4 mr-2" />
+                                    Credit Card (ending in {formData.cardNumber.slice(-4) || "****"})
+                                  </span>
+                                ) : formData.paymentMethod === "pay-at-clinic" ? (
+                                  "Pay at Clinic"
+                                ) : (
+                                  "Unknown payment method"
+                                )}
+                              </p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Price Summary */}
+                    <div className="glass-card p-6 mb-8">
+                      <h3 className="text-lg font-medium mb-4">Price Summary</h3>
+                      <div className="space-y-2">
+                        {selectedClinic && (
+                          <>
+                            <div className="flex justify-between items-center">
+                              <span>
+                                ${selectedClinic.price} x {sessionsCount} {sessionsCount === 1 ? "session" : "sessions"}
+                              </span>
+                              <span className="font-medium">${selectedClinic.price * sessionsCount}</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span>Registration fee</span>
+                              <span className="font-medium">$50</span>
+                            </div>
+                            <div className="flex justify-between items-center">
+                              <span>Consultation fee</span>
+                              <span className="font-medium">$30</span>
+                            </div>
+                            <div className="flex justify-between items-center pt-4 border-t mt-4">
+                              <span className="font-semibold">Total</span>
+                              <span className="font-bold text-xl">${totalPrice + 50 + 30}</span>
+                            </div>
+                          </>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Terms and Conditions */}
+                    <div className="mb-8">
+                      <div className="flex items-start">
+                        <input
+                          type="checkbox"
+                          id="terms"
+                          className="mt-1 mr-3"
+                        />
+                        <label htmlFor="terms" className="text-sm text-muted-foreground">
+                          I agree to the <a href="#" className="text-primary underline">Terms and Conditions</a> and <a href="#" className="text-primary underline">Privacy Policy</a>. I understand that my appointment is subject to the clinic's cancellation policy.
+                        </label>
+                      </div>
+                    </div>
+
+                    <div className="flex justify-between">
+                      <Button
+                        variant="outline"
+                        onClick={() => setCurrentStep(2)}
+                      >
+                        Back
+                      </Button>
+                      <Button
+                        className="btn-primary"
+                        onClick={handleSubmitBooking}
+                      >
+                        Confirm Appointment <Check className="ml-2 h-4 w-4" />
+                      </Button>
+                    </div>
+                  </>
+                ) : (
+                  <div className="glass-card p-8 text-center animate-fade-in">
+                    <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
+                      <Check className="h-8 w-8 text-green-600 dark:text-green-400" />
+                    </div>
+                    <h2 className="text-2xl font-bold mb-2">Appointment Confirmed!</h2>
+                    <p className="text-muted-foreground mb-6">
+                      Your appointment has been successfully confirmed. A confirmation email has been sent to {formData.email}.
+                    </p>
+                    <p className="font-medium mb-8">
+                      Appointment Reference: <span className="text-primary">MRS-{Math.floor(Math.random() * 10000).toString().padStart(4, '0')}</span>
+                    </p>
+                    <Button asChild className="btn-primary">
+                      <Link to="/">Return to Homepage</Link>
+                    </Button>
                   </div>
-                  <div>
-                    <Label htmlFor="medicalHistory">{t.appointments.appointmentInfo.medicalHistory}</Label>
-                    <Textarea
-                      id="medicalHistory"
-                      name="medicalHistory"
-                      value={formData.medicalHistory}
-                      onChange={handleInputChange}
-                      placeholder={t.appointments.appointmentInfo.medicalHistory}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="currentMedications">{t.appointments.appointmentInfo.currentMedications}</Label>
-                    <Textarea
-                      id="currentMedications"
-                      name="currentMedications"
-                      value={formData.currentMedications}
-                      onChange={handleInputChange}
-                      placeholder={t.appointments.appointmentInfo.currentMedications}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="insuranceProvider">{t.appointments.appointmentInfo.insuranceProvider}</Label>
-                    <Input
-                      type="text"
-                      id="insuranceProvider"
-                      name="insuranceProvider"
-                      value={formData.insuranceProvider}
-                      onChange={handleInputChange}
-                      placeholder={t.appointments.appointmentInfo.insuranceProvider}
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="referringDoctor">{t.appointments.appointmentInfo.referringDoctor}</Label>
-                    <Input
-                      type="text"
-                      id="referringDoctor"
-                      name="referringDoctor"
-                      value={formData.referringDoctor}
-                      onChange={handleInputChange}
-                      placeholder={t.appointments.appointmentInfo.referringDoctor}
-                    />
-                  </div>
-                  <Button type="submit">{t.appointments.requestForm.submit}</Button>
-                </form>
-              </CardContent>
-            </Card>
-          </div>
-          <div>
-            <Card className="shadow-md">
-              <CardHeader>
-                <CardTitle>{t.appointments.requestForm.title}</CardTitle>
-                <CardDescription>
-                  {t.appointments.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <p>
-                  {t.appointments.description}
-                </p>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-    </Layout>
+                )}
+              </div>
+            </div>
+          )}
+        </section>
+      </main>
+
+      <Footer />
+    </div>
   );
 }
