@@ -11,12 +11,13 @@ export interface ProcedureProps {
   id: string;
   name: string;
   description: string;
-  consultationFee: number;
-  patientType: string;
+  price: string;
   recoveryTime: string;
+  complexity: number;
   image: string;
   location: string;
-  benefits: string[];
+  features: string[];
+  patientType?: string;
 }
 
 export default function ProcedureCard({ procedure }: { procedure: ProcedureProps }) {
@@ -88,10 +89,12 @@ export default function ProcedureCard({ procedure }: { procedure: ProcedureProps
               <span>{procedure.location}</span>
             </div>
             <div className="flex items-center space-x-3 text-white">
-              <div className="flex items-center">
-                <Users className="h-4 w-4 mr-1" />
-                <span>{procedure.patientType}</span>
-              </div>
+              {procedure.patientType && (
+                <div className="flex items-center">
+                  <Users className="h-4 w-4 mr-1" />
+                  <span>{procedure.patientType}</span>
+                </div>
+              )}
               <div className="flex items-center">
                 <Clock className="h-4 w-4 mr-1" />
                 <span>{procedure.recoveryTime}</span>
@@ -105,27 +108,27 @@ export default function ProcedureCard({ procedure }: { procedure: ProcedureProps
         <p className="text-muted-foreground line-clamp-2">{translatedDescription}</p>
 
         <div className="flex flex-wrap gap-2">
-          {procedure.benefits.slice(0, 3).map((benefit, index) => (
+          {procedure.features.slice(0, 3).map((feature, index) => (
             <div
               key={index}
               className="flex items-center text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full"
             >
-              {benefit.includes("Pain") && <Activity className="h-3.5 w-3.5 mr-1" />}
-              {benefit.includes("Minimally") && <Microscope className="h-3.5 w-3.5 mr-1" />}
-              {benefit.includes("Recovery") && <Stethoscope className="h-3.5 w-3.5 mr-1" />}
-              <span>{benefit}</span>
+              {feature.includes("Pain") && <Activity className="h-3.5 w-3.5 mr-1" />}
+              {feature.includes("Minimally") && <Microscope className="h-3.5 w-3.5 mr-1" />}
+              {feature.includes("Recovery") && <Stethoscope className="h-3.5 w-3.5 mr-1" />}
+              <span>{feature}</span>
             </div>
           ))}
-          {procedure.benefits.length > 3 && (
+          {procedure.features.length > 3 && (
             <div className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">
-              +{procedure.benefits.length - 3} {t.patientResources?.filters?.more || "more"}
+              +{procedure.features.length - 3} {t.patientResources?.filters?.more || "more"}
             </div>
           )}
         </div>
 
         <div className="flex items-end justify-between pt-2">
           <div>
-            <span className="text-xl font-bold">${procedure.consultationFee}</span>
+            <span className="text-xl font-bold">${procedure.price}</span>
             <span className="text-muted-foreground text-sm"> / consultation</span>
           </div>
           <Button asChild className="btn-primary">
