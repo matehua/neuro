@@ -233,7 +233,31 @@ export class MobileOptimiser {
    * Add PWA-specific optimisations
    */
   public optimisePWA(): void {
-    // Add service worker registration
+    // Unregister any existing service worker to fix MIME type issues
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.getRegistrations().then(registrations => {
+        registrations.forEach(registration => {
+          registration.unregister().then(() => {
+            console.log('Service worker unregistered successfully');
+          });
+        });
+      });
+    }
+
+    // Clear any cached responses that might have incorrect MIME types
+    if ('caches' in window) {
+      caches.keys().then(cacheNames => {
+        cacheNames.forEach(cacheName => {
+          caches.delete(cacheName).then(() => {
+            console.log('Cache cleared:', cacheName);
+          });
+        });
+      });
+    }
+
+    // Service worker registration disabled temporarily to fix MIME type issues
+    // TODO: Re-enable after fixing service worker MIME type handling
+    /*
     if ('serviceWorker' in navigator) {
       window.addEventListener('load', () => {
         navigator.serviceWorker.register('/sw.js')
@@ -245,6 +269,7 @@ export class MobileOptimiser {
           });
       });
     }
+    */
 
     // Add app install prompt handling
     let deferredPrompt: Event | null = null;
