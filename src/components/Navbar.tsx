@@ -1,14 +1,9 @@
+
 import { useState, useEffect, useRef } from "react";
-import { Link, NavLink, useLocation } from "react-router-dom";
-import {
-  Menu,
-  X,
-  ChevronDown,
-  Github,
-  Linkedin,
-  Mail,
-  Download,
-} from "lucide-react";
+import { Link, NavLink } from "react-router-dom";
+// Removed unused Lucide icons
+// import { Menu, X, ChevronDown, Github, Linkedin, Mail, Download } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { useTheme } from "next-themes";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
@@ -72,17 +67,9 @@ const siteConfig = {
 
 export default function Navbar() {
   const { t } = useLanguage();
-  const location = useLocation();
+  // Removed unused: location, isMounted, theme, deviceInfo, isSubmenuOpen
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isMounted, setIsMounted] = useState(false);
-  const { theme } = useTheme();
-  const deviceInfo = useDeviceDetection();
-  const [isSubmenuOpen, setIsSubmenuOpen] = useState(false);
   const submenuRef = useRef<HTMLDivElement>(null);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
 
   useEffect(() => {
     const handleOutsideClick = (event: MouseEvent) => {
@@ -90,7 +77,7 @@ export default function Navbar() {
         submenuRef.current &&
         !submenuRef.current.contains(event.target as Node)
       ) {
-        setIsSubmenuOpen(false);
+        // Normally would set isSubmenuOpen, but this is not used, so safely remove
       }
     };
 
@@ -134,7 +121,9 @@ export default function Navbar() {
                     )
                   }
                 >
-                  {t.navbar[item.title.toLowerCase()] || item.title}
+                  {t.navbar && t.navbar[item.title.toLowerCase()]
+                    ? t.navbar[item.title.toLowerCase()]
+                    : item.title}
                 </NavLink>
               ))}
             </div>
@@ -185,7 +174,9 @@ export default function Navbar() {
                         )
                       }
                     >
-                      {t.navbar[item.title.toLowerCase()] || item.title}
+                      {t.navbar && t.navbar[item.title.toLowerCase()]
+                        ? t.navbar[item.title.toLowerCase()]
+                        : item.title}
                     </NavLink>
                   ))}
                 </div>
@@ -197,3 +188,4 @@ export default function Navbar() {
     </div>
   );
 }
+
