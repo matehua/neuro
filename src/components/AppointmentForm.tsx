@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect, useRef } from "react";
 import { Check, CalendarIcon, Users } from "lucide-react";
 import { format } from "date-fns";
@@ -25,6 +24,8 @@ export default function AppointmentForm() {
   const deviceInfo = useDeviceDetection();
   const [startDate, setStartDate] = useState<Date>();
   const [endDate, setEndDate] = useState<Date>();
+  const [adults, setAdults] = useState<string>("1");
+  const [children, setChildren] = useState<string>("0");
   const [submitted, setSubmitted] = useState(false);
   const timerRef = useRef<number | null>(null);
 
@@ -186,7 +187,7 @@ export default function AppointmentForm() {
               <SelectContent>
                 {[1, 2, 3, 4, 5, 6].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? t.appointmentForm.adult : t.appointmentForm.adults}
+                    {num} {num === 1 ? (t.appointmentForm.adult ?? "Adult") : (t.appointmentForm.adults ?? "Adults")}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -205,7 +206,7 @@ export default function AppointmentForm() {
               <SelectContent>
                 {[0, 1, 2, 3, 4].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? t.appointmentForm.child : t.appointmentForm.children}
+                    {num} {num === 1 ? (t.appointmentForm.child ?? "Child") : (t.appointmentForm.children ?? "Children")}
                   </SelectItem>
                 ))}
               </SelectContent>
