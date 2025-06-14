@@ -7,29 +7,22 @@ type Translations = typeof englishTranslations;
 
 export type SupportedLanguage = 'en' | 'zh';
 
-// Use a type assertion to circumvent TS7053 for index signature as we are forcibly populating object keys as string index here
-function addTranslationFallbacks<T extends object>(translations: T): T {
-  const fields: (keyof any)[] = [
-    "hospitals",
-    "dandenongLocation"
-    // Add more as necessary if TS errors persist for other required fields
-  ];
-  // Instead of fixed[field], we'll use a type assertion to index into translations
+// Ensure translations object always has the necessary string keys, TS-safe
+function addTranslationFallbacks<T extends object>(translations: T): T & { hospitals: any, dandenongLocation: any } {
   const fixed: Record<string, any> = { ...translations };
-  for (const field of fields) {
-    if (!(field in fixed)) fixed[field] = {};
-  }
-  return fixed as T;
+  if (typeof fixed.hospitals === "undefined") fixed.hospitals = {};
+  if (typeof fixed.dandenongLocation === "undefined") fixed.dandenongLocation = {};
+  return fixed as T & { hospitals: any, dandenongLocation: any };
 }
 
 interface LanguageContextType {
   language: SupportedLanguage;
   setLanguage: (lang: SupportedLanguage) => void;
-  t: Translations;
+  t: Translations & { hospitals: any, dandenongLocation: any };
   isLanguageLoaded: boolean;
 }
 
-const translations: Record<SupportedLanguage, Translations> = {
+const translations: Record<SupportedLanguage, Translations & { hospitals: any, dandenongLocation: any }> = {
   en: addTranslationFallbacks(englishTranslations),
   zh: addTranslationFallbacks(chineseTranslations)
 };
@@ -40,7 +33,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<SupportedLanguage>('en');
-  const [t, setT] = useState<Translations>(translations.en);
+  const [t, setT] = useState<Translations & { hospitals: any, dandenongLocation: any }>(translations.en);
   const [isLanguageLoaded, setIsLanguageLoaded] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
