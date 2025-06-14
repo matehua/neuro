@@ -6,6 +6,10 @@ interface PerformanceEntryWithLayoutShift extends PerformanceEntry {
   value?: number;
 }
 
+interface FirstInputPerformanceEntry extends PerformanceEntry {
+  processingStart: number;
+}
+
 interface WindowWithGtag extends Window {
   gtag?: (...args: any[]) => void;
 }
@@ -70,7 +74,8 @@ const trackFID = () => {
   try {
     const observer = new PerformanceObserver((list) => {
       for (const entry of list.getEntries()) {
-        const fid = entry.processingStart - entry.startTime;
+        const fidEntry = entry as FirstInputPerformanceEntry;
+        const fid = fidEntry.processingStart - fidEntry.startTime;
         console.log('FID:', fid);
         
         // Send to analytics if available

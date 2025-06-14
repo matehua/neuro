@@ -286,10 +286,44 @@ export const en = {
     title: "Book Appointment",
     subtitle: "Schedule your consultation",
     description: "Choose your preferred date and time",
+    description1: "Our appointment booking process is designed to be simple and convenient",
+    description2: "Choose your preferred date and time for your consultation",
     bookingForm: {
       title: "Appointment Booking",
       personalInfo: "Personal Information",
       appointmentDetails: "Appointment Details"
+    },
+    process: {
+      step1: "Personal Information",
+      step2: "Medical History", 
+      step3: "Appointment Details",
+      step4: "Confirmation"
+    },
+    appointmentInfo: {
+      title: "Appointment Information",
+      subtitle: "Please provide your details",
+      firstName: "First Name",
+      lastName: "Last Name", 
+      email: "Email Address",
+      phone: "Phone Number",
+      preferredDate: "Preferred Date",
+      preferredTime: "Preferred Time",
+      consultationType: "Consultation Type",
+      urgency: "Urgency Level",
+      reason: "Reason for Visit",
+      medicalHistory: "Medical History",
+      currentMedications: "Current Medications",
+      insuranceProvider: "Insurance Provider",
+      referringDoctor: "Referring Doctor"
+    },
+    requestForm: {
+      title: "Request Appointment",
+      submit: "Submit Request",
+      cancel: "Cancel",
+      required: "Required field",
+      optional: "Optional",
+      success: "Appointment request submitted successfully",
+      error: "Failed to submit appointment request"
     }
   },
   appointmentForm: {

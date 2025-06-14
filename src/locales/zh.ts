@@ -286,10 +286,44 @@ export const zh = {
     title: "预约",
     subtitle: "安排您的咨询",
     description: "选择您的首选日期和时间",
+    description1: "我们的预约流程设计简单便捷",
+    description2: "选择您咨询的首选日期和时间",
     bookingForm: {
       title: "预约预订",
       personalInfo: "个人信息",
       appointmentDetails: "预约详情"
+    },
+    process: {
+      step1: "个人信息",
+      step2: "病史",
+      step3: "预约详情", 
+      step4: "确认"
+    },
+    appointmentInfo: {
+      title: "预约信息",
+      subtitle: "请提供您的详细信息",
+      firstName: "名",
+      lastName: "姓",
+      email: "电子邮件地址",
+      phone: "电话号码",
+      preferredDate: "首选日期",
+      preferredTime: "首选时间",
+      consultationType: "咨询类型",
+      urgency: "紧急程度",
+      reason: "就诊原因",
+      medicalHistory: "病史",
+      currentMedications: "当前用药",
+      insuranceProvider: "保险提供商",
+      referringDoctor: "转诊医生"
+    },
+    requestForm: {
+      title: "申请预约",
+      submit: "提交申请",
+      cancel: "取消",
+      required: "必填字段",
+      optional: "可选",
+      success: "预约申请提交成功",
+      error: "预约申请提交失败"
     }
   },
   appointmentForm: {

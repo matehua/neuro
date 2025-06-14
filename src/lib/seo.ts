@@ -1,4 +1,3 @@
-
 // SEO configuration and utilities
 interface SEOPageData {
   title: string;
@@ -18,6 +17,14 @@ const BASE_SEO = {
   baseUrl: 'https://mineuro.com.au',
   ogImage: '/og-image.png',
   twitterHandle: '@mineuro'
+};
+
+// Export as SEO_CONFIG for backward compatibility
+export const SEO_CONFIG = {
+  siteUrl: BASE_SEO.baseUrl,
+  siteName: BASE_SEO.siteName,
+  defaultTitle: BASE_SEO.defaultTitle,
+  defaultDescription: BASE_SEO.defaultDescription
 };
 
 // Page-specific SEO data

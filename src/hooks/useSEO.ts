@@ -1,7 +1,7 @@
 
 import { useEffect } from 'react';
 
-interface SEOData {
+export interface SEOData {
   title?: string;
   description?: string;
   keywords?: string;
