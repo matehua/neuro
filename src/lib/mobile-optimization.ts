@@ -1,239 +1,391 @@
+/**
+ * Mobile Optimisation Utilities
+ * Comprehensive mobile performance and security enhancements
+ */
 
-// Mobile optimization utilities for enhanced user experience
-// Includes touch gestures, viewport handling, and performance optimizations
+/**
+ * Mobile performance optimisation class
+ */
+export class MobileOptimiser {
+  private static instance: MobileOptimiser;
+  private touchStartTime: number = 0;
+  private isInitialised: boolean = false;
 
-interface TouchGesture {
-  startX: number;
-  startY: number;
-  currentX: number;
-  currentY: number;
-  deltaX: number;
-  deltaY: number;
-}
-
-interface ViewportInfo {
-  width: number;
-  height: number;
-  orientation: string;
-  pixelRatio: number;
-}
-
-class MobileOptimizer {
-  private isInitialized: boolean = false;
-  private gesture: TouchGesture | null = null;
-  private viewport: ViewportInfo | null = null;
-
-  constructor() {
-    this.initializeMobileOptimizations();
+  private constructor() {
+    this.initialise();
   }
 
-  private initializeMobileOptimizations(): void {
-    if (this.isInitialized) return;
-
-    this.setupViewportOptimization();
-    this.setupTouchOptimization();
-    this.setupPerformanceOptimization();
-    this.setupOrientationHandling();
-    
-    this.isInitialized = true;
-  }
-
-  private setupViewportOptimization(): void {
-    // Set optimal viewport meta tag
-    let viewport = document.querySelector('meta[name="viewport"]');
-    if (!viewport) {
-      viewport = document.createElement('meta');
-      viewport.setAttribute('name', 'viewport');
-      document.head.appendChild(viewport);
+  static getInstance(): MobileOptimiser {
+    if (!MobileOptimiser.instance) {
+      MobileOptimiser.instance = new MobileOptimiser();
     }
+    return MobileOptimiser.instance;
+  }
+
+  /**
+   * Initialise mobile optimisations
+   */
+  private initialise(): void {
+    if (typeof window === 'undefined' || this.isInitialised) return;
+
+    // Optimise touch events
+    this.optimiseTouchEvents();
+
+    // Optimise viewport
+    this.optimiseViewport();
+
+    // Optimise scrolling
+    this.optimiseScrolling();
+
+    // Optimise images for mobile
+    this.optimiseImages();
+
+    // Add mobile-specific security measures
+    this.addMobileSecurity();
+
+    this.isInitialised = true;
+  }
+
+  /**
+   * Optimise touch events for better performance
+   */
+  private optimiseTouchEvents(): void {
+    // Add passive event listeners for better scroll performance
+    const passiveEvents = ['touchstart', 'touchmove', 'wheel'];
     
-    viewport.setAttribute('content', 
-      'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover'
-    );
+    passiveEvents.forEach(event => {
+      document.addEventListener(event, () => {}, { passive: true });
+    });
 
-    this.updateViewportInfo();
-  }
-
-  private updateViewportInfo(): void {
-    this.viewport = {
-      width: window.innerWidth,
-      height: window.innerHeight,
-      orientation: window.screen?.orientation?.type || 'unknown',
-      pixelRatio: window.devicePixelRatio || 1
-    };
-  }
-
-  private setupTouchOptimization(): void {
-    // Improve touch responsiveness
-    document.addEventListener('touchstart', this.handleTouchStart.bind(this), { passive: true });
-    document.addEventListener('touchmove', this.handleTouchMove.bind(this), { passive: true });
-    document.addEventListener('touchend', this.handleTouchEnd.bind(this), { passive: true });
+    // Optimise touch delay
+    document.addEventListener('touchstart', (e) => {
+      this.touchStartTime = Date.now();
+    }, { passive: true });
 
     // Prevent zoom on double tap for better UX
     let lastTouchEnd = 0;
-    document.addEventListener('touchend', () => {
-      const now = new Date().getTime();
+    document.addEventListener('touchend', (e) => {
+      const now = Date.now();
       if (now - lastTouchEnd <= 300) {
-        // Prevent default zoom behavior
+        e.preventDefault();
       }
       lastTouchEnd = now;
     }, false);
   }
 
-  private handleTouchStart(event: TouchEvent): void {
-    if (event.touches.length === 1) {
-      const touch = event.touches[0];
-      this.gesture = {
-        startX: touch.clientX,
-        startY: touch.clientY,
-        currentX: touch.clientX,
-        currentY: touch.clientY,
-        deltaX: 0,
-        deltaY: 0
-      };
+  /**
+   * Optimise viewport settings
+   */
+  private optimiseViewport(): void {
+    // Ensure proper viewport meta tag
+    let viewport = document.querySelector('meta[name="viewport"]') as HTMLMetaElement;
+    
+    if (!viewport) {
+      viewport = document.createElement('meta');
+      viewport.name = 'viewport';
+      document.head.appendChild(viewport);
     }
+    
+    // Set optimal viewport settings for mobile
+    viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover';
   }
 
-  private handleTouchMove(event: TouchEvent): void {
-    if (this.gesture && event.touches.length === 1) {
-      const touch = event.touches[0];
-      this.gesture.currentX = touch.clientX;
-      this.gesture.currentY = touch.clientY;
-      this.gesture.deltaX = this.gesture.currentX - this.gesture.startX;
-      this.gesture.deltaY = this.gesture.currentY - this.gesture.startY;
-    }
-  }
-
-  private handleTouchEnd(): void {
-    if (this.gesture) {
-      // Process gesture if needed
-      this.gesture = null;
-    }
-  }
-
-  private setupPerformanceOptimization(): void {
-    // Optimize animations for mobile
+  /**
+   * Optimise scrolling performance
+   */
+  private optimiseScrolling(): void {
+    // Add smooth scrolling behavior
+    document.documentElement.style.scrollBehavior = 'smooth';
+    
+    // Optimise scroll performance with CSS
     const style = document.createElement('style');
     style.textContent = `
       * {
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
       }
       
-      .animate-optimized {
-        will-change: transform;
-        transform: translateZ(0);
+      body {
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
       }
       
-      @media (prefers-reduced-motion: reduce) {
-        *, *::before, *::after {
-          animation-duration: 0.01ms !important;
-          animation-iteration-count: 1 !important;
-          transition-duration: 0.01ms !important;
+      /* Optimise touch targets */
+      button, a, input, select, textarea {
+        min-height: 44px;
+        min-width: 44px;
+      }
+      
+      /* Optimise animations for mobile */
+      @media (prefers-reduced-motion: no-preference) {
+        * {
+          animation-duration: 0.3s;
+          transition-duration: 0.3s;
         }
       }
     `;
     document.head.appendChild(style);
   }
 
-  private setupOrientationHandling(): void {
-    const handleOrientationChange = () => {
-      setTimeout(() => {
-        this.updateViewportInfo();
-        window.dispatchEvent(new CustomEvent('viewportChanged', { 
-          detail: this.viewport 
-        }));
-      }, 100);
-    };
+  /**
+   * Optimise images for mobile devices
+   */
+  private optimiseImages(): void {
+    // Add intersection observer for lazy loading
+    if ('IntersectionObserver' in window) {
+      const imageObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            const img = entry.target as HTMLImageElement;
+            if (img.dataset.src) {
+              img.src = img.dataset.src;
+              img.removeAttribute('data-src');
+              imageObserver.unobserve(img);
+            }
+          }
+        });
+      }, {
+        rootMargin: '50px 0px',
+        threshold: 0.01
+      });
 
-    window.addEventListener('orientationchange', handleOrientationChange);
-    window.addEventListener('resize', handleOrientationChange);
-  }
-
-  public getViewportInfo(): ViewportInfo | null {
-    return this.viewport;
-  }
-
-  public isMobile(): boolean {
-    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
-  }
-
-  public isTouch(): boolean {
-    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-  }
-}
-
-// PWA Installation utilities
-class PWAInstaller {
-  private installPrompt: any = null;
-
-  constructor() {
-    this.setupInstallPrompt();
-  }
-
-  private setupInstallPrompt(): void {
-    window.addEventListener('beforeinstallprompt', (e) => {
-      e.preventDefault();
-      this.installPrompt = e;
-      this.showInstallButton();
-    });
-  }
-
-  private showInstallButton(): void {
-    // Create install button if it doesn't exist
-    if (!document.querySelector('.pwa-install-button')) {
-      const button = document.createElement('button');
-      button.className = 'pwa-install-button';
-      button.textContent = 'Install App';
-      button.style.cssText = `
-        position: fixed;
-        bottom: 20px;
-        right: 20px;
-        z-index: 1000;
-        background: #007bff;
-        color: white;
-        border: none;
-        padding: 10px 15px;
-        border-radius: 5px;
-        display: none;
-      `;
-      
-      button.addEventListener('click', () => this.promptInstall());
-      document.body.appendChild(button);
+      // Observe all images with data-src
+      document.querySelectorAll('img[data-src]').forEach(img => {
+        imageObserver.observe(img);
+      });
     }
   }
 
-  public promptInstall(): void {
-    if (this.installPrompt) {
-      this.installPrompt.prompt();
-      this.installPrompt.userChoice.then((choiceResult: any) => {
-        if (choiceResult.outcome === 'accepted') {
-          console.log('PWA installation accepted');
+  /**
+   * Add mobile-specific security measures
+   */
+  private addMobileSecurity(): void {
+    // Prevent context menu on long press (optional)
+    document.addEventListener('contextmenu', (e) => {
+      if (this.isMobileDevice()) {
+        e.preventDefault();
+      }
+    });
+
+    // Prevent text selection on UI elements
+    const style = document.createElement('style');
+    style.textContent = `
+      .no-select {
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        -webkit-touch-callout: none;
+      }
+    `;
+    document.head.appendChild(style);
+
+    // Add security meta tags for mobile
+    this.addMobileSecurityMeta();
+  }
+
+  /**
+   * Add mobile-specific security meta tags
+   */
+  private addMobileSecurityMeta(): void {
+    const metaTags = [
+      { name: 'format-detection', content: 'telephone=no' },
+      { name: 'msapplication-tap-highlight', content: 'no' },
+      { name: 'apple-mobile-web-app-capable', content: 'yes' },
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'default' },
+      { name: 'apple-touch-fullscreen', content: 'yes' },
+      { name: 'mobile-web-app-capable', content: 'yes' }
+    ];
+
+    metaTags.forEach(tag => {
+      let meta = document.querySelector(`meta[name="${tag.name}"]`) as HTMLMetaElement;
+      if (!meta) {
+        meta = document.createElement('meta');
+        meta.name = tag.name;
+        document.head.appendChild(meta);
+      }
+      meta.content = tag.content;
+    });
+  }
+
+  /**
+   * Check if device is mobile
+   */
+  private isMobileDevice(): boolean {
+    return /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent);
+  }
+
+  /**
+   * Optimise font loading for mobile
+   */
+  public optimiseFonts(): void {
+    // Add font-display: swap for better performance
+    const style = document.createElement('style');
+    style.textContent = `
+      @font-face {
+        font-display: swap;
+      }
+    `;
+    document.head.appendChild(style);
+  }
+
+  /**
+   * Add PWA-specific optimisations
+   */
+  public optimisePWA(): void {
+    // Add service worker registration
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js')
+          .then(registration => {
+            console.log('SW registered: ', registration);
+          })
+          .catch(registrationError => {
+            console.log('SW registration failed: ', registrationError);
+          });
+      });
+    }
+
+    // Add app install prompt handling
+    let deferredPrompt: Event | null = null;
+    
+    window.addEventListener('beforeinstallprompt', (e) => {
+      e.preventDefault();
+      deferredPrompt = e;
+    });
+  }
+
+  /**
+   * Optimise network requests for mobile
+   */
+  public optimiseNetwork(): void {
+    // Add connection-aware loading
+    if ('connection' in navigator) {
+      const connection = (navigator as Navigator & { connection: { effectiveType: string } }).connection;
+      
+      if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+        // Reduce image quality for slow connections
+        document.documentElement.classList.add('slow-connection');
+      }
+    }
+  }
+
+  /**
+   * Add mobile accessibility enhancements
+   */
+  public enhanceAccessibility(): void {
+    // Ensure proper focus management on mobile
+    document.addEventListener('focusin', (e) => {
+      const target = e.target as HTMLElement;
+      if (target && this.isMobileDevice()) {
+        target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+    });
+
+    // Add high contrast mode detection
+    if (window.matchMedia('(prefers-contrast: high)').matches) {
+      document.documentElement.classList.add('high-contrast');
+    }
+
+    // Add reduced motion detection
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      document.documentElement.classList.add('reduced-motion');
+    }
+  }
+
+  /**
+   * Monitor mobile performance
+   */
+  public monitorPerformance(): void {
+    // Monitor memory usage on mobile
+    if ('memory' in performance) {
+      const memory = (performance as Performance & { memory: { usedJSHeapSize: number; totalJSHeapSize: number } }).memory;
+      
+      if (memory.usedJSHeapSize / memory.totalJSHeapSize > 0.8) {
+        console.warn('High memory usage detected on mobile device');
+      }
+    }
+
+    // Monitor battery status
+    if ('getBattery' in navigator) {
+      (navigator as Navigator & { getBattery: () => Promise<{ level: number; charging: boolean }> }).getBattery().then(battery => {
+        if (battery.level < 0.2 && !battery.charging) {
+          // Reduce animations and background processes for low battery
+          document.documentElement.classList.add('low-battery');
         }
-        this.installPrompt = null;
       });
     }
   }
 }
 
-// Initialize optimizations
-const mobileOptimizer = new MobileOptimizer();
-const pwaInstaller = new PWAInstaller();
+/**
+ * Initialise mobile optimisations
+ */
+export function initialiseMobileOptimisations(): void {
+  const optimiser = MobileOptimiser.getInstance();
+  optimiser.optimiseFonts();
+  optimiser.optimisePWA();
+  optimiser.optimiseNetwork();
+  optimiser.enhanceAccessibility();
+  optimiser.monitorPerformance();
+}
 
-export { MobileOptimizer, PWAInstaller, mobileOptimizer, pwaInstaller };
+/**
+ * Mobile-specific utility functions
+ */
+export const MobileUtils = {
+  /**
+   * Check if device supports touch
+   */
+  isTouchDevice(): boolean {
+    return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+  },
 
-export const initializeMobileOptimizations = (): void => {
-  console.log('Mobile optimizations initialized');
+  /**
+   * Get device pixel ratio
+   */
+  getDevicePixelRatio(): number {
+    return window.devicePixelRatio || 1;
+  },
+
+  /**
+   * Check if device is in landscape mode
+   */
+  isLandscape(): boolean {
+    return window.innerWidth > window.innerHeight;
+  },
+
+  /**
+   * Get safe area insets for devices with notches
+   */
+  getSafeAreaInsets(): { top: number; right: number; bottom: number; left: number } {
+    const style = getComputedStyle(document.documentElement);
+    return {
+      top: parseInt(style.getPropertyValue('env(safe-area-inset-top)') || '0'),
+      right: parseInt(style.getPropertyValue('env(safe-area-inset-right)') || '0'),
+      bottom: parseInt(style.getPropertyValue('env(safe-area-inset-bottom)') || '0'),
+      left: parseInt(style.getPropertyValue('env(safe-area-inset-left)') || '0')
+    };
+  },
+
+  /**
+   * Optimise images for mobile screens
+   */
+  optimiseImageForMobile(img: HTMLImageElement): void {
+    const pixelRatio = this.getDevicePixelRatio();
+    const width = img.clientWidth * pixelRatio;
+    const height = img.clientHeight * pixelRatio;
+    
+    // Add responsive image attributes
+    img.setAttribute('loading', 'lazy');
+    img.setAttribute('decoding', 'async');
+    
+    // Set optimal sizes
+    if (width && height) {
+      img.style.maxWidth = '100%';
+      img.style.height = 'auto';
+    }
+  }
 };
 
-export const getViewportInfo = (): ViewportInfo | null => {
-  return mobileOptimizer.getViewportInfo();
-};
-
-export const isMobileDevice = (): boolean => {
-  return mobileOptimizer.isMobile();
-};
-
-export const isTouchDevice = (): boolean => {
-  return mobileOptimizer.isTouch();
-};
+export default MobileOptimiser;

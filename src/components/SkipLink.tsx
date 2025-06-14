@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface SkipLinkProps {
   /** The target ID to skip to (without the #) */
   targetId?: string;

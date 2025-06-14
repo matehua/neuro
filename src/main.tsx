@@ -1,27 +1,97 @@
+import React from 'react';
+import { createRoot } from 'react-dom/client';
+import { StrictMode } from 'react';
+import App from './App.tsx';
+import './index.css';
+import { initializePerformanceMonitoring } from './lib/performance';
+import { initializeAccessibility } from './lib/accessibility';
+import { initialiseMobileOptimisations } from './lib/mobile-optimization';
+import { initializeSecurity } from './lib/security';
 
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
-import App from './App.tsx'
+// Initialize all app features for production readiness
+function initializeApp() {
+  // Initialize performance monitoring
+  initializePerformanceMonitoring();
 
-// Track initial page load performance
-const perfObserver = new PerformanceObserver((list) => {
-  for (const entry of list.getEntries()) {
-    if (entry.entryType === 'navigation') {
-      const navigationEntry = entry as PerformanceNavigationTiming;
-      // Use modern performance timing properties
-      const loadTime = navigationEntry.loadEventEnd - navigationEntry.fetchStart;
-      const domContentLoadedTime = navigationEntry.domContentLoadedEventEnd - navigationEntry.fetchStart;
-      console.log('Page Load Time:', loadTime);
-      console.log('DOM Content Loaded:', domContentLoadedTime);
+  // Initialize accessibility features
+  initializeAccessibility();
+
+  // Initialise mobile optimisations
+  initialiseMobileOptimisations();
+
+  // Initialize security measures
+  initializeSecurity({
+    enableCSP: true,
+    enableXSSProtection: true,
+    enableClickjacking: true,
+    logSecurityEvents: process.env.NODE_ENV === 'development'
+  });
+
+  // Report web vitals
+  reportWebVitals();
+}
+
+// Enhanced performance monitoring
+const reportWebVitals = () => {
+  if (typeof window === 'undefined') return;
+
+  // Core Web Vitals monitoring
+  if ('performance' in window) {
+    // Navigation timing
+    const navigationEntries = performance.getEntriesByType('navigation');
+    if (navigationEntries.length > 0) {
+      const nav = navigationEntries[0] as PerformanceNavigationTiming;
+      const metrics = {
+        'DNS Lookup': nav.domainLookupEnd - nav.domainLookupStart,
+        'TCP Connection': nav.connectEnd - nav.connectStart,
+        'Request': nav.responseStart - nav.requestStart,
+        'Response': nav.responseEnd - nav.responseStart,
+        'DOM Processing': nav.domComplete - nav.domLoading,
+        'Total Load Time': nav.loadEventEnd - nav.navigationStart
+      };
+
+      if (process.env.NODE_ENV === 'development') {
+        console.table(metrics);
+      }
+    }
+
+    // Largest Contentful Paint
+    if ('PerformanceObserver' in window) {
+      try {
+        const lcpObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          const lastEntry = entries[entries.length - 1];
+          if (process.env.NODE_ENV === 'development') {
+            console.log('LCP:', lastEntry.startTime);
+          }
+        });
+        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+
+        // First Input Delay
+        const fidObserver = new PerformanceObserver((list) => {
+          const entries = list.getEntries();
+          entries.forEach((entry) => {
+            if (process.env.NODE_ENV === 'development') {
+              console.log('FID:', entry.duration);
+            }
+          });
+        });
+        fidObserver.observe({ entryTypes: ['first-input'] });
+      } catch (error) {
+        console.warn('Performance monitoring setup failed:', error);
+      }
     }
   }
-});
+};
 
-perfObserver.observe({ entryTypes: ['navigation'] });
+// Initialize the app
+const root = createRoot(document.getElementById("root")!);
 
-createRoot(document.getElementById('root')!).render(
+// Initialize monitoring before rendering
+initializeApp();
+
+root.render(
   <StrictMode>
     <App />
-  </StrictMode>,
-)
+  </StrictMode>
+);

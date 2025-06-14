@@ -22,11 +22,14 @@ import { useDeviceDetection } from "@/hooks/use-mobile";
 export default function AppointmentForm() {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
-  const [appointmentDate, setAppointmentDate] = useState<Date>();
-  const [appointmentTime, setAppointmentTime] = useState<Date>();
+  const [startDate, setStartDate] = useState<Date>();
+  const [endDate, setEndDate] = useState<Date>();
+  const [adults, setAdults] = useState<string>("1");
+  const [children, setChildren] = useState<string>("0");
   const [submitted, setSubmitted] = useState(false);
   const timerRef = useRef<number | null>(null);
 
+  // Clean up the timer when the component unmounts
   useEffect(() => {
     return () => {
       if (timerRef.current) {
@@ -39,12 +42,22 @@ export default function AppointmentForm() {
     e.preventDefault();
 
     // Validate form data before submission
-    if (!appointmentDate || !appointmentTime) {
-      // Show error message to the user in a real app
+    if (!startDate || !endDate) {
+      // In a real app, you would show an error message to the user
       return;
     }
+
+    // In a real app, this would send the booking data to a server
+    // with proper input sanitization and validation
     setSubmitted(true);
-    if (timerRef.current) clearTimeout(timerRef.current);
+
+    // Reset form after 3 seconds
+    // Clear any existing timer
+    if (timerRef.current) {
+      clearTimeout(timerRef.current);
+    }
+
+    // Set a new timer
     timerRef.current = window.setTimeout(() => {
       setSubmitted(false);
       timerRef.current = null;
@@ -69,6 +82,7 @@ export default function AppointmentForm() {
       )}>
         {t.appointmentForm.title}
       </h3>
+
       <div className={cn(
         deviceInfo.isMobile ? "space-y-mobile-md" : "space-y-4"
       )}>
@@ -97,7 +111,7 @@ export default function AppointmentForm() {
                   variant="outline"
                   className={cn(
                     "w-full justify-start text-left font-normal touch-target",
-                    !appointmentDate && "text-muted-foreground",
+                    !startDate && "text-muted-foreground",
                     deviceInfo.isMobile && "mobile-input"
                   )}
                 >
@@ -105,7 +119,7 @@ export default function AppointmentForm() {
                     "mr-2",
                     deviceInfo.isMobile ? "h-5 w-5" : "h-4 w-4"
                   )} />
-                  {appointmentDate ? format(appointmentDate, "PPP") : <span>{t.appointmentForm.selectDate}</span>}
+                  {startDate ? format(startDate, "PPP") : <span>{t.appointmentForm.selectDate}</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent
@@ -117,8 +131,8 @@ export default function AppointmentForm() {
               >
                 <Calendar
                   mode="single"
-                  selected={appointmentDate}
-                  onSelect={setAppointmentDate}
+                  selected={startDate}
+                  onSelect={setStartDate}
                   initialFocus
                   disabled={(date) => date < new Date()}
                   className="pointer-events-auto"
@@ -126,6 +140,7 @@ export default function AppointmentForm() {
               </PopoverContent>
             </Popover>
           </div>
+
           {/* Appointment Time */}
           <div className="space-y-2">
             <label htmlFor="appointment-time" className="block text-sm font-medium">
@@ -138,45 +153,68 @@ export default function AppointmentForm() {
                   variant="outline"
                   className={cn(
                     "w-full justify-start text-left font-normal",
-                    !appointmentTime && "text-muted-foreground"
+                    !endDate && "text-muted-foreground"
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {appointmentTime ? format(appointmentTime, "PPP") : <span>{t.appointmentForm.selectTime}</span>}
+                  {endDate ? format(endDate, "PPP") : <span>{t.appointmentForm.selectTime}</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start">
                 <Calendar
                   mode="single"
-                  selected={appointmentTime}
-                  onSelect={setAppointmentTime}
+                  selected={endDate}
+                  onSelect={setEndDate}
                   initialFocus
-                  disabled={(date) => date < (appointmentDate || new Date())}
+                  disabled={(date) => date < (startDate || new Date())}
                   className="pointer-events-auto"
                 />
               </PopoverContent>
             </Popover>
           </div>
         </div>
-        {/* Number of Patients */}
-        <div className="space-y-2">
-          <label htmlFor="patients" className="block text-sm font-medium">
-            {t.appointmentForm.numberOfPatients ?? "Number of Patients"}
-          </label>
-          <Select defaultValue="1">
-            <SelectTrigger id="patients" className="w-full">
-              <SelectValue placeholder="Select" />
-            </SelectTrigger>
-            <SelectContent>
-              {[1, 2, 3, 4, 5, 6].map((num) => (
-                <SelectItem key={num} value={num.toString()}>
-                  {num} {num === 1 ? "Patient" : "Patients"}
-                </SelectItem>
-              ))}
-            </SelectContent>
-          </Select>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+          {/* Adult Patients */}
+          <div className="space-y-2">
+            <label htmlFor="adults" className="block text-sm font-medium">
+              Adults
+            </label>
+            <Select value={adults} onValueChange={setAdults}>
+              <SelectTrigger id="adults" className="w-full">
+                <SelectValue placeholder="Select" />
+              </SelectTrigger>
+              <SelectContent>
+                {[1, 2, 3, 4, 5, 6].map((num) => (
+                  <SelectItem key={num} value={num.toString()}>
+                    {num} {num === 1 ? "Adult" : "Adults"}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
+
+          {/* Child Patients */}
+          <div className="space-y-2">
+            <label htmlFor="children" className="block text-sm font-medium">
+              Children
+            </label>
+            <Select value={children} onValueChange={setChildren}>
+              <SelectTrigger id="children" className="w-full">
+                <SelectValue placeholder="Select" />
+              </SelectTrigger>
+              <SelectContent>
+                {[0, 1, 2, 3, 4].map((num) => (
+                  <SelectItem key={num} value={num.toString()}>
+                    {num} {num === 1 ? "Child" : "Children"}
+                  </SelectItem>
+                ))}
+              </SelectContent>
+            </Select>
+          </div>
         </div>
       </div>
+
       <Button type="submit" className="w-full btn-primary relative">
         {submitted ? (
           <>
