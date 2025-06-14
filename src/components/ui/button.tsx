@@ -58,7 +58,10 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ariaProps['aria-label'] = accessibleLabel;
     }
 
-    // Removed unsupported/destructive aria-disabled-reason logic
+    // If the button is disabled, explain why if a reason is provided
+    if (props.disabled && props['aria-disabled-reason']) {
+      ariaProps['aria-describedby'] = props['aria-disabled-reason'];
+    }
 
     return (
       <Comp
@@ -73,4 +76,3 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
 Button.displayName = "Button"
 
 export { Button, buttonVariants }
-

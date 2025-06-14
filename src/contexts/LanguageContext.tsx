@@ -1,30 +1,22 @@
 import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { en as englishTranslations } from '@/locales/en';
-import { zh as chineseTranslations } from '@/locales/zh';
+import { en } from '@/locales/en';
+import { zh } from '@/locales/zh';
 
-type Translations = typeof englishTranslations;
+type Translations = typeof en;
 
 export type SupportedLanguage = 'en' | 'zh';
-
-// Ensure translations object always has the necessary string keys, TS-safe
-function addTranslationFallbacks<T extends object>(translations: T): T & { hospitals: any, dandenongLocation: any } {
-  const fixed: Record<string, any> = { ...translations };
-  if (typeof fixed.hospitals === "undefined") fixed.hospitals = {};
-  if (typeof fixed.dandenongLocation === "undefined") fixed.dandenongLocation = {};
-  return fixed as T & { hospitals: any, dandenongLocation: any };
-}
 
 interface LanguageContextType {
   language: SupportedLanguage;
   setLanguage: (lang: SupportedLanguage) => void;
-  t: Translations & { hospitals: any, dandenongLocation: any };
+  t: Translations;
   isLanguageLoaded: boolean;
 }
 
-const translations: Record<SupportedLanguage, Translations & { hospitals: any, dandenongLocation: any }> = {
-  en: addTranslationFallbacks(englishTranslations),
-  zh: addTranslationFallbacks(chineseTranslations)
+const translations: Record<SupportedLanguage, Translations> = {
+  en,
+  zh
 };
 
 const supportedLanguages: SupportedLanguage[] = ['en', 'zh'];
@@ -33,7 +25,7 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<SupportedLanguage>('en');
-  const [t, setT] = useState<Translations & { hospitals: any, dandenongLocation: any }>(translations.en);
+  const [t, setT] = useState<Translations>(translations.en);
   const [isLanguageLoaded, setIsLanguageLoaded] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
