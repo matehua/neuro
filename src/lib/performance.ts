@@ -255,19 +255,19 @@ export function measureComponentRender<T extends Record<string, unknown>>(
  * Hook for measuring custom performance metrics
  */
 export function usePerformanceMetric(name: string, dependencies: React.DependencyList = []) {
-  const monitor = PerformanceMonitor.getInstance();
+  const monitor = React.useMemo(() => PerformanceMonitor.getInstance(), []);
 
   React.useEffect(() => {
     monitor.startMeasure(name);
     return () => {
       monitor.endMeasure(name);
     };
-  }, dependencies);
+  }, [monitor, name, dependencies]);
 
-  return {
+  return React.useMemo(() => ({
     startMeasure: (metricName: string) => monitor.startMeasure(metricName),
     endMeasure: (metricName: string) => monitor.endMeasure(metricName)
-  };
+  }), [monitor]);
 }
 
 /**
