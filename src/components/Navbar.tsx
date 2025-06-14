@@ -1,14 +1,12 @@
 
 import { useState, useEffect, useRef } from "react";
 import { Link, NavLink } from "react-router-dom";
-// Removed unused Lucide icons
 // import { Menu, X, ChevronDown, Github, Linkedin, Mail, Download } from "lucide-react";
 import { Menu, X } from "lucide-react";
-import { useTheme } from "next-themes";
+// Removed unused: useTheme, useDeviceDetection
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 import LanguageSelector from "./LanguageSelector";
 import ThemeToggle from "./ThemeToggle";
@@ -67,7 +65,6 @@ const siteConfig = {
 
 export default function Navbar() {
   const { t } = useLanguage();
-  // Removed unused: location, isMounted, theme, deviceInfo, isSubmenuOpen
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const submenuRef = useRef<HTMLDivElement>(null);
 
@@ -77,7 +74,7 @@ export default function Navbar() {
         submenuRef.current &&
         !submenuRef.current.contains(event.target as Node)
       ) {
-        // Normally would set isSubmenuOpen, but this is not used, so safely remove
+        // Submenu closing logic removed (not used)
       }
     };
 
@@ -121,9 +118,8 @@ export default function Navbar() {
                     )
                   }
                 >
-                  {t.navbar && t.navbar[item.title.toLowerCase()]
-                    ? t.navbar[item.title.toLowerCase()]
-                    : item.title}
+                  {/* Use (t as any) to avoid TS lookup issues with navbar */}
+                  {(t as any)?.navbar?.[item.title.toLowerCase()] ?? item.title}
                 </NavLink>
               ))}
             </div>
@@ -174,9 +170,7 @@ export default function Navbar() {
                         )
                       }
                     >
-                      {t.navbar && t.navbar[item.title.toLowerCase()]
-                        ? t.navbar[item.title.toLowerCase()]
-                        : item.title}
+                      {(t as any)?.navbar?.[item.title.toLowerCase()] ?? item.title}
                     </NavLink>
                   ))}
                 </div>
