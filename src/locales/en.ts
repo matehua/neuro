@@ -166,7 +166,11 @@ export const en = {
       referralGuidelines: "Referral Guidelines",
       clinicalResources: "Clinical Resources",
       educationalMaterials: "Educational Materials",
-      consultationProcess: "Consultation Process"
+      consultationProcess: "Consultation Process",
+      referralProtocols: "Referral Protocols",
+      diagnostics: "Diagnostics",
+      careCoordination: "Care Coordination",
+      emergencies: "Emergencies"
     },
     locationsSubmenu: {
       melbournePrivate: "Melbourne Private Surgical Centre",
@@ -179,7 +183,16 @@ export const en = {
       emergency: "Emergency Contact",
       parking: "Parking Information",
       accessibility: "Accessibility",
-      directions: "Directions"
+      directions: "Directions",
+      mornington: "Mornington",
+      frankston: "Frankston",
+      langwarrin: "Langwarrin",
+      mooneePonds: "Moonee Ponds",
+      sunbury: "Sunbury",
+      werribee: "Werribee",
+      heidelberg: "Heidelberg",
+      wantirna: "Wantirna",
+      surreyHills: "Surrey Hills"
     }
   },
   home: {
@@ -262,6 +275,21 @@ export const en = {
         ratemd: "RateMDs",
         threebestrated: "ThreeBestRated"
       }
+    },
+    advancedTechnologies: {
+      title: "Advanced Technologies",
+      subtitle: "Cutting-edge medical technology",
+      description: "State-of-the-art equipment and innovative techniques"
+    }
+  },
+  appointments: {
+    title: "Book Appointment",
+    subtitle: "Schedule your consultation",
+    description: "Choose your preferred date and time",
+    bookingForm: {
+      title: "Appointment Booking",
+      personalInfo: "Personal Information",
+      appointmentDetails: "Appointment Details"
     }
   },
   appointmentForm: {
@@ -282,6 +310,7 @@ export const en = {
     followUs: "Follow Us",
     copyright: "Copyright",
     allRightsReserved: "All rights reserved",
+    allRights: "All rights reserved",
     privacyPolicy: "Privacy Policy",
     termsOfService: "Terms of Service"
   },
@@ -537,7 +566,10 @@ export const en = {
       preOperative: "Pre-Operative",
       postOperative: "Post-Operative", 
       exercises: "Exercises",
-      education: "Education"
+      education: "Education",
+      comprehensiveSolution: "Comprehensive Solution",
+      conditionInfo: "Condition Information",
+      exerciseLibrary: "Exercise Library"
     }
   },
   gallery: {

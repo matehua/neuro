@@ -166,7 +166,11 @@ export const zh = {
       referralGuidelines: "转诊指南",
       clinicalResources: "临床资源",
       educationalMaterials: "教育材料",
-      consultationProcess: "咨询过程"
+      consultationProcess: "咨询过程",
+      referralProtocols: "转诊协议",
+      diagnostics: "诊断",
+      careCoordination: "护理协调",
+      emergencies: "紧急情况"
     },
     locationsSubmenu: {
       melbournePrivate: "墨尔本私人手术中心",
@@ -179,7 +183,16 @@ export const zh = {
       emergency: "紧急联系",
       parking: "停车信息",
       accessibility: "无障碍通道",
-      directions: "路线"
+      directions: "路线",
+      mornington: "莫宁顿",
+      frankston: "弗兰克斯顿",
+      langwarrin: "兰瓦林",
+      mooneePonds: "穆尼池塘",
+      sunbury: "森伯里",
+      werribee: "韦里比",
+      heidelberg: "海德堡",
+      wantirna: "万提尔纳",
+      surreyHills: "萨里山"
     }
   },
   home: {
@@ -262,6 +275,21 @@ export const zh = {
         ratemd: "RateMDs",
         threebestrated: "ThreeBestRated"
       }
+    },
+    advancedTechnologies: {
+      title: "先进技术",
+      subtitle: "尖端医疗技术",
+      description: "最先进的设备和创新技术"
+    }
+  },
+  appointments: {
+    title: "预约",
+    subtitle: "安排您的咨询",
+    description: "选择您的首选日期和时间",
+    bookingForm: {
+      title: "预约预订",
+      personalInfo: "个人信息",
+      appointmentDetails: "预约详情"
     }
   },
   appointmentForm: {
@@ -282,6 +310,7 @@ export const zh = {
     followUs: "关注我们",
     copyright: "版权所有",
     allRightsReserved: "保留所有权利",
+    allRights: "保留所有权利",
     privacyPolicy: "隐私政策",
     termsOfService: "服务条款"
   },
@@ -537,7 +566,10 @@ export const zh = {
       preOperative: "术前",
       postOperative: "术后",
       exercises: "练习",
-      education: "教育"
+      education: "教育",
+      comprehensiveSolution: "综合解决方案",
+      conditionInfo: "病情信息",
+      exerciseLibrary: "运动库"
     }
   },
   gallery: {
