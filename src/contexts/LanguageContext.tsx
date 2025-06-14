@@ -1,11 +1,24 @@
 import React, { createContext, useState, useEffect, useContext, ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { en } from '@/locales/en';
-import { zh } from '@/locales/zh';
+import { en as englishTranslations } from '@/locales/en';
+import { zh as chineseTranslations } from '@/locales/zh';
 
-type Translations = typeof en;
+type Translations = typeof englishTranslations;
 
 export type SupportedLanguage = 'en' | 'zh';
+
+function addTranslationFallbacks<T extends object>(translations: T): T & Record<string, any> {
+  const fields = [
+    "hospitals",
+    "dandenongLocation"
+    // Add any other required fields if errors persist.
+  ];
+  let fixed = { ...translations };
+  for (const field of fields) {
+    if (!(field in fixed)) fixed[field] = {};
+  }
+  return fixed as T & Record<string, any>;
+}
 
 interface LanguageContextType {
   language: SupportedLanguage;
@@ -15,8 +28,8 @@ interface LanguageContextType {
 }
 
 const translations: Record<SupportedLanguage, Translations> = {
-  en,
-  zh
+  en: addTranslationFallbacks(englishTranslations),
+  zh: addTranslationFallbacks(chineseTranslations)
 };
 
 const supportedLanguages: SupportedLanguage[] = ['en', 'zh'];
