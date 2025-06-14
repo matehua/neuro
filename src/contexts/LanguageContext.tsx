@@ -7,17 +7,19 @@ type Translations = typeof englishTranslations;
 
 export type SupportedLanguage = 'en' | 'zh';
 
-function addTranslationFallbacks<T extends object>(translations: T): T & Record<string, any> {
-  const fields = [
+// Use a type assertion to circumvent TS7053 for index signature as we are forcibly populating object keys as string index here
+function addTranslationFallbacks<T extends object>(translations: T): T {
+  const fields: (keyof any)[] = [
     "hospitals",
     "dandenongLocation"
-    // Add any other required fields if errors persist.
+    // Add more as necessary if TS errors persist for other required fields
   ];
-  let fixed = { ...translations };
+  // Instead of fixed[field], we'll use a type assertion to index into translations
+  const fixed: Record<string, any> = { ...translations };
   for (const field of fields) {
     if (!(field in fixed)) fixed[field] = {};
   }
-  return fixed as T & Record<string, any>;
+  return fixed as T;
 }
 
 interface LanguageContextType {
