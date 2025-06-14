@@ -23,6 +23,9 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { ProcedureProps } from "@/components/ProcedureCard";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Clock } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 // Sample clinic data
 interface ClinicData {
@@ -82,6 +85,7 @@ const proceduresData: ClinicData[] = [
 ];
 
 export default function AppointmentBooking() {
+  const { t } = useLanguage();
   const [appointmentDate, setAppointmentDate] = useState<Date | undefined>(new Date());
   const [appointmentTime, setAppointmentTime] = useState<Date | undefined>(undefined);
   const [selectedClinic, setSelectedClinic] = useState<ClinicData | null>(null);

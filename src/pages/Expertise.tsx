@@ -1,4 +1,5 @@
-import React, { useEffect } from "react";
+
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
@@ -15,7 +16,6 @@ export default function Expertise() {
   const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
-    // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
