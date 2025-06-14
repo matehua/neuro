@@ -178,7 +178,7 @@ export default function AppointmentForm() {
           {/* Adult Patients */}
           <div className="space-y-2">
             <label htmlFor="adults" className="block text-sm font-medium">
-              {t.appointmentForm.adults ?? "Adults"}
+              Adults
             </label>
             <Select value={adults} onValueChange={setAdults}>
               <SelectTrigger id="adults" className="w-full">
@@ -197,7 +197,7 @@ export default function AppointmentForm() {
           {/* Child Patients */}
           <div className="space-y-2">
             <label htmlFor="children" className="block text-sm font-medium">
-              {t.appointmentForm.children ?? "Children"}
+              Children
             </label>
             <Select value={children} onValueChange={setChildren}>
               <SelectTrigger id="children" className="w-full">
