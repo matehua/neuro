@@ -178,7 +178,7 @@ export default function AppointmentForm() {
           {/* Adult Patients */}
           <div className="space-y-2">
             <label htmlFor="adults" className="block text-sm font-medium">
-              {t.appointmentForm.adults}
+              {t.appointmentForm.adults ?? "Adults"}
             </label>
             <Select value={adults} onValueChange={setAdults}>
               <SelectTrigger id="adults" className="w-full">
@@ -187,7 +187,7 @@ export default function AppointmentForm() {
               <SelectContent>
                 {[1, 2, 3, 4, 5, 6].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? (t.appointmentForm.adult ?? "Adult") : (t.appointmentForm.adults ?? "Adults")}
+                    {num} {num === 1 ? "Adult" : "Adults"}
                   </SelectItem>
                 ))}
               </SelectContent>
@@ -197,7 +197,7 @@ export default function AppointmentForm() {
           {/* Child Patients */}
           <div className="space-y-2">
             <label htmlFor="children" className="block text-sm font-medium">
-              {t.appointmentForm.children}
+              {t.appointmentForm.children ?? "Children"}
             </label>
             <Select value={children} onValueChange={setChildren}>
               <SelectTrigger id="children" className="w-full">
@@ -206,7 +206,7 @@ export default function AppointmentForm() {
               <SelectContent>
                 {[0, 1, 2, 3, 4].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
-                    {num} {num === 1 ? (t.appointmentForm.child ?? "Child") : (t.appointmentForm.children ?? "Children")}
+                    {num} {num === 1 ? "Child" : "Children"}
                   </SelectItem>
                 ))}
               </SelectContent>
