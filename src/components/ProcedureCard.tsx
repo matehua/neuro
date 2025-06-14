@@ -1,5 +1,4 @@
-
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Users, Clock, MapPin, Activity, Stethoscope, Microscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,14 +23,20 @@ export default function ProcedureCard({ procedure }: { procedure: ProcedureProps
   const deviceInfo = useDeviceDetection();
   const [isHovered, setIsHovered] = useState(false);
 
-  // Use translated name and description if available
-  const translatedName = language !== 'en' && t.procedureDescriptions && t.procedureDescriptions[procedure.id]?.name
-    ? t.procedureDescriptions[procedure.id].name
-    : procedure.name;
+  // Use less strict lookup for translations; fallback when missing
+  const translatedName =
+    language !== 'en' &&
+    t.procedureDescriptions &&
+    (t.procedureDescriptions as any)[procedure.id]?.name
+      ? (t.procedureDescriptions as any)[procedure.id].name
+      : procedure.name;
 
-  const translatedDescription = language !== 'en' && t.procedureDescriptions && t.procedureDescriptions[procedure.id]?.description
-    ? t.procedureDescriptions[procedure.id].description
-    : procedure.description;
+  const translatedDescription =
+    language !== 'en' &&
+    t.procedureDescriptions &&
+    (t.procedureDescriptions as any)[procedure.id]?.description
+      ? (t.procedureDescriptions as any)[procedure.id].description
+      : procedure.description;
 
   return (
     <div
