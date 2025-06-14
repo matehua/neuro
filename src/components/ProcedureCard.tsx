@@ -1,5 +1,5 @@
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Users, Clock, MapPin, Activity, Stethoscope, Microscope } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -24,14 +24,25 @@ export default function ProcedureCard({ procedure }: { procedure: ProcedureProps
   const deviceInfo = useDeviceDetection();
   const [isHovered, setIsHovered] = useState(false);
 
-  // Use translated name and description if available
-  const translatedName = language !== 'en' && t.procedureDescriptions && t.procedureDescriptions[procedure.id]?.name
-    ? t.procedureDescriptions[procedure.id].name
-    : procedure.name;
+  // Defensive: Check if the translation mappings exist and index signature for string ids
+  const getTranslatedField = (
+    field: "name" | "description"
+  ): string => {
+    if (
+      language !== "en" &&
+      t.procedureDescriptions &&
+      Object.prototype.hasOwnProperty.call(t.procedureDescriptions, procedure.id)
+    ) {
+      const desc = (t.procedureDescriptions as Record<string, { name?: string; description?: string }>)[procedure.id];
+      if (desc && desc[field]) {
+        return desc[field] as string;
+      }
+    }
+    return procedure[field];
+  };
 
-  const translatedDescription = language !== 'en' && t.procedureDescriptions && t.procedureDescriptions[procedure.id]?.description
-    ? t.procedureDescriptions[procedure.id].description
-    : procedure.description;
+  const translatedName = getTranslatedField("name");
+  const translatedDescription = getTranslatedField("description");
 
   return (
     <div

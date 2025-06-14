@@ -1,8 +1,6 @@
-
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
-
 import { cn } from "@/lib/utils"
 
 const buttonVariants = cva(
@@ -58,10 +56,8 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       ariaProps['aria-label'] = accessibleLabel;
     }
 
-    // If the button is disabled, explain why if a reason is provided
-    if (props.disabled && props['aria-disabled-reason']) {
-      ariaProps['aria-describedby'] = props['aria-disabled-reason'];
-    }
+    // Remove custom aria-disabled-reason, since it's not standard and avoids TS7053
+    // If needed, introduce a custom prop pattern with correct typing in the future
 
     return (
       <Comp
