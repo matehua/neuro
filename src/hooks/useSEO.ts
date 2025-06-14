@@ -1,4 +1,5 @@
 import { useEffect } from 'react';
+import { generatePageSEO, SEO_CONFIG } from '@/lib/seo'; // SEO_CONFIG might not be directly needed here if generatePageSEO handles all canonical logic
 
 export interface SEOData {
   title: string;
@@ -117,29 +118,20 @@ export const useSEO = (seoData: SEOData) => {
 };
 
 /**
- * Hook for setting page-specific SEO data
+ * Hook for setting page-specific SEO data.
+ * It takes page-specific overrides and merges them with global defaults
+ * by calling generatePageSEO.
  */
 export const usePageSEO = (pageData: Partial<SEOData>) => {
-  const defaultSEO: SEOData = {
-    title: 'Dr. Ales Aliashkevich | Neurosurgeon & Spine Surgeon Melbourne Victoria',
-    description: 'Dr. Ales Aliashkevich is a minimally invasive neurosurgeon and spine surgeon in Melbourne, Victoria, specializing in advanced brain and spine surgery techniques.',
-    keywords: 'neurosurgeon, spine surgeon, brain surgery, spine surgery, Melbourne, Victoria, minimally invasive, Dr. Ales Aliashkevich, miNEURO',
-    ogTitle: 'Dr. Ales Aliashkevich | Neurosurgeon & Spine Surgeon Melbourne Victoria',
-    ogDescription: 'Dr. Ales Aliashkevich is a minimally invasive neurosurgeon and spine surgeon in Melbourne, Victoria, specializing in advanced brain and spine surgery techniques.',
-    ogImage: 'https://mineuro.com.au/og-image.png',
-    ogType: 'website',
-    twitterTitle: 'Dr. Ales Aliashkevich | Neurosurgeon & Spine Surgeon Melbourne Victoria',
-    twitterDescription: 'Dr. Ales Aliashkevich is a minimally invasive neurosurgeon and spine surgeon in Melbourne, Victoria, specializing in advanced brain and spine surgery techniques.',
-    twitterImage: 'https://mineuro.com.au/twitter-image.png',
-    canonical: 'https://mineuro.com.au'
-  };
-
-  const mergedSEO: SEOData = {
-    ...defaultSEO,
-    ...pageData
-  };
-
-  useSEO(mergedSEO);
+  // `pageData` contains the specific overrides for the current page.
+  // These overrides (including a potential `canonical` path like '/about')
+  // are passed to `generatePageSEO` as `customData`.
+  // `generatePageSEO` (with an undefined `pageType`) will use global defaults
+  // from `SEO_CONFIG` and then layer `pageData` on top, correctly
+  // calculating the final `canonical` URL.
+  const seoDataToSet = generatePageSEO(undefined, pageData);
+  
+  useSEO(seoDataToSet);
 };
 
 export default useSEO;
