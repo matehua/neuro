@@ -155,11 +155,31 @@ export const en = {
     faq: "FAQ",
     consultingRooms: "Consulting Rooms",
     gpResources: "GP Resources",
+    bookNow: "Book Now",
     expertiseSubmenu: {
       cervicalDisc: "Cervical Disc Replacement",
       lumbarDisc: "Lumbar Disc Replacement",
       imageGuided: "Image-Guided Surgery",
       roboticSpine: "Robotic Spine Surgery"
+    },
+    gpResourcesSubmenu: {
+      referralGuidelines: "Referral Guidelines",
+      clinicalResources: "Clinical Resources",
+      educationalMaterials: "Educational Materials",
+      consultationProcess: "Consultation Process"
+    },
+    locationsSubmenu: {
+      melbournePrivate: "Melbourne Private Surgical Centre",
+      melbourneNeurosurgery: "Melbourne Neurosurgery",
+      bundoora: "Bundoora",
+      dandenong: "Dandenong",
+      epworthEastern: "Epworth Eastern",
+      consultation: "Consultation Locations",
+      surgery: "Surgery Locations",
+      emergency: "Emergency Contact",
+      parking: "Parking Information",
+      accessibility: "Accessibility",
+      directions: "Directions"
     }
   },
   home: {
@@ -258,6 +278,7 @@ export const en = {
     description: "Providing advanced neurosurgical and spine care services with certified specialists using the latest technology.",
     quickLinks: "Quick Links",
     contactInfo: "Contact Information",
+    contact: "Contact Us",
     followUs: "Follow Us",
     copyright: "Copyright",
     allRightsReserved: "All rights reserved",
@@ -493,7 +514,14 @@ export const en = {
       subtitle: "The page you're looking for doesn't exist",
       description: "It seems the page you're trying to access has been moved or doesn't exist.",
       backHome: "Back to Home"
-    }
+    },
+    title: "miNEURO - Advanced Neurosurgery & Spine Care",
+    subtitle: "Dr Ales Aliashkevich, Melbourne Certified Neurosurgeon & Spine Surgeon",
+    description: "Providing state-of-the-art neurosurgical treatments, spine surgery, and minimally invasive procedures. Specializing in disc replacement, image-guided surgery, and robotic spine surgery.",
+    bookConsultation: "Book Consultation",
+    learnMore: "Learn More",
+    exploreTreatments: "Explore Treatments",
+    scrollDown: "Scroll Down"
   },
   notFound: {
     title: "Page Not Found",
@@ -504,7 +532,13 @@ export const en = {
   patientResources: {
     title: "Patient Resources",
     subtitle: "Comprehensive support for your recovery journey",
-    description: "Access helpful resources, exercises, and information to support your treatment and recovery"
+    description: "Access helpful resources, exercises, and information to support your treatment and recovery",
+    submenu: {
+      preOperative: "Pre-Operative",
+      postOperative: "Post-Operative", 
+      exercises: "Exercises",
+      education: "Education"
+    }
   },
   gallery: {
     title: "Gallery",
