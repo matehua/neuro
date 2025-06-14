@@ -1,352 +1,163 @@
-/**
- * Performance Monitoring and Optimisation Utilities
- * Provides tools for measuring and improving application performance
- */
 
-import React from 'react';
+// Performance monitoring utilities for miNEURO website
+// Tracks page load times, user interactions, and optimization metrics
 
-/**
- * Performance metrics interface
- */
-export interface PerformanceMetrics {
-  name: string;
-  startTime: number;
-  endTime?: number;
-  duration?: number;
-  metadata?: Record<string, unknown>;
+interface PerformanceMetrics {
+  pageLoadTime: number;
+  domContentLoadedTime: number;
+  firstContentfulPaint?: number;
+  largestContentfulPaint?: number;
+  cumulativeLayoutShift?: number;
+  firstInputDelay?: number;
 }
 
-/**
- * Performance Monitor class for tracking application performance
- */
-export class PerformanceMonitor {
-  private static instance: PerformanceMonitor;
-  private metrics: Map<string, PerformanceMetrics> = new Map();
-  private observers: PerformanceObserver[] = [];
+class PerformanceMonitor {
+  private metrics: PerformanceMetrics = {
+    pageLoadTime: 0,
+    domContentLoadedTime: 0
+  };
 
-  private constructor() {
-    this.initializeObservers();
+  constructor() {
+    this.initializePerformanceObserver();
+    this.trackNavigationTiming();
   }
 
-  static getInstance(): PerformanceMonitor {
-    if (!PerformanceMonitor.instance) {
-      PerformanceMonitor.instance = new PerformanceMonitor();
-    }
-    return PerformanceMonitor.instance;
-  }
-
-  /**
-   * Initialize performance observers
-   */
-  private initializeObservers(): void {
-    if (typeof window === 'undefined' || !('PerformanceObserver' in window)) {
-      return;
-    }
-
-    try {
-      // Observe navigation timing
-      const navObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          if (entry.entryType === 'navigation') {
-            this.logNavigationMetrics(entry as PerformanceNavigationTiming);
+  private initializePerformanceObserver(): void {
+    if ('PerformanceObserver' in window) {
+      // Track paint metrics
+      const paintObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (entry.name === 'first-contentful-paint') {
+            this.metrics.firstContentfulPaint = entry.startTime;
           }
-        });
+        }
       });
-      navObserver.observe({ entryTypes: ['navigation'] });
-      this.observers.push(navObserver);
 
-      // Observe resource timing
-      const resourceObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          if (entry.entryType === 'resource') {
-            this.logResourceMetrics(entry as PerformanceResourceTiming);
+      try {
+        paintObserver.observe({ entryTypes: ['paint'] });
+      } catch (e) {
+        console.warn('Paint observer not supported');
+      }
+
+      // Track layout shift
+      const layoutShiftObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (!entry.hadRecentInput) {
+            this.metrics.cumulativeLayoutShift = (this.metrics.cumulativeLayoutShift || 0) + (entry as any).value;
           }
-        });
+        }
       });
-      resourceObserver.observe({ entryTypes: ['resource'] });
-      this.observers.push(resourceObserver);
 
-      // Observe largest contentful paint
+      try {
+        layoutShiftObserver.observe({ entryTypes: ['layout-shift'] });
+      } catch (e) {
+        console.warn('Layout shift observer not supported');
+      }
+
+      // Track largest contentful paint
       const lcpObserver = new PerformanceObserver((list) => {
         const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        this.logMetric('LCP', lastEntry.startTime, lastEntry.startTime, {
-          element: (lastEntry as PerformanceEntry & { element?: { tagName: string } }).element?.tagName,
-          url: (lastEntry as PerformanceEntry & { url?: string }).url
-        });
+        if (entries.length > 0) {
+          const lastEntry = entries[entries.length - 1];
+          this.metrics.largestContentfulPaint = lastEntry.startTime;
+        }
       });
-      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-      this.observers.push(lcpObserver);
 
-      // Observe first input delay
+      try {
+        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
+      } catch (e) {
+        console.warn('LCP observer not supported');
+      }
+
+      // Track first input delay
       const fidObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          this.logMetric('FID', entry.startTime, entry.startTime + entry.duration, {
-            processingStart: (entry as PerformanceEntry & { processingStart?: number }).processingStart,
-            processingEnd: (entry as PerformanceEntry & { processingEnd?: number }).processingEnd
-          });
-        });
+        for (const entry of list.getEntries()) {
+          this.metrics.firstInputDelay = (entry as any).processingStart - entry.startTime;
+        }
       });
-      fidObserver.observe({ entryTypes: ['first-input'] });
-      this.observers.push(fidObserver);
 
-    } catch (error) {
-      console.warn('Performance monitoring setup failed:', error);
-    }
-  }
-
-  /**
-   * Start measuring a performance metric
-   */
-  startMeasure(name: string, metadata?: Record<string, unknown>): void {
-    const startTime = performance.now();
-    this.metrics.set(name, {
-      name,
-      startTime,
-      metadata
-    });
-  }
-
-  /**
-   * End measuring a performance metric
-   */
-  endMeasure(name: string): PerformanceMetrics | null {
-    const metric = this.metrics.get(name);
-    if (!metric) {
-      console.warn(`Performance metric "${name}" not found`);
-      return null;
-    }
-
-    const endTime = performance.now();
-    const duration = endTime - metric.startTime;
-
-    const completedMetric: PerformanceMetrics = {
-      ...metric,
-      endTime,
-      duration
-    };
-
-    this.metrics.set(name, completedMetric);
-    this.logMetric(name, metric.startTime, endTime, metric.metadata);
-
-    return completedMetric;
-  }
-
-  /**
-   * Log a performance metric
-   */
-  private logMetric(
-    name: string, 
-    startTime: number, 
-    endTime: number, 
-    metadata?: Record<string, unknown>
-  ): void {
-    const duration = endTime - startTime;
-    
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`Performance: ${name} took ${duration.toFixed(2)}ms`, metadata);
-    }
-
-    // In production, you might want to send this to an analytics service
-    // Example: sendToAnalytics({ name, duration, metadata });
-  }
-
-  /**
-   * Log navigation metrics
-   */
-  private logNavigationMetrics(entry: PerformanceNavigationTiming): void {
-    const metrics = {
-      'DNS Lookup': entry.domainLookupEnd - entry.domainLookupStart,
-      'TCP Connection': entry.connectEnd - entry.connectStart,
-      'TLS Handshake': entry.secureConnectionStart > 0 ? entry.connectEnd - entry.secureConnectionStart : 0,
-      'Request': entry.responseStart - entry.requestStart,
-      'Response': entry.responseEnd - entry.responseStart,
-      'DOM Processing': entry.domComplete - entry.domLoading,
-      'Load Complete': entry.loadEventEnd - entry.loadEventStart,
-      'Total Load Time': entry.loadEventEnd - entry.navigationStart
-    };
-
-    Object.entries(metrics).forEach(([name, duration]) => {
-      if (duration > 0) {
-        this.logMetric(`Navigation: ${name}`, 0, duration);
+      try {
+        fidObserver.observe({ entryTypes: ['first-input'] });
+      } catch (e) {
+        console.warn('FID observer not supported');
       }
-    });
-  }
-
-  /**
-   * Log resource metrics
-   */
-  private logResourceMetrics(entry: PerformanceResourceTiming): void {
-    const duration = entry.responseEnd - entry.startTime;
-    const resourceType = this.getResourceType(entry.name);
-    
-    this.logMetric(`Resource: ${resourceType}`, entry.startTime, entry.responseEnd, {
-      url: entry.name,
-      size: entry.transferSize,
-      cached: entry.transferSize === 0 && entry.decodedBodySize > 0
-    });
-  }
-
-  /**
-   * Get resource type from URL
-   */
-  private getResourceType(url: string): string {
-    if (url.includes('.css')) return 'CSS';
-    if (url.includes('.js')) return 'JavaScript';
-    if (url.match(/\.(jpg|jpeg|png|gif|webp|svg)$/i)) return 'Image';
-    if (url.match(/\.(woff|woff2|ttf|eot)$/i)) return 'Font';
-    return 'Other';
-  }
-
-  /**
-   * Get all metrics
-   */
-  getMetrics(): PerformanceMetrics[] {
-    return Array.from(this.metrics.values());
-  }
-
-  /**
-   * Clear all metrics
-   */
-  clearMetrics(): void {
-    this.metrics.clear();
-  }
-
-  /**
-   * Cleanup observers
-   */
-  cleanup(): void {
-    this.observers.forEach(observer => observer.disconnect());
-    this.observers = [];
-  }
-}
-
-/**
- * Measure component render time
- */
-export function measureComponentRender<T extends Record<string, unknown>>(
-  Component: React.ComponentType<T>,
-  componentName?: string
-): React.ComponentType<T> {
-  const monitor = PerformanceMonitor.getInstance();
-  const name = componentName || Component.displayName || Component.name || 'Component';
-
-  return function MeasuredComponent(props: T) {
-    React.useEffect(() => {
-      monitor.startMeasure(`${name} Mount`);
-      return () => {
-        monitor.endMeasure(`${name} Mount`);
-      };
-    }, []);
-
-    React.useEffect(() => {
-      monitor.startMeasure(`${name} Render`);
-      monitor.endMeasure(`${name} Render`);
-    });
-
-    return React.createElement(Component, props);
-  };
-}
-
-/**
- * Hook for measuring custom performance metrics
- */
-export function usePerformanceMetric(name: string, dependencies: React.DependencyList = []) {
-  const monitor = PerformanceMonitor.getInstance();
-
-  React.useEffect(() => {
-    monitor.startMeasure(name);
-    return () => {
-      monitor.endMeasure(name);
-    };
-  }, dependencies);
-
-  return {
-    startMeasure: (metricName: string) => monitor.startMeasure(metricName),
-    endMeasure: (metricName: string) => monitor.endMeasure(metricName)
-  };
-}
-
-/**
- * Debounce function for performance optimisation
- */
-export function debounce<T extends (...args: unknown[]) => unknown>(
-  func: T,
-  wait: number,
-  immediate?: boolean
-): (...args: Parameters<T>) => void {
-  let timeout: NodeJS.Timeout | null = null;
-
-  return function executedFunction(...args: Parameters<T>) {
-    const later = () => {
-      timeout = null;
-      if (!immediate) func(...args);
-    };
-
-    const callNow = immediate && !timeout;
-    
-    if (timeout) clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    
-    if (callNow) func(...args);
-  };
-}
-
-/**
- * Throttle function for performance optimisation
- */
-export function throttle<T extends (...args: unknown[]) => unknown>(
-  func: T,
-  limit: number
-): (...args: Parameters<T>) => void {
-  let inThrottle: boolean;
-  
-  return function executedFunction(...args: Parameters<T>) {
-    if (!inThrottle) {
-      func(...args);
-      inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
     }
-  };
-}
-
-/**
- * Lazy load images with intersection observer
- */
-export function lazyLoadImage(
-  img: HTMLImageElement,
-  src: string,
-  options?: IntersectionObserverInit
-): () => void {
-  if (!('IntersectionObserver' in window)) {
-    img.src = src;
-    return () => {};
   }
 
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        img.src = src;
-        img.classList.remove('lazy');
-        observer.unobserve(img);
-      }
+  private trackNavigationTiming(): void {
+    if ('performance' in window && 'getEntriesByType' in performance) {
+      window.addEventListener('load', () => {
+        setTimeout(() => {
+          const navigation = performance.getEntriesByType('navigation')[0] as PerformanceNavigationTiming;
+          
+          if (navigation) {
+            this.metrics.pageLoadTime = navigation.loadEventEnd - navigation.fetchStart;
+            this.metrics.domContentLoadedTime = navigation.domContentLoadedEventEnd - navigation.fetchStart;
+            
+            this.reportMetrics();
+          }
+        }, 100);
+      });
+    }
+  }
+
+  private reportMetrics(): void {
+    console.log('Performance Metrics:', this.metrics);
+    
+    // Send to analytics if configured
+    if (window.gtag) {
+      window.gtag('event', 'page_load_time', {
+        value: Math.round(this.metrics.pageLoadTime),
+        custom_parameter: 'performance_monitoring'
+      });
+    }
+  }
+
+  public getMetrics(): PerformanceMetrics {
+    return { ...this.metrics };
+  }
+}
+
+// Initialize performance monitoring
+let performanceMonitor: PerformanceMonitor | null = null;
+
+export const initializePerformanceMonitoring = (): void => {
+  if (!performanceMonitor) {
+    performanceMonitor = new PerformanceMonitor();
+  }
+};
+
+export const getPerformanceMetrics = (): PerformanceMetrics | null => {
+  return performanceMonitor ? performanceMonitor.getMetrics() : null;
+};
+
+// Resource loading optimization
+export const preloadCriticalResources = (): void => {
+  const criticalImages = [
+    '/images/hero-bg.jpg',
+    '/images/doctor-profile.jpg'
+  ];
+
+  criticalImages.forEach(src => {
+    const link = document.createElement('link');
+    link.rel = 'preload';
+    link.as = 'image';
+    link.href = src;
+    document.head.appendChild(link);
+  });
+};
+
+// Memory usage monitoring
+export const monitorMemoryUsage = (): void => {
+  if ('memory' in performance) {
+    const memory = (performance as any).memory;
+    console.log('Memory Usage:', {
+      used: Math.round(memory.usedJSHeapSize / 1048576),
+      total: Math.round(memory.totalJSHeapSize / 1048576),
+      limit: Math.round(memory.jsHeapSizeLimit / 1048576)
     });
-  }, options);
+  }
+};
 
-  observer.observe(img);
-
-  return () => observer.unobserve(img);
-}
-
-/**
- * Initialize performance monitoring
- */
-export function initializePerformanceMonitoring(): PerformanceMonitor {
-  return PerformanceMonitor.getInstance();
-}
-
-// Export singleton instance
-export const performanceMonitor = PerformanceMonitor.getInstance();
+// Export for global use
+export { PerformanceMonitor };
