@@ -165,20 +165,22 @@ export const useNetworkStatus = () => {
 
     // Get connection information if available
     if ('connection' in navigator) {
-      const connection = (navigator as any).connection;
-      setConnectionType(connection.effectiveType || 'unknown');
-      
-      const handleConnectionChange = () => {
+      const connection = (navigator as Navigator & { connection?: { effectiveType?: string; addEventListener: (event: string, handler: () => void) => void; removeEventListener: (event: string, handler: () => void) => void } }).connection;
+      if (connection) {
         setConnectionType(connection.effectiveType || 'unknown');
-      };
-      
-      connection.addEventListener('change', handleConnectionChange);
-      
-      return () => {
-        window.removeEventListener('online', handleOnline);
-        window.removeEventListener('offline', handleOffline);
-        connection.removeEventListener('change', handleConnectionChange);
-      };
+
+        const handleConnectionChange = () => {
+          setConnectionType(connection.effectiveType || 'unknown');
+        };
+
+        connection.addEventListener('change', handleConnectionChange);
+
+        return () => {
+          window.removeEventListener('online', handleOnline);
+          window.removeEventListener('offline', handleOffline);
+          connection.removeEventListener('change', handleConnectionChange);
+        };
+      }
     }
 
     return () => {

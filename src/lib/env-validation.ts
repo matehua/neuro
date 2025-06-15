@@ -173,6 +173,22 @@ export function validateEnvironmentVariables(): {
 
     // Production-specific validations
     if (isProduction) {
+      // Ensure debug flags are disabled in production
+      if (config.DEBUG_MODE) {
+        errors.push('DEBUG_MODE must be false in production');
+      }
+      if (config.SHOW_PERFORMANCE_METRICS) {
+        errors.push('SHOW_PERFORMANCE_METRICS must be false in production');
+      }
+
+      // Validate production-specific settings
+      if (config.APP_ENV !== 'production') {
+        warnings.push('APP_ENV should be set to "production" in production builds');
+      }
+    }
+
+    // Production-specific validations
+    if (isProduction) {
       // Warn about missing optional but recommended variables
       if (!config.GOOGLE_ANALYTICS_ID) {
         warnings.push('Google Analytics ID not configured - analytics tracking disabled');
