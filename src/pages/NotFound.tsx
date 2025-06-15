@@ -1,12 +1,10 @@
 
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Home } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 const NotFound = () => {
-  const { t } = useLanguage();
   const location = useLocation();
 
   // We can track 404 errors with analytics instead of console logging

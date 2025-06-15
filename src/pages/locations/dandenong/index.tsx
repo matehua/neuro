@@ -3,7 +3,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from "lucide-react";
+
 import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function DandenongLocation() {
@@ -52,15 +52,15 @@ export default function DandenongLocation() {
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2">
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold mb-4">{t.locationDetails || 'Location Details'}</h2>
+                  <h2 className="text-2xl font-bold mb-4">Location Details</h2>
                   <p className="text-muted-foreground">
-                    {t.dandenongLocation?.locationDetails || 'Everything you need to know about our Dandenong consulting location'}
+                    Everything you need to know about our Dandenong consulting location
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.address || 'Address'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">Address</h3>
                     <p className="text-muted-foreground">
                       Dandenong Neurology & Specialists Group<br />
                       136 David Street<br />
@@ -69,7 +69,7 @@ export default function DandenongLocation() {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.contactInformation || 'Contact Information'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">Contact Information</h3>
                     <p className="text-muted-foreground mb-2">
                       <span className="font-medium">Phone:</span> 03 9792 4321
                     </p>
@@ -82,25 +82,25 @@ export default function DandenongLocation() {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.consultingHours || 'Consulting Hours'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">Consulting Hours</h3>
                     <p className="text-muted-foreground mb-2">
-                      <span className="font-medium">Monday:</span> {t.dandenongLocation?.consultingHoursDetails || '9:00 AM - 5:00 PM (fortnightly)'}
+                      <span className="font-medium">Monday:</span> 9:00 AM - 5:00 PM (fortnightly)
                     </p>
                     <p className="text-muted-foreground mb-4">
-                      {t.dandenongLocation?.consultationsByAppointment || 'Consultations are by appointment only. Please call our office to schedule an appointment.'}
+                      Consultations are by appointment only. Please call our office to schedule an appointment.
                     </p>
                     <p className="text-muted-foreground">
-                      <span className="font-medium">Note:</span> {t.dandenongLocation?.urgentAppointments || 'Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.'}
+                      <span className="font-medium">Note:</span> Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.
                     </p>
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.appointmentProcess || 'Appointment Process'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">Appointment Process</h3>
                     <p className="text-muted-foreground mb-2">
-                      {t.dandenongLocation?.appointmentProcessDetails1 || 'Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.'}
+                      Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.
                     </p>
                     <p className="text-muted-foreground">
-                      {t.dandenongLocation?.appointmentProcessDetails2 || 'All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.'}
+                      All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.
                     </p>
                   </div>
                 </div>
@@ -512,7 +512,7 @@ export default function DandenongLocation() {
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <div className="relative h-48 rounded-lg overflow-hidden shadow-md mb-6">
                   <img
-                    src="/images/neurosurgery-spine-surgery-operating-theatre-microscope-image-guided-surgery.jpg"
+                    src="/images/Epworth-Eastern-Hospital-Building.jpg"
                     alt="Epworth Eastern Hospital"
                     className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
                   />
@@ -527,7 +527,7 @@ export default function DandenongLocation() {
                   <span className="font-medium">Phone:</span> {t.hospitals?.epworthEastern?.phone?.split(':')[1]?.trim() || '(03) 8807 7100'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.epworth.org.au/locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.epworth.org.au/our-locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
 

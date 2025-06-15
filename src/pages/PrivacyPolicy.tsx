@@ -1,10 +1,7 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function PrivacyPolicy() {
-  const { t } = useLanguage();
 
   useEffect(() => {
     // Scroll to top when component mounts

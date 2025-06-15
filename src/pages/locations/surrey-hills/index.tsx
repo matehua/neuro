@@ -674,7 +674,7 @@ export default function SurreyHillsLocation() {
                   {t.hospitals?.epworthRichmond?.phone || 'Phone: (03) 9426 6666'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.epworth.org.au/locations/epworth-richmond" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthRichmond?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.epworth.org.au/our-locations/epworth-richmond" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthRichmond?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
 
@@ -696,7 +696,7 @@ export default function SurreyHillsLocation() {
                   {t.hospitals?.epworthEastern?.phone || 'Phone: (03) 8807 7100'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.epworth.org.au/locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.epworth.org.au/our-locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
             </div>

@@ -5,7 +5,7 @@ import SafeImage from "@/components/SafeImage";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { MapPin, Phone, Clock } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+
 import { useDeviceDetection } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 

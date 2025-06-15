@@ -1,13 +1,11 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
 import SafeImage from "@/components/SafeImage";
 
 export default function CervicalDiscReplacement() {
-  const { t } = useLanguage();
 
   useEffect(() => {
     // Scroll to top when component mounts

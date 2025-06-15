@@ -1,11 +1,8 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
 
 export default function TermsConditions() {
-  const { t } = useLanguage();
   
   useEffect(() => {
     // Scroll to top when component mounts

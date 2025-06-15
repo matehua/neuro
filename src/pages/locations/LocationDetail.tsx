@@ -35,7 +35,7 @@ export default function LocationDetail() {
 
     // In a real application, this would fetch data from an API
     // For this example, we'll use hardcoded data
-    const locations = {
+    const locations: Record<string, any> = {
       "surrey-hills": {
         id: "surrey-hills",
         name: "Surrey Hills",

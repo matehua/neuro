@@ -64,7 +64,7 @@ export function normalizeProcedureData(data: RawProcedureData): ProcedureProps {
     description: data.description,
     consultationFee: data.consultationFee || data.price || 0,
     patientType: data.patientType || 'All Patients',
-    recoveryTime: typeof data.recoveryTime === 'number' ? `${data.recoveryTime} days` : data.recoveryTime,
+    recoveryTime: typeof data.recoveryTime === 'number' ? `${data.recoveryTime} days` : data.recoveryTime || 'Not specified',
     image: data.image,
     location: data.location,
     benefits: data.benefits || data.features || [],

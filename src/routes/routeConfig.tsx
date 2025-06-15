@@ -20,9 +20,9 @@ const PageLoadingFallback = () => (
 );
 
 // Helper function to create lazy-loaded components with error handling
-const lazyLoad = <T extends object>(importFunc: () => Promise<{ default: React.ComponentType<T> }>) => {
+const lazyLoad = (importFunc: () => Promise<{ default: React.ComponentType<any> }>) => {
   const LazyComponent = lazy(importFunc);
-  return (props: T) => (
+  return (props: any) => (
     <Suspense fallback={<PageLoadingFallback />}>
       <LazyComponent {...props} />
     </Suspense>

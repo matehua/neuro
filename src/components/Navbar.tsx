@@ -112,18 +112,7 @@ export default function Navbar() {
     setHoverTimeout(timeout);
   };
 
-  // Function to toggle submenu
-  const toggleSubmenu = (_name: string, _e: React.MouseEvent) => {
-    // Function reserved for future submenu functionality
-    // Currently not implemented but kept for potential future use
 
-    if (isClickNearRightEdge) {
-      // If clicking near the right edge (dropdown arrow), toggle the submenu
-      e.preventDefault();
-      setActiveSubmenu(activeSubmenu === name ? null : name);
-    }
-    // If clicking elsewhere on the link, the default navigation will occur
-  };
 
   // Function to handle keyboard navigation
   const handleKeyDown = (e: React.KeyboardEvent, name: string, hasSubmenu: boolean) => {
