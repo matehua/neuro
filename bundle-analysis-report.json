@@ -1,0 +1,1416 @@
+{
+  "timestamp": "2025-06-15T20:54:12.870Z",
+  "javascript": [
+    {
+      "name": "index-DC5T-48S.js",
+      "size": 0.69,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-AppointmentBooking-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-Appointments-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-Contact-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-expertise-DP2rzg_V.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-Expertise-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-Faq-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-gp-resources-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-GPResources-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-Index-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-locations-DP2rzg_V.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-Locations-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-Medicolegal-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-NotFound-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-patient-resources-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-PatientResources-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-PrivacyPolicy-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-Specialties-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "page-TermsConditions-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "react-vendor-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "ui-components-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "ui-misc-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "utility-vendor-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    },
+    {
+      "name": "vendor-l0sNRNKZ.js",
+      "size": 0,
+      "type": "javascript",
+      "status": "ok"
+    }
+  ],
+  "css": [
+    {
+      "name": "index-Bu1GGDQB.css",
+      "size": 90.23,
+      "type": "css",
+      "status": "ok"
+    }
+  ],
+  "images": [
+    {
+      "name": "vertebra-artificial-disc-cervical-lumbar-neurosurgeon-spine-surgeon-bulgarov.png",
+      "size": 387.13,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "robotic-operating-theatre-spine-brain-microsurgery-miNEURO-future-advanced-technology-CT-MRI.png",
+      "size": 367.37,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "robotic-operating-theatre-spine-brain-microsurgery-miNEURO-future-advanced-technology.png",
+      "size": 367.37,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "brain-artificial-intelligence-neurosurgeon-spine-surgeon-neurosurgery-advanced-technology-maximum-precision-robotic.png",
+      "size": 183.81,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "law-neurosurgery-JME-IME-assessment-report-spine-brain-insurance-claim-medicolegal.png",
+      "size": 173.63,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "brain-png-18-transparent-1024x820.png",
+      "size": 173.01,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "law-neurosurgery-JME-IME-assessment-report-spine-brain-insurance-claim).png",
+      "size": 171.43,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "robotic-brain-operating-theatre-spine-brain-microsurgery-miNEURO-future-advanced-technology-CT-MRI.png",
+      "size": 158.98,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Epworth-Eastern-Hospital-Building.jpg",
+      "size": 136.9,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "dandenong-neurology-consulting-rooms-ales-aliashkevich-neurosurgeon-spine-surgeon.jpg",
+      "size": 122.36,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "union-station-surrey-hills-cafe-near-miNEURO-consulting-suites.jpg",
+      "size": 122.26,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "union-station-surrey-hills-close-to-miNEURO-consulting-suites.jpg",
+      "size": 120.81,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "dandenong-neurology-specialist-consulting-disable-access-neurosurgeon-spine-surgeon.jpg",
+      "size": 118.39,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "nerve-spinal-cord-decompression-arthroplasty-disc-replacement-cervical-lumbar.jpg",
+      "size": 113.12,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neuromonitoring-EMG-MEP-SSEP-spinal-nerve-root-stimulation.jpg",
+      "size": 112.42,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "peninsula-private-hospital-entrance-consulting-ales-aliashkevich-neurosurgeon-spine.jpg",
+      "size": 112.01,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "bundoora-unihill-specialist-consulting-neurosurgery-spine-surgeon.jpg",
+      "size": 111.19,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurones-precise-advanced-brain-mineuro-robotic-neurosurgery-spine-surgery-ales-aliashkevich.jpg",
+      "size": 111.14,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "union-station-surrey-hills-next-to-miNEURO-consulting-suites.jpg",
+      "size": 106.92,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "peninsula-private-hospital-sign-consulting-ales-aliashkevich-neurosurgeon-spine-surgeon.jpg",
+      "size": 106.17,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "union-station-surrey-hills-coles-local-supermarket-near-miNEURO-consulting-suites.jpg",
+      "size": 103.36,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "peninsula-private-hospital-consulting-ales-aliashkevich-neurosurgeon-spine-surgeon.jpg",
+      "size": 102.5,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Parking-and-disabled-access.jpg",
+      "size": 100.78,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "langwarrin-consulting-peninsula-rheumatology-driveway-neurosurgery.jpg",
+      "size": 99.85,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "dandenong-neurology-specialist-consulting-services-neurosurgeon-spine-surgeon.jpg",
+      "size": 99.69,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-10.jpg",
+      "size": 99.67,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "lumbar-disc-replacement-titanium-james-towne-robotic-back-spine-surgery-mineuro.jpg",
+      "size": 97.3,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "mornington-yacht-club-peninsula-the-bays-cloudy-sky.jpg",
+      "size": 96.54,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO.jpg",
+      "size": 96.52,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "recovery-yoga-disc-replacement-cervical-lumbar-robotic-spine.jpg",
+      "size": 95.95,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "werribee-consulting-rooms-neurosurgery-gate.jpg",
+      "size": 95.38,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "medical-consulting-room-rent-Surrey-Hills-miNEURO-entrance.jpg",
+      "size": 95.25,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-9.jpg",
+      "size": 94.79,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "langwarrin-consulting-peninsula-rheumatology-parking-neurosurgery.jpg",
+      "size": 94.66,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "mornington-horizon-cloudy-sky-pier.jpg",
+      "size": 94.24,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "dandenong-neurology-specialist-consulting-entrance-neurosurgeon-spine-surgeon.jpg",
+      "size": 93.52,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "robotic-operating-theatre-spine-brain-navigation-microsurgery.jpg",
+      "size": 93.21,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Aliashkevich-operating-spine-brain-image-guided-neurosurgeon-robotic-spine-Mazor-surgery.jpg",
+      "size": 91.76,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-waiting-area.jpg",
+      "size": 91.59,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "bundoora-unihill-specialist-consulting-building-240-plenty-road.jpg",
+      "size": 89.85,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgery-mornington-specialist-centre-entrance-consulting.jpg",
+      "size": 89.58,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "heidelberg-consulting-rooms-neurosurgeon-spine-surgeon-10-martin-medical.jpg",
+      "size": 89.51,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "motor-vehicle-traffic-road-accident-injury-medicolegal-miNEURO-Ales-Aliashkevich.jpg",
+      "size": 89.4,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "dandenong-neurology-specialist-consulting-room-neurosurgeon-spine-surgeon.jpg",
+      "size": 87.98,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-entrance.jpg",
+      "size": 87.42,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "mornington-bay-beach-sheds.jpg",
+      "size": 86.68,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "scoliosis-stenosis-lumbar-spine-CT-fusion-minimally-invasive-XLIF-Medtronic-Aliashkevich-neurosurgery.jpg",
+      "size": 86.68,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "heidelberg-consulting-rooms-neurosurgeon-spine-surgeon.jpg",
+      "size": 84.63,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "weightlifting body spine art power.jpg",
+      "size": 84.61,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "wantirna-consulting-rooms-knox-audiology-neurosurgeon-spine-surgeon-entrance.jpg",
+      "size": 84.35,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "werribee-consulting-rooms-neurosurgery-waiting-area.jpg",
+      "size": 84.29,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Patient-privacy-brain-spine-neurosurgery-AI.jpg",
+      "size": 82.68,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "medical-consulting.jpg",
+      "size": 81.05,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "MCA-aneurysm-cerebral-microsurgery-clipping-subarachnoid.jpg",
+      "size": 81.02,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Patients-privacy.jpg",
+      "size": 80.67,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "LP-ESP-arthroplasty-disc-replacement-lumbar-kinetics-Aliashkevich-spine-neurosurgery-miNEURO-advanced-technology.jpg",
+      "size": 80.57,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "spinal-scoliosis-EOS-scan-neurosurgery.jpg",
+      "size": 80.34,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "moonee-ponds-specialist-consulting-rooms-patient-area.jpg",
+      "size": 80.11,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "mornington-specialist-centre-waiting-area-consulting-neurosurgery.jpg",
+      "size": 79.89,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgery-mornington-specialist-centre-waiting-area-consulting.jpg",
+      "size": 79.89,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-4.jpg",
+      "size": 79.79,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "CP-ESP-arthroplasty-disc-replacement-cervical-lumbar.jpg",
+      "size": 79.71,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "themis-statue-holding-a-scale-Q8JZGEY-min.jpg",
+      "size": 78.88,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "wantirna-consulting-rooms-knox-audiology-neurosurgeon-spine-surgeon-reception.jpg",
+      "size": 78.75,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "law-AMA-4th-edition-medicolegal-miNEURO-work-injury-accident-traffic-TAC-WorkCover-impairment-assessment.jpg",
+      "size": 78.71,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "mornington-specialist-centre-reception-consulting-neurosurgery.jpg",
+      "size": 78.36,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgery-mornington-specialist-centre-reception-consulting.jpg",
+      "size": 78.36,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "spine-nerves-spinal-cord-disc-replacement-neurosurgeon-microsurgery-miNEURO-advanced-technology.jpg",
+      "size": 77.65,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "wantirna-consulting-rooms-knox-audiology-neurosurgeon-spine-surgeon-parking.jpg",
+      "size": 77.56,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "langwarrin-consulting-peninsula-rheumatology-waiting-area-neurosurgery.jpg",
+      "size": 77.49,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "langwarrin-consulting-peninsula-rheumatology-hallway-neurosurgery.jpg",
+      "size": 75.95,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "moonee-ponds-specialist-consulting-rooms.jpg",
+      "size": 75.88,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "dandenong-neurology-specialist-consulting-building-neurosurgeon-spine-surgeon.jpg",
+      "size": 75.75,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "langwarrin-consulting-peninsula-rheumatology-entrance-neurosurgery.jpg",
+      "size": 75.32,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "wantirna-consulting-rooms-knox-audiology-neurosurgeon-spine-surgeon.jpg",
+      "size": 75.25,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "union-station-surrey-hills-parking-near-miNEURO-consulting-suites.jpg",
+      "size": 74.95,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "moonee-ponds-specialist-centre-entrance.jpg",
+      "size": 73.99,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "robotic-spinal-surgery-lumbar-fusion-minimally-invasive-Mazor-Robotics-Renaissance-Guidance-NuVasive-neurosurgery.jpg",
+      "size": 73.63,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sketch-brain-spine-shoulders-abstract-art.jpg",
+      "size": 73.63,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "welcoming-environment-human-therapeutic-interventions.jpg",
+      "size": 73.43,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sketch-brain-spine-abstract-art.jpg",
+      "size": 73.19,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "robotic-spine-surgery-lumbar-fusion-minimally-invasive-Mazor-Stryker-NuVasive-Renaissance-navigation-neurosurgery.jpg",
+      "size": 73.01,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-doctor-desk-sink.jpg",
+      "size": 72.79,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-medical-history.jpg",
+      "size": 72.78,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "langwarrin-consulting-peninsula-rheumatology-room-neurosurgery.jpg",
+      "size": 72.71,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "brain-tumour-navigated-image-guided-surgery-miNEURO-Aliashekvich-robotic.jpg",
+      "size": 72.52,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "2-level-CP-ESP-arthroplasty-disc-replacement-cervical-lumbar-Ales-Aliashkevich-spine-neurosurgery.jpg",
+      "size": 72,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "dandenong-neurology-specialist-consulting-reception-neurosurgeon-spine-surgeon.jpg",
+      "size": 71.95,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Happy-senior-people-with-toddler.jpg",
+      "size": 71.56,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Multilevel-hybrid-LP-ESP-arthroplasty-disc-replacement-lumbar-spine-neurosurgery-miNEURO-extension.jpg",
+      "size": 71.17,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "walking body spine health.jpg",
+      "size": 70.66,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "weightlifting body spine dumbbell.jpg",
+      "size": 70.43,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "moonee-ponds-specialist-centre-entrance-scaled.jpg",
+      "size": 69.65,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "bundoora-unihill-specialist-consulting-building-parking.jpg",
+      "size": 69.5,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "langwarrin-consulting-peninsula-rheumatology-reception-neurosurgery.jpg",
+      "size": 69.04,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-waiting-area-view.jpg",
+      "size": 69.04,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-doctor-desk-mirror.jpg",
+      "size": 68.89,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "hero-neurosurgeon-section-weightlifting-body-spine art.jpg",
+      "size": 68.66,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "medical-consulting-doctor-room-lease-Surrey-Hills-miNEURO.jpg",
+      "size": 68.56,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "werribee-consulting-rooms-neurosurgery-entrance.jpg",
+      "size": 68.51,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "extension body spine health.jpg",
+      "size": 68.4,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "wantirna-consulting-rooms-knox-audiology-neurosurgeon-spine-surgeon-waiting-area.jpg",
+      "size": 68.33,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Ales-Aliashkevich-operating-theatre-spine-brain-image-guided-neurosurgery.jpg",
+      "size": 68.21,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "mornington-aerial-view-beach-sheds-sea-shore.jpg",
+      "size": 67.84,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "recovery-arthroplasty-disc-replacement-cervical-lumbar-advanced-technology-maximum-precision-robotic-spine.jpg",
+      "size": 67.51,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Ales-Aliashkevich-consulting-neurosurgery.jpg",
+      "size": 67.5,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "operating-theatre-spine-brain-image-guided-neurosurgeon-microsurgery-maximum-precision-robotic-spine-Epworth-Richmond.jpg",
+      "size": 65.69,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "moonee-ponds-specialist-centre-waiting-area.jpg",
+      "size": 65.46,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sketch-human-brain-spine-abstract-art.jpg",
+      "size": 65.27,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sketch-car-parking-abstract-art.jpg",
+      "size": 65.1,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "miNEURO-brain-spine-advanced-technology-precision-miniamlly-invasive-neurosurgery-Melbourne-Surrey-Hills-entrance.jpg",
+      "size": 65.08,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-reception-view.jpg",
+      "size": 64.69,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "employment-worker-safety-construction-medicolegal-miNEURO-work-injury.jpg",
+      "size": 64.6,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "business-cards-pen-miNEURO-Ales-Aliashkevich.jpg",
+      "size": 64.06,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "medical-consulting-specialist.jpg",
+      "size": 63.95,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-5.jpg",
+      "size": 63.74,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "welcoming-environment-reception-door.jpg",
+      "size": 63.62,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "welcoming-environment-therapeutic-interventions.jpg",
+      "size": 63.61,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sunbury-lake-imaging-radiology-neurosurgery-consulting-rooms-reception-1.jpg",
+      "size": 62.99,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "medical-consulting-room-rent-Surrey-Hills-miNEURO-suites.jpg",
+      "size": 62.67,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "treatment-discussion-neurosurgery-report-spine-brain-insurance-claim-medicolegal.jpg",
+      "size": 62.66,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "heidelberg-consulting-room-waiting-area-neurosurgeon-spine-surgeon.jpg",
+      "size": 62.48,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-doctor-desk-view.jpg",
+      "size": 61.7,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "james-towne-robotic-neck-spine-surgery-ales-aliashkevich-neurosurgeon-mineuro.jpg",
+      "size": 61.61,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-reception-desk.jpg",
+      "size": 60.99,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "miNEURO-brain-spine-advanced-technology-precision-miniamlly-invasive.jpg",
+      "size": 60.81,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-entry.jpg",
+      "size": 60.77,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "peninsula-private-hospital-reception-area-consulting-ales-aliashkevich-neurosurgeon-spine-surgeon.jpg",
+      "size": 60.7,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-doctor-desk.jpg",
+      "size": 60.43,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "werribee-IMED-radiology.jpg",
+      "size": 60.13,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "werribee-consulting-rooms-neurosurgery-reception.jpg",
+      "size": 58.82,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "welcoming-environment-reception-futuristic.jpg",
+      "size": 58.61,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "ACDF-compare-arthroplasty-disc-replacement-cervical-lumbar-advanced-technology-maximum-precision-robotic-spine.jpg",
+      "size": 58.21,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-8.jpg",
+      "size": 58.11,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "law-insurance-claim-medicolegal-miNEURO-work-injury-accident-traffic-TAC-WorkCover-impairment-assessment.jpg",
+      "size": 57.81,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sketch-car-parking-access-abstract-art.jpg",
+      "size": 57.8,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "heidelberg-consulting-room-neurosurgeon-spine-surgeon.jpg",
+      "size": 57.66,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-suite.jpg",
+      "size": 57.53,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Ales-Aliashkevich-spine-brain-image-guided-neurosurgery-microsurgery-advanced-maximum-precision-robotic-spine-Melbourne.jpg",
+      "size": 57.49,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "bundoora-unihill-specialist-consulting-neurosurgery-reception-desk.jpg",
+      "size": 57.47,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "employment-worker-medicolegal-miNEURO-work-injury-accident-motor-vehicle-traffic-TAC-WorkCover.jpg",
+      "size": 57.33,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurological-examination-reflex-knee-jerk-neurosurgery-report-spine-brain-insurance-claim-medicolegal.jpg",
+      "size": 56.84,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "peninsula-private-hospital-consulting-suites-ales-aliashkevich-neurosurgeon-spine-surgeon.jpg",
+      "size": 56.44,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "complications-arthroplasty-disc-replacement-cervical-lumbar-advanced-technology-maximum-precision-robotic-spine.jpg",
+      "size": 56.36,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-entry-view.jpg",
+      "size": 56.24,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-7.jpg",
+      "size": 56.1,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-entry..jpg",
+      "size": 56.03,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "moonee-ponds-specialist-centre-business-cards.jpg",
+      "size": 55.95,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "ALIF-compare-arthroplasty-disc-replacement-cervical-lumbar-advanced-technology-maximum-precision-robotic-spine.jpg",
+      "size": 55.56,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sketch-parking-abstract-art.jpg",
+      "size": 55.21,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "spine-nerves-robotic-arm-neurosurgeon-microsurgery-miNEURO-advanced-technology-maximum-precision-Melbourne.jpg",
+      "size": 55.06,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "medical-consulting-room-lease-Surrey-Hills-miNEURO-suites.jpg",
+      "size": 54.74,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "bundoora-unihill-specialist-consulting-neurosurgery-reception-staff.jpg",
+      "size": 54.31,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Disabled-patient-parking-access-wheelchair.jpg",
+      "size": 54,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "bundoora-unihill-specialist-consulting-neurosurgery-desk.jpg",
+      "size": 53.64,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-3.jpg",
+      "size": 53.63,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "medical-consulting-room-lease-Surrey-Hills-miNEURO-suite.jpg",
+      "size": 52.95,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "cervical-disc-implants-examples-arthroplasty-disc-replacement-cervical-lumbar-spine-neurosurgery.jpg",
+      "size": 52.87,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "cervical-disc-implants-examples-rthroplasty-disc-replacement-cervical-lumbar-spine-neurosurgery.jpg",
+      "size": 52.87,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "robotic-spine-surgery-radiology-successful-neurosurgery-spine-surgery-advanced-technology-maximum-precision.jpg",
+      "size": 52.71,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-reception.jpg",
+      "size": 52.66,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sunbury-lake-imaging-radiology-neurosurgery-consulting-room.jpg",
+      "size": 52.35,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "law-neurosurgery-spine-brain-insurance-claim-medicolegal-miNEURO-work-injury-accident-traffic-TAC.jpg",
+      "size": 51.49,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "LP-ESP-arthroplasty-disc-replacement-model-lumbar-spine-neurosurgery-miNEURO-advanced-technology.jpg",
+      "size": 51.42,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "spine-nerves-spinal-cord-disc-herniation-replacement-neurosurgeon-microdiscectomy.jpg",
+      "size": 51.19,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sponylolisthesis-lumbar-spine-CT-fusion-minimally-invasive-PLIF-Medtronic-Aliashkevich-neurosurgery.jpg",
+      "size": 50.66,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sunbury-lake-imaging-neurosurgery-consulting-parking.jpg",
+      "size": 50.27,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "peninsula-private-hospital-mezzanine-consulting-ales-aliashkevich-neurosurgeon-spine-surgeon.jpg",
+      "size": 50.01,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "welcoming-environment-for-elderly-and-disabled-patients.jpg",
+      "size": 49.95,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "brain-advanced-technology-precision-mineuro-miniamlly-invasive-neurosurgery-Melbourne.jpg",
+      "size": 49.82,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "bundoora-unihill-specialist-consulting-neurosurgery-room.jpg",
+      "size": 49.41,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "arthroplasty-disc-replacement-lumbar-spine-degeneration-back.jpg",
+      "size": 49.39,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "standing cyborg back body spine.jpg",
+      "size": 49.05,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "lumbar-fusion-minimally-invasive-Mazor-Robotics-Renaissance-screw-planning-3D-neurosurgery.jpg",
+      "size": 49.03,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sunbury-lake-imaging-neurosurgery-consulting-parking-1024x768.jpg",
+      "size": 48.66,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neurosurgical-consultation-suite-Surrey-Hills-miNEURO-kitchenette.jpg",
+      "size": 47.84,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "sunbury-lake-imaging-consulting-neurosurgery.jpg",
+      "size": 47.57,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "peninsula-private-hospital-IMED-radiology-spine-surgery.jpg",
+      "size": 47.54,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "lumbar-spine-fusion-lateral-decompression-XLIF-CT-3D-robotic-reconstruction-neurosurgery-minimally-invasive.jpg",
+      "size": 47.31,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "law-neurosurgery-report-spine-brain-insurance-claim-medicolegal-miNEURO-work-injury-accident.jpg",
+      "size": 44.82,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "mri-ct-precise-advanced-mineuro-guiding-lights-neurosurgery-spine-surgery.jpg",
+      "size": 44.54,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "CP-ESP-arthroplasty-disc-replacement-model-cervical-lumbar.jpg",
+      "size": 44.38,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "weight-lifting-recovery-disc-replacement-cervical-lumbar-robotic-spine.jpg",
+      "size": 44.31,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "lumbar-disc-replacement-recovery-physiotherapy-care-spine.jpg",
+      "size": 44.27,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "lumbar-disc-replacement-risk-advanced-technology-maximum-precision-robotic-spine.jpg",
+      "size": 43.63,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-1.jpg",
+      "size": 43.58,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-6.jpg",
+      "size": 42.94,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "individual-spine-health-2.jpg",
+      "size": 41.71,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "examination-neurosurgery-report-spine-brain-insurance-claim-medicolegal.jpg",
+      "size": 39.54,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "robotic-vertebral-body-concept-bulgarov.jpg",
+      "size": 37.39,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "lumbar-disc-implants-examples-arthroplasty-replacement-cervical-lumbar-spine-advanced-technology-robotic-spine.jpg",
+      "size": 36.73,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "vertebra-disc-cervical-lumbar-3D-CT-bulgarov-vitaly-spine-neurosurgery.jpg",
+      "size": 34.92,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "brain-tumour-image-guided-surgery-minimally-invasive-advanced-neurosurgery-aliashkevich-mineuro.jpg",
+      "size": 33.02,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Disabled-parking-access-wheelchair.jpg",
+      "size": 25.92,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "image-guided-advanced-neurosurgery-spine-brain-surgeon.jpg",
+      "size": 24.66,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "favicon-aliashkevich-neurosurgeon-spine-surgeon-mineuro.png",
+      "size": 23.7,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "Google-logo.jpg",
+      "size": 14.25,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "placeholder-logo.png",
+      "size": 13.52,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "TheBestRated-logo.jpg",
+      "size": 13.52,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "brain-abstract-icon.png",
+      "size": 13.36,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "RateMDs-logo.jpg",
+      "size": 13.18,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "vertebra-icon.png",
+      "size": 11.62,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "RACS-logo.jpg",
+      "size": 9.06,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "ama-victoria-logo.jpg",
+      "size": 8.13,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "PIEF-logo.jpg",
+      "size": 6.52,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "libra-icon.png",
+      "size": 6.06,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "neuron.png",
+      "size": 4.05,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "world-map-white-transparent.png",
+      "size": 3.85,
+      "type": "image",
+      "status": "ok"
+    },
+    {
+      "name": "iatvic-logo.jpg",
+      "size": 3.48,
+      "type": "image",
+      "status": "ok"
+    }
+  ],
+  "totalSize": 90.92,
+  "performanceScore": 100,
+  "recommendations": []
+}

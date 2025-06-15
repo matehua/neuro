@@ -286,9 +286,20 @@ export const zh = {
     description: "了解为什么我们的患者信任阿利什凯维奇医生进行神经外科和脊柱手术。"
   },
   specialties: {
+    title: "神经外科专业",
+    description: "使用尖端技术进行脑部、脊柱和神经疾病的先进手术",
     filters: {
       location: "治疗部位",
       allLocations: "所有部位",
+      complexity: "手术复杂度",
+      anyComplexity: "任何复杂度",
+      moderate: "中等 (6+)",
+      advanced: "高级 (7+)",
+      complex: "复杂 (8+)",
+      highlyComplex: "高度复杂 (9+)",
+      recoveryTime: "恢复时间（天）",
+      days: "天",
+      resetFilters: "重置筛选",
       showing: "显示",
       of: "共",
       procedures: "个手术",

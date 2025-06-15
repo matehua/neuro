@@ -1,5 +1,27 @@
 import { SEOData } from '@/hooks/useSEO';
 
+// Supported languages configuration
+export const SUPPORTED_LANGUAGES = {
+  en: {
+    code: 'en',
+    locale: 'en_AU',
+    name: 'English',
+    nativeName: 'English',
+    direction: 'ltr' as const,
+    hreflang: 'en-AU'
+  },
+  zh: {
+    code: 'zh',
+    locale: 'zh_CN',
+    name: 'Chinese',
+    nativeName: '中文',
+    direction: 'ltr' as const,
+    hreflang: 'zh-CN'
+  }
+} as const;
+
+export type SupportedLanguageCode = keyof typeof SUPPORTED_LANGUAGES;
+
 // Base SEO configuration
 export const SEO_CONFIG = {
   siteName: 'miNEURO',
@@ -12,7 +34,8 @@ export const SEO_CONFIG = {
   author: 'miNEURO Brain and Spine Surgery',
   language: 'en',
   locale: 'en_AU',
-  type: 'website'
+  type: 'website',
+  supportedLanguages: Object.keys(SUPPORTED_LANGUAGES) as SupportedLanguageCode[]
 };
 
 // Doctor and practice information for structured data
@@ -282,5 +305,127 @@ export const generateBreadcrumbStructuredData = (breadcrumbs: Array<{ name: stri
       "name": crumb.name,
       "item": `${SEO_CONFIG.siteUrl}${crumb.url}`
     }))
+  };
+};
+
+/**
+ * Generate language alternate URLs for hreflang
+ */
+export const generateLanguageAlternates = (
+  currentPath: string,
+  currentLanguage: SupportedLanguageCode = 'en'
+): Array<{ hreflang: string; href: string }> => {
+  const alternates: Array<{ hreflang: string; href: string }> = [];
+
+  // Remove language prefix from current path if it exists
+  const pathWithoutLang = currentPath.replace(/^\/(en|zh)/, '') || '/';
+
+  // Generate alternates for each supported language
+  Object.values(SUPPORTED_LANGUAGES).forEach(lang => {
+    const langPath = lang.code === 'en' ? pathWithoutLang : `/${lang.code}${pathWithoutLang}`;
+    const href = `${SEO_CONFIG.siteUrl}${langPath}`;
+
+    alternates.push({
+      hreflang: lang.hreflang,
+      href: href
+    });
+  });
+
+  // Add x-default for English
+  alternates.push({
+    hreflang: 'x-default',
+    href: `${SEO_CONFIG.siteUrl}${pathWithoutLang}`
+  });
+
+  return alternates;
+};
+
+/**
+ * Validate and normalize canonical URL
+ */
+export const normalizeCanonicalUrl = (
+  url: string,
+  currentLanguage: SupportedLanguageCode = 'en'
+): string => {
+  // If it's already a full URL, validate and return
+  if (url.startsWith('http')) {
+    try {
+      const urlObj = new URL(url);
+      // Ensure it's our domain
+      if (urlObj.origin === SEO_CONFIG.siteUrl) {
+        return url;
+      }
+    } catch {
+      // Invalid URL, fall back to site URL
+      return SEO_CONFIG.siteUrl;
+    }
+  }
+
+  // Handle relative paths
+  let path = url.startsWith('/') ? url : `/${url}`;
+
+  // Remove double slashes
+  path = path.replace(/\/+/g, '/');
+
+  // Remove trailing slash unless it's the root
+  if (path !== '/' && path.endsWith('/')) {
+    path = path.slice(0, -1);
+  }
+
+  // Add language prefix for non-English languages
+  if (currentLanguage !== 'en' && !path.startsWith(`/${currentLanguage}`)) {
+    path = `/${currentLanguage}${path}`;
+  }
+
+  return `${SEO_CONFIG.siteUrl}${path}`;
+};
+
+/**
+ * Validate structured data against schema.org standards
+ */
+export const validateStructuredData = (data: Record<string, any>): {
+  isValid: boolean;
+  errors: string[];
+  warnings: string[]
+} => {
+  const errors: string[] = [];
+  const warnings: string[] = [];
+
+  // Check required fields
+  if (!data['@context']) {
+    errors.push('Missing required @context field');
+  } else if (data['@context'] !== 'https://schema.org') {
+    warnings.push('@context should be "https://schema.org"');
+  }
+
+  if (!data['@type']) {
+    errors.push('Missing required @type field');
+  }
+
+  // Validate common schema types
+  switch (data['@type']) {
+    case 'MedicalBusiness':
+    case 'MedicalOrganization':
+      if (!data.name) errors.push('Medical organization must have a name');
+      if (!data.address) warnings.push('Medical organization should have an address');
+      if (!data.telephone) warnings.push('Medical organization should have a telephone');
+      break;
+
+    case 'MedicalProcedure':
+      if (!data.name) errors.push('Medical procedure must have a name');
+      if (!data.description) warnings.push('Medical procedure should have a description');
+      break;
+
+    case 'Article':
+      if (!data.headline) errors.push('Article must have a headline');
+      if (!data.author) warnings.push('Article should have an author');
+      if (!data.datePublished) warnings.push('Article should have a publication date');
+      break;
+  }
+
+  return {
+    isValid: errors.length === 0,
+    errors,
+    warnings
   };
 };

@@ -249,9 +249,20 @@ export const en = {
     description: "Discover why our patients trust Dr Ales Aliashkevich for neurosurgical and spine procedures."
   },
   specialties: {
+    title: "Neurosurgical Specialties",
+    description: "Advanced procedures using cutting-edge technology for brain, spine, and nerve conditions",
     filters: {
       location: "Treatment Area",
       allLocations: "All Areas",
+      complexity: "Procedure Complexity",
+      anyComplexity: "Any complexity",
+      moderate: "Moderate (6+)",
+      advanced: "Advanced (7+)",
+      complex: "Complex (8+)",
+      highlyComplex: "Highly Complex (9+)",
+      recoveryTime: "Recovery Time (days)",
+      days: "days",
+      resetFilters: "Reset Filters",
       showing: "Showing",
       of: "of",
       procedures: "procedures",

@@ -4,6 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
 import { LanguageProvider } from "@/contexts/LanguageContext";
+import { DeviceProvider } from "@/contexts/DeviceContext";
 import { getAllRoutes } from "@/routes/routeConfig";
 import ScreenReaderAnnouncer from "@/components/ScreenReaderAnnouncer";
 import ErrorBoundary from "@/components/ErrorBoundary";
@@ -31,22 +32,24 @@ const AppContent = () => {
   const routes = getAllRoutes();
 
   return (
-    <LanguageProvider>
-      {/* Accessibility enhancements */}
-      <div id="skip-link-target" tabIndex={-1} />
-      <RouteChangeAnnouncer />
+    <DeviceProvider>
+      <LanguageProvider>
+        {/* Accessibility enhancements */}
+        <div id="skip-link-target" tabIndex={-1} />
+        <RouteChangeAnnouncer />
 
-      <Toaster />
-      <Routes>
-        {routes.map((route, index) => (
-          <Route
-            key={`${route.path}-${index}`}
-            path={route.path}
-            element={route.element}
-          />
-        ))}
-      </Routes>
-    </LanguageProvider>
+        <Toaster />
+        <Routes>
+          {routes.map((route, index) => (
+            <Route
+              key={`${route.path}-${index}`}
+              path={route.path}
+              element={route.element}
+            />
+          ))}
+        </Routes>
+      </LanguageProvider>
+    </DeviceProvider>
   );
 };
 

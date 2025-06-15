@@ -5,75 +5,11 @@ import { Users, Clock, MapPin, Activity, Stethoscope, Microscope } from "lucide-
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/hooks/use-mobile";
+import { useDeviceDetection } from "@/contexts/DeviceContext";
+import { ProcedureProps, normalizeProcedureData } from "@/types/procedures";
 
-export interface ProcedureProps {
-  id: string;
-  name: string;
-  description: string;
-  consultationFee: number;
-  patientType: string;
-  recoveryTime: string;
-  image: string;
-  location: string;
-  benefits: string[];
-  // Additional properties for filtering and display
-  price?: number;           // Alternative to consultationFee for backward compatibility
-  complexity?: number;      // Procedure complexity rating (1-10)
-  features?: string[];      // Alternative to benefits for backward compatibility
-}
-
-// Type for raw procedure data that might have different property names
-interface RawProcedureData {
-  id: string;
-  name: string;
-  description: string;
-  image: string;
-  location: string;
-  consultationFee?: number;
-  price?: number;
-  patientType?: string;
-  recoveryTime?: string | number;
-  benefits?: string[];
-  features?: string[];
-  complexity?: number;
-}
-
-// Type guard to ensure data compatibility
-export function isProcedurePropsValid(data: unknown): data is RawProcedureData {
-  if (typeof data !== 'object' || data === null) return false;
-
-  const obj = data as Record<string, unknown>;
-  return (
-    typeof obj.id === 'string' &&
-    typeof obj.name === 'string' &&
-    typeof obj.description === 'string' &&
-    typeof obj.image === 'string' &&
-    typeof obj.location === 'string' &&
-    (typeof obj.consultationFee === 'number' || typeof obj.price === 'number') &&
-    (typeof obj.recoveryTime === 'string' || typeof obj.recoveryTime === 'number') &&
-    (Array.isArray(obj.benefits) || Array.isArray(obj.features))
-  );
-}
-
-// Utility function to normalize procedure data
-export function normalizeProcedureData(data: RawProcedureData): ProcedureProps {
-  return {
-    id: data.id,
-    name: data.name,
-    description: data.description,
-    consultationFee: data.consultationFee || data.price || 0,
-    patientType: data.patientType || 'All Patients',
-    recoveryTime: typeof data.recoveryTime === 'number' ? `${data.recoveryTime} days` : data.recoveryTime || 'Not specified',
-    image: data.image,
-    location: data.location,
-    benefits: data.benefits || data.features || [],
-    // Preserve additional properties
-    price: data.price,
-    complexity: data.complexity,
-    features: data.features
-  };
-}
+// Re-export types from the centralized types file
+export type { ProcedureProps } from "@/types/procedures";
 
 export default function ProcedureCard({ procedure: rawProcedure }: { procedure: ProcedureProps }) {
   const { t, language } = useLanguage();

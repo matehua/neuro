@@ -89,6 +89,7 @@ const ReferralProtocols = lazyLoad(() => import('@/pages/gp-resources/ReferralPr
 const Diagnostics = lazyLoad(() => import('@/pages/gp-resources/Diagnostics'));
 const CareCoordination = lazyLoad(() => import('@/pages/gp-resources/CareCoordination'));
 const Emergencies = lazyLoad(() => import('@/pages/gp-resources/Emergencies'));
+const Specialties = lazyLoad(() => import('@/pages/Specialties'));
 const NotFound = lazyLoad(() => import('@/pages/NotFound'));
 
 // Define route structure
@@ -148,6 +149,7 @@ export const baseRoutes: RouteConfig[] = [
   { path: "/expertise/lumbar-disc-replacement", element: <LumbarDiscReplacement /> },
   { path: "/expertise/image-guided-surgery", element: <ImageGuidedSurgery /> },
   { path: "/expertise/robotic-spine-surgery", element: <RoboticSpineSurgery /> },
+  { path: "/specialties", element: <Specialties /> },
   { path: "/medicolegal", element: <Medicolegal /> },
   { path: "/locations", element: <Locations /> },
   { path: "/locations/surrey-hills", element: <SurreyHillsLocation /> },

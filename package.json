@@ -24,7 +24,10 @@
     "clean": "rimraf dist node_modules/.vite",
     "verify-production-env": "node scripts/verify-production-env.js",
     "verify-no-console": "node scripts/verify-no-console.js",
-    "pre-deploy": "npm run verify-production-env && npm run verify-no-console && npm run production-check"
+    "analyze-bundle": "npm run build && node scripts/analyze-bundle.js",
+    "detect-duplicates": "node scripts/detect-duplicates.js",
+    "quality-check": "npm run detect-duplicates && npm run analyze-bundle",
+    "pre-deploy": "npm run verify-production-env && npm run verify-no-console && npm run quality-check && npm run production-check"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",

@@ -92,7 +92,7 @@ export default function HeroSection() {
                 : "text-4xl md:text-5xl lg:text-6xl mb-6"
             )}
           >
-            Neurosurgical Expertise and Innovative Technology for Superior Brain and Spine Surgery Results
+            {t.hero.title}
           </h1>
           <p className={cn(
             "text-muted-foreground max-w-2xl mx-auto mb-mobile-xl",

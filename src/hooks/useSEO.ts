@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import { generatePageSEO } from '@/lib/seo';
+import { useLocation } from 'react-router-dom';
+import { generatePageSEO, generateLanguageAlternates, normalizeCanonicalUrl, validateStructuredData, SupportedLanguageCode } from '@/lib/seo';
 
 export interface SEOData {
   title: string;
@@ -14,13 +15,17 @@ export interface SEOData {
   twitterImage?: string;
   canonical?: string;
   structuredData?: Record<string, unknown>;
+  languageAlternates?: Array<{ hreflang: string; href: string }>;
+  currentLanguage?: SupportedLanguageCode;
 }
 
 /**
  * Custom hook for managing SEO metadata
- * Updates document head with SEO tags
+ * Updates document head with SEO tags, language alternates, and structured data
  */
 export const useSEO = (seoData: SEOData) => {
+  const location = useLocation();
+
   useEffect(() => {
     // Update document title
     if (seoData.title) {
@@ -80,28 +85,55 @@ export const useSEO = (seoData: SEOData) => {
       updateMetaTag('twitter:image', seoData.twitterImage);
     }
 
-    // Update canonical URL
+    // Update canonical URL with validation
     if (seoData.canonical) {
+      const normalizedCanonical = normalizeCanonicalUrl(seoData.canonical, seoData.currentLanguage);
       let canonicalElement = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-      
+
       if (!canonicalElement) {
         canonicalElement = document.createElement('link');
         canonicalElement.setAttribute('rel', 'canonical');
         document.head.appendChild(canonicalElement);
       }
-      
-      canonicalElement.setAttribute('href', seoData.canonical);
+
+      canonicalElement.setAttribute('href', normalizedCanonical);
     }
 
-    // Add structured data
+    // Update language alternates
+    const languageAlternates = seoData.languageAlternates || generateLanguageAlternates(location.pathname, seoData.currentLanguage);
+
+    // Remove existing hreflang links
+    document.querySelectorAll('link[hreflang]').forEach(link => link.remove());
+
+    // Add new hreflang links
+    languageAlternates.forEach(alternate => {
+      const linkElement = document.createElement('link');
+      linkElement.setAttribute('rel', 'alternate');
+      linkElement.setAttribute('hreflang', alternate.hreflang);
+      linkElement.setAttribute('href', alternate.href);
+      document.head.appendChild(linkElement);
+    });
+
+    // Add structured data with validation
     if (seoData.structuredData) {
+      const validation = validateStructuredData(seoData.structuredData);
+
+      if (process.env.NODE_ENV === 'development') {
+        if (!validation.isValid) {
+          console.warn('Structured data validation errors:', validation.errors);
+        }
+        if (validation.warnings.length > 0) {
+          console.warn('Structured data validation warnings:', validation.warnings);
+        }
+      }
+
       const structuredDataId = 'structured-data-script';
       const existingScript = document.getElementById(structuredDataId);
-      
+
       if (existingScript) {
         existingScript.remove();
       }
-      
+
       const script = document.createElement('script');
       script.id = structuredDataId;
       script.type = 'application/ld+json';

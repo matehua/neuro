@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import ProcedureCard, { ProcedureProps } from "@/components/ProcedureCard";
+import ProcedureCard from "@/components/ProcedureCard";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -12,6 +10,8 @@ import {
 } from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 import { useLanguage } from "@/contexts/LanguageContext";
+import { ProcedureProps } from "@/types/procedures";
+import StandardPageLayout from "@/components/StandardPageLayout";
 
 // Neurosurgical procedures data based on website content
 const allProcedures: ProcedureProps[] = [
@@ -149,49 +149,32 @@ export default function Specialties() {
   const locations = ["all", ...new Set(allProcedures.map(proc => proc.location))];
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
+    <StandardPageLayout
+      title={t.specialties.title || 'Neurosurgical Specialties'}
+      subtitle={t.specialties.description || 'Advanced procedures using cutting-edge technology for brain, spine, and nerve conditions'}
+      pageType="service"
+      enableErrorBoundary={true}
+    >
 
-      <main className="flex-1 pt-20">
-        {/* Hero Section */}
-        <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
-          <div className="container relative z-10">
-            <div className="max-w-3xl mx-auto text-center animate-fade-in">
-              <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                Neurosurgical Specialties
-              </h1>
-              <p className="text-muted-foreground text-lg">
-                Advanced procedures using cutting-edge technology for brain, spine, and nerve conditions
-              </p>
-            </div>
-          </div>
-
-          {/* Decorative elements */}
-          <div className="absolute top-0 right-0 w-1/3 h-full opacity-10">
-            <div className="absolute top-10 right-10 w-64 h-64 rounded-full bg-primary/50 blur-3xl" />
-            <div className="absolute bottom-10 right-40 w-48 h-48 rounded-full bg-primary/30 blur-3xl" />
-          </div>
-        </section>
-
-        {/* Filter Section */}
-        <section className="py-8 border-b">
-          <div className="container">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in">
+      {/* Filter Section */}
+      <section className="py-8 border-b">
+        <div className="container">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 animate-fade-in">
               {/* Complexity Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Procedure Complexity
+                  {t.specialties.filters.complexity || 'Procedure Complexity'}
                 </label>
                 <Select value={complexityFilter} onValueChange={setComplexityFilter}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select complexity" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">Any complexity</SelectItem>
-                    <SelectItem value="6">Moderate (6+)</SelectItem>
-                    <SelectItem value="7">Advanced (7+)</SelectItem>
-                    <SelectItem value="8">Complex (8+)</SelectItem>
-                    <SelectItem value="9">Highly Complex (9+)</SelectItem>
+                    <SelectItem value="all">{t.specialties.filters.anyComplexity || 'Any complexity'}</SelectItem>
+                    <SelectItem value="6">{t.specialties.filters.moderate || 'Moderate (6+)'}</SelectItem>
+                    <SelectItem value="7">{t.specialties.filters.advanced || 'Advanced (7+)'}</SelectItem>
+                    <SelectItem value="8">{t.specialties.filters.complex || 'Complex (8+)'}</SelectItem>
+                    <SelectItem value="9">{t.specialties.filters.highlyComplex || 'Highly Complex (9+)'}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -217,7 +200,7 @@ export default function Specialties() {
               {/* Recovery Time Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  Recovery Time (days)
+                  {t.specialties.filters.recoveryTime || 'Recovery Time (days)'}
                 </label>
                 <div className="pt-6 px-2">
                   <Slider
@@ -229,8 +212,8 @@ export default function Specialties() {
                     onValueChange={setRecoveryRange}
                   />
                   <div className="flex justify-between mt-2 text-sm text-muted-foreground">
-                    <span>{recoveryRange[0]} days</span>
-                    <span>{recoveryRange[1]} days</span>
+                    <span>{recoveryRange[0]} {t.specialties.filters.days || 'days'}</span>
+                    <span>{recoveryRange[1]} {t.specialties.filters.days || 'days'}</span>
                   </div>
                 </div>
               </div>
@@ -248,44 +231,41 @@ export default function Specialties() {
                   setRecoveryRange([0, 40]);
                 }}
               >
-                Reset Filters
+                {t.specialties.filters.resetFilters || 'Reset Filters'}
+              </Button>
+          </div>
+        </div>
+      </section>
+
+      {/* Procedures Grid */}
+      <section className="section">
+        <div className="container">
+          {filteredProcedures.length > 0 ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {filteredProcedures.map((procedure, index) => (
+                <div key={procedure.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
+                  <ProcedureCard procedure={procedure} />
+                </div>
+              ))}
+            </div>
+          ) : (
+            <div className="text-center py-12 animate-fade-in">
+              <h3 className="text-xl font-semibold mb-2">{t.specialties.filters.noMatch}</h3>
+              <p className="text-muted-foreground mb-6">{t.specialties.filters.adjustFilters}</p>
+              <Button
+                variant="outline"
+                onClick={() => {
+                  setComplexityFilter("all");
+                  setLocationFilter("all");
+                  setRecoveryRange([0, 40]);
+                }}
+              >
+                {t.specialties.filters.resetFilters || 'Reset Filters'}
               </Button>
             </div>
-          </div>
-        </section>
-
-        {/* Procedures Grid */}
-        <section className="section">
-          <div className="container">
-            {filteredProcedures.length > 0 ? (
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                {filteredProcedures.map((procedure, index) => (
-                  <div key={procedure.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
-                    <ProcedureCard procedure={procedure} />
-                  </div>
-                ))}
-              </div>
-            ) : (
-              <div className="text-center py-12 animate-fade-in">
-                <h3 className="text-xl font-semibold mb-2">{t.specialties.filters.noMatch}</h3>
-                <p className="text-muted-foreground mb-6">{t.specialties.filters.adjustFilters}</p>
-                <Button
-                  variant="outline"
-                  onClick={() => {
-                    setComplexityFilter("all");
-                    setLocationFilter("all");
-                    setRecoveryRange([0, 40]);
-                  }}
-                >
-                  Reset Filters
-                </Button>
-              </div>
-            )}
-          </div>
-        </section>
-      </main>
-
-      <Footer />
-    </div>
+          )}
+        </div>
+      </section>
+    </StandardPageLayout>
   );
 }
