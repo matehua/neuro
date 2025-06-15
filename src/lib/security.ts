@@ -383,10 +383,7 @@ export class SecurityManager {
       this.securityEvents.shift();
     }
 
-    // Log to console in development
-    if (process.env.NODE_ENV === 'development') {
-      console.warn(`Security Event [${type}]: ${details}`);
-    }
+    // Security events are logged silently in production
 
     // In production, send to monitoring service
     // this.sendToMonitoringService(event);

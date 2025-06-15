@@ -25,15 +25,13 @@ let invalidImages = 0;
 const invalidImagesList = [];
 
 exercisesData.categories.forEach(category => {
-  console.log(`📁 ${category.name} (${category.exercises.length} exercises)`);
-  
+  // Process exercises silently for production
   category.exercises.forEach(exercise => {
     totalExercises++;
     const fileName = path.basename(exercise.image, '.jpg');
-    
+
     if (actualFiles.includes(fileName)) {
       validImages++;
-      console.log(`  ✅ ${exercise.name} → ${exercise.image}`);
     } else {
       invalidImages++;
       invalidImagesList.push({
@@ -41,10 +39,8 @@ exercisesData.categories.forEach(category => {
         exercise: exercise.name,
         image: exercise.image
       });
-      console.log(`  ❌ ${exercise.name} → ${exercise.image} (MISSING)`);
     }
   });
-  console.log('');
 });
 
 console.log('📊 SUMMARY STATISTICS');

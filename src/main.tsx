@@ -7,9 +7,13 @@ import { initializePerformanceMonitoring } from './lib/performance';
 import { initializeAccessibility } from './lib/accessibility';
 import { initialiseMobileOptimisations } from './lib/mobile-optimization';
 import { initializeSecurity } from './lib/security';
+import { initializeEnvironment } from './lib/env-validation';
 
 // Initialize all app features for production readiness
 function initializeApp() {
+  // Initialize environment validation first
+  initializeEnvironment();
+
   // Initialize performance monitoring
   initializePerformanceMonitoring();
 

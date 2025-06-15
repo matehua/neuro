@@ -24,6 +24,7 @@ export class PerformanceMonitor {
   private metrics: Map<string, PerformanceMetrics> = new Map();
   private observers: PerformanceObserver[] = [];
   private initialized: boolean = false;
+  private initializing: boolean = false;
 
   private constructor() {
     // Don't initialize observers in constructor to prevent double initialization
@@ -44,28 +45,25 @@ export class PerformanceMonitor {
   }
 
   /**
-   * Initialize performance observers
+   * Initialize performance observers with atomic initialization
    */
   private initializeObservers(): void {
+    // CRITICAL: Check initialization status FIRST to prevent race conditions
+    if (this.initialized || this.initializing) {
+      return;
+    }
+
+    // Set initializing flag atomically to prevent race conditions
+    this.initializing = true;
+
+    // Environment checks after atomic flag set
     if (typeof window === 'undefined' || !('PerformanceObserver' in window)) {
-      if (process.env.NODE_ENV === 'development') {
-        console.warn('Performance monitoring not available: window or PerformanceObserver not supported');
-      }
+      this.initializing = false; // Reset flag on failure
       return;
     }
 
-    if (this.initialized) {
-      if (process.env.NODE_ENV === 'development') {
-        console.warn('Performance monitoring already initialized - preventing duplicate initialization');
-      }
-      return;
-    }
-
-    this.initialized = true;
-
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Initializing Performance Monitor with observers');
-    }
+    // Clean up any existing observers before creating new ones
+    this.cleanupObservers();
 
     try {
       // Observe navigation timing
@@ -117,8 +115,15 @@ export class PerformanceMonitor {
       fidObserver.observe({ entryTypes: ['first-input'] });
       this.observers.push(fidObserver);
 
+      // Mark as initialized only after successful setup
+      this.initialized = true;
+      this.initializing = false;
+
     } catch (error) {
-      console.warn('Performance monitoring setup failed:', error);
+      // Reset flags on failure and cleanup any partial observers
+      this.initializing = false;
+      this.initialized = false;
+      this.cleanupObservers();
     }
   }
 
@@ -163,18 +168,14 @@ export class PerformanceMonitor {
    * Log a performance metric
    */
   private logMetric(
-    name: string, 
-    startTime: number, 
-    endTime: number, 
+    name: string,
+    startTime: number,
+    endTime: number,
     metadata?: Record<string, unknown>
   ): void {
     const duration = endTime - startTime;
-    
-    if (process.env.NODE_ENV === 'development') {
-      console.log(`Performance: ${name} took ${duration.toFixed(2)}ms`, metadata);
-    }
 
-    // In production, you might want to send this to an analytics service
+    // In production, send this to an analytics service
     // Example: sendToAnalytics({ name, duration, metadata });
   }
 
@@ -247,6 +248,13 @@ export class PerformanceMonitor {
   }
 
   /**
+   * Check if performance monitoring is currently initializing
+   */
+  isInitializing(): boolean {
+    return this.initializing;
+  }
+
+  /**
    * Get number of active observers
    */
   getObserverCount(): number {
@@ -254,16 +262,22 @@ export class PerformanceMonitor {
   }
 
   /**
-   * Cleanup observers
+   * Internal cleanup method for observers only
+   */
+  private cleanupObservers(): void {
+    if (this.observers.length > 0) {
+      this.observers.forEach(observer => observer.disconnect());
+      this.observers = [];
+    }
+  }
+
+  /**
+   * Public cleanup method for complete reset
    */
   cleanup(): void {
-    this.observers.forEach(observer => observer.disconnect());
-    this.observers = [];
+    this.cleanupObservers();
     this.initialized = false;
-
-    if (process.env.NODE_ENV === 'development') {
-      console.log('Performance Monitor cleaned up');
-    }
+    this.initializing = false;
   }
 }
 

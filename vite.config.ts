@@ -45,40 +45,53 @@ export default defineConfig(({ mode }) => ({
     reportCompressedSize: true,
     chunkSizeWarningLimit: 1000,
     rollupOptions: {
+      treeshake: {
+        moduleSideEffects: false,
+        propertyReadSideEffects: false,
+        tryCatchDeoptimization: false
+      },
       output: {
-        manualChunks: {
-          'react-vendor': ['react', 'react-dom', 'react-router-dom'],
-          'ui-vendor': [
-            '@radix-ui/react-accordion',
-            '@radix-ui/react-alert-dialog',
-            '@radix-ui/react-aspect-ratio',
-            '@radix-ui/react-avatar',
-            '@radix-ui/react-checkbox',
-            '@radix-ui/react-collapsible',
-            '@radix-ui/react-context-menu',
-            '@radix-ui/react-dialog',
-            '@radix-ui/react-dropdown-menu',
-            '@radix-ui/react-hover-card',
-            '@radix-ui/react-label',
-            '@radix-ui/react-menubar',
-            '@radix-ui/react-navigation-menu',
-            '@radix-ui/react-popover',
-            '@radix-ui/react-progress',
-            '@radix-ui/react-radio-group',
-            '@radix-ui/react-scroll-area',
-            '@radix-ui/react-select',
-            '@radix-ui/react-separator',
-            '@radix-ui/react-slider',
-            '@radix-ui/react-slot',
-            '@radix-ui/react-switch',
-            '@radix-ui/react-tabs',
-            '@radix-ui/react-toast',
-            '@radix-ui/react-toggle',
-            '@radix-ui/react-toggle-group',
-            '@radix-ui/react-tooltip'
-          ],
-          'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
-          'utility-vendor': ['date-fns', 'clsx', 'tailwind-merge', 'class-variance-authority']
+        manualChunks: (id) => {
+          // React core
+          if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
+            return 'react-vendor';
+          }
+
+          // Radix UI components (split by usage frequency)
+          if (id.includes('@radix-ui')) {
+            // Core UI components used frequently
+            if (id.includes('dialog') || id.includes('popover') || id.includes('dropdown-menu') ||
+                id.includes('select') || id.includes('tabs') || id.includes('accordion')) {
+              return 'ui-core';
+            }
+            // Form-related components
+            if (id.includes('checkbox') || id.includes('radio-group') || id.includes('switch') ||
+                id.includes('slider') || id.includes('label')) {
+              return 'ui-forms';
+            }
+            // Navigation components
+            if (id.includes('navigation-menu') || id.includes('menubar') || id.includes('context-menu')) {
+              return 'ui-navigation';
+            }
+            // Other UI components
+            return 'ui-misc';
+          }
+
+          // Form libraries
+          if (id.includes('react-hook-form') || id.includes('@hookform') || id.includes('zod')) {
+            return 'form-vendor';
+          }
+
+          // Utility libraries
+          if (id.includes('date-fns') || id.includes('clsx') || id.includes('tailwind-merge') ||
+              id.includes('class-variance-authority') || id.includes('lucide-react')) {
+            return 'utility-vendor';
+          }
+
+          // Large third-party libraries
+          if (id.includes('node_modules')) {
+            return 'vendor';
+          }
         },
         // Optimize chunk naming for caching
         chunkFileNames: (chunkInfo) => {
@@ -92,10 +105,33 @@ export default defineConfig(({ mode }) => ({
       compress: {
         drop_console: true,
         drop_debugger: true,
-        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace']
+        pure_funcs: [
+          'console.log',
+          'console.info',
+          'console.debug',
+          'console.trace',
+          'console.warn',
+          'console.error'
+        ],
+        passes: 2,
+        unsafe: true,
+        unsafe_comps: true,
+        unsafe_Function: true,
+        unsafe_math: true,
+        unsafe_symbols: true,
+        unsafe_methods: true,
+        unsafe_proto: true,
+        unsafe_regexp: true,
+        unsafe_undefined: true
       },
       mangle: {
-        safari10: true
+        safari10: true,
+        properties: {
+          regex: /^_/
+        }
+      },
+      format: {
+        comments: false
       }
     } : undefined,
   },

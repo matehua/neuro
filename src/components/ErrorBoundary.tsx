@@ -30,11 +30,6 @@ class ErrorBoundary extends Component<Props, State> {
   }
 
   componentDidCatch(error: Error, errorInfo: ErrorInfo) {
-    // Log error to console in development
-    if (process.env.NODE_ENV === 'development') {
-      console.error('Error Boundary caught an error:', error, errorInfo);
-    }
-
     // Update state with error details
     this.setState({
       error,
@@ -42,9 +37,7 @@ class ErrorBoundary extends Component<Props, State> {
     });
 
     // Production error logging
-    if (process.env.NODE_ENV === 'production') {
-      this.logErrorToService(error, errorInfo);
-    }
+    this.logErrorToService(error, errorInfo);
   }
 
   private logErrorToService(error: Error, errorInfo: ErrorInfo) {
@@ -58,9 +51,6 @@ class ErrorBoundary extends Component<Props, State> {
       url: window.location.href,
       userId: 'anonymous', // Could be replaced with actual user ID
     };
-
-    // Log to console as fallback
-    console.error('Production Error:', errorReport);
 
     // Send to error reporting service (implement based on your service)
     try {
@@ -82,7 +72,6 @@ class ErrorBoundary extends Component<Props, State> {
       }
     } catch (reportingError) {
       // Silently fail if error reporting fails
-      console.warn('Failed to report error:', reportingError);
     }
   }
 
@@ -95,7 +84,19 @@ class ErrorBoundary extends Component<Props, State> {
   };
 
   handleRetry = () => {
+    // Clear error state and attempt recovery
     this.setState({ hasError: false, error: undefined, errorInfo: undefined });
+
+    // Clear any cached data that might be causing issues
+    if ('caches' in window) {
+      caches.keys().then(names => {
+        names.forEach(name => {
+          if (name.includes('runtime') || name.includes('precache')) {
+            caches.delete(name);
+          }
+        });
+      });
+    }
   };
 
   render() {
@@ -206,8 +207,8 @@ export function withErrorBoundary<P extends object>(
 export function useErrorHandler() {
   return (error: Error, errorInfo?: ErrorInfo) => {
     // In a real application, you might want to log this to an error service
-    console.error('Error caught by error handler:', error, errorInfo);
-    
+    // Example: logErrorToService(error, errorInfo);
+
     // You could also trigger a state update to show an error UI
     // This is a simplified version - in practice you might want to use
     // a more sophisticated error handling strategy

@@ -327,7 +327,7 @@ export class MobileOptimiser {
       const memory = (performance as Performance & { memory: { usedJSHeapSize: number; totalJSHeapSize: number } }).memory;
       
       if (memory.usedJSHeapSize / memory.totalJSHeapSize > 0.8) {
-        console.warn('High memory usage detected on mobile device');
+        // High memory usage detected - could trigger cleanup or analytics
       }
     }
 
