@@ -168,8 +168,6 @@ export const generateLocationSEO = (
   locationName: string,
   customData?: Partial<SEOData>
 ): SEOData => {
-  const baseLocationData = generatePageSEO('locations'); // This will now use the updated generatePageSEO
-  
   // Ensure customData's canonical (if relative path) is specific to this location
   let locationSpecificCanonicalPath = `/locations/${locationName.toLowerCase().replace(/\s+/g, '-')}`;
   if (customData?.canonical && customData.canonical.startsWith('/')) {
@@ -192,8 +190,6 @@ export const generateProcedureSEO = (
   procedureName: string,
   customData?: Partial<SEOData>
 ): SEOData => {
-  const baseProcedureData = generatePageSEO('expertise'); // Uses updated generatePageSEO
-
   let procedureSpecificCanonicalPath = `/expertise/${procedureName.toLowerCase().replace(/\s+/g, '-')}`;
    if (customData?.canonical && customData.canonical.startsWith('/')) {
     procedureSpecificCanonicalPath = customData.canonical;

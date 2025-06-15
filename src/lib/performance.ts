@@ -167,13 +167,11 @@ export class PerformanceMonitor {
    * Log a performance metric
    */
   private logMetric(
-    name: string,
-    startTime: number,
-    endTime: number,
-    metadata?: Record<string, unknown>
+    _name: string,
+    _startTime: number,
+    _endTime: number,
+    _metadata?: Record<string, unknown>
   ): void {
-    const duration = endTime - startTime;
-
     // In production, send this to an analytics service
     // Example: sendToAnalytics({ name, duration, metadata });
   }
@@ -188,9 +186,9 @@ export class PerformanceMonitor {
       'TLS Handshake': entry.secureConnectionStart > 0 ? entry.connectEnd - entry.secureConnectionStart : 0,
       'Request': entry.responseStart - entry.requestStart,
       'Response': entry.responseEnd - entry.responseStart,
-      'DOM Processing': entry.domComplete - entry.domLoading,
+      'DOM Processing': entry.domComplete - entry.domContentLoadedEventStart,
       'Load Complete': entry.loadEventEnd - entry.loadEventStart,
-      'Total Load Time': entry.loadEventEnd - entry.navigationStart
+      'Total Load Time': entry.loadEventEnd - entry.fetchStart
     };
 
     Object.entries(metrics).forEach(([name, duration]) => {
@@ -204,9 +202,8 @@ export class PerformanceMonitor {
    * Log resource metrics
    */
   private logResourceMetrics(entry: PerformanceResourceTiming): void {
-    const duration = entry.responseEnd - entry.startTime;
     const resourceType = this.getResourceType(entry.name);
-    
+
     this.logMetric(`Resource: ${resourceType}`, entry.startTime, entry.responseEnd, {
       url: entry.name,
       size: entry.transferSize,

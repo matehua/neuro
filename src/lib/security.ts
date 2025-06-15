@@ -358,7 +358,7 @@ export class SecurityManager {
     this.intervals.push(devtoolsInterval);
 
     // Monitor for right-click attempts (optional)
-    document.addEventListener('contextmenu', (e) => {
+    document.addEventListener('contextmenu', () => {
       // Allow right-click but log it
       this.logSecurityEvent('CONTEXT_MENU', 'Right-click detected');
     });

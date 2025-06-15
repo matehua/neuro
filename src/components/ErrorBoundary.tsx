@@ -205,7 +205,7 @@ export function withErrorBoundary<P extends object>(
  * Hook for error boundary functionality in functional components
  */
 export function useErrorHandler() {
-  return (error: Error, errorInfo?: ErrorInfo) => {
+  return (_error: Error, _errorInfo?: ErrorInfo) => {
     // In a real application, you might want to log this to an error service
     // Example: logErrorToService(error, errorInfo);
 

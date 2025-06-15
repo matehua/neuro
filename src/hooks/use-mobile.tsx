@@ -1,4 +1,4 @@
-import * as React from "react"
+import { useState, useEffect, useRef } from "react"
 
 const MOBILE_BREAKPOINT = 768
 const TABLET_BREAKPOINT = 1024
@@ -10,9 +10,9 @@ const TABLET_BREAKPOINT = 1024
  */
 export function useIsMobile() {
   // Default to undefined for SSR compatibility
-  const [isMobile, setIsMobile] = React.useState<boolean | undefined>(undefined);
+  const [isMobile, setIsMobile] = useState<boolean | undefined>(undefined);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // Check if window is defined (browser environment)
     if (typeof window === 'undefined') return;
 
@@ -48,7 +48,7 @@ export function useIsMobile() {
  * @returns object with device information and capabilities
  */
 export function useDeviceDetection() {
-  const [deviceInfo, setDeviceInfo] = React.useState({
+  const [deviceInfo, setDeviceInfo] = useState({
     isMobile: false,
     isTablet: false,
     isDesktop: false,
@@ -58,7 +58,7 @@ export function useDeviceDetection() {
     screenSize: 'unknown' as 'xs' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'unknown'
   });
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (typeof window === 'undefined') return;
 
     const updateDeviceInfo = () => {
@@ -130,8 +130,8 @@ export function useSwipeGesture(
   onSwipeDown?: () => void,
   threshold: number = 50
 ) {
-  const touchStart = React.useRef<{ x: number; y: number } | null>(null);
-  const touchEnd = React.useRef<{ x: number; y: number } | null>(null);
+  const touchStart = useRef<{ x: number; y: number } | null>(null);
+  const touchEnd = useRef<{ x: number; y: number } | null>(null);
 
   const handleTouchStart = React.useCallback((e: TouchEvent) => {
     touchEnd.current = null;

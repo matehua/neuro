@@ -8,7 +8,6 @@
  */
 export class MobileOptimiser {
   private static instance: MobileOptimiser;
-  private touchStartTime: number = 0;
   private isInitialised: boolean = false;
 
   private constructor() {
@@ -58,8 +57,8 @@ export class MobileOptimiser {
     });
 
     // Optimise touch delay
-    document.addEventListener('touchstart', (e) => {
-      this.touchStartTime = Date.now();
+    document.addEventListener('touchstart', () => {
+      // Touch start handled for optimization
     }, { passive: true });
 
     // Prevent zoom on double tap for better UX
@@ -255,11 +254,9 @@ export class MobileOptimiser {
     // TODO: Re-enable after fixing service worker MIME type handling
 
     // Add app install prompt handling
-    let deferredPrompt: Event | null = null;
-    
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
-      deferredPrompt = e;
+      // Store the event for later use if needed
     });
   }
 

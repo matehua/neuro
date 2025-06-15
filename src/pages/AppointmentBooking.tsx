@@ -1,10 +1,10 @@
 
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { format, addDays, differenceInDays } from "date-fns";
 import { Link } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import { CalendarIcon, Users, CreditCard, Check, ChevronRight } from "lucide-react";
+import { CalendarIcon, CreditCard, Check, ChevronRight } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Calendar } from "@/components/ui/calendar";
@@ -83,8 +83,8 @@ const proceduresData: ClinicData[] = [
 ];
 
 export default function AppointmentBooking() {
-  const [appointmentDate, setAppointmentDate] = useState<Date | undefined>(new Date());
-  const [followUpDate, setFollowUpDate] = useState<Date | undefined>(addDays(new Date(), 7));
+  const [appointmentDate] = useState<Date | undefined>(new Date());
+  const [followUpDate] = useState<Date | undefined>(addDays(new Date(), 7));
   const [selectedProcedure, setSelectedProcedure] = useState<ProcedureProps | null>(null);
   const [currentStep, setCurrentStep] = useState(1);
 
@@ -393,7 +393,18 @@ export default function AppointmentBooking() {
                           <Button
                             variant={selectedProcedure?.id === procedure.id ? "default" : "outline"}
                             className={selectedProcedure?.id === procedure.id ? "btn-primary" : ""}
-                            onClick={() => setSelectedProcedure(procedure)}
+                            onClick={() => setSelectedProcedure({
+                              id: procedure.id,
+                              name: procedure.name,
+                              description: procedure.description,
+                              consultationFee: procedure.price,
+                              patientType: "All Patients",
+                              recoveryTime: `${procedure.recoveryTime} days`,
+                              image: procedure.image,
+                              location: procedure.location,
+                              benefits: procedure.features,
+                              price: procedure.price
+                            })}
                           >
                             {selectedProcedure?.id === procedure.id ? (
                               <>
@@ -634,9 +645,9 @@ export default function AppointmentBooking() {
                           <div className="py-4 border-b space-y-2">
                             <div className="flex justify-between items-center">
                               <span>
-                                ${selectedProcedure.price} x {sessionsCount} {sessionsCount === 1 ? "session" : "sessions"}
+                                ${selectedProcedure.price || selectedProcedure.consultationFee} x {sessionsCount} {sessionsCount === 1 ? "session" : "sessions"}
                               </span>
-                              <span className="font-medium">${selectedProcedure.price * sessionsCount}</span>
+                              <span className="font-medium">${(selectedProcedure.price || selectedProcedure.consultationFee) * sessionsCount}</span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span>Registration fee</span>
@@ -795,9 +806,9 @@ export default function AppointmentBooking() {
                           <>
                             <div className="flex justify-between items-center">
                               <span>
-                                ${selectedProcedure.price} x {sessionsCount} {sessionsCount === 1 ? "session" : "sessions"}
+                                ${selectedProcedure.price || selectedProcedure.consultationFee} x {sessionsCount} {sessionsCount === 1 ? "session" : "sessions"}
                               </span>
-                              <span className="font-medium">${selectedProcedure.price * sessionsCount}</span>
+                              <span className="font-medium">${(selectedProcedure.price || selectedProcedure.consultationFee) * sessionsCount}</span>
                             </div>
                             <div className="flex justify-between items-center">
                               <span>Registration fee</span>

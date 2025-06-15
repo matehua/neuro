@@ -26,7 +26,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   width,
   height,
   priority = false,
-  quality = 75,
   placeholder = 'blur',
   blurDataURL,
   sizes,
@@ -42,8 +41,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
   // Generate optimized image sources
   const generateSources = useCallback((originalSrc: string) => {
     const basePath = originalSrc.replace(/\.[^/.]+$/, '');
-    const extension = originalSrc.split('.').pop()?.toLowerCase();
-    
+
     // Generate different formats and sizes
     const sources = {
       avif: `${basePath}.avif`,

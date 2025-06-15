@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import SafeImage from "@/components/SafeImage";
@@ -10,7 +10,6 @@ import { useDeviceDetection } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
 export default function Locations() {
-  const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
   useEffect(() => {

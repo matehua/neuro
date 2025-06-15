@@ -113,11 +113,9 @@ export default function Navbar() {
   };
 
   // Function to toggle submenu
-  const toggleSubmenu = (name: string, e: React.MouseEvent) => {
-    // Check if the click was on the dropdown arrow or near the right edge
-    const target = e.currentTarget as HTMLElement;
-    const rect = target.getBoundingClientRect();
-    const isClickNearRightEdge = (e.clientX > rect.right - 30);
+  const toggleSubmenu = (_name: string, _e: React.MouseEvent) => {
+    // Function reserved for future submenu functionality
+    // Currently not implemented but kept for potential future use
 
     if (isClickNearRightEdge) {
       // If clicking near the right edge (dropdown arrow), toggle the submenu

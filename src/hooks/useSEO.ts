@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { generatePageSEO, SEO_CONFIG } from '@/lib/seo'; // SEO_CONFIG might not be directly needed here if generatePageSEO handles all canonical logic
+import { generatePageSEO } from '@/lib/seo';
 
 export interface SEOData {
   title: string;

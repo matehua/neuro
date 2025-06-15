@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from "react"
+import { useEffect, useState, ComponentProps } from "react"
 import { Toaster as Sonner } from "sonner"
 
-type ToasterProps = React.ComponentProps<typeof Sonner>
+type ToasterProps = ComponentProps<typeof Sonner>
 
 const Toaster = ({ ...props }: ToasterProps) => {
   const [theme, setTheme] = useState<"light" | "dark" | "system">("system")

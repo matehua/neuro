@@ -1,16 +1,12 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import Layout from "@/components/Layout";
 import PageHeader from "@/components/PageHeader";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import { useLanguage } from "@/contexts/LanguageContext";
 import SafeImage from "@/components/SafeImage";
-import { useDeviceDetection } from "@/hooks/use-mobile";
-import { cn } from "@/lib/utils";
-
 export default function Medicolegal() {
   const { t } = useLanguage();
-  const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -576,38 +572,38 @@ export default function Medicolegal() {
         <section className="py-16">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.faq?.title || 'Frequently Asked Questions'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{t.contact?.faq || 'Frequently Asked Questions'}</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                {t.faq?.subtitle || 'Common questions about our medicolegal services and assessment process'}
+                {t.contact?.faqSubtitle || 'Common questions about our medicolegal services and assessment process'}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
               <div className="bg-card p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.faq?.medicolegal?.assessment?.question || 'What is a medicolegal assessment?'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">What is a medicolegal assessment?</h3>
                 <p className="text-muted-foreground">
-                  {t.faq?.medicolegal?.assessment?.answer || 'A medicolegal assessment is an independent medical examination conducted for legal purposes, such as insurance claims, workers\' compensation, or legal proceedings. It provides an objective evaluation of a person\'s medical condition and its impact on their life and work capacity.'}
+                  A medicolegal assessment is an independent medical examination conducted for legal purposes, such as insurance claims, workers' compensation, or legal proceedings. It provides an objective evaluation of a person's medical condition and its impact on their life and work capacity.
                 </p>
               </div>
 
               <div className="bg-card p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.faq?.medicolegal?.duration?.question || 'How long does a medicolegal assessment take?'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">How long does a medicolegal assessment take?</h3>
                 <p className="text-muted-foreground">
-                  {t.faq?.medicolegal?.duration?.answer || 'A typical medicolegal assessment with Dr. Aliashkevich takes approximately 60-90 minutes, depending on the complexity of the case and the number of injuries being assessed. This includes time for the interview, examination, and discussion.'}
+                  A typical medicolegal assessment with Dr. Aliashkevich takes approximately 60-90 minutes, depending on the complexity of the case and the number of injuries being assessed. This includes time for the interview, examination, and discussion.
                 </p>
               </div>
 
               <div className="bg-card p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.faq?.medicolegal?.bring?.question || 'What should I bring to my assessment?'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">What should I bring to my assessment?</h3>
                 <p className="text-muted-foreground">
-                  {t.faq?.medicolegal?.bring?.answer || 'Please bring any relevant medical records, imaging results (or details of where these were performed), a list of current medications, and any documentation related to your claim or case. If you have a support person, they are welcome to attend with you.'}
+                  Please bring any relevant medical records, imaging results (or details of where these were performed), a list of current medications, and any documentation related to your claim or case. If you have a support person, they are welcome to attend with you.
                 </p>
               </div>
 
               <div className="bg-card p-6 rounded-lg shadow-md">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.faq?.medicolegal?.report?.question || 'How soon will the report be available?'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">How soon will the report be available?</h3>
                 <p className="text-muted-foreground">
-                  {t.faq?.medicolegal?.report?.answer || 'Standard reports are typically completed within 10-14 business days after the assessment. For urgent cases, expedited reporting can be arranged. The report will be sent directly to the requesting party (insurer, lawyer, or employer).'}
+                  Standard reports are typically completed within 10-14 business days after the assessment. For urgent cases, expedited reporting can be arranged. The report will be sent directly to the requesting party (insurer, lawyer, or employer).
                 </p>
               </div>
             </div>

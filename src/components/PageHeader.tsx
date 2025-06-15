@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDeviceDetection } from "@/hooks/use-mobile";
 import { cn } from "@/lib/utils";
 
