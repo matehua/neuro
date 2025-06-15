@@ -1,986 +1,509 @@
+# Complete miNEURO Clone Script for Lovable.dev
 
-# Complete miNEURO Lovable Clone Script
+This comprehensive script will recreate the entire miNEURO neurosurgeon website with all features, pages, components, and functionality.
 
-## Overview
+## Phase 1: Initialize Project and Core Setup
 
-This comprehensive script will replicate the entire miNEURO neurosurgeon website in Lovable.dev or any AI-powered development platform.
+```
+Create a new React TypeScript project with Vite and Tailwind CSS. Set up the basic folder structure for a medical website with:
 
-## Phase 1: Project Initialization
+- src/components/ for UI components
+- src/pages/ for page components  
+- src/contexts/ for state management
+- src/hooks/ for custom hooks
+- src/lib/ for utilities
+- src/locales/ for translations
+- src/routes/ for routing
+- public/images/ for static images
+- docs/ for documentation
 
-```bash
-# Create new React TypeScript project
-npm create vite@latest mineuro-clone -- --template react-ts
-cd mineuro-clone
-npm install
-
-# Install required dependencies
-npm install react-router-dom @tanstack/react-query lucide-react
-npm install -D tailwindcss postcss autoprefixer @types/node
-npm install clsx tailwind-merge class-variance-authority
-npm install @radix-ui/react-dialog @radix-ui/react-dropdown-menu
-npm install @radix-ui/react-accordion @radix-ui/react-tabs
-npm install date-fns @hookform/resolvers zod react-hook-form
+Install these essential packages:
+- @radix-ui/react-* components for UI primitives
+- react-router-dom for routing
+- @tanstack/react-query for data fetching
+- lucide-react for icons
+- sonner for notifications
+- react-hook-form and zod for forms
+- date-fns for date handling
+- class-variance-authority and clsx for styling utilities
 ```
 
-## Phase 2: Directory Structure Creation
+## Phase 2: Core Infrastructure and Services
 
-```bash
-# Create directory structure
-mkdir -p src/{components,contexts,hooks,lib,locales,pages,routes}
-mkdir -p src/components/ui
-mkdir -p src/pages/patient-resources
-mkdir -p public/{images,pages}
-mkdir -p docs/{architecture,components,pages,setup}
-mkdir -p scripts
+```
+Create the core service files in src/lib/:
+
+1. Create src/lib/utils.ts with cn() utility function for className merging and other common utilities
+
+2. Create src/lib/seo.ts with comprehensive SEO utilities including:
+   - generatePageSEO function for dynamic meta tags
+   - SEO_CONFIG with default site configuration
+   - Structured data generation for medical organization
+   - Open Graph and Twitter card utilities
+
+3. Create src/lib/accessibility.ts with:
+   - announceToScreenReader function
+   - Focus management utilities
+   - ARIA label helpers
+   - Keyboard navigation utilities
+
+4. Create src/lib/performance.ts (420 lines) with:
+   - PerformanceMonitor singleton class
+   - Navigation timing metrics
+   - Resource loading performance tracking
+   - Component render performance measurement
+   - Memory and battery monitoring
+   - Performance optimization recommendations
+
+5. Create src/lib/mobile-optimization.ts (401 lines) with:
+   - Touch event optimization
+   - Viewport configuration
+   - PWA features implementation
+   - Network-aware loading
+   - Mobile-specific performance enhancements
+
+6. Create src/lib/security.ts with security utilities for CSP, XSS protection, and secure headers
+
+7. Create src/lib/env-validation.ts for environment variable validation
 ```
 
-## Phase 3: Core Configuration Files
+## Phase 3: Internationalization System
 
-### 1. Vite Configuration (vite.config.ts)
-```typescript
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react-swc";
-import path from "path";
+```
+Create comprehensive multilingual support:
 
-export default defineConfig(({ mode }) => ({
-  server: {
-    host: "::",
-    port: 8080,
-  },
-  plugins: [react()],
-  resolve: {
-    alias: {
-      "@": path.resolve(__dirname, "./src"),
-    },
-  },
-  optimizeDeps: {
-    include: ['react', 'react-dom', 'react-router-dom', '@tanstack/react-query', 'lucide-react']
-  },
-  build: {
-    target: 'es2020',
-    outDir: 'dist',
-    sourcemap: mode === 'development',
-    minify: mode === 'production' ? 'terser' : false,
-    terserOptions: mode === 'production' ? {
-      compress: { drop_console: true, drop_debugger: true }
-    } : undefined,
-  },
-}));
+1. Create src/locales/en.ts with complete English translations including:
+   - Navigation items
+   - Page titles and content
+   - Form labels and validation messages
+   - Medical terminology
+   - Appointment booking flow
+   - Contact information
+   - SEO meta descriptions
+   - Accessibility labels
+
+2. Create src/locales/zh.ts with corresponding Chinese translations
+
+3. Create src/contexts/LanguageContext.tsx with:
+   - SupportedLanguage type ('en' | 'zh')
+   - LanguageProvider component
+   - useLanguage hook
+   - Language detection from URL and localStorage
+   - URL path management for language routes
+   - Translation loading and caching
+
+The context should handle language switching, URL updates, and persistence.
 ```
 
-### 2. Tailwind Configuration (tailwind.config.js)
-```javascript
-module.exports = {
-  content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
-  theme: {
-    extend: {
-      colors: {
-        primary: "hsl(210, 40%, 18%)",
-        secondary: "hsl(210, 40%, 96%)",
-        muted: "hsl(210, 40%, 98%)",
-        "muted-foreground": "hsl(215, 16%, 47%)",
-        background: "hsl(0, 0%, 100%)",
-        foreground: "hsl(222, 84%, 5%)",
-        card: "hsl(0, 0%, 100%)",
-        "card-foreground": "hsl(222, 84%, 5%)",
-        border: "hsl(214, 32%, 91%)",
-      },
-      animation: {
-        "fade-in": "fade-in 0.3s ease-out",
-        "scale-in": "scale-in 0.2s ease-out",
-        "accordion-down": "accordion-down 0.2s ease-out",
-        "accordion-up": "accordion-up 0.2s ease-out",
-      },
-      keyframes: {
-        "fade-in": {
-          "0%": { opacity: "0", transform: "translateY(10px)" },
-          "100%": { opacity: "1", transform: "translateY(0)" }
-        },
-        "scale-in": {
-          "0%": { transform: "scale(0.95)", opacity: "0" },
-          "100%": { transform: "scale(1)", opacity: "1" }
-        },
-        "accordion-down": {
-          from: { height: "0", opacity: "0" },
-          to: { height: "var(--radix-accordion-content-height)", opacity: "1" }
-        },
-        "accordion-up": {
-          from: { height: "var(--radix-accordion-content-height)", opacity: "1" },
-          to: { height: "0", opacity: "0" }
-        }
-      }
-    },
-  },
-  plugins: [],
-};
+## Phase 4: UI Component Library
+
+```
+Create the complete shadcn/ui component library in src/components/ui/:
+
+Create these base components with proper TypeScript types and Tailwind styling:
+- accordion.tsx - Collapsible content sections
+- alert-dialog.tsx - Modal alert dialogs  
+- avatar.tsx - User avatar display
+- badge.tsx - Status and category badges
+- button.tsx - Button variants (default, destructive, outline, secondary, ghost, link)
+- calendar.tsx - Date picker with mobile optimization
+- card.tsx - Content container cards (Card, CardHeader, CardTitle, CardContent, CardFooter)
+- checkbox.tsx - Form checkboxes
+- dialog.tsx - Modal dialogs
+- dropdown-menu.tsx - Dropdown menus
+- form.tsx - Form components with validation
+- input.tsx - Text input fields
+- label.tsx - Form labels
+- popover.tsx - Floating content with mobile positioning
+- progress.tsx - Progress indicators
+- radio-group.tsx - Radio button groups
+- select.tsx - Select dropdowns with custom styling
+- separator.tsx - Visual separators
+- sheet.tsx - Side panels
+- sonner.tsx - Toast notifications with theme support
+- switch.tsx - Toggle switches
+- table.tsx - Data tables
+- tabs.tsx - Tabbed navigation
+- textarea.tsx - Multi-line text input
+- tooltip.tsx - Hover tooltips
+
+Each component should be fully typed, accessible, and mobile-optimized.
 ```
 
-## Phase 4: Core Library Files
+## Phase 5: Custom Hooks and Utilities
 
-### 1. Utilities (src/lib/utils.ts)
-```typescript
-import { type ClassValue, clsx } from "clsx";
-import { twMerge } from "tailwind-merge";
+```
+Create custom hooks in src/hooks/:
 
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
+1. Create src/hooks/use-mobile.ts with:
+   - useDeviceDetection hook returning device information
+   - isMobile, isTablet, isDesktop detection
+   - Touch capability detection
+   - Screen size breakpoints
+   - Performance preferences
+   - Network status detection
+
+2. Create src/hooks/useSEO.ts with:
+   - useSEO hook for dynamic meta tag management
+   - usePageSEO hook for page-specific SEO
+   - SEOData interface with comprehensive meta options
+   - Dynamic title, description, and structured data updates
 ```
 
-### 2. SEO Management (src/lib/seo.ts)
-```typescript
-export interface SEOData {
-  title?: string;
-  description?: string;
-  keywords?: string;
-  image?: string;
-  url?: string;
-  type?: string;
-}
+## Phase 6: Core Layout Components
 
-export function generatePageSEO(pageType: string, customData: Partial<SEOData> = {}): SEOData {
-  const defaultSEO = {
-    title: "miNEURO Brain and Spine Surgery - Dr Ales Aliashkevich",
-    description: "Expert neurosurgeon in Melbourne specializing in brain and spine surgery with advanced minimally invasive techniques",
-    keywords: "neurosurgeon, spine surgeon, brain surgery, Melbourne, minimally invasive",
-    image: "/images/hero-neurosurgeon-section-weightlifting-body-spine art.jpg",
-    url: "https://mineuro.com.au",
-    type: "website"
-  };
+```
+Create the main layout components in src/components/:
 
-  return { ...defaultSEO, ...customData };
-}
+1. Create src/components/Layout.tsx:
+   - Main layout wrapper component
+   - SEO integration with useSEO hook
+   - Accessibility announcements
+   - Page title management
+   - Props: children, pageTitle, seoData, pageType
+
+2. Create src/components/Navbar.tsx:
+   - Responsive navigation header
+   - Mobile menu with hamburger toggle
+   - Language selector integration
+   - Theme toggle integration
+   - Navigation links with active states
+   - Call-to-action button
+   - Accessibility-compliant navigation
+
+3. Create src/components/Footer.tsx:
+   - Multi-column footer layout
+   - Contact information
+   - Location links
+   - Social media links
+   - Copyright information
+   - Newsletter signup
+
+4. Create src/components/PageHeader.tsx:
+   - Reusable page header component
+   - Background image support with parallax
+   - Title and subtitle display
+   - Mobile optimization
+   - Accessibility features
+   - Props: title, subtitle, backgroundImage, enableParallax
+
+5. Create src/components/LanguageSelector.tsx:
+   - Language switching dropdown
+   - Flag icons for visual identification
+   - Smooth language transitions
+   - URL path updates
+   - Accessibility labels
+
+6. Create src/components/ThemeToggle.tsx:
+   - Dark/light mode toggle button
+   - System preference detection
+   - Smooth theme transitions
+   - Icon animations
+   - Local storage persistence
+
+7. Create src/components/SkipLink.tsx:
+   - Accessibility skip navigation
+   - Keyboard navigation support
+   - Screen reader compatibility
 ```
 
-### 3. Performance Monitoring (src/lib/performance.ts)
-```typescript
-export class PerformanceMonitor {
-  private static instance: PerformanceMonitor;
-  private metrics: Map<string, any> = new Map();
-  private initialized = false;
+## Phase 7: Specialized Components
 
-  static getInstance(): PerformanceMonitor {
-    if (!PerformanceMonitor.instance) {
-      PerformanceMonitor.instance = new PerformanceMonitor();
-    }
-    return PerformanceMonitor.instance;
-  }
+```
+Create specialized components for the medical website:
 
-  initialize(): void {
-    if (this.initialized) return;
-    this.initialized = true;
-    // Initialize performance observers
-  }
+1. Create src/components/HeroSection.tsx:
+   - Homepage hero section with parallax background
+   - Professional medical imagery
+   - Call-to-action buttons
+   - Mobile-optimized animations
+   - Accessibility-compliant content
+   - Device-specific performance optimizations
 
-  startMeasure(name: string): void {
-    this.metrics.set(name, { startTime: performance.now() });
-  }
+2. Create src/components/TestimonialsSection.tsx:
+   - Patient testimonials carousel
+   - Auto-rotating testimonials (8-second intervals)
+   - Manual navigation controls
+   - Star ratings display
+   - Patient photos and information
+   - Mobile-optimized touch interactions
+   - Accessibility features with ARIA labels
 
-  endMeasure(name: string): void {
-    const metric = this.metrics.get(name);
-    if (metric) {
-      metric.endTime = performance.now();
-      metric.duration = metric.endTime - metric.startTime;
-    }
-  }
-}
+3. Create src/components/ProcedureCard.tsx:
+   - Medical procedure information cards
+   - Image optimization with SafeImage
+   - Procedure descriptions and pricing
+   - Link integration to detailed pages
+   - Mobile-responsive design
+   - Props: title, description, image, link, price (optional)
 
-export function initializePerformanceMonitoring(): PerformanceMonitor {
-  const monitor = PerformanceMonitor.getInstance();
-  monitor.initialize();
-  return monitor;
-}
+4. Create src/components/ContactForm.tsx:
+   - Contact and inquiry forms
+   - Form validation with react-hook-form and zod
+   - EmailJS integration for submissions
+   - Error handling and success notifications
+   - Accessibility-compliant form fields
+   - Mobile-optimized form layout
+
+5. Create src/components/SafeImage.tsx:
+   - Optimized image component with error handling
+   - Lazy loading support
+   - Fallback image handling
+   - Loading state management
+   - Props: src, alt, fallback, className, lazy
+
+6. Create src/components/ErrorBoundary.tsx:
+   - Global error handling component
+   - Graceful error recovery
+   - User-friendly error messages
+   - Error reporting integration
+
+7. Create src/components/ScreenReaderAnnouncer.tsx:
+   - Accessibility announcements for screen readers
+   - Live region management
+   - Route change announcements
+   - Dynamic content updates
 ```
 
-### 4. Mobile Optimization (src/lib/mobile-optimization.ts)
-```typescript
-export class MobileOptimiser {
-  private static instance: MobileOptimiser;
-  private isInitialised = false;
+## Phase 8: Page Components
 
-  static getInstance(): MobileOptimiser {
-    if (!MobileOptimiser.instance) {
-      MobileOptimiser.instance = new MobileOptimiser();
-    }
-    return MobileOptimiser.instance;
-  }
+```
+Create all page components in src/pages/:
 
-  initialise(): void {
-    if (this.isInitialised || typeof window === 'undefined') return;
-    
-    this.optimiseTouchEvents();
-    this.optimiseViewport();
-    this.optimiseScrolling();
-    this.isInitialised = true;
-  }
+1. Create src/pages/Index.tsx (Homepage):
+   - Hero section with Dr. Aliashkevich introduction
+   - Services overview with brain, spine, and nerve surgery
+   - Welcome section with practice information
+   - Testimonials section integration
+   - Contact information and locations
+   - SEO optimization for homepage
 
-  private optimiseTouchEvents(): void {
-    const passiveEvents = ['touchstart', 'touchmove', 'wheel'];
-    passiveEvents.forEach(event => {
-      document.addEventListener(event, () => {}, { passive: true });
-    });
-  }
+2. Create src/pages/Appointments.tsx:
+   - Comprehensive appointment booking information
+   - Consultation types and processes
+   - Required documents checklist
+   - Insurance and payment options
+   - Telehealth consultation details
+   - Location information
+   - Contact forms integration
 
-  private optimiseViewport(): void {
-    let viewport = document.querySelector('meta[name="viewport"]') as HTMLMetaElement;
-    if (!viewport) {
-      viewport = document.createElement('meta');
-      viewport.name = 'viewport';
-      document.head.appendChild(viewport);
-    }
-    viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes';
-  }
+3. Create src/pages/AppointmentBooking.tsx:
+   - Multi-step appointment booking system
+   - Patient information collection
+   - Procedure selection
+   - Date and time scheduling
+   - Insurance verification
+   - Confirmation and notifications
 
-  private optimiseScrolling(): void {
-    document.documentElement.style.scrollBehavior = 'smooth';
-  }
-}
+4. Create src/pages/About.tsx:
+   - Dr. Ales Aliashkevich biography
+   - Medical qualifications and certifications
+   - Professional experience and expertise
+   - Awards and recognition
+   - Research and publications
+   - Professional philosophy and approach
 
-export function initialiseMobileOptimisations(): void {
-  const optimiser = MobileOptimiser.getInstance();
-  optimiser.initialise();
-}
+5. Create src/pages/Contact.tsx:
+   - Contact information and forms
+   - Office locations with maps
+   - Phone, email, and fax details
+   - Office hours and availability
+   - Emergency contact information
+   - Accessibility information
+
+6. Create src/pages/Expertise.tsx:
+   - Comprehensive neurosurgical procedures
+   - Brain surgery expertise (tumors, aneurysms, trauma)
+   - Spine surgery procedures (disc replacement, fusion)
+   - Peripheral nerve surgery
+   - Advanced technologies and techniques
+   - Treatment outcomes and success rates
+
+7. Create src/pages/Locations.tsx:
+   - All consulting locations across Melbourne
+   - Detailed location information
+   - Contact details for each location
+   - Accessibility information
+   - Parking and public transport
+   - Photo galleries of facilities
+
+8. Create src/pages/GPResources.tsx:
+   - Resources for general practitioners
+   - Referral guidelines and processes
+   - Diagnostic criteria and imaging requirements
+   - Contact information for referrals
+   - Educational materials and updates
+
+9. Create src/pages/NotFound.tsx:
+   - 404 error page with helpful navigation
+   - Search functionality
+   - Recent pages or popular content
+   - Contact information
+
+10. Create src/pages/TestImages.tsx:
+    - Image testing and verification page
+    - Gallery of all website images
+    - Image optimization testing
+    - Fallback image testing
+
+11. Create src/pages/patient-resources/:
+    - Individual patient education pages
+    - Create IndividualSpineHealthProgram.tsx with comprehensive spine health information
+
+12. Create src/pages/expertise/ subdirectory:
+    - Create ImageGuidedSurgery.tsx with detailed information about image-guided surgical techniques
+    - Create RoboticSpineSurgery.tsx with robotic surgery information
 ```
 
-### 5. Accessibility (src/lib/accessibility.ts)
-```typescript
-export function announceToScreenReader(message: string, priority: 'polite' | 'assertive' = 'polite'): void {
-  const announcer = document.createElement('div');
-  announcer.setAttribute('aria-live', priority);
-  announcer.setAttribute('aria-atomic', 'true');
-  announcer.className = 'sr-only';
-  announcer.textContent = message;
-  
-  document.body.appendChild(announcer);
-  setTimeout(() => document.body.removeChild(announcer), 1000);
-}
+## Phase 9: Routing Configuration
+
+```
+Create comprehensive routing system:
+
+1. Create src/routes/routeConfig.tsx:
+   - Route definitions for all pages
+   - Language-specific routing (/en/, /zh/)
+   - Nested routes for expertise and patient resources
+   - Dynamic route handling
+   - 404 error handling
+   - SEO-friendly URLs
+
+2. Update src/App.tsx:
+   - Router configuration with language support
+   - Error boundary integration
+   - Query client provider setup
+   - Tooltip provider
+   - Global providers setup
+   - Route change announcements
+
+The routing should support:
+- Base routes (/) redirecting to language-specific routes
+- Language prefixed routes (/en/, /zh/)
+- Nested expertise routes
+- Location-specific pages
+- Patient resource pages
 ```
 
-## Phase 5: Context and Hooks
+## Phase 10: Static Assets and Data
 
-### 1. Language Context (src/contexts/LanguageContext.tsx)
-```typescript
-import React, { createContext, useContext, useState } from 'react';
+```
+Set up the public directory structure:
 
-interface LanguageContextType {
-  language: 'en' | 'zh';
-  setLanguage: (lang: 'en' | 'zh') => void;
-  t: any; // Translation function
-}
+1. Create public/images/ with organized subdirectories:
+   - conditions/ - Medical condition images
+   - exercises/ - Exercise demonstration images
+   - gp-resources/ - GP referral images
+   - locations/ - Clinic location photos
+   - patient-resources/ - Patient education images
+   - expertise/ - Medical expertise images
+   - testimonials/ - Patient testimonial photos
 
-const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
+2. Create public/data/:
+   - exercises.json with comprehensive exercise library (75+ exercises, 8 categories)
+   - conditions.json with medical conditions data
 
-export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguage] = useState<'en' | 'zh'>('en');
+3. Create public/pages/:
+   - Static markdown content for various pages
+   - Organized by feature/page type
 
-  const t = {
-    // Translation keys will be populated from locales
-    hero: {
-      subtitle: "Expert Neurosurgeon & Spine Specialist",
-      title: "Advanced Brain and Spine Surgery",
-      description: "Providing comprehensive neurosurgical care with state-of-the-art minimally invasive techniques",
-      bookConsultation: "Book Consultation",
-      exploreTreatments: "Explore Treatments",
-      scrollDown: "Scroll Down"
-    },
-    // Add more translation keys as needed
-  };
+4. Create public/logo/:
+   - Brand assets in multiple formats
+   - Various logo variations
 
-  return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
-      {children}
-    </LanguageContext.Provider>
-  );
-}
-
-export function useLanguage() {
-  const context = useContext(LanguageContext);
-  if (!context) {
-    throw new Error('useLanguage must be used within LanguageProvider');
-  }
-  return context;
-}
+5. Create SEO files:
+   - robots.txt for search engine crawling
+   - sitemap.xml for SEO
+   - manifest.json for PWA features
+   - favicon.ico and related icons
 ```
 
-### 2. Mobile Detection Hook (src/hooks/use-mobile.ts)
-```typescript
-import { useState, useEffect } from 'react';
+## Phase 11: Build Configuration and Scripts
 
-export interface DeviceInfo {
-  isMobile: boolean;
-  isTablet: boolean;
-  isDesktop: boolean;
-  screenWidth: number;
-  screenHeight: number;
-  orientation: 'portrait' | 'landscape';
-}
+```
+Set up build configuration and utility scripts:
 
-export function useDeviceDetection(): DeviceInfo {
-  const [deviceInfo, setDeviceInfo] = useState<DeviceInfo>({
-    isMobile: false,
-    isTablet: false,
-    isDesktop: true,
-    screenWidth: 1920,
-    screenHeight: 1080,
-    orientation: 'landscape'
-  });
+1. Update vite.config.ts:
+   - Optimized build configuration
+   - Code splitting setup
+   - Bundle optimization
+   - Path aliases configuration
+   - Environment variable handling
 
-  useEffect(() => {
-    const updateDeviceInfo = () => {
-      const width = window.innerWidth;
-      const height = window.innerHeight;
-      
-      setDeviceInfo({
-        isMobile: width < 768,
-        isTablet: width >= 768 && width < 1024,
-        isDesktop: width >= 1024,
-        screenWidth: width,
-        screenHeight: height,
-        orientation: width > height ? 'landscape' : 'portrait'
-      });
-    };
+2. Update tsconfig.json:
+   - Strict TypeScript configuration
+   - Path mapping for imports
+   - Modern ES modules support
 
-    updateDeviceInfo();
-    window.addEventListener('resize', updateDeviceInfo);
-    return () => window.removeEventListener('resize', updateDeviceInfo);
-  }, []);
+3. Update tailwind.config.ts:
+   - Custom color scheme for medical website
+   - Typography configuration
+   - Mobile-first breakpoints
+   - Custom animations and transitions
 
-  return deviceInfo;
-}
+4. Create scripts/:
+   - verify-production-env.js (215 lines) for environment validation
+   - verify-no-console.js (235 lines) for production console removal
+
+5. Update package.json scripts:
+   - Development and build scripts
+   - Linting and type checking
+   - Production optimization scripts
 ```
 
-### 3. SEO Hook (src/hooks/useSEO.ts)
-```typescript
-import { useEffect } from 'react';
-import { SEOData } from '@/lib/seo';
+## Phase 12: Environment and Production Setup
 
-export function useSEO(seoData: SEOData) {
-  useEffect(() => {
-    if (seoData.title) {
-      document.title = seoData.title;
-    }
-    
-    const updateMetaTag = (name: string, content: string) => {
-      let meta = document.querySelector(`meta[name="${name}"]`) as HTMLMetaElement;
-      if (!meta) {
-        meta = document.createElement('meta');
-        meta.name = name;
-        document.head.appendChild(meta);
-      }
-      meta.content = content;
-    };
+```
+Configure environment and production settings:
 
-    if (seoData.description) updateMetaTag('description', seoData.description);
-    if (seoData.keywords) updateMetaTag('keywords', seoData.keywords);
-  }, [seoData]);
-}
+1. Create .env files:
+   - .env for development variables
+   - .env.production for production configuration
+   - .env.example as template
+
+2. Set up production optimizations:
+   - Console statement removal for production
+   - Bundle size optimization
+   - Performance monitoring integration
+   - Error reporting setup
+
+3. Configure deployment settings:
+   - Static file serving configuration
+   - PWA manifest and service worker
+   - SEO optimization for production
+   - Security headers configuration
+
+4. Create comprehensive documentation:
+   - README.md with setup instructions
+   - Component documentation
+   - API documentation
+   - Deployment guide
 ```
 
-## Phase 6: Core Components
-
-### 1. Layout Component (src/components/Layout.tsx)
-```typescript
-import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { announceToScreenReader } from "@/lib/accessibility";
-import { useSEO, SEOData } from "@/hooks/useSEO";
-import { generatePageSEO } from "@/lib/seo";
-
-interface LayoutProps {
-  children: React.ReactNode;
-  pageTitle?: string;
-  seoData?: SEOData;
-  pageType?: string;
-}
-
-export default function Layout({ children, pageTitle, seoData, pageType = 'default' }: LayoutProps) {
-  const finalSeoData = seoData || generatePageSEO(pageType, pageTitle ? { title: `${pageTitle} | miNEURO` } : {});
-  useSEO(finalSeoData);
-
-  useEffect(() => {
-    if (pageTitle) {
-      announceToScreenReader(`Navigated to ${pageTitle} page`);
-    }
-  }, [pageTitle]);
-
-  return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main id="main-content" className="flex-1 pt-20" tabIndex={-1}>
-        {pageTitle && <h1 className="sr-only">{pageTitle}</h1>}
-        {children}
-      </main>
-      <Footer />
-    </div>
-  );
-}
-```
-
-### 2. Navigation Component (src/components/Navbar.tsx)
-```typescript
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { cn } from "@/lib/utils";
-
-export default function Navbar() {
-  const [isOpen, setIsOpen] = useState(false);
-  const { language, setLanguage } = useLanguage();
-
-  const navigation = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Expertise", href: "/expertise" },
-    { name: "Locations", href: "/locations" },
-    { name: "Appointments", href: "/appointments" },
-    { name: "Contact", href: "/contact" }
-  ];
-
-  return (
-    <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
-          {/* Logo */}
-          <Link to="/" className="flex items-center">
-            <span className="text-2xl font-bold text-primary">miNEURO</span>
-          </Link>
-
-          {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-8">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="text-foreground hover:text-primary transition-colors"
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          {/* Right side */}
-          <div className="hidden md:flex items-center space-x-4">
-            <Button
-              variant="outline"
-              size="sm"
-              onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
-            >
-              {language === 'en' ? '中文' : 'EN'}
-            </Button>
-            <Button asChild>
-              <a href="tel:0390084200">
-                <Phone className="h-4 w-4 mr-2" />
-                Call Now
-              </a>
-            </Button>
-          </div>
-
-          {/* Mobile menu button */}
-          <button
-            className="md:hidden"
-            onClick={() => setIsOpen(!isOpen)}
-            aria-label="Toggle menu"
-          >
-            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-          </button>
-        </div>
-      </div>
-
-      {/* Mobile Menu */}
-      {isOpen && (
-        <div className="md:hidden bg-white border-t">
-          <div className="px-2 pt-2 pb-3 space-y-1">
-            {navigation.map((item) => (
-              <Link
-                key={item.name}
-                to={item.href}
-                className="block px-3 py-2 text-foreground hover:text-primary"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-        </div>
-      )}
-    </nav>
-  );
-}
-```
-
-### 3. Hero Section (src/components/HeroSection.tsx)
-```typescript
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/hooks/use-mobile";
-import { cn } from "@/lib/utils";
-
-export default function HeroSection() {
-  const { t } = useLanguage();
-  const [scrollY, setScrollY] = useState(0);
-  const deviceInfo = useDeviceDetection();
-
-  useEffect(() => {
-    const handleScroll = () => setScrollY(window.scrollY);
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  const backgroundY = deviceInfo.isMobile ? scrollY * 0.2 : scrollY * 0.5;
-
-  return (
-    <section className="relative overflow-hidden h-screen" id="hero-section">
-      {/* Background */}
-      <div className="absolute inset-0 overflow-hidden opacity-50">
-        <div
-          className="absolute inset-0 bg-cover bg-center"
-          style={{
-            backgroundImage: "url('/images/hero-neurosurgeon-section-weightlifting-body-spine art.jpg')",
-            transform: deviceInfo.isMobile ? 'none' : `translateY(${backgroundY}px)`
-          }}
-          role="img"
-          aria-label="Dr Ales Aliashkevich - Neurosurgeon"
-        />
-      </div>
-
-      {/* Gradient Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-r from-primary/10 to-white" />
-
-      {/* Content */}
-      <div className="relative h-full flex flex-col justify-center items-center text-center px-4">
-        <div className="max-w-3xl">
-          <span className="inline-block text-foreground/90 tracking-wide border-b border-foreground/30 pb-2 mb-4">
-            {t.hero.subtitle}
-          </span>
-          <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-foreground mb-6">
-            Neurosurgical Expertise and Innovative Technology for Superior Brain and Spine Surgery Results
-          </h1>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-8">
-            {t.hero.description}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="rounded-full bg-primary text-white min-w-[200px]">
-              <Link to="/appointments">{t.hero.bookConsultation}</Link>
-            </Button>
-            <Button asChild variant="outline" size="lg" className="rounded-full min-w-[200px]">
-              <Link to="/expertise">{t.hero.exploreTreatments}</Link>
-            </Button>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-foreground animate-bounce">
-        <a href="#welcome" className="flex flex-col items-center opacity-70 hover:opacity-100">
-          <span className="text-sm mb-2">{t.hero.scrollDown}</span>
-          <ChevronDown className="h-6 w-6" />
-        </a>
-      </div>
-    </section>
-  );
-}
-```
-
-### 4. Safe Image Component (src/components/SafeImage.tsx)
-```typescript
-import React, { useState } from 'react';
-import { cn } from '@/lib/utils';
-
-interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
-  src: string;
-  alt: string;
-  fallback?: string;
-  className?: string;
-}
-
-export default function SafeImage({ 
-  src, 
-  alt, 
-  fallback = '/images/placeholder.jpg', 
-  className,
-  ...props 
-}: SafeImageProps) {
-  const [imageSrc, setImageSrc] = useState(src);
-  const [isLoading, setIsLoading] = useState(true);
-  const [hasError, setHasError] = useState(false);
-
-  const handleLoad = () => {
-    setIsLoading(false);
-    setHasError(false);
-  };
-
-  const handleError = () => {
-    setIsLoading(false);
-    setHasError(true);
-    if (imageSrc !== fallback) {
-      setImageSrc(fallback);
-    }
-  };
-
-  return (
-    <div className={cn("relative overflow-hidden", className)}>
-      {isLoading && (
-        <div className="absolute inset-0 bg-muted animate-pulse" />
-      )}
-      <img
-        src={imageSrc}
-        alt={alt}
-        onLoad={handleLoad}
-        onError={handleError}
-        className={cn(
-          "transition-opacity duration-300",
-          isLoading ? "opacity-0" : "opacity-100",
-          hasError && "opacity-50",
-          className
-        )}
-        {...props}
-      />
-    </div>
-  );
-}
-```
-
-## Phase 7: Page Components
-
-### 1. Homepage (src/pages/Index.tsx)
-```typescript
-import React, { useEffect } from "react";
-import Layout from "@/components/Layout";
-import HeroSection from "@/components/HeroSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
-import { useLanguage } from "@/contexts/LanguageContext";
-
-export default function Index() {
-  const { t } = useLanguage();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return (
-    <Layout>
-      <HeroSection />
-      
-      {/* Welcome Section */}
-      <section id="welcome" className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto text-center">
-            <h2 className="text-3xl font-bold mb-6">Welcome to miNEURO</h2>
-            <p className="text-lg text-muted-foreground mb-8">
-              Dr. Ales Aliashkevich provides comprehensive neurosurgical care with 
-              state-of-the-art minimally invasive techniques across multiple Melbourne locations.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Services Overview */}
-      <section className="py-16 bg-muted">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Our Expertise</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center p-6 bg-card rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Brain Surgery</h3>
-              <p className="text-muted-foreground">
-                Advanced brain tumor removal, aneurysm treatment, and trauma surgery
-              </p>
-            </div>
-            <div className="text-center p-6 bg-card rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Spine Surgery</h3>
-              <p className="text-muted-foreground">
-                Minimally invasive disc replacement, spinal fusion, and decompression
-              </p>
-            </div>
-            <div className="text-center p-6 bg-card rounded-lg shadow-sm">
-              <h3 className="text-xl font-semibold mb-4">Peripheral Nerve Surgery</h3>
-              <p className="text-muted-foreground">
-                Nerve repair, compression syndrome treatment, and reconstruction
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <TestimonialsSection />
-    </Layout>
-  );
-}
-```
-
-### 2. About Page (src/pages/About.tsx)
-```typescript
-import React, { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import SafeImage from "@/components/SafeImage";
-
-export default function About() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
-  return (
-    <Layout pageTitle="About Dr. Ales Aliashkevich">
-      <PageHeader
-        title="About Dr. Ales Aliashkevich"
-        subtitle="Expert Neurosurgeon & Spine Specialist"
-        backgroundImage="/images/about/about-hero.jpg"
-      />
-
-      <section className="py-16 bg-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto">
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <SafeImage
-                  src="/images/about/dr-aliashkevich-portrait.jpg"
-                  alt="Dr. Ales Aliashkevich - Neurosurgeon"
-                  className="w-full h-96 object-cover rounded-lg shadow-lg"
-                />
-              </div>
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Professional Background</h2>
-                <p className="text-muted-foreground mb-4">
-                  Dr. Ales Aliashkevich is a highly experienced consultant neurosurgeon 
-                  specializing in brain and spine surgery. With over a decade of practice 
-                  since 2012, he has established himself as a leading expert in minimally 
-                  invasive neurosurgical techniques.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  Operating across multiple locations in Melbourne, Dr. Aliashkevich 
-                  provides comprehensive neurosurgical care with a focus on patient-centered 
-                  treatment and optimal outcomes.
-                </p>
-                
-                <h3 className="text-xl font-semibold mb-4">Areas of Expertise</h3>
-                <ul className="space-y-2 text-muted-foreground">
-                  <li>• Brain tumor surgery and removal</li>
-                  <li>• Spinal disc replacement and fusion</li>
-                  <li>• Minimally invasive spine surgery</li>
-                  <li>• Peripheral nerve surgery</li>
-                  <li>• Trauma and emergency neurosurgery</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-    </Layout>
-  );
-}
-```
-
-## Phase 8: Routing Configuration
-
-### Route Configuration (src/routes/routeConfig.tsx)
-```typescript
-import React from "react";
-import Index from "@/pages/Index";
-import About from "@/pages/About";
-import Appointments from "@/pages/Appointments";
-import Contact from "@/pages/Contact";
-import Expertise from "@/pages/Expertise";
-import Locations from "@/pages/Locations";
-import NotFound from "@/pages/NotFound";
-
-export interface RouteConfig {
-  path: string;
-  element: React.ReactElement;
-  exact?: boolean;
-}
-
-export function getAllRoutes(): RouteConfig[] {
-  return [
-    { path: "/", element: <Index /> },
-    { path: "/about", element: <About /> },
-    { path: "/appointments", element: <Appointments /> },
-    { path: "/contact", element: <Contact /> },
-    { path: "/expertise", element: <Expertise /> },
-    { path: "/locations", element: <Locations /> },
-    { path: "*", element: <NotFound /> }
-  ];
-}
-```
-
-## Phase 9: Main Application Files
-
-### 1. App Component (src/App.tsx)
-```typescript
-import React from "react";
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { LanguageProvider } from "@/contexts/LanguageContext";
-import { getAllRoutes } from "@/routes/routeConfig";
-import ErrorBoundary from "@/components/ErrorBoundary";
-
-const queryClient = new QueryClient();
-
-const App = () => {
-  const routes = getAllRoutes();
-
-  return (
-    <ErrorBoundary>
-      <QueryClientProvider client={queryClient}>
-        <TooltipProvider>
-          <BrowserRouter>
-            <LanguageProvider>
-              <Toaster />
-              <Routes>
-                {routes.map((route, index) => (
-                  <Route
-                    key={`${route.path}-${index}`}
-                    path={route.path}
-                    element={route.element}
-                  />
-                ))}
-              </Routes>
-            </LanguageProvider>
-          </BrowserRouter>
-        </TooltipProvider>
-      </QueryClientProvider>
-    </ErrorBoundary>
-  );
-};
-
-export default App;
-```
-
-### 2. Main Entry Point (src/main.tsx)
-```typescript
-import React from "react";
-import ReactDOM from "react-dom/client";
-import App from "./App";
-import "./index.css";
-import { initializePerformanceMonitoring } from "@/lib/performance";
-import { initialiseMobileOptimisations } from "@/lib/mobile-optimization";
-
-// Initialize performance monitoring
-initializePerformanceMonitoring();
-
-// Initialize mobile optimizations
-initialiseMobileOptimisations();
-
-ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
-```
-
-## Phase 10: Environment Configuration
-
-### Environment File (.env.production)
-```env
-VITE_APP_ENV=production
-VITE_APP_NAME="miNEURO Brain and Spine Surgery"
-VITE_APP_VERSION=1.0.0
-VITE_SITE_URL=https://mineuro.com.au
-VITE_PRACTICE_PHONE="+61 3 9008 4200"
-VITE_PRACTICE_EMAIL="info@mineuro.com.au"
-VITE_DEBUG_MODE=false
-VITE_ENABLE_PERFORMANCE_MONITORING=true
-```
-
-## Phase 11: Build Scripts
-
-### Verification Script (scripts/verify-production-env.js)
-```javascript
-#!/usr/bin/env node
-
-const fs = require('fs');
-const path = require('path');
-
-const REQUIRED_VARS = [
-  'VITE_APP_ENV',
-  'VITE_SITE_URL',
-  'VITE_PRACTICE_PHONE',
-  'VITE_PRACTICE_EMAIL'
-];
-
-function validateEnvironment() {
-  const envPath = path.join(__dirname, '../.env.production');
-  
-  if (!fs.existsSync(envPath)) {
-    console.error('❌ Production environment file not found');
-    process.exit(1);
-  }
-
-  const content = fs.readFileSync(envPath, 'utf8');
-  const env = {};
-  
-  content.split('\n').forEach(line => {
-    if (line && !line.startsWith('#')) {
-      const [key, value] = line.split('=');
-      if (key && value) {
-        env[key] = value.replace(/['"]/g, '');
-      }
-    }
-  });
-
-  const missing = REQUIRED_VARS.filter(key => !env[key]);
-  
-  if (missing.length > 0) {
-    console.error('❌ Missing required environment variables:', missing);
-    process.exit(1);
-  }
-
-  console.log('✅ Production environment validation passed');
-}
-
-validateEnvironment();
-```
-
-## Phase 12: Package.json Scripts
-
-```json
-{
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc && vite build",
-    "preview": "vite preview",
-    "verify-env": "node scripts/verify-production-env.js",
-    "deploy": "npm run verify-env && npm run build"
-  }
-}
-```
-
-## Deployment Instructions
-
-### For Lovable.dev:
-1. Create new project in Lovable
-2. Copy and paste each file individually
-3. Install dependencies through Lovable interface
-4. Configure environment variables
-5. Test all pages and functionality
-6. Deploy through Lovable's deployment system
-
-### For Other Platforms:
-1. Clone repository or create new project
-2. Run `npm install` to install dependencies
-3. Copy all source files to appropriate directories
-4. Configure environment variables
-5. Run `npm run build` for production build
-6. Deploy built files to hosting platform
-
-## Final Verification Checklist
-
-- [ ] All pages load correctly
-- [ ] Navigation works between pages
-- [ ] Contact forms submit properly
-- [ ] Mobile responsiveness verified
-- [ ] SEO meta tags present
-- [ ] Performance monitoring active
-- [ ] Error boundaries functioning
-- [ ] Multilingual switching works
-- [ ] All images load with fallbacks
-- [ ] Accessibility features working
-
-This comprehensive script replicates the entire miNEURO website architecture, maintaining all functionality, styling, and features while ensuring production-ready performance and accessibility standards.
+## Verification Steps
+
+After completing all phases, verify:
+
+1. **Functionality**: All pages load correctly with proper navigation
+2. **Responsive Design**: Mobile, tablet, and desktop layouts work properly
+3. **Accessibility**: Screen reader compatibility and keyboard navigation
+4. **Performance**: Fast loading times and optimized bundles
+5. **SEO**: Proper meta tags, structured data, and sitemap
+6. **Internationalization**: Language switching works correctly
+7. **Forms**: Contact and booking forms submit successfully
+8. **Error Handling**: Error boundaries catch and display errors gracefully
+
+## Final Configuration
+
+The completed application should have:
+- 50+ pages with comprehensive medical content
+- 25+ reusable components
+- Complete English/Chinese translation
+- Mobile-optimized responsive design
+- Accessibility compliance (WCAG 2.1 AA)
+- SEO optimization with structured data
+- Performance monitoring and optimization
+- Production-ready build configuration
+- Comprehensive error handling
+- Professional medical website appearance
+
+This script creates a complete, production-ready neurosurgeon website with all modern web development best practices implemented.

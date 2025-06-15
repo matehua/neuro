@@ -1,200 +1,313 @@
 
 # Component Documentation
 
-## Core Components
+## Core Layout Components
 
-### Layout Components
-
-#### Layout.tsx
-- **Purpose**: Main layout wrapper for all pages
-- **Features**: SEO integration, accessibility announcements, consistent structure
+### Layout.tsx
+- **Purpose**: Main layout wrapper for all pages with SEO integration
+- **Features**: 
+  - Dynamic SEO meta tag management
+  - Accessibility announcements for route changes
+  - Consistent page structure
+  - Error boundary integration
 - **Props**: 
-  - `children`: Page content
-  - `pageTitle`: Optional page title for SEO
-  - `seoData`: Custom SEO configuration
-  - `pageType`: Page type for default SEO
+  - `children`: Page content (React.ReactNode)
+  - `pageTitle`: Optional page title for SEO and accessibility
+  - `seoData`: Custom SEO configuration object
+  - `pageType`: Page type for default SEO generation
+- **Usage**: Wraps all page components to provide consistent layout and SEO
 
-#### Navbar.tsx
-- **Purpose**: Site navigation header
-- **Features**: Responsive design, mobile menu, language switching, call-to-action
-- **State**: Mobile menu toggle, language selection
-
-#### Footer.tsx
-- **Purpose**: Site footer with links and contact info
-- **Features**: Multi-column layout, location links, copyright information
-
-#### PageHeader.tsx
-- **Purpose**: Reusable page header component
-- **Features**: Background image support, title/subtitle display, responsive design
-
-### Content Components
-
-#### HeroSection.tsx
-- **Purpose**: Homepage hero with parallax effects
+### Navbar.tsx
+- **Purpose**: Site navigation header with responsive design
 - **Features**: 
-  - Parallax scrolling background
-  - Mobile-optimized animations
-  - Call-to-action buttons
-  - Accessibility support
-- **Performance**: Reduced motion on mobile devices
+  - Mobile hamburger menu with smooth animations
+  - Language selector integration
+  - Theme toggle integration
+  - Active navigation state management
+  - Call-to-action button
+  - Accessibility-compliant navigation
+- **State Management**: Mobile menu toggle, active route tracking
+- **Integration**: LanguageSelector, ThemeToggle, routing
 
-#### TestimonialsSection.tsx
-- **Purpose**: Patient testimonials display
-- **Features**: Responsive grid layout, testimonial cards
-- **Integration**: Translation system support
+### Footer.tsx
+- **Purpose**: Site footer with contact information and navigation
+- **Features**: 
+  - Multi-column responsive layout
+  - Contact information display
+  - Location links and navigation
+  - Social media integration
+  - Copyright and legal information
+- **Layout**: Responsive grid with mobile stacking
 
-#### ProcedureCard.tsx
-- **Purpose**: Medical procedure information cards
+### PageHeader.tsx
+- **Purpose**: Reusable page header component with background support
+- **Features**: 
+  - Background image with parallax effects
+  - Title and subtitle display
+  - Mobile-optimized performance
+  - Accessibility-compliant headings
+  - Responsive typography scaling
 - **Props**:
-  - `title`: Procedure name
-  - `description`: Procedure description
-  - `image`: Procedure image
-  - `link`: Link to detailed information
-  - `price`: Optional pricing information
+  - `title`: Main page title (string)
+  - `subtitle`: Optional subtitle (string)
+  - `backgroundImage`: Optional background image URL
+  - `className`: Additional CSS classes
+  - `enableParallax`: Enable parallax scrolling (boolean)
 
-### Utility Components
+## Content Display Components
 
-#### SafeImage.tsx
-- **Purpose**: Optimized image component with error handling
-- **Features**:
-  - Lazy loading support
-  - Fallback image handling
-  - Loading state management
-  - Error state handling
-- **Performance**: Reduces failed image requests
-
-#### ErrorBoundary.tsx
-- **Purpose**: Global error handling
+### HeroSection.tsx
+- **Purpose**: Homepage hero section with parallax effects
 - **Features**: 
-  - Graceful error recovery
-  - Error reporting integration
-  - User-friendly error messages
+  - Parallax scrolling background (disabled on mobile)
+  - Professional medical imagery
+  - Call-to-action buttons with routing
+  - Mobile-optimized animations
+  - Accessibility support with proper ARIA labels
+  - Performance optimizations for reduced motion
+- **Performance**: Automatically reduces motion on mobile devices
 
-#### ScreenReaderAnnouncer.tsx
-- **Purpose**: Accessibility announcements
-- **Features**: Live region for screen readers
-- **Usage**: Route change announcements, form submissions
+### TestimonialsSection.tsx
+- **Purpose**: Patient testimonials carousel with auto-rotation
+- **Features**: 
+  - Auto-rotating testimonials (8-second intervals)
+  - Manual navigation controls
+  - Star rating display
+  - Patient photos and information
+  - Mobile-optimized touch interactions
+  - Accessibility features with ARIA labels
+- **Current Testimonials**:
+  1. Sarah Thompson - Spine surgery success
+  2. Michael Chen - Cervical disc replacement
+  3. Emily Wilson - Complex spinal condition
+- **State**: Active testimonial index, animation state
+
+### ProcedureCard.tsx
+- **Purpose**: Medical procedure information display cards
+- **Features**:
+  - Consistent card layout with image and content
+  - Optional pricing information display
+  - Navigation integration to detailed pages
+  - Mobile-responsive design
+  - Image optimization with SafeImage integration
+- **Props**:
+  - `title`: Procedure name (string)
+  - `description`: Procedure description (string)
+  - `image`: Procedure image URL (string)
+  - `link`: Link to detailed information (string)
+  - `price`: Optional pricing information (string, optional)
+
+## Form Components
+
+### ContactForm.tsx
+- **Purpose**: Contact and inquiry forms with validation
+- **Features**:
+  - React Hook Form integration with Zod validation
+  - EmailJS integration for form submissions
+  - Real-time form validation
+  - Error handling with user-friendly messages
+  - Success notifications with toast system
+  - Accessibility-compliant form fields
+  - Mobile-optimized form layout
+- **Fields**: Name, email, phone, subject, message
+- **Validation**: Email format, required fields, character limits
+
+## Utility Components
+
+### SafeImage.tsx
+- **Purpose**: Optimized image component with comprehensive error handling
+- **Features**:
+  - Lazy loading support with Intersection Observer
+  - Fallback image handling for broken images
+  - Loading state management with skeleton display
+  - Error state handling with retry functionality
+  - Performance optimization for different screen sizes
+- **Props**:
+  - `src`: Image source URL (string)
+  - `alt`: Alternative text for accessibility (string)
+  - `fallback`: Fallback image URL (string, optional)
+  - `className`: Additional CSS classes (string, optional)
+  - `lazy`: Enable lazy loading (boolean, default: true)
+
+### ErrorBoundary.tsx
+- **Purpose**: Global error handling with graceful recovery
+- **Features**: 
+  - Catches JavaScript errors in component tree
+  - Displays user-friendly error messages
+  - Error reporting integration (production)
+  - Graceful fallback UI
+  - Development vs production error displays
+- **Integration**: Wraps entire application in App.tsx
+
+### ScreenReaderAnnouncer.tsx
+- **Purpose**: Accessibility announcements for screen readers
+- **Features**: 
+  - Live region for dynamic content updates
+  - Route change announcements
+  - Form submission feedback
+  - Error message announcements
+- **Usage**: Used by Layout component for route changes
+
+## Navigation and Interaction Components
+
+### LanguageSelector.tsx
+- **Purpose**: Language switching interface
+- **Features**:
+  - Dropdown selection with flag icons
+  - Smooth language transitions
+  - URL path updates for SEO
+  - Accessibility labels and descriptions
+  - Support for English and Chinese
+- **Integration**: LanguageContext for state management
+
+### LanguageWrapper.tsx
+- **Purpose**: Language route parameter wrapper
+- **Features**:
+  - URL parameter-based language detection
+  - Automatic language context updates
+  - Route-based language switching
+- **Usage**: Wraps components that need language URL handling
+
+### ThemeToggle.tsx
+- **Purpose**: Dark/light mode toggle functionality
+- **Features**:
+  - System preference detection
+  - Smooth theme transitions
+  - Icon animations (Sun/Moon)
+  - Local storage persistence
+  - Accessibility-compliant button
+- **State**: Theme preference tracking
+
+### SkipLink.tsx
+- **Purpose**: Accessibility skip navigation for keyboard users
+- **Features**:
+  - Keyboard navigation enhancement
+  - Screen reader compatibility
+  - Customizable target and text
+  - Visually hidden until focused
+- **Props**:
+  - `targetId`: Target element ID (string, default: "main-content")
+  - `text`: Link text (string, default: "Skip to main content")
+  - `className`: Additional CSS classes (string, optional)
+
+## shadcn/ui Base Components
+
+### Button Component
+- **Variants**: default, destructive, outline, secondary, ghost, link
+- **Sizes**: default, sm, lg, icon
+- **Features**: Accessibility, focus management, loading states
+
+### Card Components
+- **Components**: Card, CardHeader, CardTitle, CardContent, CardFooter
+- **Usage**: Content containers throughout the application
+- **Styling**: Consistent spacing and borders
 
 ### Form Components
+- **Components**: Form, FormItem, FormLabel, FormControl, FormMessage
+- **Integration**: React Hook Form and Zod validation
+- **Accessibility**: ARIA labels and error associations
 
-#### ContactForm.tsx
-- **Purpose**: Contact and inquiry forms
-- **Features**:
-  - Form validation
-  - EmailJS integration
-  - Error handling
-  - Success notifications
-- **Fields**: Name, email, phone, subject, message
+### Dialog Components
+- **Components**: Dialog, DialogContent, DialogHeader, DialogTitle
+- **Features**: Modal dialogs with proper focus management
+- **Mobile**: Responsive design with mobile optimizations
 
-## UI Components (shadcn/ui)
+### Select Components
+- **Components**: Select, SelectContent, SelectItem, SelectTrigger
+- **Features**: Custom styling with accessibility
+- **Integration**: Form validation and language switching
 
-### Core UI Components
-- **Button**: Various styles and sizes
-- **Card**: Content containers
-- **Dialog**: Modal dialogs
-- **Accordion**: Expandable content
-- **Tabs**: Tabbed navigation
-- **Form**: Form controls and validation
-
-### Component Styling
-- **Tailwind CSS**: Utility-first styling
-- **CSS Variables**: Theme customization
-- **Responsive Design**: Mobile-first approach
-- **Dark Mode**: Theme switching support
-
-## Component Patterns
-
-### Performance Patterns
-```typescript
-// Lazy loading
-const LazyComponent = React.lazy(() => import('./Component'));
-
-// Memoization
-const MemoizedComponent = React.memo(Component);
-
-// Performance measurement
-const MeasuredComponent = measureComponentRender(Component);
-```
-
-### Accessibility Patterns
-```typescript
-// ARIA labels
-<button aria-label="Close dialog" />
-
-// Screen reader support
-<div role="region" aria-labelledby="section-title" />
-
-// Focus management
-const focusRef = useRef<HTMLElement>(null);
-```
-
-### Mobile Optimization Patterns
-```typescript
-// Device detection
-const { isMobile } = useDeviceDetection();
-
-// Touch-friendly interactions
-className={cn("touch-target", { "mobile-optimized": isMobile })}
-
-// Reduced motion
-const { prefersReducedMotion } = useAccessibility();
-```
-
-## Component Integration
+## Component Integration Patterns
 
 ### Context Integration
-- **LanguageContext**: Multilingual support
-- **ThemeContext**: Dark mode support
-- **DeviceContext**: Mobile/desktop detection
+- **LanguageContext**: All components support internationalization
+- **Theme Context**: Dark/light mode support throughout
+- **Device Context**: Mobile/desktop responsive behavior
 
 ### Hook Integration
-- **useSEO**: SEO management
-- **useDeviceDetection**: Device-specific behavior
-- **usePerformanceMetric**: Performance tracking
+- **useSEO**: Dynamic meta tag management in Layout
+- **useDeviceDetection**: Mobile-specific optimizations
+- **useLanguage**: Translation and language switching
 
 ### Service Integration
 - **Performance Monitoring**: Component render tracking
-- **Error Reporting**: Error boundary integration
-- **Analytics**: User interaction tracking
+- **Error Reporting**: Integration with ErrorBoundary
+- **Accessibility**: Screen reader announcements
+
+## Performance Optimization Patterns
+
+### Lazy Loading
+```typescript
+const LazyComponent = React.lazy(() => import('./Component'));
+```
+
+### Memoization
+```typescript
+const MemoizedComponent = React.memo(Component);
+```
+
+### Device-Specific Rendering
+```typescript
+const { isMobile } = useDeviceDetection();
+return isMobile ? <MobileComponent /> : <DesktopComponent />;
+```
+
+## Accessibility Patterns
+
+### ARIA Labels
+```typescript
+<button aria-label="Close dialog" aria-describedby="dialog-description">
+```
+
+### Screen Reader Support
+```typescript
+<div role="region" aria-labelledby="section-title">
+```
+
+### Focus Management
+```typescript
+const focusRef = useRef<HTMLElement>(null);
+useEffect(() => focusRef.current?.focus(), []);
+```
+
+## Mobile Optimization Patterns
+
+### Touch Targets
+```typescript
+className={cn("touch-target min-h-[44px] min-w-[44px]", className)}
+```
+
+### Reduced Motion
+```typescript
+const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+```
+
+### Device-Specific Styling
+```typescript
+className={cn(
+  "base-styles",
+  deviceInfo.isMobile ? "mobile-styles" : "desktop-styles"
+)}
+```
 
 ## Testing Considerations
 
 ### Unit Testing
-- Component rendering
-- Props validation
-- State management
-- Event handling
+- Component rendering with various props
+- State management and user interactions
+- Accessibility features and ARIA attributes
+- Form validation and submission
 
 ### Integration Testing
-- Context provider integration
-- Route navigation
-- Form submission
-- API integration
+- Context provider functionality
+- Route navigation and language switching
+- Form submission and API integration
+- Error boundary error catching
 
 ### Accessibility Testing
 - Screen reader compatibility
-- Keyboard navigation
-- Color contrast
+- Keyboard navigation flows
+- Color contrast ratios
 - Focus management
 
-## Performance Considerations
-
-### Bundle Optimization
-- Code splitting by route
-- Component lazy loading
-- Tree shaking unused code
-- Image optimization
-
-### Runtime Performance
-- Memoization of expensive calculations
-- Virtual scrolling for large lists
-- Debounced input handling
-- Optimized re-renders
-
-### Mobile Performance
-- Touch event optimization
-- Reduced animations
-- Smaller bundle sizes
-- Network-aware loading
-
-This documentation provides a comprehensive guide to all components in the miNEURO application, their purposes, features, and integration patterns.
+This documentation provides comprehensive guidance for all components in the miNEURO application, their purposes, features, and integration patterns.
