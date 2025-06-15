@@ -12,12 +12,13 @@ export class MobileOptimiser {
   private isInitialised: boolean = false;
 
   private constructor() {
-    this.initialise();
+    // Don't initialize in constructor to prevent duplicate initialization
   }
 
   static getInstance(): MobileOptimiser {
     if (!MobileOptimiser.instance) {
       MobileOptimiser.instance = new MobileOptimiser();
+      MobileOptimiser.instance.initialise();
     }
     return MobileOptimiser.instance;
   }

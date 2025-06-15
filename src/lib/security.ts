@@ -23,6 +23,9 @@ export class SecurityManager {
   private static instance: SecurityManager;
   private config: SecurityConfig;
   private securityEvents: Array<{ type: string; timestamp: number; details: string }> = [];
+  private observers: MutationObserver[] = [];
+  private intervals: NodeJS.Timeout[] = [];
+  private initialized: boolean = false;
 
   private constructor(config: Partial<SecurityConfig> = {}) {
     this.config = {
@@ -49,8 +52,9 @@ export class SecurityManager {
    * Initialize security measures
    */
   private initialize(): void {
-    if (typeof window === 'undefined') return;
+    if (typeof window === 'undefined' || this.initialized) return;
 
+    this.initialized = true;
     this.setupCSP();
     this.setupXSSProtection();
     this.setupClickjackingProtection();
@@ -297,6 +301,8 @@ export class SecurityManager {
         childList: true,
         subtree: true
       });
+
+      this.observers.push(observer);
     }
   }
 
@@ -338,7 +344,7 @@ export class SecurityManager {
   private monitorSecurityEvents(): void {
     // Monitor for console access (potential debugging attempts)
     let devtools = false;
-    setInterval(() => {
+    const devtoolsInterval = setInterval(() => {
       if (window.outerHeight - window.innerHeight > 200 || window.outerWidth - window.innerWidth > 200) {
         if (!devtools) {
           devtools = true;
@@ -348,6 +354,8 @@ export class SecurityManager {
         devtools = false;
       }
     }, 1000);
+
+    this.intervals.push(devtoolsInterval);
 
     // Monitor for right-click attempts (optional)
     document.addEventListener('contextmenu', (e) => {
@@ -425,6 +433,19 @@ export class SecurityManager {
    */
   public clearSecurityEvents(): void {
     this.securityEvents = [];
+  }
+
+  /**
+   * Cleanup all observers and intervals
+   */
+  public cleanup(): void {
+    this.observers.forEach(observer => observer.disconnect());
+    this.observers = [];
+
+    this.intervals.forEach(interval => clearInterval(interval));
+    this.intervals = [];
+
+    this.initialized = false;
   }
 }
 

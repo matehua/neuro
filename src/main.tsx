@@ -31,15 +31,14 @@ function initializeApp() {
   reportWebVitals();
 }
 
-// Enhanced performance monitoring
+// Enhanced performance monitoring - simplified to avoid conflicts with PerformanceMonitor
 const reportWebVitals = () => {
   if (typeof window === 'undefined') return;
 
-  // Core Web Vitals monitoring
+  // Basic navigation timing only (PerformanceMonitor handles the rest)
   if ('performance' in window) {
-    // Navigation timing
     const navigationEntries = performance.getEntriesByType('navigation');
-    if (navigationEntries.length > 0) {
+    if (navigationEntries.length > 0 && process.env.NODE_ENV === 'development') {
       const nav = navigationEntries[0] as PerformanceNavigationTiming;
       const metrics = {
         'DNS Lookup': nav.domainLookupEnd - nav.domainLookupStart,
@@ -49,37 +48,7 @@ const reportWebVitals = () => {
         'DOM Processing': nav.domComplete - nav.domLoading,
         'Total Load Time': nav.loadEventEnd - nav.navigationStart
       };
-
-      if (process.env.NODE_ENV === 'development') {
-        console.table(metrics);
-      }
-    }
-
-    // Largest Contentful Paint
-    if ('PerformanceObserver' in window) {
-      try {
-        const lcpObserver = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          const lastEntry = entries[entries.length - 1];
-          if (process.env.NODE_ENV === 'development') {
-            console.log('LCP:', lastEntry.startTime);
-          }
-        });
-        lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-
-        // First Input Delay
-        const fidObserver = new PerformanceObserver((list) => {
-          const entries = list.getEntries();
-          entries.forEach((entry) => {
-            if (process.env.NODE_ENV === 'development') {
-              console.log('FID:', entry.duration);
-            }
-          });
-        });
-        fidObserver.observe({ entryTypes: ['first-input'] });
-      } catch (error) {
-        console.warn('Performance monitoring setup failed:', error);
-      }
+      console.table(metrics);
     }
   }
 };

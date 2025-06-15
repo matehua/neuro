@@ -23,14 +23,16 @@ export class PerformanceMonitor {
   private static instance: PerformanceMonitor;
   private metrics: Map<string, PerformanceMetrics> = new Map();
   private observers: PerformanceObserver[] = [];
+  private initialized: boolean = false;
 
   private constructor() {
-    this.initializeObservers();
+    // Don't initialize observers in constructor to prevent double initialization
   }
 
   static getInstance(): PerformanceMonitor {
     if (!PerformanceMonitor.instance) {
       PerformanceMonitor.instance = new PerformanceMonitor();
+      PerformanceMonitor.instance.initializeObservers();
     }
     return PerformanceMonitor.instance;
   }
@@ -39,9 +41,11 @@ export class PerformanceMonitor {
    * Initialize performance observers
    */
   private initializeObservers(): void {
-    if (typeof window === 'undefined' || !('PerformanceObserver' in window)) {
+    if (typeof window === 'undefined' || !('PerformanceObserver' in window) || this.initialized) {
       return;
     }
+
+    this.initialized = true;
 
     try {
       // Observe navigation timing

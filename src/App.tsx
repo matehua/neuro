@@ -7,7 +7,6 @@ import { LanguageProvider } from "@/contexts/LanguageContext";
 import { getAllRoutes } from "@/routes/routeConfig";
 import ScreenReaderAnnouncer from "@/components/ScreenReaderAnnouncer";
 import ErrorBoundary from "@/components/ErrorBoundary";
-import { initializePerformanceMonitoring } from "@/lib/performance";
 
 // Create a react-query client
 const queryClient = new QueryClient();
@@ -52,11 +51,6 @@ const AppContent = () => {
 };
 
 const App = () => {
-  // Initialize performance monitoring
-  React.useEffect(() => {
-    initializePerformanceMonitoring();
-  }, []);
-
   return (
     <ErrorBoundary>
       <QueryClientProvider client={queryClient}>
