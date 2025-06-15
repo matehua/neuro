@@ -2,7 +2,7 @@ import { useLanguage } from "@/contexts/LanguageContext";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Star } from "lucide-react";
 import SafeImage from "@/components/SafeImage";
-import { useDeviceDetection } from "@/hooks/use-mobile";
+import { useDeviceDetection } from "@/contexts/DeviceContext";
 import { cn } from "@/lib/utils";
 
 export default function IndependentReviewsSection() {

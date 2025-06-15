@@ -9,7 +9,7 @@ import { ArrowRight } from "lucide-react";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CTASection from "@/components/CTASection";
 import { generatePageSEO, generateMedicalPracticeStructuredData, PRACTICE_INFO } from "@/lib/seo";
-import { useDeviceDetection } from "@/hooks/use-mobile";
+import { useDeviceDetection } from "@/contexts/DeviceContext";
 import { cn } from "@/lib/utils";
 
 export default function Index() {

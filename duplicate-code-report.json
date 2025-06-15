@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-06-15T20:54:34.054Z",
+  "timestamp": "2025-06-15T21:40:21.948Z",
   "filesAnalyzed": 159,
-  "blocksAnalyzed": 411,
+  "blocksAnalyzed": 444,
   "duplicatesFound": 7,
-  "similarPatternsFound": 11,
+  "similarPatternsFound": 12,
   "duplicates": [
     {
       "hash": "bf8fbea1810da582d5a40d4758a036ec",
@@ -445,6 +445,33 @@
       "files": [
         "components\\ui\\form.tsx",
         "components\\ui\\sidebar.tsx"
+      ]
+    },
+    {
+      "similarity": 0.8059701492537313,
+      "blocks": [
+        {
+          "type": "pattern",
+          "content": "if (typeof payload !== \"object\" || payload === null) {\r\n    return undefined\r\n  }",
+          "normalized": "if (typeof payload !== STRING || VAR === null) { return undefined }",
+          "hash": "26c593ff72c09202fc994ef8ae7c8ee9",
+          "file": "D:\\website\\neurosurgeon\\revitrax\\revitrax-03\\src\\components\\ui\\chart.tsx",
+          "line": 323,
+          "size": 81
+        },
+        {
+          "type": "pattern",
+          "content": "if (typeof value !== 'object' || value === null) {\n    return false;\n  }",
+          "normalized": "if (typeof value !== STRING || VAR === null) { return false; }",
+          "hash": "ea78d32dc652a5a876e9b9f3b36ae864",
+          "file": "D:\\website\\neurosurgeon\\revitrax\\revitrax-03\\src\\lib\\type-safety.ts",
+          "line": 95,
+          "size": 72
+        }
+      ],
+      "files": [
+        "components\\ui\\chart.tsx",
+        "lib\\type-safety.ts"
       ]
     },
     {

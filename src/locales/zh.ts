@@ -1032,5 +1032,36 @@ export const zh = {
     address: "丹德农神经病学咨询室地址",
     email: "电子邮件",
     phone: "电话"
+  },
+  navigation: {
+    home: "首页",
+    about: "关于我们",
+    expertise: "专业领域",
+    locations: "诊所位置",
+    patientResources: "患者资源",
+    contact: "联系我们",
+    bookAppointment: "预约咨询",
+    language: "语言",
+    menu: "菜单",
+    close: "关闭",
+    skipToContent: "跳转到内容"
+  },
+  common: {
+    loading: "加载中...",
+    save: "保存",
+    cancel: "取消",
+    submit: "提交",
+    back: "返回",
+    next: "下一步",
+    previous: "上一步",
+    close: "关闭",
+    open: "打开",
+    yes: "是",
+    no: "否",
+    ok: "确定",
+    error: "错误",
+    success: "成功",
+    warning: "警告",
+    info: "信息"
   }
 };

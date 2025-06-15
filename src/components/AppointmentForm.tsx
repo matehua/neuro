@@ -17,7 +17,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/hooks/use-mobile";
+import { useDeviceDetection } from "@/contexts/DeviceContext";
 
 export default function AppointmentForm() {
   const { t } = useLanguage();

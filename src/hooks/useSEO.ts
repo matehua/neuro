@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import { generatePageSEO, generateLanguageAlternates, normalizeCanonicalUrl, validateStructuredData, SupportedLanguageCode } from '@/lib/seo';
+import { generatePageSEO, generateLanguageAlternates, normalizeCanonicalUrl, validateStructuredData, SupportedLanguageCode, MetaTagManager } from '@/lib/seo';
 
 export interface SEOData {
   title: string;
@@ -27,76 +27,56 @@ export const useSEO = (seoData: SEOData) => {
   const location = useLocation();
 
   useEffect(() => {
+    const metaManager = MetaTagManager.getInstance();
+
     // Update document title
     if (seoData.title) {
       document.title = seoData.title;
     }
 
-    // Helper function to update or create meta tags
-    const updateMetaTag = (name: string, content: string, property?: boolean) => {
-      const attribute = property ? 'property' : 'name';
-      let element = document.querySelector(`meta[${attribute}="${name}"]`) as HTMLMetaElement;
-      
-      if (!element) {
-        element = document.createElement('meta');
-        element.setAttribute(attribute, name);
-        document.head.appendChild(element);
-      }
-      
-      element.setAttribute('content', content);
-    };
-
     // Update basic meta tags
     if (seoData.description) {
-      updateMetaTag('description', seoData.description);
+      metaManager.updateMetaTag('description', seoData.description);
     }
 
     if (seoData.keywords) {
-      updateMetaTag('keywords', seoData.keywords);
+      metaManager.updateMetaTag('keywords', seoData.keywords);
     }
 
     // Update Open Graph tags
     if (seoData.ogTitle) {
-      updateMetaTag('og:title', seoData.ogTitle, true);
+      metaManager.updateMetaTag('og:title', seoData.ogTitle, true);
     }
 
     if (seoData.ogDescription) {
-      updateMetaTag('og:description', seoData.ogDescription, true);
+      metaManager.updateMetaTag('og:description', seoData.ogDescription, true);
     }
 
     if (seoData.ogImage) {
-      updateMetaTag('og:image', seoData.ogImage, true);
+      metaManager.updateMetaTag('og:image', seoData.ogImage, true);
     }
 
     if (seoData.ogType) {
-      updateMetaTag('og:type', seoData.ogType, true);
+      metaManager.updateMetaTag('og:type', seoData.ogType, true);
     }
 
     // Update Twitter Card tags
     if (seoData.twitterTitle) {
-      updateMetaTag('twitter:title', seoData.twitterTitle);
+      metaManager.updateMetaTag('twitter:title', seoData.twitterTitle);
     }
 
     if (seoData.twitterDescription) {
-      updateMetaTag('twitter:description', seoData.twitterDescription);
+      metaManager.updateMetaTag('twitter:description', seoData.twitterDescription);
     }
 
     if (seoData.twitterImage) {
-      updateMetaTag('twitter:image', seoData.twitterImage);
+      metaManager.updateMetaTag('twitter:image', seoData.twitterImage);
     }
 
     // Update canonical URL with validation
     if (seoData.canonical) {
       const normalizedCanonical = normalizeCanonicalUrl(seoData.canonical, seoData.currentLanguage);
-      let canonicalElement = document.querySelector('link[rel="canonical"]') as HTMLLinkElement;
-
-      if (!canonicalElement) {
-        canonicalElement = document.createElement('link');
-        canonicalElement.setAttribute('rel', 'canonical');
-        document.head.appendChild(canonicalElement);
-      }
-
-      canonicalElement.setAttribute('href', normalizedCanonical);
+      metaManager.updateLinkTag('canonical', normalizedCanonical);
     }
 
     // Update language alternates
@@ -146,7 +126,7 @@ export const useSEO = (seoData: SEOData) => {
       // Note: We don't remove meta tags on cleanup as they should persist
       // until the next page navigation in a SPA
     };
-  }, [seoData]);
+  }, [seoData, location.pathname]);
 };
 
 /**

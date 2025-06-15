@@ -7,7 +7,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Badge } from "@/components/ui/badge";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/hooks/use-mobile";
+import { useDeviceDetection } from "@/contexts/DeviceContext";
 import { cn } from "@/lib/utils";
 import SafeImage from "@/components/SafeImage";
 import { 

@@ -9,7 +9,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/hooks/use-mobile";
+import { useDeviceDetection } from "@/contexts/DeviceContext";
 import { cn } from "@/lib/utils";
 
 export default function Contact() {

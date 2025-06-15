@@ -15,7 +15,7 @@ import {
 import { useLanguage } from "@/contexts/LanguageContext";
 import { Link } from "react-router-dom";
 import { generatePageSEO } from "@/lib/seo";
-import { useDeviceDetection } from "@/hooks/use-mobile";
+import { useDeviceDetection } from "@/contexts/DeviceContext";
 import { cn } from "@/lib/utils";
 
 export default function Appointments() {

@@ -37,7 +37,7 @@ export interface AppError {
   url?: string;
   userAgent?: string;
   stack?: string;
-  context?: Record<string, any>;
+  context?: Record<string, unknown>;
   recoverable?: boolean;
   retryable?: boolean;
 }
@@ -117,7 +117,7 @@ export class ErrorHandler {
           type: ErrorType.NETWORK,
           severity: ErrorSeverity.MEDIUM,
           message: 'Resource loading failed',
-          details: (event.target as any)?.src || (event.target as any)?.href,
+          details: (event.target as HTMLElement & { src?: string; href?: string })?.src || (event.target as HTMLElement & { src?: string; href?: string })?.href,
           recoverable: true,
           retryable: true
         }));
@@ -178,7 +178,9 @@ export class ErrorHandler {
       }
 
     } catch (handlingError) {
-      console.error('Error in error handler:', handlingError);
+      if (import.meta.env.DEV) {
+        console.error('Error in error handler:', handlingError);
+      }
     }
   }
 
@@ -197,17 +199,19 @@ export class ErrorHandler {
       stack: error.stack
     };
 
-    switch (error.severity) {
-      case ErrorSeverity.CRITICAL:
-      case ErrorSeverity.HIGH:
-        console.error(logMessage, logData);
-        break;
-      case ErrorSeverity.MEDIUM:
-        console.warn(logMessage, logData);
-        break;
-      case ErrorSeverity.LOW:
-        console.info(logMessage, logData);
-        break;
+    if (import.meta.env.DEV) {
+      switch (error.severity) {
+        case ErrorSeverity.CRITICAL:
+        case ErrorSeverity.HIGH:
+          console.error(logMessage, logData);
+          break;
+        case ErrorSeverity.MEDIUM:
+          console.warn(logMessage, logData);
+          break;
+        case ErrorSeverity.LOW:
+          console.info(logMessage, logData);
+          break;
+      }
     }
   }
 
@@ -226,7 +230,9 @@ export class ErrorHandler {
         body: JSON.stringify(error)
       });
     } catch (reportingError) {
-      console.error('Failed to report error:', reportingError);
+      if (import.meta.env.DEV) {
+        console.error('Failed to report error:', reportingError);
+      }
     }
   }
 
@@ -241,7 +247,9 @@ export class ErrorHandler {
     // You could integrate with toast notifications, modal dialogs, etc.
     if (error.severity === ErrorSeverity.CRITICAL || error.severity === ErrorSeverity.HIGH) {
       // Show prominent notification
-      console.warn('User notification:', userMessage);
+      if (import.meta.env.DEV) {
+        console.warn('User notification:', userMessage);
+      }
     }
   }
 
@@ -375,7 +383,7 @@ export function handleNetworkError(message: string, details?: string): void {
   }));
 }
 
-export function handleValidationError(message: string, context?: Record<string, any>): void {
+export function handleValidationError(message: string, context?: Record<string, unknown>): void {
   errorHandler.handleError(errorHandler.createError({
     type: ErrorType.VALIDATION,
     severity: ErrorSeverity.LOW,

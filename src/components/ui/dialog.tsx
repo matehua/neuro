@@ -3,7 +3,7 @@ import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { X } from "lucide-react"
 
 import { cn } from "@/lib/utils"
-import { useDeviceDetection } from "@/hooks/use-mobile"
+import { useDeviceDetection } from "@/contexts/DeviceContext"
 
 const Dialog = DialogPrimitive.Root
 

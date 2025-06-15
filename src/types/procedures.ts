@@ -310,8 +310,8 @@ export function searchProcedures(
   // Apply sorting
   if (options.sortBy) {
     filtered.sort((a, b) => {
-      let aValue: any = a[options.sortBy!];
-      let bValue: any = b[options.sortBy!];
+      let aValue: unknown = a[options.sortBy!];
+      let bValue: unknown = b[options.sortBy!];
       
       // Handle special cases
       if (options.sortBy === 'recoveryTime') {
@@ -338,4 +338,61 @@ export function searchProcedures(
   }
 
   return filtered;
+}
+
+/**
+ * Safe procedure data access with null checks
+ */
+export function safeProcedureAccess<K extends keyof ProcedureProps>(
+  procedure: ProcedureProps | null | undefined,
+  key: K,
+  fallback?: ProcedureProps[K]
+): ProcedureProps[K] | undefined {
+  if (!procedure) return fallback;
+  return procedure[key] ?? fallback;
+}
+
+/**
+ * Enhanced procedure validation with runtime checks
+ */
+export function validateProcedureData(data: unknown): data is ProcedureProps {
+  if (!isProcedurePropsValid(data)) return false;
+
+  const procedure = data as RawProcedureData;
+
+  // Additional runtime validations
+  if (procedure.complexity && (procedure.complexity < 1 || procedure.complexity > 10)) {
+    return false;
+  }
+
+  if (procedure.successRate && (procedure.successRate < 0 || procedure.successRate > 100)) {
+    return false;
+  }
+
+  return true;
+}
+
+/**
+ * Create a safe procedure object with defaults
+ */
+export function createSafeProcedure(data: Partial<RawProcedureData>): ProcedureProps | null {
+  // Check required fields
+  if (!data.id || !data.name || !data.description || !data.image || !data.location) {
+    return null;
+  }
+
+  const rawData: RawProcedureData = {
+    id: data.id,
+    name: data.name,
+    description: data.description,
+    image: data.image,
+    location: data.location,
+    ...data
+  };
+
+  try {
+    return normalizeProcedureData(rawData);
+  } catch {
+    return null;
+  }
 }

@@ -409,6 +409,192 @@ export function initializePerformanceMonitoring(): PerformanceMonitor {
 }
 
 /**
+ * React performance utilities
+ */
+export const ReactPerformanceUtils = {
+  /**
+   * Create a memoized component with custom comparison
+   */
+  createMemoComponent<T extends Record<string, unknown>>(
+    Component: React.ComponentType<T>,
+    areEqual?: (prevProps: T, nextProps: T) => boolean
+  ) {
+    return React.memo(Component, areEqual);
+  },
+
+  /**
+   * Create a stable callback with useCallback
+   */
+  useStableCallback<T extends (...args: unknown[]) => unknown>(
+    callback: T,
+    deps: React.DependencyList
+  ): T {
+    return React.useCallback(callback, deps);
+  },
+
+  /**
+   * Create a memoized value with useMemo
+   */
+  useMemoizedValue<T>(
+    factory: () => T,
+    deps: React.DependencyList
+  ): T {
+    return React.useMemo(factory, deps);
+  },
+
+  /**
+   * Debounced state hook
+   */
+  useDebouncedState<T>(
+    initialValue: T,
+    delay: number
+  ): [T, React.Dispatch<React.SetStateAction<T>>, T] {
+    const [value, setValue] = React.useState(initialValue);
+    const [debouncedValue, setDebouncedValue] = React.useState(initialValue);
+
+    React.useEffect(() => {
+      const handler = setTimeout(() => {
+        setDebouncedValue(value);
+      }, delay);
+
+      return () => {
+        clearTimeout(handler);
+      };
+    }, [value, delay]);
+
+    return [value, setValue, debouncedValue];
+  },
+
+  /**
+   * Throttled callback hook
+   */
+  useThrottledCallback<T extends (...args: unknown[]) => unknown>(
+    callback: T,
+    delay: number
+  ): T {
+    const lastRun = React.useRef(Date.now());
+
+    return React.useCallback(
+      ((...args: Parameters<T>) => {
+        if (Date.now() - lastRun.current >= delay) {
+          callback(...args);
+          lastRun.current = Date.now();
+        }
+      }) as T,
+      [callback, delay]
+    );
+  }
+};
+
+/**
+ * Bundle size optimization utilities
+ */
+export const BundleOptimizationUtils = {
+  /**
+   * Dynamic import with error handling
+   */
+  async dynamicImport<T>(
+    importFn: () => Promise<{ default: T }>,
+    fallback?: T
+  ): Promise<T> {
+    try {
+      const module = await importFn();
+      return module.default;
+    } catch (error) {
+      if (import.meta.env.DEV) {
+        console.error('Dynamic import failed:', error);
+      }
+      if (fallback) {
+        return fallback;
+      }
+      throw error;
+    }
+  },
+
+  /**
+   * Lazy load component with suspense
+   */
+  createLazyComponent<T extends React.ComponentType<unknown>>(
+    importFn: () => Promise<{ default: T }>,
+    fallback?: React.ComponentType
+  ) {
+    const LazyComponent = React.lazy(importFn);
+
+    return (props: React.ComponentProps<T>) => {
+      const fallbackElement = fallback
+        ? React.createElement(fallback)
+        : React.createElement('div', { children: 'Loading...' });
+
+      return React.createElement(
+        React.Suspense,
+        { fallback: fallbackElement },
+        React.createElement(LazyComponent, props)
+      );
+    };
+  },
+
+  /**
+   * Check if feature should be loaded based on conditions
+   */
+  shouldLoadFeature(conditions: {
+    userAgent?: string;
+    viewport?: { width: number; height: number };
+    connection?: 'slow' | 'fast';
+    memory?: 'low' | 'high';
+  }): boolean {
+    // Check connection speed
+    if (conditions.connection === 'slow' && 'connection' in navigator) {
+      const connection = (navigator as unknown as { connection: { effectiveType: string } }).connection;
+      if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
+        return false;
+      }
+    }
+
+    // Check device memory
+    if (conditions.memory === 'low' && 'deviceMemory' in navigator) {
+      const deviceMemory = (navigator as unknown as { deviceMemory: number }).deviceMemory;
+      if (deviceMemory < 4) {
+        return false;
+      }
+    }
+
+    // Check viewport size
+    if (conditions.viewport) {
+      const { width, height } = conditions.viewport;
+      if (window.innerWidth < width || window.innerHeight < height) {
+        return false;
+      }
+    }
+
+    return true;
+  }
+};
+
+/**
+ * Dead code elimination utilities
+ */
+export const DeadCodeUtils = {
+  /**
+   * Mark unused exports for tree shaking
+   */
+  markUnused(reason: string): void {
+    if (import.meta.env.DEV) {
+      console.warn(`Unused code detected: ${reason}`);
+    }
+  },
+
+  /**
+   * Conditional feature loading
+   */
+  loadFeatureIf<T>(
+    condition: boolean,
+    loader: () => Promise<T>
+  ): Promise<T | null> {
+    return condition ? loader() : Promise.resolve(null);
+  }
+};
+
+/**
  * Get the performance monitor instance (only after initialization)
  */
 export function getPerformanceMonitor(): PerformanceMonitor {

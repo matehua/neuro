@@ -357,7 +357,7 @@ export function getTranslation(
   fallback?: string
 ): string {
   const keys = path.split('.');
-  let current: any = translations;
+  let current: unknown = translations;
   
   for (const key of keys) {
     if (current && typeof current === 'object' && key in current) {
@@ -379,8 +379,8 @@ export function validateTranslationCompleteness(
   const extra: string[] = [];
   
   function checkObject(
-    obj: any,
-    ref: any,
+    obj: Record<string, unknown>,
+    ref: Record<string, unknown>,
     path: string = ''
   ): void {
     // Check for missing keys

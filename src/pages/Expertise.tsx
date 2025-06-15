@@ -7,7 +7,7 @@ import SafeImage from "@/components/SafeImage";
 import { useLanguage } from "@/contexts/LanguageContext";
 import CTASection from "@/components/CTASection";
 import { generatePageSEO, generateMedicalProcedureStructuredData } from "@/lib/seo";
-import { useDeviceDetection } from "@/hooks/use-mobile";
+import { useDeviceDetection } from "@/contexts/DeviceContext";
 import { cn } from "@/lib/utils";
 
 export default function Expertise() {

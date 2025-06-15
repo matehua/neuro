@@ -98,7 +98,9 @@ export default function EnhancedImage({
     if (loadStartTime > 0) {
       const loadTime = performance.now() - loadStartTime;
       if (process.env.NODE_ENV === 'development') {
-        console.log(`Image loaded in ${loadTime.toFixed(2)}ms:`, src);
+        if (import.meta.env.DEV) {
+          console.log(`Image loaded in ${loadTime.toFixed(2)}ms:`, src);
+        }
       }
       
       // Report to performance monitoring if available
@@ -121,7 +123,9 @@ export default function EnhancedImage({
     setIsLoaded(true); // Consider it "loaded" to stop loading state
     
     if (process.env.NODE_ENV === 'development') {
-      console.warn(`Failed to load image: ${src}`);
+      if (import.meta.env.DEV) {
+        console.warn(`Failed to load image: ${src}`);
+      }
     }
     
     onError?.();

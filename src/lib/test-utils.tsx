@@ -195,7 +195,7 @@ export function mockPerformanceAPI() {
 /**
  * Mock fetch API for testing network requests
  */
-export function mockFetch(response: any = {}, ok: boolean = true) {
+export function mockFetch(response: Record<string, unknown> = {}, ok: boolean = true) {
   const mockFetch = jest.fn(() =>
     Promise.resolve({
       ok,
@@ -255,7 +255,7 @@ export function waitForAsync(ms: number = 0): Promise<void> {
 /**
  * Create a mock procedure for testing
  */
-export function createMockProcedure(overrides: any = {}) {
+export function createMockProcedure(overrides: Record<string, unknown> = {}) {
   return {
     id: 'test-procedure-1',
     name: 'Test Procedure',
@@ -274,7 +274,7 @@ export function createMockProcedure(overrides: any = {}) {
 /**
  * Create mock translation data
  */
-export function createMockTranslations(overrides: any = {}) {
+export function createMockTranslations(overrides: Record<string, unknown> = {}) {
   return {
     navigation: mockLanguageContext.t.navigation,
     hero: mockLanguageContext.t.hero,

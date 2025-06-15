@@ -1,8 +1,8 @@
 {
-  "timestamp": "2025-06-15T20:54:12.870Z",
+  "timestamp": "2025-06-15T21:41:01.525Z",
   "javascript": [
     {
-      "name": "index-DC5T-48S.js",
+      "name": "index-Cm8bvdiO.js",
       "size": 0.69,
       "type": "javascript",
       "status": "ok"
@@ -148,8 +148,8 @@
   ],
   "css": [
     {
-      "name": "index-Bu1GGDQB.css",
-      "size": 90.23,
+      "name": "index-CYBqIR2o.css",
+      "size": 89.87,
       "type": "css",
       "status": "ok"
     }
@@ -1410,7 +1410,7 @@
       "status": "ok"
     }
   ],
-  "totalSize": 90.92,
+  "totalSize": 90.56,
   "performanceScore": 100,
   "recommendations": []
 }

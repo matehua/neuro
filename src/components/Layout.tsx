@@ -1,45 +1,30 @@
-import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { announceToScreenReader } from "@/lib/accessibility";
-import { useSEO, SEOData } from "@/hooks/useSEO";
-import { generatePageSEO } from "@/lib/seo";
+import React from "react";
+import StandardPageLayout, { StandardPageLayoutProps } from "@/components/StandardPageLayout";
 
 interface LayoutProps {
   children: React.ReactNode;
   /** Title for the current page, will be announced to screen readers */
   pageTitle?: string;
   /** SEO data for the page */
-  seoData?: SEOData;
+  seoData?: StandardPageLayoutProps['seoData'];
   /** Page type for default SEO configuration */
-  pageType?: string;
+  pageType?: StandardPageLayoutProps['pageType'];
 }
 
+/**
+ * Legacy Layout component - now wraps StandardPageLayout for consistency
+ * @deprecated Use StandardPageLayout directly for new components
+ */
 export default function Layout({ children, pageTitle, seoData, pageType = 'default' }: LayoutProps) {
-  // Generate SEO data if not provided
-  const finalSeoData = seoData || generatePageSEO(pageType, pageTitle ? { title: `${pageTitle} | miNEURO` } : {});
-
-  // Apply SEO data
-  useSEO(finalSeoData);
-
-  // Announce page title to screen readers when it changes
-  useEffect(() => {
-    if (pageTitle) {
-      // Announce page change to screen readers
-      announceToScreenReader(`Navigated to ${pageTitle} page`);
-    }
-  }, [pageTitle]);
-
   return (
-    <div className="min-h-screen flex flex-col">
-      <Navbar />
-      <main id="main-content" className="flex-1 pt-20" tabIndex={-1}>
-        {pageTitle && (
-          <h1 className="sr-only">{pageTitle}</h1>
-        )}
-        {children}
-      </main>
-      <Footer />
-    </div>
+    <StandardPageLayout
+      title={pageTitle}
+      seoData={seoData}
+      pageType={pageType}
+      showHeader={false} // Legacy Layout didn't show PageHeader
+      enableErrorBoundary={true}
+    >
+      {children}
+    </StandardPageLayout>
   );
 }

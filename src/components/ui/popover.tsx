@@ -2,7 +2,7 @@ import { forwardRef, ElementRef, ComponentPropsWithoutRef } from "react"
 import * as PopoverPrimitive from "@radix-ui/react-popover"
 
 import { cn } from "@/lib/utils"
-import { useDeviceDetection } from "@/hooks/use-mobile"
+import { useDeviceDetection } from "@/contexts/DeviceContext"
 
 const Popover = PopoverPrimitive.Root
 

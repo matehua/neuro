@@ -323,7 +323,7 @@ export const generateLanguageAlternates = (
   // Generate alternates for each supported language
   Object.values(SUPPORTED_LANGUAGES).forEach(lang => {
     const langPath = lang.code === 'en' ? pathWithoutLang : `/${lang.code}${pathWithoutLang}`;
-    const href = `${SEO_CONFIG.siteUrl}${langPath}`;
+    const href = normalizeCanonicalUrl(langPath, lang.code);
 
     alternates.push({
       hreflang: lang.hreflang,
@@ -331,10 +331,10 @@ export const generateLanguageAlternates = (
     });
   });
 
-  // Add x-default for English
+  // Add x-default for English (primary language)
   alternates.push({
     hreflang: 'x-default',
-    href: `${SEO_CONFIG.siteUrl}${pathWithoutLang}`
+    href: normalizeCanonicalUrl(pathWithoutLang, 'en')
   });
 
   return alternates;
@@ -383,7 +383,7 @@ export const normalizeCanonicalUrl = (
 /**
  * Validate structured data against schema.org standards
  */
-export const validateStructuredData = (data: Record<string, any>): {
+export const validateStructuredData = (data: Record<string, unknown>): {
   isValid: boolean;
   errors: string[];
   warnings: string[]
@@ -409,18 +409,45 @@ export const validateStructuredData = (data: Record<string, any>): {
       if (!data.name) errors.push('Medical organization must have a name');
       if (!data.address) warnings.push('Medical organization should have an address');
       if (!data.telephone) warnings.push('Medical organization should have a telephone');
+      if (!data.url) warnings.push('Medical organization should have a website URL');
+      if (!data.description) warnings.push('Medical organization should have a description');
       break;
 
     case 'MedicalProcedure':
       if (!data.name) errors.push('Medical procedure must have a name');
       if (!data.description) warnings.push('Medical procedure should have a description');
+      if (!data.procedureType) warnings.push('Medical procedure should specify procedure type');
+      if (!data.bodyLocation) warnings.push('Medical procedure should specify body location');
       break;
 
     case 'Article':
       if (!data.headline) errors.push('Article must have a headline');
       if (!data.author) warnings.push('Article should have an author');
       if (!data.datePublished) warnings.push('Article should have a publication date');
+      if (!data.image) warnings.push('Article should have an image');
       break;
+
+    case 'WebPage':
+      if (!data.name) errors.push('WebPage must have a name');
+      if (!data.description) warnings.push('WebPage should have a description');
+      if (!data.url) warnings.push('WebPage should have a URL');
+      break;
+
+    case 'Person':
+      if (!data.name) errors.push('Person must have a name');
+      if (!data.jobTitle) warnings.push('Person should have a job title');
+      if (!data.worksFor) warnings.push('Person should specify organization');
+      break;
+
+    default:
+      warnings.push(`Unknown schema type: ${data['@type']}`);
+  }
+
+  // Validate required properties for medical content
+  if (typeof data['@type'] === 'string' && data['@type'].includes('Medical')) {
+    if (!data.medicalSpecialty) {
+      warnings.push('Medical content should specify medical specialty');
+    }
   }
 
   return {
@@ -429,3 +456,79 @@ export const validateStructuredData = (data: Record<string, any>): {
     warnings
   };
 };
+
+/**
+ * Centralized meta tag manager to prevent duplicates
+ */
+export class MetaTagManager {
+  private static instance: MetaTagManager;
+  private managedTags = new Set<string>();
+
+  static getInstance(): MetaTagManager {
+    if (!MetaTagManager.instance) {
+      MetaTagManager.instance = new MetaTagManager();
+    }
+    return MetaTagManager.instance;
+  }
+
+  /**
+   * Update or create a meta tag
+   */
+  updateMetaTag(name: string, content: string, property = false): void {
+    const attribute = property ? 'property' : 'name';
+    const selector = `meta[${attribute}="${name}"]`;
+    let element = document.querySelector(selector) as HTMLMetaElement;
+
+    if (!element) {
+      element = document.createElement('meta');
+      element.setAttribute(attribute, name);
+      document.head.appendChild(element);
+    }
+
+    element.setAttribute('content', content);
+    this.managedTags.add(selector);
+  }
+
+  /**
+   * Update or create a link tag
+   */
+  updateLinkTag(rel: string, href: string, attributes: Record<string, string> = {}): void {
+    const selector = `link[rel="${rel}"]`;
+    let element = document.querySelector(selector) as HTMLLinkElement;
+
+    if (!element) {
+      element = document.createElement('link');
+      element.setAttribute('rel', rel);
+      document.head.appendChild(element);
+    }
+
+    element.setAttribute('href', href);
+
+    // Set additional attributes
+    Object.entries(attributes).forEach(([key, value]) => {
+      element.setAttribute(key, value);
+    });
+
+    this.managedTags.add(selector);
+  }
+
+  /**
+   * Remove all managed tags (useful for cleanup)
+   */
+  cleanup(): void {
+    this.managedTags.forEach(selector => {
+      const element = document.querySelector(selector);
+      if (element) {
+        element.remove();
+      }
+    });
+    this.managedTags.clear();
+  }
+
+  /**
+   * Get all managed tag selectors
+   */
+  getManagedTags(): string[] {
+    return Array.from(this.managedTags);
+  }
+}

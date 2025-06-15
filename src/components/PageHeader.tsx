@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useDeviceDetection } from "@/hooks/use-mobile";
+import { useDeviceDetection } from "@/contexts/DeviceContext";
 import { cn } from "@/lib/utils";
 
 interface PageHeaderProps {
