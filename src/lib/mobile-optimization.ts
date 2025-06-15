@@ -18,7 +18,6 @@ export class MobileOptimiser {
   static getInstance(): MobileOptimiser {
     if (!MobileOptimiser.instance) {
       MobileOptimiser.instance = new MobileOptimiser();
-      MobileOptimiser.instance.initialise();
     }
     return MobileOptimiser.instance;
   }
@@ -26,7 +25,7 @@ export class MobileOptimiser {
   /**
    * Initialise mobile optimisations
    */
-  private initialise(): void {
+  public initialise(): void {
     if (typeof window === 'undefined' || this.isInitialised) return;
 
     // Optimise touch events
@@ -349,6 +348,7 @@ export class MobileOptimiser {
  */
 export function initialiseMobileOptimisations(): void {
   const optimiser = MobileOptimiser.getInstance();
+  optimiser.initialise(); // Proper initialization
   optimiser.optimiseFonts();
   optimiser.optimisePWA();
   optimiser.optimiseNetwork();

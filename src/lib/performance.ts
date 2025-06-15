@@ -32,20 +32,40 @@ export class PerformanceMonitor {
   static getInstance(): PerformanceMonitor {
     if (!PerformanceMonitor.instance) {
       PerformanceMonitor.instance = new PerformanceMonitor();
-      PerformanceMonitor.instance.initializeObservers();
     }
     return PerformanceMonitor.instance;
+  }
+
+  /**
+   * Initialize the performance monitoring (should only be called once from main.tsx)
+   */
+  public initialize(): void {
+    this.initializeObservers();
   }
 
   /**
    * Initialize performance observers
    */
   private initializeObservers(): void {
-    if (typeof window === 'undefined' || !('PerformanceObserver' in window) || this.initialized) {
+    if (typeof window === 'undefined' || !('PerformanceObserver' in window)) {
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Performance monitoring not available: window or PerformanceObserver not supported');
+      }
+      return;
+    }
+
+    if (this.initialized) {
+      if (process.env.NODE_ENV === 'development') {
+        console.warn('Performance monitoring already initialized - preventing duplicate initialization');
+      }
       return;
     }
 
     this.initialized = true;
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Initializing Performance Monitor with observers');
+    }
 
     try {
       // Observe navigation timing
@@ -220,11 +240,30 @@ export class PerformanceMonitor {
   }
 
   /**
+   * Check if performance monitoring is initialized
+   */
+  isInitialized(): boolean {
+    return this.initialized;
+  }
+
+  /**
+   * Get number of active observers
+   */
+  getObserverCount(): number {
+    return this.observers.length;
+  }
+
+  /**
    * Cleanup observers
    */
   cleanup(): void {
     this.observers.forEach(observer => observer.disconnect());
     this.observers = [];
+    this.initialized = false;
+
+    if (process.env.NODE_ENV === 'development') {
+      console.log('Performance Monitor cleaned up');
+    }
   }
 }
 
@@ -351,10 +390,12 @@ export function lazyLoadImage(
 }
 
 /**
- * Initialize performance monitoring
+ * Initialize performance monitoring (should only be called once from main.tsx)
  */
 export function initializePerformanceMonitoring(): PerformanceMonitor {
-  return PerformanceMonitor.getInstance();
+  const monitor = PerformanceMonitor.getInstance();
+  monitor.initialize();
+  return monitor;
 }
 
 /**
