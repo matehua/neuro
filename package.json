@@ -21,9 +21,10 @@
     "build:analyze": "npm run build && npx rollup-plugin-visualizer dist/stats.html --open",
     "security-audit": "npm audit --audit-level moderate",
     "deps-check": "npx npm-check-updates",
-    "clean": "rm -rf dist node_modules/.vite",
+    "clean": "rimraf dist node_modules/.vite",
     "verify-production-env": "node scripts/verify-production-env.js",
-    "pre-deploy": "npm run verify-production-env && npm run production-check"
+    "verify-no-console": "node scripts/verify-no-console.js",
+    "pre-deploy": "npm run verify-production-env && npm run verify-no-console && npm run production-check"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.0",
@@ -91,6 +92,7 @@
     "globals": "^15.9.0",
     "lovable-tagger": "^1.1.7",
     "postcss": "^8.4.47",
+    "rimraf": "^6.0.1",
     "tailwindcss": "^3.4.11",
     "terser": "^5.42.0",
     "typescript": "^5.5.3",

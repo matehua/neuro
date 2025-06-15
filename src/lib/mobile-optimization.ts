@@ -237,9 +237,7 @@ export class MobileOptimiser {
     if ('serviceWorker' in navigator) {
       navigator.serviceWorker.getRegistrations().then(registrations => {
         registrations.forEach(registration => {
-          registration.unregister().then(() => {
-            console.log('Service worker unregistered successfully');
-          });
+          registration.unregister();
         });
       });
     }
@@ -248,28 +246,13 @@ export class MobileOptimiser {
     if ('caches' in window) {
       caches.keys().then(cacheNames => {
         cacheNames.forEach(cacheName => {
-          caches.delete(cacheName).then(() => {
-            console.log('Cache cleared:', cacheName);
-          });
+          caches.delete(cacheName);
         });
       });
     }
 
     // Service worker registration disabled temporarily to fix MIME type issues
     // TODO: Re-enable after fixing service worker MIME type handling
-    /*
-    if ('serviceWorker' in navigator) {
-      window.addEventListener('load', () => {
-        navigator.serviceWorker.register('/sw.js')
-          .then(registration => {
-            console.log('SW registered: ', registration);
-          })
-          .catch(registrationError => {
-            console.log('SW registration failed: ', registrationError);
-          });
-      });
-    }
-    */
 
     // Add app install prompt handling
     let deferredPrompt: Event | null = null;

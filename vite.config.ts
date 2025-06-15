@@ -111,9 +111,24 @@ export default defineConfig(({ mode }) => ({
           'console.debug',
           'console.trace',
           'console.warn',
-          'console.error'
+          'console.error',
+          'console.assert',
+          'console.clear',
+          'console.count',
+          'console.countReset',
+          'console.dir',
+          'console.dirxml',
+          'console.group',
+          'console.groupCollapsed',
+          'console.groupEnd',
+          'console.table',
+          'console.time',
+          'console.timeEnd',
+          'console.timeLog',
+          'console.profile',
+          'console.profileEnd'
         ],
-        passes: 2,
+        passes: 3,
         unsafe: true,
         unsafe_comps: true,
         unsafe_Function: true,
@@ -122,7 +137,9 @@ export default defineConfig(({ mode }) => ({
         unsafe_methods: true,
         unsafe_proto: true,
         unsafe_regexp: true,
-        unsafe_undefined: true
+        unsafe_undefined: true,
+        dead_code: true,
+        side_effects: false
       },
       mangle: {
         safari10: true,

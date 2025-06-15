@@ -145,7 +145,6 @@ export class PerformanceMonitor {
   endMeasure(name: string): PerformanceMetrics | null {
     const metric = this.metrics.get(name);
     if (!metric) {
-      console.warn(`Performance metric "${name}" not found`);
       return null;
     }
 
