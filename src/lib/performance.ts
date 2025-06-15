@@ -235,11 +235,12 @@ export function measureComponentRender<T extends Record<string, unknown>>(
   Component: React.ComponentType<T>,
   componentName?: string
 ): React.ComponentType<T> {
-  const monitor = PerformanceMonitor.getInstance();
   const name = componentName || Component.displayName || Component.name || 'Component';
 
   return function MeasuredComponent(props: T) {
     React.useEffect(() => {
+      // Lazy access to monitor to avoid race condition
+      const monitor = PerformanceMonitor.getInstance();
       monitor.startMeasure(`${name} Mount`);
       return () => {
         monitor.endMeasure(`${name} Mount`);
@@ -247,6 +248,8 @@ export function measureComponentRender<T extends Record<string, unknown>>(
     }, []);
 
     React.useEffect(() => {
+      // Lazy access to monitor to avoid race condition
+      const monitor = PerformanceMonitor.getInstance();
       monitor.startMeasure(`${name} Render`);
       monitor.endMeasure(`${name} Render`);
     });
@@ -259,19 +262,21 @@ export function measureComponentRender<T extends Record<string, unknown>>(
  * Hook for measuring custom performance metrics
  */
 export function usePerformanceMetric(name: string, dependencies: React.DependencyList = []) {
-  const monitor = React.useMemo(() => PerformanceMonitor.getInstance(), []);
+  // Use lazy initialization to avoid race condition
+  const getMonitor = React.useCallback(() => PerformanceMonitor.getInstance(), []);
 
   React.useEffect(() => {
+    const monitor = getMonitor();
     monitor.startMeasure(name);
     return () => {
       monitor.endMeasure(name);
     };
-  }, [monitor, name, dependencies]);
+  }, [getMonitor, name, dependencies]);
 
   return React.useMemo(() => ({
-    startMeasure: (metricName: string) => monitor.startMeasure(metricName),
-    endMeasure: (metricName: string) => monitor.endMeasure(metricName)
-  }), [monitor]);
+    startMeasure: (metricName: string) => getMonitor().startMeasure(metricName),
+    endMeasure: (metricName: string) => getMonitor().endMeasure(metricName)
+  }), [getMonitor]);
 }
 
 /**
@@ -352,5 +357,9 @@ export function initializePerformanceMonitoring(): PerformanceMonitor {
   return PerformanceMonitor.getInstance();
 }
 
-// Export singleton instance
-export const performanceMonitor = PerformanceMonitor.getInstance();
+/**
+ * Get the performance monitor instance (only after initialization)
+ */
+export function getPerformanceMonitor(): PerformanceMonitor {
+  return PerformanceMonitor.getInstance();
+}
