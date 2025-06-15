@@ -41,8 +41,49 @@ class ErrorBoundary extends Component<Props, State> {
       errorInfo
     });
 
-    // In production, you might want to log this to an error reporting service
-    // Example: logErrorToService(error, errorInfo);
+    // Production error logging
+    if (process.env.NODE_ENV === 'production') {
+      this.logErrorToService(error, errorInfo);
+    }
+  }
+
+  private logErrorToService(error: Error, errorInfo: ErrorInfo) {
+    // Create error report
+    const errorReport = {
+      message: error.message,
+      stack: error.stack,
+      componentStack: errorInfo.componentStack,
+      timestamp: new Date().toISOString(),
+      userAgent: navigator.userAgent,
+      url: window.location.href,
+      userId: 'anonymous', // Could be replaced with actual user ID
+    };
+
+    // Log to console as fallback
+    console.error('Production Error:', errorReport);
+
+    // Send to error reporting service (implement based on your service)
+    try {
+      // Example: Sentry, LogRocket, or custom endpoint
+      if (import.meta.env.VITE_SENTRY_DSN) {
+        // Sentry integration would go here
+        // Sentry.captureException(error, { contexts: { react: errorInfo } });
+      }
+
+      // Custom error endpoint
+      if (import.meta.env.VITE_ERROR_REPORTING_ENDPOINT) {
+        fetch(import.meta.env.VITE_ERROR_REPORTING_ENDPOINT, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(errorReport),
+        }).catch(() => {
+          // Silently fail if error reporting fails
+        });
+      }
+    } catch (reportingError) {
+      // Silently fail if error reporting fails
+      console.warn('Failed to report error:', reportingError);
+    }
   }
 
   handleReload = () => {

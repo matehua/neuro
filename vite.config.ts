@@ -36,6 +36,14 @@ export default defineConfig(({ mode }) => ({
     devSourcemap: true,
   },
   build: {
+    target: 'es2020',
+    outDir: 'dist',
+    assetsDir: 'assets',
+    sourcemap: mode === 'development',
+    minify: mode === 'production' ? 'terser' : false,
+    cssMinify: mode === 'production',
+    reportCompressedSize: true,
+    chunkSizeWarningLimit: 1000,
     rollupOptions: {
       output: {
         manualChunks: {
@@ -71,10 +79,24 @@ export default defineConfig(({ mode }) => ({
           ],
           'form-vendor': ['react-hook-form', '@hookform/resolvers', 'zod'],
           'utility-vendor': ['date-fns', 'clsx', 'tailwind-merge', 'class-variance-authority']
-        }
+        },
+        // Optimize chunk naming for caching
+        chunkFileNames: (chunkInfo) => {
+          const facadeModuleId = chunkInfo.facadeModuleId ? chunkInfo.facadeModuleId.split('/').pop() : 'chunk';
+          return `assets/[name]-[hash].js`;
+        },
+        assetFileNames: 'assets/[name]-[hash].[ext]'
       }
     },
-    sourcemap: mode === 'development',
-    minify: mode !== 'development',
+    terserOptions: mode === 'production' ? {
+      compress: {
+        drop_console: true,
+        drop_debugger: true,
+        pure_funcs: ['console.log', 'console.info', 'console.debug', 'console.trace']
+      },
+      mangle: {
+        safari10: true
+      }
+    } : undefined,
   },
 }));
