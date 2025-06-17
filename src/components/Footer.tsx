@@ -1,10 +1,11 @@
-import { Link } from "react-router-dom";
-import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
+import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-export default function Footer() {
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const Footer: React.FC = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   const deviceInfo = useDeviceDetection();
@@ -99,7 +100,7 @@ export default function Footer() {
                 { name: t.nav.gpResources, path: "/gp-resources" },
                 { name: t.nav.locations, path: "/locations" },
                 { name: t.nav.contact, path: "/contact" },
-              ].map((link) => (
+              ].map((link: any) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
@@ -304,4 +305,8 @@ export default function Footer() {
       </div>
     </footer>
   );
-}
+};
+
+Footer.displayName = 'Footer';
+
+export default Footer;

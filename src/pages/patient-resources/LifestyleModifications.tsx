@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
-export default function LifestyleModifications() {
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const LifestyleModifications: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -17,7 +18,7 @@ export default function LifestyleModifications() {
   }, []);
 
   return (
-    <Layout pageTitle="Lifestyle & Activity Modifications">
+    <StandardPageLayout title="Lifestyle & Activity Modifications" showHeader={false}>
       <PageHeader
         title="Lifestyle & Activity Modifications"
         subtitle="Evidence-based recommendations to help manage spine conditions and improve quality of life through lifestyle changes."
@@ -848,6 +849,10 @@ export default function LifestyleModifications() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+LifestyleModifications.displayName = 'LifestyleModifications';
+
+export default LifestyleModifications;

@@ -1,5 +1,6 @@
-import React from "react";
-import StandardPageLayout, { StandardPageLayoutProps } from "@/components/StandardPageLayout";
+import React from 'react';
+
+import StandardPageLayout, { StandardPageLayoutProps } from '@/components/StandardPageLayout';
 
 interface LayoutProps {
   children: React.ReactNode;
@@ -11,11 +12,11 @@ interface LayoutProps {
   pageType?: StandardPageLayoutProps['pageType'];
 }
 
-/**
+  /**
  * Legacy Layout component - now wraps StandardPageLayout for consistency
  * @deprecated Use StandardPageLayout directly for new components
  */
-export default function Layout({ children, pageTitle, seoData, pageType = 'default' }: LayoutProps) {
+const Layout: React.FC<LayoutProps> = ({ children, pageTitle, seoData, pageType = 'default' }) => {
   return (
     <StandardPageLayout
       title={pageTitle}
@@ -27,4 +28,8 @@ export default function Layout({ children, pageTitle, seoData, pageType = 'defau
       {children}
     </StandardPageLayout>
   );
-}
+};
+
+Layout.displayName = 'Layout';
+
+export default Layout;

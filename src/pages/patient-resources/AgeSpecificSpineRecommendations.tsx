@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Activity,
   FileText,
@@ -14,7 +15,7 @@ import {
   Clock
 } from "lucide-react";
 
-export default function AgeSpecificSpineRecommendations() {
+const AgeSpecificSpineRecommendations: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -22,7 +23,7 @@ export default function AgeSpecificSpineRecommendations() {
   }, []);
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <PageHeader
         title="Age-Specific Recommendations for a Youthful Spine"
         subtitle="A Neurosurgeon's Guide"
@@ -464,6 +465,10 @@ export default function AgeSpecificSpineRecommendations() {
           </div>
         </div>
       </section>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+AgeSpecificSpineRecommendations.displayName = 'AgeSpecificSpineRecommendations';
+
+export default AgeSpecificSpineRecommendations;

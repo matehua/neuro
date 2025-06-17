@@ -1,15 +1,19 @@
-import React, { useEffect, useState } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Search, Filter, Info, ArrowRight, CheckCircle2 } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import React, {   useEffect, useState , useMemo , useCallback } from 'react';
+import { Link } from 'react-router-dom';
+import { Search, Filter, Info, ArrowRight, CheckCircle2 } from 'lucide-react';
+
+import ErrorBoundary from '@/components/ErrorBoundary';
+import PageHeader from '@/components/PageHeader';
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Dialog,
   DialogContent,
@@ -20,8 +24,6 @@ import {
   DialogFooter,
   DialogClose
 } from "@/components/ui/dialog";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import SafeImage from "@/components/SafeImage";
 
 // Define types for our exercise data
 interface Exercise {
@@ -51,8 +53,7 @@ interface Category {
 interface ExerciseData {
   categories: Category[];
 }
-
-export default function ExerciseLibrary() {
+const ExerciseLibrary: React.FC = () => {
   const { t } = useLanguage();
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
@@ -87,7 +88,6 @@ export default function ExerciseLibrary() {
         setExerciseData(data);
         setError(null);
       } catch (err) {
-
         setError(err as Error);
       } finally {
         setIsLoading(false);
@@ -100,7 +100,7 @@ export default function ExerciseLibrary() {
   // Define exercise categories
   const categories = [
     { id: "all", name: "All Exercises" },
-    ...(exerciseData?.categories.map(cat => ({ id: cat.id, name: cat.name })) || [])
+    ...(exerciseData?.categories?.map(cat => ({ id: cat.id, name: cat.name })) || [])
   ];
 
   // Define difficulty levels
@@ -129,13 +129,13 @@ export default function ExerciseLibrary() {
 
     // Filter by difficulty
     if (selectedDifficulty !== "all") {
-      filtered = filtered.filter(exercise => exercise.difficulty === selectedDifficulty);
+      filtered = filtered?.filter(exercise => exercise.difficulty === selectedDifficulty);
     }
 
     // Filter by search query
     if (searchQuery.trim() !== "") {
       const query = searchQuery.toLowerCase();
-      filtered = filtered.filter(
+      filtered = filtered?.filter(
         exercise =>
           exercise.name.toLowerCase().includes(query) ||
           exercise.description.toLowerCase().includes(query)
@@ -159,11 +159,12 @@ export default function ExerciseLibrary() {
   };
 
   return (
-    <Layout pageTitle="Exercise Library" seoData={{
+    <ErrorBoundary>
+      <StandardPageLayout title="Exercise Library" seoData={useMemo(() => ({
       title: "Exercise Library | Spine Health Exercises | miNEURO",
       description: "Comprehensive collection of spine-specific exercises designed by neurosurgical experts to help strengthen your spine and reduce pain.",
       keywords: "spine exercises, back exercises, neck exercises, core strengthening, posture exercises, physical therapy"
-    }}>
+     }), [])} showHeader={false}>
       <PageHeader
         title="Exercise Library"
         subtitle="Comprehensive collection of spine-specific exercises designed by neurosurgical experts to help strengthen your spine and reduce pain."
@@ -195,7 +196,7 @@ export default function ExerciseLibrary() {
         <section className="py-8">
           <div className="container">
             <div className="flex flex-wrap gap-2 justify-center">
-              {categories.map((category) => (
+              {categories?.map((category) => (
                 <Button
                   key={category.id}
                   variant={selectedCategory === category.id ? "default" : "outline"}
@@ -223,7 +224,7 @@ export default function ExerciseLibrary() {
                     <SelectValue placeholder="Select difficulty" />
                   </SelectTrigger>
                   <SelectContent>
-                    {difficultyLevels.map((level) => (
+                    {difficultyLevels?.map((level: any) => (
                       <SelectItem key={level.id} value={level.id}>
                         {level.name}
                       </SelectItem>
@@ -298,15 +299,15 @@ export default function ExerciseLibrary() {
                     ? "All Exercises"
                     : categories.find(c => c.id === selectedCategory)?.name}
                   {selectedDifficulty !== "all" && ` - ${difficultyLevels.find(d => d.id === selectedDifficulty)?.name} Level`}
-                  <span className="text-muted-foreground ml-2 text-lg">({filteredExercises.length} exercises)</span>
+                  <span className="text-muted-foreground ml-2 text-lg">({filteredExercises?.length} exercises)</span>
                 </h2>
-                {filteredExercises.length === 0 ? (
+                {filteredExercises?.length === 0 ? (
                   <div className="text-center py-12">
                     <p className="text-muted-foreground">No exercises found matching your criteria. Try adjusting your filters.</p>
                   </div>
                 ) : (
                   <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    {filteredExercises.map((exercise) => (
+                    {filteredExercises?.map((exercise) => (
                       <Card key={exercise.id} className="bg-card shadow-md hover:shadow-lg transition-shadow overflow-hidden">
                         <div className="relative aspect-video w-full overflow-hidden group">
                           <SafeImage
@@ -351,7 +352,7 @@ export default function ExerciseLibrary() {
 
         {/* Exercise Detail Dialog */}
         {selectedExercise && (
-          <Dialog open={!!selectedExercise} onOpenChange={(open) => !open && setSelectedExercise(null)}>
+          <Dialog open={!!selectedExercise} onOpenChange={(open: any) => !open && setSelectedExercise(null)}>
             <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
                 <DialogTitle className="text-2xl">{selectedExercise.name}</DialogTitle>
@@ -391,22 +392,22 @@ export default function ExerciseLibrary() {
                   <h3 className="text-lg font-semibold mb-2">Description</h3>
                   <p className="text-muted-foreground mb-4">{selectedExercise.description}</p>
 
-                  {selectedExercise.targetAreas && selectedExercise.targetAreas.length > 0 && (
+                  {selectedExercise.targetAreas && selectedExercise.targetAreas?.length > 0 && (
                     <div className="mb-4">
                       <h4 className="font-semibold mb-2">Target Areas</h4>
                       <div className="flex flex-wrap gap-2">
-                        {selectedExercise.targetAreas.map((area, index) => (
+                        {selectedExercise.targetAreas?.map((area: any, index: any) => (
                           <Badge key={index} variant="secondary">{area}</Badge>
                         ))}
                       </div>
                     </div>
                   )}
 
-                  {selectedExercise.relatedConditions && selectedExercise.relatedConditions.length > 0 && (
+                  {selectedExercise.relatedConditions && selectedExercise.relatedConditions?.length > 0 && (
                     <div className="mb-6">
                       <h4 className="font-semibold mb-2">Related Conditions</h4>
                       <div className="flex flex-wrap gap-2">
-                        {selectedExercise.relatedConditions.map((condition, index) => (
+                        {selectedExercise.relatedConditions?.map((condition: any, index: any) => (
                           <Badge key={index} variant="outline">{condition}</Badge>
                         ))}
                       </div>
@@ -418,7 +419,7 @@ export default function ExerciseLibrary() {
                       <AccordionTrigger className="text-lg font-semibold">Step-by-Step Instructions</AccordionTrigger>
                       <AccordionContent>
                         <ol className="list-decimal pl-5 space-y-2">
-                          {selectedExercise.instructions.map((instruction, index) => (
+                          {selectedExercise.instructions?.map((instruction: any, index: any) => (
                             <li key={index} className="text-muted-foreground">{instruction}</li>
                           ))}
                         </ol>
@@ -447,19 +448,19 @@ export default function ExerciseLibrary() {
                       <AccordionTrigger className="text-lg font-semibold">Cautions & Safety Guidelines</AccordionTrigger>
                       <AccordionContent>
                         <ul className="list-disc pl-5 space-y-2">
-                          {selectedExercise.cautions.map((caution, index) => (
+                          {selectedExercise.cautions?.map((caution: any, index: any) => (
                             <li key={index} className="text-muted-foreground">{caution}</li>
                           ))}
                         </ul>
                       </AccordionContent>
                     </AccordionItem>
 
-                    {selectedExercise.contraindications && selectedExercise.contraindications.length > 0 && (
+                    {selectedExercise.contraindications && selectedExercise.contraindications?.length > 0 && (
                       <AccordionItem value="contraindications">
                         <AccordionTrigger className="text-lg font-semibold text-red-600">⚠️ Contraindications</AccordionTrigger>
                         <AccordionContent>
                           <ul className="list-disc pl-5 space-y-2">
-                            {selectedExercise.contraindications.map((contraindication, index) => (
+                            {selectedExercise.contraindications?.map((contraindication: any, index: any) => (
                               <li key={index} className="text-red-600">{contraindication}</li>
                             ))}
                           </ul>
@@ -467,12 +468,12 @@ export default function ExerciseLibrary() {
                       </AccordionItem>
                     )}
 
-                    {selectedExercise.modifications && selectedExercise.modifications.length > 0 && (
+                    {selectedExercise.modifications && selectedExercise.modifications?.length > 0 && (
                       <AccordionItem value="modifications">
                         <AccordionTrigger className="text-lg font-semibold">Exercise Modifications</AccordionTrigger>
                         <AccordionContent>
                           <ul className="list-disc pl-5 space-y-2">
-                            {selectedExercise.modifications.map((modification, index) => (
+                            {selectedExercise.modifications?.map((modification: any, index: any) => (
                               <li key={index} className="text-muted-foreground">{modification}</li>
                             ))}
                           </ul>
@@ -563,6 +564,11 @@ export default function ExerciseLibrary() {
         </section>
         </main>
       </div>
-    </Layout>
+    </StandardPageLayout>
+    </ErrorBoundary>
   );
-}
+};
+
+ExerciseLibrary.displayName = 'ExerciseLibrary';
+
+export default ExerciseLibrary;

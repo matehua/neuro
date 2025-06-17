@@ -1,4 +1,5 @@
 import React from 'react';
+
 import EnhancedImage from '@/components/EnhancedImage';
 import { cn } from '@/lib/utils';
 
@@ -15,9 +16,10 @@ interface OptimizedImageProps {
   sizes?: string;
   onLoad?: () => void;
   onError?: () => void;
+
 }
 
-/**
+  /**
  * Optimized Image Component - now wraps EnhancedImage for consistency
  * @deprecated Use EnhancedImage directly for new components
  */
@@ -47,8 +49,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       blurDataURL={blurDataURL}
       sizes={sizes}
       quality={quality}
-      onLoad={onLoad}
-      onError={onError}
+      onLoad={onLoad
+                            onError={onError
     />
   );
 };
@@ -56,7 +58,6 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 /**
  * Hook for responsive image sizes
  */
-export const useResponsiveImageSizes = (breakpoints: Record<string, number>) => {
   const generateSizes = React.useCallback(() => {
     const sizeEntries = Object.entries(breakpoints)
       .sort(([, a], [, b]) => b - a) // Sort by width descending

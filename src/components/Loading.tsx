@@ -1,4 +1,5 @@
 import { Loader2, Brain, Heart } from 'lucide-react';
+
 import { cn } from '@/lib/utils';
 
 interface LoadingProps {
@@ -7,12 +8,13 @@ interface LoadingProps {
   text?: string;
   className?: string;
   fullScreen?: boolean;
+
 }
 
-/**
+  /**
  * Loading Component with multiple variants and accessibility features
  */
-export default function Loading({ 
+const Loading: React.FC = ({ 
   size = 'md', 
   variant = 'spinner', 
   text = 'Loading...', 
@@ -122,7 +124,6 @@ export default function Loading({
         return renderSkeleton();
       default:
         return renderSpinner();
-    }
   };
 
   const content = (
@@ -147,11 +148,7 @@ export default function Loading({
         {content}
       </div>
     );
-  }
-
   return content;
-}
-
 /**
  * Inline Loading Spinner for buttons and small spaces
  */
@@ -161,7 +158,7 @@ export function InlineLoading({
 }: { 
   size?: 'sm' | 'md'; 
   className?: string; 
-}) {
+}): React.ReactElement { {
   return (
     <Loader2 
       className={cn(
@@ -172,12 +169,10 @@ export function InlineLoading({
       aria-hidden="true"
     />
   );
-}
-
 /**
  * Page Loading Component with medical theme
  */
-export function PageLoading({ text = 'Loading page...' }: { text?: string }) {
+export function PageLoading({ text = 'Loading page...' }: { text?: string }): React.ReactElement { {
   return (
     <Loading 
       variant="medical" 
@@ -186,8 +181,6 @@ export function PageLoading({ text = 'Loading page...' }: { text?: string }) {
       fullScreen 
     />
   );
-}
-
 /**
  * Content Loading Skeleton
  */
@@ -197,10 +190,10 @@ export function ContentSkeleton({
 }: { 
   lines?: number; 
   className?: string; 
-}) {
+}): React.ReactElement { {
   return (
     <div className={cn('space-y-3', className)}>
-      {Array.from({ length: lines }).map((_, index) => (
+      {Array.from({ length: lines }).map((_: any, index: any) => (
         <div 
           key={index}
           className={cn(
@@ -212,12 +205,10 @@ export function ContentSkeleton({
       ))}
     </div>
   );
-}
-
 /**
  * Card Loading Skeleton
  */
-export function CardSkeleton({ className }: { className?: string }) {
+export function CardSkeleton({ className }: { className?: string }): React.ReactElement { {
   return (
     <div className={cn('p-6 space-y-4', className)}>
       <div className="h-6 bg-muted rounded animate-pulse w-3/4" />
@@ -229,8 +220,6 @@ export function CardSkeleton({ className }: { className?: string }) {
       <div className="h-10 bg-muted rounded animate-pulse w-1/3" />
     </div>
   );
-}
-
 /**
  * Image Loading Skeleton
  */
@@ -240,7 +229,7 @@ export function ImageSkeleton({
 }: { 
   aspectRatio?: string;
   className?: string; 
-}) {
+}): React.ReactElement { {
   return (
     <div 
       className={cn(
@@ -251,4 +240,8 @@ export function ImageSkeleton({
       aria-hidden="true"
     />
   );
-}
+Loading.displayName = 'Loading';
+
+export default Loading;
+
+Loading.displayName = 'Loading';

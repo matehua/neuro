@@ -1,12 +1,13 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from 'lucide-react';
+import { useEffect } from 'react';
 
-export default function FrankstonLocation() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const FrankstonLocation: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -559,7 +560,7 @@ export default function FrankstonLocation() {
                 <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.conditionsTreated?.spinalConditions?.title || 'Spinal Conditions'}</h3>
                 <ul className="text-muted-foreground list-none space-y-2">
                   {t.frankstonLocation?.conditionsTreated?.spinalConditions?.conditions ?
-                    t.frankstonLocation.conditionsTreated.spinalConditions.conditions.map((condition, index) => (
+                    t.frankstonLocation.conditionsTreated.spinalConditions.conditions?.map((condition: any, index: any) => (
                       <li key={index} className="flex items-start">
                         <span className="text-primary mr-2">•</span>
                         <span>{condition}</span>
@@ -599,7 +600,7 @@ export default function FrankstonLocation() {
                 <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.conditionsTreated?.brainConditions?.title || 'Brain Conditions'}</h3>
                 <ul className="text-muted-foreground list-none space-y-2">
                   {t.frankstonLocation?.conditionsTreated?.brainConditions?.conditions ?
-                    t.frankstonLocation.conditionsTreated.brainConditions.conditions.map((condition, index) => (
+                    t.frankstonLocation.conditionsTreated.brainConditions.conditions?.map((condition: any, index: any) => (
                       <li key={index} className="flex items-start">
                         <span className="text-primary mr-2">•</span>
                         <span>{condition}</span>
@@ -639,7 +640,7 @@ export default function FrankstonLocation() {
                 <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.conditionsTreated?.nerveConditions?.title || 'Nerve Conditions'}</h3>
                 <ul className="text-muted-foreground list-none space-y-2">
                   {t.frankstonLocation?.conditionsTreated?.nerveConditions?.conditions ?
-                    t.frankstonLocation.conditionsTreated.nerveConditions.conditions.map((condition, index) => (
+                    t.frankstonLocation.conditionsTreated.nerveConditions.conditions?.map((condition: any, index: any) => (
                       <li key={index} className="flex items-start">
                         <span className="text-primary mr-2">•</span>
                         <span>{condition}</span>
@@ -778,7 +779,7 @@ export default function FrankstonLocation() {
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <h3 className="text-xl font-semibold mb-3 text-primary">{t.frankstonLocation?.insuranceAndFunding?.privateHealthInsurance?.title || 'Private Health Insurance'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  Patients must have valid private health/hospital insurance with no waiting periods. Extras are not applicable for inpatient hospital treatment. The health funds don't contribute to consultation and outpatient treatment fees.
+                  Patients must have valid private health/hospital insurance with no waiting periods. Extras are not applicable for inpatient hospital treatment. The health funds don&apos;t contribute to consultation and outpatient treatment fees.
                 </p>
                 <p className="text-muted-foreground">
                   {t.frankstonLocation?.insuranceAndFunding?.privateHealthInsurance?.description2 || 'Please note that so-called basic and bronze covers may not cover spinal surgery or neurosurgery in private hospitals. Cervical and lumbar artificial disc replacement (arthroplasty) falls into the Joint Replacement Category, which is usually included in Silver and Gold policies. Patients need to check their policy for coverage levels, exclusions, and inclusions.'}
@@ -846,4 +847,8 @@ export default function FrankstonLocation() {
       <Footer />
     </div>
   );
-}
+};
+
+FrankstonLocation.displayName = 'FrankstonLocation';
+
+export default FrankstonLocation;

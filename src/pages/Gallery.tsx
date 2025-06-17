@@ -1,11 +1,11 @@
+import { X } from 'lucide-react';
+import { useEffect, useState, useCallback } from 'react';
 
-import { useEffect, useState, useCallback } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SafeImage from "@/components/SafeImage";
-import { X } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useLanguage } from "@/contexts/LanguageContext";
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import SafeImage from '@/components/SafeImage';
+import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Sample gallery images
 const galleryImages = [
@@ -83,7 +83,7 @@ const galleryImages = [
   },
 ];
 
-export default function Gallery() {
+const Gallery: React.FC = () => {
   const { t } = useLanguage();
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [filteredImages, setFilteredImages] = useState(galleryImages);
@@ -101,8 +101,7 @@ export default function Gallery() {
     if (category === "all") {
       setFilteredImages(galleryImages);
     } else {
-      setFilteredImages(galleryImages.filter(img => img.category === category));
-    }
+      setFilteredImages(galleryImages?.filter(img => img.category === category));
   };
 
   // Handle lightbox navigation
@@ -113,11 +112,9 @@ export default function Gallery() {
     let newIndex;
 
     if (direction === "prev") {
-      newIndex = currentIndex > 0 ? currentIndex - 1 : filteredImages.length - 1;
+      newIndex = currentIndex > 0 ? currentIndex - 1 : filteredImages?.length - 1;
     } else {
-      newIndex = currentIndex < filteredImages.length - 1 ? currentIndex + 1 : 0;
-    }
-
+      newIndex = currentIndex < filteredImages?.length - 1 ? currentIndex + 1 : 0;
     setSelectedImage(filteredImages[newIndex].id);
   }, [selectedImage, filteredImages]);
 
@@ -132,7 +129,6 @@ export default function Gallery() {
         navigateGallery("prev");
       } else if (e.key === "ArrowRight") {
         navigateGallery("next");
-      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -171,8 +167,8 @@ export default function Gallery() {
               {["all", "exterior", "rooms", "amenities"].map((category) => (
                 <button
                   key={category}
-                  onClick={() => filterGallery(category)}
-                  className={cn(
+                  onClick={() => filterGallery(category)
+                            className={cn(
                     "px-6 py-2 rounded-full transition-all",
                     activeFilter === category
                       ? "bg-primary text-white shadow-lg"
@@ -192,15 +188,15 @@ export default function Gallery() {
 
             {/* Gallery Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {filteredImages.map((image, index) => (
+              {filteredImages?.map((image: any, index: any) => (
                 <div
                   key={image.id}
                   className="relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer group animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
-                  onClick={() => setSelectedImage(image.id)}
+                  onClick={() => setSelectedImage(image.id)
                 >
                   <SafeImage
-                    src={image.src}
+                            src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     fallbackSrc="/images/miNEURO-brain-spine-advanced-technology-precision-miniamlly-invasive.jpg"
@@ -219,15 +215,15 @@ export default function Gallery() {
           <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in">
             <button
               className="absolute top-4 right-4 text-white p-2 rounded-full hover:bg-white/10 transition-colors"
-              onClick={() => setSelectedImage(null)}
+              onClick={() => setSelectedImage(null)
             >
               <X className="h-6 w-6" />
               <span className="sr-only">Close</span>
             </button>
 
             <button
-              className="absolute left-4 top-1/2 -translate-y-1/2 text-white p-4 rounded-full hover:bg-white/10 transition-colors"
-              onClick={() => navigateGallery("prev")}
+                            className="absolute left-4 top-1/2 -translate-y-1/2 text-white p-4 rounded-full hover:bg-white/10 transition-colors"
+                            onClick={() => navigateGallery("prev")
             >
               <span className="sr-only">Previous</span>
               <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -248,7 +244,7 @@ export default function Gallery() {
 
             <button
               className="absolute right-4 top-1/2 -translate-y-1/2 text-white p-4 rounded-full hover:bg-white/10 transition-colors"
-              onClick={() => navigateGallery("next")}
+              onClick={() => navigateGallery("next")
             >
               <span className="sr-only">Next</span>
               <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -262,4 +258,8 @@ export default function Gallery() {
       <Footer />
     </div>
   );
-}
+Gallery.displayName = 'Gallery';
+
+export default Gallery;
+
+Gallery.displayName = 'Gallery';

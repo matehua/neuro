@@ -1,12 +1,12 @@
-import * as React from "react"
+import React from 'react';
 
-import { cn } from "@/lib/utils"
-import { useDeviceDetection } from "@/contexts/DeviceContext"
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
 
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => (
+>(({ className: any, ...props }: any, ref: any) => (
   <div
     ref={ref}
     className={cn(
@@ -21,7 +21,7 @@ Card.displayName = "Card"
 const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+>(({ className: any, ...props }: any, ref: any) => {
   const deviceInfo = useDeviceDetection();
 
   return (
@@ -43,7 +43,7 @@ CardHeader.displayName = "CardHeader"
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
->(({ className, ...props }, ref) => (
+>(({ className: any, ...props }: any, ref: any) => (
   <h3
     ref={ref}
     className={cn(
@@ -58,7 +58,7 @@ CardTitle.displayName = "CardTitle"
 const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => (
+>(({ className: any, ...props }: any, ref: any) => (
   <p
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
@@ -70,7 +70,7 @@ CardDescription.displayName = "CardDescription"
 const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+>(({ className: any, ...props }: any, ref: any) => {
   const deviceInfo = useDeviceDetection();
 
   return (
@@ -90,7 +90,7 @@ CardContent.displayName = "CardContent"
 const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+>(({ className: any, ...props }: any, ref: any) => {
   const deviceInfo = useDeviceDetection();
 
   return (

@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { Menu, X } from "lucide-react";
-import { cn } from "@/lib/utils";
-import ThemeToggle from "@/components/ThemeToggle";
-import LanguageSelector from "@/components/LanguageSelector";
-import SafeImage from "@/components/SafeImage";
-import SkipLink from "@/components/SkipLink";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
+import React, {  useState, useEffect , useCallback } from 'react';
+import { Link } from 'react-router-dom';
+import { Menu, X } from 'lucide-react';
 
-export default function Navbar() {
+import LanguageSelector from '@/components/LanguageSelector';
+import SafeImage from '@/components/SafeImage';
+import SkipLink from '@/components/SkipLink';
+import ThemeToggle from '@/components/ThemeToggle';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const Navbar: React.FC = () => {
   const { t } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
@@ -152,7 +153,7 @@ export default function Navbar() {
 
         {/* Desktop Navigation */}
         <ul className="hidden lg:flex items-center space-x-6" role="menubar">
-          {navLinks.map(link => (
+          {navLinks?.map(link => (
             <li key={link.name} className={`relative nav-item-with-submenu ${activeSubmenu === link.name ? 'active' : ''}`} role="none">
               {link.submenu ? (
                 <>
@@ -161,7 +162,7 @@ export default function Navbar() {
                     className="font-medium transition-colors hover:text-primary flex items-center text-base whitespace-nowrap"
                     onMouseEnter={() => handleSubmenuEnter(link.name)}
                     onMouseLeave={handleSubmenuLeave}
-                    onKeyDown={(e) => handleKeyDown(e, link.name, true)}
+                    onKeyDown={useCallback((e: any) => handleKeyDown(e, link.name, true), [])}
                     aria-expanded={activeSubmenu === link.name}
                     aria-haspopup="true"
                     role="menuitem"
@@ -183,9 +184,9 @@ export default function Navbar() {
                     onMouseLeave={handleSubmenuLeave}
                   >
                     <div className="py-1">
-                      {link.submenu.map((subItem) => (
+                      {link.submenu?.map((subItem: any) => (
                         <Link
-                          key={subItem.name}
+                            key={subItem.name}
                           to={subItem.path}
                           className="block px-4 py-2 text-sm text-foreground hover:bg-muted hover:text-primary"
                           role="menuitem"
@@ -274,12 +275,12 @@ export default function Navbar() {
               </div>
               <nav aria-label="Mobile navigation">
                 <ul className="space-y-6" role="menu">
-                  {navLinks.map(link => (
+                  {navLinks?.map(link => (
                     <li key={link.name} role="none">
                       <Link
                         to={link.path}
                         className="text-lg font-medium transition-colors hover:text-primary block"
-                        onClick={(e) => {
+                        onClick={useCallback((e) => {
                           // Check if the click was on the dropdown arrow
                           const target = e.currentTarget as HTMLElement;
                           const rect = target.getBoundingClientRect();
@@ -293,7 +294,7 @@ export default function Navbar() {
                             // Otherwise navigate to the page
                             setMobileMenuOpen(false);
                           }
-                        }}
+                        }, [])}
                         aria-expanded={link.submenu ? activeSubmenu === link.name : undefined}
                         aria-haspopup={link.submenu ? 'true' : undefined}
                         role="menuitem"
@@ -309,7 +310,7 @@ export default function Navbar() {
                           role="menu"
                           aria-label={`${link.name} submenu`}
                         >
-                          {link.submenu.map((subItem) => (
+                          {link.submenu?.map((subItem) => (
                             <Link
                               key={subItem.name}
                               to={subItem.path}
@@ -338,4 +339,8 @@ export default function Navbar() {
       </div>
     </header>
   );
-}
+};
+
+Navbar.displayName = 'Navbar';
+
+export default Navbar;

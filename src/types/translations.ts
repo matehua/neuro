@@ -16,7 +16,6 @@ export interface NavigationTranslations {
   menu: string;
   close: string;
   skipToContent: string;
-}
 
 // Hero section translations
 export interface HeroTranslations {
@@ -25,7 +24,6 @@ export interface HeroTranslations {
   primaryCTA: string;
   secondaryCTA: string;
   scrollDown: string;
-}
 
 // About section translations
 export interface AboutTranslations {
@@ -37,7 +35,6 @@ export interface AboutTranslations {
   procedures: string;
   awards: string;
   learnMore: string;
-}
 
 // Expertise translations
 export interface ExpertiseTranslations {
@@ -57,7 +54,6 @@ export interface ExpertiseTranslations {
   };
   viewAll: string;
   learnMore: string;
-}
 
 // Testimonials translations
 export interface TestimonialsTranslations {
@@ -66,7 +62,6 @@ export interface TestimonialsTranslations {
   readMore: string;
   previous: string;
   next: string;
-}
 
 // CTA section translations
 export interface CTATranslations {
@@ -76,7 +71,6 @@ export interface CTATranslations {
   secondaryButton: string;
   phone: string;
   email: string;
-}
 
 // Footer translations
 export interface FooterTranslations {
@@ -88,7 +82,6 @@ export interface FooterTranslations {
   termsOfService: string;
   accessibility: string;
   sitemap: string;
-}
 
 // Specialties page translations
 export interface SpecialtiesTranslations {
@@ -112,9 +105,7 @@ export interface SpecialtiesTranslations {
     noMatch: string;
     adjustFilters: string;
   };
-}
-
-// Patient resources translations
+  // Patient resources translations
 export interface PatientResourcesTranslations {
   title: string;
   description: string;
@@ -143,9 +134,7 @@ export interface PatientResourcesTranslations {
     education: string;
     lifestyle: string;
   };
-}
-
-// Contact page translations
+  // Contact page translations
 export interface ContactTranslations {
   title: string;
   subtitle: string;
@@ -175,9 +164,7 @@ export interface ContactTranslations {
     directions: string;
     parking: string;
   };
-}
-
-// Location page translations
+  // Location page translations
 export interface LocationTranslations {
   title: string;
   description: string;
@@ -191,7 +178,6 @@ export interface LocationTranslations {
   hours: string;
   bookAppointment: string;
   virtualTour: string;
-}
 
 // Appointment booking translations
 export interface AppointmentTranslations {
@@ -240,9 +226,7 @@ export interface AppointmentTranslations {
     weekendNotAvailable: string;
     timeSlotUnavailable: string;
   };
-}
-
-// Common UI translations
+  // Common UI translations
 export interface CommonTranslations {
   loading: string;
   error: string;
@@ -286,7 +270,6 @@ export interface CommonTranslations {
   address: string;
   website: string;
   socialMedia: string;
-}
 
 // Main translation interface
 export interface Translations {
@@ -303,7 +286,6 @@ export interface Translations {
   location: LocationTranslations;
   appointment: AppointmentTranslations;
   common: CommonTranslations;
-}
 
 // Language codes
 export type LanguageCode = 'en' | 'zh';
@@ -315,12 +297,10 @@ export interface LanguageInfo {
   nativeName: string;
   direction: 'ltr' | 'rtl';
   flag: string;
-}
 
 // Translation validation utilities
 export function isValidLanguageCode(code: string): code is LanguageCode {
   return ['en', 'zh'].includes(code);
-}
 
 // Type guard for translation object validation
 export function isValidTranslations(obj: unknown): obj is Translations {
@@ -348,7 +328,6 @@ export function isValidTranslations(obj: unknown): obj is Translations {
   return requiredSections.every(section => 
     typeof translations[section] === 'object' && translations[section] !== null
   );
-}
 
 // Utility function to get nested translation value safely
 export function getTranslation(
@@ -360,15 +339,28 @@ export function getTranslation(
   let current: unknown = translations;
   
   for (const key of keys) {
-    if (current && typeof current === 'object' && key in current) {
-      current = current[key];
-    } else {
-      return fallback || path;
+    if ( ) {
+ 
     }
-  }
-  
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3} else {
+      return fallback || path;
+
+
   return typeof current === 'string' ? current : fallback || path;
-}
 
 // Utility function to validate translation completeness
 export function validateTranslationCompleteness(
@@ -389,26 +381,25 @@ export function validateTranslationCompleteness(
       
       if (!(key in obj)) {
         missing.push(currentPath);
-      } else if (typeof ref[key] === 'object' && ref[key] !== null) {
-        if (typeof obj[key] === 'object' && obj[key] !== null) {
-          checkObject(obj[key], ref[key], currentPath);
-        } else {
-          missing.push(currentPath);
-        }
-      }
+      } else if (          checkObject(obj[key], ref[key], currentPath);) {
+ ) {
+ 
     }
-    
+    $3}
+    $3} else {
+          missing.push(currentPath);
+
+
+
     // Check for extra keys
     for (const key in obj) {
       const currentPath = path ? `${path}.${key}` : key;
       
       if (!(key in ref)) {
         extra.push(currentPath);
-      }
-    }
-  }
-  
+
+
+
   checkObject(translations, referenceTranslations);
   
   return { missing, extra };
-}

@@ -1,16 +1,17 @@
-import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import { ChevronDown } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
+import { ChevronDown } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 /**
  * HeroSection component for the homepage with parallax scrolling effect
  * Features a full-width background image with overlay and call-to-action buttons
  */
-export default function HeroSection() {
+const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   const [scrollY, setScrollY] = useState(0);
   const deviceInfo = useDeviceDetection();
@@ -191,4 +192,8 @@ export default function HeroSection() {
       </div>
     </section>
   );
-}
+};
+
+HeroSection.displayName = 'HeroSection';
+
+export default HeroSection;

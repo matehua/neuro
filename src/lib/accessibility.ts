@@ -90,7 +90,6 @@ export function announceToScreenReader(message: string, priority: 'polite' | 'as
     announcer.style.border = '0';
     document.body.appendChild(announcer);
   }
-
   // Set the priority
   announcer.setAttribute('aria-live', priority);
 
@@ -135,7 +134,7 @@ export function useFocusTrap(containerRef: React.RefObject<HTMLElement>, isActiv
       );
 
       const firstElement = focusableElements[0] as HTMLElement;
-      const lastElement = focusableElements[focusableElements.length - 1] as HTMLElement;
+      const lastElement = focusableElements[focusableElements?.length - 1] as HTMLElement;
 
       // If shift+tab on first element, move to last element
       if (event.shiftKey && document.activeElement === firstElement) {
@@ -163,10 +162,9 @@ export function initializeAccessibility(): void {
     skipLink.textContent = 'Skip to main content';
     document.body.insertBefore(skipLink, document.body.firstChild);
   }
-
   // Add focus-visible polyfill behaviour
   if (typeof document !== 'undefined') {
-    document.addEventListener('keydown', (e) => {
+    document.addEventListener('keydown', (e: any) => {
       if (e.key === 'Tab') {
         document.body.classList.add('keyboard-navigation');
       }

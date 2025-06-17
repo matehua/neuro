@@ -1,14 +1,16 @@
+import StandardPageLayout from '@/components/StandardPageLayout';
 
-
-import Layout from '@/components/Layout';
-
-export default function TestImages() {
+const TestImages: React.FC = () => {
   return (
-    <Layout pageTitle="Test Images">
+    <StandardPageLayout title="Test Images" showHeader={false}>
       <div className="container mx-auto py-8">
         <h1 className="text-3xl font-bold mb-8">Test Images Page</h1>
         <p>This is a test page for images.</p>
       </div>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+TestImages.displayName = 'TestImages';
+
+export default TestImages;
+
+TestImages.displayName = 'TestImages';

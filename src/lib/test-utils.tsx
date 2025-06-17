@@ -1,16 +1,18 @@
+import React, { ReactElement, ReactNode } from 'react';
+import { BrowserRouter } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { render, RenderOptions, RenderResult } from '@testing-library/react';
+
+import ErrorBoundary from '@/components/ErrorBoundary';
+import { DeviceProvider } from '@/contexts/DeviceContext';
+import { LanguageProvider } from '@/contexts/LanguageContext';
+import { TooltipProvider } from '@/components/ui/tooltip';
+
 /**
  * Comprehensive testing utilities
  * Provides consistent testing setup and utilities for components, hooks, and integration tests
  */
 
-import React, { ReactElement, ReactNode } from 'react';
-import { render, RenderOptions, RenderResult } from '@testing-library/react';
-import { BrowserRouter } from 'react-router-dom';
-import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { LanguageProvider } from '@/contexts/LanguageContext';
-import { DeviceProvider } from '@/contexts/DeviceContext';
-import { TooltipProvider } from '@/components/ui/tooltip';
-import ErrorBoundary from '@/components/ErrorBoundary';
 
 // Mock implementations for testing
 export const mockDeviceInfo = {
@@ -23,9 +25,8 @@ export const mockDeviceInfo = {
   screenSize: 'lg' as const,
   width: 1024,
   height: 768,
-};
-
-export const mockLanguageContext = {
+  };
+  export const mockLanguageContext = {
   language: 'en' as const,
   setLanguage: jest.fn(),
   t: {
@@ -61,8 +62,6 @@ interface CustomRenderOptions extends Omit<RenderOptions, 'wrapper'> {
   deviceInfo?: typeof mockDeviceInfo;
   languageContext?: typeof mockLanguageContext;
   withErrorBoundary?: boolean;
-}
-
 export function renderWithProviders(
   ui: ReactElement,
   options: CustomRenderOptions = {}
@@ -116,12 +115,12 @@ export function renderWithProviders(
     return withErrorBoundary ? (
       <ErrorBoundary>{content}</ErrorBoundary>
     ) : content;
-  }
 
   return render(ui, { wrapper: Wrapper, ...renderOptions });
-}
 
 // Utility functions for common testing scenarios
+
+}
 
 /**
  * Create a mock intersection observer for testing lazy loading
@@ -135,9 +134,9 @@ export function createMockIntersectionObserver() {
   });
   window.IntersectionObserver = mockIntersectionObserver;
   return mockIntersectionObserver;
-}
+  }
 
-/**
+  /**
  * Create a mock resize observer for testing responsive components
  */
 export function createMockResizeObserver() {
@@ -149,9 +148,9 @@ export function createMockResizeObserver() {
   });
   window.ResizeObserver = mockResizeObserver;
   return mockResizeObserver;
-}
+  }
 
-/**
+  /**
  * Mock window.matchMedia for testing responsive behavior
  */
 export function mockMatchMedia(matches: boolean = false) {
@@ -168,6 +167,7 @@ export function mockMatchMedia(matches: boolean = false) {
       dispatchEvent: jest.fn(),
     })),
   });
+
 }
 
 /**
@@ -183,16 +183,15 @@ export function mockPerformanceAPI() {
     clearMarks: jest.fn(),
     clearMeasures: jest.fn(),
   };
-
   Object.defineProperty(window, 'performance', {
     writable: true,
     value: mockPerformance,
   });
 
   return mockPerformance;
-}
+  }
 
-/**
+  /**
  * Mock fetch API for testing network requests
  */
 export function mockFetch(response: Record<string, unknown> = {}, ok: boolean = true) {
@@ -207,9 +206,9 @@ export function mockFetch(response: Record<string, unknown> = {}, ok: boolean = 
 
   global.fetch = mockFetch;
   return mockFetch;
-}
+  }
 
-/**
+  /**
  * Mock localStorage for testing storage functionality
  */
 export function mockLocalStorage() {
@@ -219,15 +218,14 @@ export function mockLocalStorage() {
     removeItem: jest.fn(),
     clear: jest.fn(),
   };
-
   Object.defineProperty(window, 'localStorage', {
     value: localStorageMock,
   });
 
   return localStorageMock;
-}
+  }
 
-/**
+  /**
  * Mock sessionStorage for testing session functionality
  */
 export function mockSessionStorage() {
@@ -237,19 +235,19 @@ export function mockSessionStorage() {
     removeItem: jest.fn(),
     clear: jest.fn(),
   };
-
   Object.defineProperty(window, 'sessionStorage', {
     value: sessionStorageMock,
   });
 
   return sessionStorageMock;
-}
+  }
 
-/**
+  /**
  * Wait for async operations to complete
  */
-export function waitForAsync(ms: number = 0): Promise<void> {
-  return new Promise(resolve => setTimeout(resolve, ms));
+export function waitForAsync(  return new Promise(resolve => setTimeout(resolve, ms));
+): $3 {
+$4
 }
 
 /**
@@ -269,9 +267,9 @@ export function createMockProcedure(overrides: Record<string, unknown> = {}) {
     complexity: 7,
     ...overrides,
   };
-}
+   }
 
-/**
+  /**
  * Create mock translation data
  */
 export function createMockTranslations(overrides: Record<string, unknown> = {}) {
@@ -280,19 +278,18 @@ export function createMockTranslations(overrides: Record<string, unknown> = {}) 
     hero: mockLanguageContext.t.hero,
     ...overrides,
   };
-}
+   }
 
-/**
+  /**
  * Test helper for error boundary testing
  */
 export function ThrowError({ shouldThrow }: { shouldThrow: boolean }) {
-  if (shouldThrow) {
-    throw new Error('Test error');
-  }
-  return <div>No error</div>;
-}
+  if (    throw new Error('Test error');
 
-/**
+  return <div>No error</div>;
+  }
+
+  /**
  * Custom matchers for testing
  */
 export const customMatchers = {
@@ -309,8 +306,10 @@ export const customMatchers = {
         pass
           ? `Expected element not to be accessible`
           : `Expected element to be accessible (have aria-label, role, or tabindex)`,
-      pass,
-    };
+      pass,) {
+ 
+    }
+    $3};
   },
   
   toHaveValidSEO: (received: Document) => {
@@ -326,8 +325,8 @@ export const customMatchers = {
           ? `Expected document not to have valid SEO`
           : `Expected document to have title, description, and canonical link`,
       pass,
-    };
-  },
+  };
+   },
 };
 
 // Setup function to be called in test setup files
@@ -352,7 +351,6 @@ export function setupTestEnvironment() {
   afterEach(() => {
     console.error = originalError;
   });
-}
 
 // Export everything for easy importing
 export * from '@testing-library/react';

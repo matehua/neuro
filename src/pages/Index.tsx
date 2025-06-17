@@ -1,19 +1,20 @@
-import { useEffect } from "react";
-import Layout from "@/components/Layout";
-import HeroSection from "@/components/HeroSection";
-import IndependentReviewsSection from "@/components/IndependentReviewsSection";
-import SafeImage from "@/components/SafeImage";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { ArrowRight } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
-import CTASection from "@/components/CTASection";
-import { generatePageSEO, generateMedicalPracticeStructuredData, PRACTICE_INFO } from "@/lib/seo";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
+import { ArrowRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function Index() {
-  const { t } = useLanguage();
+import CTASection from '@/components/CTASection';
+import HeroSection from '@/components/HeroSection';
+import IndependentReviewsSection from '@/components/IndependentReviewsSection';
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { generatePageSEO, generateMedicalPracticeStructuredData, PRACTICE_INFO } from '@/lib/seo';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const Index: React.FC = () => {
+  const { t, isLanguageLoaded } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
@@ -21,13 +22,25 @@ export default function Index() {
     window.scrollTo(0, 0);
   }, []);
 
+  // Show loading state while translations are loading
+  if (!isLanguageLoaded || !t) {
+    return (
+      <div className="flex items-center justify-center min-h-screen">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
+          <p className="text-muted-foreground">Loading...</p>
+        </div>
+      </div>
+    );
+  }
+
   // Generate comprehensive SEO data for homepage
   const homeSeoData = generatePageSEO('home', {
     structuredData: generateMedicalPracticeStructuredData(PRACTICE_INFO)
   });
 
   return (
-    <Layout pageType="home" seoData={homeSeoData}>
+    <StandardPageLayout pageType="home" seoData={homeSeoData} showHeader={false}>
       <main className="flex-1">
         {/* Hero Section */}
         <HeroSection />
@@ -67,7 +80,7 @@ export default function Index() {
                   deviceInfo.isMobile ? "mobile-text" : "mb-8"
                 )}>
                   <a
-                    href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
+                    href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/"
                     className={cn(
                       "text-primary touch-feedback",
                       deviceInfo.isMobile ? "" : "hover:underline"
@@ -612,7 +625,7 @@ export default function Index() {
                   {t.minimallyInvasive.description2}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.minimallyInvasive.description3} <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a>
+                  {t.minimallyInvasive.description3} <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a>
                 </p>
                 <ul className="text-muted-foreground mb-6 list-none space-y-1">
                   <li>– {t.minimallyInvasive.principle1}</li>
@@ -681,6 +694,10 @@ export default function Index() {
         {/* CTA Section */}
         <CTASection className="py-24" />
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+Index.displayName = 'Index';
+
+export default Index;

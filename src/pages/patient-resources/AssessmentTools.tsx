@@ -1,14 +1,15 @@
-import { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { FileUp, ClipboardCheck, History, Share2 } from "lucide-react";
+import { FileUp, ClipboardCheck, History, Share2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function AssessmentTools() {
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const AssessmentTools: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -17,7 +18,7 @@ export default function AssessmentTools() {
   }, []);
 
   return (
-    <Layout pageTitle="Assessment Tools">
+    <StandardPageLayout title="Assessment Tools" showHeader={false}>
       <PageHeader
         title="Assessment Tools"
         subtitle="Comprehensive spine assessment tools to help identify your condition and create personalized treatment plans."
@@ -365,6 +366,10 @@ export default function AssessmentTools() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+AssessmentTools.displayName = 'AssessmentTools';
+
+export default AssessmentTools;
+
+AssessmentTools.displayName = 'AssessmentTools';

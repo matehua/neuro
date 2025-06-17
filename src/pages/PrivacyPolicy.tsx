@@ -1,7 +1,8 @@
-import { useEffect } from "react";
-import Layout from "@/components/Layout";
+import { useEffect } from 'react';
 
-export default function PrivacyPolicy() {
+import StandardPageLayout from '@/components/StandardPageLayout';
+
+const PrivacyPolicy: React.FC = () => {
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -9,7 +10,7 @@ export default function PrivacyPolicy() {
   }, []);
 
   return (
-    <Layout pageTitle="Privacy Policy">
+    <StandardPageLayout title="Privacy Policy" showHeader={false}>
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-12 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
@@ -252,6 +253,10 @@ export default function PrivacyPolicy() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+PrivacyPolicy.displayName = 'PrivacyPolicy';
+
+export default PrivacyPolicy;

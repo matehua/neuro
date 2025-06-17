@@ -1,3 +1,5 @@
+import ErrorBoundary from '@/components/ErrorBoundary';
+
 /**
  * Comprehensive error handling system
  * Provides consistent error handling, logging, and recovery mechanisms
@@ -13,7 +15,6 @@ export enum ErrorType {
   SERVER = 'SERVER',
   CLIENT = 'CLIENT',
   UNKNOWN = 'UNKNOWN'
-}
 
 // Error severity levels
 export enum ErrorSeverity {
@@ -21,7 +22,6 @@ export enum ErrorSeverity {
   MEDIUM = 'MEDIUM',
   HIGH = 'HIGH',
   CRITICAL = 'CRITICAL'
-}
 
 // Base error interface
 export interface AppError {
@@ -40,7 +40,6 @@ export interface AppError {
   context?: Record<string, unknown>;
   recoverable?: boolean;
   retryable?: boolean;
-}
 
 // Error handler configuration
 interface ErrorHandlerConfig {
@@ -51,7 +50,6 @@ interface ErrorHandlerConfig {
   reportingEndpoint?: string;
   maxRetries: number;
   retryDelay: number;
-}
 
 // Default configuration
 const DEFAULT_CONFIG: ErrorHandlerConfig = {
@@ -61,9 +59,8 @@ const DEFAULT_CONFIG: ErrorHandlerConfig = {
   logLevel: ErrorSeverity.MEDIUM,
   maxRetries: 3,
   retryDelay: 1000
-};
-
-/**
+  };
+  /**
  * Enhanced Error Handler Class
  */
 export class ErrorHandler {
@@ -75,13 +72,16 @@ export class ErrorHandler {
   private constructor(config: Partial<ErrorHandlerConfig> = {}) {
     this.config = { ...DEFAULT_CONFIG, ...config };
     this.setupGlobalErrorHandlers();
-  }
 
-  static getInstance(config?: Partial<ErrorHandlerConfig>): ErrorHandler {
-    if (!ErrorHandler.instance) {
-      ErrorHandler.instance = new ErrorHandler(config);
-    }
+  static getInstance(    if (      ErrorHandler.instance = new ErrorHandler(config);
+
     return ErrorHandler.instance;
+): $4 {
+$5) {
+ 
+    }
+    $3}
+
   }
 
   /**
@@ -89,7 +89,7 @@ export class ErrorHandler {
    */
   private setupGlobalErrorHandlers(): void {
     // Handle unhandled promise rejections
-    window.addEventListener('unhandledrejection', (event) => {
+    window.addEventListener('unhandledrejection', (event: any) => {
       this.handleError(this.createError({
         type: ErrorType.UNKNOWN,
         severity: ErrorSeverity.HIGH,
@@ -100,7 +100,7 @@ export class ErrorHandler {
     });
 
     // Handle global JavaScript errors
-    window.addEventListener('error', (event) => {
+    window.addEventListener('error', (event: any) => {
       this.handleError(this.createError({
         type: ErrorType.CLIENT,
         severity: ErrorSeverity.HIGH,
@@ -111,19 +111,30 @@ export class ErrorHandler {
     });
 
     // Handle resource loading errors
-    window.addEventListener('error', (event) => {
-      if (event.target !== window) {
-        this.handleError(this.createError({
-          type: ErrorType.NETWORK,
-          severity: ErrorSeverity.MEDIUM,
-          message: 'Resource loading failed',
-          details: (event.target as HTMLElement & { src?: string; href?: string })?.src || (event.target as HTMLElement & { src?: string; href?: string })?.href,
+    window.addEventListener('error', (event: any) => {
+      if ( ) {
+ 
+    }
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3}
+    $3etails: (event.target as HTMLElement & { src?: string; href?: string })?.src || (event.target as HTMLElement & { src?: string; href?: string })?.href,
           recoverable: true,
           retryable: true
         }));
-      }
+
     }, true);
-  }
 
   /**
    * Create a standardized error object
@@ -146,8 +157,8 @@ export class ErrorHandler {
       recoverable: params.recoverable ?? false,
       retryable: params.retryable ?? false,
       ...params
-    };
-  }
+  };
+   }
 
   /**
    * Handle an error with full processing pipeline
@@ -160,35 +171,38 @@ export class ErrorHandler {
       // Log the error
       if (this.config.enableLogging && this.shouldLog(error)) {
         this.logError(error);
-      }
 
       // Report the error
       if (this.config.enableReporting && this.shouldReport(error)) {
         await this.reportError(error);
-      }
 
       // Notify the user if appropriate
       if (this.config.enableUserNotification && this.shouldNotifyUser(error)) {
         this.notifyUser(error);
-      }
 
       // Attempt recovery if possible
-      if (error.recoverable) {
-        await this.attemptRecovery(error);
-      }
-
-    } catch (handlingError) {
-      if (import.meta.env.DEV) {
-        console.error('Error in error handler:', handlingError);
-      }
+      if (        await this.attemptRecovery(error);
+) {
+ 
     }
+    $3} catch (      if (    console.error('Error in error handler:', handlingError);
+
+
+
+) {
+$2) {
+ 
+    }
+    $3}
   }
 
   /**
    * Log error to console with appropriate level
    */
-  private logError(error: AppError): void {
-    const logMessage = `[${error.severity}] ${error.type}: ${error.message}`;
+  private logError(error: AppError): void {) {
+c
+    }
+    $3onst logMessage = `[${error.severity}] ${error.type}: ${error.message}`;
     const logData = {
       id: error.id,
       details: error.details,
@@ -197,23 +211,20 @@ export class ErrorHandler {
       url: error.url,
       context: error.context,
       stack: error.stack
-    };
+  };
+  if (    console.error(logMessage, logData);
 
-    if (import.meta.env.DEV) {
-      switch (error.severity) {
-        case ErrorSeverity.CRITICAL:
-        case ErrorSeverity.HIGH:
-          console.error(logMessage, logData);
           break;
         case ErrorSeverity.MEDIUM:
-          console.warn(logMessage, logData);
+          if (    console.warn(logMessage, logData);
+
           break;
         case ErrorSeverity.LOW:
-          console.info(logMessage, logData);
+          if (    console.info(logMessage, logData);
+
           break;
-      }
-    }
-  }
+
+
 
   /**
    * Report error to external service
@@ -225,32 +236,48 @@ export class ErrorHandler {
       await fetch(this.config.reportingEndpoint, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-        },
+          'Content-Type': 'application/json',) {
+ ) {
+ ) {
+ ) {
+ ) {
+ 
+    }
+    $3}
+    $3}
+    $3}
+    $3}
+    $3},
         body: JSON.stringify(error)
       });
-    } catch (reportingError) {
-      if (import.meta.env.DEV) {
-        console.error('Failed to report error:', reportingError);
-      }
-    }
-  }
+    } catch (      if (    console.error('Failed to report error:', reportingError);
+
+
+
 
   /**
    * Notify user about the error
    */
-  private notifyUser(error: AppError): void {
-    // This would integrate with your notification system
+  private notifyUser(    // This would integrate with your notification system
     // For now, we'll use a simple approach
     const userMessage = this.getUserFriendlyMessage(error);
     
     // You could integrate with toast notifications, modal dialogs, etc.
-    if (error.severity === ErrorSeverity.CRITICAL || error.severity === ErrorSeverity.HIGH) {
-      // Show prominent notification
-      if (import.meta.env.DEV) {
-        console.warn('User notification:', userMessage);
-      }
+    if (    console.warn('User notification:', userMessage);
+
+
+
+) {
+$2) {
+ ) {
+ ) {
+ ) {
+ 
     }
+    $3}
+    $3}
+    $3}
+    $3}
   }
 
   /**
@@ -260,10 +287,8 @@ export class ErrorHandler {
     if (!error.retryable) return;
 
     const retryCount = this.retryQueue.get(error.id) || 0;
-    if (retryCount >= this.config.maxRetries) {
-      this.retryQueue.delete(error.id);
+    if (      this.retryQueue.delete(error.id);
       return;
-    }
 
     this.retryQueue.set(error.id, retryCount + 1);
 
@@ -281,7 +306,15 @@ export class ErrorHandler {
       default:
         // Generic recovery
         break;
+
+): $4 {
+$5) {
+ ) {
+ 
     }
+    $3}
+    $3}
+
   }
 
   /**
@@ -289,32 +322,25 @@ export class ErrorHandler {
    */
   private generateErrorId(): string {
     return `err_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-  }
 
-  private getCurrentUserId(): string | undefined {
-    // Implement based on your auth system
+  private getCurrentUserId(    // Implement based on your auth system
     return undefined;
-  }
 
   private getSessionId(): string | undefined {
     // Implement based on your session management
     return sessionStorage.getItem('sessionId') || undefined;
-  }
 
   private shouldLog(error: AppError): boolean {
     const severityLevels = [ErrorSeverity.LOW, ErrorSeverity.MEDIUM, ErrorSeverity.HIGH, ErrorSeverity.CRITICAL];
     const configLevel = severityLevels.indexOf(this.config.logLevel);
     const errorLevel = severityLevels.indexOf(error.severity);
     return errorLevel >= configLevel;
-  }
 
   private shouldReport(error: AppError): boolean {
     return error.severity === ErrorSeverity.HIGH || error.severity === ErrorSeverity.CRITICAL;
-  }
 
   private shouldNotifyUser(error: AppError): boolean {
     return error.severity === ErrorSeverity.MEDIUM || error.severity === ErrorSeverity.HIGH || error.severity === ErrorSeverity.CRITICAL;
-  }
 
   private getUserFriendlyMessage(error: AppError): string {
     switch (error.type) {
@@ -332,7 +358,10 @@ export class ErrorHandler {
         return 'Server error. Please try again later.';
       default:
         return 'An unexpected error occurred. Please try again.';
-    }
+
+): $4 {
+$5
+  }
   }
 
   /**
@@ -353,12 +382,12 @@ export class ErrorHandler {
     });
 
     return {
-      total: this.errorQueue.length,
+      total: this.errorQueue?.length,
       byType,
       bySeverity,
       recent: this.errorQueue.slice(-10)
-    };
-  }
+  };
+   }
 
   /**
    * Clear error queue
@@ -366,12 +395,10 @@ export class ErrorHandler {
   clearErrors(): void {
     this.errorQueue = [];
     this.retryQueue.clear();
-  }
-}
+
 
 // Convenience functions for common error scenarios
 export const errorHandler = ErrorHandler.getInstance();
-
 export function handleNetworkError(message: string, details?: string): void {
   errorHandler.handleError(errorHandler.createError({
     type: ErrorType.NETWORK,
@@ -381,8 +408,6 @@ export function handleNetworkError(message: string, details?: string): void {
     recoverable: true,
     retryable: true
   }));
-}
-
 export function handleValidationError(message: string, context?: Record<string, unknown>): void {
   errorHandler.handleError(errorHandler.createError({
     type: ErrorType.VALIDATION,
@@ -391,8 +416,6 @@ export function handleValidationError(message: string, context?: Record<string, 
     context,
     recoverable: true
   }));
-}
-
 export function handleCriticalError(message: string, details?: string, stack?: string): void {
   errorHandler.handleError(errorHandler.createError({
     type: ErrorType.UNKNOWN,
@@ -401,6 +424,7 @@ export function handleCriticalError(message: string, details?: string, stack?: s
     details,
     stack
   }));
-}
 
 export default ErrorHandler;
+
+}

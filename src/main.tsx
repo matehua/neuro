@@ -1,12 +1,13 @@
-import { createRoot } from 'react-dom/client';
 import { StrictMode } from 'react';
-import App from './App.tsx';
+import { createRoot } from 'react-dom/client';
+
 import './index.css';
-import { initializePerformanceMonitoring } from './lib/performance';
-import { initializeAccessibility } from './lib/accessibility';
+import App from './App.tsx';
 import { initialiseMobileOptimisations } from './lib/mobile-optimization';
-import { initializeSecurity } from './lib/security';
+import { initializeAccessibility } from './lib/accessibility';
 import { initializeEnvironment } from './lib/env-validation';
+import { initializePerformanceMonitoring } from './lib/performance';
+import { initializeSecurity } from './lib/security';
 
 // Initialize all app features for production readiness
 function initializeApp() {

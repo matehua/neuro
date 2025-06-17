@@ -1,18 +1,18 @@
+import React, {  useState, useEffect , useCallback } from 'react';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, Send, Check, FileText, CreditCard, Building, Users } from 'lucide-react';
 
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import SafeImage from "@/components/SafeImage";
-import { MapPin, Phone, Mail, Clock, Send, Check, FileText, CreditCard, Building, Users } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
+import PageHeader from '@/components/PageHeader';
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
-export default function Contact() {
+const Contact: React.FC = () => {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
   const [formData, setFormData] = useState({
@@ -56,7 +56,7 @@ export default function Contact() {
   };
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <PageHeader
         title={t.contact.title}
         subtitle={`${t.contact.subtitle} Our staff will assist to coordinate an appointment at the location most convenient and accessible for you. Urgent appointments are available on request.`}
@@ -462,7 +462,7 @@ export default function Contact() {
                           name="message"
                           value={formData.message}
                           onChange={handleInputChange}
-                          placeholder={t.contact.howCanWeHelp}
+                            placeholder={t.contact.howCanWeHelp}
                           className={cn(
                             "w-full p-3 rounded-md border border-input bg-background touch-manipulation",
                             deviceInfo.isMobile
@@ -523,7 +523,7 @@ export default function Contact() {
                 : "mb-8"
             )}>
               <a
-                href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
+                href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/"
                 className={cn(
                   "text-primary transition-colors touch-feedback",
                   deviceInfo.isMobile ? "" : "hover:underline"
@@ -681,6 +681,10 @@ export default function Contact() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+Contact.displayName = 'Contact';
+
+export default Contact;

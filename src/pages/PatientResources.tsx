@@ -1,12 +1,13 @@
-import { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { FileText, Calendar, Info, HelpCircle, FileDown, Clock } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { FileText, Calendar, Info, HelpCircle, FileDown, Clock } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function PatientResources() {
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const PatientResources: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -147,7 +148,7 @@ export default function PatientResources() {
   ];
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <PageHeader
         title={t.patientResources.title}
         subtitle={t.patientResources.subtitle}
@@ -161,14 +162,14 @@ export default function PatientResources() {
         <section className="py-16">
           <div className="container">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {resourceCategories.map((category, index) => (
+              {resourceCategories?.map((category, index) => (
                 <div key={index} className="card p-6 rounded-lg shadow-md bg-card animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                   <div className="flex items-center mb-4">
                     {category.icon}
                     <h2 className="text-2xl font-bold ml-3">{category.title}</h2>
                   </div>
                   <div className="space-y-6">
-                    {category.resources.map((resource, resourceIndex) => (
+                    {category.resources?.map((resource, resourceIndex) => (
                       <div key={resourceIndex} className="border-t pt-4">
                         <h3 className="text-lg font-semibold mb-2">{resource.title}</h3>
                         <p className="text-muted-foreground mb-3">{resource.description}</p>
@@ -189,7 +190,7 @@ export default function PatientResources() {
           <div className="container">
             <h2 className="text-3xl font-bold text-center mb-12">{t.patientResources.educationalMaterials}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {educationalMaterials.map((material, index) => (
+              {educationalMaterials?.map((material: any, index: any) => (
                 <div key={index} className="card p-6 rounded-lg shadow-md bg-card hover:shadow-lg transition-shadow animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-lg font-semibold">{material.title}</h3>
@@ -444,6 +445,10 @@ export default function PatientResources() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+PatientResources.displayName = 'PatientResources';
+
+export default PatientResources;

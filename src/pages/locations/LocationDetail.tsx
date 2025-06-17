@@ -1,13 +1,14 @@
-import React, { useEffect, useState } from "react";
-import { useParams, Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SafeImage from "@/components/SafeImage";
-import { Button } from "@/components/ui/button";
-import { MapPin, Phone, Clock, Calendar, Car, Train, Bus, Mail } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import React, { useEffect, useState } from 'react';
+import { MapPin, Phone, Clock, Calendar, Car, Train, Bus, Mail } from 'lucide-react';
+import { useParams, Link } from 'react-router-dom';
 
-export default function LocationDetail() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import SafeImage from '@/components/SafeImage';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const LocationDetail: React.FC = () => {
   const { t } = useLanguage();
   const { location } = useParams<{ location: string }>();
   interface LocationData {
@@ -296,11 +297,11 @@ export default function LocationDetail() {
                     </div>
                   </div>
 
-                  {locationData.nearbyFacilities && locationData.nearbyFacilities.length > 0 && (
+                  {locationData.nearbyFacilities && locationData.nearbyFacilities?.length > 0 && (
                     <div className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="font-semibold mb-2">Nearby Hospitals & Facilities</h3>
                       <ul className="list-disc list-inside text-muted-foreground">
-                        {locationData.nearbyFacilities.map((facility, index) => (
+                        {locationData.nearbyFacilities?.map((facility, index) => (
                           <li key={index}>{facility}</li>
                         ))}
                       </ul>
@@ -387,4 +388,8 @@ export default function LocationDetail() {
       <Footer />
     </div>
   );
-}
+};
+
+LocationDetail.displayName = 'LocationDetail';
+
+export default LocationDetail;

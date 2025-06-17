@@ -1,8 +1,10 @@
-import { useEffect, useState } from "react";
-import { Moon, Sun } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Moon, Sun } from 'lucide-react';
+import { useEffect, useState, useCallback } from 'react';
 
-export default function ThemeToggle() {
+import ErrorBoundary from '@/components/ErrorBoundary';
+import { Button } from '@/components/ui/button';
+
+const ThemeToggle: React.FC = () => {
   const [isDark, setIsDark] = useState(false);
 
   useEffect(() => {
@@ -31,22 +33,23 @@ export default function ThemeToggle() {
   };
 
   return (
-    <Button
-      variant="ghost"
-      size="icon"
-      onClick={toggleTheme}
-      className="rounded-full w-10 h-10 transition-all duration-300 hover:bg-muted"
-      aria-pressed={isDark}
-      aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      title={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      onKeyDown={(e) => {
-        // Ensure Space and Enter keys trigger the toggle
-        if (e.key === ' ' || e.key === 'Enter') {
-          e.preventDefault();
-          toggleTheme();
-        }
-      }}
-    >
+    <ErrorBoundary>
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={toggleTheme}
+        className="rounded-full w-10 h-10 transition-all duration-300 hover:bg-muted"
+        aria-pressed={isDark}
+        aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
+        title={isDark ? "Switch to light theme" : "Switch to dark theme"}
+        onKeyDown={useCallback((e) => {
+          // Ensure Space and Enter keys trigger the toggle
+          if (e.key === ' ' || e.key === 'Enter') {
+            e.preventDefault();
+            toggleTheme();
+          }
+        }, [isDark, toggleTheme])}
+      >
       {isDark ? (
         <Sun className="h-5 w-5 transition-transform duration-500 rotate-0" aria-hidden="true" />
       ) : (
@@ -54,5 +57,10 @@ export default function ThemeToggle() {
       )}
       <span className="sr-only">{isDark ? "Switch to light theme" : "Switch to dark theme"}</span>
     </Button>
+    </ErrorBoundary>
   );
-}
+};
+
+ThemeToggle.displayName = 'ThemeToggle';
+
+export default ThemeToggle;

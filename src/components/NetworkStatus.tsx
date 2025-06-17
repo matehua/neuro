@@ -1,15 +1,18 @@
-import React, { useState, useEffect } from 'react';
+import React, {  useState, useEffect , useCallback } from 'react';
 import { Wifi, WifiOff, RefreshCw, AlertTriangle } from 'lucide-react';
-import { Button } from '@/components/ui/button';
+
+import ErrorBoundary from '@/components/ErrorBoundary';
 import { Alert, AlertDescription } from '@/components/ui/alert';
+import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 
 interface NetworkStatusProps {
   onRetry?: () => void;
   className?: string;
+
 }
 
-/**
+  /**
  * Network Status Component with offline support and retry mechanisms
  */
 export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className }) => {
@@ -36,8 +39,6 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
     // Show offline message if already offline
     if (!navigator.onLine) {
       setShowOfflineMessage(true);
-    }
-
     return () => {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
@@ -62,21 +63,18 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
         onRetry?.();
       } else {
         throw new Error('Network test failed');
-      }
     } catch (error) {
       // Still offline or network issues
       setIsOnline(false);
     } finally {
       setIsRetrying(false);
-    }
   };
 
   if (!showOfflineMessage && isOnline) {
     return null;
-  }
-
   return (
-    <div className={cn('fixed top-4 left-4 right-4 z-50', className)}>
+    <ErrorBoundary>
+      <div className={cn('fixed top-4 left-4 right-4 z-50', className)}>
       <Alert className={cn(
         'border-2 shadow-lg',
         isOnline ? 'border-green-500 bg-green-50' : 'border-orange-500 bg-orange-50'
@@ -99,7 +97,7 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => setShowOfflineMessage(false)}
+                onClick={() => setShowOfflineMessage(false)
                 className="ml-4"
               >
                 Dismiss
@@ -115,8 +113,8 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
                 <Button
                   variant="outline"
                   size="sm"
-                  onClick={handleRetry}
-                  disabled={isRetrying}
+                            onClick={handleRetry
+                            disabled={isRetrying}
                   className="flex items-center gap-2"
                 >
                   <RefreshCw className={cn(
@@ -146,13 +144,13 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
         </AlertDescription>
       </Alert>
     </div>
+    </ErrorBoundary>
   );
 };
 
 /**
  * Hook for network status monitoring
  */
-export const useNetworkStatus = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [connectionType, setConnectionType] = useState<string>('unknown');
 
@@ -180,9 +178,6 @@ export const useNetworkStatus = () => {
           window.removeEventListener('offline', handleOffline);
           connection.removeEventListener('change', handleConnectionChange);
         };
-      }
-    }
-
     return () => {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
@@ -195,7 +190,6 @@ export const useNetworkStatus = () => {
 /**
  * Retry mechanism for failed requests
  */
-export const useRetryMechanism = (maxRetries = 3, baseDelay = 1000) => {
   const [retryCount, setRetryCount] = useState(0);
   const [isRetrying, setIsRetrying] = useState(false);
 
@@ -220,14 +214,9 @@ export const useRetryMechanism = (maxRetries = 3, baseDelay = 1000) => {
           setIsRetrying(false);
           onError?.(error as Error);
           throw error;
-        }
-        
         // Exponential backoff
         const delay = baseDelay * Math.pow(2, attempt);
         await new Promise(resolve => setTimeout(resolve, delay));
-      }
-    }
-    
     setIsRetrying(false);
     return null;
   };

@@ -1,16 +1,16 @@
-import * as React from "react"
-import { generateId } from "@/lib/accessibility"
-import { cn } from "@/lib/utils"
+import React from 'react';
+
+import { cn } from '@/lib/utils';
+import { generateId } from '@/lib/accessibility';
 
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   /** Error message to display and announce to screen readers */
   error?: string;
+
   /** Description for the input field */
   description?: string;
 }
-
-const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, error, description, id, ...props }, ref) => {
+const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type, error, description, id, ...props }, ref) => {
     // Generate unique IDs for accessibility
     const inputId = id || generateId('input');
     const errorId = error ? `${inputId}-error` : undefined;
@@ -58,9 +58,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(
           </div>
         )}
       </div>
-    )
+    );
   }
-)
+);
 Input.displayName = "Input"
 
 export { Input }

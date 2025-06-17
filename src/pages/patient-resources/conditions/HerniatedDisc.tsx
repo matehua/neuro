@@ -1,22 +1,23 @@
-import React, { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
-import SafeImage from "@/components/SafeImage";
-import { 
-  AlertTriangle, 
-  Activity, 
-  Brain, 
-  Heart, 
-  Shield, 
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import PageHeader from '@/components/PageHeader';
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  AlertTriangle,
+  Activity,
+  Brain,
+  Heart,
+  Shield,
   Target,
   Clock,
   CheckCircle,
@@ -26,7 +27,7 @@ import {
   Calendar
 } from "lucide-react";
 
-export default function HerniatedDisc() {
+const HerniatedDisc: React.FC = () => {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
@@ -36,7 +37,7 @@ export default function HerniatedDisc() {
   }, []);
 
   return (
-    <Layout pageTitle="Herniated Disc - Comprehensive Guide">
+    <StandardPageLayout title="Herniated Disc - Comprehensive Guide" showHeader={false}>
       <PageHeader
         title="Herniated Disc: Complete Guide"
         subtitle="Understanding herniated discs: causes, symptoms, diagnosis, and comprehensive treatment options from conservative care to advanced surgical interventions."
@@ -1583,6 +1584,10 @@ export default function HerniatedDisc() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+HerniatedDisc.displayName = 'HerniatedDisc';
+
+export default HerniatedDisc;

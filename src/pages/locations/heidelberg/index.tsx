@@ -1,12 +1,13 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from 'lucide-react';
+import { useEffect } from 'react';
 
-export default function HeidelbergLocation() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const HeidelbergLocation: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -176,7 +177,7 @@ export default function HeidelbergLocation() {
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.heidelbergLocation?.therapeuticInterventions?.description ? t.heidelbergLocation.therapeuticInterventions.description : <>Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> collaborates closely with other specialists in Heidelberg and Melbourne to develop a tailored therapeutic plan designed to address your specific needs.</>}
+                {t.heidelbergLocation?.therapeuticInterventions?.description ? t.heidelbergLocation.therapeuticInterventions.description : <>Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> collaborates closely with other specialists in Heidelberg and Melbourne to develop a tailored therapeutic plan designed to address your specific needs.</>}
               </p>
             </div>
 
@@ -714,4 +715,8 @@ export default function HeidelbergLocation() {
       <Footer />
     </div>
   );
-}
+};
+
+HeidelbergLocation.displayName = 'HeidelbergLocation';
+
+export default HeidelbergLocation;

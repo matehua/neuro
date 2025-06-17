@@ -1,11 +1,12 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect } from 'react';
+
+import { useLanguage, SupportedLanguage } from '@/contexts/LanguageContext';
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
 } from "@/components/ui/select";
-import { useLanguage, SupportedLanguage } from "@/contexts/LanguageContext";
 
 type Language = {
   code: SupportedLanguage;
@@ -18,7 +19,7 @@ const languages: Language[] = [
   { code: "zh", name: "中文", flag: "🇨🇳" },
 ];
 
-export default function LanguageSelector() {
+const LanguageSelector: React.FC = () => {
   const { language, setLanguage, isLanguageLoaded } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
@@ -38,7 +39,6 @@ export default function LanguageSelector() {
   if (!mounted || !isLanguageLoaded) {
     return null;
   }
-
   // Find the current language object
   const currentLanguage = languages.find(lang => lang.code === language) || languages[0];
 
@@ -65,7 +65,7 @@ export default function LanguageSelector() {
           position="popper"
           sideOffset={5}
         >
-          {languages.map((lang) => (
+          {languages?.map((lang) => (
             <SelectItem
               key={lang.code}
               value={lang.code}
@@ -85,4 +85,8 @@ export default function LanguageSelector() {
       </span>
     </div>
   );
-}
+};
+
+LanguageSelector.displayName = 'LanguageSelector';
+
+export default LanguageSelector;

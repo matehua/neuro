@@ -1,22 +1,23 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { 
-  Activity, 
-  FileText, 
-  AlertTriangle, 
-  CheckCircle2, 
-  Car, 
-  Laptop, 
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  Activity,
+  FileText,
+  AlertTriangle,
+  CheckCircle2,
+  Car,
+  Laptop,
   Dumbbell,
   Clock
 } from "lucide-react";
 
-export default function CervicalSpineInjury() {
+const CervicalSpineInjury: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -24,7 +25,7 @@ export default function CervicalSpineInjury() {
   }, []);
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <PageHeader
         title="Patient Guide: Management & Rehabilitation After Mild Cervical Spine Injury"
         subtitle="Recovery strategies and exercises for optimal healing"
@@ -444,6 +445,10 @@ export default function CervicalSpineInjury() {
           </div>
         </div>
       </section>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+CervicalSpineInjury.displayName = 'CervicalSpineInjury';
+
+export default CervicalSpineInjury;

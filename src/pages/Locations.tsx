@@ -1,15 +1,15 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import SafeImage from "@/components/SafeImage";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Clock } from "lucide-react";
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Clock } from 'lucide-react';
+import { useEffect } from 'react';
 
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import SafeImage from '@/components/SafeImage';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
 
-export default function Locations() {
+const Locations: React.FC = () => {
   const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
@@ -256,7 +256,7 @@ export default function Locations() {
                 ? "grid grid-cols-1 gap-mobile-lg"
                 : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
             )}>
-              {locations.map(location => (
+              {locations?.map(location => (
                 <div key={location.id} className={cn(
                   "card rounded-lg shadow-md bg-card",
                   deviceInfo.isMobile ? "p-mobile-lg" : "p-6"
@@ -319,4 +319,8 @@ export default function Locations() {
       <Footer />
     </div>
   );
-}
+};
+
+Locations.displayName = 'Locations';
+
+export default Locations;

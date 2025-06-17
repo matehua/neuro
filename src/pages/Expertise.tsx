@@ -1,16 +1,17 @@
-import { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import SafeImage from "@/components/SafeImage";
-import { useLanguage } from "@/contexts/LanguageContext";
-import CTASection from "@/components/CTASection";
-import { generatePageSEO, generateMedicalProcedureStructuredData } from "@/lib/seo";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function Expertise() {
+import CTASection from '@/components/CTASection';
+import PageHeader from '@/components/PageHeader';
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { generatePageSEO, generateMedicalProcedureStructuredData } from '@/lib/seo';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const Expertise: React.FC = () => {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
@@ -20,30 +21,34 @@ export default function Expertise() {
   }, []);
 
   // Generate SEO data for expertise page with structured data
-  const expertiseSeoData = generatePageSEO('expertise', {
-    structuredData: {
-      "@context": "https://schema.org",
-      "@type": "MedicalWebPage",
-      "name": "Neurosurgery Expertise - Dr Ales Aliashkevich",
-      "description": "Comprehensive neurosurgical expertise including brain surgery, spine surgery, minimally invasive procedures, and advanced surgical techniques.",
-      "medicalAudience": ["Patient", "Physician"],
-      "about": [
-        generateMedicalProcedureStructuredData({
-          name: "Brain Tumor Surgery",
-          description: "Advanced surgical treatment for brain tumors using image-guided techniques",
-          bodyLocation: "Brain"
-        }),
-        generateMedicalProcedureStructuredData({
-          name: "Spine Surgery",
-          description: "Minimally invasive spine surgery including disc replacement and fusion procedures",
-          bodyLocation: "Spine"
-        })
-      ]
-    }
-  });
+  const expertiseSeoData = useMemo(() => {
+    return generatePageSeoData({
+      title: "Neurosurgery Expertise - Dr Ales Aliashkevich",
+      description: "Comprehensive neurosurgical expertise including brain surgery, spine surgery, minimally invasive procedures, and advanced surgical techniques.",
+      structuredData: {
+        "@context": "https://schema.org",
+        "@type": "MedicalWebPage",
+        "name": "Neurosurgery Expertise - Dr Ales Aliashkevich",
+        "description": "Comprehensive neurosurgical expertise including brain surgery, spine surgery, minimally invasive procedures, and advanced surgical techniques.",
+        "medicalAudience": ["Patient", "Physician"],
+        "about": [
+          generateMedicalProcedureStructuredData({
+            name: "Brain Tumor Surgery",
+            description: "Advanced surgical treatment for brain tumors using image-guided techniques",
+            bodyLocation: "Brain"
+          }),
+          generateMedicalProcedureStructuredData({
+            name: "Spine Surgery",
+            description: "Minimally invasive spine surgery including disc replacement and fusion procedures",
+            bodyLocation: "Spine"
+          })
+        ]
+      }
+    });
+  }, []);
 
   return (
-    <Layout pageType="expertise" seoData={expertiseSeoData}>
+    <StandardPageLayout pageType="expertise" seoData={expertiseSeoData} showHeader={false}>
       <PageHeader
         title="Neurosurgical Expertise"
         subtitle="Explore our neurosurgical specialties, from spine surgery to brain tumour removal."
@@ -67,7 +72,7 @@ export default function Expertise() {
               )}>
                 <p className="mb-4">
                   <a
-                    href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
+                    href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/"
                     className={cn(
                       "text-primary transition-colors touch-feedback",
                       deviceInfo.isMobile ? "" : "hover:underline"
@@ -83,7 +88,7 @@ export default function Expertise() {
                   deviceInfo.isMobile ? "mobile-text" : "mb-4"
                 )}>
                   <a
-                    href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
+                    href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/"
                     className={cn(
                       "text-primary transition-colors touch-feedback",
                       deviceInfo.isMobile ? "" : "hover:underline"
@@ -96,7 +101,7 @@ export default function Expertise() {
                 </p>
                 <p className="mb-4">
                   <a
-                    href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/"
+                    href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/"
                     className={cn(
                       "text-primary transition-colors touch-feedback",
                       deviceInfo.isMobile ? "" : "hover:underline"
@@ -262,7 +267,7 @@ export default function Expertise() {
             <div className="text-center max-w-3xl mx-auto mb-12">
               <h2 className="text-3xl font-bold mb-6">Our Surgical Approach</h2>
               <p className="text-muted-foreground">
-                <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich's</a> surgical philosophy is based on three main principles that guide all procedures
+                <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich's</a> surgical philosophy is based on three main principles that guide all procedures
               </p>
             </div>
 
@@ -336,7 +341,7 @@ export default function Expertise() {
               </div>
               <div>
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.wellness.items.slice(0, 2).map((item, index) => (
+                  {t.technologiesPage.categories.wellness.items.slice(0, 2).map((item: any, index: any) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -351,7 +356,7 @@ export default function Expertise() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.wellness.items.slice(2, 4).map((item, index) => (
+                  {t.technologiesPage.categories.wellness.items.slice(2, 4).map((item: any, index: any) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -391,7 +396,7 @@ export default function Expertise() {
               </div>
               <div>
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.imagingTech.items.slice(0, 2).map((item, index) => (
+                  {t.technologiesPage.categories.imagingTech.items.slice(0, 2).map((item: any, index: any) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -406,7 +411,7 @@ export default function Expertise() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.imagingTech.items.slice(2, 4).map((item, index) => (
+                  {t.technologiesPage.categories.imagingTech.items.slice(2, 4).map((item: any, index: any) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -445,7 +450,7 @@ export default function Expertise() {
               </div>
               <div>
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.services.items.slice(0, 2).map((item, index) => (
+                  {t.technologiesPage.categories.services.items.slice(0, 2).map((item: any, index: any) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -460,7 +465,7 @@ export default function Expertise() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.services.items.slice(2, 4).map((item, index) => (
+                  {t.technologiesPage.categories.services.items.slice(2, 4).map((item: any, index: any) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -499,7 +504,7 @@ export default function Expertise() {
               </div>
               <div>
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.brainSurgery.items.slice(0, 2).map((item, index) => (
+                  {t.technologiesPage.categories.brainSurgery.items.slice(0, 2).map((item: any, index: any) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -514,7 +519,7 @@ export default function Expertise() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.brainSurgery.items.slice(2, 4).map((item, index) => (
+                  {t.technologiesPage.categories.brainSurgery.items.slice(2, 4).map((item: any, index: any) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -538,6 +543,10 @@ export default function Expertise() {
         {/* Call to Action */}
         <CTASection />
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+Expertise.displayName = 'Expertise';
+
+export default Expertise;

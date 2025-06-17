@@ -1,15 +1,15 @@
-import * as React from "react"
-import * as TabsPrimitive from "@radix-ui/react-tabs"
+import React from 'react';
+import * as TabsPrimitive from '@radix-ui/react-tabs';
 
-import { cn } from "@/lib/utils"
-import { useDeviceDetection } from "@/contexts/DeviceContext"
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
 
 const Tabs = TabsPrimitive.Root
 
 const TabsList = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
->(({ className, ...props }, ref) => {
+>(({ className: any, ...props }: any, ref: any) => {
   const deviceInfo = useDeviceDetection();
 
   return (
@@ -31,7 +31,7 @@ TabsList.displayName = TabsPrimitive.List.displayName
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className, ...props }, ref) => {
+>(({ className: any, ...props }: any, ref: any) => {
   const deviceInfo = useDeviceDetection();
 
   return (
@@ -53,7 +53,7 @@ TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
 const TabsContent = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
->(({ className, ...props }, ref) => {
+>(({ className: any, ...props }: any, ref: any) => {
   const deviceInfo = useDeviceDetection();
 
   return (

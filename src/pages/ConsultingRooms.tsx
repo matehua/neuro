@@ -1,14 +1,15 @@
-import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
+import React, {  useEffect , useCallback } from 'react';
+import { Link } from 'react-router-dom';
 
-export default function ConsultingRooms() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const ConsultingRooms: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -149,7 +150,7 @@ export default function ConsultingRooms() {
               <div id="inquiry-form">
                 <h2 className="text-2xl font-bold mb-6">{t.consultingRooms?.form?.title || "Consulting Room Inquiry"}</h2>
                 <div className="card p-6 rounded-lg shadow-md bg-card">
-                  <form className="space-y-4" onSubmit={handleFormSubmit}>
+                  <form className="space-y-4" onSubmit={handleFormSubmit>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                       <div className="space-y-2">
                         <Label htmlFor="firstName">{t.consultingRooms?.form?.firstName || "First Name"}</Label>
@@ -319,4 +320,8 @@ export default function ConsultingRooms() {
       <Footer />
     </div>
   );
-}
+ConsultingRooms.displayName = 'ConsultingRooms';
+
+export default ConsultingRooms;
+
+ConsultingRooms.displayName = 'ConsultingRooms';

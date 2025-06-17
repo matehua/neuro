@@ -1,9 +1,9 @@
-import { forwardRef, ElementRef, ComponentPropsWithoutRef, useId } from "react"
-import * as SelectPrimitive from "@radix-ui/react-select"
-import { Check, ChevronDown, ChevronUp } from "lucide-react"
+import * as SelectPrimitive from '@radix-ui/react-select';
+import { Check, ChevronDown, ChevronUp } from 'lucide-react';
+import { forwardRef, ElementRef, ComponentPropsWithoutRef, useId } from 'react';
 
-import { cn } from "@/lib/utils"
-import { useDeviceDetection } from "@/contexts/DeviceContext"
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
 
 const Select = SelectPrimitive.Root
 
@@ -14,10 +14,10 @@ const SelectValue = SelectPrimitive.Value
 export interface SelectTriggerProps extends ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger> {
   /** Error message to display and announce to screen readers */
   error?: string;
+
   /** Description for the select field */
   description?: string;
 }
-
 const SelectTrigger = forwardRef<
   ElementRef<typeof SelectPrimitive.Trigger>,
   SelectTriggerProps

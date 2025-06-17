@@ -1,0 +1,113 @@
+[
+  {
+    "filePath": "src/components/SEOHead.tsx",
+    "lineCount": 251,
+    "suggestions": [
+      "Split large sections into separate files:",
+      "  - interface: = (222 lines)"
+    ],
+    "sections": [
+      {
+        "type": "interface",
+        "name": "SEOProps",
+        "start": 3,
+        "end": 22,
+        "lines": 20
+      },
+      {
+        "type": "utility",
+        "name": "SEOHead",
+        "start": 23,
+        "end": 28,
+        "lines": 6
+      },
+      {
+        "type": "interface",
+        "name": "=",
+        "start": 29,
+        "end": 250,
+        "lines": 222
+      }
+    ]
+  },
+  {
+    "filePath": "scripts/verify-production-env.js",
+    "lineCount": 215,
+    "suggestions": [
+      "Split large functions into smaller modules:",
+      "  - generateReport (51 lines)"
+    ],
+    "sections": [
+      {
+        "type": "function",
+        "name": "parseEnvFile",
+        "start": 47,
+        "end": 54,
+        "lines": 8
+      },
+      {
+        "type": "function",
+        "name": "line",
+        "start": 55,
+        "end": 73,
+        "lines": 19
+      },
+      {
+        "type": "function",
+        "name": "validateProductionEnvironment",
+        "start": 74,
+        "end": 82,
+        "lines": 9
+      },
+      {
+        "type": "function",
+        "name": "varName",
+        "start": 83,
+        "end": 89,
+        "lines": 7
+      },
+      {
+        "type": "function",
+        "name": "varName",
+        "start": 90,
+        "end": 96,
+        "lines": 7
+      },
+      {
+        "type": "function",
+        "name": "varName",
+        "start": 97,
+        "end": 103,
+        "lines": 7
+      },
+      {
+        "type": "function",
+        "name": "varName",
+        "start": 104,
+        "end": 127,
+        "lines": 24
+      },
+      {
+        "type": "function",
+        "name": "Unknown",
+        "start": 128,
+        "end": 149,
+        "lines": 22
+      },
+      {
+        "type": "function",
+        "name": "generateReport",
+        "start": 150,
+        "end": 200,
+        "lines": 51
+      },
+      {
+        "type": "function",
+        "name": "check",
+        "start": 201,
+        "end": 214,
+        "lines": 14
+      }
+    ]
+  }
+]

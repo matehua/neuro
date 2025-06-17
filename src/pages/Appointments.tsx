@@ -1,10 +1,16 @@
-import React, { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
+import { cn } from '@/lib/utils';
+import { generatePageSEO } from '@/lib/seo';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Select,
   SelectContent,
@@ -12,13 +18,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Link } from "react-router-dom";
-import { generatePageSEO } from "@/lib/seo";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
 
-export default function Appointments() {
+const Appointments: React.FC = () => {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
@@ -31,7 +32,7 @@ export default function Appointments() {
   const appointmentsSeoData = generatePageSEO('appointments');
 
   return (
-    <Layout pageType="appointments" seoData={appointmentsSeoData}>
+    <StandardPageLayout pageType="appointments" seoData={appointmentsSeoData} showHeader={false}>
       <PageHeader
         title={t.appointments.title}
         subtitle={`${t.appointments.subtitle} ${t.appointments.description1} Dr Ales Aliashkevich ${t.appointments.description2}`}
@@ -213,7 +214,7 @@ export default function Appointments() {
                   <div className="card p-6 rounded-lg shadow-md bg-card">
                     <h3 className="text-xl font-semibold mb-3 text-primary">{t.appointments.appointmentInfo.whatToBring.title}</h3>
                     <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-4">
-                      {t.appointments.appointmentInfo.whatToBring.items.map((item, index) => (
+                      {t.appointments.appointmentInfo.whatToBring.items?.map((item: any, index: any) => (
                         <li key={index}>{item}</li>
                       ))}
                     </ul>
@@ -337,7 +338,7 @@ export default function Appointments() {
                   {t.appointments.investigations.description2}
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground space-y-2 mb-6">
-                  {t.appointments.investigations.items.map((item, index) => (
+                  {t.appointments.investigations.items?.map((item: any, index: any) => (
                     <li key={index}>{item}</li>
                   ))}
                 </ul>
@@ -523,7 +524,7 @@ export default function Appointments() {
               <div className="flex flex-col justify-center">
                 <h3 className="text-2xl font-bold mb-4">{t.appointments.locations.mainOffice.title}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.appointments.locations.mainOffice.address.split('\n').map((line, i) => (
+                  {t.appointments.locations.mainOffice.address.split('\n').map((line: any, i: any) => (
                     <React.Fragment key={i}>
                       {line}<br />
                     </React.Fragment>
@@ -650,6 +651,10 @@ export default function Appointments() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+Appointments.displayName = 'Appointments';
+
+export default Appointments;

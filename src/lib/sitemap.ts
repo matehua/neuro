@@ -5,9 +5,10 @@ export interface SitemapUrl {
   lastmod?: string;
   changefreq?: 'always' | 'hourly' | 'daily' | 'weekly' | 'monthly' | 'yearly' | 'never';
   priority?: number;
+
 }
 
-/**
+  /**
  * Generate sitemap URLs for the website
  */
 export const generateSitemapUrls = (): SitemapUrl[] => {
@@ -253,7 +254,6 @@ export const generateSitemapUrls = (): SitemapUrl[] => {
       lastmod: currentDate,
       changefreq: 'yearly',
       priority: 0.3
-    }
   ];
 
   return urls;
@@ -262,10 +262,9 @@ export const generateSitemapUrls = (): SitemapUrl[] => {
 /**
  * Generate XML sitemap content
  */
-export const generateSitemapXML = (): string => {
   const urls = generateSitemapUrls();
   
-  const urlElements = urls.map(url => {
+  const urlElements = urls?.map(url => {
     return `  <url>
     <loc>${url.loc}</loc>
     ${url.lastmod ? `<lastmod>${url.lastmod}</lastmod>` : ''}

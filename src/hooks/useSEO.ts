@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+
 import { generatePageSEO, generateLanguageAlternates, normalizeCanonicalUrl, validateStructuredData, SupportedLanguageCode, MetaTagManager } from '@/lib/seo';
 
 export interface SEOData {
@@ -78,7 +79,6 @@ export const useSEO = (seoData: SEOData) => {
       const normalizedCanonical = normalizeCanonicalUrl(seoData.canonical, seoData.currentLanguage);
       metaManager.updateLinkTag('canonical', normalizedCanonical);
     }
-
     // Update language alternates
     const languageAlternates = seoData.languageAlternates || generateLanguageAlternates(location.pathname, seoData.currentLanguage);
 
@@ -102,7 +102,7 @@ export const useSEO = (seoData: SEOData) => {
         if (!validation.isValid) {
           console.warn('Structured data validation errors:', validation.errors);
         }
-        if (validation.warnings.length > 0) {
+        if (validation.warnings?.length > 0) {
           console.warn('Structured data validation warnings:', validation.warnings);
         }
       }
@@ -120,7 +120,6 @@ export const useSEO = (seoData: SEOData) => {
       script.textContent = JSON.stringify(seoData.structuredData);
       document.head.appendChild(script);
     }
-
     // Cleanup function to remove added elements when component unmounts
     return () => {
       // Note: We don't remove meta tags on cleanup as they should persist
@@ -134,7 +133,7 @@ export const useSEO = (seoData: SEOData) => {
  * It takes page-specific overrides and merges them with global defaults
  * by calling generatePageSEO.
  */
-export const usePageSEO = (pageData: Partial<SEOData>) => {
+export const usePageSEO = (pageData?: Partial<SEOData>) => {
   // `pageData` contains the specific overrides for the current page.
   // These overrides (including a potential `canonical` path like '/about')
   // are passed to `generatePageSEO` as `customData`.
@@ -142,7 +141,7 @@ export const usePageSEO = (pageData: Partial<SEOData>) => {
   // from `SEO_CONFIG` and then layer `pageData` on top, correctly
   // calculating the final `canonical` URL.
   const seoDataToSet = generatePageSEO(undefined, pageData);
-  
+
   useSEO(seoDataToSet);
 };
 

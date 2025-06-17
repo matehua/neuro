@@ -1,16 +1,16 @@
-import * as React from "react"
-import { generateId } from "@/lib/accessibility"
-import { cn } from "@/lib/utils"
+import React from 'react';
+
+import { cn } from '@/lib/utils';
+import { generateId } from '@/lib/accessibility';
 
 export interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
   /** Error message to display and announce to screen readers */
   error?: string;
+
   /** Description for the textarea field */
   description?: string;
 }
-
-const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, error, description, id, ...props }, ref) => {
+const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(({ className, error, description, id, ...props }, ref) => {
     // Generate unique IDs for accessibility
     const textareaId = id || generateId('textarea');
     const errorId = error ? `${textareaId}-error` : undefined;
@@ -57,9 +57,9 @@ const Textarea = React.forwardRef<HTMLTextAreaElement, TextareaProps>(
           </div>
         )}
       </div>
-    )
+    );
   }
-)
+);
 Textarea.displayName = "Textarea"
 
 export { Textarea }

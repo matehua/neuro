@@ -1,14 +1,15 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import SafeImage from "@/components/SafeImage";
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import SafeImage from '@/components/SafeImage';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Brain,
   Activity,
@@ -24,7 +25,7 @@ import {
   BarChart
 } from "lucide-react";
 
-export default function IndividualSpineHealthProgramme() {
+const IndividualSpineHealthProgramme: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -248,4 +249,8 @@ export default function IndividualSpineHealthProgramme() {
       <Footer />
     </div>
   );
-}
+};
+
+IndividualSpineHealthProgramme.displayName = 'IndividualSpineHealthProgramme';
+
+export default IndividualSpineHealthProgramme;

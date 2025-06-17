@@ -1,21 +1,22 @@
-import { useEffect } from "react";
-import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
-import SafeImage from "@/components/SafeImage";
-import { 
-  AlertTriangle, 
-  Activity, 
-  Brain, 
-  Heart, 
-  Shield, 
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  AlertTriangle,
+  Activity,
+  Brain,
+  Heart,
+  Shield,
   Target,
   Clock,
   CheckCircle,
@@ -39,7 +40,7 @@ import {
   Move
 } from "lucide-react";
 
-export default function SacroiliacArthropathy() {
+const SacroiliacArthropathy: React.FC = () => {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
@@ -49,7 +50,7 @@ export default function SacroiliacArthropathy() {
   }, []);
 
   return (
-    <Layout pageTitle="Sacroiliac Arthropathy (SI Joint Dysfunction) - Comprehensive Guide">
+    <StandardPageLayout title="Sacroiliac Arthropathy (SI Joint Dysfunction) - Comprehensive Guide" showHeader={false}>
       <main className="flex-1 pt-20">
         {/* Hero Section */}
         <section className={cn(
@@ -1660,6 +1661,10 @@ export default function SacroiliacArthropathy() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+SacroiliacArthropathy.displayName = 'SacroiliacArthropathy';
+
+export default SacroiliacArthropathy;

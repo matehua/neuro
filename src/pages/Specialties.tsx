@@ -1,6 +1,11 @@
-import { useEffect, useState } from "react";
-import ProcedureCard from "@/components/ProcedureCard";
-import { Button } from "@/components/ui/button";
+import { useEffect, useState, useCallback } from 'react';
+
+import ProcedureCard from '@/components/ProcedureCard';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { ProcedureProps } from '@/types/procedures';
+import { Slider } from '@/components/ui/slider';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Select,
   SelectContent,
@@ -8,10 +13,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Slider } from "@/components/ui/slider";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { ProcedureProps } from "@/types/procedures";
-import StandardPageLayout from "@/components/StandardPageLayout";
 
 // Neurosurgical procedures data based on website content
 const allProcedures: ProcedureProps[] = [
@@ -107,7 +108,7 @@ const allProcedures: ProcedureProps[] = [
   },
 ];
 
-export default function Specialties() {
+const Specialties: React.FC = () => {
   const { t } = useLanguage();
   const [filteredProcedures, setFilteredProcedures] = useState<ProcedureProps[]>(allProcedures);
   const [complexityFilter, setComplexityFilter] = useState<string>("all");
@@ -126,16 +127,16 @@ export default function Specialties() {
     // Filter by complexity
     if (complexityFilter !== "all") {
       const complexity = parseInt(complexityFilter);
-      result = result.filter(proc => proc.complexity && proc.complexity >= complexity);
+      result = result?.filter(proc => proc.complexity && proc.complexity >= complexity);
     }
 
     // Filter by location
     if (locationFilter !== "all") {
-      result = result.filter(proc => proc.location === locationFilter);
+      result = result?.filter(proc => proc.location === locationFilter);
     }
 
     // Filter by recovery time range - convert string to number for comparison
-    result = result.filter(proc => {
+    result = result?.filter(proc => {
       const recoveryDays = typeof proc.recoveryTime === 'string'
         ? parseInt(proc.recoveryTime.replace(/\D/g, '')) || 0
         : proc.recoveryTime || 0;
@@ -146,7 +147,7 @@ export default function Specialties() {
   }, [complexityFilter, locationFilter, recoveryRange]);
 
   // Get unique locations for filter
-  const locations = ["all", ...new Set(allProcedures.map(proc => proc.location))];
+  const locations = ["all", ...new Set(allProcedures?.map(proc => proc.location))];
 
   return (
     <StandardPageLayout
@@ -190,7 +191,7 @@ export default function Specialties() {
                   </SelectTrigger>
                   <SelectContent>
                     <SelectItem value="all">{t.specialties.filters.allLocations}</SelectItem>
-                    {locations.filter(loc => loc !== "all").map(location => (
+                    {locations?.filter(loc => loc !== "all").map(location => (
                       <SelectItem key={location} value={location}>{location}</SelectItem>
                     ))}
                   </SelectContent>
@@ -221,15 +222,15 @@ export default function Specialties() {
 
             <div className="flex justify-between items-center mt-6 animate-fade-in [animation-delay:200ms]">
               <p className="text-muted-foreground">
-                {t.specialties.filters.showing} {filteredProcedures.length} {t.specialties.filters.of} {allProcedures.length} {t.specialties.filters.procedures}
+                {t.specialties.filters.showing} {filteredProcedures?.length} {t.specialties.filters.of} {allProcedures?.length} {t.specialties.filters.procedures}
               </p>
               <Button
                 variant="outline"
-                onClick={() => {
+                onClick={useCallback(() => {
                   setComplexityFilter("all");
                   setLocationFilter("all");
                   setRecoveryRange([0, 40]);
-                }}
+                }, [])}
               >
                 {t.specialties.filters.resetFilters || 'Reset Filters'}
               </Button>
@@ -240,9 +241,9 @@ export default function Specialties() {
       {/* Procedures Grid */}
       <section className="section">
         <div className="container">
-          {filteredProcedures.length > 0 ? (
+          {filteredProcedures?.length > 0 ? (
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {filteredProcedures.map((procedure, index) => (
+              {filteredProcedures?.map((procedure, index) => (
                 <div key={procedure.id} className="animate-fade-in" style={{ animationDelay: `${(index + 1) * 100}ms` }}>
                   <ProcedureCard procedure={procedure} />
                 </div>
@@ -254,11 +255,11 @@ export default function Specialties() {
               <p className="text-muted-foreground mb-6">{t.specialties.filters.adjustFilters}</p>
               <Button
                 variant="outline"
-                onClick={() => {
+                onClick={useCallback(() => {
                   setComplexityFilter("all");
                   setLocationFilter("all");
                   setRecoveryRange([0, 40]);
-                }}
+                }, [])}
               >
                 {t.specialties.filters.resetFilters || 'Reset Filters'}
               </Button>
@@ -268,4 +269,8 @@ export default function Specialties() {
       </section>
     </StandardPageLayout>
   );
-}
+};
+
+Specialties.displayName = 'Specialties';
+
+export default Specialties;

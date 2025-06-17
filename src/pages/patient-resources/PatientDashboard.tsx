@@ -1,16 +1,17 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { LineChart, BarChart, Activity, Target, Calendar, ClipboardList, Share2 } from "lucide-react";
+import { LineChart, BarChart, Activity, Target, Calendar, ClipboardList, Share2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function PatientDashboard() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const PatientDashboard: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -476,4 +477,8 @@ export default function PatientDashboard() {
       <Footer />
     </div>
   );
-}
+PatientDashboard.displayName = 'PatientDashboard';
+
+export default PatientDashboard;
+
+PatientDashboard.displayName = 'PatientDashboard';

@@ -11,7 +11,7 @@ interface ScreenReaderAnnouncerProps {
   role?: 'status' | 'alert' | 'log';
 }
 
-/**
+  /**
  * A component that announces messages to screen readers using ARIA live regions
  * This is useful for announcing dynamic content changes, form submission results, etc.
  */

@@ -1,11 +1,12 @@
-import React, { useEffect } from "react";
-import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from 'lucide-react';
 
-export default function MorningtonLocation() {
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const MorningtonLocation: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -14,7 +15,7 @@ export default function MorningtonLocation() {
   }, []);
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <main className="flex-1">
         {/* Hero Section */}
         <section className="relative py-20 bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background">
@@ -689,6 +690,10 @@ export default function MorningtonLocation() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+MorningtonLocation.displayName = 'MorningtonLocation';
+
+export default MorningtonLocation;

@@ -1,6 +1,7 @@
-import { useEffect, useState } from "react";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
+import { useEffect, useState } from 'react';
+
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
 
 interface PageHeaderProps {
   title: string;
@@ -8,20 +9,21 @@ interface PageHeaderProps {
   backgroundImage?: string;
   className?: string;
   enableParallax?: boolean;
+
 }
 
-/**
+  /**
  * PageHeader component for displaying page titles and optional subtitles
  * Features enhanced background images with dark blue overlay, parallax effects, and mobile optimization
  * Uniform styling across all pages for consistency
  */
-export default function PageHeader({
+const PageHeader: React.FC<PageHeaderProps> = ({
   title,
   subtitle,
   backgroundImage,
   className = "",
   enableParallax = false
-}: PageHeaderProps) {
+}) => {
   const [imageLoaded, setImageLoaded] = useState(false);
   const [scrollY, setScrollY] = useState(0);
   const deviceInfo = useDeviceDetection();
@@ -124,4 +126,8 @@ export default function PageHeader({
       </div>
     </section>
   );
-}
+};
+
+PageHeader.displayName = 'PageHeader';
+
+export default PageHeader;

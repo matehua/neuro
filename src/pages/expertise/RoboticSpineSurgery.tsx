@@ -1,11 +1,12 @@
-import { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import SafeImage from "@/components/SafeImage";
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function RoboticSpineSurgery() {
+import PageHeader from '@/components/PageHeader';
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+
+const RoboticSpineSurgery: React.FC = () => {
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -13,7 +14,7 @@ export default function RoboticSpineSurgery() {
   }, []);
 
   return (
-    <Layout pageTitle="Robotic Spine Surgery">
+    <StandardPageLayout title="Robotic Spine Surgery" showHeader={false}>
       <PageHeader
         title="Robotic Spine Surgery"
         subtitle="State-of-the-art robotic technology for enhanced precision in spine procedures"
@@ -152,7 +153,7 @@ export default function RoboticSpineSurgery() {
                   Intraoperative multimodality monitoring is an essential part of robotic and minimally invasive spine surgery. Electromyography (EMG) and somatosensory (SSEP) and motor evoked potentials (MEP) allow to record the electrical activity of muscles and to assess the health and function of the spinal cord, nerves and muscles.
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  EMG is regularly used in robotic procedures to confirm good placement of pedicle screws and to avoid nerve impingement. Recording of the electrical muscle activity assesses the nerve proximity and location. <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> uses both stimulated and free-run EMG to ensure safe surgery and to reduce the risk of postoperative complications.
+                  EMG is regularly used in robotic procedures to confirm good placement of pedicle screws and to avoid nerve impingement. Recording of the electrical muscle activity assesses the nerve proximity and location. <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> uses both stimulated and free-run EMG to ensure safe surgery and to reduce the risk of postoperative complications.
                 </p>
                 <p className="text-muted-foreground mb-4">
                   SSEP and MEP monitor the function of the spinal cord and to recognise early possible changes caused by reduced blood flow (ischemia), compression, manipulations, or body positioning during surgery.
@@ -222,7 +223,7 @@ export default function RoboticSpineSurgery() {
 
                 <h2 className="text-2xl font-bold mb-6">Conditions Treated with Robotic Spine Surgery</h2>
                 <p className="text-muted-foreground mb-4">
-                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> utilizes robotic spine surgery to treat a variety of conditions, including:
+                  <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> utilizes robotic spine surgery to treat a variety of conditions, including:
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
                   <div className="card p-6 rounded-lg shadow-md bg-card">
@@ -270,7 +271,7 @@ export default function RoboticSpineSurgery() {
 
                 <h2 className="text-2xl font-bold mb-6">Why Choose Dr Aliashkevich for Robotic Spine Surgery?</h2>
                 <p className="text-muted-foreground mb-4">
-                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> is at the forefront of robotic spine surgery and offers:
+                  <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> is at the forefront of robotic spine surgery and offers:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-8 space-y-2">
                   <li>Specialised training and expertise in robotic spine surgery systems</li>
@@ -316,7 +317,7 @@ export default function RoboticSpineSurgery() {
                       <li>Vertebral compression fractures</li>
                     </ul>
                     <p className="text-muted-foreground mb-4">
-                      <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> will evaluate your specific condition to determine if robotic spine surgery is appropriate for your case.
+                      <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> will evaluate your specific condition to determine if robotic spine surgery is appropriate for your case.
                     </p>
                     <Button asChild className="w-full">
                       <Link to="/appointments">Schedule a Consultation</Link>
@@ -425,6 +426,10 @@ export default function RoboticSpineSurgery() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+RoboticSpineSurgery.displayName = 'RoboticSpineSurgery';
+
+export default RoboticSpineSurgery;

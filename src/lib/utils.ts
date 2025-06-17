@@ -1,5 +1,5 @@
-import { clsx, type ClassValue } from "clsx"
-import { twMerge } from "tailwind-merge"
+import { clsx, type ClassValue } from 'clsx';
+import { twMerge } from 'tailwind-merge';
 
 /**
  * Combines multiple class names using clsx and tailwind-merge
@@ -29,8 +29,8 @@ export function formatDate(
     year: 'numeric'
   }
 ): string {
-  const dateObj = date instanceof Date ? date : new Date(date)
-  return new Intl.DateTimeFormat(locale, options).format(dateObj)
+  const dateObj = date instanceof Date ? date : new Date(date);
+  return new Intl.DateTimeFormat(locale, options).format(dateObj);
 }
 
 /**
@@ -41,6 +41,6 @@ export function formatDate(
  * @returns Truncated string
  */
 export function truncateString(str: string, length: number): string {
-  if (str.length <= length) return str
-  return str.slice(0, length) + '...'
+  if (str?.length <= length) return str;
+  return str.slice(0, length) + '...';
 }

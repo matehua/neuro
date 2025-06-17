@@ -1,5 +1,7 @@
-import React, { createContext, useContext, useState, useEffect, ReactNode, useMemo } from 'react';
+import React, { createContext, useContext, useState, useEffect, useMemo, ReactNode } from 'react';
+import ErrorBoundary from '@/components/ErrorBoundary';
 
+// Breakpoint constants
 const MOBILE_BREAKPOINT = 768;
 const TABLET_BREAKPOINT = 1024;
 
@@ -131,9 +133,11 @@ export function DeviceProvider({ children }: DeviceProviderProps) {
   }), [deviceInfo, isLoaded]);
 
   return (
-    <DeviceContext.Provider value={contextValue}>
-      {children}
-    </DeviceContext.Provider>
+    <ErrorBoundary>
+      <DeviceContext.Provider value={contextValue}>
+        {children}
+      </DeviceContext.Provider>
+    </ErrorBoundary>
   );
 }
 

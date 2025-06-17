@@ -1,13 +1,14 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { Brain, FileText, Activity, Clock, CheckCircle2 } from "lucide-react";
+import React, { useEffect } from 'react';
+import { Brain, FileText, Activity, Clock, CheckCircle2 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
-export default function SpineAndBrainHealth() {
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const SpineAndBrainHealth: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -49,7 +50,7 @@ export default function SpineAndBrainHealth() {
   ];
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <PageHeader
         title="Your Expert Guide to Chronic Spine and Brain Health"
         subtitle="Science-Backed Strategies for a Healthier Spine"
@@ -224,7 +225,7 @@ export default function SpineAndBrainHealth() {
               <div className="bg-muted p-6 rounded-lg my-8">
                 <h3 className="text-xl font-bold mb-4">💡 Popular Topics to Get You Started:</h3>
                 <ul className="space-y-4 list-none pl-0">
-                  {popularTopics.map((topic, index) => (
+                  {popularTopics?.map((topic: any, index: any) => (
                     <li key={index} className="flex items-start">
                       {topic.icon}
                       <Link to={topic.link} className="ml-2 text-primary hover:underline">
@@ -310,6 +311,10 @@ export default function SpineAndBrainHealth() {
           </div>
         </div>
       </section>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+SpineAndBrainHealth.displayName = 'SpineAndBrainHealth';
+
+export default SpineAndBrainHealth;

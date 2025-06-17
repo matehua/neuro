@@ -1,21 +1,22 @@
-import React, { useEffect } from "react";
-import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Card, CardContent, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
-import SafeImage from "@/components/SafeImage";
-import { 
-  AlertTriangle, 
-  Activity, 
-  Brain, 
-  Heart, 
-  Shield, 
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  AlertTriangle,
+  Activity,
+  Brain,
+  Heart,
+  Shield,
   Target,
   Clock,
   CheckCircle,
@@ -40,7 +41,7 @@ import {
   Ruler
 } from "lucide-react";
 
-export default function Spondylolisthesis() {
+const Spondylolisthesis: React.FC = () => {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
@@ -50,7 +51,7 @@ export default function Spondylolisthesis() {
   }, []);
 
   return (
-    <Layout pageTitle="Spondylolisthesis - Comprehensive Guide">
+    <StandardPageLayout title="Spondylolisthesis - Comprehensive Guide" showHeader={false}>
       <main className="flex-1 pt-20">
         {/* Hero Section */}
         <section className={cn(
@@ -1730,6 +1731,10 @@ export default function Spondylolisthesis() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+Spondylolisthesis.displayName = 'Spondylolisthesis';
+
+export default Spondylolisthesis;

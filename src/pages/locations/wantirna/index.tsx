@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from 'lucide-react';
 
-export default function WantirnaLocation() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const WantirnaLocation: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -27,7 +28,7 @@ export default function WantirnaLocation() {
                 <h1 className="text-3xl font-bold mb-6">{t.wantirnaLocation?.expertNeurosurgery || 'Wantirna Consulting Location'}</h1>
                 <h2 className="text-xl text-primary mb-4">Knox Audiology Specialist Medical Suites</h2>
                 <p className="text-muted-foreground mb-4">
-                  {t.wantirnaLocation?.introduction1 || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? '}<a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Ales Aliashkevich</a>{t.wantirnaLocation?.introduction1 ? '' : ', neurosurgeon and spine surgeon, provides specialized care to patients in Melbourne\'s eastern suburbs at Knox Private Hospital in Wantirna.'}
+                  {t.wantirnaLocation?.introduction1 || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? '}<a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Ales Aliashkevich</a>{t.wantirnaLocation?.introduction1 ? '' : ', neurosurgeon and spine surgeon, provides specialized care to patients in Melbourne\'s eastern suburbs at Knox Private Hospital in Wantirna.'}
                 </p>
                 <p className="text-muted-foreground">
                   {t.wantirnaLocation?.introduction2 || 'With expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions, radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems, Dr. Aliashkevich brings specialized care closer to residents of Wantirna and surrounding areas. This location provides convenient access to expert neurosurgical care for patients throughout Melbourne\'s eastern region.'}
@@ -588,4 +589,8 @@ export default function WantirnaLocation() {
       <Footer />
     </div>
   );
-}
+};
+
+WantirnaLocation.displayName = 'WantirnaLocation';
+
+export default WantirnaLocation;

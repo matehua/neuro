@@ -1,45 +1,46 @@
-import { useEffect, useState, ComponentProps } from "react"
-import { Toaster as Sonner } from "sonner"
+import { useTheme } from "next-themes";
+import { Toaster as Sonner } from "sonner";
+import { useEffect, useState } from "react";
 
-type ToasterProps = ComponentProps<typeof Sonner>
+type ToasterProps = React.ComponentProps<typeof Sonner>;
 
 const Toaster = ({ ...props }: ToasterProps) => {
-  const [theme, setTheme] = useState<"light" | "dark" | "system">("system")
+  const [theme, setTheme] = useState<"light" | "dark" | "system">("system");
 
   useEffect(() => {
-    // Check for theme in localStorage or system preference
-    const savedTheme = localStorage.getItem("theme")
-    if (savedTheme === "dark" || savedTheme === "light") {
-      setTheme(savedTheme)
-    } else {
-      // Check system preference
-      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-      setTheme(isDark ? "dark" : "light")
-    }
-
     // Listen for theme changes
     const handleThemeChange = () => {
-      const savedTheme = localStorage.getItem("theme")
+      const savedTheme = localStorage.getItem("theme");
       if (savedTheme === "dark" || savedTheme === "light") {
-        setTheme(savedTheme)
+        setTheme(savedTheme);
       } else {
-        const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
-        setTheme(isDark ? "dark" : "light")
+        const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        setTheme(isDark ? "dark" : "light");
       }
+    };
+
+    // Check for saved theme preference
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark" || savedTheme === "light") {
+      setTheme(savedTheme);
+    } else {
+      // Check system preference
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+      setTheme(isDark ? "dark" : "light");
     }
 
     // Listen for storage changes (theme changes from other tabs)
-    window.addEventListener("storage", handleThemeChange)
+    window.addEventListener("storage", handleThemeChange);
 
     // Listen for system theme changes
-    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)")
-    mediaQuery.addEventListener("change", handleThemeChange)
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+    mediaQuery.addEventListener("change", handleThemeChange);
 
     return () => {
-      window.removeEventListener("storage", handleThemeChange)
-      mediaQuery.removeEventListener("change", handleThemeChange)
-    }
-  }, [])
+      window.removeEventListener("storage", handleThemeChange);
+      mediaQuery.removeEventListener("change", handleThemeChange);
+    };
+  }, []);
 
   return (
     <Sonner
@@ -58,7 +59,7 @@ const Toaster = ({ ...props }: ToasterProps) => {
       }}
       {...props}
     />
-  )
-}
+  );
+};
 
-export { Toaster }
+export { Toaster };

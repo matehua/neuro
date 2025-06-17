@@ -1,5 +1,6 @@
-import React, { Component, ErrorInfo, ReactNode } from 'react';
+import React, {  Component, ErrorInfo, ReactNode , useCallback } from 'react';
 import { AlertTriangle, RefreshCw, Home } from 'lucide-react';
+
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
@@ -14,7 +15,7 @@ interface State {
   errorInfo?: ErrorInfo;
 }
 
-/**
+  /**
  * Error Boundary Component for handling React errors gracefully
  * Provides user-friendly error messages and recovery options
  */
@@ -59,7 +60,6 @@ class ErrorBoundary extends Component<Props, State> {
         // Sentry integration would go here
         // Sentry.captureException(error, { contexts: { react: errorInfo } });
       }
-
       // Custom error endpoint
       if (import.meta.env.VITE_ERROR_REPORTING_ENDPOINT) {
         fetch(import.meta.env.VITE_ERROR_REPORTING_ENDPOINT, {
@@ -105,7 +105,6 @@ class ErrorBoundary extends Component<Props, State> {
       if (this.props.fallback) {
         return this.props.fallback;
       }
-
       // Default error UI
       return (
         <div className="min-h-screen flex items-center justify-center p-4 bg-muted/30">
@@ -163,7 +162,7 @@ class ErrorBoundary extends Component<Props, State> {
                   <a 
                     href="/contact" 
                     className="text-primary hover:underline"
-                    onClick={(e) => {
+                    onClick={(e: any) => {
                       e.preventDefault();
                       window.location.href = '/contact';
                     }}
@@ -178,7 +177,6 @@ class ErrorBoundary extends Component<Props, State> {
         </div>
       );
     }
-
     return this.props.children;
   }
 }

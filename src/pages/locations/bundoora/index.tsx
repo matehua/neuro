@@ -1,10 +1,11 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function BundooraLocation() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+
+const BundooraLocation: React.FC = () => {
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -609,4 +610,8 @@ export default function BundooraLocation() {
       <Footer />
     </div>
   );
-}
+};
+
+BundooraLocation.displayName = 'BundooraLocation';
+
+export default BundooraLocation;

@@ -1,11 +1,12 @@
-import { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import SafeImage from "@/components/SafeImage";
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function LumbarDiscReplacement() {
+import PageHeader from '@/components/PageHeader';
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+
+const LumbarDiscReplacement: React.FC = () => {
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -13,7 +14,7 @@ export default function LumbarDiscReplacement() {
   }, []);
 
   return (
-    <Layout pageTitle="Lumbar Disc Replacement">
+    <StandardPageLayout title="Lumbar Disc Replacement" showHeader={false}>
       <PageHeader
         title="Lumbar Disc Replacement"
         subtitle="Advanced motion-preserving treatment for lumbar disc disease"
@@ -70,7 +71,7 @@ export default function LumbarDiscReplacement() {
 
                 <h2 className="text-2xl font-bold mb-6">When is Lumbar Disc Replacement Recommended?</h2>
                 <p className="text-muted-foreground mb-6">
-                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> may recommend lumbar disc replacement for patients with:
+                  <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> may recommend lumbar disc replacement for patients with:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-8 space-y-2">
                   <li>Lumbar degenerative disc disease causing chronic low back pain</li>
@@ -185,7 +186,7 @@ export default function LumbarDiscReplacement() {
                 </ul>
 
                 <p className="text-muted-foreground mb-6">
-                  Most patients can return to light work within 2-4 weeks and more strenuous activities within 8-12 weeks, depending on their specific situation and <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich's</a> recommendations.
+                  Most patients can return to light work within 2-4 weeks and more strenuous activities within 8-12 weeks, depending on their specific situation and <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich's</a> recommendations.
                 </p>
 
                 <p className="text-muted-foreground mb-6">
@@ -273,7 +274,7 @@ export default function LumbarDiscReplacement() {
 
                 <h2 className="text-2xl font-bold mb-6">Why Choose Dr Aliashkevich for Lumbar Disc Replacement?</h2>
                 <p className="text-muted-foreground mb-4">
-                  <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> is highly experienced in lumbar disc replacement surgery and offers:
+                  <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> is highly experienced in lumbar disc replacement surgery and offers:
                 </p>
                 <ul className="list-disc list-inside text-muted-foreground mb-8 space-y-2">
                   <li>Expertise in the latest artificial disc technologies</li>
@@ -316,7 +317,7 @@ export default function LumbarDiscReplacement() {
                     </ul>
 
                     <p className="text-muted-foreground mb-4">
-                      <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> will conduct a thorough evaluation to determine if you're a good candidate for this procedure.
+                      <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a> will conduct a thorough evaluation to determine if you're a good candidate for this procedure.
                     </p>
                     <Button asChild className="w-full">
                       <Link to="/appointments">Schedule a Consultation</Link>
@@ -410,6 +411,10 @@ export default function LumbarDiscReplacement() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+LumbarDiscReplacement.displayName = 'LumbarDiscReplacement';
+
+export default LumbarDiscReplacement;

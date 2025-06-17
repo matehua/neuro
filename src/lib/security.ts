@@ -1,44 +1,41 @@
 /**
- * Security Utilities for Production-Ready Application
- * Comprehensive security measures and attack prevention
+ * Security management and protection utilities
  */
 
-/**
- * Security configuration interface
- */
-interface SecurityConfig {
+export interface SecurityConfig {
   enableCSP: boolean;
   enableXSSProtection: boolean;
-  enableClickjacking: boolean;
-  enableMIMESniffing: boolean;
-  enableReferrerPolicy: boolean;
-  enableHSTS: boolean;
+  enableInputSanitization: boolean;
+  enableFormValidation: boolean;
+  enableNetworkSecurity: boolean;
+  enableStorageSecurity: boolean;
   logSecurityEvents: boolean;
+  strictMode: boolean;
 }
 
 /**
- * Security Manager class
+ * Security manager singleton class
  */
 export class SecurityManager {
   private static instance: SecurityManager;
   private config: SecurityConfig;
+  private initialized = false;
+  private observers: any[] = [];
+  private intervals: number[] = [];
   private securityEvents: Array<{ type: string; timestamp: number; details: string }> = [];
-  private observers: MutationObserver[] = [];
-  private intervals: NodeJS.Timeout[] = [];
-  private initialized: boolean = false;
 
-  private constructor(config: Partial<SecurityConfig> = {}) {
+  private constructor(config?: Partial<SecurityConfig>) {
     this.config = {
       enableCSP: true,
       enableXSSProtection: true,
-      enableClickjacking: true,
-      enableMIMESniffing: true,
-      enableReferrerPolicy: true,
-      enableHSTS: true,
+      enableInputSanitization: true,
+      enableFormValidation: true,
+      enableNetworkSecurity: true,
+      enableStorageSecurity: true,
       logSecurityEvents: true,
+      strictMode: false,
       ...config
     };
-    this.initialize();
   }
 
   static getInstance(config?: Partial<SecurityConfig>): SecurityManager {
@@ -49,60 +46,75 @@ export class SecurityManager {
   }
 
   /**
-   * Initialize security measures
+   * Initialize all security measures
    */
-  private initialize(): void {
-    if (typeof window === 'undefined' || this.initialized) return;
+  initialize(): void {
+    if (this.initialized) {
+      return;
+    }
 
-    this.initialized = true;
-    this.setupCSP();
-    this.setupXSSProtection();
-    this.setupClickjackingProtection();
-    this.setupInputSanitization();
-    this.setupFormValidation();
-    this.setupNetworkSecurity();
-    this.setupStorageSecurity();
-    this.monitorSecurityEvents();
+    try {
+      if (typeof window === 'undefined') {
+        return;
+      }
+
+      if (this.config.enableCSP) {
+        this.setupCSP();
+      }
+
+      if (this.config.enableXSSProtection) {
+        this.setupXSSProtection();
+        this.monitorXSSAttempts();
+      }
+
+      if (this.config.enableInputSanitization) {
+        this.setupInputSanitization();
+      }
+
+      if (this.config.enableFormValidation) {
+        this.setupFormValidation();
+      }
+
+      if (this.config.enableNetworkSecurity) {
+        this.setupNetworkSecurity();
+      }
+
+      if (this.config.enableStorageSecurity) {
+        this.setupStorageSecurity();
+      }
+
+      this.sanitizeExistingContent();
+      this.monitorSecurityEvents();
+
+      this.initialized = true;
+    } catch (error) {
+      // Reset on failure
+      this.initialized = false;
+      this.cleanup();
+    }
   }
 
   /**
    * Setup Content Security Policy
    */
   private setupCSP(): void {
-    if (!this.config.enableCSP) return;
-
     // CSP is handled via headers, but we can add reporting
-    document.addEventListener('securitypolicyviolation', (e) => {
+    document.addEventListener('securitypolicyviolation', (e: any) => {
       this.logSecurityEvent('CSP_VIOLATION', `Blocked: ${e.blockedURI} - Directive: ${e.violatedDirective}`);
     });
   }
 
   /**
-   * Setup XSS Protection
+   * Setup XSS protection
    */
   private setupXSSProtection(): void {
-    if (!this.config.enableXSSProtection) return;
-
-    // Sanitize dynamic content
-    this.sanitizeExistingContent();
-    
-    // Monitor for potential XSS attempts
-    this.monitorXSSAttempts();
-  }
-
-  /**
-   * Setup Clickjacking Protection
-   */
-  private setupClickjackingProtection(): void {
-    if (!this.config.enableClickjacking) return;
-
-    // Verify we're not in a frame (additional client-side protection)
-    if (window.top !== window.self) {
-      this.logSecurityEvent('CLICKJACKING_ATTEMPT', 'Page loaded in frame');
-      
+    // Prevent clickjacking
+    if (window.self !== window.top) {
       // Optional: Break out of frame
       try {
-        window.top!.location = window.self.location;
+        if (window.top && window.top !== window.self) {
+          window.top.location.href = window.self.location.href;
+        }
       } catch (e) {
         // Frame-busting blocked, log the attempt
         this.logSecurityEvent('FRAME_BUSTING_BLOCKED', 'Unable to break out of frame');
@@ -114,8 +126,7 @@ export class SecurityManager {
    * Setup input sanitization
    */
   private setupInputSanitization(): void {
-    // Monitor all form inputs
-    document.addEventListener('input', (e) => {
+    document.addEventListener('input', (e: any) => {
       const target = e.target as HTMLInputElement;
       if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
         this.sanitizeInput(target);
@@ -124,22 +135,21 @@ export class SecurityManager {
   }
 
   /**
-   * Sanitize input value
+   * Sanitize input field
    */
-  private sanitizeInput(input: HTMLInputElement | HTMLTextAreaElement): void {
+  private sanitizeInput(input: HTMLInputElement): void {
     const value = input.value;
-    
-    // Check for potential XSS patterns
+    let hasSuspiciousContent = false;
+
     const xssPatterns = [
-      /<script\b[^<]*(?:(?!<\/script>)<[^<]*)*<\/script>/gi,
+      /<script[^>]*>.*?<\/script>/gi,
       /javascript:/gi,
       /on\w+\s*=/gi,
-      /<iframe\b[^<]*(?:(?!<\/iframe>)<[^<]*)*<\/iframe>/gi,
-      /<object\b[^<]*(?:(?!<\/object>)<[^<]*)*<\/object>/gi,
-      /<embed\b[^<]*(?:(?!<\/embed>)<[^<]*)*<\/embed>/gi
+      /<iframe[^>]*>.*?<\/iframe>/gi,
+      /<object[^>]*>.*?<\/object>/gi,
+      /<embed[^>]*>/gi
     ];
 
-    let hasSuspiciousContent = false;
     xssPatterns.forEach(pattern => {
       if (pattern.test(value)) {
         hasSuspiciousContent = true;
@@ -161,18 +171,19 @@ export class SecurityManager {
    */
   private sanitizeString(str: string): string {
     return str
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#x27;')
-      .replace(/\//g, '&#x2F;');
+      .replace(/<script[^>]*>.*?<\/script>/gi, '')
+      .replace(/javascript:/gi, '')
+      .replace(/on\w+\s*=/gi, '')
+      .replace(/<iframe[^>]*>.*?<\/iframe>/gi, '')
+      .replace(/<object[^>]*>.*?<\/object>/gi, '')
+      .replace(/<embed[^>]*>/gi, '');
   }
 
   /**
-   * Setup form validation security
+   * Setup form validation
    */
   private setupFormValidation(): void {
-    document.addEventListener('submit', (e) => {
+    document.addEventListener('submit', (e: any) => {
       const form = e.target as HTMLFormElement;
       if (!this.validateForm(form)) {
         e.preventDefault();
@@ -182,17 +193,17 @@ export class SecurityManager {
   }
 
   /**
-   * Validate form for security issues
+   * Validate form data
    */
   private validateForm(form: HTMLFormElement): boolean {
-    const inputs = form.querySelectorAll('input, textarea, select');
+    const elements = Array.from(form.elements) as HTMLInputElement[];
     let isValid = true;
 
-    inputs.forEach(input => {
-      const element = input as HTMLInputElement;
-      
-      // Check for oversized inputs (potential DoS)
-      if (element.value.length > 10000) {
+    elements.forEach(element => {
+      if (!element.value) return;
+
+      // Check for oversized inputs
+      if (element.value?.length > 10000) {
         isValid = false;
         this.logSecurityEvent('OVERSIZED_INPUT', `Input too large: ${element.name || element.id}`);
       }
@@ -221,7 +232,7 @@ export class SecurityManager {
   private setupNetworkSecurity(): void {
     // Monitor for suspicious network requests
     const originalFetch = window.fetch;
-    window.fetch = async (...args) => {
+    window.fetch = async (...args: any) => {
       const url = args[0] as string;
       
       // Check for suspicious URLs
@@ -229,7 +240,6 @@ export class SecurityManager {
         this.logSecurityEvent('SUSPICIOUS_REQUEST', `Blocked request to: ${url}`);
         throw new Error('Request blocked for security reasons');
       }
-      
       return originalFetch.apply(window, args);
     };
   }
@@ -242,7 +252,6 @@ export class SecurityManager {
     if (url.startsWith('/') || url.startsWith('./') || url.startsWith('../')) {
       return false;
     }
-
     const suspiciousPatterns = [
       /^(?!https?:\/\/(localhost|127\.0\.0\.1|.*\.mineuro\.com\.au))/,
       /[<>'"]/,
@@ -284,7 +293,7 @@ export class SecurityManager {
   private monitorXSSAttempts(): void {
     // Monitor DOM mutations for potential XSS
     if ('MutationObserver' in window) {
-      const observer = new MutationObserver((mutations) => {
+      const observer = new MutationObserver((mutations: any) => {
         mutations.forEach(mutation => {
           if (mutation.type === 'childList') {
             mutation.addedNodes.forEach(node => {
@@ -379,10 +388,9 @@ export class SecurityManager {
     this.securityEvents.push(event);
 
     // Keep only last 100 events
-    if (this.securityEvents.length > 100) {
+    if (this.securityEvents?.length > 100) {
       this.securityEvents.shift();
     }
-
     // Security events are logged silently in production
 
     // In production, send to monitoring service
@@ -481,7 +489,7 @@ export const SecurityUtils = {
    */
   isValidEmail(email: string): boolean {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email) && email.length <= 254;
+    return emailRegex.test(email) && email?.length <= 254;
   },
 
   /**

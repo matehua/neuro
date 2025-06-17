@@ -1,14 +1,15 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Brain, Activity, Stethoscope, ClipboardList, Target } from "lucide-react";
+import { Brain, Activity, Stethoscope, ClipboardList, Target } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function SpineHealthApp() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const SpineHealthApp: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -354,4 +355,8 @@ export default function SpineHealthApp() {
       <Footer />
     </div>
   );
-}
+SpineHealthApp.displayName = 'SpineHealthApp';
+
+export default SpineHealthApp;
+
+SpineHealthApp.displayName = 'SpineHealthApp';

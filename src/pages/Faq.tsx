@@ -1,20 +1,21 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import SafeImage from "@/components/SafeImage";
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import SafeImage from '@/components/SafeImage';
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Accordion,
   AccordionContent,
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
 
-export default function Faq() {
+const Faq: React.FC = () => {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
@@ -236,7 +237,7 @@ export default function Faq() {
           <div className="container">
             <div className="max-w-3xl mx-auto">
               <p className="text-muted-foreground mb-6">
-                Welcome to our comprehensive FAQ section. Here you'll find answers to common questions about neurosurgical procedures, recovery expectations, and specific treatments offered by <a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Ales Aliashkevich</a>. If you don't find the information you're looking for, please don't hesitate to contact us.
+                Welcome to our comprehensive FAQ section. Here you'll find answers to common questions about neurosurgical procedures, recovery expectations, and specific treatments offered by <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Ales Aliashkevich</a>. If you don't find the information you're looking for, please don't hesitate to contact us.
               </p>
 
               {/* Featured Image */}
@@ -274,7 +275,7 @@ export default function Faq() {
                   )}>
                     Categories
                   </h2>
-                  {faqCategories.map((category, index) => (
+                  {faqCategories?.map((category: any, index: any) => (
                     <Button
                       key={index}
                       variant="ghost"
@@ -293,7 +294,7 @@ export default function Faq() {
                   ? "order-1 space-y-mobile-xl"
                   : "lg:col-span-3 space-y-12"
               )}>
-                {faqCategories.map((category, categoryIndex) => (
+                {faqCategories?.map((category: any, categoryIndex: any) => (
                   <div key={categoryIndex} id={`category-${categoryIndex}`}>
                     <h2 className={cn(
                       "font-bold mb-mobile-sm",
@@ -359,7 +360,7 @@ export default function Faq() {
                       </div>
                     )}
                     <Accordion type="single" collapsible className="space-y-4">
-                      {category.questions.map((faq, faqIndex) => (
+                      {category.questions?.map((faq: any, faqIndex: any) => (
                         <AccordionItem
                           key={faqIndex}
                           value={`item-${categoryIndex}-${faqIndex}`}
@@ -369,7 +370,7 @@ export default function Faq() {
                             {faq.question}
                           </AccordionTrigger>
                           <AccordionContent className="px-4 pt-2 pb-4 text-muted-foreground">
-                            {faq.answer.split('\n').map((paragraph, i) => (
+                            {faq.answer.split('\n').map((paragraph: any, i: any) => (
                               <p key={i} className={i > 0 ? 'mt-2' : ''}>{paragraph}</p>
                             ))}
                           </AccordionContent>
@@ -407,4 +408,8 @@ export default function Faq() {
       <Footer />
     </div>
   );
-}
+};
+
+Faq.displayName = 'Faq';
+
+export default Faq;

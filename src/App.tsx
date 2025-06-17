@@ -1,13 +1,14 @@
-import { useState, useEffect } from "react";
-import { Toaster } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
-import { LanguageProvider } from "@/contexts/LanguageContext";
-import { DeviceProvider } from "@/contexts/DeviceContext";
-import { getAllRoutes } from "@/routes/routeConfig";
-import ScreenReaderAnnouncer from "@/components/ScreenReaderAnnouncer";
-import ErrorBoundary from "@/components/ErrorBoundary";
+import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useState, useEffect } from 'react';
+
+import ErrorBoundary from '@/components/ErrorBoundary';
+import ScreenReaderAnnouncer from '@/components/ScreenReaderAnnouncer';
+import { DeviceProvider } from '@/contexts/DeviceContext';
+import { LanguageProvider } from '@/contexts/LanguageContext';
+import { Toaster } from '@/components/ui/sonner';
+import { TooltipProvider } from '@/components/ui/tooltip';
+import { getAllRoutes } from '@/routes/routeConfig';
 
 // Create a react-query client
 const queryClient = new QueryClient();
@@ -19,8 +20,8 @@ const RouteChangeAnnouncer = () => {
 
   useEffect(() => {
     // When the route changes, announce it to screen readers
-    const path = location.pathname;
-    const routeName = path === '/' ? 'Home' : path.split('/').filter(Boolean).join(' ');
+    const path = location?.pathname;
+    const routeName = path === '/' ? 'Home' : path?.split('/').filter(Boolean).join(' ');
     setMessage(`Navigated to ${routeName} page`);
   }, [location]);
 
@@ -31,8 +32,7 @@ const RouteChangeAnnouncer = () => {
 const AppContent = () => {
   const routes = getAllRoutes();
 
-  return (
-    <DeviceProvider>
+  return (<DeviceProvider>
       <LanguageProvider>
         {/* Accessibility enhancements */}
         <div id="skip-link-target" tabIndex={-1} />
@@ -40,11 +40,11 @@ const AppContent = () => {
 
         <Toaster />
         <Routes>
-          {routes.map((route, index) => (
+          {routes?.map((route: any, index: any) => (
             <Route
-              key={`${route.path}-${index}`}
-              path={route.path}
-              element={route.element}
+              key={`${route?.path}-${index}`}
+              path={route?.path}
+              element={route?.element}
             />
           ))}
         </Routes>

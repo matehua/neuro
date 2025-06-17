@@ -1,4 +1,4 @@
-export const zh = {
+export default {
   consultingRooms: {
     hero: {
       title: "在萨里山扩展您的医疗实践",
@@ -30,7 +30,7 @@ export const zh = {
       professionalEnvironment: {
         title: "专业环境",
         description: "从温馨的接待区到设备齐全的咨询室，我们优先为所有使用者创造积极的体验。"
-      }
+
     },
     whyChoose: {
       title: "为什么选择我们的套房",
@@ -61,9 +61,9 @@ export const zh = {
       kitchenette: {
         title: "小厨房",
         description: "我们的小厨房让我们能够在一天中准备和享用茶点。无论您需要在预约之间快速喝杯咖啡还是吃点零食来补充能量，我们的小厨房都提供了放松和补充能量的完美空间。它配备了基本电器，包括冰箱、微波炉、烤面包机、三明治机和开水/冷水龙头。"
-      }
+
     },
-    amenities: {
+    additionalAmenities: {
       title: "设施和便利",
       subtitle: "为您的医疗实践提供全面支持",
       description: "我们的咨询套房不仅提供优质的医疗空间，还包括各种便利设施，确保您的实践顺利运行。",
@@ -102,7 +102,7 @@ export const zh = {
         title: "长期租赁",
         description: "长期租赁协议，适合希望建立永久实践的医疗专业人士。",
         features: ["最优惠价格", "专用空间", "完全定制", "全面支持"]
-      }
+
     },
     location: {
       title: "位置",
@@ -178,7 +178,7 @@ export const zh = {
       title: "有问题？",
       description: "如果您对我们的咨询室选项有任何问题，或想安排参观，请随时联系我们。",
       contactUs: "联系我们"
-    }
+
   },
   expertiseCards: {
     brainConditions: {
@@ -196,7 +196,7 @@ export const zh = {
     medicolegalReports: {
       title: "医疗法律报告",
       description: "根据AMA永久性损伤指南进行损伤评估、能力评估、工伤赔偿、交通事故伤害、责任咨询。"
-    }
+
   },
   minimallyInvasive: {
     subtitle: "相信少即是多的神经外科医生",
@@ -305,7 +305,7 @@ export const zh = {
       procedures: "个手术",
       noMatch: "没有符合您筛选条件的手术",
       adjustFilters: "请尝试调整筛选条件以查看更多结果"
-    }
+
   },
   notFound: {
     title: "页面未找到",
@@ -360,14 +360,14 @@ export const zh = {
         location: {
           title: "人工椎间盘置换",
           description: "我们提供颈椎和腰椎人工椎间盘置换，这是一种保留运动的技术，可减轻疼痛并提高生活质量。"
-        }
-      }
+
+
     },
     cta: {
       title: "准备解决您的脊柱或脑部问题？",
       description: "今天预约咨询，了解我们如何使用微创技术改善您的生活质量。",
       bookNow: "安排您的咨询"
-    }
+
   },
   patientResources: {
     title: "患者资源",
@@ -397,7 +397,7 @@ export const zh = {
         assessment: "综合评估",
         tracking: "进度跟踪",
         goals: "目标设定"
-      }
+
     },
     conditionInfo: {
       title: "脊柱疾病库",
@@ -458,7 +458,7 @@ export const zh = {
         setGoals: "设定和跟踪目标",
         viewHistory: "查看评估历史",
         shareWithProvider: "与医疗提供者分享"
-      }
+
     },
     categories: {
       beforeVisit: "就诊前",
@@ -527,7 +527,7 @@ export const zh = {
       viewDetails: "查看详情",
       features: "功能",
       more: "更多"
-    }
+
   },
   gallery: {
     title: "图片库",
@@ -538,7 +538,7 @@ export const zh = {
       technology: "技术",
       team: "团队",
       procedures: "手术"
-    }
+
   },
   appointment: {
     title: "预约咨询",
@@ -576,7 +576,7 @@ export const zh = {
       emailSent: "您的预约已成功确认。确认电子邮件已发送至",
       appointmentReference: "预约参考号",
       returnToHome: "返回首页"
-    }
+
   },
   contact: {
     title: "联系我们",
@@ -605,7 +605,7 @@ export const zh = {
       sending: "发送中...",
       success: "信息已发送！",
       error: "发送失败，请重试。"
-    }
+
   },
   procedureDescriptions: {
     cervicalDiscReplacement: {
@@ -627,7 +627,7 @@ export const zh = {
       title: "机器人脊柱手术",
       subtitle: "下一代脊柱手术技术",
       description: "机器人辅助脊柱手术提供前所未有的精确度和控制，使复杂的脊柱手术更安全、更有效。"
-    }
+
   },
   appointments: {
     title: "预约",
@@ -685,7 +685,7 @@ export const zh = {
       futureCarePlanning: {
         title: "未来护理规划",
         description: "评估患者未来的医疗需求和护理要求，为长期护理规划提供专业建议。"
-      }
+
     },
     process: {
       title: "评估流程",
@@ -704,7 +704,7 @@ export const zh = {
       step4: {
         title: "专家证词",
         description: "如需要，可提供法庭专家证词和咨询服务。"
-      }
+
     },
     expertise: {
       title: "专业领域",
@@ -722,7 +722,7 @@ export const zh = {
       description: "如需医疗法律评估服务，请联系我们的办公室安排咨询。",
       phone: "电话：03 9008 4200",
       email: "电子邮件：info@mineuro.com.au"
-    }
+
   },
   hospitals: {
     title: "我们的医院",
@@ -762,7 +762,7 @@ export const zh = {
       address: "地址：Vale Street, Mornington VIC 3931",
       phone: "电话：(03) 5975 2009",
       visitWebsite: "访问医院网站"
-    }
+
   },
   locations: {
     title: "我们的地点",
@@ -829,8 +829,8 @@ export const zh = {
             description: "创建患者解剖结构的详细三维模型，用于手术前规划和术中导航，提高精确度。"
           }
         ]
-      }
-    }
+
+
   },
   gpResources: {
     title: "全科医生资源",
@@ -858,8 +858,7 @@ export const zh = {
       triageCategories: {
         title: "分诊类别",
         description: "我们如何根据临床表现优先处理转诊："
-      }
-    },
+      },
     diagnostics: {
       title: "神经外科诊断",
       subtitle: "神经外科疾病的诊断方法和工具",
@@ -875,8 +874,7 @@ export const zh = {
       clinicalAssessment: {
         title: "临床评估",
         description: "神经外科疾病的临床评估要点："
-      }
-    },
+      },
     careCoordination: {
       title: "多学科护理",
       subtitle: "协调神经外科患者的多学科护理",
@@ -892,8 +890,7 @@ export const zh = {
       careTransitions: {
         title: "护理过渡",
         description: "管理神经外科患者护理过渡的最佳实践："
-      }
-    },
+      },
     emergencies: {
       title: "紧急情况和危险信号",
       subtitle: "识别需要紧急神经外科干预的情况",
@@ -910,8 +907,7 @@ export const zh = {
         title: "紧急联系信息",
         description: "紧急神经外科咨询的联系信息："
       }
-    }
-  },
+    },
   dandenongLocation: {
     expertNeurosurgery: "丹德农专业神经外科咨询",
     subtitle: "帮助您无痛生活",
@@ -941,8 +937,7 @@ export const zh = {
       brainSurgery: {
         title: "脑部手术",
         description: "使用影像引导技术进行精确的脑肿瘤切除和神经血管手术。"
-      }
-    },
+      },
     facilities: {
       title: "设施",
       description: "我们的丹德农地点配备了现代化的医疗设备和舒适的患者环境。",
@@ -957,8 +952,7 @@ export const zh = {
       accessibility: {
         title: "无障碍设施",
         description: "完全符合无障碍标准的设施，确保所有患者都能轻松进入。"
-      }
-    },
+      },
     nearbyAmenities: {
       title: "附近设施",
       subtitle: "为访问我们丹德农地点的患者提供便捷的本地设施",
@@ -990,8 +984,7 @@ export const zh = {
         banksATMs: "银行和自动取款机 - 丹德农中央商务区有多个银行选择。",
         dandenongPostOffice: "Dandenong邮局 - 便捷位置，提供邮政服务和账单支付。",
         drumTheatre: "Drum剧院 - 一个表演艺术场所，举办各种文化活动和表演。"
-      }
-    },
+      },
     nearbyHospitals: {
       title: "附近医院",
       subtitle: "阿利什凯维奇医生在丹德农附近的这些医院进行手术",
@@ -1013,8 +1006,7 @@ export const zh = {
         description: "莫宁顿的The Bays医院是一家非营利性社区医院，提供广泛的医疗和外科服务。阿利什凯维奇医生在这家设施进行选定的神经外科手术，该设施在以社区为中心的环境中提供个性化护理。",
         address: "Vale Street, Mornington VIC 3931",
         phone: "(03) 5975 2009"
-      }
-    },
+      },
     patientsPrivacy: {
       title: "患者隐私",
       subtitle: "您的隐私是我们的优先事项",
@@ -1064,4 +1056,4 @@ export const zh = {
     warning: "警告",
     info: "信息"
   }
-};
+}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}};

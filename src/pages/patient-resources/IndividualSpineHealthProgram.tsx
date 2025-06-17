@@ -1,5 +1,4 @@
-
-import React from "react";
+import React from 'react';
 
 /**
  * Placeholder for Individual Spine Health Program page.

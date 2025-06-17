@@ -1,3 +1,5 @@
+import React from 'react';
+
 interface SkipLinkProps {
   /** The target ID to skip to (without the #) */
   targetId?: string;
@@ -22,11 +24,11 @@ interface SkipLinkProps {
  * // Custom target and text
  * <SkipLink targetId="content" text="Skip to content" />
  */
-export default function SkipLink({
+const SkipLink: React.FC<SkipLinkProps> = ({
   targetId = "main-content",
   text = "Skip to main content",
   className = ""
-}: SkipLinkProps) {
+}) => {
   return (
     <a
       href={`#${targetId}`}
@@ -36,4 +38,8 @@ export default function SkipLink({
       {text}
     </a>
   );
-}
+};
+
+SkipLink.displayName = 'SkipLink';
+
+export default SkipLink;

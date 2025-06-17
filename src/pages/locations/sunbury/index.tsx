@@ -1,12 +1,13 @@
-import React, { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from 'lucide-react';
 
-export default function SunburyLocation() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const SunburyLocation: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -175,7 +176,7 @@ export default function SunburyLocation() {
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.locations?.sunburyLocation?.therapeuticInterventions?.description || 'Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, '}<a href="https://mpscentre.com.au/dt_team/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> {t.locations?.sunburyLocation?.therapeuticInterventions?.description ? '' : 'collaborates closely with other specialists in Sunbury and Melbourne to develop a tailored therapeutic plan designed to address your specific needs.'}
+                {t.locations?.sunburyLocation?.therapeuticInterventions?.description || 'Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, '}<a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> {t.locations?.sunburyLocation?.therapeuticInterventions?.description ? '' : 'collaborates closely with other specialists in Sunbury and Melbourne to develop a tailored therapeutic plan designed to address your specific needs.'}
               </p>
             </div>
 
@@ -712,4 +713,8 @@ export default function SunburyLocation() {
       <Footer />
     </div>
   );
-}
+};
+
+SunburyLocation.displayName = 'SunburyLocation';
+
+export default SunburyLocation;

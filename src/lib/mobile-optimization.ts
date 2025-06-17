@@ -20,7 +20,6 @@ export class MobileOptimiser {
     }
     return MobileOptimiser.instance;
   }
-
   /**
    * Initialise mobile optimisations
    */
@@ -63,7 +62,7 @@ export class MobileOptimiser {
 
     // Prevent zoom on double tap for better UX
     let lastTouchEnd = 0;
-    document.addEventListener('touchend', (e) => {
+    document.addEventListener('touchend', (e: any) => {
       const now = Date.now();
       if (now - lastTouchEnd <= 300) {
         e.preventDefault();
@@ -84,7 +83,6 @@ export class MobileOptimiser {
       viewport.name = 'viewport';
       document.head.appendChild(viewport);
     }
-    
     // Set optimal viewport settings for mobile
     viewport.content = 'width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes, viewport-fit=cover';
   }
@@ -102,26 +100,18 @@ export class MobileOptimiser {
       * {
         -webkit-overflow-scrolling: touch;
         overscroll-behavior: contain;
-      }
-      
       body {
         -webkit-text-size-adjust: 100%;
         -webkit-tap-highlight-color: transparent;
-      }
-      
       /* Optimise touch targets */
       button, a, input, select, textarea {
         min-height: 44px;
         min-width: 44px;
-      }
-      
       /* Optimise animations for mobile */
       @media (prefers-reduced-motion: no-preference) {
         * {
           animation-duration: 0.3s;
           transition-duration: 0.3s;
-        }
-      }
     `;
     document.head.appendChild(style);
   }
@@ -132,7 +122,7 @@ export class MobileOptimiser {
   private optimiseImages(): void {
     // Add intersection observer for lazy loading
     if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries) => {
+      const imageObserver = new IntersectionObserver((entries: any) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const img = entry.target as HTMLImageElement;
@@ -154,13 +144,12 @@ export class MobileOptimiser {
       });
     }
   }
-
   /**
    * Add mobile-specific security measures
    */
   private addMobileSecurity(): void {
     // Prevent context menu on long press (optional)
-    document.addEventListener('contextmenu', (e) => {
+    document.addEventListener('contextmenu', (e: any) => {
       if (this.isMobileDevice()) {
         e.preventDefault();
       }
@@ -169,13 +158,21 @@ export class MobileOptimiser {
     // Prevent text selection on UI elements
     const style = document.createElement('style');
     style.textContent = `
-      .no-select {
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        -ms-user-select: none;
-        user-select: none;
-        -webkit-touch-callout: none;
-      }
+      * {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+      body {
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+      /* Optimise touch targets */
+      button, a, input, select, textarea {
+        min-height: 44px;
+        min-width: 44px;
+      /* Optimise animations for mobile */
+      @media (prefers-reduced-motion: no-preference) {
+        * {
+          animation-duration: 0.3s;
+          transition-duration: 0.3s;
     `;
     document.head.appendChild(style);
 
@@ -221,9 +218,21 @@ export class MobileOptimiser {
     // Add font-display: swap for better performance
     const style = document.createElement('style');
     style.textContent = `
-      @font-face {
-        font-display: swap;
-      }
+      * {
+        -webkit-overflow-scrolling: touch;
+        overscroll-behavior: contain;
+      body {
+        -webkit-text-size-adjust: 100%;
+        -webkit-tap-highlight-color: transparent;
+      /* Optimise touch targets */
+      button, a, input, select, textarea {
+        min-height: 44px;
+        min-width: 44px;
+      /* Optimise animations for mobile */
+      @media (prefers-reduced-motion: no-preference) {
+        * {
+          animation-duration: 0.3s;
+          transition-duration: 0.3s;
     `;
     document.head.appendChild(style);
   }
@@ -240,7 +249,6 @@ export class MobileOptimiser {
         });
       });
     }
-
     // Clear any cached responses that might have incorrect MIME types
     if ('caches' in window) {
       caches.keys().then(cacheNames => {
@@ -249,12 +257,11 @@ export class MobileOptimiser {
         });
       });
     }
-
     // Service worker registration disabled temporarily to fix MIME type issues
     // TODO: Re-enable after fixing service worker MIME type handling
 
     // Add app install prompt handling
-    window.addEventListener('beforeinstallprompt', (e) => {
+    window.addEventListener('beforeinstallprompt', (e: any) => {
       e.preventDefault();
       // Store the event for later use if needed
     });
@@ -280,7 +287,7 @@ export class MobileOptimiser {
    */
   public enhanceAccessibility(): void {
     // Ensure proper focus management on mobile
-    document.addEventListener('focusin', (e) => {
+    document.addEventListener('focusin', (e: any) => {
       const target = e.target as HTMLElement;
       if (target && this.isMobileDevice()) {
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -291,7 +298,6 @@ export class MobileOptimiser {
     if (window.matchMedia('(prefers-contrast: high)').matches) {
       document.documentElement.classList.add('high-contrast');
     }
-
     // Add reduced motion detection
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
       document.documentElement.classList.add('reduced-motion');
@@ -310,7 +316,6 @@ export class MobileOptimiser {
         // High memory usage detected - could trigger cleanup or analytics
       }
     }
-
     // Monitor battery status
     if ('getBattery' in navigator) {
       (navigator as Navigator & { getBattery: () => Promise<{ level: number; charging: boolean }> }).getBattery().then(battery => {
@@ -322,7 +327,6 @@ export class MobileOptimiser {
     }
   }
 }
-
 /**
  * Initialise mobile optimisations
  */
@@ -378,14 +382,14 @@ export const MobileUtils = {
    * Optimise images for mobile screens
    */
   optimiseImageForMobile(img: HTMLImageElement): void {
-    const pixelRatio = this.getDevicePixelRatio();
+    const pixelRatio = MobileUtils.getDevicePixelRatio();
     const width = img.clientWidth * pixelRatio;
     const height = img.clientHeight * pixelRatio;
-    
+
     // Add responsive image attributes
     img.setAttribute('loading', 'lazy');
     img.setAttribute('decoding', 'async');
-    
+
     // Set optimal sizes
     if (width && height) {
       img.style.maxWidth = '100%';

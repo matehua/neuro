@@ -1,9 +1,9 @@
+import { Link } from 'react-router-dom';
 
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
+import { Button } from '@/components/ui/button';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface CTASectionProps {
   className?: string;
@@ -17,7 +17,7 @@ interface CTASectionProps {
   id?: string;
 }
 
-export default function CTASection({
+const CTASection: React.FC<CTASectionProps> = ({
   className = "",
   title,
   description,
@@ -27,7 +27,7 @@ export default function CTASection({
   secondaryButtonLink = "/contact",
   bgClass = "bg-primary/5",
   id,
-}: CTASectionProps) {
+}: CTASectionProps) => {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
@@ -112,4 +112,8 @@ export default function CTASection({
       </div>
     </section>
   );
-}
+};
+
+CTASection.displayName = 'CTASection';
+
+export default CTASection;

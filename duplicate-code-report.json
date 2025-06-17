@@ -1,9 +1,9 @@
 {
-  "timestamp": "2025-06-15T21:40:21.948Z",
-  "filesAnalyzed": 159,
-  "blocksAnalyzed": 444,
+  "timestamp": "2025-06-15T23:50:50.422Z",
+  "filesAnalyzed": 165,
+  "blocksAnalyzed": 475,
   "duplicatesFound": 7,
-  "similarPatternsFound": 12,
+  "similarPatternsFound": 14,
   "duplicates": [
     {
       "hash": "bf8fbea1810da582d5a40d4758a036ec",
@@ -445,6 +445,60 @@
       "files": [
         "components\\ui\\form.tsx",
         "components\\ui\\sidebar.tsx"
+      ]
+    },
+    {
+      "similarity": 0.8656716417910447,
+      "blocks": [
+        {
+          "type": "pattern",
+          "content": "if (import.meta.env.DEV) {\n        console.error('Failed to report error:', reportingError);\n      }",
+          "normalized": "if (import.meta.env.DEV) { console.error(STRING, reportingError); }",
+          "hash": "2b3174e67f08f98d0606d4f818f18cd4",
+          "file": "D:\\website\\neurosurgeon\\revitrax\\revitrax-03\\src\\lib\\error-handling.ts",
+          "line": 233,
+          "size": 100
+        },
+        {
+          "type": "pattern",
+          "content": "if (import.meta.env.DEV) {\r\n        console.error('Dynamic import failed:', error);\r\n      }",
+          "normalized": "if (import.meta.env.DEV) { console.error(STRING, error); }",
+          "hash": "40b8223313832bae8c3df5e57893f9ca",
+          "file": "D:\\website\\neurosurgeon\\revitrax\\revitrax-03\\src\\lib\\performance.ts",
+          "line": 504,
+          "size": 92
+        }
+      ],
+      "files": [
+        "lib\\error-handling.ts",
+        "lib\\performance.ts"
+      ]
+    },
+    {
+      "similarity": 0.8636363636363636,
+      "blocks": [
+        {
+          "type": "pattern",
+          "content": "if (import.meta.env.DEV) {\n        console.error('Error in error handler:', handlingError);\n      }",
+          "normalized": "if (import.meta.env.DEV) { console.error(STRING, handlingError); }",
+          "hash": "35476bf5928d48f8bc8ecdcabae4bce7",
+          "file": "D:\\website\\neurosurgeon\\revitrax\\revitrax-03\\src\\lib\\error-handling.ts",
+          "line": 181,
+          "size": 99
+        },
+        {
+          "type": "pattern",
+          "content": "if (import.meta.env.DEV) {\r\n        console.error('Dynamic import failed:', error);\r\n      }",
+          "normalized": "if (import.meta.env.DEV) { console.error(STRING, error); }",
+          "hash": "40b8223313832bae8c3df5e57893f9ca",
+          "file": "D:\\website\\neurosurgeon\\revitrax\\revitrax-03\\src\\lib\\performance.ts",
+          "line": 504,
+          "size": 92
+        }
+      ],
+      "files": [
+        "lib\\error-handling.ts",
+        "lib\\performance.ts"
       ]
     },
     {

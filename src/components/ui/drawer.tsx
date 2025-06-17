@@ -1,7 +1,8 @@
-import * as React from "react"
-import { Drawer as DrawerPrimitive } from "vaul"
+import React from 'react';
 
-import { cn } from "@/lib/utils"
+import { Drawer as DrawerPrimitive } from 'vaul';
+
+import { cn } from '@/lib/utils';
 
 const Drawer = ({
   shouldScaleBackground = true,
@@ -23,7 +24,7 @@ const DrawerClose = DrawerPrimitive.Close
 const DrawerOverlay = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Overlay>
->(({ className, ...props }, ref) => (
+>(({ className: any, ...props }: any, ref: any) => (
   <DrawerPrimitive.Overlay
     ref={ref}
     className={cn("fixed inset-0 z-50 bg-black/80", className)}
@@ -35,7 +36,7 @@ DrawerOverlay.displayName = DrawerPrimitive.Overlay.displayName
 const DrawerContent = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Content>
->(({ className, children, ...props }, ref) => (
+>(({ className: any, children: any, ...props }: any, ref: any) => (
   <DrawerPortal>
     <DrawerOverlay />
     <DrawerPrimitive.Content
@@ -78,7 +79,7 @@ DrawerFooter.displayName = "DrawerFooter"
 const DrawerTitle = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Title>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Title>
->(({ className, ...props }, ref) => (
+>(({ className: any, ...props }: any, ref: any) => (
   <DrawerPrimitive.Title
     ref={ref}
     className={cn(
@@ -93,7 +94,7 @@ DrawerTitle.displayName = DrawerPrimitive.Title.displayName
 const DrawerDescription = React.forwardRef<
   React.ElementRef<typeof DrawerPrimitive.Description>,
   React.ComponentPropsWithoutRef<typeof DrawerPrimitive.Description>
->(({ className, ...props }, ref) => (
+>(({ className: any, ...props }: any, ref: any) => (
   <DrawerPrimitive.Description
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
@@ -112,5 +113,4 @@ export {
   DrawerHeader,
   DrawerFooter,
   DrawerTitle,
-  DrawerDescription,
-}
+  DrawerDescription,

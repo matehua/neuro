@@ -1,13 +1,14 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import PageHeader from "@/components/PageHeader";
-import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { AlertTriangle, Phone, Clock, Stethoscope, Brain, Activity } from "lucide-react";
+import { AlertTriangle, Phone, Clock, Stethoscope, Brain, Activity } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function Emergencies() {
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
+const Emergencies: React.FC = () => {
   // No translations needed for this page
 
   useEffect(() => {
@@ -47,7 +48,7 @@ export default function Emergencies() {
   ];
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <PageHeader
         title="Emergencies & Red Flags"
         subtitle="Critical neurosurgical conditions requiring urgent assessment and intervention"
@@ -317,7 +318,7 @@ export default function Emergencies() {
           <div className="mt-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Emergency Case Examples</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {emergencyCases.map((example, index) => (
+              {emergencyCases?.map((example: any, index: any) => (
                 <Card key={index} className="bg-card border-red-200 dark:border-red-800">
                   <CardHeader className="bg-red-50 dark:bg-red-950/20 border-b border-red-200 dark:border-red-800">
                     <CardTitle className="text-xl text-red-700 dark:text-red-400">{example.title}</CardTitle>
@@ -342,6 +343,10 @@ export default function Emergencies() {
           </div>
         </div>
       </section>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+Emergencies.displayName = 'Emergencies';
+
+export default Emergencies;

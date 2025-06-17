@@ -1,12 +1,13 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from "lucide-react";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { Link } from 'react-router-dom';
+import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from 'lucide-react';
+import { useEffect } from 'react';
 
-export default function LangwarrinLocation() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const LangwarrinLocation: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -604,4 +605,8 @@ export default function LangwarrinLocation() {
       <Footer />
     </div>
   );
-}
+};
+
+LangwarrinLocation.displayName = 'LangwarrinLocation';
+
+export default LangwarrinLocation;

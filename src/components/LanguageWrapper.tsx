@@ -1,13 +1,13 @@
-
 import { useEffect, ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
+
 import { useLanguage, SupportedLanguage } from '@/contexts/LanguageContext';
 
 interface LanguageWrapperProps {
   children: ReactNode;
 }
 
-export default function LanguageWrapper({ children }: LanguageWrapperProps) {
+const LanguageWrapper: React.FC<LanguageWrapperProps> = ({ children }) => {
   const { lang } = useParams<{ lang: string }>();
   const { setLanguage, isLanguageLoaded } = useLanguage();
 
@@ -18,4 +18,8 @@ export default function LanguageWrapper({ children }: LanguageWrapperProps) {
   }, [lang, setLanguage, isLanguageLoaded]);
 
   return <>{children}</>;
-}
+};
+
+LanguageWrapper.displayName = 'LanguageWrapper';
+
+export default LanguageWrapper;

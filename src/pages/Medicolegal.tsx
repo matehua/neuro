@@ -1,11 +1,13 @@
-import { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import SafeImage from "@/components/SafeImage";
-export default function Medicolegal() {
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import PageHeader from '@/components/PageHeader';
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const Medicolegal: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -14,7 +16,7 @@ export default function Medicolegal() {
   }, []);
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <PageHeader
         title={t.medicolegal?.title || 'Medicolegal Services'}
         subtitle={t.medicolegal?.subtitle || 'Expert medicolegal assessments and reports for legal and insurance purposes.'}
@@ -143,7 +145,7 @@ export default function Medicolegal() {
                   {t.medicolegal?.independentReports?.description2 || 'His assessments are always in line with the current evidence-based treatment recommendations, considering the values of multidisciplinary approaches and availability of minimally-invasive and motion-preserving surgical techniques.'}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {t.medicolegal?.services?.items?.slice(0, 4).map((item, index) => (
+                  {t.medicolegal?.services?.items?.slice(0, 4).map((item: any, index: any) => (
                     <div key={index} className="bg-card p-3 rounded-md shadow-sm">
                       <p className="font-medium">{item}</p>
                     </div>
@@ -152,7 +154,7 @@ export default function Medicolegal() {
                     'Independent Medical Examinations (IME)',
                     'Joint Medical Examinations (JME)',
                     'Whole Person Impairment Assessments (WPI)'
-                  ].map((item, index) => (
+                  ].map((item: any, index: any) => (
                     <div key={index} className="bg-card p-3 rounded-md shadow-sm">
                       <p className="font-medium">{item}</p>
                     </div>
@@ -292,7 +294,7 @@ export default function Medicolegal() {
                 Our reports can be used for a variety of legal purposes:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-12">
-                {t.medicolegal?.helpRecover?.purposes?.map((purpose, index) => (
+                {t.medicolegal?.helpRecover?.purposes?.map((purpose: any, index: any) => (
                   <div key={index} className="bg-background p-4 rounded-lg shadow-sm flex items-center">
                     <div className="bg-primary/10 rounded-full p-2 mr-3">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -306,7 +308,7 @@ export default function Medicolegal() {
                   'Assisting with insurance and compensation claims',
                   'Impairment assessments',
                   'Estimation of work capacity'
-                ].map((purpose, index) => (
+                ].map((purpose: any, index: any) => (
                   <div key={index} className="bg-background p-4 rounded-lg shadow-sm flex items-center">
                     <div className="bg-primary/10 rounded-full p-2 mr-3">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -320,7 +322,7 @@ export default function Medicolegal() {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {t.medicolegal?.services?.items?.map((item, index) => (
+              {t.medicolegal?.services?.items?.map((item: any, index: any) => (
                 <div key={index} className="card p-4 rounded-lg shadow-md bg-background">
                   <p className="font-medium">{item}</p>
                 </div>
@@ -337,7 +339,7 @@ export default function Medicolegal() {
                 'Expert Witness Opinions',
                 'File/Imaging Reviews',
                 'Teleconferences'
-              ].map((item, index) => (
+              ].map((item: any, index: any) => (
                 <div key={index} className="card p-4 rounded-lg shadow-md bg-background">
                   <p className="font-medium">{item}</p>
                 </div>
@@ -487,7 +489,7 @@ export default function Medicolegal() {
                   {t.medicolegal?.locations?.additionalLocations?.title || 'Additional Locations'}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {t.medicolegal?.locations?.additionalLocations?.locations?.map((location, index) => (
+                  {t.medicolegal?.locations?.additionalLocations?.locations?.map((location: any, index: any) => (
                     <div key={index} className="bg-card p-4 rounded-md shadow-sm">
                       <h4 className="font-semibold text-primary mb-2">{location.name}</h4>
                       <p className="text-sm text-muted-foreground whitespace-pre-line">{location.address}</p>
@@ -501,7 +503,7 @@ export default function Medicolegal() {
                     { name: 'Moonee Ponds', address: 'Moonee Ponds Specialist Centre\n827 Mt Alexander Road' },
                     { name: 'Dandenong', address: 'Dandenong Neurology & Specialists Group\n136 David Street' },
                     { name: 'Sunbury', address: 'Lake Imaging\n17-19 Horne Street' }
-                  ].map((location, index) => (
+                  ].map((location: any, index: any) => (
                     <div key={index} className="bg-card p-4 rounded-md shadow-sm">
                       <h4 className="font-semibold text-primary mb-2">{location.name}</h4>
                       <p className="text-sm text-muted-foreground whitespace-pre-line">{location.address}</p>
@@ -610,7 +612,11 @@ export default function Medicolegal() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+Medicolegal.displayName = 'Medicolegal';
+
+export default Medicolegal;
 

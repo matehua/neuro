@@ -1,9 +1,9 @@
-import * as React from "react"
-import * as DialogPrimitive from "@radix-ui/react-dialog"
-import { X } from "lucide-react"
+import * as DialogPrimitive from '@radix-ui/react-dialog';
+import React from 'react';
+import { X } from 'lucide-react';
 
-import { cn } from "@/lib/utils"
-import { useDeviceDetection } from "@/contexts/DeviceContext"
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
 
 const Dialog = DialogPrimitive.Root
 
@@ -16,7 +16,7 @@ const DialogClose = DialogPrimitive.Close
 const DialogOverlay = React.forwardRef<
   React.ElementRef<typeof DialogPrimitive.Overlay>,
   React.ComponentPropsWithoutRef<typeof DialogPrimitive.Overlay>
->(({ className, ...props }, ref) => {
+>(({ className: any, ...props }: any, ref: any) => {
   const deviceInfo = useDeviceDetection();
 
   return (

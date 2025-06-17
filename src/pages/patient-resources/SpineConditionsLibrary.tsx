@@ -1,14 +1,15 @@
-import { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
 
-export default function SpineConditionsLibrary() {
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const SpineConditionsLibrary: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -17,7 +18,7 @@ export default function SpineConditionsLibrary() {
   }, []);
 
   return (
-    <Layout pageTitle="Spine Conditions Library">
+    <StandardPageLayout title="Spine Conditions Library" showHeader={false}>
       <PageHeader
         title="Spine Conditions Library"
         subtitle="Comprehensive information about common spine conditions, their causes, symptoms, and treatment options."
@@ -753,6 +754,10 @@ export default function SpineConditionsLibrary() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+SpineConditionsLibrary.displayName = 'SpineConditionsLibrary';
+
+export default SpineConditionsLibrary;

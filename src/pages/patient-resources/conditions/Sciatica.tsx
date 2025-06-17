@@ -1,22 +1,23 @@
-import React, { useEffect } from "react";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Badge } from "@/components/ui/badge";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { cn } from "@/lib/utils";
-import SafeImage from "@/components/SafeImage";
-import { 
-  AlertTriangle, 
-  Activity, 
-  Brain, 
-  Heart, 
-  Shield, 
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import PageHeader from '@/components/PageHeader';
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Badge } from '@/components/ui/badge';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+import {
+  AlertTriangle,
+  Activity,
+  Brain,
+  Heart,
+  Shield,
   Target,
   Clock,
   CheckCircle,
@@ -32,7 +33,7 @@ import {
   Gauge
 } from "lucide-react";
 
-export default function Sciatica() {
+const Sciatica: React.FC = () => {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
@@ -42,7 +43,7 @@ export default function Sciatica() {
   }, []);
 
   return (
-    <Layout pageTitle="Sciatica - Comprehensive Guide">
+    <StandardPageLayout title="Sciatica - Comprehensive Guide" showHeader={false}>
       <PageHeader
         title="Sciatica: Complete Guide"
         subtitle="Understanding sciatica: causes, symptoms, diagnosis, and comprehensive treatment options for sciatic nerve pain from conservative management to advanced interventional procedures."
@@ -1721,6 +1722,10 @@ export default function Sciatica() {
           </div>
         </section>
       </main>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+Sciatica.displayName = 'Sciatica';
+
+export default Sciatica;

@@ -1,8 +1,3 @@
-/**
- * Performance Monitoring and Optimisation Utilities
- * Provides tools for measuring and improving application performance
- */
-
 import React from 'react';
 
 /**
@@ -17,17 +12,41 @@ export interface PerformanceMetrics {
 }
 
 /**
- * Performance Monitor class for tracking application performance
+ * Performance monitoring configuration
+ */
+interface PerformanceConfig {
+  enableResourceTiming: boolean;
+  enableNavigationTiming: boolean;
+  enableUserTiming: boolean;
+  enableLongTaskTiming: boolean;
+  enableLayoutShiftTiming: boolean;
+  enableLargestContentfulPaint: boolean;
+  enableFirstInputDelay: boolean;
+  maxMetrics: number;
+}
+
+/**
+ * Performance monitoring singleton class
  */
 export class PerformanceMonitor {
   private static instance: PerformanceMonitor;
   private metrics: Map<string, PerformanceMetrics> = new Map();
   private observers: PerformanceObserver[] = [];
-  private initialized: boolean = false;
-  private initializing: boolean = false;
+  private config: PerformanceConfig;
+  private initialized = false;
+  private initializing = false;
 
   private constructor() {
-    // Don't initialize observers in constructor to prevent double initialization
+    this.config = {
+      enableResourceTiming: true,
+      enableNavigationTiming: true,
+      enableUserTiming: true,
+      enableLongTaskTiming: true,
+      enableLayoutShiftTiming: true,
+      enableLargestContentfulPaint: true,
+      enableFirstInputDelay: true,
+      maxMetrics: 1000
+    };
   }
 
   static getInstance(): PerformanceMonitor {
@@ -38,92 +57,70 @@ export class PerformanceMonitor {
   }
 
   /**
-   * Initialize the performance monitoring (should only be called once from main.tsx)
+   * Initialize performance monitoring
    */
-  public initialize(): void {
-    this.initializeObservers();
-  }
-
-  /**
-   * Initialize performance observers with atomic initialization
-   */
-  private initializeObservers(): void {
-    // CRITICAL: Check initialization status FIRST to prevent race conditions
+  initialize(): void {
     if (this.initialized || this.initializing) {
       return;
     }
 
-    // Set initializing flag atomically to prevent race conditions
     this.initializing = true;
 
-    // Environment checks after atomic flag set
-    if (typeof window === 'undefined' || !('PerformanceObserver' in window)) {
-      this.initializing = false; // Reset flag on failure
-      return;
-    }
-
-    // Clean up any existing observers before creating new ones
-    this.cleanupObservers();
-
     try {
-      // Observe navigation timing
-      const navObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          if (entry.entryType === 'navigation') {
-            this.logNavigationMetrics(entry as PerformanceNavigationTiming);
-          }
-        });
-      });
-      navObserver.observe({ entryTypes: ['navigation'] });
-      this.observers.push(navObserver);
+      if (typeof window === 'undefined' || !('performance' in window)) {
+        this.initializing = false;
+        return;
+      }
 
-      // Observe resource timing
-      const resourceObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          if (entry.entryType === 'resource') {
-            this.logResourceMetrics(entry as PerformanceResourceTiming);
-          }
-        });
-      });
-      resourceObserver.observe({ entryTypes: ['resource'] });
-      this.observers.push(resourceObserver);
-
-      // Observe largest contentful paint
-      const lcpObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        const lastEntry = entries[entries.length - 1];
-        this.logMetric('LCP', lastEntry.startTime, lastEntry.startTime, {
-          element: (lastEntry as PerformanceEntry & { element?: { tagName: string } }).element?.tagName,
-          url: (lastEntry as PerformanceEntry & { url?: string }).url
-        });
-      });
-      lcpObserver.observe({ entryTypes: ['largest-contentful-paint'] });
-      this.observers.push(lcpObserver);
-
-      // Observe first input delay
-      const fidObserver = new PerformanceObserver((list) => {
-        const entries = list.getEntries();
-        entries.forEach((entry) => {
-          this.logMetric('FID', entry.startTime, entry.startTime + entry.duration, {
-            processingStart: (entry as PerformanceEntry & { processingStart?: number }).processingStart,
-            processingEnd: (entry as PerformanceEntry & { processingEnd?: number }).processingEnd
-          });
-        });
-      });
-      fidObserver.observe({ entryTypes: ['first-input'] });
-      this.observers.push(fidObserver);
-
-      // Mark as initialized only after successful setup
+      // Initialize observers
+      this.initializeObservers();
+      
       this.initialized = true;
       this.initializing = false;
-
     } catch (error) {
       // Reset flags on failure and cleanup any partial observers
       this.initializing = false;
       this.initialized = false;
       this.cleanupObservers();
+    }
+  }
+
+  /**
+   * Initialize performance observers
+   */
+  private initializeObservers(): void {
+    if (!('PerformanceObserver' in window)) {
+      return;
+    }
+
+    try {
+      // Navigation timing observer
+      if (this.config.enableNavigationTiming) {
+        const navObserver = new PerformanceObserver((list) => {
+          list.getEntries().forEach((entry) => {
+            if (entry.entryType === 'navigation') {
+              this.logNavigationMetrics(entry as PerformanceNavigationTiming);
+            }
+          });
+        });
+        navObserver.observe({ entryTypes: ['navigation'] });
+        this.observers.push(navObserver);
+      }
+
+      // Resource timing observer
+      if (this.config.enableResourceTiming) {
+        const resourceObserver = new PerformanceObserver((list) => {
+          list.getEntries().forEach((entry) => {
+            if (entry.entryType === 'resource') {
+              this.logResourceMetrics(entry as PerformanceResourceTiming);
+            }
+          });
+        });
+        resourceObserver.observe({ entryTypes: ['resource'] });
+        this.observers.push(resourceObserver);
+      }
+    } catch (error) {
+      // Silently handle observer initialization errors
     }
   }
 
@@ -147,7 +144,6 @@ export class PerformanceMonitor {
     if (!metric) {
       return null;
     }
-
     const endTime = performance.now();
     const duration = endTime - metric.startTime;
 
@@ -254,14 +250,14 @@ export class PerformanceMonitor {
    * Get number of active observers
    */
   getObserverCount(): number {
-    return this.observers.length;
+    return this.observers?.length || 0;
   }
 
   /**
    * Internal cleanup method for observers only
    */
   private cleanupObservers(): void {
-    if (this.observers.length > 0) {
+    if (this.observers?.length > 0) {
       this.observers.forEach(observer => observer.disconnect());
       this.observers = [];
     }
@@ -320,83 +316,12 @@ export function usePerformanceMetric(name: string, dependencies: React.Dependenc
     return () => {
       monitor.endMeasure(name);
     };
-  }, [getMonitor, name, dependencies]);
+  }, [getMonitor, name, ...dependencies]);
 
   return React.useMemo(() => ({
     startMeasure: (metricName: string) => getMonitor().startMeasure(metricName),
     endMeasure: (metricName: string) => getMonitor().endMeasure(metricName)
   }), [getMonitor]);
-}
-
-/**
- * Debounce function for performance optimisation
- */
-export function debounce<T extends (...args: unknown[]) => unknown>(
-  func: T,
-  wait: number,
-  immediate?: boolean
-): (...args: Parameters<T>) => void {
-  let timeout: NodeJS.Timeout | null = null;
-
-  return function executedFunction(...args: Parameters<T>) {
-    const later = () => {
-      timeout = null;
-      if (!immediate) func(...args);
-    };
-
-    const callNow = immediate && !timeout;
-    
-    if (timeout) clearTimeout(timeout);
-    timeout = setTimeout(later, wait);
-    
-    if (callNow) func(...args);
-  };
-}
-
-/**
- * Throttle function for performance optimisation
- */
-export function throttle<T extends (...args: unknown[]) => unknown>(
-  func: T,
-  limit: number
-): (...args: Parameters<T>) => void {
-  let inThrottle: boolean;
-  
-  return function executedFunction(...args: Parameters<T>) {
-    if (!inThrottle) {
-      func(...args);
-      inThrottle = true;
-      setTimeout(() => inThrottle = false, limit);
-    }
-  };
-}
-
-/**
- * Lazy load images with intersection observer
- */
-export function lazyLoadImage(
-  img: HTMLImageElement,
-  src: string,
-  options?: IntersectionObserverInit
-): () => void {
-  if (!('IntersectionObserver' in window)) {
-    img.src = src;
-    return () => {};
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        img.src = src;
-        img.classList.remove('lazy');
-        observer.unobserve(img);
-      }
-    });
-  }, options);
-
-  observer.observe(img);
-
-  return () => observer.unobserve(img);
 }
 
 /**
@@ -407,192 +332,6 @@ export function initializePerformanceMonitoring(): PerformanceMonitor {
   monitor.initialize();
   return monitor;
 }
-
-/**
- * React performance utilities
- */
-export const ReactPerformanceUtils = {
-  /**
-   * Create a memoized component with custom comparison
-   */
-  createMemoComponent<T extends Record<string, unknown>>(
-    Component: React.ComponentType<T>,
-    areEqual?: (prevProps: T, nextProps: T) => boolean
-  ) {
-    return React.memo(Component, areEqual);
-  },
-
-  /**
-   * Create a stable callback with useCallback
-   */
-  useStableCallback<T extends (...args: unknown[]) => unknown>(
-    callback: T,
-    deps: React.DependencyList
-  ): T {
-    return React.useCallback(callback, deps);
-  },
-
-  /**
-   * Create a memoized value with useMemo
-   */
-  useMemoizedValue<T>(
-    factory: () => T,
-    deps: React.DependencyList
-  ): T {
-    return React.useMemo(factory, deps);
-  },
-
-  /**
-   * Debounced state hook
-   */
-  useDebouncedState<T>(
-    initialValue: T,
-    delay: number
-  ): [T, React.Dispatch<React.SetStateAction<T>>, T] {
-    const [value, setValue] = React.useState(initialValue);
-    const [debouncedValue, setDebouncedValue] = React.useState(initialValue);
-
-    React.useEffect(() => {
-      const handler = setTimeout(() => {
-        setDebouncedValue(value);
-      }, delay);
-
-      return () => {
-        clearTimeout(handler);
-      };
-    }, [value, delay]);
-
-    return [value, setValue, debouncedValue];
-  },
-
-  /**
-   * Throttled callback hook
-   */
-  useThrottledCallback<T extends (...args: unknown[]) => unknown>(
-    callback: T,
-    delay: number
-  ): T {
-    const lastRun = React.useRef(Date.now());
-
-    return React.useCallback(
-      ((...args: Parameters<T>) => {
-        if (Date.now() - lastRun.current >= delay) {
-          callback(...args);
-          lastRun.current = Date.now();
-        }
-      }) as T,
-      [callback, delay]
-    );
-  }
-};
-
-/**
- * Bundle size optimization utilities
- */
-export const BundleOptimizationUtils = {
-  /**
-   * Dynamic import with error handling
-   */
-  async dynamicImport<T>(
-    importFn: () => Promise<{ default: T }>,
-    fallback?: T
-  ): Promise<T> {
-    try {
-      const module = await importFn();
-      return module.default;
-    } catch (error) {
-      if (import.meta.env.DEV) {
-        console.error('Dynamic import failed:', error);
-      }
-      if (fallback) {
-        return fallback;
-      }
-      throw error;
-    }
-  },
-
-  /**
-   * Lazy load component with suspense
-   */
-  createLazyComponent<T extends React.ComponentType<unknown>>(
-    importFn: () => Promise<{ default: T }>,
-    fallback?: React.ComponentType
-  ) {
-    const LazyComponent = React.lazy(importFn);
-
-    return (props: React.ComponentProps<T>) => {
-      const fallbackElement = fallback
-        ? React.createElement(fallback)
-        : React.createElement('div', { children: 'Loading...' });
-
-      return React.createElement(
-        React.Suspense,
-        { fallback: fallbackElement },
-        React.createElement(LazyComponent, props)
-      );
-    };
-  },
-
-  /**
-   * Check if feature should be loaded based on conditions
-   */
-  shouldLoadFeature(conditions: {
-    userAgent?: string;
-    viewport?: { width: number; height: number };
-    connection?: 'slow' | 'fast';
-    memory?: 'low' | 'high';
-  }): boolean {
-    // Check connection speed
-    if (conditions.connection === 'slow' && 'connection' in navigator) {
-      const connection = (navigator as unknown as { connection: { effectiveType: string } }).connection;
-      if (connection.effectiveType === 'slow-2g' || connection.effectiveType === '2g') {
-        return false;
-      }
-    }
-
-    // Check device memory
-    if (conditions.memory === 'low' && 'deviceMemory' in navigator) {
-      const deviceMemory = (navigator as unknown as { deviceMemory: number }).deviceMemory;
-      if (deviceMemory < 4) {
-        return false;
-      }
-    }
-
-    // Check viewport size
-    if (conditions.viewport) {
-      const { width, height } = conditions.viewport;
-      if (window.innerWidth < width || window.innerHeight < height) {
-        return false;
-      }
-    }
-
-    return true;
-  }
-};
-
-/**
- * Dead code elimination utilities
- */
-export const DeadCodeUtils = {
-  /**
-   * Mark unused exports for tree shaking
-   */
-  markUnused(reason: string): void {
-    if (import.meta.env.DEV) {
-      console.warn(`Unused code detected: ${reason}`);
-    }
-  },
-
-  /**
-   * Conditional feature loading
-   */
-  loadFeatureIf<T>(
-    condition: boolean,
-    loader: () => Promise<T>
-  ): Promise<T | null> {
-    return condition ? loader() : Promise.resolve(null);
-  }
-};
 
 /**
  * Get the performance monitor instance (only after initialization)

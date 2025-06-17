@@ -1,15 +1,16 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { Button } from "@/components/ui/button";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import { Search } from "lucide-react";
-import { Input } from "@/components/ui/input";
-import SafeImage from "@/components/SafeImage";
+import { Link } from 'react-router-dom';
+import { Search } from 'lucide-react';
+import { useEffect } from 'react';
 
-export default function ConditionInformation() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import SafeImage from '@/components/SafeImage';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { Input } from '@/components/ui/input';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const ConditionInformation: React.FC = () => {
   const { t, language } = useLanguage();
 
   useEffect(() => {
@@ -137,7 +138,7 @@ export default function ConditionInformation() {
           <div className="container">
             <h2 className="text-3xl font-bold mb-12">{t.patientResources.conditionInfo.exploreConditions}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {conditions.map((condition) => {
+              {conditions?.map((condition) => {
                 // Get translated condition name and description if available
                 const translatedName = language !== 'en' && t.patientResources?.conditions && t.patientResources.conditions[condition.id]?.name
                   ? t.patientResources.conditions[condition.id].name
@@ -239,4 +240,8 @@ export default function ConditionInformation() {
       <Footer />
     </div>
   );
-}
+};
+
+ConditionInformation.displayName = 'ConditionInformation';
+
+export default ConditionInformation;

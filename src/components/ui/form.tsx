@@ -1,7 +1,11 @@
-import * as React from "react"
-import * as LabelPrimitive from "@radix-ui/react-label"
-import { Slot } from "@radix-ui/react-slot"
-import {
+import * as LabelPrimitive from '@radix-ui/react-label';
+import React from 'react';
+import { Slot } from '@radix-ui/react-slot';
+
+import ErrorBoundary from '@/components/ErrorBoundary';
+import { Label } from '@/components/ui/label';
+import { cn } from '@/lib/utils';
+
   Controller,
   ControllerProps,
   FieldPath,
@@ -10,8 +14,6 @@ import {
   useFormContext,
 } from "react-hook-form"
 
-import { cn } from "@/lib/utils"
-import { Label } from "@/components/ui/label"
 
 const Form = FormProvider
 
@@ -20,8 +22,6 @@ type FormFieldContextValue<
   TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>
 > = {
   name: TName
-}
-
 const FormFieldContext = React.createContext<FormFieldContextValue>(
   {} as FormFieldContextValue
 )
@@ -33,12 +33,11 @@ const FormField = <
   ...props
 }: ControllerProps<TFieldValues, TName>) => {
   return (
-    <FormFieldContext.Provider value={{ name: props.name }}>
+    <ErrorBoundary>
+      <FormFieldContext.Provider value={{ name: props.name }}>
       <Controller {...props} />
     </FormFieldContext.Provider>
   )
-}
-
 const useFormField = () => {
   const fieldContext = React.useContext(FormFieldContext)
   const itemContext = React.useContext(FormItemContext)
@@ -48,8 +47,6 @@ const useFormField = () => {
 
   if (!fieldContext) {
     throw new Error("useFormField should be used within <FormField>")
-  }
-
   const { id } = itemContext
 
   return {
@@ -59,13 +56,8 @@ const useFormField = () => {
     formDescriptionId: `${id}-form-item-description`,
     formMessageId: `${id}-form-item-message`,
     ...fieldState,
-  }
-}
-
 type FormItemContextValue = {
   id: string
-}
-
 const FormItemContext = React.createContext<FormItemContextValue>(
   {} as FormItemContextValue
 )
@@ -73,7 +65,7 @@ const FormItemContext = React.createContext<FormItemContextValue>(
 const FormItem = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className, ...props }, ref) => {
+>(({ className: any, ...props }: any, ref: any) => {
   const id = React.useId()
 
   return (
@@ -87,7 +79,7 @@ FormItem.displayName = "FormItem"
 const FormLabel = React.forwardRef<
   React.ElementRef<typeof LabelPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof LabelPrimitive.Root>
->(({ className, ...props }, ref) => {
+>(({ className: any, ...props }: any, ref: any) => {
   const { error, formItemId } = useFormField()
 
   return (
@@ -104,7 +96,7 @@ FormLabel.displayName = "FormLabel"
 const FormControl = React.forwardRef<
   React.ElementRef<typeof Slot>,
   React.ComponentPropsWithoutRef<typeof Slot>
->(({ ...props }, ref) => {
+>(({ ...props }: any, ref: any) => {
   const { error, formItemId, formDescriptionId, formMessageId } = useFormField()
 
   return (
@@ -115,7 +107,6 @@ const FormControl = React.forwardRef<
         !error
           ? `${formDescriptionId}`
           : `${formDescriptionId} ${formMessageId}`
-      }
       aria-invalid={!!error}
       {...props}
     />
@@ -126,7 +117,7 @@ FormControl.displayName = "FormControl"
 const FormDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, ...props }, ref) => {
+>(({ className: any, ...props }: any, ref: any) => {
   const { formDescriptionId } = useFormField()
 
   return (
@@ -143,14 +134,12 @@ FormDescription.displayName = "FormDescription"
 const FormMessage = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className, children, ...props }, ref) => {
+>(({ className: any, children: any, ...props }: any, ref: any) => {
   const { error, formMessageId } = useFormField()
   const body = error ? String(error?.message) : children
 
   if (!body) {
     return null
-  }
-
   return (
     <p
       ref={ref}
@@ -160,6 +149,7 @@ const FormMessage = React.forwardRef<
     >
       {body}
     </p>
+    </ErrorBoundary>
   )
 })
 FormMessage.displayName = "FormMessage"
@@ -172,5 +162,4 @@ export {
   FormControl,
   FormDescription,
   FormMessage,
-  FormField,
-}
+  FormField,

@@ -1,17 +1,17 @@
+import { Link } from 'react-router-dom';
+import { Users, Clock, MapPin, Activity, Stethoscope, Microscope } from 'lucide-react';
+import { useState } from 'react';
 
-import { useState } from "react";
-import { Link } from "react-router-dom";
-import { Users, Clock, MapPin, Activity, Stethoscope, Microscope } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import { cn } from "@/lib/utils";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
-import { ProcedureProps, normalizeProcedureData } from "@/types/procedures";
+import { Button } from '@/components/ui/button';
+import { ProcedureProps, normalizeProcedureData } from '@/types/procedures';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 // Re-export types from the centralized types file
 export type { ProcedureProps } from "@/types/procedures";
 
-export default function ProcedureCard({ procedure: rawProcedure }: { procedure: ProcedureProps }) {
+const ProcedureCard: React.FC<{ procedure: ProcedureProps }> = ({ procedure: rawProcedure }) => {
   const { t, language } = useLanguage();
   const deviceInfo = useDeviceDetection();
   const [isHovered, setIsHovered] = useState(false);
@@ -100,7 +100,7 @@ export default function ProcedureCard({ procedure: rawProcedure }: { procedure: 
         <p className="text-muted-foreground line-clamp-2">{translatedDescription}</p>
 
         <div className="flex flex-wrap gap-2">
-          {procedure.benefits.slice(0, 3).map((benefit, index) => (
+          {procedure.benefits.slice(0, 3).map((benefit: any, index: any) => (
             <div
               key={index}
               className="flex items-center text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full"
@@ -111,9 +111,9 @@ export default function ProcedureCard({ procedure: rawProcedure }: { procedure: 
               <span>{benefit}</span>
             </div>
           ))}
-          {procedure.benefits.length > 3 && (
+          {procedure.benefits?.length > 3 && (
             <div className="text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full">
-              +{procedure.benefits.length - 3} {t.patientResources?.filters?.more || "more"}
+              +{procedure.benefits?.length - 3} {t.patientResources?.filters?.more || "more"}
             </div>
           )}
         </div>
@@ -130,4 +130,8 @@ export default function ProcedureCard({ procedure: rawProcedure }: { procedure: 
       </div>
     </div>
   );
-}
+};
+
+ProcedureCard.displayName = 'ProcedureCard';
+
+export default ProcedureCard;

@@ -1,8 +1,9 @@
-import { useEffect } from "react";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+import { useEffect } from 'react';
 
-export default function TermsConditions() {
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+
+const TermsConditions: React.FC = () => {
   
   useEffect(() => {
     // Scroll to top when component mounts
@@ -136,4 +137,8 @@ export default function TermsConditions() {
       <Footer />
     </div>
   );
-}
+};
+
+TermsConditions.displayName = 'TermsConditions';
+
+export default TermsConditions;

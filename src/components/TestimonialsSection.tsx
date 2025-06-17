@@ -1,7 +1,8 @@
-import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight, Star } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { useLanguage } from "@/contexts/LanguageContext";
+import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { useState, useEffect, useCallback } from 'react';
+
+import { cn } from '@/lib/utils';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 interface Testimonial {
   id: number;
@@ -10,8 +11,6 @@ interface Testimonial {
   avatar: string;
   content: string;
   rating: number;
-}
-
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -39,7 +38,7 @@ const testimonials: Testimonial[] = [
   },
 ];
 
-export default function TestimonialsSection() {
+const TestimonialsSection: React.FC = () => {
   const { t } = useLanguage();
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
@@ -48,7 +47,7 @@ export default function TestimonialsSection() {
     if (isAnimating) return;
 
     setIsAnimating(true);
-    setActiveIndex((prev) => (prev + 1) % testimonials.length);
+    setActiveIndex((prev: any) => (prev + 1) % testimonials?.length);
 
     setTimeout(() => {
       setIsAnimating(false);
@@ -59,7 +58,7 @@ export default function TestimonialsSection() {
     if (isAnimating) return;
 
     setIsAnimating(true);
-    setActiveIndex((prev) => (prev - 1 + testimonials.length) % testimonials.length);
+    setActiveIndex((prev: any) => (prev - 1 + testimonials?.length) % testimonials?.length);
 
     setTimeout(() => {
       setIsAnimating(false);
@@ -85,7 +84,7 @@ export default function TestimonialsSection() {
 
         <div className="relative max-w-4xl mx-auto">
           <div className="relative h-[400px] md:h-[300px]">
-            {testimonials.map((testimonial, index) => (
+            {testimonials?.map((testimonial, index) => (
               <div
                 key={testimonial.id}
                 className={cn(
@@ -107,7 +106,7 @@ export default function TestimonialsSection() {
                       />
                     </div>
                     <div className="flex mb-2">
-                      {[...Array(5)].map((_, i) => (
+                      {[...Array(5)].map((_: any, i: any) => (
                         <Star
                           key={i}
                           className={`h-4 w-4 ${i < testimonial.rating ? "fill-primary text-primary" : "text-muted-foreground"}`}
@@ -130,24 +129,25 @@ export default function TestimonialsSection() {
 
           <div className="flex justify-between mt-8">
             <button
-              onClick={prevTestimonial}
-              className="p-2 rounded-full bg-card hover:bg-muted border border-border transition-colors"
-              disabled={isAnimating}
+              onClick={prevTestimonial
+                            className="p-2 rounded-full bg-card hover:bg-muted border border-border transition-colors"
+                            disabled={isAnimating}
             >
               <ChevronLeft className="h-5 w-5" />
               <span className="sr-only">Previous testimonial</span>
             </button>
 
             <div className="flex space-x-2">
-              {testimonials.map((_, index) => (
+              {testimonials?.map((_: any, index: any) => (
                 <button
                   key={index}
-                  onClick={() => {
+                  onClick={useCallback((
                     if (isAnimating) return;
                     setIsAnimating(true);
                     setActiveIndex(index);
-                    setTimeout(() => setIsAnimating(false), 500);
-                  }}
+                    setTimeout(() => setIsAnimating(false), 500);) => {
+                  $2
+                }, [])
                   className={`w-3 h-3 rounded-full transition-all ${
                     activeIndex === index
                       ? "bg-primary w-6"
@@ -159,7 +159,7 @@ export default function TestimonialsSection() {
             </div>
 
             <button
-              onClick={nextTestimonial}
+              onClick={useCallback(nextTestimonial, [])}
               className="p-2 rounded-full bg-card hover:bg-muted border border-border transition-colors"
               disabled={isAnimating}
             >
@@ -171,4 +171,8 @@ export default function TestimonialsSection() {
       </div>
     </section>
   );
-}
+TestimonialsSection.displayName = 'TestimonialsSection';
+
+export default TestimonialsSection;
+
+TestimonialsSection.displayName = 'TestimonialsSection';

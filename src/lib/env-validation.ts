@@ -1,20 +1,19 @@
 /**
- * Environment Variables Validation and Configuration
- * Ensures all required environment variables are properly configured for production
+ * Environment variable validation and configuration
  */
 
-interface EnvironmentConfig {
-  // Application Configuration
+export interface EnvironmentConfig {
+  // App configuration
   APP_ENV: string;
   APP_NAME: string;
   APP_VERSION: string;
   
-  // Website Configuration
+  // URLs
   SITE_URL: string;
   API_BASE_URL?: string;
   CDN_URL?: string;
   
-  // Contact Information
+  // Contact information
   PRACTICE_PHONE: string;
   PRACTICE_FAX?: string;
   PRACTICE_EMAIL: string;
@@ -26,17 +25,17 @@ interface EnvironmentConfig {
   LINKEDIN_URL?: string;
   TWITTER_HANDLE?: string;
   
-  // Analytics and Tracking
+  // Analytics
   GOOGLE_ANALYTICS_ID?: string;
   GOOGLE_TAG_MANAGER_ID?: string;
   HOTJAR_ID?: string;
   FACEBOOK_PIXEL_ID?: string;
   
-  // Maps and Location Services
+  // Maps
   GOOGLE_MAPS_API_KEY?: string;
   MAPBOX_ACCESS_TOKEN?: string;
   
-  // Email Services
+  // Email
   EMAILJS_SERVICE_ID?: string;
   EMAILJS_TEMPLATE_ID?: string;
   EMAILJS_PUBLIC_KEY?: string;
@@ -47,39 +46,36 @@ interface EnvironmentConfig {
   ERROR_REPORTING_ENDPOINT?: string;
   ERROR_REPORTING_API_KEY?: string;
   
-  // Performance Monitoring
+  // Feature flags
   ENABLE_PERFORMANCE_MONITORING: boolean;
   ENABLE_ERROR_BOUNDARY: boolean;
-  
-  // Feature Flags
   ENABLE_DARK_MODE: boolean;
   ENABLE_LANGUAGE_SWITCHING: boolean;
   ENABLE_APPOINTMENT_BOOKING: boolean;
   ENABLE_LIVE_CHAT: boolean;
-  
-  // Security
   ENABLE_CSP: boolean;
   ENABLE_HSTS: boolean;
-  
-  // Development Only
   DEBUG_MODE: boolean;
   SHOW_PERFORMANCE_METRICS: boolean;
 }
 
 /**
- * Required environment variables for production only
+ * Required environment variables for production
  */
 const REQUIRED_PRODUCTION_VARS = [
+  'VITE_APP_ENV',
   'VITE_SITE_URL',
   'VITE_PRACTICE_PHONE',
   'VITE_PRACTICE_EMAIL'
 ];
 
 /**
- * Recommended environment variables (warnings only)
+ * Recommended environment variables (warnings if missing)
  */
 const RECOMMENDED_VARS = [
-  'VITE_APP_ENV',
+  'VITE_GOOGLE_ANALYTICS_ID',
+  'VITE_SENTRY_DSN',
+  'VITE_GOOGLE_MAPS_API_KEY',
   'VITE_APP_NAME',
   'VITE_APP_VERSION'
 ];
@@ -108,7 +104,6 @@ export function validateEnvironmentVariables(): {
       }
     });
   }
-
   // Check recommended variables (warnings only)
   RECOMMENDED_VARS.forEach(varName => {
     const value = import.meta.env[varName];
@@ -180,49 +175,48 @@ export function validateEnvironmentVariables(): {
       if (config.SHOW_PERFORMANCE_METRICS) {
         errors.push('SHOW_PERFORMANCE_METRICS must be false in production');
       }
-
       // Validate production-specific settings
       if (config.APP_ENV !== 'production') {
         warnings.push('APP_ENV should be set to "production" in production builds');
       }
     }
-
     // Production-specific validations
-    if (isProduction) {
-      // Warn about missing optional but recommended variables
-      if (!config.GOOGLE_ANALYTICS_ID) {
-        warnings.push('Google Analytics ID not configured - analytics tracking disabled');
+    try {
+      if (isProduction) {
+        // Warn about missing optional but recommended variables
+        if (!config.GOOGLE_ANALYTICS_ID) {
+          warnings.push('Google Analytics ID not configured - analytics tracking disabled');
+        }
+        if (!config.SENTRY_DSN && !config.ERROR_REPORTING_ENDPOINT) {
+          warnings.push('No error reporting service configured - errors will not be tracked');
+        }
+        if (!config.GOOGLE_MAPS_API_KEY) {
+          warnings.push('Google Maps API key not configured - location features may not work');
+        }
+        // Validate URLs
+        if (config.SITE_URL && !isValidUrl(config.SITE_URL)) {
+          errors.push('Invalid SITE_URL format');
+        }
+        if (config.API_BASE_URL && !isValidUrl(config.API_BASE_URL)) {
+          errors.push('Invalid API_BASE_URL format');
+        }
+        // Validate email addresses
+        if (config.PRACTICE_EMAIL && !isValidEmail(config.PRACTICE_EMAIL)) {
+          errors.push('Invalid PRACTICE_EMAIL format');
+        }
+        if (config.ARGUS_EMAIL && !isValidEmail(config.ARGUS_EMAIL)) {
+          errors.push('Invalid ARGUS_EMAIL format');
+        }
       }
-      if (!config.SENTRY_DSN && !config.ERROR_REPORTING_ENDPOINT) {
-        warnings.push('No error reporting service configured - errors will not be tracked');
-      }
-      if (!config.GOOGLE_MAPS_API_KEY) {
-        warnings.push('Google Maps API key not configured - location features may not work');
-      }
-      
-      // Validate URLs
-      if (config.SITE_URL && !isValidUrl(config.SITE_URL)) {
-        errors.push('Invalid SITE_URL format');
-      }
-      if (config.API_BASE_URL && !isValidUrl(config.API_BASE_URL)) {
-        errors.push('Invalid API_BASE_URL format');
-      }
-      
-      // Validate email addresses
-      if (config.PRACTICE_EMAIL && !isValidEmail(config.PRACTICE_EMAIL)) {
-        errors.push('Invalid PRACTICE_EMAIL format');
-      }
-      if (config.ARGUS_EMAIL && !isValidEmail(config.ARGUS_EMAIL)) {
-        errors.push('Invalid ARGUS_EMAIL format');
-      }
+    } catch (error) {
+      errors.push(`Environment validation error: ${error instanceof Error ? error.message : 'Unknown error'}`);
     }
-
   } catch (error) {
     errors.push(`Environment validation error: ${error instanceof Error ? error.message : 'Unknown error'}`);
   }
 
   return {
-    isValid: errors.length === 0,
+    isValid: errors?.length === 0,
     errors,
     warnings,
     config
@@ -238,7 +232,6 @@ export function getEnvironmentConfig(): EnvironmentConfig {
   if (!validation.isValid) {
     throw new Error(`Environment validation failed: ${validation.errors.join(', ')}`);
   }
-  
   return validation.config as EnvironmentConfig;
 }
 
@@ -271,9 +264,8 @@ export function initializeEnvironment(): void {
   if (!validation.isValid) {
     throw new Error(`Critical environment configuration errors: ${validation.errors.join(', ')}`);
   }
-
   // Only show warnings in development (silently handle in production)
-  if (import.meta.env.DEV && validation.warnings.length > 0) {
+  if (import.meta.env.DEV && validation.warnings?.length > 0) {
     // Development warnings are handled silently to avoid console output
     // In a real application, you might want to use a proper logging service
   }

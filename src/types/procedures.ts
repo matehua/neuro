@@ -12,13 +12,24 @@ export interface BaseProcedure {
   location: string;
 }
 
+// Procedure categories
+export type ProcedureCategory =
+  | 'brain-surgery'
+  | 'spine-surgery'
+  | 'peripheral-nerve'
+  | 'pediatric-neurosurgery'
+  | 'functional-neurosurgery'
+  | 'tumor-surgery'
+  | 'vascular-neurosurgery'
+  | 'trauma-surgery';
+
 // Extended procedure interface with all possible fields
 export interface ProcedureProps extends BaseProcedure {
   consultationFee: number;
   patientType: string;
   recoveryTime: string;
   benefits: string[];
-  
+
   // Optional fields for enhanced functionality
   price?: number;           // Alternative to consultationFee for backward compatibility
   complexity?: number;      // Procedure complexity rating (1-10)
@@ -37,17 +48,6 @@ export interface ProcedureProps extends BaseProcedure {
   equipmentUsed?: string[];
   surgeonSpecialty?: string[];
 }
-
-// Procedure categories
-export type ProcedureCategory = 
-  | 'brain-surgery'
-  | 'spine-surgery'
-  | 'peripheral-nerve'
-  | 'pediatric-neurosurgery'
-  | 'functional-neurosurgery'
-  | 'tumor-surgery'
-  | 'vascular-neurosurgery'
-  | 'trauma-surgery';
 
 // Raw procedure data that might come from APIs or databases
 export interface RawProcedureData {
@@ -130,7 +130,7 @@ export function isProcedurePropsValid(data: unknown): data is RawProcedureData {
   if (typeof data !== 'object' || data === null) return false;
 
   const obj = data as Record<string, unknown>;
-  
+
   // Check required fields
   const hasRequiredFields = (
     typeof obj.id === 'string' &&
@@ -144,7 +144,7 @@ export function isProcedurePropsValid(data: unknown): data is RawProcedureData {
 
   // Check that at least one price field exists
   const hasPrice = (
-    typeof obj.consultationFee === 'number' || 
+    typeof obj.consultationFee === 'number' ||
     typeof obj.price === 'number'
   );
 
@@ -152,7 +152,7 @@ export function isProcedurePropsValid(data: unknown): data is RawProcedureData {
 
   // Check recovery time format
   const hasValidRecoveryTime = (
-    typeof obj.recoveryTime === 'string' || 
+    typeof obj.recoveryTime === 'string' ||
     typeof obj.recoveryTime === 'number' ||
     obj.recoveryTime === undefined
   );
@@ -161,7 +161,7 @@ export function isProcedurePropsValid(data: unknown): data is RawProcedureData {
 
   // Check benefits/features array
   const hasBenefits = (
-    Array.isArray(obj.benefits) || 
+    Array.isArray(obj.benefits) ||
     Array.isArray(obj.features) ||
     (obj.benefits === undefined && obj.features === undefined)
   );
@@ -208,13 +208,13 @@ export function normalizeProcedureData(data: RawProcedureData): ProcedureProps {
     description: data.description,
     image: data.image,
     location: data.location,
-    
+
     // Normalized required fields
     consultationFee: data.consultationFee || data.price || 0,
     patientType: data.patientType || 'All Patients',
     recoveryTime: normalizeRecoveryTime(data.recoveryTime),
     benefits: data.benefits || data.features || [],
-    
+
     // Optional fields with fallbacks
     price: data.price,
     complexity: data.complexity,
@@ -242,104 +242,6 @@ export function validateProcedures(procedures: unknown[]): ProcedureProps[] {
     .map(normalizeProcedureData);
 }
 
-// Utility function to search and filter procedures
-export function searchProcedures(
-  procedures: ProcedureProps[],
-  options: ProcedureSearchOptions
-): ProcedureProps[] {
-  let filtered = [...procedures];
-
-  // Apply text search
-  if (options.query) {
-    const query = options.query.toLowerCase();
-    filtered = filtered.filter(procedure =>
-      procedure.name.toLowerCase().includes(query) ||
-      procedure.description.toLowerCase().includes(query) ||
-      procedure.location.toLowerCase().includes(query) ||
-      procedure.benefits.some(benefit => benefit.toLowerCase().includes(query))
-    );
-  }
-
-  // Apply filters
-  if (options.filters) {
-    const { filters } = options;
-    
-    if (filters.location && filters.location !== 'all') {
-      filtered = filtered.filter(p => p.location === filters.location);
-    }
-    
-    if (filters.complexity !== undefined) {
-      filtered = filtered.filter(p => (p.complexity || 0) >= filters.complexity!);
-    }
-    
-    if (filters.recoveryTimeMin !== undefined || filters.recoveryTimeMax !== undefined) {
-      filtered = filtered.filter(p => {
-        const recoveryDays = parseInt(p.recoveryTime) || 0;
-        const min = filters.recoveryTimeMin || 0;
-        const max = filters.recoveryTimeMax || Infinity;
-        return recoveryDays >= min && recoveryDays <= max;
-      });
-    }
-    
-    if (filters.category) {
-      filtered = filtered.filter(p => p.category === filters.category);
-    }
-    
-    if (filters.priceMin !== undefined || filters.priceMax !== undefined) {
-      filtered = filtered.filter(p => {
-        const price = p.consultationFee;
-        const min = filters.priceMin || 0;
-        const max = filters.priceMax || Infinity;
-        return price >= min && price <= max;
-      });
-    }
-    
-    if (filters.isMinimallyInvasive !== undefined) {
-      filtered = filtered.filter(p => p.isMinimallyInvasive === filters.isMinimallyInvasive);
-    }
-    
-    if (filters.riskLevel) {
-      filtered = filtered.filter(p => p.riskLevel === filters.riskLevel);
-    }
-    
-    if (filters.anesthesia) {
-      filtered = filtered.filter(p => p.anesthesia === filters.anesthesia);
-    }
-  }
-
-  // Apply sorting
-  if (options.sortBy) {
-    filtered.sort((a, b) => {
-      let aValue: unknown = a[options.sortBy!];
-      let bValue: unknown = b[options.sortBy!];
-      
-      // Handle special cases
-      if (options.sortBy === 'recoveryTime') {
-        aValue = parseInt(a.recoveryTime) || 0;
-        bValue = parseInt(b.recoveryTime) || 0;
-      }
-      
-      if (typeof aValue === 'string') {
-        aValue = aValue.toLowerCase();
-        bValue = bValue.toLowerCase();
-      }
-      
-      if (aValue < bValue) return options.sortOrder === 'desc' ? 1 : -1;
-      if (aValue > bValue) return options.sortOrder === 'desc' ? -1 : 1;
-      return 0;
-    });
-  }
-
-  // Apply pagination
-  if (options.offset !== undefined || options.limit !== undefined) {
-    const start = options.offset || 0;
-    const end = options.limit ? start + options.limit : undefined;
-    filtered = filtered.slice(start, end);
-  }
-
-  return filtered;
-}
-
 /**
  * Safe procedure data access with null checks
  */
@@ -355,7 +257,7 @@ export function safeProcedureAccess<K extends keyof ProcedureProps>(
 /**
  * Enhanced procedure validation with runtime checks
  */
-export function validateProcedureData(data: unknown): data is ProcedureProps {
+export function validateProcedureData(data: unknown): boolean {
   if (!isProcedurePropsValid(data)) return false;
 
   const procedure = data as RawProcedureData;
@@ -387,6 +289,10 @@ export function createSafeProcedure(data: Partial<RawProcedureData>): ProcedureP
     description: data.description,
     image: data.image,
     location: data.location,
+    consultationFee: data.consultationFee || data.price || 0,
+    patientType: data.patientType || 'All Patients',
+    recoveryTime: data.recoveryTime || 'Not specified',
+    benefits: data.benefits || [],
     ...data
   };
 
@@ -396,3 +302,4 @@ export function createSafeProcedure(data: Partial<RawProcedureData>): ProcedureP
     return null;
   }
 }
+

@@ -9,11 +9,12 @@ interface SafeImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
   fallbackSrc?: string;
   /** Whether the image is purely decorative (affects accessibility attributes) */
   isDecorative?: boolean;
+
   /** Optional callback function that runs when the image fails to load */
   onImageError?: () => void;
 }
 
-/**
+  /**
  * SafeImage component with enhanced accessibility features and error handling
  *
  * This component gracefully handles image loading errors by displaying a fallback image

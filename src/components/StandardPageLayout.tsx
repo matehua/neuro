@@ -1,35 +1,29 @@
-import React, { ReactNode, useEffect } from 'react';
-import { Helmet } from 'react-helmet-async';
-import Navbar from '@/components/Navbar';
-import Footer from '@/components/Footer';
-import PageHeader from '@/components/PageHeader';
+import React, { useEffect } from 'react';
+
 import ErrorBoundary from '@/components/ErrorBoundary';
-import { useDeviceDetection } from '@/contexts/DeviceContext';
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import PageHeader from '@/components/PageHeader';
+import { StandardPageLayoutProps } from './layout/types';
 import { cn } from '@/lib/utils';
-import { generatePageSEO, SEOData } from '@/lib/seo';
+import { generatePageSEO } from '@/lib/seo';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useSEO } from '@/hooks/useSEO';
 
-export interface StandardPageLayoutProps {
-  children: ReactNode;
-  title?: string;
-  subtitle?: string;
-  backgroundImage?: string;
-  enableParallax?: boolean;
-  className?: string;
-  seoData?: SEOData;
-  pageType?: 'default' | 'landing' | 'article' | 'service' | 'location';
-  showHeader?: boolean;
-  headerClassName?: string;
-  contentClassName?: string;
-  enableErrorBoundary?: boolean;
-  customErrorFallback?: ReactNode;
-}
+/**
+ * Standard Page Layout Component
+ * Refactored for better maintainability and modularity
+ */
+
+
+// Re-export types for backward compatibility
+export type { StandardPageLayoutProps } from './layout/types';
 
 /**
  * Standardized page layout component
  * Provides consistent structure, SEO, error handling, and responsive design
  */
-export default function StandardPageLayout({
+const StandardPageLayout: React.FC<StandardPageLayoutProps> = ({
   children,
   title,
   subtitle,
@@ -43,7 +37,7 @@ export default function StandardPageLayout({
   contentClassName = '',
   enableErrorBoundary = true,
   customErrorFallback,
-}: StandardPageLayoutProps) {
+}) => {
   const deviceInfo = useDeviceDetection();
 
   // Generate SEO data if not provided
@@ -67,7 +61,7 @@ export default function StandardPageLayout({
       announcer.className = 'sr-only';
       announcer.textContent = announcement;
       document.body.appendChild(announcer);
-      
+
       setTimeout(() => {
         document.body.removeChild(announcer);
       }, 1000);
@@ -81,7 +75,7 @@ export default function StandardPageLayout({
       className
     )}>
       <Navbar />
-      
+
       {showHeader && title && (
         <PageHeader
           title={title}
@@ -92,8 +86,8 @@ export default function StandardPageLayout({
         />
       )}
 
-      <main 
-        id="main-content" 
+      <main
+        id="main-content"
         className={cn(
           'flex-1',
           showHeader && title ? 'pt-0' : 'pt-20',
@@ -105,7 +99,7 @@ export default function StandardPageLayout({
         {(!showHeader || !title) && title && (
           <h1 className="sr-only">{title}</h1>
         )}
-        
+
         {children}
       </main>
 
@@ -123,135 +117,8 @@ export default function StandardPageLayout({
   }
 
   return pageContent;
-}
+};
 
-/**
- * Specialized layout for landing pages
- */
-export function LandingPageLayout(props: Omit<StandardPageLayoutProps, 'pageType'>) {
-  return (
-    <StandardPageLayout
-      {...props}
-      pageType="landing"
-      enableParallax={true}
-      className={cn('landing-page', props.className)}
-    />
-  );
-}
+StandardPageLayout.displayName = 'StandardPageLayout';
 
-/**
- * Specialized layout for service pages
- */
-export function ServicePageLayout(props: Omit<StandardPageLayoutProps, 'pageType'>) {
-  return (
-    <StandardPageLayout
-      {...props}
-      pageType="service"
-      className={cn('service-page', props.className)}
-    />
-  );
-}
-
-/**
- * Specialized layout for location pages
- */
-export function LocationPageLayout(props: Omit<StandardPageLayoutProps, 'pageType'>) {
-  return (
-    <StandardPageLayout
-      {...props}
-      pageType="location"
-      className={cn('location-page', props.className)}
-    />
-  );
-}
-
-/**
- * Specialized layout for article/content pages
- */
-export function ArticlePageLayout(props: Omit<StandardPageLayoutProps, 'pageType'>) {
-  return (
-    <StandardPageLayout
-      {...props}
-      pageType="article"
-      showHeader={props.showHeader ?? true}
-      className={cn('article-page', props.className)}
-      contentClassName={cn('prose-container', props.contentClassName)}
-    />
-  );
-}
-
-/**
- * Higher-order component for wrapping pages with standard layout
- */
-export function withStandardLayout<P extends object>(
-  Component: React.ComponentType<P>,
-  layoutProps?: Partial<StandardPageLayoutProps>
-) {
-  const WrappedComponent = (props: P) => (
-    <StandardPageLayout {...layoutProps}>
-      <Component {...props} />
-    </StandardPageLayout>
-  );
-
-  WrappedComponent.displayName = `withStandardLayout(${Component.displayName || Component.name})`;
-  
-  return WrappedComponent;
-}
-
-/**
- * Section component with consistent spacing and responsive design
- */
-export function StandardSection({
-  children,
-  className = '',
-  background = 'default',
-  spacing = 'default',
-  maxWidth = 'container',
-  id,
-}: {
-  children: ReactNode;
-  className?: string;
-  background?: 'default' | 'muted' | 'primary' | 'accent';
-  spacing?: 'none' | 'sm' | 'default' | 'lg' | 'xl';
-  maxWidth?: 'none' | 'container' | 'prose' | 'narrow';
-  id?: string;
-}) {
-  const deviceInfo = useDeviceDetection();
-
-  const backgroundClasses = {
-    default: '',
-    muted: 'bg-muted/30',
-    primary: 'bg-primary/5',
-    accent: 'bg-accent/5',
-  };
-
-  const spacingClasses = {
-    none: '',
-    sm: deviceInfo.isMobile ? 'py-mobile-lg' : 'py-8',
-    default: deviceInfo.isMobile ? 'py-mobile-xl' : 'py-16',
-    lg: deviceInfo.isMobile ? 'py-mobile-2xl' : 'py-24',
-    xl: deviceInfo.isMobile ? 'py-mobile-3xl' : 'py-32',
-  };
-
-  const maxWidthClasses = {
-    none: '',
-    container: 'container',
-    prose: 'max-w-prose mx-auto px-4',
-    narrow: 'max-w-2xl mx-auto px-4',
-  };
-
-  return (
-    <section
-      id={id}
-      className={cn(
-        backgroundClasses[background],
-        spacingClasses[spacing],
-        className
-      )}
-    >
-      <div className={maxWidthClasses[maxWidth]}>
-        {children}
-      </div>
-    </section>
-  );
-}
+export default StandardPageLayout;

@@ -1,13 +1,18 @@
+import { CalendarIcon, CreditCard, Check, ChevronRight } from 'lucide-react';
+import { Link } from 'react-router-dom';
+import { useEffect, useState } from 'react';
 
-import { useEffect, useState } from "react";
-import { format, addDays, differenceInDays } from "date-fns";
-import { Link } from "react-router-dom";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import { CalendarIcon, CreditCard, Check, ChevronRight } from "lucide-react";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
+import { format, addDays, differenceInDays } from 'date-fns';
+
+import Footer from '@/components/Footer';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { Calendar } from '@/components/ui/calendar';
+import { Input } from '@/components/ui/input';
+import { Label } from '@/components/ui/label';
+import { ProcedureProps } from '@/components/ProcedureCard';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { cn } from '@/lib/utils';
 import {
   Popover,
   PopoverContent,
@@ -20,10 +25,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { ProcedureProps } from "@/components/ProcedureCard";
+import { useCallback } from 'react';
 
 // Sample clinic data
 interface ClinicData {
@@ -82,7 +84,7 @@ const proceduresData: ClinicData[] = [
   },
 ];
 
-export default function AppointmentBooking() {
+const AppointmentBooking: React.FC = () => {
   const [appointmentDate] = useState<Date | undefined>(new Date());
   const [followUpDate] = useState<Date | undefined>(addDays(new Date(), 7));
   const [selectedProcedure, setSelectedProcedure] = useState<ProcedureProps | null>(null);
@@ -270,7 +272,7 @@ export default function AppointmentBooking() {
                             selected={startDate}
                             onSelect={setStartDate}
                             initialFocus
-                            disabled={(date) => date < new Date()}
+                            disabled={(date: any) => date < new Date()}
                             className="pointer-events-auto"
                           />
                         </PopoverContent>
@@ -302,7 +304,7 @@ export default function AppointmentBooking() {
                             selected={endDate}
                             onSelect={setEndDate}
                             initialFocus
-                            disabled={(date) => date < (startDate || new Date())}
+                            disabled={(date: any) => date < (startDate || new Date())}
                             className="pointer-events-auto"
                           />
                         </PopoverContent>
@@ -319,7 +321,7 @@ export default function AppointmentBooking() {
                           <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>
-                          {[1, 2, 3, 4, 5, 6].map((num) => (
+                          {[1, 2, 3, 4, 5, 6].map((num: any) => (
                             <SelectItem key={num} value={num.toString()}>
                               {num} {num === 1 ? "Adult" : "Adults"}
                             </SelectItem>
@@ -338,7 +340,7 @@ export default function AppointmentBooking() {
                           <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>
-                          {[0, 1, 2, 3, 4].map((num) => (
+                          {[0, 1, 2, 3, 4].map((num: any) => (
                             <SelectItem key={num} value={num.toString()}>
                               {num} {num === 1 ? "Child" : "Children"}
                             </SelectItem>
@@ -352,7 +354,7 @@ export default function AppointmentBooking() {
                 {/* Procedures Selection */}
                 <h2 className="text-xl font-semibold mb-4">Select Your Clinic Location</h2>
                 <div className="space-y-6">
-                  {proceduresData.map((procedure) => (
+                  {proceduresData?.map((procedure: any) => (
                     <div
                       key={procedure.id}
                       className={cn(
@@ -550,7 +552,8 @@ export default function AppointmentBooking() {
 
                       <h2 className="text-xl font-semibold mb-4">Payment Information</h2>
                       <div className="glass-card p-6 space-y-6">
-                        <Tabs defaultValue="credit-card" onValueChange={(value) => handleSelectChange("paymentMethod", value)}>
+                        <Tabs defaultValue="credit-card" onValueChange={(value) => handleSelectChange("paymentMethod", value)
+}>
                           <TabsList className="grid w-full grid-cols-2">
                             <TabsTrigger value="credit-card">Credit Card</TabsTrigger>
                             <TabsTrigger value="pay-at-clinic">Pay at Clinic</TabsTrigger>
@@ -570,7 +573,7 @@ export default function AppointmentBooking() {
                               <Input
                                 id="cardNumber"
                                 name="cardNumber"
-                                value={formData.cardNumber}
+                            value={formData.cardNumber}
                                 onChange={handleInputChange}
                                 placeholder="0000 0000 0000 0000"
                               />
@@ -581,9 +584,9 @@ export default function AppointmentBooking() {
                                 <Input
                                   id="cardExpiry"
                                   name="cardExpiry"
-                                  value={formData.cardExpiry}
+                            value={formData.cardExpiry}
                                   onChange={handleInputChange}
-                                  placeholder="MM/YY"
+                            placeholder="MM/YY"
                                 />
                               </div>
                               <div className="space-y-2">
@@ -591,9 +594,9 @@ export default function AppointmentBooking() {
                                 <Input
                                   id="cardCvc"
                                   name="cardCvc"
-                                  value={formData.cardCvc}
+                            value={formData.cardCvc}
                                   onChange={handleInputChange}
-                                  placeholder="123"
+                            placeholder="123"
                                 />
                               </div>
                             </div>
@@ -679,8 +682,8 @@ export default function AppointmentBooking() {
                     Back
                   </Button>
                   <Button
-                    className="btn-primary"
-                    onClick={() => setCurrentStep(3)}
+                            className="btn-primary"
+                            onClick={() => setCurrentStep(3)}
                   >
                     Review & Confirm <ChevronRight className="ml-2 h-4 w-4" />
                   </Button>
@@ -849,8 +852,8 @@ export default function AppointmentBooking() {
                         Back
                       </Button>
                       <Button
-                        className="btn-primary"
-                        onClick={handleSubmitBooking}
+                            className="btn-primary"
+                            onClick={handleSubmitBooking}
                       >
                         Confirm Appointment <Check className="ml-2 h-4 w-4" />
                       </Button>
@@ -882,4 +885,8 @@ export default function AppointmentBooking() {
       <Footer />
     </div>
   );
-}
+};
+
+AppointmentBooking.displayName = 'AppointmentBooking';
+
+export default AppointmentBooking;

@@ -1,10 +1,11 @@
-import React, { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import React, { useEffect } from 'react';
+import { Link } from 'react-router-dom';
+
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Activity,
   FileText,
@@ -13,7 +14,7 @@ import {
   Clock
 } from "lucide-react";
 
-export default function YouthfulSpine() {
+const YouthfulSpine: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -21,7 +22,7 @@ export default function YouthfulSpine() {
   }, []);
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <PageHeader
         title="How to Keep Your Spine Young While Still Ageing Gracefully"
         subtitle="A Neurosurgeon's Guide"
@@ -541,6 +542,10 @@ export default function YouthfulSpine() {
           </div>
         </div>
       </section>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+YouthfulSpine.displayName = 'YouthfulSpine';
+
+export default YouthfulSpine;

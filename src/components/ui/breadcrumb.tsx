@@ -1,21 +1,20 @@
-import * as React from "react"
-import { Slot } from "@radix-ui/react-slot"
-import { ChevronRight, MoreHorizontal } from "lucide-react"
+import React from 'react';
+import { ChevronRight, MoreHorizontal } from 'lucide-react';
+import { Slot } from '@radix-ui/react-slot';
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils';
 
 const Breadcrumb = React.forwardRef<
   HTMLElement,
   React.ComponentPropsWithoutRef<"nav"> & {
     separator?: React.ReactNode
-  }
->(({ ...props }, ref) => <nav ref={ref} aria-label="breadcrumb" {...props} />)
+>(({ ...props }: any, ref: any) => <nav ref={ref} aria-label="breadcrumb" {...props} />)
 Breadcrumb.displayName = "Breadcrumb"
 
 const BreadcrumbList = React.forwardRef<
   HTMLOListElement,
   React.ComponentPropsWithoutRef<"ol">
->(({ className, ...props }, ref) => (
+>(({ className: any, ...props }: any, ref: any) => (
   <ol
     ref={ref}
     className={cn(
@@ -30,7 +29,7 @@ BreadcrumbList.displayName = "BreadcrumbList"
 const BreadcrumbItem = React.forwardRef<
   HTMLLIElement,
   React.ComponentPropsWithoutRef<"li">
->(({ className, ...props }, ref) => (
+>(({ className: any, ...props }: any, ref: any) => (
   <li
     ref={ref}
     className={cn("inline-flex items-center gap-1.5", className)}
@@ -43,8 +42,7 @@ const BreadcrumbLink = React.forwardRef<
   HTMLAnchorElement,
   React.ComponentPropsWithoutRef<"a"> & {
     asChild?: boolean
-  }
->(({ asChild, className, ...props }, ref) => {
+>(({ asChild: any, className: any, ...props }: any, ref: any) => {
   const Comp = asChild ? Slot : "a"
 
   return (
@@ -60,7 +58,7 @@ BreadcrumbLink.displayName = "BreadcrumbLink"
 const BreadcrumbPage = React.forwardRef<
   HTMLSpanElement,
   React.ComponentPropsWithoutRef<"span">
->(({ className, ...props }, ref) => (
+>(({ className: any, ...props }: any, ref: any) => (
   <span
     ref={ref}
     role="link"
@@ -111,5 +109,4 @@ export {
   BreadcrumbLink,
   BreadcrumbPage,
   BreadcrumbSeparator,
-  BreadcrumbEllipsis,
-}
+  BreadcrumbEllipsis,

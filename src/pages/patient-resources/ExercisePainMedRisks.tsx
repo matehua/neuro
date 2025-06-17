@@ -1,10 +1,11 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import Layout from "@/components/Layout";
-import PageHeader from "@/components/PageHeader";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import PageHeader from '@/components/PageHeader';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
 import {
   Activity,
   FileText,
@@ -14,7 +15,7 @@ import {
   Clock
 } from "lucide-react";
 
-export default function ExercisePainMedRisks() {
+const ExercisePainMedRisks: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -22,7 +23,7 @@ export default function ExercisePainMedRisks() {
   }, []);
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <PageHeader
         title="The Hidden Risks of Exercising While on Pain Medications"
         subtitle="A Spinal Neurosurgeon's Perspective"
@@ -449,6 +450,10 @@ export default function ExercisePainMedRisks() {
           </div>
         </div>
       </section>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+ExercisePainMedRisks.displayName = 'ExercisePainMedRisks';
+
+export default ExercisePainMedRisks;

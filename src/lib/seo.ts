@@ -148,13 +148,13 @@ export const generatePageSEO = (
 
   // Determine the path segment for canonical URL.
   // Priority: customData.canonical (if path) > pageConfig.canonical (if path) > root "/"
-  let pathSegment = "/"; 
+  let pathSegment = "/";
   if (customData?.canonical && customData.canonical.startsWith('/')) {
     pathSegment = customData.canonical;
   } else if (pageConfig.canonical && pageConfig.canonical.startsWith('/')) {
     pathSegment = pageConfig.canonical;
   }
-  
+
   // Construct final canonical URL.
   // Priority for full URL: customData.canonical (if full URL) > pageConfig.canonical (if full URL) > constructed from pathSegment
   let finalCanonicalUrl: string;
@@ -172,7 +172,7 @@ export const generatePageSEO = (
       finalCanonicalUrl = fullPath;
     }
   }
-  
+
   // Merge SEO data: baseSeoData <- pageConfig <- customData
   const mergedSeo = {
     ...baseSeoData,
@@ -214,7 +214,7 @@ export const generateProcedureSEO = (
   customData?: Partial<SEOData>
 ): SEOData => {
   let procedureSpecificCanonicalPath = `/expertise/${procedureName.toLowerCase().replace(/\s+/g, '-')}`;
-   if (customData?.canonical && customData.canonical.startsWith('/')) {
+  if (customData?.canonical && customData.canonical.startsWith('/')) {
     procedureSpecificCanonicalPath = customData.canonical;
   }
 
@@ -295,11 +295,11 @@ export const generateMedicalProcedureStructuredData = (
 /**
  * Generate breadcrumb structured data
  */
-export const generateBreadcrumbStructuredData = (breadcrumbs: Array<{ name: string; url: string }>) => {
+export const generateBreadcrumbStructuredData = (breadcrumbs?: Array<{ name: string; url: string }>) => {
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbs.map((crumb, index) => ({
+    "itemListElement": breadcrumbs?.map((crumb: any, index: any) => ({
       "@type": "ListItem",
       "position": index + 1,
       "name": crumb.name,
@@ -383,7 +383,7 @@ export const normalizeCanonicalUrl = (
 /**
  * Validate structured data against schema.org standards
  */
-export const validateStructuredData = (data: Record<string, unknown>): {
+export const validateStructuredData = (data: any): {
   isValid: boolean;
   errors: string[];
   warnings: string[]
@@ -451,7 +451,7 @@ export const validateStructuredData = (data: Record<string, unknown>): {
   }
 
   return {
-    isValid: errors.length === 0,
+    isValid: errors?.length === 0,
     errors,
     warnings
   };

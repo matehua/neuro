@@ -1,96 +1,89 @@
-import React, { lazy, Suspense } from 'react';
+import React from 'react';
 import { Navigate } from 'react-router-dom';
+
 import LanguageWrapper from '@/components/LanguageWrapper';
-import { Skeleton } from '@/components/ui/skeleton';
+import { ROUTE_PATHS, ROUTE_REDIRECTS, SUPPORTED_LANGUAGES, SupportedLanguage } from './route-definitions';
+import { createLazyComponent, registerRoutes, RouteLoaderRegistry } from './route-loader';
 
-// Loading fallback component
-const PageLoadingFallback = () => (
-  <div className="min-h-screen flex items-center justify-center">
-    <div className="space-y-4 w-full max-w-md">
-      <Skeleton className="h-12 w-3/4 mx-auto" />
-      <Skeleton className="h-4 w-full" />
-      <Skeleton className="h-4 w-full" />
-      <Skeleton className="h-4 w-2/3" />
-      <div className="flex gap-4 pt-4">
-        <Skeleton className="h-10 w-full" />
-        <Skeleton className="h-10 w-full" />
-      </div>
-    </div>
-  </div>
-);
+// Register all route loaders
+registerRoutes({
+  // Core pages
+  [ROUTE_PATHS.HOME]: () => import('@/pages/Index'),
+  [ROUTE_PATHS.APPOINTMENTS]: () => import('@/pages/Appointments'),
+  [ROUTE_PATHS.APPOINTMENT_BOOKING]: () => import('@/pages/AppointmentBooking'),
+  [ROUTE_PATHS.EXPERTISE]: () => import('@/pages/Expertise'),
+  [ROUTE_PATHS.PATIENT_RESOURCES]: () => import('@/pages/PatientResources'),
+  [ROUTE_PATHS.CONTACT]: () => import('@/pages/Contact'),
+  [ROUTE_PATHS.FAQ]: () => import('@/pages/Faq'),
+  [ROUTE_PATHS.PRIVACY_POLICY]: () => import('@/pages/PrivacyPolicy'),
+  [ROUTE_PATHS.TERMS_CONDITIONS]: () => import('@/pages/TermsConditions'),
+  [ROUTE_PATHS.SPECIALTIES]: () => import('@/pages/Specialties'),
+  [ROUTE_PATHS.MEDICOLEGAL]: () => import('@/pages/Medicolegal'),
+  [ROUTE_PATHS.LOCATIONS]: () => import('@/pages/Locations'),
+  [ROUTE_PATHS.GP_RESOURCES]: () => import('@/pages/GPResources'),
 
-// Helper function to create lazy-loaded components with error handling
-const lazyLoad = (importFunc: () => Promise<{ default: React.ComponentType<Record<string, unknown>> }>) => {
-  const LazyComponent = lazy(importFunc);
-  return (props: Record<string, unknown>) => (
-    <Suspense fallback={<PageLoadingFallback />}>
-      <LazyComponent {...props} />
-    </Suspense>
-  );
-};
+  // Patient Resources
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.CONDITION_INFORMATION]: () => import('@/pages/patient-resources/ConditionInformation'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.SPINE_CONDITIONS_LIBRARY]: () => import('@/pages/patient-resources/SpineConditionsLibrary'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.EXERCISE_LIBRARY]: () => import('@/pages/patient-resources/ExerciseLibrary'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.INDIVIDUAL_SPINE_HEALTH_PROGRAMME]: () => import('@/pages/patient-resources/IndividualSpineHealthProgramme'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.SPINE_AND_BRAIN_HEALTH]: () => import('@/pages/patient-resources/SpineAndBrainHealth'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.CERVICAL_SPINE_INJURY]: () => import('@/pages/patient-resources/CervicalSpineInjury'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.CERVICAL_SPINE_EXERCISES]: () => import('@/pages/patient-resources/CervicalSpineExercises'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.SPINE_SAFE_EXERCISES]: () => import('@/pages/patient-resources/SpineSafeExercises'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.EXERCISE_PAIN_MED_RISKS]: () => import('@/pages/patient-resources/ExercisePainMedRisks'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.AGE_SPECIFIC_SPINE_RECOMMENDATIONS]: () => import('@/pages/patient-resources/AgeSpecificSpineRecommendations'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.YOUTHFUL_SPINE]: () => import('@/pages/patient-resources/YouthfulSpine'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.LIFESTYLE_MODIFICATIONS]: () => import('@/pages/patient-resources/LifestyleModifications'),
 
-// Lazy load components
-const Index = lazyLoad(() => import('@/pages/Index'));
-const Appointments = lazyLoad(() => import('@/pages/Appointments'));
-const AppointmentBooking = lazyLoad(() => import('@/pages/AppointmentBooking'));
-const Expertise = lazyLoad(() => import('@/pages/Expertise'));
-const PatientResources = lazyLoad(() => import('@/pages/PatientResources'));
-const ConditionInformation = lazyLoad(() => import('@/pages/patient-resources/ConditionInformation'));
-const ExerciseLibrary = lazyLoad(() => import('@/pages/patient-resources/ExerciseLibrary'));
-const LifestyleModifications = lazyLoad(() => import('@/pages/patient-resources/LifestyleModifications'));
-const SpineConditionsLibrary = lazyLoad(() => import('@/pages/patient-resources/SpineConditionsLibrary'));
-const HerniatedDisc = lazyLoad(() => import('@/pages/patient-resources/conditions/HerniatedDisc'));
-const SpinalStenosis = lazyLoad(() => import('@/pages/patient-resources/conditions/SpinalStenosis'));
-const Sciatica = lazyLoad(() => import('@/pages/patient-resources/conditions/Sciatica'));
-const Radiculopathy = lazyLoad(() => import('@/pages/patient-resources/conditions/Radiculopathy'));
-const Arthrosis = lazyLoad(() => import('@/pages/patient-resources/conditions/Arthrosis'));
-const Discopathy = lazyLoad(() => import('@/pages/patient-resources/conditions/Discopathy'));
-const FacetArthropathy = lazyLoad(() => import('@/pages/patient-resources/conditions/FacetArthropathy'));
-const SacroiliacArthropathy = lazyLoad(() => import('@/pages/patient-resources/conditions/SacroiliacArthropathy'));
-const PiriformisSyndrome = lazyLoad(() => import('@/pages/patient-resources/conditions/PiriformisSyndrome'));
-const ThoracicOutletSyndrome = lazyLoad(() => import('@/pages/patient-resources/conditions/ThoracicOutletSyndrome'));
-const OccipitalNeuralgia = lazyLoad(() => import('@/pages/patient-resources/conditions/OccipitalNeuralgia'));
-const Spondylosis = lazyLoad(() => import('@/pages/patient-resources/conditions/Spondylosis'));
-const ParsDefects = lazyLoad(() => import('@/pages/patient-resources/conditions/ParsDefects'));
-const Spondylolisthesis = lazyLoad(() => import('@/pages/patient-resources/conditions/Spondylolisthesis'));
-const IndividualSpineHealthProgramme = lazyLoad(() => import('@/pages/patient-resources/IndividualSpineHealthProgramme'));
-const SpineAndBrainHealth = lazyLoad(() => import('@/pages/patient-resources/SpineAndBrainHealth'));
-const CervicalSpineInjury = lazyLoad(() => import('@/pages/patient-resources/CervicalSpineInjury'));
-const CervicalSpineExercises = lazyLoad(() => import('@/pages/patient-resources/CervicalSpineExercises'));
-const SpineSafeExercises = lazyLoad(() => import('@/pages/patient-resources/SpineSafeExercises'));
-const ExercisePainMedRisks = lazyLoad(() => import('@/pages/patient-resources/ExercisePainMedRisks'));
-const AgeSpecificSpineRecommendations = lazyLoad(() => import('@/pages/patient-resources/AgeSpecificSpineRecommendations'));
-const YouthfulSpine = lazyLoad(() => import('@/pages/patient-resources/YouthfulSpine'));
+  // Medical Conditions
+  [ROUTE_PATHS.CONDITIONS.HERNIATED_DISC]: () => import('@/pages/patient-resources/conditions/HerniatedDisc'),
+  [ROUTE_PATHS.CONDITIONS.SPINAL_STENOSIS]: () => import('@/pages/patient-resources/conditions/SpinalStenosis'),
+  [ROUTE_PATHS.CONDITIONS.SCIATICA]: () => import('@/pages/patient-resources/conditions/Sciatica'),
+  [ROUTE_PATHS.CONDITIONS.RADICULOPATHY]: () => import('@/pages/patient-resources/conditions/Radiculopathy'),
+  [ROUTE_PATHS.CONDITIONS.ARTHROSIS]: () => import('@/pages/patient-resources/conditions/Arthrosis'),
+  [ROUTE_PATHS.CONDITIONS.DISCOPATHY]: () => import('@/pages/patient-resources/conditions/Discopathy'),
+  [ROUTE_PATHS.CONDITIONS.FACET_ARTHROPATHY]: () => import('@/pages/patient-resources/conditions/FacetArthropathy'),
+  [ROUTE_PATHS.CONDITIONS.SACROILIAC_ARTHROPATHY]: () => import('@/pages/patient-resources/conditions/SacroiliacArthropathy'),
+  [ROUTE_PATHS.CONDITIONS.PIRIFORMIS_SYNDROME]: () => import('@/pages/patient-resources/conditions/PiriformisSyndrome'),
+  [ROUTE_PATHS.CONDITIONS.THORACIC_OUTLET_SYNDROME]: () => import('@/pages/patient-resources/conditions/ThoracicOutletSyndrome'),
+  [ROUTE_PATHS.CONDITIONS.OCCIPITAL_NEURALGIA]: () => import('@/pages/patient-resources/conditions/OccipitalNeuralgia'),
+  [ROUTE_PATHS.CONDITIONS.SPONDYLOSIS]: () => import('@/pages/patient-resources/conditions/Spondylosis'),
+  [ROUTE_PATHS.CONDITIONS.PARS_DEFECTS]: () => import('@/pages/patient-resources/conditions/ParsDefects'),
+  [ROUTE_PATHS.CONDITIONS.SPONDYLOLISTHESIS]: () => import('@/pages/patient-resources/conditions/Spondylolisthesis'),
 
-const CervicalDiscReplacement = lazyLoad(() => import('@/pages/expertise/CervicalDiscReplacement'));
-const LumbarDiscReplacement = lazyLoad(() => import('@/pages/expertise/LumbarDiscReplacement'));
-const ImageGuidedSurgery = lazyLoad(() => import('@/pages/expertise/ImageGuidedSurgery'));
-const RoboticSpineSurgery = lazyLoad(() => import('@/pages/expertise/RoboticSpineSurgery'));
-const Medicolegal = lazyLoad(() => import('@/pages/Medicolegal'));
-const Locations = lazyLoad(() => import('@/pages/Locations'));
-const LocationDetail = lazyLoad(() => import('@/pages/locations/LocationDetail'));
-const SurreyHillsLocation = lazyLoad(() => import('@/pages/locations/surrey-hills'));
-const MorningtonLocation = lazyLoad(() => import('@/pages/locations/mornington'));
-const FrankstonLocation = lazyLoad(() => import('@/pages/locations/frankston'));
-const LangwarrinLocation = lazyLoad(() => import('@/pages/locations/langwarrin'));
-const BundooraLocation = lazyLoad(() => import('@/pages/locations/bundoora'));
-const WerribeeLocation = lazyLoad(() => import('@/pages/locations/werribee'));
-const HeidelbergLocation = lazyLoad(() => import('@/pages/locations/heidelberg'));
-const MooneePondsLocation = lazyLoad(() => import('@/pages/locations/moonee-ponds'));
-const SunburyLocation = lazyLoad(() => import('@/pages/locations/sunbury'));
-const DandenongLocation = lazyLoad(() => import('@/pages/locations/dandenong'));
-const WantirnaLocation = lazyLoad(() => import('@/pages/locations/wantirna'));
-const Faq = lazyLoad(() => import('@/pages/Faq'));
-const Contact = lazyLoad(() => import('@/pages/Contact'));
-const PrivacyPolicy = lazyLoad(() => import('@/pages/PrivacyPolicy'));
-const TermsConditions = lazyLoad(() => import('@/pages/TermsConditions'));
-const GPResources = lazyLoad(() => import('@/pages/GPResources'));
-const ReferralProtocols = lazyLoad(() => import('@/pages/gp-resources/ReferralProtocols'));
-const Diagnostics = lazyLoad(() => import('@/pages/gp-resources/Diagnostics'));
-const CareCoordination = lazyLoad(() => import('@/pages/gp-resources/CareCoordination'));
-const Emergencies = lazyLoad(() => import('@/pages/gp-resources/Emergencies'));
-const Specialties = lazyLoad(() => import('@/pages/Specialties'));
-const NotFound = lazyLoad(() => import('@/pages/NotFound'));
+  // Expertise/Technologies
+  [ROUTE_PATHS.EXPERTISE_ROUTES.CERVICAL_DISC_REPLACEMENT]: () => import('@/pages/expertise/CervicalDiscReplacement'),
+  [ROUTE_PATHS.EXPERTISE_ROUTES.LUMBAR_DISC_REPLACEMENT]: () => import('@/pages/expertise/LumbarDiscReplacement'),
+  [ROUTE_PATHS.EXPERTISE_ROUTES.IMAGE_GUIDED_SURGERY]: () => import('@/pages/expertise/ImageGuidedSurgery'),
+  [ROUTE_PATHS.EXPERTISE_ROUTES.ROBOTIC_SPINE_SURGERY]: () => import('@/pages/expertise/RoboticSpineSurgery'),
+
+  // Locations
+  [ROUTE_PATHS.LOCATION_ROUTES.SURREY_HILLS]: () => import('@/pages/locations/surrey-hills'),
+  [ROUTE_PATHS.LOCATION_ROUTES.MORNINGTON]: () => import('@/pages/locations/mornington'),
+  [ROUTE_PATHS.LOCATION_ROUTES.FRANKSTON]: () => import('@/pages/locations/frankston'),
+  [ROUTE_PATHS.LOCATION_ROUTES.LANGWARRIN]: () => import('@/pages/locations/langwarrin'),
+  [ROUTE_PATHS.LOCATION_ROUTES.BUNDOORA]: () => import('@/pages/locations/bundoora'),
+  [ROUTE_PATHS.LOCATION_ROUTES.WERRIBEE]: () => import('@/pages/locations/werribee'),
+  [ROUTE_PATHS.LOCATION_ROUTES.HEIDELBERG]: () => import('@/pages/locations/heidelberg'),
+  [ROUTE_PATHS.LOCATION_ROUTES.MOONEE_PONDS]: () => import('@/pages/locations/moonee-ponds'),
+  [ROUTE_PATHS.LOCATION_ROUTES.SUNBURY]: () => import('@/pages/locations/sunbury'),
+  [ROUTE_PATHS.LOCATION_ROUTES.DANDENONG]: () => import('@/pages/locations/dandenong'),
+  [ROUTE_PATHS.LOCATION_ROUTES.WANTIRNA]: () => import('@/pages/locations/wantirna'),
+  [ROUTE_PATHS.LOCATION_ROUTES.LOCATION_DETAIL]: () => import('@/pages/locations/LocationDetail'),
+
+  // GP Resources
+  [ROUTE_PATHS.GP_RESOURCES_ROUTES.REFERRAL_PROTOCOLS]: () => import('@/pages/gp-resources/ReferralProtocols'),
+  [ROUTE_PATHS.GP_RESOURCES_ROUTES.DIAGNOSTICS]: () => import('@/pages/gp-resources/Diagnostics'),
+  [ROUTE_PATHS.GP_RESOURCES_ROUTES.CARE_COORDINATION]: () => import('@/pages/gp-resources/CareCoordination'),
+  [ROUTE_PATHS.GP_RESOURCES_ROUTES.EMERGENCIES]: () => import('@/pages/gp-resources/Emergencies'),
+
+  // Special routes
+  [ROUTE_PATHS.NOT_FOUND]: () => import('@/pages/NotFound'),
+});
+
+// Get the route loader registry
+const routeRegistry = RouteLoaderRegistry.getInstance();
 
 // Define route structure
 export interface RouteConfig {
@@ -99,92 +92,50 @@ export interface RouteConfig {
   children?: RouteConfig[];
 }
 
-// Development-only routes (excluded from production)
-const developmentRoutes: RouteConfig[] = process.env.NODE_ENV === 'development' ? [
-  // Add development-only routes here if needed
-] : [];
+// Helper function to create route elements
+function createRouteElement(path: string): React.ReactNode {
+  const LazyComponent = routeRegistry.getLazyComponent(path);
+  return <LazyComponent />;
+}
+
+// Helper function to create redirect elements
+function createRedirectElement(to: string): React.ReactNode {
+  return <Navigate to={to} replace />;
+}
+
+// Generate base routes from route definitions
+function generateBaseRoutes(): RouteConfig[] {
+  const routes: RouteConfig[] = [];
+
+  // Add all registered routes
+  routeRegistry.getRegisteredRoutes().forEach(path => {
+    routes.push({
+      path,
+      element: createRouteElement(path)
+    });
+  });
+
+  // Add redirects
+  Object.entries(ROUTE_REDIRECTS).forEach(([from, to]) => {
+    routes.push({
+      path: from,
+      element: createRedirectElement(to)
+    });
+  });
+
+  return routes;
+}
 
 // Define base routes (without language prefix)
-export const baseRoutes: RouteConfig[] = [
-  { path: "/", element: <Index /> },
-  { path: "/appointments", element: <Appointments /> },
-  { path: "/appointment-booking", element: <AppointmentBooking /> },
-  { path: "/expertise", element: <Expertise /> },
-  { path: "/patient-resources", element: <PatientResources /> },
-  { path: "/patient-resources/spine-health-app", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
-  { path: "/patient-resources/condition-information", element: <ConditionInformation /> },
-  { path: "/patient-resources/spine-conditions-library", element: <SpineConditionsLibrary /> },
-  { path: "/patient-resources/conditions/herniated-disc", element: <HerniatedDisc /> },
-  { path: "/patient-resources/conditions/spinal-stenosis", element: <SpinalStenosis /> },
-  { path: "/patient-resources/conditions/sciatica", element: <Sciatica /> },
-  { path: "/patient-resources/conditions/radiculopathy", element: <Radiculopathy /> },
-  { path: "/patient-resources/conditions/arthrosis", element: <Arthrosis /> },
-  { path: "/patient-resources/conditions/discopathy", element: <Discopathy /> },
-  { path: "/patient-resources/conditions/facet-arthropathy", element: <FacetArthropathy /> },
-  { path: "/patient-resources/conditions/sacroiliac-arthropathy", element: <SacroiliacArthropathy /> },
-  { path: "/patient-resources/conditions/piriformis-syndrome", element: <PiriformisSyndrome /> },
-  { path: "/patient-resources/conditions/thoracic-outlet-syndrome", element: <ThoracicOutletSyndrome /> },
-  { path: "/patient-resources/conditions/occipital-neuralgia", element: <OccipitalNeuralgia /> },
-  { path: "/patient-resources/conditions/spondylosis", element: <Spondylosis /> },
-  { path: "/patient-resources/conditions/pars-defects", element: <ParsDefects /> },
-  { path: "/patient-resources/conditions/spondylolisthesis", element: <Spondylolisthesis /> },
-  { path: "/patient-resources/exercise-library", element: <ExerciseLibrary /> },
-  { path: "/patient-resources/assessment-tools", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
-  { path: "/patient-resources/patient-dashboard", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
-  { path: "/patient-resources/comprehensive-solution", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
-  { path: "/patient-resources/individual-spine-health-program", element: <Navigate to="/patient-resources/individual-spine-health-programme" replace /> },
-  { path: "/patient-resources/individual-spine-health-programme", element: <IndividualSpineHealthProgramme /> },
-  { path: "/patient-resources/spine-and-brain-health", element: <SpineAndBrainHealth /> },
-  { path: "/patient-resources/cervical-spine-injury", element: <CervicalSpineInjury /> },
-  { path: "/patient-resources/cervical-spine-exercises", element: <CervicalSpineExercises /> },
-  { path: "/patient-resources/spine-safe-exercises", element: <SpineSafeExercises /> },
-  { path: "/patient-resources/exercise-pain-medication-risks", element: <ExercisePainMedRisks /> },
-  { path: "/patient-resources/age-specific-spine-recommendations", element: <AgeSpecificSpineRecommendations /> },
-  { path: "/patient-resources/youthful-spine", element: <YouthfulSpine /> },
-  { path: "/patient-resources/lifestyle-modifications", element: <LifestyleModifications /> },
-
-  { path: "/technologies", element: <Navigate to="/expertise" replace /> },
-  { path: "/expertise/technologies", element: <Navigate to="/expertise" replace /> },
-  { path: "/expertise/cervical-disc-replacement", element: <CervicalDiscReplacement /> },
-  { path: "/expertise/lumbar-disc-replacement", element: <LumbarDiscReplacement /> },
-  { path: "/expertise/image-guided-surgery", element: <ImageGuidedSurgery /> },
-  { path: "/expertise/robotic-spine-surgery", element: <RoboticSpineSurgery /> },
-  { path: "/specialties", element: <Specialties /> },
-  { path: "/medicolegal", element: <Medicolegal /> },
-  { path: "/locations", element: <Locations /> },
-  { path: "/locations/surrey-hills", element: <SurreyHillsLocation /> },
-  { path: "/locations/mornington", element: <MorningtonLocation /> },
-  { path: "/locations/frankston", element: <FrankstonLocation /> },
-  { path: "/locations/langwarrin", element: <LangwarrinLocation /> },
-  { path: "/locations/bundoora", element: <BundooraLocation /> },
-  { path: "/locations/werribee", element: <WerribeeLocation /> },
-  { path: "/locations/heidelberg", element: <HeidelbergLocation /> },
-  { path: "/locations/moonee-ponds", element: <MooneePondsLocation /> },
-  { path: "/locations/sunbury", element: <SunburyLocation /> },
-  { path: "/locations/dandenong", element: <DandenongLocation /> },
-  { path: "/locations/wantirna", element: <WantirnaLocation /> },
-  { path: "/locations/:location", element: <LocationDetail /> },
-  { path: "/faq", element: <Faq /> },
-  { path: "/contact", element: <Contact /> },
-  { path: "/privacy-policy", element: <PrivacyPolicy /> },
-  { path: "/terms-conditions", element: <TermsConditions /> },
-  { path: "/gp-resources", element: <GPResources /> },
-  { path: "/gp-resources/referral-protocols", element: <ReferralProtocols /> },
-  { path: "/gp-resources/diagnostics", element: <Diagnostics /> },
-  { path: "/gp-resources/care-coordination", element: <CareCoordination /> },
-  { path: "/gp-resources/emergencies", element: <Emergencies /> },
-  ...developmentRoutes,
-  { path: "*", element: <NotFound /> }
-];
+export const baseRoutes: RouteConfig[] = generateBaseRoutes();
 
 // Generate language-specific routes
-export const generateLanguageRoutes = (lang: string): RouteConfig[] => {
-  return baseRoutes.map(route => {
+export const generateLanguageRoutes = (lang: SupportedLanguage): RouteConfig[] => {
+  return baseRoutes?.map(route => {
     // Skip the catch-all route
-    if (route.path === "*") {
+    if (route.path === ROUTE_PATHS.NOT_FOUND) {
       return route;
     }
-
     // For redirect routes, update the redirect path to include language
     if (React.isValidElement(route.element) && route.element.type === Navigate) {
       const navigate = route.element as React.ReactElement<{ to: string; replace: boolean }>;
@@ -195,7 +146,6 @@ export const generateLanguageRoutes = (lang: string): RouteConfig[] => {
         </LanguageWrapper>
       };
     }
-
     // For regular routes, wrap with LanguageWrapper
     return {
       path: `/${lang}${route.path}`,
@@ -204,10 +154,12 @@ export const generateLanguageRoutes = (lang: string): RouteConfig[] => {
   });
 };
 
-// Combine all routes
-export const getAllRoutes = (): RouteConfig[] => {
-  const enRoutes = generateLanguageRoutes('en');
-  const zhRoutes = generateLanguageRoutes('zh');
-
-  return [...baseRoutes, ...enRoutes, ...zhRoutes];
+// Combine all routes with type safety
+export const getAllRoutes = () => {
+  const languageRoutes = SUPPORTED_LANGUAGES.flatMap(lang => generateLanguageRoutes(lang));
+  return [...baseRoutes, ...languageRoutes];
 };
+
+// Export route utilities
+export { ROUTE_PATHS, ROUTE_REDIRECTS, SUPPORTED_LANGUAGES } from './route-definitions';
+export { RouteLoaderRegistry, preloadRoute } from './route-loader';

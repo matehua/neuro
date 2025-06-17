@@ -1,3 +1,5 @@
+ import ErrorBoundary from '@/components/ErrorBoundary';
+
 /**
  * Type Safety Utilities
  * Provides runtime type checking and safe type assertions
@@ -5,13 +7,14 @@
 
 // Safe type assertion utilities
 export class TypeSafetyError extends Error {
-  constructor(message: string, public readonly value: unknown) {
-    super(message);
+  constructor(    super(message);
     this.name = 'TypeSafetyError';
-  }
-}
 
-/**
+) {
+$4
+  }
+
+  /**
  * Safe type assertion with runtime validation
  */
 export function assertType<T>(
@@ -24,11 +27,11 @@ export function assertType<T>(
       errorMessage || `Type assertion failed for value: ${JSON.stringify(value)}`,
       value
     );
-  }
-  return value;
-}
 
-/**
+  return value;
+  }
+
+  /**
  * Safe type casting with fallback
  */
 export function safeCast<T>(
@@ -37,9 +40,9 @@ export function safeCast<T>(
   fallback: T
 ): T {
   return validator(value) ? value : fallback;
-}
+  }
 
-/**
+  /**
  * Null-safe property access
  */
 export function safeGet<T, K extends keyof T>(
@@ -47,9 +50,9 @@ export function safeGet<T, K extends keyof T>(
   key: K
 ): T[K] | undefined {
   return obj?.[key];
-}
+  }
 
-/**
+  /**
  * Deep null-safe property access
  */
 export function safeGetNested<T>(
@@ -57,25 +60,25 @@ export function safeGetNested<T>(
   path: string,
   fallback?: T
 ): T | undefined {
-  if (!obj || typeof obj !== 'object') {
-    return fallback;
-  }
+  if (    return fallback;
 
   const keys = path.split('.');
   let current: unknown = obj;
 
   for (const key of keys) {
-    if (current && typeof current === 'object' && key in current) {
-      current = (current as Record<string, unknown>)[key];
-    } else {
-      return fallback;
+    if (      current = (current as Record<string, unknown>)[key];) {
+ ) {
+ 
     }
-  }
+    $3}
+    $3} else {
+      return fallback;
+
 
   return current as T;
-}
+  }
 
-/**
+  /**
  * Array type guards
  */
 export function isArrayOf<T>(
@@ -83,73 +86,60 @@ export function isArrayOf<T>(
   itemValidator: (item: unknown) => item is T
 ): value is T[] {
   return Array.isArray(value) && value.every(itemValidator);
-}
+  }
 
-/**
+  /**
  * Object type guards
  */
 export function isObjectWithKeys<T extends Record<string, unknown>>(
   value: unknown,
   requiredKeys: (keyof T)[]
 ): value is T {
-  if (typeof value !== 'object' || value === null) {
-    return false;
-  }
+  if (    return false;
 
   const obj = value as Record<string, unknown>;
   return requiredKeys.every(key => key in obj);
-}
+  }
 
-/**
+  /**
  * String validation utilities
  */
 export function isNonEmptyString(value: unknown): value is string {
   return typeof value === 'string' && value.trim().length > 0;
-}
-
 export function isValidEmail(value: unknown): value is string {
   if (!isNonEmptyString(value)) return false;
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
   return emailRegex.test(value);
-}
-
 export function isValidUrl(value: unknown): value is string {
   if (!isNonEmptyString(value)) return false;
   try {
     new URL(value);
-    return true;
-  } catch {
+    return true;) {
+ 
+    }
+    $3} catch {
     return false;
   }
-}
 
-/**
+  /**
  * Number validation utilities
  */
-export function isPositiveNumber(value: unknown): value is number {
-  return typeof value === 'number' && value > 0 && !isNaN(value);
-}
+export function isPositiveNumber(  return typeof value === 'number' && value > 0 && !isNaN(value);
+export function isValidPercentage(  return typeof value === 'number' && value >= 0 && value <= 100 && !isNaN(value);
+  }
 
-export function isValidPercentage(value: unknown): value is number {
-  return typeof value === 'number' && value >= 0 && value <= 100 && !isNaN(value);
-}
-
-/**
+  /**
  * DOM element type guards
  */
 export function isHTMLElement(value: unknown): value is HTMLElement {
   return value instanceof HTMLElement;
-}
-
 export function isHTMLInputElement(value: unknown): value is HTMLInputElement {
   return value instanceof HTMLInputElement;
-}
-
 export function isHTMLFormElement(value: unknown): value is HTMLFormElement {
   return value instanceof HTMLFormElement;
-}
+  }
 
-/**
+  /**
  * React-specific type guards
  */
 export function isReactElement(value: unknown): value is React.ReactElement {
@@ -160,23 +150,26 @@ export function isReactElement(value: unknown): value is React.ReactElement {
     'type' in value &&
     'props' in value
   );
-}
+): $4 {
+$5
+  }
 
-/**
+  /**
  * Error handling utilities
  */
 export function isError(value: unknown): value is Error {
   return value instanceof Error;
-}
-
 export function getErrorMessage(error: unknown): string {
   if (isError(error)) {
     return error.message;
-  }
-  if (typeof error === 'string') {
-    return error;
-  }
+
+  if (    return error;
+
   return 'An unknown error occurred';
+): $3 {) {
+$
+    }
+    $34
 }
 
 /**
@@ -189,20 +182,22 @@ export function isPromise<T = unknown>(value: unknown): value is Promise<T> {
     'then' in value &&
     typeof (value as { then: unknown }).then === 'function'
   );
-}
+  }
 
-/**
+  /**
  * Function type guards
  */
-export function isFunction(value: unknown): value is Function {
-  return typeof value === 'function';
-}
+export function isFunction(  return typeof value === 'function';
+  }
 
-/**
+  /**
  * Date validation
  */
 export function isValidDate(value: unknown): value is Date {
   return value instanceof Date && !isNaN(value.getTime());
+): $3 {
+$4
+  }
 }
 
 /**
@@ -217,22 +212,21 @@ export function safeJsonParse<T = unknown>(
   } catch {
     return fallback;
   }
-}
+  }
 
-/**
+  /**
  * Environment variable validation
  */
 export function getRequiredEnvVar(name: string): string {
   const value = import.meta.env[name];
   if (!isNonEmptyString(value)) {
     throw new TypeSafetyError(`Required environment variable ${name} is not set`, value);
-  }
-  return value;
-}
 
-export function getOptionalEnvVar(name: string, fallback = ''): string {
-  const value = import.meta.env[name];
+  return value;
+export function getOptionalEnvVar(  const value = import.meta.env[name];
   return isNonEmptyString(value) ? value : fallback;
+): $3 {
+$4
 }
 
 /**
@@ -251,9 +245,6 @@ export function safeLocalStorageGet<T>(
     return validator(parsed) ? parsed : fallback;
   } catch {
     return fallback;
-  }
-}
-
 export function safeLocalStorageSet<T>(key: string, value: T): boolean {
   try {
     localStorage.setItem(key, JSON.stringify(value));
@@ -261,9 +252,9 @@ export function safeLocalStorageSet<T>(key: string, value: T): boolean {
   } catch {
     return false;
   }
-}
+  }
 
-/**
+  /**
  * Component prop validation
  */
 export function validateRequiredProps<T extends Record<string, unknown>>(
@@ -271,9 +262,9 @@ export function validateRequiredProps<T extends Record<string, unknown>>(
   requiredKeys: (keyof T)[]
 ): props is T {
   return requiredKeys.every(key => key in props && props[key] !== undefined);
-}
+  }
 
-/**
+  /**
  * API response validation
  */
 export function validateApiResponse<T>(
@@ -282,6 +273,7 @@ export function validateApiResponse<T>(
 ): T {
   if (!validator(response)) {
     throw new TypeSafetyError('Invalid API response format', response);
-  }
+
   return response;
+
 }

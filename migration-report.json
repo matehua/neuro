@@ -1,0 +1,260 @@
+[
+  {
+    "file": "src\\pages\\Appointments.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\Contact.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\expertise\\CervicalDiscReplacement.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\expertise\\ImageGuidedSurgery.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\expertise\\LumbarDiscReplacement.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\expertise\\RoboticSpineSurgery.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\Expertise.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\gp-resources\\CareCoordination.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\gp-resources\\Diagnostics.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\gp-resources\\Emergencies.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\gp-resources\\ReferralProtocols.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\GPResources.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\Index.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\locations\\mornington\\index.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\Medicolegal.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\AgeSpecificSpineRecommendations.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\AssessmentTools.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\CervicalSpineExercises.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\CervicalSpineInjury.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\Discopathy.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\HerniatedDisc.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\OccipitalNeuralgia.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\Radiculopathy.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\SpinalStenosis.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\Spondylolisthesis.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\ExerciseLibrary.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\ExercisePainMedRisks.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\LifestyleModifications.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\SpineAndBrainHealth.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\SpineSafeExercises.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\patient-resources\\YouthfulSpine.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\PatientResources.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\PrivacyPolicy.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  },
+  {
+    "file": "src\\pages\\TestImages.tsx",
+    "changes": [
+      "Layout → StandardPageLayout"
+    ]
+  }
+]

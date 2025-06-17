@@ -1,25 +1,26 @@
-import React, { useState, useEffect, useRef } from "react";
-import { Check, CalendarIcon, Users } from "lucide-react";
-import { format } from "date-fns";
-import { cn } from "@/lib/utils";
-import { Button } from "@/components/ui/button";
-import { Calendar } from "@/components/ui/calendar";
-import {
+import React, {  useState, useEffect, useRef , useCallback } from 'react';
+import { Check, CalendarIcon, Users } from 'lucide-react';
+
+import { format } from 'date-fns';
+
+import { Button } from '@/components/ui/button';
+import { Calendar } from '@/components/ui/calendar';
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
-import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { useLanguage } from "@/contexts/LanguageContext";
-import { useDeviceDetection } from "@/contexts/DeviceContext";
 
-export default function AppointmentForm() {
+const AppointmentForm: React.FC = () => {
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
   const [startDate, setStartDate] = useState<Date>();
@@ -34,7 +35,6 @@ export default function AppointmentForm() {
     return () => {
       if (timerRef.current) {
         clearTimeout(timerRef.current);
-      }
     };
   }, []);
 
@@ -45,8 +45,6 @@ export default function AppointmentForm() {
     if (!startDate || !endDate) {
       // In a real app, you would show an error message to the user
       return;
-    }
-
     // In a real app, this would send the booking data to a server
     // with proper input sanitization and validation
     setSubmitted(true);
@@ -55,8 +53,6 @@ export default function AppointmentForm() {
     // Clear any existing timer
     if (timerRef.current) {
       clearTimeout(timerRef.current);
-    }
-
     // Set a new timer
     timerRef.current = window.setTimeout(() => {
       setSubmitted(false);
@@ -66,8 +62,8 @@ export default function AppointmentForm() {
 
   return (
     <form
-      onSubmit={handleSubmit}
-      className={cn(
+      onSubmit={handleSubmit
+                            className={cn(
         "glass-card animate-fade-in [animation-delay:200ms]",
         deviceInfo.isMobile
           ? "p-mobile-lg space-y-mobile-lg"
@@ -132,9 +128,9 @@ export default function AppointmentForm() {
                 <Calendar
                   mode="single"
                   selected={startDate}
-                  onSelect={setStartDate}
+                  onSelect={setStartDate
                   initialFocus
-                  disabled={(date) => date < new Date()}
+                            disabled={(date: any) => date < new Date()}
                   className="pointer-events-auto"
                 />
               </PopoverContent>
@@ -164,9 +160,9 @@ export default function AppointmentForm() {
                 <Calendar
                   mode="single"
                   selected={endDate}
-                  onSelect={setEndDate}
+                  onSelect={setEndDate
                   initialFocus
-                  disabled={(date) => date < (startDate || new Date())}
+                            disabled={(date: any) => date < (startDate || new Date())}
                   className="pointer-events-auto"
                 />
               </PopoverContent>
@@ -180,12 +176,12 @@ export default function AppointmentForm() {
             <label htmlFor="adults" className="block text-sm font-medium">
               Adults
             </label>
-            <Select value={adults} onValueChange={setAdults}>
+            <Select value={adults} onValueChange={setAdults>
               <SelectTrigger id="adults" className="w-full">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
-                {[1, 2, 3, 4, 5, 6].map((num) => (
+                {[1, 2, 3, 4, 5, 6].map((num: any) => (
                   <SelectItem key={num} value={num.toString()}>
                     {num} {num === 1 ? "Adult" : "Adults"}
                   </SelectItem>
@@ -199,12 +195,12 @@ export default function AppointmentForm() {
             <label htmlFor="children" className="block text-sm font-medium">
               Children
             </label>
-            <Select value={children} onValueChange={setChildren}>
+            <Select value={children} onValueChange={setChildren>
               <SelectTrigger id="children" className="w-full">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
-                {[0, 1, 2, 3, 4].map((num) => (
+                {[0, 1, 2, 3, 4].map((num: any) => (
                   <SelectItem key={num} value={num.toString()}>
                     {num} {num === 1 ? "Child" : "Children"}
                   </SelectItem>
@@ -230,4 +226,13 @@ export default function AppointmentForm() {
       </Button>
     </form>
   );
+AppointmentForm.displayName = 'AppointmentForm';
+
+export default AppointmentForm;
+
+AppointmentForm.displayName = 'AppointmentForm';
+  }
+}
+}
+}
 }

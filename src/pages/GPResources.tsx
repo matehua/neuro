@@ -1,12 +1,14 @@
-import { useEffect } from "react";
-import { Link } from "react-router-dom";
-import { useLanguage } from "@/contexts/LanguageContext";
-import PageHeader from "@/components/PageHeader";
-import Layout from "@/components/Layout";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
-import SafeImage from "@/components/SafeImage";
-export default function GPResources() {
+import { Link } from 'react-router-dom';
+import { useEffect } from 'react';
+
+import PageHeader from '@/components/PageHeader';
+import SafeImage from '@/components/SafeImage';
+import StandardPageLayout from '@/components/StandardPageLayout';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
+import { useLanguage } from '@/contexts/LanguageContext';
+
+const GPResources: React.FC = () => {
   const { t } = useLanguage();
 
   useEffect(() => {
@@ -14,7 +16,7 @@ export default function GPResources() {
   }, []);
 
   return (
-    <Layout>
+    <StandardPageLayout showHeader={false}>
       <PageHeader
         title={t.gpResources.title}
         subtitle={t.gpResources.subtitle}
@@ -127,6 +129,10 @@ export default function GPResources() {
           </div>
         </div>
       </section>
-    </Layout>
+    </StandardPageLayout>
   );
-}
+};
+
+GPResources.displayName = 'GPResources';
+
+export default GPResources;
