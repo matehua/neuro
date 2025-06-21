@@ -4,9 +4,9 @@ import { forwardRef, ElementRef, ComponentPropsWithoutRef } from 'react';
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 
-const Popover = PopoverPrimitive.Root
+const Popover = PopoverPrimitive.Root;
 
-const PopoverTrigger = PopoverPrimitive.Trigger
+const PopoverTrigger = PopoverPrimitive.Trigger;
 
 const PopoverContent = forwardRef<
   ElementRef<typeof PopoverPrimitive.Content>,
@@ -32,6 +32,6 @@ const PopoverContent = forwardRef<
     </PopoverPrimitive.Portal>
   );
 });
-PopoverContent.displayName = PopoverPrimitive.Content.displayName
+PopoverContent.displayName = PopoverPrimitive.Content.displayName;
 
-export { Popover, PopoverTrigger, PopoverContent }
+export { Popover, PopoverTrigger, PopoverContent };

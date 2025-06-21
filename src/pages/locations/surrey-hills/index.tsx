@@ -6,9 +6,19 @@ import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
 
 const SurreyHillsLocation: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Basic fallback structure
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -25,16 +35,16 @@ const SurreyHillsLocation: React.FC = () => {
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
-                <h1 className="text-3xl font-bold mb-6">{t.surreyHillsLocation?.expertNeurosurgery || 'Expand Your Medical Practice in Surrey Hills'}</h1>
-                <h2 className="text-xl text-primary mb-4">{t.surreyHillsLocation?.subtitle || 'Professional Environment'}</h2>
+                <h1 className="text-3xl font-bold mb-6">{finalT.surreyHillsLocation?.expertNeurosurgery || 'Expand Your Medical Practice in Surrey Hills'}</h1>
+                <h2 className="text-xl text-primary mb-4">{finalT.surreyHillsLocation?.subtitle || 'Professional Environment'}</h2>
                 <p className="text-muted-foreground mb-4">
-                  {t.surreyHillsLocation?.introduction1 || 'Rent a fully-equipped neurosurgical consultation suite in Surrey Hills at miNEURO Medical Consulting Suites. Perfect for healthcare professionals, our state-of-the-art space is located near major medical facilities and transport links.'}
+                  {finalT.surreyHillsLocation?.introduction1 || 'Rent a fully-equipped neurosurgical consultation suite in Surrey Hills at miNEURO Medical Consulting Suites. Perfect for healthcare professionals, our state-of-the-art space is located near major medical facilities and transport links.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.surreyHillsLocation?.introduction2 || 'Whether you need a sessional or permanent setup, our prime location in a vibrant shopping district offers a modern and accessible workspace to deliver top-notch patient care. It creates an ideal choice for consultants seeking a modern and accessible workspace to deliver quality patient services.'}
+                  {finalT.surreyHillsLocation?.introduction2 || 'Whether you need a sessional or permanent setup, our prime location in a vibrant shopping district offers a modern and accessible workspace to deliver top-notch patient care. It creates an ideal choice for consultants seeking a modern and accessible workspace to deliver quality patient services.'}
                 </p>
                 <p className="text-muted-foreground">
-                  {t.surreyHillsLocation?.introduction2 ? '' : 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, a neurosurgeon and spine surgeon, has cared for patients in Melbourne since 2012. He offers consultations at his main office in Surrey Hills and operates at major Melbourne Hospitals.'}
+                  {finalT.surreyHillsLocation?.introduction2 ? '' : 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, a neurosurgeon and spine surgeon, has cared for patients in Melbourne since 2012. He offers consultations at his main office in Surrey Hills and operates at major Melbourne Hospitals.'}
                 </p>
               </div>
               <div className="md:w-1/2">
@@ -56,15 +66,15 @@ const SurreyHillsLocation: React.FC = () => {
             <div className="flex flex-col md:flex-row gap-8">
               <div className="md:w-1/2">
                 <div className="mb-8">
-                  <h2 className="text-2xl font-bold mb-4">{t.surreyHillsLocation?.locationDetails || 'Location Details'}</h2>
+                  <h2 className="text-2xl font-bold mb-4">{finalT.surreyHillsLocation?.locationDetails || 'Location Details'}</h2>
                   <p className="text-muted-foreground">
-                    {t.surreyHillsLocation?.locationDetails || 'Everything you need to know about our Surrey Hills consultation suites'}
+                    {finalT.surreyHillsLocation?.locationDetails || 'Everything you need to know about our Surrey Hills consultation suites'}
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.address || 'Address'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.address || 'Address'}</h3>
                     <p className="text-muted-foreground">
                       miNEURO Consulting Suites<br />
                       Suite 4, Ground Floor<br />
@@ -74,7 +84,7 @@ const SurreyHillsLocation: React.FC = () => {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.contactInformation || 'Contact Information'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.contactInformation || 'Contact Information'}</h3>
                     <p className="text-muted-foreground mb-2">
                       <span className="font-medium">Phone:</span> 03 90084200 (clinical office)
                     </p>
@@ -90,25 +100,25 @@ const SurreyHillsLocation: React.FC = () => {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.consultingHours || 'Consulting Hours'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.consultingHours || 'Consulting Hours'}</h3>
                     <p className="text-muted-foreground mb-2">
-                      <span className="font-medium">{t.surreyHillsLocation?.consultingHoursDetails ? '' : 'Monday to Friday:'}</span> {t.surreyHillsLocation?.consultingHoursDetails || '8:30 AM - 5:30 PM'}
+                      <span className="font-medium">{finalT.surreyHillsLocation?.consultingHoursDetails ? '' : 'Monday to Friday:'}</span> {finalT.surreyHillsLocation?.consultingHoursDetails || '8:30 AM - 5:30 PM'}
                     </p>
                     <p className="text-muted-foreground mb-4">
-                      {t.surreyHillsLocation?.consultationsByAppointment || 'Consultations are by appointment only. Please call our office to schedule an appointment.'}
+                      {finalT.surreyHillsLocation?.consultationsByAppointment || 'Consultations are by appointment only. Please call our office to schedule an appointment.'}
                     </p>
                     <p className="text-muted-foreground">
-                      <span className="font-medium">{t.surreyHillsLocation?.urgentAppointments ? '' : 'Note:'}</span> {t.surreyHillsLocation?.urgentAppointments || 'Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.'}
+                      <span className="font-medium">{finalT.surreyHillsLocation?.urgentAppointments ? '' : 'Note:'}</span> {finalT.surreyHillsLocation?.urgentAppointments || 'Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.'}
                     </p>
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.appointmentProcess || 'Appointment Process'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.appointmentProcess || 'Appointment Process'}</h3>
                     <p className="text-muted-foreground mb-2">
-                      {t.surreyHillsLocation?.appointmentProcessDetails1 || 'Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.'}
+                      {finalT.surreyHillsLocation?.appointmentProcessDetails1 || 'Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.'}
                     </p>
                     <p className="text-muted-foreground">
-                      {t.surreyHillsLocation?.appointmentProcessDetails2 || 'All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.'}
+                      {finalT.surreyHillsLocation?.appointmentProcessDetails2 || 'All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.'}
                     </p>
                   </div>
                 </div>
@@ -130,19 +140,19 @@ const SurreyHillsLocation: React.FC = () => {
                 </div>
 
                 <div className="card p-6 rounded-lg shadow-md bg-card">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.gettingHere || 'Getting Here'}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.gettingHere || 'Getting Here'}</h3>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-lg font-medium mb-2">{t.surreyHillsLocation?.byPublicTransport || 'By Public Transport'}</h4>
+                      <h4 className="text-lg font-medium mb-2">{finalT.surreyHillsLocation?.byPublicTransport || 'By Public Transport'}</h4>
                       <p className="text-muted-foreground">
-                        {t.surreyHillsLocation?.byPublicTransportDetails || 'Our Surrey Hills location is a short walk from Surrey Hills train station on the Lilydale/Belgrave line. Several bus routes also service Canterbury Road, making it easily accessible from various parts of Melbourne.'}
+                        {finalT.surreyHillsLocation?.byPublicTransportDetails || 'Our Surrey Hills location is a short walk from Surrey Hills train station on the Lilydale/Belgrave line. Several bus routes also service Canterbury Road, making it easily accessible from various parts of Melbourne.'}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-medium mb-2">{t.surreyHillsLocation?.byCar || 'By Car'}</h4>
+                      <h4 className="text-lg font-medium mb-2">{finalT.surreyHillsLocation?.byCar || 'By Car'}</h4>
                       <p className="text-muted-foreground">
-                        {t.surreyHillsLocation?.byCarDetails || 'Ample on-street parking is available on Canterbury Road and surrounding streets. The building is easily accessible from the Eastern Freeway and Burwood Highway, with convenient access from most parts of Melbourne.'}
+                        {finalT.surreyHillsLocation?.byCarDetails || 'Ample on-street parking is available on Canterbury Road and surrounding streets. The building is easily accessible from the Eastern Freeway and Burwood Highway, with convenient access from most parts of Melbourne.'}
                       </p>
                     </div>
                   </div>
@@ -156,15 +166,15 @@ const SurreyHillsLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.surreyHillsLocation?.facilities?.title || 'Our Facilities'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.surreyHillsLocation?.facilities?.title || 'Our Facilities'}</h2>
               <p className="text-muted-foreground">
-                {t.surreyHillsLocation?.facilities?.subtitle || 'Modern, comfortable facilities designed for healthcare professionals and patient care'}
+                {finalT.surreyHillsLocation?.facilities?.subtitle || 'Modern, comfortable facilities designed for healthcare professionals and patient care'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.surreyHillsLocation?.facilities?.description || 'At miNEURO Medical Consulting Suites, we are committed to providing healthcare professionals with the resources and support tailored to meet diverse needs. Our facility offers for rent sessional or permanent fully-equipped state-of-the-art medical consulting suites in Surrey Hills at a prime location near key medical institutions, a bustling shopping district, and a convenient transportation hub.'}
+                {finalT.surreyHillsLocation?.facilities?.description || 'At miNEURO Medical Consulting Suites, we are committed to providing healthcare professionals with the resources and support tailored to meet diverse needs. Our facility offers for rent sessional or permanent fully-equipped state-of-the-art medical consulting suites in Surrey Hills at a prime location near key medical institutions, a bustling shopping district, and a convenient transportation hub.'}
               </p>
             </div>
 
@@ -177,9 +187,9 @@ const SurreyHillsLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.facilities?.consultingRooms?.title || 'Modern Consultation Suites'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.facilities?.consultingRooms?.title || 'Modern Consultation Suites'}</h3>
                 <p className="text-muted-foreground">
-                  {t.surreyHillsLocation?.facilities?.consultingRooms?.description || 'Our consultation suites are meticulously designed and equipped to support various medical specialties. Each suite has modern medical equipment, including examination tables, sinks, ergonomic seating, and ample storage space. The suites feature large displays to review and discuss imaging, helping patients understand their conditions and treatment options.'}
+                  {finalT.surreyHillsLocation?.facilities?.consultingRooms?.description || 'Our consultation suites are meticulously designed and equipped to support various medical specialties. Each suite has modern medical equipment, including examination tables, sinks, ergonomic seating, and ample storage space. The suites feature large displays to review and discuss imaging, helping patients understand their conditions and treatment options.'}
                 </p>
               </div>
 
@@ -191,9 +201,9 @@ const SurreyHillsLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.facilities?.waitingSpace?.title || 'Comfortable Waiting Area'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.facilities?.waitingSpace?.title || 'Comfortable Waiting Area'}</h3>
                 <p className="text-muted-foreground">
-                  {t.surreyHillsLocation?.facilities?.waitingSpace?.description || 'Our welcoming waiting area is designed to provide comfort and convenience for patients and their companions. Furnished with comfortable seating, reading materials, a fridge with refreshing drinks, a TV, a HiFi audio system and ambient lighting, our waiting area creates a calming atmosphere for patients awaiting their appointments.'}
+                  {finalT.surreyHillsLocation?.facilities?.waitingSpace?.description || 'Our welcoming waiting area is designed to provide comfort and convenience for patients and their companions. Furnished with comfortable seating, reading materials, a fridge with refreshing drinks, a TV, a HiFi audio system and ambient lighting, our waiting area creates a calming atmosphere for patients awaiting their appointments.'}
                 </p>
               </div>
 
@@ -205,9 +215,9 @@ const SurreyHillsLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.facilities?.accessibleEnvironment?.title || 'Receptionist Support'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.facilities?.accessibleEnvironment?.title || 'Receptionist Support'}</h3>
                 <p className="text-muted-foreground">
-                  {t.surreyHillsLocation?.facilities?.accessibleEnvironment?.description || 'From greeting patients to managing appointments and inquiries, our experienced receptionists are here to assist you in providing exceptional patient care. Our dedicated team of administrative and clinical staff are committed to providing a welcoming and efficient experience for all patients.'}
+                  {finalT.surreyHillsLocation?.facilities?.accessibleEnvironment?.description || 'From greeting patients to managing appointments and inquiries, our experienced receptionists are here to assist you in providing exceptional patient care. Our dedicated team of administrative and clinical staff are committed to providing a welcoming and efficient experience for all patients.'}
                 </p>
               </div>
             </div>
@@ -234,9 +244,9 @@ const SurreyHillsLocation: React.FC = () => {
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.facilities?.kitchenette?.title || 'Kitchenette'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.facilities?.kitchenette?.title || 'Kitchenette'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.surreyHillsLocation?.facilities?.kitchenette?.description || 'Our kitchenette allows us to prepare and enjoy refreshments throughout the day. Whether you need a quick coffee break between appointments or a snack to recharge, our kitchenette offers the perfect space to unwind and refuel. It features essential appliances, including a refrigerator, microwave, toaster, sandwich press and boiling/chilled water taps.'}
+                  {finalT.surreyHillsLocation?.facilities?.kitchenette?.description || 'Our kitchenette allows us to prepare and enjoy refreshments throughout the day. Whether you need a quick coffee break between appointments or a snack to recharge, our kitchenette offers the perfect space to unwind and refuel. It features essential appliances, including a refrigerator, microwave, toaster, sandwich press and boiling/chilled water taps.'}
                 </p>
               </div>
 
@@ -375,15 +385,15 @@ const SurreyHillsLocation: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.surreyHillsLocation?.location || 'Location and Amenities'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.surreyHillsLocation?.location || 'Location and Amenities'}</h2>
               <p className="text-muted-foreground">
-                {t.surreyHillsLocation?.locationDetails1 ? '' : 'Prime location with convenient services and facilities in the surrounding area'}
+                {finalT.surreyHillsLocation?.locationDetails1 ? '' : 'Prime location with convenient services and facilities in the surrounding area'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.surreyHillsLocation?.locationDetails1 || 'Our consultation suites are strategically located at 619 Canterbury Road, Surrey Hills, offering a prime location for healthcare professionals seeking a convenient and accessible workspace. Situated within a few minutes drive from the bustling Box Hill Medical Hub, our facility provides easy access to essential medical services and collaborative opportunities with fellow healthcare professionals.'}
+                {finalT.surreyHillsLocation?.locationDetails1 || 'Our consultation suites are strategically located at 619 Canterbury Road, Surrey Hills, offering a prime location for healthcare professionals seeking a convenient and accessible workspace. Situated within a few minutes drive from the bustling Box Hill Medical Hub, our facility provides easy access to essential medical services and collaborative opportunities with fellow healthcare professionals.'}
               </p>
             </div>
 
@@ -463,15 +473,15 @@ const SurreyHillsLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.surreyHillsLocation?.nearbyAmenities?.title || 'Nearby Amenities'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.surreyHillsLocation?.nearbyAmenities?.title || 'Nearby Amenities'}</h2>
               <p className="text-muted-foreground">
-                {t.surreyHillsLocation?.nearbyAmenities?.subtitle || 'Discover the convenience of Surrey Hills\' local amenities for patients and visitors'}
+                {finalT.surreyHillsLocation?.nearbyAmenities?.subtitle || 'Discover the convenience of Surrey Hills\' local amenities for patients and visitors'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.surreyHillsLocation?.nearbyAmenities?.description ||
+                {finalT.surreyHillsLocation?.nearbyAmenities?.description ||
                   'Our Surrey Hills location is surrounded by a variety of amenities to make your visit more convenient and comfortable. ' +
                   'Whether you\'re looking for a place to grab a coffee before your appointment, need to pick up a prescription, or want to enjoy a meal afterward, ' +
                   'you\'ll find everything you need within easy reach.'}
@@ -480,33 +490,33 @@ const SurreyHillsLocation: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.nearbyAmenities?.cafesRestaurants?.title || 'Cafes & Restaurants'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.nearbyAmenities?.cafesRestaurants?.title || 'Cafes & Restaurants'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Union Station Cafe</span> - {t.surreyHillsLocation?.nearbyAmenities?.cafesRestaurants?.unionStationCafe?.split(' - ')[1] ||
+                      <span className="font-medium">Union Station Cafe</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.cafesRestaurants?.unionStationCafe?.split(' - ')[1] ||
                         'A popular local cafe just a short walk away, offering excellent coffee, breakfast, and lunch options.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Our Little Secret</span> - {t.surreyHillsLocation?.nearbyAmenities?.cafesRestaurants?.ourLittleSecret?.split(' - ')[1] ||
+                      <span className="font-medium">Our Little Secret</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.cafesRestaurants?.ourLittleSecret?.split(' - ')[1] ||
                         'A charming cafe known for its friendly service and delicious brunch menu.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Maling Road Cafes</span> - {t.surreyHillsLocation?.nearbyAmenities?.cafesRestaurants?.malingRoadCafes?.split(' - ')[1] ||
+                      <span className="font-medium">Maling Road Cafes</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.cafesRestaurants?.malingRoadCafes?.split(' - ')[1] ||
                         'A short drive away, this historic shopping strip offers multiple cafes and restaurants with outdoor seating.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Surrey Hills Grocer</span> - {t.surreyHillsLocation?.nearbyAmenities?.cafesRestaurants?.surreyHillsGrocer?.split(' - ')[1] ||
+                      <span className="font-medium">Surrey Hills Grocer</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.cafesRestaurants?.surreyHillsGrocer?.split(' - ')[1] ||
                         'A specialty food store and cafe offering quality Australian produce and prepared foods.'}
                     </div>
                   </li>
@@ -514,33 +524,33 @@ const SurreyHillsLocation: React.FC = () => {
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.nearbyAmenities?.shopping?.title || 'Shopping'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.nearbyAmenities?.shopping?.title || 'Shopping'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Coles Supermarket</span> - {t.surreyHillsLocation?.nearbyAmenities?.shopping?.colesSupermarket?.split(' - ')[1] ||
+                      <span className="font-medium">Coles Supermarket</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.shopping?.colesSupermarket?.split(' - ')[1] ||
                         'A full-service supermarket within 100 meters of our facility for any grocery needs.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Surrey Hills Pharmacy</span> - {t.surreyHillsLocation?.nearbyAmenities?.shopping?.surreyHillsPharmacy?.split(' - ')[1] ||
+                      <span className="font-medium">Surrey Hills Pharmacy</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.shopping?.surreyHillsPharmacy?.split(' - ')[1] ||
                         'Conveniently located nearby for prescription fills and health products.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Canterbury Shopping Precinct</span> - {t.surreyHillsLocation?.nearbyAmenities?.shopping?.canterburyShopping?.split(' - ')[1] ||
+                      <span className="font-medium">Canterbury Shopping Precinct</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.shopping?.canterburyShopping?.split(' - ')[1] ||
                         'A variety of specialty shops and services along Canterbury Road.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Box Hill Central</span> - {t.surreyHillsLocation?.nearbyAmenities?.shopping?.boxHillCentral?.split(' - ')[1] ||
+                      <span className="font-medium">Box Hill Central</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.shopping?.boxHillCentral?.split(' - ')[1] ||
                         'A major shopping center just a short drive away with department stores, specialty shops, and a diverse food court.'}
                     </div>
                   </li>
@@ -548,33 +558,33 @@ const SurreyHillsLocation: React.FC = () => {
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.nearbyAmenities?.parksRecreation?.title || 'Parks & Recreation'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.nearbyAmenities?.parksRecreation?.title || 'Parks & Recreation'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Surrey Gardens</span> - {t.surreyHillsLocation?.nearbyAmenities?.parksRecreation?.surreyGardens?.split(' - ')[1] ||
+                      <span className="font-medium">Surrey Gardens</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.parksRecreation?.surreyGardens?.split(' - ')[1] ||
                         'A peaceful park with walking paths, mature trees, and open green spaces, perfect for a relaxing stroll.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Surrey Park</span> - {t.surreyHillsLocation?.nearbyAmenities?.parksRecreation?.surreyPark?.split(' - ')[1] ||
+                      <span className="font-medium">Surrey Park</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.parksRecreation?.surreyPark?.split(' - ')[1] ||
                         'Features sports facilities, walking tracks, and playgrounds for families.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Anniversary Trail</span> - {t.surreyHillsLocation?.nearbyAmenities?.parksRecreation?.anniversaryTrail?.split(' - ')[1] ||
+                      <span className="font-medium">Anniversary Trail</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.parksRecreation?.anniversaryTrail?.split(' - ')[1] ||
                         'A popular walking and cycling path that runs through Surrey Hills, perfect for exercise or leisure.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Canterbury Sports Ground</span> - {t.surreyHillsLocation?.nearbyAmenities?.parksRecreation?.canterburySportsGround?.split(' - ')[1] ||
+                      <span className="font-medium">Canterbury Sports Ground</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.parksRecreation?.canterburySportsGround?.split(' - ')[1] ||
                         'Nearby sporting facilities including tennis courts and ovals.'}
                     </div>
                   </li>
@@ -582,33 +592,33 @@ const SurreyHillsLocation: React.FC = () => {
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.nearbyAmenities?.otherAmenities?.title || 'Other Amenities'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.nearbyAmenities?.otherAmenities?.title || 'Other Amenities'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Surrey Hills Post Office</span> - {t.surreyHillsLocation?.nearbyAmenities?.otherAmenities?.surreyHillsPostOffice?.split(' - ')[1] ||
+                      <span className="font-medium">Surrey Hills Post Office</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.otherAmenities?.surreyHillsPostOffice?.split(' - ')[1] ||
                         'Conveniently located for postal services and bill payments.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Banks & ATMs</span> - {t.surreyHillsLocation?.nearbyAmenities?.otherAmenities?.banksATMs?.split(' - ')[1] ||
+                      <span className="font-medium">Banks & ATMs</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.otherAmenities?.banksATMs?.split(' - ')[1] ||
                         'Several banking options within walking distance.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Surrey Hills Library</span> - {t.surreyHillsLocation?.nearbyAmenities?.otherAmenities?.surreyHillsLibrary?.split(' - ')[1] ||
+                      <span className="font-medium">Surrey Hills Library</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.otherAmenities?.surreyHillsLibrary?.split(' - ')[1] ||
                         'A community library offering a quiet space for reading and research.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Surrey Hills Neighborhood Centre</span> - {t.surreyHillsLocation?.nearbyAmenities?.otherAmenities?.surreyHillsNeighborhoodCentre?.split(' - ')[1] ||
+                      <span className="font-medium">Surrey Hills Neighborhood Centre</span> - {finalT.surreyHillsLocation?.nearbyAmenities?.otherAmenities?.surreyHillsNeighborhoodCentre?.split(' - ')[1] ||
                         'Offers community programs and services for local residents.'}
                     </div>
                   </li>
@@ -622,15 +632,15 @@ const SurreyHillsLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.surreyHillsLocation?.nearbyHospitals?.title || 'Nearby Hospitals'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.surreyHillsLocation?.nearbyHospitals?.title || 'Nearby Hospitals'}</h2>
               <p className="text-muted-foreground">
-                {t.surreyHillsLocation?.nearbyHospitals?.subtitle || 'Dr. Aliashkevich performs surgery at these hospitals'}
+                {finalT.surreyHillsLocation?.nearbyHospitals?.subtitle || 'Dr. Aliashkevich performs surgery at these hospitals'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.surreyHillsLocation?.nearbyHospitals?.description || 'Dr. Aliashkevich performs surgery at multiple hospitals across Melbourne, including the following facilities. These hospitals are equipped with state-of-the-art technology for neurosurgical and spine procedures.'}
+                {finalT.surreyHillsLocation?.nearbyHospitals?.description || 'Dr. Aliashkevich performs surgery at multiple hospitals across Melbourne, including the following facilities. These hospitals are equipped with state-of-the-art technology for neurosurgical and spine procedures.'}
               </p>
             </div>
 
@@ -644,16 +654,16 @@ const SurreyHillsLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.hospitals?.warringalPrivate?.title || 'Warringal Private Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.hospitals?.warringalPrivate?.title || 'Warringal Private Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.warringalPrivate?.description || 'Warringal Private Hospital is a leading private hospital in Melbourne\'s northern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
+                  {finalT.hospitals?.warringalPrivate?.description || 'Warringal Private Hospital is a leading private hospital in Melbourne\'s northern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.warringalPrivate?.address || 'Address: 216 Burgundy Street, Heidelberg VIC 3084'}<br />
-                  {t.hospitals?.warringalPrivate?.phone || 'Phone: (03) 9274 1300'}
+                  {finalT.hospitals?.warringalPrivate?.address || 'Address: 216 Burgundy Street, Heidelberg VIC 3084'}<br />
+                  {finalT.hospitals?.warringalPrivate?.phone || 'Phone: (03) 9274 1300'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.warringalprivatehospital.com.au/" target="_blank" rel="noopener noreferrer">{t.hospitals?.warringalPrivate?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.warringalprivatehospital.com.au/" target="_blank" rel="noopener noreferrer">{finalT.hospitals?.warringalPrivate?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
 
@@ -666,16 +676,16 @@ const SurreyHillsLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.hospitals?.epworthRichmond?.title || 'Epworth Richmond Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.hospitals?.epworthRichmond?.title || 'Epworth Richmond Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.epworthRichmond?.description || 'Epworth Richmond Hospital is one of Melbourne\'s largest private hospitals, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
+                  {finalT.hospitals?.epworthRichmond?.description || 'Epworth Richmond Hospital is one of Melbourne\'s largest private hospitals, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.epworthRichmond?.address || 'Address: 89 Bridge Road, Richmond VIC 3121'}<br />
-                  {t.hospitals?.epworthRichmond?.phone || 'Phone: (03) 9426 6666'}
+                  {finalT.hospitals?.epworthRichmond?.address || 'Address: 89 Bridge Road, Richmond VIC 3121'}<br />
+                  {finalT.hospitals?.epworthRichmond?.phone || 'Phone: (03) 9426 6666'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.epworth.org.au/our-locations/epworth-richmond" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthRichmond?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.epworth.org.au/our-locations/epworth-richmond" target="_blank" rel="noopener noreferrer">{finalT.hospitals?.epworthRichmond?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
 
@@ -688,16 +698,16 @@ const SurreyHillsLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.hospitals?.epworthEastern?.title || 'Epworth Eastern Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.hospitals?.epworthEastern?.title || 'Epworth Eastern Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.epworthEastern?.description || 'Epworth Eastern Hospital is a leading private hospital in Melbourne\'s eastern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
+                  {finalT.hospitals?.epworthEastern?.description || 'Epworth Eastern Hospital is a leading private hospital in Melbourne\'s eastern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.epworthEastern?.address || 'Address: 1 Arnold Street, Box Hill VIC 3128'}<br />
-                  {t.hospitals?.epworthEastern?.phone || 'Phone: (03) 8807 7100'}
+                  {finalT.hospitals?.epworthEastern?.address || 'Address: 1 Arnold Street, Box Hill VIC 3128'}<br />
+                  {finalT.hospitals?.epworthEastern?.phone || 'Phone: (03) 8807 7100'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.epworth.org.au/our-locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.epworth.org.au/our-locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{finalT.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
             </div>
@@ -708,15 +718,15 @@ const SurreyHillsLocation: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.surreyHillsLocation?.otherConsultingLocations?.title || 'Other Consulting Locations'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.surreyHillsLocation?.otherConsultingLocations?.title || 'Other Consulting Locations'}</h2>
               <p className="text-muted-foreground">
-                {t.surreyHillsLocation?.otherConsultingLocations?.subtitle || 'Dr. Aliashkevich also consults at these nearby locations'}
+                {finalT.surreyHillsLocation?.otherConsultingLocations?.subtitle || 'Dr. Aliashkevich also consults at these nearby locations'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.surreyHillsLocation?.otherConsultingLocations?.description || 'For your convenience, Dr. Aliashkevich consults at multiple locations across Melbourne. If the Surrey Hills location is not suitable for you, appointments can be arranged at these alternative locations.'}
+                {finalT.surreyHillsLocation?.otherConsultingLocations?.description || 'For your convenience, Dr. Aliashkevich consults at multiple locations across Melbourne. If the Surrey Hills location is not suitable for you, appointments can be arranged at these alternative locations.'}
               </p>
             </div>
 
@@ -730,16 +740,16 @@ const SurreyHillsLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.otherConsultingLocations?.wantirna?.title || 'Wantirna'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.otherConsultingLocations?.wantirna?.title || 'Wantirna'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.surreyHillsLocation?.otherConsultingLocations?.wantirna?.description || 'The Wantirna consulting rooms at Knox Audiology provide convenient access to neurosurgical care for patients in Melbourne\'s eastern suburbs.'}
+                  {finalT.surreyHillsLocation?.otherConsultingLocations?.wantirna?.description || 'The Wantirna consulting rooms at Knox Audiology provide convenient access to neurosurgical care for patients in Melbourne\'s eastern suburbs.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.surreyHillsLocation?.otherConsultingLocations?.wantirna?.address?.split('：')[1] || '230 Mountain Highway, Wantirna VIC 3152'}<br />
-                  <span className="font-medium">Phone:</span> {t.surreyHillsLocation?.otherConsultingLocations?.wantirna?.phone?.split('：')[1] || '03 9008 4200'}
+                  <span className="font-medium">Address:</span> {finalT.surreyHillsLocation?.otherConsultingLocations?.wantirna?.address?.split('：')[1] || '230 Mountain Highway, Wantirna VIC 3152'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.surreyHillsLocation?.otherConsultingLocations?.wantirna?.phone?.split('：')[1] || '03 9008 4200'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/locations/wantirna">{t.surreyHillsLocation?.otherConsultingLocations?.wantirna?.viewDetails || 'View Details'}</Link>
+                  <Link to="/locations/wantirna">{finalT.surreyHillsLocation?.otherConsultingLocations?.wantirna?.viewDetails || 'View Details'}</Link>
                 </Button>
               </div>
 
@@ -752,16 +762,16 @@ const SurreyHillsLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.otherConsultingLocations?.dandenong?.title || 'Dandenong'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.otherConsultingLocations?.dandenong?.title || 'Dandenong'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.surreyHillsLocation?.otherConsultingLocations?.dandenong?.description || 'The Dandenong Neurology and Specialist Group provides convenient access to neurosurgical care for patients in Melbourne\'s southeastern suburbs. Dr. Aliashkevich consults here regularly.'}
+                  {finalT.surreyHillsLocation?.otherConsultingLocations?.dandenong?.description || 'The Dandenong Neurology and Specialist Group provides convenient access to neurosurgical care for patients in Melbourne\'s southeastern suburbs. Dr. Aliashkevich consults here regularly.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.surreyHillsLocation?.otherConsultingLocations?.dandenong?.address?.split('：')[1] || '136 David Street, Dandenong VIC 3175'}<br />
-                  <span className="font-medium">Phone:</span> {t.surreyHillsLocation?.otherConsultingLocations?.dandenong?.phone?.split('：')[1] || '03 9008 4200'}
+                  <span className="font-medium">Address:</span> {finalT.surreyHillsLocation?.otherConsultingLocations?.dandenong?.address?.split('：')[1] || '136 David Street, Dandenong VIC 3175'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.surreyHillsLocation?.otherConsultingLocations?.dandenong?.phone?.split('：')[1] || '03 9008 4200'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/locations/dandenong">{t.surreyHillsLocation?.otherConsultingLocations?.dandenong?.viewDetails || 'View Details'}</Link>
+                  <Link to="/locations/dandenong">{finalT.surreyHillsLocation?.otherConsultingLocations?.dandenong?.viewDetails || 'View Details'}</Link>
                 </Button>
               </div>
 
@@ -774,16 +784,16 @@ const SurreyHillsLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.surreyHillsLocation?.otherConsultingLocations?.frankston?.title || 'Frankston'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.surreyHillsLocation?.otherConsultingLocations?.frankston?.title || 'Frankston'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.surreyHillsLocation?.otherConsultingLocations?.frankston?.description || 'Dr. Aliashkevich consults at Peninsula Private Hospital in Frankston, providing specialized neurosurgical care to patients on the Mornington Peninsula and surrounding areas.'}
+                  {finalT.surreyHillsLocation?.otherConsultingLocations?.frankston?.description || 'Dr. Aliashkevich consults at Peninsula Private Hospital in Frankston, providing specialized neurosurgical care to patients on the Mornington Peninsula and surrounding areas.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.surreyHillsLocation?.otherConsultingLocations?.frankston?.address?.split('：')[1] || '525 McClelland Drive, Frankston VIC 3199'}<br />
-                  <span className="font-medium">Phone:</span> {t.surreyHillsLocation?.otherConsultingLocations?.frankston?.phone?.split('：')[1] || '03 9008 4200'}
+                  <span className="font-medium">Address:</span> {finalT.surreyHillsLocation?.otherConsultingLocations?.frankston?.address?.split('：')[1] || '525 McClelland Drive, Frankston VIC 3199'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.surreyHillsLocation?.otherConsultingLocations?.frankston?.phone?.split('：')[1] || '03 9008 4200'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/locations/frankston">{t.surreyHillsLocation?.otherConsultingLocations?.frankston?.viewDetails || 'View Details'}</Link>
+                  <Link to="/locations/frankston">{finalT.surreyHillsLocation?.otherConsultingLocations?.frankston?.viewDetails || 'View Details'}</Link>
                 </Button>
               </div>
             </div>
@@ -862,19 +872,19 @@ const SurreyHillsLocation: React.FC = () => {
             </div>
 
             <div className="text-center">
-              <h2 className="text-2xl font-bold mb-6">{t.surreyHillsLocation?.readyToSchedule?.title || 'Ready to Schedule an Appointment?'}</h2>
+              <h2 className="text-2xl font-bold mb-6">{finalT.surreyHillsLocation?.readyToSchedule?.title || 'Ready to Schedule an Appointment?'}</h2>
               <p className="text-lg mb-8 max-w-2xl mx-auto text-muted-foreground">
-                {t.surreyHillsLocation?.readyToSchedule?.description || 'Contact us today to schedule a consultation with Dr. Ales Aliashkevich at our Surrey Hills location. Our staff will help coordinate your appointment and ensure you have all the information you need for your visit. Urgent appointments are available on request.'}
+                {finalT.surreyHillsLocation?.readyToSchedule?.description || 'Contact us today to schedule a consultation with Dr. Ales Aliashkevich at our Surrey Hills location. Our staff will help coordinate your appointment and ensure you have all the information you need for your visit. Urgent appointments are available on request.'}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">
-                  <Link to="/appointments">{t.surreyHillsLocation?.readyToSchedule?.bookAppointment || 'Book an Appointment'}</Link>
+                  <Link to="/appointments">{finalT.surreyHillsLocation?.readyToSchedule?.bookAppointment || 'Book an Appointment'}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/locations">{t.surreyHillsLocation?.readyToSchedule?.viewAllLocations || 'View All Locations'}</Link>
+                  <Link to="/locations">{finalT.surreyHillsLocation?.readyToSchedule?.viewAllLocations || 'View All Locations'}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">{t.surreyHillsLocation?.readyToSchedule?.contactUs || 'Contact Us'}</Link>
+                  <Link to="/contact">{finalT.surreyHillsLocation?.readyToSchedule?.contactUs || 'Contact Us'}</Link>
                 </Button>
               </div>
             </div>

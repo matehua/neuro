@@ -1,0 +1,1077 @@
+{
+  "timestamp": "2025-06-19T12:16:39.681Z",
+  "overallScore": 86.2,
+  "status": "ACCEPTABLE",
+  "criticalTests": {
+    "passedTests": 19,
+    "failedTests": 0,
+    "testResults": [
+      {
+        "path": "home.welcome.subtitle",
+        "exists": true,
+        "value": "全面的神经外科服务",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "home.welcome.title",
+        "exists": true,
+        "value": "专业的脑部、脊柱和周围神经疾病护理",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "home.booking.subtitle",
+        "exists": true,
+        "value": "预约咨询",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "home.booking.title",
+        "exists": true,
+        "value": "预约您的神经外科咨询",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "home.featuredProcedures.subtitle",
+        "exists": true,
+        "value": "我们的专业领域",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "home.featuredProcedures.title",
+        "exists": true,
+        "value": "专业治疗领域",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "home.advancedTechnologies.subtitle",
+        "exists": true,
+        "value": "先进技术",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "home.advancedTechnologies.title",
+        "exists": true,
+        "value": "微创方法",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "home.cta.title",
+        "exists": true,
+        "value": "准备开始您的治疗之旅？",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "home.cta.description",
+        "exists": true,
+        "value": "立即预约咨询，与我们的神经外科专家讨论您的治疗选择。",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "nav.home",
+        "exists": true,
+        "value": "首页",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "nav.about",
+        "exists": true,
+        "value": "关于我们",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "nav.expertise",
+        "exists": true,
+        "value": "专业领域",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "nav.appointments",
+        "exists": true,
+        "value": "预约",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "nav.locations",
+        "exists": true,
+        "value": "诊所位置",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "nav.contact",
+        "exists": true,
+        "value": "联系我们",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "common.loading",
+        "exists": true,
+        "value": "加载中...",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "common.error",
+        "exists": true,
+        "value": "错误",
+        "type": "string",
+        "status": "PASS"
+      },
+      {
+        "path": "common.success",
+        "exists": true,
+        "value": "成功",
+        "type": "string",
+        "status": "PASS"
+      }
+    ]
+  },
+  "structureCheck": {
+    "integrityScore": 65.5,
+    "issues": [
+      {
+        "path": "nav.locationsSubmenu.sunbury",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.locationsSubmenu.sunbury]"
+      },
+      {
+        "path": "nav.locationsSubmenu.werribee",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.locationsSubmenu.werribee]"
+      },
+      {
+        "path": "nav.locationsSubmenu.bundoora",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.locationsSubmenu.bundoora]"
+      },
+      {
+        "path": "nav.locationsSubmenu.dandenong",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.locationsSubmenu.dandenong]"
+      },
+      {
+        "path": "nav.locationsSubmenu.heidelberg",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.locationsSubmenu.heidelberg]"
+      },
+      {
+        "path": "nav.locationsSubmenu.wantirna",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.locationsSubmenu.wantirna]"
+      },
+      {
+        "path": "nav.expertiseSubmenu.cervicalDisc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.expertiseSubmenu.cervicalDisc]"
+      },
+      {
+        "path": "nav.expertiseSubmenu.lumbarDisc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.expertiseSubmenu.lumbarDisc]"
+      },
+      {
+        "path": "nav.expertiseSubmenu.imageGuided",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.expertiseSubmenu.imageGuided]"
+      },
+      {
+        "path": "nav.expertiseSubmenu.roboticSpine",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.expertiseSubmenu.roboticSpine]"
+      },
+      {
+        "path": "nav.gpResourcesSubmenu.referralProtocols",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.gpResourcesSubmenu.referralProtocols]"
+      },
+      {
+        "path": "nav.gpResourcesSubmenu.diagnostics",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.gpResourcesSubmenu.diagnostics]"
+      },
+      {
+        "path": "nav.gpResourcesSubmenu.careCoordination",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.gpResourcesSubmenu.careCoordination]"
+      },
+      {
+        "path": "nav.gpResourcesSubmenu.emergencies",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.gpResourcesSubmenu.emergencies]"
+      },
+      {
+        "path": "nav.medicolegal",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.medicolegal]"
+      },
+      {
+        "path": "nav.bookNow",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: nav.bookNow]"
+      },
+      {
+        "path": "patientResources.submenu.comprehensiveSolution",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.submenu.comprehensiveSolution]"
+      },
+      {
+        "path": "patientResources.submenu.conditionInfo",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.submenu.conditionInfo]"
+      },
+      {
+        "path": "patientResources.submenu.exerciseLibrary",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.submenu.exerciseLibrary]"
+      },
+      {
+        "path": "patientResources.conditionInfo.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.conditionInfo.title]"
+      },
+      {
+        "path": "patientResources.conditionInfo.subtitle",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.conditionInfo.subtitle]"
+      },
+      {
+        "path": "patientResources.conditionInfo.searchPlaceholder",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.conditionInfo.searchPlaceholder]"
+      },
+      {
+        "path": "patientResources.conditionInfo.exploreConditions",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.conditionInfo.exploreConditions]"
+      },
+      {
+        "path": "patientResources.conditionInfo.understandingAnatomy",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.conditionInfo.understandingAnatomy]"
+      },
+      {
+        "path": "patientResources.conditionInfo.notSureAboutCondition",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.conditionInfo.notSureAboutCondition]"
+      },
+      {
+        "path": "patientResources.conditionInfo.takeAssessment",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.conditionInfo.takeAssessment]"
+      },
+      {
+        "path": "patientResources.conditions",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.conditions]"
+      },
+      {
+        "path": "patientResources.assessmentTools.startAssessment",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.assessmentTools.startAssessment]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.title]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.subtitle",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.subtitle]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.startAssessment",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.startAssessment]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.exploreFeatures",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.exploreFeatures]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.journey.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.journey.title]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.journey.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.journey.description]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.journey.approach",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.journey.approach]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.journey.assess",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.journey.assess]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.journey.educate",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.journey.educate]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.journey.recommend",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.journey.recommend]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.journey.track",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.journey.track]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.journey.support",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.journey.support]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.journey.howItWorks",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.journey.howItWorks]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.title]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.assessment.title]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.assessment.description]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.content",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.assessment.content]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.button",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.assessment.button]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.education.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.education.title]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.education.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.education.description]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.education.content",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.education.content]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.education.button",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.education.button]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.title]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.description]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.content",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.content]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.button",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.button]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.title]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.description]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.content",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.content]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.button",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.button]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.title]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.description]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.content",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.content]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.button",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.button]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.title]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.description]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.content",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.content]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.button",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.button]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.readyToTakeControl.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.readyToTakeControl.title]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.readyToTakeControl.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.readyToTakeControl.description]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.readyToTakeControl.startAssessment",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.readyToTakeControl.startAssessment]"
+      },
+      {
+        "path": "patientResources.individualSpineHealthProgramme.readyToTakeControl.scheduleConsultation",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.individualSpineHealthProgramme.readyToTakeControl.scheduleConsultation]"
+      },
+      {
+        "path": "patientResources.patientDashboard.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.patientDashboard.title]"
+      },
+      {
+        "path": "patientResources.patientDashboard.subtitle",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.patientDashboard.subtitle]"
+      },
+      {
+        "path": "patientResources.patientDashboard.login",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.patientDashboard.login]"
+      },
+      {
+        "path": "patientResources.patientDashboard.register",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.patientDashboard.register]"
+      },
+      {
+        "path": "patientResources.patientDashboard.features.trackProgress",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.patientDashboard.features.trackProgress]"
+      },
+      {
+        "path": "patientResources.patientDashboard.features.manageExercises",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.patientDashboard.features.manageExercises]"
+      },
+      {
+        "path": "patientResources.patientDashboard.features.setGoals",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.patientDashboard.features.setGoals]"
+      },
+      {
+        "path": "patientResources.patientDashboard.features.viewHistory",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.patientDashboard.features.viewHistory]"
+      },
+      {
+        "path": "patientResources.patientDashboard.features.shareWithProvider",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.patientDashboard.features.shareWithProvider]"
+      },
+      {
+        "path": "patientResources.categories.beforeVisit",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.categories.beforeVisit]"
+      },
+      {
+        "path": "patientResources.categories.conditionsTreatments",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.categories.conditionsTreatments]"
+      },
+      {
+        "path": "patientResources.categories.surgeryInfo",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.categories.surgeryInfo]"
+      },
+      {
+        "path": "patientResources.categories.patientSupport",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.categories.patientSupport]"
+      },
+      {
+        "path": "patientResources.resources.newPatientForms",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.newPatientForms]"
+      },
+      {
+        "path": "patientResources.resources.newPatientFormsDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.newPatientFormsDesc]"
+      },
+      {
+        "path": "patientResources.resources.insuranceInfo",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.insuranceInfo]"
+      },
+      {
+        "path": "patientResources.resources.insuranceInfoDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.insuranceInfoDesc]"
+      },
+      {
+        "path": "patientResources.resources.preparingForAppointment",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.preparingForAppointment]"
+      },
+      {
+        "path": "patientResources.resources.preparingForAppointmentDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.preparingForAppointmentDesc]"
+      },
+      {
+        "path": "patientResources.resources.brainConditions",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.brainConditions]"
+      },
+      {
+        "path": "patientResources.resources.brainConditionsDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.brainConditionsDesc]"
+      },
+      {
+        "path": "patientResources.resources.spineConditions",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.spineConditions]"
+      },
+      {
+        "path": "patientResources.resources.spineConditionsDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.spineConditionsDesc]"
+      },
+      {
+        "path": "patientResources.resources.minimallyInvasive",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.minimallyInvasive]"
+      },
+      {
+        "path": "patientResources.resources.minimallyInvasiveDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.minimallyInvasiveDesc]"
+      },
+      {
+        "path": "patientResources.resources.preSurgeryInstructions",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.preSurgeryInstructions]"
+      },
+      {
+        "path": "patientResources.resources.preSurgeryInstructionsDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.preSurgeryInstructionsDesc]"
+      },
+      {
+        "path": "patientResources.resources.postSurgeryCare",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.postSurgeryCare]"
+      },
+      {
+        "path": "patientResources.resources.postSurgeryCareDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.postSurgeryCareDesc]"
+      },
+      {
+        "path": "patientResources.resources.hospitalInfo",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.hospitalInfo]"
+      },
+      {
+        "path": "patientResources.resources.hospitalInfoDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.hospitalInfoDesc]"
+      },
+      {
+        "path": "patientResources.resources.supportGroups",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.supportGroups]"
+      },
+      {
+        "path": "patientResources.resources.supportGroupsDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.supportGroupsDesc]"
+      },
+      {
+        "path": "patientResources.resources.rehabilitationResources",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.rehabilitationResources]"
+      },
+      {
+        "path": "patientResources.resources.rehabilitationResourcesDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.rehabilitationResourcesDesc]"
+      },
+      {
+        "path": "patientResources.resources.mentalHealthSupport",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.mentalHealthSupport]"
+      },
+      {
+        "path": "patientResources.resources.mentalHealthSupportDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.resources.mentalHealthSupportDesc]"
+      },
+      {
+        "path": "patientResources.viewInstructions",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.viewInstructions]"
+      },
+      {
+        "path": "patientResources.viewHospitals",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.viewHospitals]"
+      },
+      {
+        "path": "patientResources.findSupport",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.findSupport]"
+      },
+      {
+        "path": "patientResources.viewResources",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.viewResources]"
+      },
+      {
+        "path": "patientResources.educationalMaterials",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.educationalMaterials]"
+      },
+      {
+        "path": "patientResources.needAppointment",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.needAppointment]"
+      },
+      {
+        "path": "patientResources.appointmentDesc",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: patientResources.appointmentDesc]"
+      },
+      {
+        "path": "contact.faqSubtitle",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: contact.faqSubtitle]"
+      },
+      {
+        "path": "specialties.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.title]"
+      },
+      {
+        "path": "specialties.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.description]"
+      },
+      {
+        "path": "specialties.filters.complexity",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.complexity]"
+      },
+      {
+        "path": "specialties.filters.anyComplexity",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.anyComplexity]"
+      },
+      {
+        "path": "specialties.filters.moderate",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.moderate]"
+      },
+      {
+        "path": "specialties.filters.advanced",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.advanced]"
+      },
+      {
+        "path": "specialties.filters.complex",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.complex]"
+      },
+      {
+        "path": "specialties.filters.highlyComplex",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.highlyComplex]"
+      },
+      {
+        "path": "specialties.filters.location",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.location]"
+      },
+      {
+        "path": "specialties.filters.allLocations",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.allLocations]"
+      },
+      {
+        "path": "specialties.filters.recoveryTime",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.recoveryTime]"
+      },
+      {
+        "path": "specialties.filters.days",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.days]"
+      },
+      {
+        "path": "specialties.filters.showing",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.showing]"
+      },
+      {
+        "path": "specialties.filters.of",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.of]"
+      },
+      {
+        "path": "specialties.filters.procedures",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.procedures]"
+      },
+      {
+        "path": "specialties.filters.resetFilters",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.resetFilters]"
+      },
+      {
+        "path": "specialties.filters.noMatch",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.noMatch]"
+      },
+      {
+        "path": "specialties.filters.adjustFilters",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: specialties.filters.adjustFilters]"
+      },
+      {
+        "path": "en",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: en]"
+      },
+      {
+        "path": "navigation",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: navigation]"
+      },
+      {
+        "path": "gpResources.diagnostics.imagingGuidelines.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.diagnostics.imagingGuidelines.title]"
+      },
+      {
+        "path": "gpResources.diagnostics.imagingGuidelines.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.diagnostics.imagingGuidelines.description]"
+      },
+      {
+        "path": "gpResources.diagnostics.neurologicalAssessment.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.diagnostics.neurologicalAssessment.title]"
+      },
+      {
+        "path": "gpResources.diagnostics.neurologicalAssessment.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.diagnostics.neurologicalAssessment.description]"
+      },
+      {
+        "path": "gpResources.diagnostics.specialisedTests.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.diagnostics.specialisedTests.description]"
+      },
+      {
+        "path": "gpResources.diagnostics.interpretingResults.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.diagnostics.interpretingResults.title]"
+      },
+      {
+        "path": "gpResources.diagnostics.interpretingResults.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.diagnostics.interpretingResults.description]"
+      },
+      {
+        "path": "gpResources.referralProtocols.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.title]"
+      },
+      {
+        "path": "gpResources.referralProtocols.subtitle",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.subtitle]"
+      },
+      {
+        "path": "gpResources.referralProtocols.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.description]"
+      },
+      {
+        "path": "gpResources.referralProtocols.urgentReferrals.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.urgentReferrals.title]"
+      },
+      {
+        "path": "gpResources.referralProtocols.urgentReferrals.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.urgentReferrals.description]"
+      },
+      {
+        "path": "gpResources.referralProtocols.standardReferrals.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.standardReferrals.title]"
+      },
+      {
+        "path": "gpResources.referralProtocols.standardReferrals.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.standardReferrals.description]"
+      },
+      {
+        "path": "gpResources.referralProtocols.referralProcess.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.referralProcess.title]"
+      },
+      {
+        "path": "gpResources.referralProtocols.referralProcess.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.referralProcess.description]"
+      },
+      {
+        "path": "gpResources.referralProtocols.triageCategories.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.triageCategories.title]"
+      },
+      {
+        "path": "gpResources.referralProtocols.triageCategories.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.referralProtocols.triageCategories.description]"
+      },
+      {
+        "path": "gpResources.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.title]"
+      },
+      {
+        "path": "gpResources.subtitle",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.subtitle]"
+      },
+      {
+        "path": "gpResources.overview.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.overview.title]"
+      },
+      {
+        "path": "gpResources.overview.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.overview.description]"
+      },
+      {
+        "path": "gpResources.emergencies.title",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.emergencies.title]"
+      },
+      {
+        "path": "gpResources.emergencies.subtitle",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.emergencies.subtitle]"
+      },
+      {
+        "path": "gpResources.emergencies.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: gpResources.emergencies.description]"
+      },
+      {
+        "path": "dandenongLocation.locationDetails1",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: dandenongLocation.locationDetails1]"
+      },
+      {
+        "path": "dandenongLocation.diagnosticFacilitiesDetails1",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: dandenongLocation.diagnosticFacilitiesDetails1]"
+      },
+      {
+        "path": "dandenongLocation.therapeuticInterventions.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: dandenongLocation.therapeuticInterventions.description]"
+      },
+      {
+        "path": "dandenongLocation.facilities.accessibleEnvironment.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: dandenongLocation.facilities.accessibleEnvironment.description]"
+      },
+      {
+        "path": "dandenongLocation.readyToSchedule.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: dandenongLocation.readyToSchedule.description]"
+      },
+      {
+        "path": "hospitals",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: hospitals]"
+      },
+      {
+        "path": "email",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: email]"
+      },
+      {
+        "path": "phone",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: phone]"
+      },
+      {
+        "path": "frankstonLocation.conditionsTreated.spinalConditions.conditions",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: frankstonLocation.conditionsTreated.spinalConditions.conditions]"
+      },
+      {
+        "path": "frankstonLocation.conditionsTreated.brainConditions.conditions",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: frankstonLocation.conditionsTreated.brainConditions.conditions]"
+      },
+      {
+        "path": "frankstonLocation.conditionsTreated.nerveConditions.conditions",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: frankstonLocation.conditionsTreated.nerveConditions.conditions]"
+      },
+      {
+        "path": "heidelbergLocation.diagnosticFacilitiesDetails1",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: heidelbergLocation.diagnosticFacilitiesDetails1]"
+      },
+      {
+        "path": "heidelbergLocation.therapeuticInterventions.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: heidelbergLocation.therapeuticInterventions.description]"
+      },
+      {
+        "path": "locationDetails",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: locationDetails]"
+      },
+      {
+        "path": "langwarrinLocation",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: langwarrinLocation]"
+      },
+      {
+        "path": "mooneePondsLocation",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: mooneePondsLocation]"
+      },
+      {
+        "path": "morningtonLocation",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: morningtonLocation]"
+      },
+      {
+        "path": "sunburyLocation",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: sunburyLocation]"
+      },
+      {
+        "path": "surreyHillsLocation",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: surreyHillsLocation]"
+      },
+      {
+        "path": "wantirnaLocation.byCarDetails",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: wantirnaLocation.byCarDetails]"
+      },
+      {
+        "path": "wantirnaLocation.facilities.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: wantirnaLocation.facilities.description]"
+      },
+      {
+        "path": "wantirnaLocation.readyToSchedule.description",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: wantirnaLocation.readyToSchedule.description]"
+      },
+      {
+        "path": "werribeeLocation",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: werribeeLocation]"
+      },
+      {
+        "path": "medicolegal",
+        "issue": "Contains error marker",
+        "value": "[翻译缺失: medicolegal]"
+      }
+    ],
+    "totalKeys": 1496,
+    "validKeys": 980
+  },
+  "conflictCheck": {
+    "conflicts": [],
+    "homeObjects": [
+      "home"
+    ]
+  }
+}

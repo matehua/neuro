@@ -1,15 +1,54 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import PageHeader from '@/components/PageHeader';
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
+interface CaseExample {
+  title: string;
+  description: string;
+  approach: string;
+  gpRole: string;
+  outcome: string;
+}
 
 const CareCoordination: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.gpResources && safeT.gpResources.careCoordination) ? safeT : {
+    gpResources: {
+      careCoordination: {
+        title: "Care Coordination",
+        subtitle: "Collaborative healthcare for optimal patient outcomes",
+        description: "Effective care coordination between neurosurgical specialists and general practitioners ensures comprehensive patient care throughout the treatment journey.",
+        teamApproach: {
+          title: "Team-Based Care Approach",
+          description: "Our multidisciplinary team works collaboratively to provide comprehensive neurosurgical care."
+        },
+        preoperativeManagement: {
+          title: "Preoperative Management",
+          description: "Comprehensive preoperative planning and patient optimization for successful surgical outcomes."
+        },
+        postoperativeFollowUp: {
+          title: "Postoperative Follow-Up",
+          description: "Structured postoperative care and monitoring to ensure optimal recovery and outcomes."
+        },
+        sharedCareModels: {
+          title: "Shared Care Models",
+          description: "Collaborative care approaches that leverage the expertise of both specialists and general practitioners."
+        }
+      }
+    },
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,8 +96,8 @@ const CareCoordination: React.FC = () => {
   return (
     <StandardPageLayout showHeader={false}>
       <PageHeader
-        title={t.gpResources.careCoordination.title}
-        subtitle={t.gpResources.careCoordination.subtitle}
+        title={finalT.gpResources.careCoordination.title}
+        subtitle={finalT.gpResources.careCoordination.subtitle}
         backgroundImage="/images/gp-resources/care-coordination-hero.jpg"
       />
 
@@ -66,7 +105,7 @@ const CareCoordination: React.FC = () => {
         <div className="container">
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg mb-8">
-              {t.gpResources.careCoordination.description}
+              {finalT.gpResources.careCoordination.description}
             </p>
 
             <Tabs defaultValue="team" className="w-full">
@@ -80,10 +119,10 @@ const CareCoordination: React.FC = () => {
               <TabsContent value="team" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.careCoordination.teamApproach.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.careCoordination.teamApproach.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.careCoordination.teamApproach.description}</p>
+                    <p className="mb-4">{finalT.gpResources.careCoordination.teamApproach.description}</p>
 
                     <h3 className="font-bold text-lg mt-6 mb-3">Our Multidisciplinary Team</h3>
                     <div className="space-y-4">
@@ -154,10 +193,10 @@ const CareCoordination: React.FC = () => {
               <TabsContent value="preoperative" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.careCoordination.preoperativeManagement.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.careCoordination.preoperativeManagement.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.careCoordination.preoperativeManagement.description}</p>
+                    <p className="mb-4">{finalT.gpResources.careCoordination.preoperativeManagement.description}</p>
 
                     <h3 className="font-bold text-lg mt-6 mb-3">Preoperative Optimisation</h3>
                     <div className="space-y-4">
@@ -236,10 +275,10 @@ const CareCoordination: React.FC = () => {
               <TabsContent value="postoperative" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.careCoordination.postoperativeFollowUp.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.careCoordination.postoperativeFollowUp.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.careCoordination.postoperativeFollowUp.description}</p>
+                    <p className="mb-4">{finalT.gpResources.careCoordination.postoperativeFollowUp.description}</p>
 
                     <h3 className="font-bold text-lg mt-6 mb-3">Discharge Planning and Communication</h3>
                     <div className="p-4 bg-muted rounded-md mb-6">
@@ -310,10 +349,10 @@ const CareCoordination: React.FC = () => {
               <TabsContent value="shared" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.careCoordination.sharedCareModels.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.careCoordination.sharedCareModels.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.careCoordination.sharedCareModels.description}</p>
+                    <p className="mb-4">{finalT.gpResources.careCoordination.sharedCareModels.description}</p>
 
                     <h3 className="font-bold text-lg mt-6 mb-3">Structured Shared Care Approaches</h3>
                     <div className="space-y-4">
@@ -390,7 +429,7 @@ const CareCoordination: React.FC = () => {
           <div className="mt-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Case Examples</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {caseExamples?.map((example: any, index: any) => (
+              {caseExamples?.map((example: CaseExample, index: number) => (
                 <Card key={index} className="bg-card">
                   <CardHeader>
                     <CardTitle className="text-xl">{example.title}</CardTitle>

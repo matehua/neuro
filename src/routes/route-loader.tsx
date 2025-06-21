@@ -1,11 +1,11 @@
-import React, { Suspense, ComponentType } from 'react';
+import React, { Suspense, useCallback, useEffect, ComponentType } from 'react';
 import ErrorBoundary from '@/components/ErrorBoundary';
 
 /**
  * Options for creating lazy components
  */
 interface LazyComponentOptions {
-  fallback?: ComponentType;
+  fallback?: ComponentType<Record<string, never>>;
   errorFallback?: React.ReactNode;
   retryAttempts?: number;
   retryDelay?: number;
@@ -14,7 +14,7 @@ interface LazyComponentOptions {
 /**
  * Creates a lazy-loaded component with error boundary and retry logic
  */
-export function createLazyComponent<T extends ComponentType<any>>(
+export function createLazyComponent<T extends ComponentType<Record<string, unknown>>>(
   importFunc: () => Promise<{ default: T }>,
   options: LazyComponentOptions = {}
 ): ComponentType<React.ComponentProps<T>> {
@@ -57,11 +57,11 @@ export function createLazyComponent<T extends ComponentType<any>>(
 /**
  * Preload function for critical routes
  */
-export function preloadRoute(importFunc: () => Promise<{ default: ComponentType<any> }>) {
+export function preloadRoute(importFunc: () => Promise<{ default: ComponentType<Record<string, unknown>> }>) {
   // Only preload in browser environment
   if (typeof window !== 'undefined') {
-    if ((window as any).requestIdleCallback) {
-      (window as any).requestIdleCallback(() => {
+    if ((window as Window & { requestIdleCallback?: (callback: () => void) => void }).requestIdleCallback) {
+      (window as Window & { requestIdleCallback: (callback: () => void) => void }).requestIdleCallback(() => {
         importFunc().catch(() => {
           // Silently fail preloading
         });
@@ -81,7 +81,7 @@ export function preloadRoute(importFunc: () => Promise<{ default: ComponentType<
  */
 export class RouteLoaderRegistry {
   private static instance: RouteLoaderRegistry;
-  private loaders = new Map<string, () => Promise<{ default: ComponentType<any> }>>();
+  private loaders = new Map<string, () => Promise<{ default: ComponentType<Record<string, unknown>> }>>();
   private preloadedRoutes = new Set<string>();
 
   static getInstance(): RouteLoaderRegistry {
@@ -94,7 +94,7 @@ export class RouteLoaderRegistry {
   /**
    * Register a route loader
    */
-  register(routePath: string, loader: () => Promise<{ default: ComponentType<any> }>) {
+  register(routePath: string, loader: () => Promise<{ default: ComponentType<Record<string, unknown>> }>) {
     this.loaders.set(routePath, loader);
   }
 
@@ -149,7 +149,7 @@ export class RouteLoaderRegistry {
 /**
  * Utility for batch registering routes
  */
-export function registerRoutes(routes: Record<string, () => Promise<{ default: ComponentType<any> }>>) {
+export function registerRoutes(routes: Record<string, () => Promise<{ default: ComponentType<Record<string, unknown>> }>>) {
   const registry = RouteLoaderRegistry.getInstance();
   Object.entries(routes).forEach(([path, loader]) => {
     registry.register(path, loader);
@@ -165,7 +165,7 @@ export function useRoutePreloader() {
   const preloadOnHover = React.useCallback((routePath: string) => {
     return {
       onMouseEnter: () => registry.preload(routePath),
-      onFocus: () => registry.preload(routePath),
+      onFocus: () => registry.preload(routePath)
     };
   }, [registry]);
 
@@ -213,7 +213,7 @@ export class RouteLoadingMonitor {
       loadTimes: Object.fromEntries(this.loadTimes),
       errorCounts: Object.fromEntries(this.loadErrors),
       averageLoadTime: Array.from(this.loadTimes.values()).reduce((sum, time) => sum + time, 0) / this.loadTimes.size || 0,
-      totalErrors: Array.from(this.loadErrors.values()).reduce((sum, count) => sum + count, 0),
+      totalErrors: Array.from(this.loadErrors.values()).reduce((sum, count) => sum + count, 0)
     };
   }
 }

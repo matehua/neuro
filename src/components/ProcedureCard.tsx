@@ -1,12 +1,12 @@
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Users, Clock, MapPin, Activity, Stethoscope, Microscope } from 'lucide-react';
-import { useState } from 'react';
-
 import { Button } from '@/components/ui/button';
 import { ProcedureProps, normalizeProcedureData } from '@/types/procedures';
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+
 
 // Re-export types from the centralized types file
 export type { ProcedureProps } from "@/types/procedures";
@@ -100,7 +100,7 @@ const ProcedureCard: React.FC<{ procedure: ProcedureProps }> = ({ procedure: raw
         <p className="text-muted-foreground line-clamp-2">{translatedDescription}</p>
 
         <div className="flex flex-wrap gap-2">
-          {procedure.benefits.slice(0, 3).map((benefit: any, index: any) => (
+          {procedure.benefits.slice(0, 3).map((benefit: string, index: number) => (
             <div
               key={index}
               className="flex items-center text-sm text-muted-foreground bg-muted px-3 py-1 rounded-full"

@@ -1,11 +1,18 @@
+import React, { useState, useEffect, useCallback } from 'react';
 import { X } from 'lucide-react';
-import { useEffect, useState, useCallback } from 'react';
-
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import SafeImage from '@/components/SafeImage';
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
+interface GalleryImage {
+  id: number;
+  src: string;
+  alt: string;
+  category: string;
+}
 
 // Sample gallery images
 const galleryImages = [
@@ -85,6 +92,24 @@ const galleryImages = [
 
 const Gallery: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.gallery && safeT.gallery.title && safeT.gallery.subtitle && safeT.gallery.filters) ? safeT : {
+    gallery: {
+      title: "Medical Facility Gallery",
+      subtitle: "Explore our state-of-the-art medical facilities and advanced neurosurgical equipment",
+      filters: {
+        all: "All",
+        exterior: "Exterior",
+        rooms: "Consultation Rooms",
+        amenities: "Equipment & Amenities"
+      }
+    },
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
   const [filteredImages, setFilteredImages] = useState(galleryImages);
   const [activeFilter, setActiveFilter] = useState("all");
@@ -102,6 +127,7 @@ const Gallery: React.FC = () => {
       setFilteredImages(galleryImages);
     } else {
       setFilteredImages(galleryImages?.filter(img => img.category === category));
+    }
   };
 
   // Handle lightbox navigation
@@ -115,6 +141,7 @@ const Gallery: React.FC = () => {
       newIndex = currentIndex > 0 ? currentIndex - 1 : filteredImages?.length - 1;
     } else {
       newIndex = currentIndex < filteredImages?.length - 1 ? currentIndex + 1 : 0;
+    }
     setSelectedImage(filteredImages[newIndex].id);
   }, [selectedImage, filteredImages]);
 
@@ -129,6 +156,7 @@ const Gallery: React.FC = () => {
         navigateGallery("prev");
       } else if (e.key === "ArrowRight") {
         navigateGallery("next");
+      }
     };
 
     window.addEventListener("keydown", handleKeyDown);
@@ -145,10 +173,10 @@ const Gallery: React.FC = () => {
           <div className="container relative z-10">
             <div className="max-w-3xl mx-auto text-center animate-fade-in">
               <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
-                {t.gallery.title}
+                {finalT.gallery.title}
               </h1>
               <p className="text-muted-foreground text-lg mb-6">
-                {t.gallery.subtitle}
+                {finalT.gallery.subtitle}
               </p>
             </div>
           </div>
@@ -167,8 +195,8 @@ const Gallery: React.FC = () => {
               {["all", "exterior", "rooms", "amenities"].map((category) => (
                 <button
                   key={category}
-                  onClick={() => filterGallery(category)
-                            className={cn(
+                  onClick={() => filterGallery(category)}
+                  className={cn(
                     "px-6 py-2 rounded-full transition-all",
                     activeFilter === category
                       ? "bg-primary text-white shadow-lg"
@@ -176,27 +204,27 @@ const Gallery: React.FC = () => {
                   )}
                 >
                   {category === "all"
-                    ? t.gallery.filters.all
+                    ? finalT.gallery.filters.all
                     : category === "exterior"
-                      ? t.gallery.filters.exterior
+                      ? finalT.gallery.filters.exterior
                       : category === "rooms"
-                        ? t.gallery.filters.rooms
-                        : t.gallery.filters.amenities}
+                        ? finalT.gallery.filters.rooms
+                        : finalT.gallery.filters.amenities}
                 </button>
               ))}
             </div>
 
             {/* Gallery Grid */}
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
-              {filteredImages?.map((image: any, index: any) => (
+              {filteredImages?.map((image: GalleryImage, index: number) => (
                 <div
                   key={image.id}
                   className="relative overflow-hidden rounded-xl aspect-[4/3] cursor-pointer group animate-fade-in"
                   style={{ animationDelay: `${index * 50}ms` }}
-                  onClick={() => setSelectedImage(image.id)
+                  onClick={() => setSelectedImage(image.id)}
                 >
                   <SafeImage
-                            src={image.src}
+                    src={image.src}
                     alt={image.alt}
                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     fallbackSrc="/images/miNEURO-brain-spine-advanced-technology-precision-miniamlly-invasive.jpg"
@@ -215,15 +243,15 @@ const Gallery: React.FC = () => {
           <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in">
             <button
               className="absolute top-4 right-4 text-white p-2 rounded-full hover:bg-white/10 transition-colors"
-              onClick={() => setSelectedImage(null)
+              onClick={() => setSelectedImage(null)}
             >
               <X className="h-6 w-6" />
               <span className="sr-only">Close</span>
             </button>
 
             <button
-                            className="absolute left-4 top-1/2 -translate-y-1/2 text-white p-4 rounded-full hover:bg-white/10 transition-colors"
-                            onClick={() => navigateGallery("prev")
+              className="absolute left-4 top-1/2 -translate-y-1/2 text-white p-4 rounded-full hover:bg-white/10 transition-colors"
+              onClick={() => navigateGallery("prev")}
             >
               <span className="sr-only">Previous</span>
               <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -244,7 +272,7 @@ const Gallery: React.FC = () => {
 
             <button
               className="absolute right-4 top-1/2 -translate-y-1/2 text-white p-4 rounded-full hover:bg-white/10 transition-colors"
-              onClick={() => navigateGallery("next")
+              onClick={() => navigateGallery("next")}
             >
               <span className="sr-only">Next</span>
               <svg className="h-8 w-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -258,8 +286,8 @@ const Gallery: React.FC = () => {
       <Footer />
     </div>
   );
+};
+
 Gallery.displayName = 'Gallery';
 
 export default Gallery;
-
-Gallery.displayName = 'Gallery';

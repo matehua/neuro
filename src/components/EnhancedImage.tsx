@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useCallback } from 'react';
+import React, { useState, useRef, useCallback, useEffect } from 'react';
 
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
@@ -32,7 +32,7 @@ interface EnhancedImageProps {
  * - Error handling with fallback images
  * - Performance monitoring
  */
-const EnhancedImage: React.FC = ({
+const EnhancedImage: React.FC<EnhancedImageProps> = ({
   src,
   alt,
   className = '',
@@ -49,7 +49,7 @@ const EnhancedImage: React.FC = ({
   decoding = 'async',
   fetchPriority = 'auto',
   crossOrigin,
-}: EnhancedImageProps) {
+}) => {
   const [isLoaded, setIsLoaded] = useState(false);
   const [hasError, setHasError] = useState(false);
   const [currentSrc, setCurrentSrc] = useState<string>('');
@@ -79,33 +79,29 @@ const EnhancedImage: React.FC = ({
   // Generate blur placeholder
   const generateBlurPlaceholder = useCallback(() => {
     if (blurDataURL) return blurDataURL;
-    
+
     // Generate a simple blur placeholder
     const canvas = document.createElement('canvas');
     canvas.width = 10;
     canvas.height = 10;
     const ctx = canvas.getContext('2d');
-    if (      ctx.fillStyle = '#f3f4f6';
+    if (ctx) {
+      ctx.fillStyle = '#f3f4f6';
       ctx.fillRect(0, 0, 10, 10);
-
-    return canvas.toDataURL();) {
- 
+      return canvas.toDataURL();
     }
-    $3}, [blurDataURL]);
+
+    return '';
+  }, [blurDataURL]);
 
   // Handle image load
   const handleLoad = useCallback(() => {
     setIsLoaded(true);
-    
-    // Performance monitoring
-    if (      const loadTime = performance.now() - loadStartTime;
-      if (        if (import.meta.env.DEV) {) {
-c) {
- 
-    }
-    $3}
-    $3onsole.log(`Image loaded in ${loadTime.toFixed(2)}ms:`, src);
 
+    // Performance monitoring
+    if (loadStartTime > 0) {
+      const loadTime = performance.now() - loadStartTime;
+      // Performance monitoring could be added here for production analytics
 
       // Report to performance monitoring if available
       if (window.performance && window.performance.mark) {
@@ -115,82 +111,79 @@ c) {
           `image-load-start-${src}`,
           `image-load-${src}`
         );
-
+      }
+    }
 
     onLoad?.();
-  }, [loadStartTime, src, onLoad]);
+  }, [loadStartTime, src, onLoad, setIsLoaded]);
 
   // Handle image error
   const handleError = useCallback(() => {
     setHasError(true);
     setIsLoaded(true); // Consider it "loaded" to stop loading state
-    
-    if (      if (import.meta.env.DEV) {) {
-c
-    }
-    $3onsole.warn(`Failed to load image: ${src}`);
 
+    // Error logging could be added here for production monitoring
 
     onError?.();
-  }, [src, onError]);
+  }, [onError, setHasError, setIsLoaded]);
 
   // Intersection Observer for lazy loading
   useEffect(() => {
-    if (      setCurrentSrc(src);
+    if (priority || loading === 'eager') {
+      setCurrentSrc(src);
       setLoadStartTime(performance.now());
-      if (window.performance && window.performance.mark) {) {
-w
-    }
-    $3indow.performance.mark(`image-load-start-${src}`);
-
+      if (window.performance && window.performance.mark) {
+        window.performance.mark(`image-load-start-${src}`);
+      }
       return;
+    }
 
     if (!imgRef.current) return;
 
-    observerRef.current = new IntersectionObserver((entries: any) => {
-        entries.forEach((entry: any) => {
-          if (            setCurrentSrc(src);
+    observerRef.current = new IntersectionObserver((entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry: IntersectionObserverEntry) => {
+          if (entry.isIntersecting) {
+            setCurrentSrc(src);
             setLoadStartTime(performance.now());
-            if (window.performance && window.performance.mark) {) {
-w
-    }
-    $3indow.performance.mark(`image-load-start-${src}`);
-
+            if (window.performance && window.performance.mark) {
+              window.performance.mark(`image-load-start-${src}`);
+            }
             observerRef.current?.disconnect();
-
+          }
         });
       },
       {
         rootMargin: deviceInfo.isMobile ? '50px' : '100px',
         threshold: 0.1
-
+      }
     );
 
     observerRef.current.observe(imgRef.current);
 
     return () => {
       observerRef.current?.disconnect();
-  };
-   }, [src, priority, loading, deviceInfo.isMobile]);
+    };
+   }, [src, priority, loading, deviceInfo.isMobile, setCurrentSrc, setLoadStartTime]);
 
   // Preload critical images
   useEffect(() => {
-    if (      const link = document.createElement('link');
+    if (priority && currentSrc) {
+      const link = document.createElement('link');
       link.rel = 'preload';
       link.as = 'image';
       link.href = currentSrc;
-      if (        link.setAttribute('fetchpriority', fetchPriority);
+      if (fetchPriority !== 'auto') {
+        link.setAttribute('fetchpriority', fetchPriority);
+      }
 
       document.head.appendChild(link);
-      
-      return () => {
-        document.head.removeChild(link);) {
- ) {
- 
-    }
-    $3}
-    $3};
 
+      return () => {
+        if (document.head.contains(link)) {
+          document.head.removeChild(link);
+        }
+      };
+    }
   }, [priority, currentSrc, fetchPriority]);
 
   const imageSources = generateImageSources(currentSrc || src);
@@ -254,9 +247,9 @@ w
           decoding={decoding}
           fetchPriority={fetchPriority}
           crossOrigin={crossOrigin}
-          onLoad={handleLoad
+          onLoad={handleLoad}
           onError={handleError}
-                            className={cn(
+          className={cn(
             'w-full h-full object-cover transition-opacity duration-300',
             isLoaded ? 'opacity-100' : 'opacity-0',
             hasError && 'opacity-0'
@@ -273,23 +266,23 @@ w
       )}
     </div>
   );
-  }
+}
 
-  /**
+/**
  * Medical image component with specific optimizations
  */
-export function MedicalImage({ 
+export function MedicalImage({
   medicalType = 'photo',
-  ...props 
-}: EnhancedImageProps & { 
+  ...props
+}: EnhancedImageProps & {
   medicalType?: 'xray' | 'mri' | 'ct' | 'diagram' | 'photo';
-}): React.ReactElement { {
+}): React.ReactElement {
   // Medical images often need higher quality
   const quality = medicalType === 'diagram' ? 90 : props.quality || 85;
-  
+
   // Medical images should be prioritized for accessibility
   const priority = medicalType === 'diagram' ? true : props.priority;
-  
+
   // Medical images should load eagerly for accessibility
   const loading = medicalType === 'diagram' ? 'eager' : props.loading;
 
@@ -307,12 +300,12 @@ export function MedicalImage({
       )}
     />
   );
-  }
+}
 
-  /**
+/**
  * Hero image component with specific optimizations
  */
-export function HeroImage(props: EnhancedImageProps): React.ReactElement { {
+export function HeroImage(props: EnhancedImageProps): React.ReactElement {
   return (
     <EnhancedImage
       {...props}
@@ -323,9 +316,8 @@ export function HeroImage(props: EnhancedImageProps): React.ReactElement { {
       className={cn('hero-image', props.className)}
     />
   );
+}
 
 EnhancedImage.displayName = 'EnhancedImage';
 
 export default EnhancedImage;
-
-EnhancedImage.displayName = 'EnhancedImage';

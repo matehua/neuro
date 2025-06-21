@@ -1,4 +1,4 @@
-import React, {   useEffect, useState , useMemo , useCallback } from 'react';
+import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { Search, Filter, Info, ArrowRight, CheckCircle2 } from 'lucide-react';
 
@@ -14,8 +14,9 @@ import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
 import {
-  Dialog,
+Dialog,
   DialogContent,
   DialogDescription,
   DialogHeader,
@@ -53,8 +54,18 @@ interface Category {
 interface ExerciseData {
   categories: Category[];
 }
+
 const ExerciseLibrary: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Add minimal fallback structure based on component needs
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [selectedDifficulty, setSelectedDifficulty] = useState("all");
   const [searchQuery, setSearchQuery] = useState("");
@@ -224,7 +235,7 @@ const ExerciseLibrary: React.FC = () => {
                     <SelectValue placeholder="Select difficulty" />
                   </SelectTrigger>
                   <SelectContent>
-                    {difficultyLevels?.map((level: any) => (
+                    {difficultyLevels?.map((level: unknown) => (
                       <SelectItem key={level.id} value={level.id}>
                         {level.name}
                       </SelectItem>
@@ -352,7 +363,7 @@ const ExerciseLibrary: React.FC = () => {
 
         {/* Exercise Detail Dialog */}
         {selectedExercise && (
-          <Dialog open={!!selectedExercise} onOpenChange={(open: any) => !open && setSelectedExercise(null)}>
+          <Dialog open={!!selectedExercise} onOpenChange={(open: unknown) => !open && setSelectedExercise(null)}>
             <DialogContent className="max-w-3xl max-h-[90vh] overflow-y-auto">
               <DialogHeader>
                 <DialogTitle className="text-2xl">{selectedExercise.name}</DialogTitle>
@@ -396,7 +407,7 @@ const ExerciseLibrary: React.FC = () => {
                     <div className="mb-4">
                       <h4 className="font-semibold mb-2">Target Areas</h4>
                       <div className="flex flex-wrap gap-2">
-                        {selectedExercise.targetAreas?.map((area: any, index: any) => (
+                        {selectedExercise.targetAreas?.map((area: string, index: number) => (
                           <Badge key={index} variant="secondary">{area}</Badge>
                         ))}
                       </div>
@@ -407,7 +418,7 @@ const ExerciseLibrary: React.FC = () => {
                     <div className="mb-6">
                       <h4 className="font-semibold mb-2">Related Conditions</h4>
                       <div className="flex flex-wrap gap-2">
-                        {selectedExercise.relatedConditions?.map((condition: any, index: any) => (
+                        {selectedExercise.relatedConditions?.map((condition: string, index: number) => (
                           <Badge key={index} variant="outline">{condition}</Badge>
                         ))}
                       </div>
@@ -419,7 +430,7 @@ const ExerciseLibrary: React.FC = () => {
                       <AccordionTrigger className="text-lg font-semibold">Step-by-Step Instructions</AccordionTrigger>
                       <AccordionContent>
                         <ol className="list-decimal pl-5 space-y-2">
-                          {selectedExercise.instructions?.map((instruction: any, index: any) => (
+                          {selectedExercise.instructions?.map((instruction: string, index: number) => (
                             <li key={index} className="text-muted-foreground">{instruction}</li>
                           ))}
                         </ol>
@@ -448,7 +459,7 @@ const ExerciseLibrary: React.FC = () => {
                       <AccordionTrigger className="text-lg font-semibold">Cautions & Safety Guidelines</AccordionTrigger>
                       <AccordionContent>
                         <ul className="list-disc pl-5 space-y-2">
-                          {selectedExercise.cautions?.map((caution: any, index: any) => (
+                          {selectedExercise.cautions?.map((caution: string, index: number) => (
                             <li key={index} className="text-muted-foreground">{caution}</li>
                           ))}
                         </ul>
@@ -460,7 +471,7 @@ const ExerciseLibrary: React.FC = () => {
                         <AccordionTrigger className="text-lg font-semibold text-red-600">⚠️ Contraindications</AccordionTrigger>
                         <AccordionContent>
                           <ul className="list-disc pl-5 space-y-2">
-                            {selectedExercise.contraindications?.map((contraindication: any, index: any) => (
+                            {selectedExercise.contraindications?.map((contraindication: string, index: number) => (
                               <li key={index} className="text-red-600">{contraindication}</li>
                             ))}
                           </ul>
@@ -473,7 +484,7 @@ const ExerciseLibrary: React.FC = () => {
                         <AccordionTrigger className="text-lg font-semibold">Exercise Modifications</AccordionTrigger>
                         <AccordionContent>
                           <ul className="list-disc pl-5 space-y-2">
-                            {selectedExercise.modifications?.map((modification: any, index: any) => (
+                            {selectedExercise.modifications?.map((modification: string, index: number) => (
                               <li key={index} className="text-muted-foreground">{modification}</li>
                             ))}
                           </ul>

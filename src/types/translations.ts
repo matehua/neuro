@@ -16,6 +16,7 @@ export interface NavigationTranslations {
   menu: string;
   close: string;
   skipToContent: string;
+}
 
 // Hero section translations
 export interface HeroTranslations {
@@ -24,6 +25,7 @@ export interface HeroTranslations {
   primaryCTA: string;
   secondaryCTA: string;
   scrollDown: string;
+}
 
 // About section translations
 export interface AboutTranslations {
@@ -35,6 +37,7 @@ export interface AboutTranslations {
   procedures: string;
   awards: string;
   learnMore: string;
+}
 
 // Expertise translations
 export interface ExpertiseTranslations {
@@ -45,15 +48,16 @@ export interface ExpertiseTranslations {
     description: string;
   };
   spineSurgery: {
-    title: string;
-    description: string;
+  title: string;
+  description: string;
   };
   peripheralNerve: {
-    title: string;
-    description: string;
+  title: string;
+  description: string;
   };
   viewAll: string;
   learnMore: string;
+}
 
 // Testimonials translations
 export interface TestimonialsTranslations {
@@ -62,6 +66,7 @@ export interface TestimonialsTranslations {
   readMore: string;
   previous: string;
   next: string;
+}
 
 // CTA section translations
 export interface CTATranslations {
@@ -71,6 +76,7 @@ export interface CTATranslations {
   secondaryButton: string;
   phone: string;
   email: string;
+}
 
 // Footer translations
 export interface FooterTranslations {
@@ -82,89 +88,96 @@ export interface FooterTranslations {
   termsOfService: string;
   accessibility: string;
   sitemap: string;
+}
 
 // Specialties page translations
 export interface SpecialtiesTranslations {
   title: string;
   description: string;
   filters: {
-    location: string;
-    allLocations: string;
-    complexity: string;
-    anyComplexity: string;
-    moderate: string;
-    advanced: string;
-    complex: string;
-    highlyComplex: string;
-    recoveryTime: string;
-    days: string;
-    resetFilters: string;
-    showing: string;
-    of: string;
-    procedures: string;
-    noMatch: string;
-    adjustFilters: string;
+  location: string;
+  allLocations: string;
+  complexity: string;
+  anyComplexity: string;
+  moderate: string;
+  advanced: string;
+  complex: string;
+  highlyComplex: string;
+  recoveryTime: string;
+  days: string;
+  resetFilters: string;
+  showing: string;
+  of: string;
+  procedures: string;
+  noMatch: string;
+  adjustFilters: string;
   };
-  // Patient resources translations
+}
+
+// Patient resources translations
 export interface PatientResourcesTranslations {
   title: string;
   description: string;
   filters: {
-    category: string;
-    allCategories: string;
-    difficulty: string;
-    allDifficulties: string;
-    duration: string;
-    allDurations: string;
-    equipment: string;
-    allEquipment: string;
-    showing: string;
-    of: string;
-    exercises: string;
-    resources: string;
-    noMatch: string;
-    adjustFilters: string;
-    viewDetails: string;
-    more: string;
+  category: string;
+  allCategories: string;
+  difficulty: string;
+  allDifficulties: string;
+  duration: string;
+  allDurations: string;
+  equipment: string;
+  allEquipment: string;
+  showing: string;
+  of: string;
+  exercises: string;
+  resources: string;
+  noMatch: string;
+  adjustFilters: string;
+  viewDetails: string;
+  more: string;
   };
   categories: {
-    preOperative: string;
-    postOperative: string;
-    rehabilitation: string;
-    education: string;
-    lifestyle: string;
+  preOperative: string;
+  postOperative: string;
+  rehabilitation: string;
+  education: string;
+  lifestyle: string;
   };
-  // Contact page translations
+}
+
+// Contact page translations
 export interface ContactTranslations {
   title: string;
   subtitle: string;
   form: {
-    name: string;
-    email: string;
-    phone: string;
-    subject: string;
-    message: string;
-    submit: string;
-    sending: string;
-    success: string;
-    error: string;
-    required: string;
-    invalidEmail: string;
-    invalidPhone: string;
+  name: string;
+  email: string;
+  phone: string;
+  subject: string;
+  message: string;
+  submit: string;
+  sending: string;
+  success: string;
+  error: string;
+  required: string;
+  invalidEmail: string;
+  invalidPhone: string;
   };
   info: {
-    address: string;
-    phone: string;
-    email: string;
-    hours: string;
-    emergency: string;
+  address: string;
+  phone: string;
+  email: string;
+  hours: string;
+  emergency: string;
   };
   map: {
-    title: string;
-    directions: string;
-    parking: string;
+  title: string;
+  directions: string;
+  parking: string;
   };
-  // Location page translations
+}
+
+// Location page translations
 export interface LocationTranslations {
   title: string;
   description: string;
@@ -178,55 +191,58 @@ export interface LocationTranslations {
   hours: string;
   bookAppointment: string;
   virtualTour: string;
+}
 
 // Appointment booking translations
 export interface AppointmentTranslations {
   title: string;
   subtitle: string;
   steps: {
-    selectService: string;
-    chooseDateTime: string;
-    personalInfo: string;
-    confirmation: string;
+  selectService: string;
+  chooseDateTime: string;
+  personalInfo: string;
+  confirmation: string;
   };
   form: {
-    service: string;
-    date: string;
-    time: string;
-    firstName: string;
-    lastName: string;
-    email: string;
-    phone: string;
-    dateOfBirth: string;
-    gender: string;
-    address: string;
-    emergencyContact: string;
-    medicalHistory: string;
-    currentMedications: string;
-    allergies: string;
-    insuranceProvider: string;
-    policyNumber: string;
-    referringPhysician: string;
-    reasonForVisit: string;
-    preferredLanguage: string;
-    specialRequests: string;
-    submit: string;
-    back: string;
-    next: string;
-    booking: string;
-    success: string;
-    error: string;
+  service: string;
+  date: string;
+  time: string;
+  firstName: string;
+  lastName: string;
+  email: string;
+  phone: string;
+  dateOfBirth: string;
+  gender: string;
+  address: string;
+  emergencyContact: string;
+  medicalHistory: string;
+  currentMedications: string;
+  allergies: string;
+  insuranceProvider: string;
+  policyNumber: string;
+  referringPhysician: string;
+  reasonForVisit: string;
+  preferredLanguage: string;
+  specialRequests: string;
+  submit: string;
+  back: string;
+  next: string;
+  booking: string;
+  success: string;
+  error: string;
   };
   validation: {
-    required: string;
-    invalidEmail: string;
-    invalidPhone: string;
-    invalidDate: string;
-    pastDate: string;
-    weekendNotAvailable: string;
-    timeSlotUnavailable: string;
+  required: string;
+  invalidEmail: string;
+  invalidPhone: string;
+  invalidDate: string;
+  pastDate: string;
+  weekendNotAvailable: string;
+  timeSlotUnavailable: string;
   };
-  // Common UI translations
+}
+
+// Common UI translations
 export interface CommonTranslations {
   loading: string;
   error: string;
@@ -270,6 +286,7 @@ export interface CommonTranslations {
   address: string;
   website: string;
   socialMedia: string;
+}
 
 // Main translation interface
 export interface Translations {
@@ -286,6 +303,7 @@ export interface Translations {
   location: LocationTranslations;
   appointment: AppointmentTranslations;
   common: CommonTranslations;
+}
 
 // Language codes
 export type LanguageCode = 'en' | 'zh';
@@ -297,10 +315,12 @@ export interface LanguageInfo {
   nativeName: string;
   direction: 'ltr' | 'rtl';
   flag: string;
+}
 
 // Translation validation utilities
 export function isValidLanguageCode(code: string): code is LanguageCode {
   return ['en', 'zh'].includes(code);
+}
 
 // Type guard for translation object validation
 export function isValidTranslations(obj: unknown): obj is Translations {
@@ -325,9 +345,10 @@ export function isValidTranslations(obj: unknown): obj is Translations {
     'common'
   ];
   
-  return requiredSections.every(section => 
+  return requiredSections.every(section =>
     typeof translations[section] === 'object' && translations[section] !== null
   );
+}
 
 // Utility function to get nested translation value safely
 export function getTranslation(
@@ -337,30 +358,17 @@ export function getTranslation(
 ): string {
   const keys = path.split('.');
   let current: unknown = translations;
-  
-  for (const key of keys) {
-    if ( ) {
- 
-    }
-    $3}
-    $3}
-    $3}
-    $3}
-    $3}
-    $3}
-    $3}
-    $3}
-    $3}
-    $3}
-    $3}
-    $3}
-    $3}
-    $3}
-    $3} else {
-      return fallback || path;
 
+  for (const key of keys) {
+    if (current && typeof current === 'object' && key in current) {
+      current = (current as Record<string, unknown>)[key];
+    } else {
+      return fallback || path;
+    }
+  }
 
   return typeof current === 'string' ? current : fallback || path;
+}
 
 // Utility function to validate translation completeness
 export function validateTranslationCompleteness(
@@ -369,7 +377,7 @@ export function validateTranslationCompleteness(
 ): { missing: string[]; extra: string[] } {
   const missing: string[] = [];
   const extra: string[] = [];
-  
+
   function checkObject(
     obj: Record<string, unknown>,
     ref: Record<string, unknown>,
@@ -378,28 +386,27 @@ export function validateTranslationCompleteness(
     // Check for missing keys
     for (const key in ref) {
       const currentPath = path ? `${path}.${key}` : key;
-      
+
       if (!(key in obj)) {
         missing.push(currentPath);
-      } else if (          checkObject(obj[key], ref[key], currentPath);) {
- ) {
- 
+      } else if (typeof ref[key] === 'object' && ref[key] !== null && typeof obj[key] === 'object' && obj[key] !== null) {
+        checkObject(obj[key] as Record<string, unknown>, ref[key] as Record<string, unknown>, currentPath);
+      } else if (typeof ref[key] !== typeof obj[key]) {
+        missing.push(currentPath);
+      }
     }
-    $3}
-    $3} else {
-          missing.push(currentPath);
-
-
 
     // Check for extra keys
     for (const key in obj) {
       const currentPath = path ? `${path}.${key}` : key;
-      
+
       if (!(key in ref)) {
         extra.push(currentPath);
-
-
+      }
+    }
+  }
 
   checkObject(translations, referenceTranslations);
-  
+
   return { missing, extra };
+}

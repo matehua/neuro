@@ -1,6 +1,6 @@
+import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
-import { useState, useEffect } from 'react';
 
 import ErrorBoundary from '@/components/ErrorBoundary';
 import ScreenReaderAnnouncer from '@/components/ScreenReaderAnnouncer';
@@ -9,6 +9,12 @@ import { LanguageProvider } from '@/contexts/LanguageContext';
 import { Toaster } from '@/components/ui/sonner';
 import { TooltipProvider } from '@/components/ui/tooltip';
 import { getAllRoutes } from '@/routes/routeConfig';
+
+// Define route type
+interface RouteConfig {
+  path: string;
+  element: React.ReactElement;
+}
 
 // Create a react-query client
 const queryClient = new QueryClient();
@@ -40,7 +46,7 @@ const AppContent = () => {
 
         <Toaster />
         <Routes>
-          {routes?.map((route: any, index: any) => (
+          {routes?.map((route: RouteConfig, index: number) => (
             <Route
               key={`${route?.path}-${index}`}
               path={route?.path}

@@ -1,0 +1,57 @@
+{
+  "translationTests": [
+    {
+      "name": "Translation Completeness",
+      "status": "FAILED",
+      "message": "94 translation keys missing Chinese translations",
+      "details": [
+        "appointments.title",
+        "appointments.subtitle",
+        "appointments.description1",
+        "appointments.description2",
+        "appointments.process.title",
+        "appointments.process.subtitle",
+        "appointments.process.steps.initialConsultation.title",
+        "appointments.process.steps.initialConsultation.description",
+        "appointments.process.steps.investigations.title",
+        "appointments.process.steps.investigations.description"
+      ]
+    },
+    {
+      "name": "Translation Structure Consistency",
+      "status": "PASSED",
+      "message": "Translation structure is consistent"
+    }
+  ],
+  "componentTests": [
+    {
+      "name": "Component Translation Usage",
+      "status": "PASSED",
+      "message": "All 100 components properly use translations"
+    }
+  ],
+  "integrationTests": [
+    {
+      "name": "Language Switching Functionality",
+      "status": "PASSED",
+      "message": "Language switching functionality is properly implemented"
+    },
+    {
+      "name": "Medical Terminology Accuracy",
+      "status": "WARNING",
+      "message": "3 potential medical terminology issues",
+      "details": [
+        "Inconsistent medical term: 1 -> [object Object]",
+        "Inconsistent medical term: 2 -> [object Object]",
+        "Inconsistent medical term: 3 -> [object Object]"
+      ]
+    }
+  ],
+  "issues": [],
+  "summary": {
+    "totalTests": 5,
+    "passed": 3,
+    "failed": 1,
+    "warnings": 1
+  }
+}

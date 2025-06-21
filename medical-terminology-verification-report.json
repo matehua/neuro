@@ -1,0 +1,635 @@
+{
+  "summary": {
+    "totalTerms": 93,
+    "categories": 6,
+    "verificationDate": "2025-06-19T10:47:45.336Z"
+  },
+  "verifiedTerms": {
+    "neurological": {
+      "brain tumor": {
+        "chinese": "脑肿瘤",
+        "verified": true,
+        "category": "neurological"
+      },
+      "glioma": {
+        "chinese": "胶质瘤",
+        "verified": true,
+        "category": "neurological"
+      },
+      "meningioma": {
+        "chinese": "脑膜瘤",
+        "verified": true,
+        "category": "neurological"
+      },
+      "acoustic neuroma": {
+        "chinese": "听神经瘤",
+        "verified": true,
+        "category": "neurological"
+      },
+      "vestibular schwannoma": {
+        "chinese": "前庭神经鞘瘤",
+        "verified": true,
+        "category": "neurological"
+      },
+      "pituitary adenoma": {
+        "chinese": "垂体腺瘤",
+        "verified": true,
+        "category": "neurological"
+      },
+      "hydrocephalus": {
+        "chinese": "脑积水",
+        "verified": true,
+        "category": "neurological"
+      },
+      "brain aneurysm": {
+        "chinese": "脑动脉瘤",
+        "verified": true,
+        "category": "neurological"
+      },
+      "arteriovenous malformation": {
+        "chinese": "动静脉畸形",
+        "verified": true,
+        "category": "neurological"
+      },
+      "cavernous malformation": {
+        "chinese": "海绵状血管瘤",
+        "verified": true,
+        "category": "neurological"
+      },
+      "epilepsy": {
+        "chinese": "癫痫",
+        "verified": true,
+        "category": "neurological"
+      },
+      "trigeminal neuralgia": {
+        "chinese": "三叉神经痛",
+        "verified": true,
+        "category": "neurological"
+      },
+      "chiari malformation": {
+        "chinese": "Chiari畸形",
+        "verified": true,
+        "category": "neurological"
+      },
+      "neurosurgery": {
+        "chinese": "神经外科",
+        "verified": true,
+        "category": "neurological"
+      },
+      "minimally invasive": {
+        "chinese": "微创",
+        "verified": true,
+        "category": "neurological"
+      },
+      "craniotomy": {
+        "chinese": "开颅手术",
+        "verified": true,
+        "category": "neurological"
+      },
+      "stereotactic": {
+        "chinese": "立体定向",
+        "verified": true,
+        "category": "neurological"
+      }
+    },
+    "spinal": {
+      "spinal stenosis": {
+        "chinese": "脊柱狭窄",
+        "verified": true,
+        "category": "spinal"
+      },
+      "disc herniation": {
+        "chinese": "椎间盘突出",
+        "verified": true,
+        "category": "spinal"
+      },
+      "spondylolisthesis": {
+        "chinese": "脊椎滑脱",
+        "verified": true,
+        "category": "spinal"
+      },
+      "spondylitis": {
+        "chinese": "脊柱炎",
+        "verified": true,
+        "category": "spinal"
+      },
+      "epidural abscess": {
+        "chinese": "硬膜外脓肿",
+        "verified": true,
+        "category": "spinal"
+      },
+      "spinal instability": {
+        "chinese": "脊柱不稳定",
+        "verified": true,
+        "category": "spinal"
+      },
+      "myelopathy": {
+        "chinese": "脊髓病",
+        "verified": true,
+        "category": "spinal"
+      },
+      "spinal cord compression": {
+        "chinese": "脊髓压迫",
+        "verified": true,
+        "category": "spinal"
+      },
+      "spinal tumor": {
+        "chinese": "脊柱肿瘤",
+        "verified": true,
+        "category": "spinal"
+      },
+      "spinal vascular malformation": {
+        "chinese": "脊柱血管畸形",
+        "verified": true,
+        "category": "spinal"
+      },
+      "cervical": {
+        "chinese": "颈椎",
+        "verified": true,
+        "category": "spinal"
+      },
+      "lumbar": {
+        "chinese": "腰椎",
+        "verified": true,
+        "category": "spinal"
+      },
+      "thoracic": {
+        "chinese": "胸椎",
+        "verified": true,
+        "category": "spinal"
+      },
+      "disc replacement": {
+        "chinese": "椎间盘置换",
+        "verified": true,
+        "category": "spinal"
+      },
+      "arthroplasty": {
+        "chinese": "关节成形术",
+        "verified": true,
+        "category": "spinal"
+      },
+      "fusion": {
+        "chinese": "融合术",
+        "verified": true,
+        "category": "spinal"
+      },
+      "laminectomy": {
+        "chinese": "椎板切除术",
+        "verified": true,
+        "category": "spinal"
+      },
+      "discectomy": {
+        "chinese": "椎间盘切除术",
+        "verified": true,
+        "category": "spinal"
+      }
+    },
+    "nerve": {
+      "nerve tumor": {
+        "chinese": "神经肿瘤",
+        "verified": true,
+        "category": "nerve"
+      },
+      "schwannoma": {
+        "chinese": "神经鞘瘤",
+        "verified": true,
+        "category": "nerve"
+      },
+      "neurofibroma": {
+        "chinese": "神经纤维瘤",
+        "verified": true,
+        "category": "nerve"
+      },
+      "neuroma": {
+        "chinese": "神经瘤",
+        "verified": true,
+        "category": "nerve"
+      },
+      "nerve pain": {
+        "chinese": "神经疼痛",
+        "verified": true,
+        "category": "nerve"
+      },
+      "nerve injury": {
+        "chinese": "神经损伤",
+        "verified": true,
+        "category": "nerve"
+      },
+      "nerve compression": {
+        "chinese": "神经压迫",
+        "verified": true,
+        "category": "nerve"
+      },
+      "carpal tunnel syndrome": {
+        "chinese": "腕管综合征",
+        "verified": true,
+        "category": "nerve"
+      },
+      "cubital tunnel syndrome": {
+        "chinese": "肘管综合征",
+        "verified": true,
+        "category": "nerve"
+      },
+      "nerve biopsy": {
+        "chinese": "神经活检",
+        "verified": true,
+        "category": "nerve"
+      },
+      "muscle biopsy": {
+        "chinese": "肌肉活检",
+        "verified": true,
+        "category": "nerve"
+      },
+      "peripheral nerve": {
+        "chinese": "周围神经",
+        "verified": true,
+        "category": "nerve"
+      },
+      "neuropathy": {
+        "chinese": "神经病变",
+        "verified": true,
+        "category": "nerve"
+      },
+      "radiculopathy": {
+        "chinese": "神经根病变",
+        "verified": true,
+        "category": "nerve"
+      }
+    },
+    "procedures": {
+      "consultation": {
+        "chinese": "咨询",
+        "verified": true,
+        "category": "procedures"
+      },
+      "examination": {
+        "chinese": "检查",
+        "verified": true,
+        "category": "procedures"
+      },
+      "diagnosis": {
+        "chinese": "诊断",
+        "verified": true,
+        "category": "procedures"
+      },
+      "treatment": {
+        "chinese": "治疗",
+        "verified": true,
+        "category": "procedures"
+      },
+      "surgery": {
+        "chinese": "手术",
+        "verified": true,
+        "category": "procedures"
+      },
+      "rehabilitation": {
+        "chinese": "康复",
+        "verified": true,
+        "category": "procedures"
+      },
+      "follow-up": {
+        "chinese": "随访",
+        "verified": true,
+        "category": "procedures"
+      },
+      "imaging": {
+        "chinese": "影像学",
+        "verified": true,
+        "category": "procedures"
+      },
+      "MRI": {
+        "chinese": "磁共振成像",
+        "verified": true,
+        "category": "procedures"
+      },
+      "CT scan": {
+        "chinese": "CT扫描",
+        "verified": true,
+        "category": "procedures"
+      },
+      "X-ray": {
+        "chinese": "X光",
+        "verified": true,
+        "category": "procedures"
+      },
+      "ultrasound": {
+        "chinese": "超声",
+        "verified": true,
+        "category": "procedures"
+      },
+      "biopsy": {
+        "chinese": "活检",
+        "verified": true,
+        "category": "procedures"
+      },
+      "anesthesia": {
+        "chinese": "麻醉",
+        "verified": true,
+        "category": "procedures"
+      },
+      "recovery": {
+        "chinese": "恢复",
+        "verified": true,
+        "category": "procedures"
+      },
+      "post-operative": {
+        "chinese": "术后",
+        "verified": true,
+        "category": "procedures"
+      }
+    },
+    "specialties": {
+      "neurosurgery": {
+        "chinese": "神经外科",
+        "verified": true,
+        "category": "specialties"
+      },
+      "spine surgery": {
+        "chinese": "脊柱外科",
+        "verified": true,
+        "category": "specialties"
+      },
+      "pain management": {
+        "chinese": "疼痛管理",
+        "verified": true,
+        "category": "specialties"
+      },
+      "rehabilitation medicine": {
+        "chinese": "康复医学",
+        "verified": true,
+        "category": "specialties"
+      },
+      "anesthesiology": {
+        "chinese": "麻醉学",
+        "verified": true,
+        "category": "specialties"
+      },
+      "radiology": {
+        "chinese": "放射科",
+        "verified": true,
+        "category": "specialties"
+      },
+      "pathology": {
+        "chinese": "病理科",
+        "verified": true,
+        "category": "specialties"
+      },
+      "neurology": {
+        "chinese": "神经内科",
+        "verified": true,
+        "category": "specialties"
+      },
+      "orthopedics": {
+        "chinese": "骨科",
+        "verified": true,
+        "category": "specialties"
+      },
+      "plastic surgery": {
+        "chinese": "整形外科",
+        "verified": true,
+        "category": "specialties"
+      }
+    },
+    "anatomy": {
+      "brain": {
+        "chinese": "大脑",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "spinal cord": {
+        "chinese": "脊髓",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "spine": {
+        "chinese": "脊柱",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "vertebra": {
+        "chinese": "椎骨",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "disc": {
+        "chinese": "椎间盘",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "nerve": {
+        "chinese": "神经",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "muscle": {
+        "chinese": "肌肉",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "bone": {
+        "chinese": "骨骼",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "joint": {
+        "chinese": "关节",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "ligament": {
+        "chinese": "韧带",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "tendon": {
+        "chinese": "肌腱",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "cartilage": {
+        "chinese": "软骨",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "skull": {
+        "chinese": "颅骨",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "cervical spine": {
+        "chinese": "颈椎",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "thoracic spine": {
+        "chinese": "胸椎",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "lumbar spine": {
+        "chinese": "腰椎",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "sacrum": {
+        "chinese": "骶骨",
+        "verified": true,
+        "category": "anatomy"
+      },
+      "coccyx": {
+        "chinese": "尾骨",
+        "verified": true,
+        "category": "anatomy"
+      }
+    }
+  },
+  "recommendations": [
+    {
+      "category": "Consistency",
+      "recommendation": "Use consistent medical terminology across all translations",
+      "priority": "HIGH",
+      "examples": [
+        "Always use \"神经外科\" for neurosurgery",
+        "Always use \"脊柱\" for spine",
+        "Always use \"椎间盘\" for disc"
+      ]
+    },
+    {
+      "category": "Accuracy",
+      "recommendation": "Ensure medical terms are clinically accurate",
+      "priority": "HIGH",
+      "examples": [
+        "Use proper anatomical terms",
+        "Maintain medical precision in translations",
+        "Consult medical dictionaries for complex terms"
+      ]
+    },
+    {
+      "category": "Patient Communication",
+      "recommendation": "Use patient-friendly language where appropriate",
+      "priority": "MEDIUM",
+      "examples": [
+        "Provide both technical and layman terms",
+        "Include explanations for complex procedures",
+        "Use clear, understandable language"
+      ]
+    },
+    {
+      "category": "Cultural Adaptation",
+      "recommendation": "Adapt medical terms for Chinese-speaking patients",
+      "priority": "MEDIUM",
+      "examples": [
+        "Use traditional Chinese medical concepts where relevant",
+        "Consider cultural sensitivities",
+        "Maintain professional medical standards"
+      ]
+    }
+  ],
+  "medicalTerms": {
+    "neurological": {
+      "brain tumor": "脑肿瘤",
+      "glioma": "胶质瘤",
+      "meningioma": "脑膜瘤",
+      "acoustic neuroma": "听神经瘤",
+      "vestibular schwannoma": "前庭神经鞘瘤",
+      "pituitary adenoma": "垂体腺瘤",
+      "hydrocephalus": "脑积水",
+      "brain aneurysm": "脑动脉瘤",
+      "arteriovenous malformation": "动静脉畸形",
+      "cavernous malformation": "海绵状血管瘤",
+      "epilepsy": "癫痫",
+      "trigeminal neuralgia": "三叉神经痛",
+      "chiari malformation": "Chiari畸形",
+      "neurosurgery": "神经外科",
+      "minimally invasive": "微创",
+      "craniotomy": "开颅手术",
+      "stereotactic": "立体定向"
+    },
+    "spinal": {
+      "spinal stenosis": "脊柱狭窄",
+      "disc herniation": "椎间盘突出",
+      "spondylolisthesis": "脊椎滑脱",
+      "spondylitis": "脊柱炎",
+      "epidural abscess": "硬膜外脓肿",
+      "spinal instability": "脊柱不稳定",
+      "myelopathy": "脊髓病",
+      "spinal cord compression": "脊髓压迫",
+      "spinal tumor": "脊柱肿瘤",
+      "spinal vascular malformation": "脊柱血管畸形",
+      "cervical": "颈椎",
+      "lumbar": "腰椎",
+      "thoracic": "胸椎",
+      "disc replacement": "椎间盘置换",
+      "arthroplasty": "关节成形术",
+      "fusion": "融合术",
+      "laminectomy": "椎板切除术",
+      "discectomy": "椎间盘切除术"
+    },
+    "nerve": {
+      "nerve tumor": "神经肿瘤",
+      "schwannoma": "神经鞘瘤",
+      "neurofibroma": "神经纤维瘤",
+      "neuroma": "神经瘤",
+      "nerve pain": "神经疼痛",
+      "nerve injury": "神经损伤",
+      "nerve compression": "神经压迫",
+      "carpal tunnel syndrome": "腕管综合征",
+      "cubital tunnel syndrome": "肘管综合征",
+      "nerve biopsy": "神经活检",
+      "muscle biopsy": "肌肉活检",
+      "peripheral nerve": "周围神经",
+      "neuropathy": "神经病变",
+      "radiculopathy": "神经根病变"
+    },
+    "procedures": {
+      "consultation": "咨询",
+      "examination": "检查",
+      "diagnosis": "诊断",
+      "treatment": "治疗",
+      "surgery": "手术",
+      "rehabilitation": "康复",
+      "follow-up": "随访",
+      "imaging": "影像学",
+      "MRI": "磁共振成像",
+      "CT scan": "CT扫描",
+      "X-ray": "X光",
+      "ultrasound": "超声",
+      "biopsy": "活检",
+      "anesthesia": "麻醉",
+      "recovery": "恢复",
+      "post-operative": "术后"
+    },
+    "specialties": {
+      "neurosurgery": "神经外科",
+      "spine surgery": "脊柱外科",
+      "pain management": "疼痛管理",
+      "rehabilitation medicine": "康复医学",
+      "anesthesiology": "麻醉学",
+      "radiology": "放射科",
+      "pathology": "病理科",
+      "neurology": "神经内科",
+      "orthopedics": "骨科",
+      "plastic surgery": "整形外科"
+    },
+    "anatomy": {
+      "brain": "大脑",
+      "spinal cord": "脊髓",
+      "spine": "脊柱",
+      "vertebra": "椎骨",
+      "disc": "椎间盘",
+      "nerve": "神经",
+      "muscle": "肌肉",
+      "bone": "骨骼",
+      "joint": "关节",
+      "ligament": "韧带",
+      "tendon": "肌腱",
+      "cartilage": "软骨",
+      "skull": "颅骨",
+      "cervical spine": "颈椎",
+      "thoracic spine": "胸椎",
+      "lumbar spine": "腰椎",
+      "sacrum": "骶骨",
+      "coccyx": "尾骨"
+    }
+  }
+}

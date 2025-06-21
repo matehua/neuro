@@ -1,6 +1,5 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import SafeImage from '@/components/SafeImage';
@@ -8,6 +7,8 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 import {
   Accordion,
   AccordionContent,
@@ -15,8 +16,43 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface FAQCategory {
+  title: string;
+  description?: string;
+  questions: FAQItem[];
+}
+
 const Faq: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.nav && safeT.nav.faq && safeT.contact && safeT.contact.faqSubtitle && safeT.home && safeT.home.cta) ? safeT : {
+    nav: {
+      home: "Home",
+      expertise: "Expertise",
+      appointments: "Appointments",
+      contact: "Contact",
+      faq: "Frequently Asked Questions"
+    },
+    contact: {
+      faqSubtitle: "Find answers to common questions about neurosurgical procedures and treatments"
+    },
+    home: {
+      cta: {
+        title: "Ready to Schedule Your Consultation?",
+        description: "Take the first step towards better health with expert neurosurgical care",
+        bookNow: "Book Appointment"
+      }
+    },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
   const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
@@ -220,13 +256,13 @@ const Faq: React.FC = () => {
                   ? "mobile-4xl"
                   : "text-4xl md:text-5xl mb-6"
               )}>
-                {t.nav.faq}
+                {finalT.nav.faq}
               </h1>
               <p className={cn(
                 "text-muted-foreground",
                 deviceInfo.isMobile ? "mobile-text" : ""
               )}>
-                {t.contact.faqSubtitle}
+                {finalT.contact.faqSubtitle}
               </p>
             </div>
           </div>
@@ -275,7 +311,7 @@ const Faq: React.FC = () => {
                   )}>
                     Categories
                   </h2>
-                  {faqCategories?.map((category: any, index: any) => (
+                  {faqCategories?.map((category: FAQCategory, index: number) => (
                     <Button
                       key={index}
                       variant="ghost"
@@ -294,7 +330,7 @@ const Faq: React.FC = () => {
                   ? "order-1 space-y-mobile-xl"
                   : "lg:col-span-3 space-y-12"
               )}>
-                {faqCategories?.map((category: any, categoryIndex: any) => (
+                {faqCategories?.map((category: FAQCategory, categoryIndex: number) => (
                   <div key={categoryIndex} id={`category-${categoryIndex}`}>
                     <h2 className={cn(
                       "font-bold mb-mobile-sm",
@@ -360,7 +396,7 @@ const Faq: React.FC = () => {
                       </div>
                     )}
                     <Accordion type="single" collapsible className="space-y-4">
-                      {category.questions?.map((faq: any, faqIndex: any) => (
+                      {category.questions?.map((faq: FAQItem, faqIndex: number) => (
                         <AccordionItem
                           key={faqIndex}
                           value={`item-${categoryIndex}-${faqIndex}`}
@@ -370,7 +406,7 @@ const Faq: React.FC = () => {
                             {faq.question}
                           </AccordionTrigger>
                           <AccordionContent className="px-4 pt-2 pb-4 text-muted-foreground">
-                            {faq.answer.split('\n').map((paragraph: any, i: any) => (
+                            {faq.answer.split('\n').map((paragraph: string, i: number) => (
                               <p key={i} className={i > 0 ? 'mt-2' : ''}>{paragraph}</p>
                             ))}
                           </AccordionContent>
@@ -388,16 +424,16 @@ const Faq: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto">
-              <h2 className="text-3xl font-bold mb-6">{t.home.cta.title}</h2>
+              <h2 className="text-3xl font-bold mb-6">{finalT.home.cta.title}</h2>
               <p className="text-muted-foreground mb-8">
-                {t.home.cta.description}
+                {finalT.home.cta.description}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">
-                  <Link to="/appointments">{t.home.cta.bookNow}</Link>
+                  <Link to="/appointments">{finalT.home.cta.bookNow}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">{t.nav.contact}</Link>
+                  <Link to="/contact">{finalT.nav.contact}</Link>
                 </Button>
               </div>
             </div>

@@ -1,16 +1,26 @@
+import React, { useEffect } from 'react';
 import { Brain, Activity, Stethoscope, ClipboardList, Target } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 
 const SpineHealthApp: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Add minimal fallback structure based on component needs
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -312,7 +322,7 @@ const SpineHealthApp: React.FC = () => {
                 </CardHeader>
                 <CardContent>
                   <p className="text-muted-foreground">
-                    "The personalized exercise program was a game-changer for my spinal stenosis. The app adjusted my exercises based on my feedback, and the educational content helped me understand why certain movements were beneficial while others weren't."
+                    "The personalized exercise program was a game-changer for my spinal stenosis. The app adjusted my exercises based on my feedback, and the educational content helped me understand why certain movements were beneficial while others weren'finalT."
                   </p>
                 </CardContent>
               </Card>
@@ -355,8 +365,7 @@ const SpineHealthApp: React.FC = () => {
       <Footer />
     </div>
   );
-SpineHealthApp.displayName = 'SpineHealthApp';
+};
 
+SpineHealthApp.displayName = 'SpineHealthApp';
 export default SpineHealthApp;
-
-SpineHealthApp.displayName = 'SpineHealthApp';

@@ -7,7 +7,6 @@ export interface SitemapUrl {
   priority?: number;
 
 }
-
   /**
  * Generate sitemap URLs for the website
  */
@@ -254,6 +253,7 @@ export const generateSitemapUrls = (): SitemapUrl[] => {
       lastmod: currentDate,
       changefreq: 'yearly',
       priority: 0.3
+    }
   ];
 
   return urls;
@@ -262,6 +262,7 @@ export const generateSitemapUrls = (): SitemapUrl[] => {
 /**
  * Generate XML sitemap content
  */
+export const generateSitemapXML = (): string => {
   const urls = generateSitemapUrls();
   
   const urlElements = urls?.map(url => {

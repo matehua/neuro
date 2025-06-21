@@ -1,0 +1,31 @@
+{
+  "timestamp": "2025-06-19T11:57:26.368Z",
+  "summary": {
+    "totalEnglishKeys": 989,
+    "totalChineseKeys": 1954,
+    "missingCount": 0,
+    "placeholderCount": 0,
+    "emptyCount": 0,
+    "typeErrorCount": 0,
+    "completionRate": "100.0"
+  },
+  "categoryBreakdown": {
+    "consulting-rooms": {
+      "total": 989,
+      "missing": 0,
+      "placeholder": 0,
+      "empty": 0,
+      "complete": 989
+    }
+  },
+  "priorityBreakdown": {
+    "critical": [],
+    "high": [],
+    "medium": [],
+    "low": []
+  },
+  "missingTranslations": [],
+  "placeholderTranslations": [],
+  "emptyTranslations": [],
+  "typeErrorTranslations": []
+}

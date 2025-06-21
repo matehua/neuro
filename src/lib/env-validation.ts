@@ -180,6 +180,7 @@ export function validateEnvironmentVariables(): {
         warnings.push('APP_ENV should be set to "production" in production builds');
       }
     }
+
     // Production-specific validations
     try {
       if (isProduction) {

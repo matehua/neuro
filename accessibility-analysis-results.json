@@ -1,0 +1,202 @@
+{
+  "issues": {
+    "semanticHTML": [
+      {
+        "file": "AppointmentForm.tsx",
+        "issue": "High div usage (7 divs vs 0 semantic elements)",
+        "priority": "medium",
+        "fix": "Replace appropriate divs with semantic HTML elements"
+      },
+      {
+        "file": "ErrorBoundary.tsx",
+        "issue": "High div usage (5 divs vs 0 semantic elements)",
+        "priority": "medium",
+        "fix": "Replace appropriate divs with semantic HTML elements"
+      },
+      {
+        "file": "Footer.tsx",
+        "issue": "High div usage (9 divs vs 1 semantic elements)",
+        "priority": "medium",
+        "fix": "Replace appropriate divs with semantic HTML elements"
+      },
+      {
+        "file": "Navbar.tsx",
+        "issue": "High div usage (12 divs vs 3 semantic elements)",
+        "priority": "medium",
+        "fix": "Replace appropriate divs with semantic HTML elements"
+      },
+      {
+        "file": "HeroSection.tsx",
+        "issue": "High div usage (8 divs vs 1 semantic elements)",
+        "priority": "medium",
+        "fix": "Replace appropriate divs with semantic HTML elements"
+      },
+      {
+        "file": "TestimonialsSection.tsx",
+        "issue": "High div usage (12 divs vs 1 semantic elements)",
+        "priority": "medium",
+        "fix": "Replace appropriate divs with semantic HTML elements"
+      },
+      {
+        "file": "IndependentReviewsSection.tsx",
+        "issue": "High div usage (10 divs vs 1 semantic elements)",
+        "priority": "medium",
+        "fix": "Replace appropriate divs with semantic HTML elements"
+      }
+    ],
+    "ariaLabels": [
+      {
+        "file": "TestimonialsSection.tsx",
+        "issue": "3 buttons without ARIA labels",
+        "priority": "high",
+        "fix": "Add aria-label or aria-labelledby to buttons"
+      }
+    ],
+    "headingHierarchy": [],
+    "focusManagement": [],
+    "colorContrast": [],
+    "imageAlt": []
+  },
+  "fixes": {
+    "applied": [],
+    "pending": [
+      {
+        "category": "Semantic HTML",
+        "priority": "HIGH",
+        "description": "Replace div elements with semantic HTML",
+        "files": [
+          "Footer.tsx",
+          "Navbar.tsx",
+          "HeroSection.tsx"
+        ],
+        "impact": "Screen reader navigation, SEO, code maintainability",
+        "effort": "Medium",
+        "fixes": [
+          "Replace <div className=\"nav\"> with <nav>",
+          "Replace <div className=\"main\"> with <main>",
+          "Replace <div className=\"header\"> with <header>",
+          "Replace <div className=\"footer\"> with <footer>",
+          "Replace <div className=\"section\"> with <section>"
+        ]
+      },
+      {
+        "category": "ARIA Labels",
+        "priority": "HIGH",
+        "description": "Add missing ARIA labels and descriptions",
+        "files": [
+          "AppointmentForm.tsx",
+          "Navbar.tsx",
+          "TestimonialsSection.tsx"
+        ],
+        "impact": "Screen reader accessibility, form usability",
+        "effort": "Low",
+        "fixes": [
+          "Add aria-label to icon-only buttons",
+          "Add aria-labelledby to form sections",
+          "Add aria-describedby to form inputs",
+          "Add role=\"navigation\" to nav elements",
+          "Add aria-expanded to collapsible elements"
+        ]
+      },
+      {
+        "category": "Heading Hierarchy",
+        "priority": "HIGH",
+        "description": "Fix heading structure and hierarchy",
+        "files": [
+          "Multiple pages"
+        ],
+        "impact": "Screen reader navigation, content structure",
+        "effort": "Medium",
+        "fixes": [
+          "Ensure single h1 per page",
+          "Fix heading level gaps (h2 → h4)",
+          "Add proper heading structure to sections",
+          "Use aria-labelledby for section headings"
+        ]
+      },
+      {
+        "category": "Focus Management",
+        "priority": "MEDIUM",
+        "description": "Improve keyboard navigation and focus indicators",
+        "effort": "Medium",
+        "fixes": [
+          "Add visible focus indicators",
+          "Implement skip links",
+          "Manage focus for modals and dropdowns",
+          "Add tabindex where appropriate"
+        ]
+      },
+      {
+        "category": "Color Contrast",
+        "priority": "MEDIUM",
+        "description": "Ensure WCAG AA color contrast compliance",
+        "effort": "Low",
+        "fixes": [
+          "Check text/background contrast ratios",
+          "Adjust muted text colors",
+          "Ensure interactive element contrast",
+          "Add high contrast mode support"
+        ]
+      }
+    ],
+    "recommendations": []
+  },
+  "implementationPlan": {
+    "phase1": {
+      "name": "Critical Semantic HTML Fixes",
+      "duration": "1-2 days",
+      "files": [
+        "Footer.tsx",
+        "Navbar.tsx",
+        "HeroSection.tsx"
+      ],
+      "tasks": [
+        "Replace div navigation with nav elements",
+        "Add main, header, footer semantic elements",
+        "Replace div sections with section elements",
+        "Add proper landmark roles"
+      ]
+    },
+    "phase2": {
+      "name": "ARIA Labels and Descriptions",
+      "duration": "1 day",
+      "files": [
+        "AppointmentForm.tsx",
+        "All interactive components"
+      ],
+      "tasks": [
+        "Add aria-label to icon buttons",
+        "Add aria-labelledby to form sections",
+        "Add aria-describedby to inputs",
+        "Add aria-expanded to collapsible elements"
+      ]
+    },
+    "phase3": {
+      "name": "Heading Hierarchy and Structure",
+      "duration": "1 day",
+      "files": [
+        "All page components"
+      ],
+      "tasks": [
+        "Audit and fix heading levels",
+        "Ensure single h1 per page",
+        "Add section headings where missing",
+        "Implement proper heading hierarchy"
+      ]
+    },
+    "phase4": {
+      "name": "Focus Management and Keyboard Navigation",
+      "duration": "1-2 days",
+      "files": [
+        "Interactive components"
+      ],
+      "tasks": [
+        "Add skip links",
+        "Implement focus management",
+        "Add keyboard event handlers",
+        "Test tab navigation flow"
+      ]
+    }
+  },
+  "timestamp": "2025-06-19T23:15:44.311Z"
+}

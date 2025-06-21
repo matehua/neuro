@@ -1,0 +1,4987 @@
+{
+  "pages": [
+    {
+      "path": "src/pages/AppointmentBooking.tsx",
+      "name": "AppointmentBooking",
+      "fullPath": "src\\pages\\AppointmentBooking.tsx",
+      "category": "other",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "lucide-react",
+        "react-router-dom",
+        "date-fns",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/components/ui/calendar",
+        "@/components/ui/input",
+        "@/components/ui/label",
+        "@/components/ProcedureCard",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/components/ui/popover",
+        "@/components/ui/select"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "AppointmentBooking"
+        }
+      ],
+      "linesOfCode": 891,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/Appointments.tsx",
+      "name": "Appointments",
+      "fullPath": "src\\pages\\Appointments.tsx",
+      "category": "main",
+      "translationKeys": [
+        "appointments.title",
+        "appointments.subtitle",
+        "appointments.description1",
+        "appointments.description2",
+        "appointments.process.title",
+        "appointments.process.subtitle",
+        "appointments.process.steps.initialConsultation.title",
+        "appointments.process.steps.initialConsultation.description",
+        "appointments.process.steps.investigations.title",
+        "appointments.process.steps.investigations.description",
+        "appointments.process.steps.discussionOptions.title",
+        "appointments.process.steps.discussionOptions.description",
+        "appointments.process.steps.treatmentDecisions.title",
+        "appointments.process.steps.treatmentDecisions.description",
+        "appointments.appointmentInfo.title",
+        "appointments.appointmentInfo.referralRequirements.title",
+        "appointments.appointmentInfo.referralRequirements.description1",
+        "appointments.appointmentInfo.referralRequirements.description2",
+        "appointments.appointmentInfo.whatToBring.title",
+        "appointments.appointmentInfo.whatToBring.items",
+        "appointments.appointmentInfo.whatToBring.description",
+        "appointments.appointmentInfo.consultationProcess.title",
+        "appointments.appointmentInfo.consultationProcess.description1",
+        "appointments.appointmentInfo.consultationProcess.description2",
+        "appointments.appointmentInfo.consultationProcess.description3",
+        "appointments.appointmentInfo.telehealth.title",
+        "appointments.appointmentInfo.telehealth.description1",
+        "appointments.appointmentInfo.telehealth.description2",
+        "appointments.requestForm.title",
+        "appointments.requestForm.firstName",
+        "appointments.requestForm.lastName",
+        "appointments.requestForm.email",
+        "appointments.requestForm.phone",
+        "appointments.requestForm.preferredLocation",
+        "appointments.requestForm.selectLocation",
+        "appointments.requestForm.reason",
+        "appointments.requestForm.reasonPlaceholder",
+        "appointments.requestForm.referral",
+        "appointments.requestForm.selectOption",
+        "appointments.requestForm.haveReferral",
+        "appointments.requestForm.needReferralInfo",
+        "appointments.requestForm.submit",
+        "appointments.requestForm.confirmation",
+        "appointments.investigations.title",
+        "appointments.investigations.description1",
+        "appointments.investigations.description2",
+        "appointments.investigations.items",
+        "appointments.investigations.description3",
+        "appointments.treatmentOptions.title",
+        "appointments.treatmentOptions.description1",
+        "appointments.treatmentOptions.description2",
+        "appointments.treatmentOptions.description3",
+        "appointments.treatmentOptions.description4",
+        "appointments.fees.title",
+        "appointments.fees.subtitle",
+        "appointments.fees.initialConsultation.title",
+        "appointments.fees.initialConsultation.description",
+        "appointments.fee",
+        "appointments.fees.initialConsultation.fee",
+        "appointments.medicareRebate",
+        "appointments.fees.initialConsultation.rebate",
+        "appointments.outOfPocketCost",
+        "appointments.fees.initialConsultation.outOfPocket",
+        "appointments.fees.reviewConsultation.title",
+        "appointments.fees.reviewConsultation.description",
+        "appointments.fees.reviewConsultation.fee",
+        "appointments.fees.reviewConsultation.rebate",
+        "appointments.fees.reviewConsultation.outOfPocket",
+        "appointments.fees.insuranceOptions.title",
+        "appointments.fees.insuranceOptions.privateHealth.title",
+        "appointments.fees.insuranceOptions.privateHealth.description",
+        "appointments.fees.insuranceOptions.tac.title",
+        "appointments.fees.insuranceOptions.tac.description",
+        "appointments.fees.insuranceOptions.veteranAffairs.title",
+        "appointments.fees.insuranceOptions.veteranAffairs.description",
+        "appointments.fees.insuranceOptions.workCover.title",
+        "appointments.fees.insuranceOptions.workCover.description",
+        "appointments.privacy.title",
+        "appointments.privacy.description1",
+        "appointments.privacy.description2",
+        "appointments.locations.title",
+        "appointments.locations.subtitle1",
+        "appointments.locations.subtitle2",
+        "appointments.locations.mainOffice.title",
+        "appointments.locations.mainOffice.address.split",
+        "appointments.phone",
+        "appointments.locations.mainOffice.phone",
+        "appointments.fax",
+        "appointments.locations.mainOffice.fax",
+        "appointments.email",
+        "appointments.locations.mainOffice.email",
+        "appointments.locations.mainOffice.viewDetails",
+        "appointments.locations.allLocations",
+        "appointments.locations.viewAllLocations"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/input",
+        "@/components/ui/label",
+        "@/components/ui/textarea",
+        "@/lib/utils",
+        "@/lib/seo",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "@/components/ui/select"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Appointments"
+        }
+      ],
+      "linesOfCode": 824,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/ConsultingRooms.tsx",
+      "name": "ConsultingRooms",
+      "fullPath": "src\\pages\\ConsultingRooms.tsx",
+      "category": "other",
+      "translationKeys": [
+        "consultingRooms"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/components/ui/input",
+        "@/components/ui/label",
+        "@/components/ui/textarea",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "ConsultingRooms"
+        }
+      ],
+      "linesOfCode": 337,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/Contact.tsx",
+      "name": "Contact",
+      "fullPath": "src\\pages\\Contact.tsx",
+      "category": "main",
+      "translationKeys": [
+        "contact.title",
+        "contact.subtitle",
+        "contact.getInTouch",
+        "contact.address",
+        "contact.phone",
+        "contact.email",
+        "contact.receptionHours",
+        "contact.sendMessage",
+        "contact.fullName",
+        "contact.phoneNumber",
+        "contact.subject",
+        "contact.message",
+        "contact.howCanWeHelp",
+        "contact.send",
+        "contact.messageSent",
+        "contact.thankYou",
+        "nav.locations",
+        "home.featuredProcedures.viewAll"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/input",
+        "@/components/ui/label",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Contact"
+        }
+      ],
+      "linesOfCode": 760,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/expertise/CervicalDiscReplacement.tsx",
+      "name": "CervicalDiscReplacement",
+      "fullPath": "src\\pages\\expertise\\CervicalDiscReplacement.tsx",
+      "category": "expertise",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "CervicalDiscReplacement"
+        }
+      ],
+      "linesOfCode": 422,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/expertise/ImageGuidedSurgery.tsx",
+      "name": "ImageGuidedSurgery",
+      "fullPath": "src\\pages\\expertise\\ImageGuidedSurgery.tsx",
+      "category": "expertise",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "ImageGuidedSurgery"
+        }
+      ],
+      "linesOfCode": 374,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/expertise/LumbarDiscReplacement.tsx",
+      "name": "LumbarDiscReplacement",
+      "fullPath": "src\\pages\\expertise\\LumbarDiscReplacement.tsx",
+      "category": "expertise",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "LumbarDiscReplacement"
+        }
+      ],
+      "linesOfCode": 421,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/expertise/RoboticSpineSurgery.tsx",
+      "name": "RoboticSpineSurgery",
+      "fullPath": "src\\pages\\expertise\\RoboticSpineSurgery.tsx",
+      "category": "expertise",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "RoboticSpineSurgery"
+        }
+      ],
+      "linesOfCode": 436,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/Expertise.tsx",
+      "name": "Expertise",
+      "fullPath": "src\\pages\\Expertise.tsx",
+      "category": "other",
+      "translationKeys": [
+        "expertisePage.hero.title",
+        "expertisePage.hero.subtitle",
+        "expertisePage.introduction.paragraph1",
+        "expertisePage.introduction.paragraph2",
+        "expertisePage.introduction.paragraph3",
+        "procedureDescriptions",
+        "expertiseCards.brainConditions.description",
+        "expertiseCards.spinalProblems.description",
+        "expertiseCards.nerveProblems.description",
+        "expertiseCards.medicolegalReports.title",
+        "expertiseCards.medicolegalReports.description",
+        "home.welcome.learnMore",
+        "home.featuredProcedures.title",
+        "nav.expertiseSubmenu.cervicalDisc",
+        "expertisePage.specializedProcedures.cervicalDisc.description",
+        "nav.expertiseSubmenu.lumbarDisc",
+        "expertisePage.specializedProcedures.lumbarDisc.description",
+        "nav.expertiseSubmenu.imageGuided",
+        "expertisePage.specializedProcedures.imageGuided.description",
+        "nav.expertiseSubmenu.roboticSpine",
+        "expertisePage.specializedProcedures.roboticSpine.description",
+        "expertisePage.surgicalApproach.title",
+        "expertisePage.surgicalApproach.subtitle",
+        "expertisePage.surgicalApproach.principles.identification.title",
+        "expertisePage.surgicalApproach.principles.identification.description",
+        "expertisePage.surgicalApproach.principles.access.title",
+        "expertisePage.surgicalApproach.principles.access.description",
+        "expertisePage.surgicalApproach.principles.repair.title",
+        "expertisePage.surgicalApproach.principles.repair.description",
+        "expertisePage.surgicalApproach.cta",
+        "technologiesPage.title",
+        "technologiesPage.description",
+        "technologiesPage.categories.wellness.title",
+        "technologiesPage.categories.wellness.description",
+        "technologiesPage.categories.wellness.items.slice",
+        "technologiesPage.categories.imagingTech.title",
+        "technologiesPage.categories.imagingTech.description",
+        "technologiesPage.categories.imagingTech.items.slice",
+        "technologiesPage.categories.services.title",
+        "technologiesPage.categories.services.description",
+        "technologiesPage.categories.services.items.slice",
+        "technologiesPage.categories.brainSurgery.title",
+        "technologiesPage.categories.brainSurgery.description",
+        "technologiesPage.categories.brainSurgery.items.slice"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/CTASection",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/lib/utils",
+        "@/lib/seo",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Expertise"
+        }
+      ],
+      "linesOfCode": 543,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/Faq.tsx",
+      "name": "Faq",
+      "fullPath": "src\\pages\\Faq.tsx",
+      "category": "other",
+      "translationKeys": [
+        "nav.faq",
+        "contact.faqSubtitle",
+        "home.cta.title",
+        "home.cta.description",
+        "home.cta.bookNow",
+        "nav.contact"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/SafeImage",
+        "@/components/ui/button",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "@/components/ui/accordion"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Faq"
+        }
+      ],
+      "linesOfCode": 452,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/Gallery.tsx",
+      "name": "Gallery",
+      "fullPath": "src\\pages\\Gallery.tsx",
+      "category": "other",
+      "translationKeys": [
+        "gallery.title",
+        "gallery.subtitle",
+        "gallery.filters.all",
+        "gallery.filters.exterior",
+        "gallery.filters.rooms",
+        "gallery.filters.amenities"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/SafeImage",
+        "@/lib/utils",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Gallery"
+        }
+      ],
+      "linesOfCode": 294,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/gp-resources/CareCoordination.tsx",
+      "name": "CareCoordination",
+      "fullPath": "src\\pages\\gp-resources\\CareCoordination.tsx",
+      "category": "gpResources",
+      "translationKeys": [
+        "gpResources.careCoordination.title",
+        "gpResources.careCoordination.subtitle",
+        "gpResources.careCoordination.description",
+        "gpResources.careCoordination.teamApproach.title",
+        "gpResources.careCoordination.teamApproach.description",
+        "gpResources.careCoordination.preoperativeManagement.title",
+        "gpResources.careCoordination.preoperativeManagement.description",
+        "gpResources.careCoordination.postoperativeFollowUp.title",
+        "gpResources.careCoordination.postoperativeFollowUp.description",
+        "gpResources.careCoordination.sharedCareModels.title",
+        "gpResources.careCoordination.sharedCareModels.description"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "CareCoordination"
+        }
+      ],
+      "linesOfCode": 464,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/gp-resources/Diagnostics.tsx",
+      "name": "Diagnostics",
+      "fullPath": "src\\pages\\gp-resources\\Diagnostics.tsx",
+      "category": "gpResources",
+      "translationKeys": [
+        "gpResources.diagnostics.title",
+        "gpResources.diagnostics.subtitle",
+        "gpResources.diagnostics.description",
+        "gpResources.diagnostics.imagingGuidelines.title",
+        "gpResources.diagnostics.imagingGuidelines.description",
+        "gpResources.diagnostics.neurologicalAssessment.title",
+        "gpResources.diagnostics.neurologicalAssessment.description",
+        "gpResources.diagnostics.specialisedTests.description",
+        "gpResources.diagnostics.interpretingResults.title",
+        "gpResources.diagnostics.interpretingResults.description"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Diagnostics"
+        }
+      ],
+      "linesOfCode": 495,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/gp-resources/Emergencies.tsx",
+      "name": "Emergencies",
+      "fullPath": "src\\pages\\gp-resources\\Emergencies.tsx",
+      "category": "gpResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "lucide-react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Emergencies"
+        }
+      ],
+      "linesOfCode": 367,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/gp-resources/ReferralProtocols.tsx",
+      "name": "ReferralProtocols",
+      "fullPath": "src\\pages\\gp-resources\\ReferralProtocols.tsx",
+      "category": "gpResources",
+      "translationKeys": [
+        "gpResources.referralProtocols.title",
+        "gpResources.referralProtocols.subtitle",
+        "gpResources.referralProtocols.description",
+        "gpResources.referralProtocols.urgentReferrals.title",
+        "gpResources.referralProtocols.urgentReferrals.description",
+        "gpResources.referralProtocols.standardReferrals.title",
+        "gpResources.referralProtocols.standardReferrals.description",
+        "gpResources.referralProtocols.referralProcess.title",
+        "gpResources.referralProtocols.referralProcess.description",
+        "gpResources.referralProtocols.triageCategories.title",
+        "gpResources.referralProtocols.triageCategories.description"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "ReferralProtocols"
+        }
+      ],
+      "linesOfCode": 323,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/GPResources.tsx",
+      "name": "GPResources",
+      "fullPath": "src\\pages\\GPResources.tsx",
+      "category": "other",
+      "translationKeys": [
+        "gpResources.title",
+        "gpResources.subtitle",
+        "gpResources.overview.title",
+        "gpResources.overview.description",
+        "gpResources.referralProtocols.title",
+        "gpResources.referralProtocols.subtitle",
+        "gpResources.referralProtocols.description",
+        "gpResources.diagnostics.title",
+        "gpResources.diagnostics.subtitle",
+        "gpResources.diagnostics.description",
+        "gpResources.careCoordination.title",
+        "gpResources.careCoordination.subtitle",
+        "gpResources.careCoordination.description",
+        "gpResources.emergencies.title",
+        "gpResources.emergencies.subtitle",
+        "gpResources.emergencies.description"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "GPResources"
+        }
+      ],
+      "linesOfCode": 173,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/Index.tsx",
+      "name": "Index",
+      "fullPath": "src\\pages\\Index.tsx",
+      "category": "main",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "lucide-react",
+        "react-router-dom",
+        "@/components/CTASection",
+        "@/components/HeroSection",
+        "@/components/IndependentReviewsSection",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/lib/utils",
+        "@/lib/seo",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Index"
+        }
+      ],
+      "linesOfCode": 777,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/locations/bundoora/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\bundoora\\index.tsx",
+      "category": "locations",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "BundooraLocation"
+        }
+      ],
+      "linesOfCode": 618,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/locations/dandenong/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\dandenong\\index.tsx",
+      "category": "locations",
+      "translationKeys": [
+        "dandenongLocation",
+        "dandenongLocation.locationDetails1",
+        "dandenongLocation.diagnosticFacilitiesDetails1",
+        "dandenongLocation.therapeuticInterventions.description",
+        "dandenongLocation.facilities.accessibleEnvironment.description",
+        "hospitals",
+        "dandenongLocation.readyToSchedule.description",
+        "email",
+        "phone"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "DandenongLocation"
+        }
+      ],
+      "linesOfCode": 644,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/locations/frankston/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\frankston\\index.tsx",
+      "category": "locations",
+      "translationKeys": [
+        "locations",
+        "frankstonLocation",
+        "frankstonLocation.conditionsTreated.spinalConditions.conditions",
+        "frankstonLocation.conditionsTreated.brainConditions.conditions",
+        "frankstonLocation.conditionsTreated.nerveConditions.conditions",
+        "hospitals"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "FrankstonLocation"
+        }
+      ],
+      "linesOfCode": 865,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/locations/heidelberg/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\heidelberg\\index.tsx",
+      "category": "locations",
+      "translationKeys": [
+        "heidelbergLocation",
+        "locationDetails",
+        "heidelbergLocation.diagnosticFacilitiesDetails1",
+        "heidelbergLocation.therapeuticInterventions.description",
+        "hospitals",
+        "email",
+        "phone"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "HeidelbergLocation"
+        }
+      ],
+      "linesOfCode": 733,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/locations/langwarrin/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\langwarrin\\index.tsx",
+      "category": "locations",
+      "translationKeys": [
+        "locations",
+        "langwarrinLocation"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "LangwarrinLocation"
+        }
+      ],
+      "linesOfCode": 623,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/locations/LocationDetail.tsx",
+      "name": "LocationDetail",
+      "fullPath": "src\\pages\\locations\\LocationDetail.tsx",
+      "category": "locations",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "lucide-react",
+        "react-router-dom",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/SafeImage",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "LocationDetail"
+        }
+      ],
+      "linesOfCode": 406,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/locations/moonee-ponds/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\moonee-ponds\\index.tsx",
+      "category": "locations",
+      "translationKeys": [
+        "mooneePondsLocation",
+        "locations",
+        "hospitals",
+        "email",
+        "phone"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "MooneePondsLocation"
+        }
+      ],
+      "linesOfCode": 719,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/locations/mornington/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\mornington\\index.tsx",
+      "category": "locations",
+      "translationKeys": [
+        "locations",
+        "appointments",
+        "morningtonLocation"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "MorningtonLocation"
+        }
+      ],
+      "linesOfCode": 710,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/locations/sunbury/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\sunbury\\index.tsx",
+      "category": "locations",
+      "translationKeys": [
+        "sunburyLocation",
+        "locations",
+        "hospitals",
+        "email",
+        "phone"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "SunburyLocation"
+        }
+      ],
+      "linesOfCode": 731,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/locations/surrey-hills/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\surrey-hills\\index.tsx",
+      "category": "locations",
+      "translationKeys": [
+        "surreyHillsLocation",
+        "hospitals"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "SurreyHillsLocation"
+        }
+      ],
+      "linesOfCode": 903,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/locations/wantirna/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\wantirna\\index.tsx",
+      "category": "locations",
+      "translationKeys": [
+        "wantirnaLocation",
+        "wantirnaLocation.byCarDetails",
+        "wantirnaLocation.facilities.description",
+        "hospitals",
+        "wantirnaLocation.readyToSchedule.description"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "WantirnaLocation"
+        }
+      ],
+      "linesOfCode": 607,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/locations/werribee/index.tsx",
+      "name": "index",
+      "fullPath": "src\\pages\\locations\\werribee\\index.tsx",
+      "category": "locations",
+      "translationKeys": [
+        "locations",
+        "werribeeLocation",
+        "hospitals",
+        "email",
+        "phone"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "WerribeeLocation"
+        }
+      ],
+      "linesOfCode": 731,
+      "isIndexFile": true
+    },
+    {
+      "path": "src/pages/Locations.tsx",
+      "name": "Locations",
+      "fullPath": "src\\pages\\Locations.tsx",
+      "category": "other",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/SafeImage",
+        "@/components/ui/button",
+        "@/lib/utils",
+        "@/contexts/DeviceContext"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Locations"
+        }
+      ],
+      "linesOfCode": 327,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/Medicolegal.tsx",
+      "name": "Medicolegal",
+      "fullPath": "src\\pages\\Medicolegal.tsx",
+      "category": "other",
+      "translationKeys": [
+        "medicolegal",
+        "home",
+        "contact"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Medicolegal"
+        }
+      ],
+      "linesOfCode": 637,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/NotFound.tsx",
+      "name": "NotFound",
+      "fullPath": "src\\pages\\NotFound.tsx",
+      "category": "main",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "lucide-react",
+        "react-router-dom",
+        "react",
+        "@/components/ui/button"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "NotFound"
+        }
+      ],
+      "linesOfCode": 43,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/AgeSpecificSpineRecommendations.tsx",
+      "name": "AgeSpecificSpineRecommendations",
+      "fullPath": "src\\pages\\patient-resources\\AgeSpecificSpineRecommendations.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "AgeSpecificSpineRecommendations"
+        }
+      ],
+      "linesOfCode": 485,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/AssessmentTools.tsx",
+      "name": "AssessmentTools",
+      "fullPath": "src\\pages\\patient-resources\\AssessmentTools.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "lucide-react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "AssessmentTools"
+        }
+      ],
+      "linesOfCode": 385,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/CervicalSpineExercises.tsx",
+      "name": "CervicalSpineExercises",
+      "fullPath": "src\\pages\\patient-resources\\CervicalSpineExercises.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "CervicalSpineExercises"
+        }
+      ],
+      "linesOfCode": 619,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/CervicalSpineInjury.tsx",
+      "name": "CervicalSpineInjury",
+      "fullPath": "src\\pages\\patient-resources\\CervicalSpineInjury.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "CervicalSpineInjury"
+        }
+      ],
+      "linesOfCode": 465,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/ConditionInformation.tsx",
+      "name": "ConditionInformation",
+      "fullPath": "src\\pages\\patient-resources\\ConditionInformation.tsx",
+      "category": "patientResources",
+      "translationKeys": [
+        "patientResources.conditionInfo.title",
+        "patientResources.conditionInfo.subtitle",
+        "patientResources.conditionInfo.searchPlaceholder",
+        "patientResources.conditionInfo.exploreConditions",
+        "patientResources",
+        "patientResources.conditions",
+        "patientResources.conditionInfo.understandingAnatomy",
+        "patientResources.conditionInfo.notSureAboutCondition",
+        "patientResources.conditionInfo.takeAssessment",
+        "patientResources.assessmentTools.startAssessment"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/SafeImage",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/input",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "ConditionInformation"
+        }
+      ],
+      "linesOfCode": 269,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/Arthrosis.tsx",
+      "name": "Arthrosis",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "@/components/StandardPageLayout",
+        "@/components/medical-conditions/shared/ConditionHeroSection",
+        "@/components/medical-conditions/shared/ConditionQuickFacts",
+        "@/components/medical-conditions/shared/ConditionOverviewSection",
+        "@/components/medical-conditions/arthrosis/ArthrosisTypesSection",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Arthrosis"
+        }
+      ],
+      "linesOfCode": 1461,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/Discopathy.tsx",
+      "name": "Discopathy",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\Discopathy.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "@/components/medical-conditions/ConditionHero",
+        "@/components/medical-conditions/ConditionOverview",
+        "@/components/medical-conditions/DegenerationProcess",
+        "@/components/StandardPageLayout",
+        "@/data/conditions/discopathy"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Discopathy"
+        }
+      ],
+      "linesOfCode": 65,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/FacetArthropathy.tsx",
+      "name": "FacetArthropathy",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "@/components/StandardPageLayout",
+        "@/components/medical-conditions/shared/ConditionHeroSection",
+        "@/components/medical-conditions/shared/ConditionQuickFacts",
+        "@/components/medical-conditions/shared/ConditionOverviewSection",
+        "@/components/medical-conditions/facet-arthropathy/FacetJointAnatomySection",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "FacetArthropathy"
+        }
+      ],
+      "linesOfCode": 1478,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/FacetArthropathyRefactored.tsx",
+      "name": "FacetArthropathyRefactored",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/StandardPageLayout",
+        "@/components/medical-conditions",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/data/conditions/facet-arthropathy",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "FacetArthropathyRefactored"
+        }
+      ],
+      "linesOfCode": 378,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/HerniatedDisc.tsx",
+      "name": "HerniatedDisc",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\HerniatedDisc.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "HerniatedDisc"
+        }
+      ],
+      "linesOfCode": 1604,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/OccipitalNeuralgia.tsx",
+      "name": "OccipitalNeuralgia",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\OccipitalNeuralgia.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "OccipitalNeuralgia"
+        }
+      ],
+      "linesOfCode": 1664,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/ParsDefects.tsx",
+      "name": "ParsDefects",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "ParsDefects"
+        }
+      ],
+      "linesOfCode": 1682,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/PiriformisSyndrome.tsx",
+      "name": "PiriformisSyndrome",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "PiriformisSyndrome"
+        }
+      ],
+      "linesOfCode": 1678,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/Radiculopathy.tsx",
+      "name": "Radiculopathy",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\Radiculopathy.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Radiculopathy"
+        }
+      ],
+      "linesOfCode": 1842,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/SacroiliacArthropathy.tsx",
+      "name": "SacroiliacArthropathy",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "SacroiliacArthropathy"
+        }
+      ],
+      "linesOfCode": 1681,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/Sciatica.tsx",
+      "name": "Sciatica",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Sciatica"
+        }
+      ],
+      "linesOfCode": 1742,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/SpinalStenosis.tsx",
+      "name": "SpinalStenosis",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\SpinalStenosis.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "SpinalStenosis"
+        }
+      ],
+      "linesOfCode": 1772,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/Spondylolisthesis.tsx",
+      "name": "Spondylolisthesis",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\Spondylolisthesis.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Spondylolisthesis"
+        }
+      ],
+      "linesOfCode": 1751,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/Spondylosis.tsx",
+      "name": "Spondylosis",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Spondylosis"
+        }
+      ],
+      "linesOfCode": 1678,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/conditions/ThoracicOutletSyndrome.tsx",
+      "name": "ThoracicOutletSyndrome",
+      "fullPath": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/lib/utils",
+        "@/contexts/DeviceContext",
+        "@/contexts/LanguageContext",
+        "lucide-react",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "ThoracicOutletSyndrome"
+        }
+      ],
+      "linesOfCode": 1683,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/ExerciseLibrary.tsx",
+      "name": "ExerciseLibrary",
+      "fullPath": "src\\pages\\patient-resources\\ExerciseLibrary.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "lucide-react",
+        "@/components/ErrorBoundary",
+        "@/components/PageHeader",
+        "@/components/SafeImage",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/badge",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/input",
+        "@/components/ui/select",
+        "@/components/ui/tabs",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "@/components/ui/dialog"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "ExerciseLibrary"
+        }
+      ],
+      "linesOfCode": 586,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/ExercisePainMedRisks.tsx",
+      "name": "ExercisePainMedRisks",
+      "fullPath": "src\\pages\\patient-resources\\ExercisePainMedRisks.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "ExercisePainMedRisks"
+        }
+      ],
+      "linesOfCode": 470,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/IndividualSpineHealthProgramme.tsx",
+      "name": "IndividualSpineHealthProgramme",
+      "fullPath": "src\\pages\\patient-resources\\IndividualSpineHealthProgramme.tsx",
+      "category": "patientResources",
+      "translationKeys": [
+        "patientResources.individualSpineHealthProgramme.title",
+        "patientResources.individualSpineHealthProgramme.subtitle",
+        "patientResources.individualSpineHealthProgramme.startAssessment",
+        "patientResources.individualSpineHealthProgramme.exploreFeatures",
+        "patientResources.individualSpineHealthProgramme.journey.title",
+        "patientResources.individualSpineHealthProgramme.journey.description",
+        "patientResources.individualSpineHealthProgramme.journey.approach",
+        "patientResources.individualSpineHealthProgramme.journey.assess",
+        "patientResources.individualSpineHealthProgramme.journey.educate",
+        "patientResources.individualSpineHealthProgramme.journey.recommend",
+        "patientResources.individualSpineHealthProgramme.journey.track",
+        "patientResources.individualSpineHealthProgramme.journey.support",
+        "patientResources.individualSpineHealthProgramme.journey.howItWorks",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.title",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.title",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.description",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.content",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.button",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.education.title",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.education.description",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.education.content",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.education.button",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.title",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.description",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.content",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.button",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.title",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.description",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.content",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.button",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.title",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.description",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.content",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.button",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.title",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.description",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.content",
+        "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.button",
+        "patientResources.individualSpineHealthProgramme.readyToTakeControl.title",
+        "patientResources.individualSpineHealthProgramme.readyToTakeControl.description",
+        "patientResources.individualSpineHealthProgramme.readyToTakeControl.startAssessment",
+        "patientResources.individualSpineHealthProgramme.readyToTakeControl.scheduleConsultation"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/SafeImage",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/input",
+        "@/components/ui/label",
+        "@/components/ui/tabs",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "IndividualSpineHealthProgramme"
+        }
+      ],
+      "linesOfCode": 330,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/LifestyleModifications.tsx",
+      "name": "LifestyleModifications",
+      "fullPath": "src\\pages\\patient-resources\\LifestyleModifications.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "LifestyleModifications"
+        }
+      ],
+      "linesOfCode": 869,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/PatientDashboard.tsx",
+      "name": "PatientDashboard",
+      "fullPath": "src\\pages\\patient-resources\\PatientDashboard.tsx",
+      "category": "patientResources",
+      "translationKeys": [
+        "patientResources.patientDashboard.title",
+        "patientResources.patientDashboard.subtitle",
+        "patientResources.patientDashboard.login",
+        "patientResources.patientDashboard.register",
+        "patientResources.patientDashboard.features.trackProgress",
+        "patientResources.patientDashboard.features.manageExercises",
+        "patientResources.patientDashboard.features.setGoals",
+        "patientResources.patientDashboard.features.viewHistory",
+        "patientResources.patientDashboard.features.shareWithProvider"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "lucide-react",
+        "react-router-dom",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/input",
+        "@/components/ui/label",
+        "@/components/ui/tabs",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "PatientDashboard"
+        }
+      ],
+      "linesOfCode": 508,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/SpineAndBrainHealth.tsx",
+      "name": "SpineAndBrainHealth",
+      "fullPath": "src\\pages\\patient-resources\\SpineAndBrainHealth.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "lucide-react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "SpineAndBrainHealth"
+        }
+      ],
+      "linesOfCode": 331,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/SpineConditionsLibrary.tsx",
+      "name": "SpineConditionsLibrary",
+      "fullPath": "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/accordion",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "SpineConditionsLibrary"
+        }
+      ],
+      "linesOfCode": 774,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/SpineHealthApp.tsx",
+      "name": "SpineHealthApp",
+      "fullPath": "src\\pages\\patient-resources\\SpineHealthApp.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "lucide-react",
+        "react-router-dom",
+        "@/components/Footer",
+        "@/components/Navbar",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/components/ui/tabs",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "SpineHealthApp"
+        }
+      ],
+      "linesOfCode": 372,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/SpineSafeExercises.tsx",
+      "name": "SpineSafeExercises",
+      "fullPath": "src\\pages\\patient-resources\\SpineSafeExercises.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "SpineSafeExercises"
+        }
+      ],
+      "linesOfCode": 630,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/patient-resources/YouthfulSpine.tsx",
+      "name": "YouthfulSpine",
+      "fullPath": "src\\pages\\patient-resources\\YouthfulSpine.tsx",
+      "category": "patientResources",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/components/ui/card",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "lucide-react"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "YouthfulSpine"
+        }
+      ],
+      "linesOfCode": 562,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/PatientResources.tsx",
+      "name": "PatientResources",
+      "fullPath": "src\\pages\\PatientResources.tsx",
+      "category": "other",
+      "translationKeys": [
+        "patientResources.categories.beforeVisit",
+        "patientResources.resources.newPatientForms",
+        "patientResources.resources.newPatientFormsDesc",
+        "patientResources.resources.insuranceInfo",
+        "patientResources.resources.insuranceInfoDesc",
+        "patientResources.resources.preparingForAppointment",
+        "patientResources.resources.preparingForAppointmentDesc",
+        "patientResources.categories.conditionsTreatments",
+        "patientResources.resources.brainConditions",
+        "patientResources.resources.brainConditionsDesc",
+        "patientResources.resources.spineConditions",
+        "patientResources.resources.spineConditionsDesc",
+        "patientResources.resources.minimallyInvasive",
+        "patientResources.resources.minimallyInvasiveDesc",
+        "patientResources.categories.surgeryInfo",
+        "patientResources.resources.preSurgeryInstructions",
+        "patientResources.resources.preSurgeryInstructionsDesc",
+        "patientResources.viewInstructions",
+        "patientResources.resources.postSurgeryCare",
+        "patientResources.resources.postSurgeryCareDesc",
+        "patientResources.resources.hospitalInfo",
+        "patientResources.resources.hospitalInfoDesc",
+        "patientResources.viewHospitals",
+        "patientResources.categories.patientSupport",
+        "patientResources.resources.supportGroups",
+        "patientResources.resources.supportGroupsDesc",
+        "patientResources.findSupport",
+        "patientResources.resources.rehabilitationResources",
+        "patientResources.resources.rehabilitationResourcesDesc",
+        "patientResources.viewResources",
+        "patientResources.resources.mentalHealthSupport",
+        "patientResources.resources.mentalHealthSupportDesc",
+        "patientResources.title",
+        "patientResources.subtitle",
+        "patientResources.educationalMaterials",
+        "patientResources.needAppointment",
+        "patientResources.appointmentDesc"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "lucide-react",
+        "react-router-dom",
+        "@/components/PageHeader",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/contexts/LanguageContext",
+        "@/locales/en"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "PatientResources"
+        }
+      ],
+      "linesOfCode": 511,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/PrivacyPolicy.tsx",
+      "name": "PrivacyPolicy",
+      "fullPath": "src\\pages\\PrivacyPolicy.tsx",
+      "category": "main",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "@/components/StandardPageLayout"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "PrivacyPolicy"
+        }
+      ],
+      "linesOfCode": 263,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/Specialties.tsx",
+      "name": "Specialties",
+      "fullPath": "src\\pages\\Specialties.tsx",
+      "category": "other",
+      "translationKeys": [
+        "specialties.title",
+        "specialties.description",
+        "specialties.filters.complexity",
+        "specialties.filters.anyComplexity",
+        "specialties.filters.moderate",
+        "specialties.filters.advanced",
+        "specialties.filters.complex",
+        "specialties.filters.highlyComplex",
+        "specialties.filters.location",
+        "specialties.filters.allLocations",
+        "specialties.filters.recoveryTime",
+        "specialties.filters.days",
+        "specialties.filters.showing",
+        "specialties.filters.of",
+        "specialties.filters.procedures",
+        "specialties.filters.resetFilters",
+        "specialties.filters.noMatch",
+        "specialties.filters.adjustFilters"
+      ],
+      "hasTranslations": true,
+      "imports": [
+        "react",
+        "@/components/ProcedureCard",
+        "@/components/StandardPageLayout",
+        "@/components/ui/button",
+        "@/types/procedures",
+        "@/components/ui/slider",
+        "@/contexts/LanguageContext",
+        "@/locales/en",
+        "@/components/ui/select"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "Specialties"
+        }
+      ],
+      "linesOfCode": 286,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/TermsConditions.tsx",
+      "name": "TermsConditions",
+      "fullPath": "src\\pages\\TermsConditions.tsx",
+      "category": "other",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "@/components/Footer",
+        "@/components/Navbar"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "TermsConditions"
+        }
+      ],
+      "linesOfCode": 145,
+      "isIndexFile": false
+    },
+    {
+      "path": "src/pages/TestImages.tsx",
+      "name": "TestImages",
+      "fullPath": "src\\pages\\TestImages.tsx",
+      "category": "other",
+      "translationKeys": [],
+      "hasTranslations": false,
+      "imports": [
+        "react",
+        "@/components/StandardPageLayout"
+      ],
+      "exports": [
+        {
+          "type": "default",
+          "name": "TestImages"
+        }
+      ],
+      "linesOfCode": 19,
+      "isIndexFile": false
+    }
+  ],
+  "translationKeys": [
+    "appointments.title",
+    "appointments.subtitle",
+    "appointments.description1",
+    "appointments.description2",
+    "appointments.process.title",
+    "appointments.process.subtitle",
+    "appointments.process.steps.initialConsultation.title",
+    "appointments.process.steps.initialConsultation.description",
+    "appointments.process.steps.investigations.title",
+    "appointments.process.steps.investigations.description",
+    "appointments.process.steps.discussionOptions.title",
+    "appointments.process.steps.discussionOptions.description",
+    "appointments.process.steps.treatmentDecisions.title",
+    "appointments.process.steps.treatmentDecisions.description",
+    "appointments.appointmentInfo.title",
+    "appointments.appointmentInfo.referralRequirements.title",
+    "appointments.appointmentInfo.referralRequirements.description1",
+    "appointments.appointmentInfo.referralRequirements.description2",
+    "appointments.appointmentInfo.whatToBring.title",
+    "appointments.appointmentInfo.whatToBring.items",
+    "appointments.appointmentInfo.whatToBring.description",
+    "appointments.appointmentInfo.consultationProcess.title",
+    "appointments.appointmentInfo.consultationProcess.description1",
+    "appointments.appointmentInfo.consultationProcess.description2",
+    "appointments.appointmentInfo.consultationProcess.description3",
+    "appointments.appointmentInfo.telehealth.title",
+    "appointments.appointmentInfo.telehealth.description1",
+    "appointments.appointmentInfo.telehealth.description2",
+    "appointments.requestForm.title",
+    "appointments.requestForm.firstName",
+    "appointments.requestForm.lastName",
+    "appointments.requestForm.email",
+    "appointments.requestForm.phone",
+    "appointments.requestForm.preferredLocation",
+    "appointments.requestForm.selectLocation",
+    "appointments.requestForm.reason",
+    "appointments.requestForm.reasonPlaceholder",
+    "appointments.requestForm.referral",
+    "appointments.requestForm.selectOption",
+    "appointments.requestForm.haveReferral",
+    "appointments.requestForm.needReferralInfo",
+    "appointments.requestForm.submit",
+    "appointments.requestForm.confirmation",
+    "appointments.investigations.title",
+    "appointments.investigations.description1",
+    "appointments.investigations.description2",
+    "appointments.investigations.items",
+    "appointments.investigations.description3",
+    "appointments.treatmentOptions.title",
+    "appointments.treatmentOptions.description1",
+    "appointments.treatmentOptions.description2",
+    "appointments.treatmentOptions.description3",
+    "appointments.treatmentOptions.description4",
+    "appointments.fees.title",
+    "appointments.fees.subtitle",
+    "appointments.fees.initialConsultation.title",
+    "appointments.fees.initialConsultation.description",
+    "appointments.fee",
+    "appointments.fees.initialConsultation.fee",
+    "appointments.medicareRebate",
+    "appointments.fees.initialConsultation.rebate",
+    "appointments.outOfPocketCost",
+    "appointments.fees.initialConsultation.outOfPocket",
+    "appointments.fees.reviewConsultation.title",
+    "appointments.fees.reviewConsultation.description",
+    "appointments.fees.reviewConsultation.fee",
+    "appointments.fees.reviewConsultation.rebate",
+    "appointments.fees.reviewConsultation.outOfPocket",
+    "appointments.fees.insuranceOptions.title",
+    "appointments.fees.insuranceOptions.privateHealth.title",
+    "appointments.fees.insuranceOptions.privateHealth.description",
+    "appointments.fees.insuranceOptions.tac.title",
+    "appointments.fees.insuranceOptions.tac.description",
+    "appointments.fees.insuranceOptions.veteranAffairs.title",
+    "appointments.fees.insuranceOptions.veteranAffairs.description",
+    "appointments.fees.insuranceOptions.workCover.title",
+    "appointments.fees.insuranceOptions.workCover.description",
+    "appointments.privacy.title",
+    "appointments.privacy.description1",
+    "appointments.privacy.description2",
+    "appointments.locations.title",
+    "appointments.locations.subtitle1",
+    "appointments.locations.subtitle2",
+    "appointments.locations.mainOffice.title",
+    "appointments.locations.mainOffice.address.split",
+    "appointments.phone",
+    "appointments.locations.mainOffice.phone",
+    "appointments.fax",
+    "appointments.locations.mainOffice.fax",
+    "appointments.email",
+    "appointments.locations.mainOffice.email",
+    "appointments.locations.mainOffice.viewDetails",
+    "appointments.locations.allLocations",
+    "appointments.locations.viewAllLocations",
+    "consultingRooms",
+    "contact.title",
+    "contact.subtitle",
+    "contact.getInTouch",
+    "contact.address",
+    "contact.phone",
+    "contact.email",
+    "contact.receptionHours",
+    "contact.sendMessage",
+    "contact.fullName",
+    "contact.phoneNumber",
+    "contact.subject",
+    "contact.message",
+    "contact.howCanWeHelp",
+    "contact.send",
+    "contact.messageSent",
+    "contact.thankYou",
+    "nav.locations",
+    "home.featuredProcedures.viewAll",
+    "expertisePage.hero.title",
+    "expertisePage.hero.subtitle",
+    "expertisePage.introduction.paragraph1",
+    "expertisePage.introduction.paragraph2",
+    "expertisePage.introduction.paragraph3",
+    "procedureDescriptions",
+    "expertiseCards.brainConditions.description",
+    "expertiseCards.spinalProblems.description",
+    "expertiseCards.nerveProblems.description",
+    "expertiseCards.medicolegalReports.title",
+    "expertiseCards.medicolegalReports.description",
+    "home.welcome.learnMore",
+    "home.featuredProcedures.title",
+    "nav.expertiseSubmenu.cervicalDisc",
+    "expertisePage.specializedProcedures.cervicalDisc.description",
+    "nav.expertiseSubmenu.lumbarDisc",
+    "expertisePage.specializedProcedures.lumbarDisc.description",
+    "nav.expertiseSubmenu.imageGuided",
+    "expertisePage.specializedProcedures.imageGuided.description",
+    "nav.expertiseSubmenu.roboticSpine",
+    "expertisePage.specializedProcedures.roboticSpine.description",
+    "expertisePage.surgicalApproach.title",
+    "expertisePage.surgicalApproach.subtitle",
+    "expertisePage.surgicalApproach.principles.identification.title",
+    "expertisePage.surgicalApproach.principles.identification.description",
+    "expertisePage.surgicalApproach.principles.access.title",
+    "expertisePage.surgicalApproach.principles.access.description",
+    "expertisePage.surgicalApproach.principles.repair.title",
+    "expertisePage.surgicalApproach.principles.repair.description",
+    "expertisePage.surgicalApproach.cta",
+    "technologiesPage.title",
+    "technologiesPage.description",
+    "technologiesPage.categories.wellness.title",
+    "technologiesPage.categories.wellness.description",
+    "technologiesPage.categories.wellness.items.slice",
+    "technologiesPage.categories.imagingTech.title",
+    "technologiesPage.categories.imagingTech.description",
+    "technologiesPage.categories.imagingTech.items.slice",
+    "technologiesPage.categories.services.title",
+    "technologiesPage.categories.services.description",
+    "technologiesPage.categories.services.items.slice",
+    "technologiesPage.categories.brainSurgery.title",
+    "technologiesPage.categories.brainSurgery.description",
+    "technologiesPage.categories.brainSurgery.items.slice",
+    "nav.faq",
+    "contact.faqSubtitle",
+    "home.cta.title",
+    "home.cta.description",
+    "home.cta.bookNow",
+    "nav.contact",
+    "gallery.title",
+    "gallery.subtitle",
+    "gallery.filters.all",
+    "gallery.filters.exterior",
+    "gallery.filters.rooms",
+    "gallery.filters.amenities",
+    "gpResources.careCoordination.title",
+    "gpResources.careCoordination.subtitle",
+    "gpResources.careCoordination.description",
+    "gpResources.careCoordination.teamApproach.title",
+    "gpResources.careCoordination.teamApproach.description",
+    "gpResources.careCoordination.preoperativeManagement.title",
+    "gpResources.careCoordination.preoperativeManagement.description",
+    "gpResources.careCoordination.postoperativeFollowUp.title",
+    "gpResources.careCoordination.postoperativeFollowUp.description",
+    "gpResources.careCoordination.sharedCareModels.title",
+    "gpResources.careCoordination.sharedCareModels.description",
+    "gpResources.diagnostics.title",
+    "gpResources.diagnostics.subtitle",
+    "gpResources.diagnostics.description",
+    "gpResources.diagnostics.imagingGuidelines.title",
+    "gpResources.diagnostics.imagingGuidelines.description",
+    "gpResources.diagnostics.neurologicalAssessment.title",
+    "gpResources.diagnostics.neurologicalAssessment.description",
+    "gpResources.diagnostics.specialisedTests.description",
+    "gpResources.diagnostics.interpretingResults.title",
+    "gpResources.diagnostics.interpretingResults.description",
+    "gpResources.referralProtocols.title",
+    "gpResources.referralProtocols.subtitle",
+    "gpResources.referralProtocols.description",
+    "gpResources.referralProtocols.urgentReferrals.title",
+    "gpResources.referralProtocols.urgentReferrals.description",
+    "gpResources.referralProtocols.standardReferrals.title",
+    "gpResources.referralProtocols.standardReferrals.description",
+    "gpResources.referralProtocols.referralProcess.title",
+    "gpResources.referralProtocols.referralProcess.description",
+    "gpResources.referralProtocols.triageCategories.title",
+    "gpResources.referralProtocols.triageCategories.description",
+    "gpResources.title",
+    "gpResources.subtitle",
+    "gpResources.overview.title",
+    "gpResources.overview.description",
+    "gpResources.emergencies.title",
+    "gpResources.emergencies.subtitle",
+    "gpResources.emergencies.description",
+    "dandenongLocation",
+    "dandenongLocation.locationDetails1",
+    "dandenongLocation.diagnosticFacilitiesDetails1",
+    "dandenongLocation.therapeuticInterventions.description",
+    "dandenongLocation.facilities.accessibleEnvironment.description",
+    "hospitals",
+    "dandenongLocation.readyToSchedule.description",
+    "email",
+    "phone",
+    "locations",
+    "frankstonLocation",
+    "frankstonLocation.conditionsTreated.spinalConditions.conditions",
+    "frankstonLocation.conditionsTreated.brainConditions.conditions",
+    "frankstonLocation.conditionsTreated.nerveConditions.conditions",
+    "heidelbergLocation",
+    "locationDetails",
+    "heidelbergLocation.diagnosticFacilitiesDetails1",
+    "heidelbergLocation.therapeuticInterventions.description",
+    "langwarrinLocation",
+    "mooneePondsLocation",
+    "appointments",
+    "morningtonLocation",
+    "sunburyLocation",
+    "surreyHillsLocation",
+    "wantirnaLocation",
+    "wantirnaLocation.byCarDetails",
+    "wantirnaLocation.facilities.description",
+    "wantirnaLocation.readyToSchedule.description",
+    "werribeeLocation",
+    "medicolegal",
+    "home",
+    "contact",
+    "patientResources.conditionInfo.title",
+    "patientResources.conditionInfo.subtitle",
+    "patientResources.conditionInfo.searchPlaceholder",
+    "patientResources.conditionInfo.exploreConditions",
+    "patientResources",
+    "patientResources.conditions",
+    "patientResources.conditionInfo.understandingAnatomy",
+    "patientResources.conditionInfo.notSureAboutCondition",
+    "patientResources.conditionInfo.takeAssessment",
+    "patientResources.assessmentTools.startAssessment",
+    "patientResources.individualSpineHealthProgramme.title",
+    "patientResources.individualSpineHealthProgramme.subtitle",
+    "patientResources.individualSpineHealthProgramme.startAssessment",
+    "patientResources.individualSpineHealthProgramme.exploreFeatures",
+    "patientResources.individualSpineHealthProgramme.journey.title",
+    "patientResources.individualSpineHealthProgramme.journey.description",
+    "patientResources.individualSpineHealthProgramme.journey.approach",
+    "patientResources.individualSpineHealthProgramme.journey.assess",
+    "patientResources.individualSpineHealthProgramme.journey.educate",
+    "patientResources.individualSpineHealthProgramme.journey.recommend",
+    "patientResources.individualSpineHealthProgramme.journey.track",
+    "patientResources.individualSpineHealthProgramme.journey.support",
+    "patientResources.individualSpineHealthProgramme.journey.howItWorks",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.title",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.title",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.description",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.content",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.button",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.education.title",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.education.description",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.education.content",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.education.button",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.title",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.description",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.content",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.button",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.title",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.description",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.content",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.button",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.title",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.description",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.content",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.button",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.title",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.description",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.content",
+    "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.button",
+    "patientResources.individualSpineHealthProgramme.readyToTakeControl.title",
+    "patientResources.individualSpineHealthProgramme.readyToTakeControl.description",
+    "patientResources.individualSpineHealthProgramme.readyToTakeControl.startAssessment",
+    "patientResources.individualSpineHealthProgramme.readyToTakeControl.scheduleConsultation",
+    "patientResources.patientDashboard.title",
+    "patientResources.patientDashboard.subtitle",
+    "patientResources.patientDashboard.login",
+    "patientResources.patientDashboard.register",
+    "patientResources.patientDashboard.features.trackProgress",
+    "patientResources.patientDashboard.features.manageExercises",
+    "patientResources.patientDashboard.features.setGoals",
+    "patientResources.patientDashboard.features.viewHistory",
+    "patientResources.patientDashboard.features.shareWithProvider",
+    "patientResources.categories.beforeVisit",
+    "patientResources.resources.newPatientForms",
+    "patientResources.resources.newPatientFormsDesc",
+    "patientResources.resources.insuranceInfo",
+    "patientResources.resources.insuranceInfoDesc",
+    "patientResources.resources.preparingForAppointment",
+    "patientResources.resources.preparingForAppointmentDesc",
+    "patientResources.categories.conditionsTreatments",
+    "patientResources.resources.brainConditions",
+    "patientResources.resources.brainConditionsDesc",
+    "patientResources.resources.spineConditions",
+    "patientResources.resources.spineConditionsDesc",
+    "patientResources.resources.minimallyInvasive",
+    "patientResources.resources.minimallyInvasiveDesc",
+    "patientResources.categories.surgeryInfo",
+    "patientResources.resources.preSurgeryInstructions",
+    "patientResources.resources.preSurgeryInstructionsDesc",
+    "patientResources.viewInstructions",
+    "patientResources.resources.postSurgeryCare",
+    "patientResources.resources.postSurgeryCareDesc",
+    "patientResources.resources.hospitalInfo",
+    "patientResources.resources.hospitalInfoDesc",
+    "patientResources.viewHospitals",
+    "patientResources.categories.patientSupport",
+    "patientResources.resources.supportGroups",
+    "patientResources.resources.supportGroupsDesc",
+    "patientResources.findSupport",
+    "patientResources.resources.rehabilitationResources",
+    "patientResources.resources.rehabilitationResourcesDesc",
+    "patientResources.viewResources",
+    "patientResources.resources.mentalHealthSupport",
+    "patientResources.resources.mentalHealthSupportDesc",
+    "patientResources.title",
+    "patientResources.subtitle",
+    "patientResources.educationalMaterials",
+    "patientResources.needAppointment",
+    "patientResources.appointmentDesc",
+    "specialties.title",
+    "specialties.description",
+    "specialties.filters.complexity",
+    "specialties.filters.anyComplexity",
+    "specialties.filters.moderate",
+    "specialties.filters.advanced",
+    "specialties.filters.complex",
+    "specialties.filters.highlyComplex",
+    "specialties.filters.location",
+    "specialties.filters.allLocations",
+    "specialties.filters.recoveryTime",
+    "specialties.filters.days",
+    "specialties.filters.showing",
+    "specialties.filters.of",
+    "specialties.filters.procedures",
+    "specialties.filters.resetFilters",
+    "specialties.filters.noMatch",
+    "specialties.filters.adjustFilters"
+  ],
+  "pageCategories": {
+    "main": [
+      {
+        "path": "src/pages/Appointments.tsx",
+        "name": "Appointments",
+        "fullPath": "src\\pages\\Appointments.tsx",
+        "category": "main",
+        "translationKeys": [
+          "appointments.title",
+          "appointments.subtitle",
+          "appointments.description1",
+          "appointments.description2",
+          "appointments.process.title",
+          "appointments.process.subtitle",
+          "appointments.process.steps.initialConsultation.title",
+          "appointments.process.steps.initialConsultation.description",
+          "appointments.process.steps.investigations.title",
+          "appointments.process.steps.investigations.description",
+          "appointments.process.steps.discussionOptions.title",
+          "appointments.process.steps.discussionOptions.description",
+          "appointments.process.steps.treatmentDecisions.title",
+          "appointments.process.steps.treatmentDecisions.description",
+          "appointments.appointmentInfo.title",
+          "appointments.appointmentInfo.referralRequirements.title",
+          "appointments.appointmentInfo.referralRequirements.description1",
+          "appointments.appointmentInfo.referralRequirements.description2",
+          "appointments.appointmentInfo.whatToBring.title",
+          "appointments.appointmentInfo.whatToBring.items",
+          "appointments.appointmentInfo.whatToBring.description",
+          "appointments.appointmentInfo.consultationProcess.title",
+          "appointments.appointmentInfo.consultationProcess.description1",
+          "appointments.appointmentInfo.consultationProcess.description2",
+          "appointments.appointmentInfo.consultationProcess.description3",
+          "appointments.appointmentInfo.telehealth.title",
+          "appointments.appointmentInfo.telehealth.description1",
+          "appointments.appointmentInfo.telehealth.description2",
+          "appointments.requestForm.title",
+          "appointments.requestForm.firstName",
+          "appointments.requestForm.lastName",
+          "appointments.requestForm.email",
+          "appointments.requestForm.phone",
+          "appointments.requestForm.preferredLocation",
+          "appointments.requestForm.selectLocation",
+          "appointments.requestForm.reason",
+          "appointments.requestForm.reasonPlaceholder",
+          "appointments.requestForm.referral",
+          "appointments.requestForm.selectOption",
+          "appointments.requestForm.haveReferral",
+          "appointments.requestForm.needReferralInfo",
+          "appointments.requestForm.submit",
+          "appointments.requestForm.confirmation",
+          "appointments.investigations.title",
+          "appointments.investigations.description1",
+          "appointments.investigations.description2",
+          "appointments.investigations.items",
+          "appointments.investigations.description3",
+          "appointments.treatmentOptions.title",
+          "appointments.treatmentOptions.description1",
+          "appointments.treatmentOptions.description2",
+          "appointments.treatmentOptions.description3",
+          "appointments.treatmentOptions.description4",
+          "appointments.fees.title",
+          "appointments.fees.subtitle",
+          "appointments.fees.initialConsultation.title",
+          "appointments.fees.initialConsultation.description",
+          "appointments.fee",
+          "appointments.fees.initialConsultation.fee",
+          "appointments.medicareRebate",
+          "appointments.fees.initialConsultation.rebate",
+          "appointments.outOfPocketCost",
+          "appointments.fees.initialConsultation.outOfPocket",
+          "appointments.fees.reviewConsultation.title",
+          "appointments.fees.reviewConsultation.description",
+          "appointments.fees.reviewConsultation.fee",
+          "appointments.fees.reviewConsultation.rebate",
+          "appointments.fees.reviewConsultation.outOfPocket",
+          "appointments.fees.insuranceOptions.title",
+          "appointments.fees.insuranceOptions.privateHealth.title",
+          "appointments.fees.insuranceOptions.privateHealth.description",
+          "appointments.fees.insuranceOptions.tac.title",
+          "appointments.fees.insuranceOptions.tac.description",
+          "appointments.fees.insuranceOptions.veteranAffairs.title",
+          "appointments.fees.insuranceOptions.veteranAffairs.description",
+          "appointments.fees.insuranceOptions.workCover.title",
+          "appointments.fees.insuranceOptions.workCover.description",
+          "appointments.privacy.title",
+          "appointments.privacy.description1",
+          "appointments.privacy.description2",
+          "appointments.locations.title",
+          "appointments.locations.subtitle1",
+          "appointments.locations.subtitle2",
+          "appointments.locations.mainOffice.title",
+          "appointments.locations.mainOffice.address.split",
+          "appointments.phone",
+          "appointments.locations.mainOffice.phone",
+          "appointments.fax",
+          "appointments.locations.mainOffice.fax",
+          "appointments.email",
+          "appointments.locations.mainOffice.email",
+          "appointments.locations.mainOffice.viewDetails",
+          "appointments.locations.allLocations",
+          "appointments.locations.viewAllLocations"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/input",
+          "@/components/ui/label",
+          "@/components/ui/textarea",
+          "@/lib/utils",
+          "@/lib/seo",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "@/components/ui/select"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Appointments"
+          }
+        ],
+        "linesOfCode": 824,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/Contact.tsx",
+        "name": "Contact",
+        "fullPath": "src\\pages\\Contact.tsx",
+        "category": "main",
+        "translationKeys": [
+          "contact.title",
+          "contact.subtitle",
+          "contact.getInTouch",
+          "contact.address",
+          "contact.phone",
+          "contact.email",
+          "contact.receptionHours",
+          "contact.sendMessage",
+          "contact.fullName",
+          "contact.phoneNumber",
+          "contact.subject",
+          "contact.message",
+          "contact.howCanWeHelp",
+          "contact.send",
+          "contact.messageSent",
+          "contact.thankYou",
+          "nav.locations",
+          "home.featuredProcedures.viewAll"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/input",
+          "@/components/ui/label",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Contact"
+          }
+        ],
+        "linesOfCode": 760,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/Index.tsx",
+        "name": "Index",
+        "fullPath": "src\\pages\\Index.tsx",
+        "category": "main",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "lucide-react",
+          "react-router-dom",
+          "@/components/CTASection",
+          "@/components/HeroSection",
+          "@/components/IndependentReviewsSection",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/lib/utils",
+          "@/lib/seo",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Index"
+          }
+        ],
+        "linesOfCode": 777,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/NotFound.tsx",
+        "name": "NotFound",
+        "fullPath": "src\\pages\\NotFound.tsx",
+        "category": "main",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "lucide-react",
+          "react-router-dom",
+          "react",
+          "@/components/ui/button"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "NotFound"
+          }
+        ],
+        "linesOfCode": 43,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/PrivacyPolicy.tsx",
+        "name": "PrivacyPolicy",
+        "fullPath": "src\\pages\\PrivacyPolicy.tsx",
+        "category": "main",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "@/components/StandardPageLayout"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "PrivacyPolicy"
+          }
+        ],
+        "linesOfCode": 263,
+        "isIndexFile": false
+      }
+    ],
+    "locations": [
+      {
+        "path": "src/pages/locations/bundoora/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\bundoora\\index.tsx",
+        "category": "locations",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "BundooraLocation"
+          }
+        ],
+        "linesOfCode": 618,
+        "isIndexFile": true
+      },
+      {
+        "path": "src/pages/locations/dandenong/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\dandenong\\index.tsx",
+        "category": "locations",
+        "translationKeys": [
+          "dandenongLocation",
+          "dandenongLocation.locationDetails1",
+          "dandenongLocation.diagnosticFacilitiesDetails1",
+          "dandenongLocation.therapeuticInterventions.description",
+          "dandenongLocation.facilities.accessibleEnvironment.description",
+          "hospitals",
+          "dandenongLocation.readyToSchedule.description",
+          "email",
+          "phone"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "DandenongLocation"
+          }
+        ],
+        "linesOfCode": 644,
+        "isIndexFile": true
+      },
+      {
+        "path": "src/pages/locations/frankston/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\frankston\\index.tsx",
+        "category": "locations",
+        "translationKeys": [
+          "locations",
+          "frankstonLocation",
+          "frankstonLocation.conditionsTreated.spinalConditions.conditions",
+          "frankstonLocation.conditionsTreated.brainConditions.conditions",
+          "frankstonLocation.conditionsTreated.nerveConditions.conditions",
+          "hospitals"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "FrankstonLocation"
+          }
+        ],
+        "linesOfCode": 865,
+        "isIndexFile": true
+      },
+      {
+        "path": "src/pages/locations/heidelberg/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\heidelberg\\index.tsx",
+        "category": "locations",
+        "translationKeys": [
+          "heidelbergLocation",
+          "locationDetails",
+          "heidelbergLocation.diagnosticFacilitiesDetails1",
+          "heidelbergLocation.therapeuticInterventions.description",
+          "hospitals",
+          "email",
+          "phone"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "HeidelbergLocation"
+          }
+        ],
+        "linesOfCode": 733,
+        "isIndexFile": true
+      },
+      {
+        "path": "src/pages/locations/langwarrin/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\langwarrin\\index.tsx",
+        "category": "locations",
+        "translationKeys": [
+          "locations",
+          "langwarrinLocation"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "LangwarrinLocation"
+          }
+        ],
+        "linesOfCode": 623,
+        "isIndexFile": true
+      },
+      {
+        "path": "src/pages/locations/LocationDetail.tsx",
+        "name": "LocationDetail",
+        "fullPath": "src\\pages\\locations\\LocationDetail.tsx",
+        "category": "locations",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "lucide-react",
+          "react-router-dom",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/SafeImage",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "LocationDetail"
+          }
+        ],
+        "linesOfCode": 406,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/locations/moonee-ponds/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\moonee-ponds\\index.tsx",
+        "category": "locations",
+        "translationKeys": [
+          "mooneePondsLocation",
+          "locations",
+          "hospitals",
+          "email",
+          "phone"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "MooneePondsLocation"
+          }
+        ],
+        "linesOfCode": 719,
+        "isIndexFile": true
+      },
+      {
+        "path": "src/pages/locations/mornington/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\mornington\\index.tsx",
+        "category": "locations",
+        "translationKeys": [
+          "locations",
+          "appointments",
+          "morningtonLocation"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "MorningtonLocation"
+          }
+        ],
+        "linesOfCode": 710,
+        "isIndexFile": true
+      },
+      {
+        "path": "src/pages/locations/sunbury/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\sunbury\\index.tsx",
+        "category": "locations",
+        "translationKeys": [
+          "sunburyLocation",
+          "locations",
+          "hospitals",
+          "email",
+          "phone"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "SunburyLocation"
+          }
+        ],
+        "linesOfCode": 731,
+        "isIndexFile": true
+      },
+      {
+        "path": "src/pages/locations/surrey-hills/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\surrey-hills\\index.tsx",
+        "category": "locations",
+        "translationKeys": [
+          "surreyHillsLocation",
+          "hospitals"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "SurreyHillsLocation"
+          }
+        ],
+        "linesOfCode": 903,
+        "isIndexFile": true
+      },
+      {
+        "path": "src/pages/locations/wantirna/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\wantirna\\index.tsx",
+        "category": "locations",
+        "translationKeys": [
+          "wantirnaLocation",
+          "wantirnaLocation.byCarDetails",
+          "wantirnaLocation.facilities.description",
+          "hospitals",
+          "wantirnaLocation.readyToSchedule.description"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "WantirnaLocation"
+          }
+        ],
+        "linesOfCode": 607,
+        "isIndexFile": true
+      },
+      {
+        "path": "src/pages/locations/werribee/index.tsx",
+        "name": "index",
+        "fullPath": "src\\pages\\locations\\werribee\\index.tsx",
+        "category": "locations",
+        "translationKeys": [
+          "locations",
+          "werribeeLocation",
+          "hospitals",
+          "email",
+          "phone"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "WerribeeLocation"
+          }
+        ],
+        "linesOfCode": 731,
+        "isIndexFile": true
+      }
+    ],
+    "expertise": [
+      {
+        "path": "src/pages/expertise/CervicalDiscReplacement.tsx",
+        "name": "CervicalDiscReplacement",
+        "fullPath": "src\\pages\\expertise\\CervicalDiscReplacement.tsx",
+        "category": "expertise",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "CervicalDiscReplacement"
+          }
+        ],
+        "linesOfCode": 422,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/expertise/ImageGuidedSurgery.tsx",
+        "name": "ImageGuidedSurgery",
+        "fullPath": "src\\pages\\expertise\\ImageGuidedSurgery.tsx",
+        "category": "expertise",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "ImageGuidedSurgery"
+          }
+        ],
+        "linesOfCode": 374,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/expertise/LumbarDiscReplacement.tsx",
+        "name": "LumbarDiscReplacement",
+        "fullPath": "src\\pages\\expertise\\LumbarDiscReplacement.tsx",
+        "category": "expertise",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "LumbarDiscReplacement"
+          }
+        ],
+        "linesOfCode": 421,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/expertise/RoboticSpineSurgery.tsx",
+        "name": "RoboticSpineSurgery",
+        "fullPath": "src\\pages\\expertise\\RoboticSpineSurgery.tsx",
+        "category": "expertise",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "RoboticSpineSurgery"
+          }
+        ],
+        "linesOfCode": 436,
+        "isIndexFile": false
+      }
+    ],
+    "patientResources": [
+      {
+        "path": "src/pages/patient-resources/AgeSpecificSpineRecommendations.tsx",
+        "name": "AgeSpecificSpineRecommendations",
+        "fullPath": "src\\pages\\patient-resources\\AgeSpecificSpineRecommendations.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "AgeSpecificSpineRecommendations"
+          }
+        ],
+        "linesOfCode": 485,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/AssessmentTools.tsx",
+        "name": "AssessmentTools",
+        "fullPath": "src\\pages\\patient-resources\\AssessmentTools.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "lucide-react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "AssessmentTools"
+          }
+        ],
+        "linesOfCode": 385,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/CervicalSpineExercises.tsx",
+        "name": "CervicalSpineExercises",
+        "fullPath": "src\\pages\\patient-resources\\CervicalSpineExercises.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "CervicalSpineExercises"
+          }
+        ],
+        "linesOfCode": 619,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/CervicalSpineInjury.tsx",
+        "name": "CervicalSpineInjury",
+        "fullPath": "src\\pages\\patient-resources\\CervicalSpineInjury.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "CervicalSpineInjury"
+          }
+        ],
+        "linesOfCode": 465,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/ConditionInformation.tsx",
+        "name": "ConditionInformation",
+        "fullPath": "src\\pages\\patient-resources\\ConditionInformation.tsx",
+        "category": "patientResources",
+        "translationKeys": [
+          "patientResources.conditionInfo.title",
+          "patientResources.conditionInfo.subtitle",
+          "patientResources.conditionInfo.searchPlaceholder",
+          "patientResources.conditionInfo.exploreConditions",
+          "patientResources",
+          "patientResources.conditions",
+          "patientResources.conditionInfo.understandingAnatomy",
+          "patientResources.conditionInfo.notSureAboutCondition",
+          "patientResources.conditionInfo.takeAssessment",
+          "patientResources.assessmentTools.startAssessment"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/SafeImage",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/input",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "ConditionInformation"
+          }
+        ],
+        "linesOfCode": 269,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/Arthrosis.tsx",
+        "name": "Arthrosis",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "@/components/StandardPageLayout",
+          "@/components/medical-conditions/shared/ConditionHeroSection",
+          "@/components/medical-conditions/shared/ConditionQuickFacts",
+          "@/components/medical-conditions/shared/ConditionOverviewSection",
+          "@/components/medical-conditions/arthrosis/ArthrosisTypesSection",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Arthrosis"
+          }
+        ],
+        "linesOfCode": 1461,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/Discopathy.tsx",
+        "name": "Discopathy",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\Discopathy.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "@/components/medical-conditions/ConditionHero",
+          "@/components/medical-conditions/ConditionOverview",
+          "@/components/medical-conditions/DegenerationProcess",
+          "@/components/StandardPageLayout",
+          "@/data/conditions/discopathy"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Discopathy"
+          }
+        ],
+        "linesOfCode": 65,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/FacetArthropathy.tsx",
+        "name": "FacetArthropathy",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "@/components/StandardPageLayout",
+          "@/components/medical-conditions/shared/ConditionHeroSection",
+          "@/components/medical-conditions/shared/ConditionQuickFacts",
+          "@/components/medical-conditions/shared/ConditionOverviewSection",
+          "@/components/medical-conditions/facet-arthropathy/FacetJointAnatomySection",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "FacetArthropathy"
+          }
+        ],
+        "linesOfCode": 1478,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/FacetArthropathyRefactored.tsx",
+        "name": "FacetArthropathyRefactored",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/StandardPageLayout",
+          "@/components/medical-conditions",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/data/conditions/facet-arthropathy",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "FacetArthropathyRefactored"
+          }
+        ],
+        "linesOfCode": 378,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/HerniatedDisc.tsx",
+        "name": "HerniatedDisc",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\HerniatedDisc.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "HerniatedDisc"
+          }
+        ],
+        "linesOfCode": 1604,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/OccipitalNeuralgia.tsx",
+        "name": "OccipitalNeuralgia",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\OccipitalNeuralgia.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "OccipitalNeuralgia"
+          }
+        ],
+        "linesOfCode": 1664,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/ParsDefects.tsx",
+        "name": "ParsDefects",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "ParsDefects"
+          }
+        ],
+        "linesOfCode": 1682,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/PiriformisSyndrome.tsx",
+        "name": "PiriformisSyndrome",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "PiriformisSyndrome"
+          }
+        ],
+        "linesOfCode": 1678,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/Radiculopathy.tsx",
+        "name": "Radiculopathy",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\Radiculopathy.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Radiculopathy"
+          }
+        ],
+        "linesOfCode": 1842,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/SacroiliacArthropathy.tsx",
+        "name": "SacroiliacArthropathy",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "SacroiliacArthropathy"
+          }
+        ],
+        "linesOfCode": 1681,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/Sciatica.tsx",
+        "name": "Sciatica",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Sciatica"
+          }
+        ],
+        "linesOfCode": 1742,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/SpinalStenosis.tsx",
+        "name": "SpinalStenosis",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\SpinalStenosis.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "SpinalStenosis"
+          }
+        ],
+        "linesOfCode": 1772,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/Spondylolisthesis.tsx",
+        "name": "Spondylolisthesis",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\Spondylolisthesis.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Spondylolisthesis"
+          }
+        ],
+        "linesOfCode": 1751,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/Spondylosis.tsx",
+        "name": "Spondylosis",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Spondylosis"
+          }
+        ],
+        "linesOfCode": 1678,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/conditions/ThoracicOutletSyndrome.tsx",
+        "name": "ThoracicOutletSyndrome",
+        "fullPath": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "lucide-react",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "ThoracicOutletSyndrome"
+          }
+        ],
+        "linesOfCode": 1683,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/ExerciseLibrary.tsx",
+        "name": "ExerciseLibrary",
+        "fullPath": "src\\pages\\patient-resources\\ExerciseLibrary.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/ErrorBoundary",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/badge",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/input",
+          "@/components/ui/select",
+          "@/components/ui/tabs",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "@/components/ui/dialog"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "ExerciseLibrary"
+          }
+        ],
+        "linesOfCode": 586,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/ExercisePainMedRisks.tsx",
+        "name": "ExercisePainMedRisks",
+        "fullPath": "src\\pages\\patient-resources\\ExercisePainMedRisks.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "ExercisePainMedRisks"
+          }
+        ],
+        "linesOfCode": 470,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/IndividualSpineHealthProgramme.tsx",
+        "name": "IndividualSpineHealthProgramme",
+        "fullPath": "src\\pages\\patient-resources\\IndividualSpineHealthProgramme.tsx",
+        "category": "patientResources",
+        "translationKeys": [
+          "patientResources.individualSpineHealthProgramme.title",
+          "patientResources.individualSpineHealthProgramme.subtitle",
+          "patientResources.individualSpineHealthProgramme.startAssessment",
+          "patientResources.individualSpineHealthProgramme.exploreFeatures",
+          "patientResources.individualSpineHealthProgramme.journey.title",
+          "patientResources.individualSpineHealthProgramme.journey.description",
+          "patientResources.individualSpineHealthProgramme.journey.approach",
+          "patientResources.individualSpineHealthProgramme.journey.assess",
+          "patientResources.individualSpineHealthProgramme.journey.educate",
+          "patientResources.individualSpineHealthProgramme.journey.recommend",
+          "patientResources.individualSpineHealthProgramme.journey.track",
+          "patientResources.individualSpineHealthProgramme.journey.support",
+          "patientResources.individualSpineHealthProgramme.journey.howItWorks",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.title",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.title",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.description",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.content",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.assessment.button",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.education.title",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.education.description",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.education.content",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.education.button",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.title",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.description",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.content",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.exercisePlans.button",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.title",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.description",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.content",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.progressTracking.button",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.title",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.description",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.content",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.goalSetting.button",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.title",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.description",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.content",
+          "patientResources.individualSpineHealthProgramme.keyFeatures.healthcareIntegration.button",
+          "patientResources.individualSpineHealthProgramme.readyToTakeControl.title",
+          "patientResources.individualSpineHealthProgramme.readyToTakeControl.description",
+          "patientResources.individualSpineHealthProgramme.readyToTakeControl.startAssessment",
+          "patientResources.individualSpineHealthProgramme.readyToTakeControl.scheduleConsultation"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/SafeImage",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/input",
+          "@/components/ui/label",
+          "@/components/ui/tabs",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "IndividualSpineHealthProgramme"
+          }
+        ],
+        "linesOfCode": 330,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/LifestyleModifications.tsx",
+        "name": "LifestyleModifications",
+        "fullPath": "src\\pages\\patient-resources\\LifestyleModifications.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "LifestyleModifications"
+          }
+        ],
+        "linesOfCode": 869,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/PatientDashboard.tsx",
+        "name": "PatientDashboard",
+        "fullPath": "src\\pages\\patient-resources\\PatientDashboard.tsx",
+        "category": "patientResources",
+        "translationKeys": [
+          "patientResources.patientDashboard.title",
+          "patientResources.patientDashboard.subtitle",
+          "patientResources.patientDashboard.login",
+          "patientResources.patientDashboard.register",
+          "patientResources.patientDashboard.features.trackProgress",
+          "patientResources.patientDashboard.features.manageExercises",
+          "patientResources.patientDashboard.features.setGoals",
+          "patientResources.patientDashboard.features.viewHistory",
+          "patientResources.patientDashboard.features.shareWithProvider"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "lucide-react",
+          "react-router-dom",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/input",
+          "@/components/ui/label",
+          "@/components/ui/tabs",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "PatientDashboard"
+          }
+        ],
+        "linesOfCode": 508,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/SpineAndBrainHealth.tsx",
+        "name": "SpineAndBrainHealth",
+        "fullPath": "src\\pages\\patient-resources\\SpineAndBrainHealth.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "lucide-react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "SpineAndBrainHealth"
+          }
+        ],
+        "linesOfCode": 331,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/SpineConditionsLibrary.tsx",
+        "name": "SpineConditionsLibrary",
+        "fullPath": "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/accordion",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "SpineConditionsLibrary"
+          }
+        ],
+        "linesOfCode": 774,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/SpineHealthApp.tsx",
+        "name": "SpineHealthApp",
+        "fullPath": "src\\pages\\patient-resources\\SpineHealthApp.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "lucide-react",
+          "react-router-dom",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "SpineHealthApp"
+          }
+        ],
+        "linesOfCode": 372,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/SpineSafeExercises.tsx",
+        "name": "SpineSafeExercises",
+        "fullPath": "src\\pages\\patient-resources\\SpineSafeExercises.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "SpineSafeExercises"
+          }
+        ],
+        "linesOfCode": 630,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/patient-resources/YouthfulSpine.tsx",
+        "name": "YouthfulSpine",
+        "fullPath": "src\\pages\\patient-resources\\YouthfulSpine.tsx",
+        "category": "patientResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "lucide-react"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "YouthfulSpine"
+          }
+        ],
+        "linesOfCode": 562,
+        "isIndexFile": false
+      }
+    ],
+    "gpResources": [
+      {
+        "path": "src/pages/gp-resources/CareCoordination.tsx",
+        "name": "CareCoordination",
+        "fullPath": "src\\pages\\gp-resources\\CareCoordination.tsx",
+        "category": "gpResources",
+        "translationKeys": [
+          "gpResources.careCoordination.title",
+          "gpResources.careCoordination.subtitle",
+          "gpResources.careCoordination.description",
+          "gpResources.careCoordination.teamApproach.title",
+          "gpResources.careCoordination.teamApproach.description",
+          "gpResources.careCoordination.preoperativeManagement.title",
+          "gpResources.careCoordination.preoperativeManagement.description",
+          "gpResources.careCoordination.postoperativeFollowUp.title",
+          "gpResources.careCoordination.postoperativeFollowUp.description",
+          "gpResources.careCoordination.sharedCareModels.title",
+          "gpResources.careCoordination.sharedCareModels.description"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "CareCoordination"
+          }
+        ],
+        "linesOfCode": 464,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/gp-resources/Diagnostics.tsx",
+        "name": "Diagnostics",
+        "fullPath": "src\\pages\\gp-resources\\Diagnostics.tsx",
+        "category": "gpResources",
+        "translationKeys": [
+          "gpResources.diagnostics.title",
+          "gpResources.diagnostics.subtitle",
+          "gpResources.diagnostics.description",
+          "gpResources.diagnostics.imagingGuidelines.title",
+          "gpResources.diagnostics.imagingGuidelines.description",
+          "gpResources.diagnostics.neurologicalAssessment.title",
+          "gpResources.diagnostics.neurologicalAssessment.description",
+          "gpResources.diagnostics.specialisedTests.description",
+          "gpResources.diagnostics.interpretingResults.title",
+          "gpResources.diagnostics.interpretingResults.description"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Diagnostics"
+          }
+        ],
+        "linesOfCode": 495,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/gp-resources/Emergencies.tsx",
+        "name": "Emergencies",
+        "fullPath": "src\\pages\\gp-resources\\Emergencies.tsx",
+        "category": "gpResources",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "lucide-react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Emergencies"
+          }
+        ],
+        "linesOfCode": 367,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/gp-resources/ReferralProtocols.tsx",
+        "name": "ReferralProtocols",
+        "fullPath": "src\\pages\\gp-resources\\ReferralProtocols.tsx",
+        "category": "gpResources",
+        "translationKeys": [
+          "gpResources.referralProtocols.title",
+          "gpResources.referralProtocols.subtitle",
+          "gpResources.referralProtocols.description",
+          "gpResources.referralProtocols.urgentReferrals.title",
+          "gpResources.referralProtocols.urgentReferrals.description",
+          "gpResources.referralProtocols.standardReferrals.title",
+          "gpResources.referralProtocols.standardReferrals.description",
+          "gpResources.referralProtocols.referralProcess.title",
+          "gpResources.referralProtocols.referralProcess.description",
+          "gpResources.referralProtocols.triageCategories.title",
+          "gpResources.referralProtocols.triageCategories.description"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/components/ui/tabs",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "ReferralProtocols"
+          }
+        ],
+        "linesOfCode": 323,
+        "isIndexFile": false
+      }
+    ],
+    "conditions": [],
+    "procedures": [],
+    "other": [
+      {
+        "path": "src/pages/AppointmentBooking.tsx",
+        "name": "AppointmentBooking",
+        "fullPath": "src\\pages\\AppointmentBooking.tsx",
+        "category": "other",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "lucide-react",
+          "react-router-dom",
+          "date-fns",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/components/ui/calendar",
+          "@/components/ui/input",
+          "@/components/ui/label",
+          "@/components/ProcedureCard",
+          "@/components/ui/tabs",
+          "@/lib/utils",
+          "@/components/ui/popover",
+          "@/components/ui/select"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "AppointmentBooking"
+          }
+        ],
+        "linesOfCode": 891,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/ConsultingRooms.tsx",
+        "name": "ConsultingRooms",
+        "fullPath": "src\\pages\\ConsultingRooms.tsx",
+        "category": "other",
+        "translationKeys": [
+          "consultingRooms"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/ui/button",
+          "@/components/ui/input",
+          "@/components/ui/label",
+          "@/components/ui/textarea",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "ConsultingRooms"
+          }
+        ],
+        "linesOfCode": 337,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/Expertise.tsx",
+        "name": "Expertise",
+        "fullPath": "src\\pages\\Expertise.tsx",
+        "category": "other",
+        "translationKeys": [
+          "expertisePage.hero.title",
+          "expertisePage.hero.subtitle",
+          "expertisePage.introduction.paragraph1",
+          "expertisePage.introduction.paragraph2",
+          "expertisePage.introduction.paragraph3",
+          "procedureDescriptions",
+          "expertiseCards.brainConditions.description",
+          "expertiseCards.spinalProblems.description",
+          "expertiseCards.nerveProblems.description",
+          "expertiseCards.medicolegalReports.title",
+          "expertiseCards.medicolegalReports.description",
+          "home.welcome.learnMore",
+          "home.featuredProcedures.title",
+          "nav.expertiseSubmenu.cervicalDisc",
+          "expertisePage.specializedProcedures.cervicalDisc.description",
+          "nav.expertiseSubmenu.lumbarDisc",
+          "expertisePage.specializedProcedures.lumbarDisc.description",
+          "nav.expertiseSubmenu.imageGuided",
+          "expertisePage.specializedProcedures.imageGuided.description",
+          "nav.expertiseSubmenu.roboticSpine",
+          "expertisePage.specializedProcedures.roboticSpine.description",
+          "expertisePage.surgicalApproach.title",
+          "expertisePage.surgicalApproach.subtitle",
+          "expertisePage.surgicalApproach.principles.identification.title",
+          "expertisePage.surgicalApproach.principles.identification.description",
+          "expertisePage.surgicalApproach.principles.access.title",
+          "expertisePage.surgicalApproach.principles.access.description",
+          "expertisePage.surgicalApproach.principles.repair.title",
+          "expertisePage.surgicalApproach.principles.repair.description",
+          "expertisePage.surgicalApproach.cta",
+          "technologiesPage.title",
+          "technologiesPage.description",
+          "technologiesPage.categories.wellness.title",
+          "technologiesPage.categories.wellness.description",
+          "technologiesPage.categories.wellness.items.slice",
+          "technologiesPage.categories.imagingTech.title",
+          "technologiesPage.categories.imagingTech.description",
+          "technologiesPage.categories.imagingTech.items.slice",
+          "technologiesPage.categories.services.title",
+          "technologiesPage.categories.services.description",
+          "technologiesPage.categories.services.items.slice",
+          "technologiesPage.categories.brainSurgery.title",
+          "technologiesPage.categories.brainSurgery.description",
+          "technologiesPage.categories.brainSurgery.items.slice"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/CTASection",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/lib/utils",
+          "@/lib/seo",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Expertise"
+          }
+        ],
+        "linesOfCode": 543,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/Faq.tsx",
+        "name": "Faq",
+        "fullPath": "src\\pages\\Faq.tsx",
+        "category": "other",
+        "translationKeys": [
+          "nav.faq",
+          "contact.faqSubtitle",
+          "home.cta.title",
+          "home.cta.description",
+          "home.cta.bookNow",
+          "nav.contact"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/SafeImage",
+          "@/components/ui/button",
+          "@/lib/utils",
+          "@/contexts/DeviceContext",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "@/components/ui/accordion"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Faq"
+          }
+        ],
+        "linesOfCode": 452,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/Gallery.tsx",
+        "name": "Gallery",
+        "fullPath": "src\\pages\\Gallery.tsx",
+        "category": "other",
+        "translationKeys": [
+          "gallery.title",
+          "gallery.subtitle",
+          "gallery.filters.all",
+          "gallery.filters.exterior",
+          "gallery.filters.rooms",
+          "gallery.filters.amenities"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/SafeImage",
+          "@/lib/utils",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Gallery"
+          }
+        ],
+        "linesOfCode": 294,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/GPResources.tsx",
+        "name": "GPResources",
+        "fullPath": "src\\pages\\GPResources.tsx",
+        "category": "other",
+        "translationKeys": [
+          "gpResources.title",
+          "gpResources.subtitle",
+          "gpResources.overview.title",
+          "gpResources.overview.description",
+          "gpResources.referralProtocols.title",
+          "gpResources.referralProtocols.subtitle",
+          "gpResources.referralProtocols.description",
+          "gpResources.diagnostics.title",
+          "gpResources.diagnostics.subtitle",
+          "gpResources.diagnostics.description",
+          "gpResources.careCoordination.title",
+          "gpResources.careCoordination.subtitle",
+          "gpResources.careCoordination.description",
+          "gpResources.emergencies.title",
+          "gpResources.emergencies.subtitle",
+          "gpResources.emergencies.description"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/components/ui/card",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "GPResources"
+          }
+        ],
+        "linesOfCode": 173,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/Locations.tsx",
+        "name": "Locations",
+        "fullPath": "src\\pages\\Locations.tsx",
+        "category": "other",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "lucide-react",
+          "@/components/Footer",
+          "@/components/Navbar",
+          "@/components/SafeImage",
+          "@/components/ui/button",
+          "@/lib/utils",
+          "@/contexts/DeviceContext"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Locations"
+          }
+        ],
+        "linesOfCode": 327,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/Medicolegal.tsx",
+        "name": "Medicolegal",
+        "fullPath": "src\\pages\\Medicolegal.tsx",
+        "category": "other",
+        "translationKeys": [
+          "medicolegal",
+          "home",
+          "contact"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/SafeImage",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Medicolegal"
+          }
+        ],
+        "linesOfCode": 637,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/PatientResources.tsx",
+        "name": "PatientResources",
+        "fullPath": "src\\pages\\PatientResources.tsx",
+        "category": "other",
+        "translationKeys": [
+          "patientResources.categories.beforeVisit",
+          "patientResources.resources.newPatientForms",
+          "patientResources.resources.newPatientFormsDesc",
+          "patientResources.resources.insuranceInfo",
+          "patientResources.resources.insuranceInfoDesc",
+          "patientResources.resources.preparingForAppointment",
+          "patientResources.resources.preparingForAppointmentDesc",
+          "patientResources.categories.conditionsTreatments",
+          "patientResources.resources.brainConditions",
+          "patientResources.resources.brainConditionsDesc",
+          "patientResources.resources.spineConditions",
+          "patientResources.resources.spineConditionsDesc",
+          "patientResources.resources.minimallyInvasive",
+          "patientResources.resources.minimallyInvasiveDesc",
+          "patientResources.categories.surgeryInfo",
+          "patientResources.resources.preSurgeryInstructions",
+          "patientResources.resources.preSurgeryInstructionsDesc",
+          "patientResources.viewInstructions",
+          "patientResources.resources.postSurgeryCare",
+          "patientResources.resources.postSurgeryCareDesc",
+          "patientResources.resources.hospitalInfo",
+          "patientResources.resources.hospitalInfoDesc",
+          "patientResources.viewHospitals",
+          "patientResources.categories.patientSupport",
+          "patientResources.resources.supportGroups",
+          "patientResources.resources.supportGroupsDesc",
+          "patientResources.findSupport",
+          "patientResources.resources.rehabilitationResources",
+          "patientResources.resources.rehabilitationResourcesDesc",
+          "patientResources.viewResources",
+          "patientResources.resources.mentalHealthSupport",
+          "patientResources.resources.mentalHealthSupportDesc",
+          "patientResources.title",
+          "patientResources.subtitle",
+          "patientResources.educationalMaterials",
+          "patientResources.needAppointment",
+          "patientResources.appointmentDesc"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "lucide-react",
+          "react-router-dom",
+          "@/components/PageHeader",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/contexts/LanguageContext",
+          "@/locales/en"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "PatientResources"
+          }
+        ],
+        "linesOfCode": 511,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/Specialties.tsx",
+        "name": "Specialties",
+        "fullPath": "src\\pages\\Specialties.tsx",
+        "category": "other",
+        "translationKeys": [
+          "specialties.title",
+          "specialties.description",
+          "specialties.filters.complexity",
+          "specialties.filters.anyComplexity",
+          "specialties.filters.moderate",
+          "specialties.filters.advanced",
+          "specialties.filters.complex",
+          "specialties.filters.highlyComplex",
+          "specialties.filters.location",
+          "specialties.filters.allLocations",
+          "specialties.filters.recoveryTime",
+          "specialties.filters.days",
+          "specialties.filters.showing",
+          "specialties.filters.of",
+          "specialties.filters.procedures",
+          "specialties.filters.resetFilters",
+          "specialties.filters.noMatch",
+          "specialties.filters.adjustFilters"
+        ],
+        "hasTranslations": true,
+        "imports": [
+          "react",
+          "@/components/ProcedureCard",
+          "@/components/StandardPageLayout",
+          "@/components/ui/button",
+          "@/types/procedures",
+          "@/components/ui/slider",
+          "@/contexts/LanguageContext",
+          "@/locales/en",
+          "@/components/ui/select"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "Specialties"
+          }
+        ],
+        "linesOfCode": 286,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/TermsConditions.tsx",
+        "name": "TermsConditions",
+        "fullPath": "src\\pages\\TermsConditions.tsx",
+        "category": "other",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "@/components/Footer",
+          "@/components/Navbar"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "TermsConditions"
+          }
+        ],
+        "linesOfCode": 145,
+        "isIndexFile": false
+      },
+      {
+        "path": "src/pages/TestImages.tsx",
+        "name": "TestImages",
+        "fullPath": "src\\pages\\TestImages.tsx",
+        "category": "other",
+        "translationKeys": [],
+        "hasTranslations": false,
+        "imports": [
+          "react",
+          "@/components/StandardPageLayout"
+        ],
+        "exports": [
+          {
+            "type": "default",
+            "name": "TestImages"
+          }
+        ],
+        "linesOfCode": 19,
+        "isIndexFile": false
+      }
+    ]
+  },
+  "translationAudit": {
+    "totalKeys": 356,
+    "translatedKeys": 337,
+    "missingKeys": [
+      "appointments.locations.mainOffice.address.split",
+      "expertisePage.hero.title",
+      "expertisePage.hero.subtitle",
+      "expertisePage.introduction.paragraph1",
+      "expertisePage.introduction.paragraph2",
+      "expertisePage.introduction.paragraph3",
+      "expertisePage.specializedProcedures.cervicalDisc.description",
+      "expertisePage.specializedProcedures.lumbarDisc.description",
+      "expertisePage.specializedProcedures.imageGuided.description",
+      "expertisePage.specializedProcedures.roboticSpine.description",
+      "expertisePage.surgicalApproach.title",
+      "expertisePage.surgicalApproach.subtitle",
+      "expertisePage.surgicalApproach.principles.identification.title",
+      "expertisePage.surgicalApproach.principles.identification.description",
+      "expertisePage.surgicalApproach.principles.access.title",
+      "expertisePage.surgicalApproach.principles.access.description",
+      "expertisePage.surgicalApproach.principles.repair.title",
+      "expertisePage.surgicalApproach.principles.repair.description",
+      "expertisePage.surgicalApproach.cta"
+    ],
+    "placeholderKeys": [],
+    "byCategory": {
+      "main": {
+        "totalKeys": 112,
+        "translatedKeys": 111,
+        "completionRate": "99.1"
+      },
+      "locations": {
+        "totalKeys": 29,
+        "translatedKeys": 29,
+        "completionRate": "100.0"
+      },
+      "expertise": {
+        "totalKeys": 0,
+        "translatedKeys": 0,
+        "completionRate": "0.0"
+      },
+      "patientResources": {
+        "totalKeys": 61,
+        "translatedKeys": 61,
+        "completionRate": "100.0"
+      },
+      "gpResources": {
+        "totalKeys": 32,
+        "translatedKeys": 32,
+        "completionRate": "100.0"
+      },
+      "conditions": {
+        "totalKeys": 0,
+        "translatedKeys": 0,
+        "completionRate": "0.0"
+      },
+      "procedures": {
+        "totalKeys": 0,
+        "translatedKeys": 0,
+        "completionRate": "0.0"
+      },
+      "other": {
+        "totalKeys": 131,
+        "translatedKeys": 113,
+        "completionRate": "86.3"
+      }
+    }
+  },
+  "generatedAt": "2025-06-20T19:43:04.739Z"
+}

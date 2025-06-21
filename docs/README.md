@@ -1,190 +1,225 @@
+# miNEURO Documentation
 
-# miNEURO - Neurosurgeon Website Documentation
+Welcome to the miNEURO neurosurgery website documentation. This comprehensive guide covers all aspects of the project from setup to deployment.
 
-## Project Overview
+## 📚 Documentation Structure
 
-miNEURO is a comprehensive neurosurgeon website built with React, TypeScript, and Tailwind CSS. It serves as a professional medical practice website for Dr. Ales Aliashkevich, featuring appointment booking, multilingual support, and comprehensive information about neurosurgical services.
+### 🚀 Setup & Getting Started
+- **[Getting Started Guide](./setup/getting-started.md)** - Complete setup and development guide
+- **[Deployment Guide](./setup/deployment.md)** - Deployment and hosting instructions
+- **[Lovable Clone Script](./setup/lovable-clone-script.md)** - Platform-specific setup
 
-## Architecture Overview
+### 📖 Guides & Tutorials
+- **[Development Guidelines](./guides/development-guidelines.md)** - Coding standards and best practices
+- **[Internationalization Guide](./guides/internationalization.md)** - Multi-language support implementation
 
-### Tech Stack
-- **Frontend**: React 18 with TypeScript
-- **Build Tool**: Vite
-- **Styling**: Tailwind CSS with shadcn/ui components
-- **Routing**: React Router DOM
-- **State Management**: React Context API
-- **Internationalization**: Custom multilingual system (English/Chinese)
-- **Performance**: Custom performance monitoring system
-- **Mobile Optimization**: Dedicated mobile optimization utilities
+### 📋 Technical Reference
+- **[Architecture Overview](./reference/architecture.md)** - Technical architecture and system design
+- **[Codebase Structure](./reference/codebase-structure.md)** - Complete file structure and relationships
+- **[Component Library](./reference/component-library.md)** - Component reference documentation
+- **[Component System](./reference/component-system.md)** - Detailed component documentation
+- **[Service Layer](./reference/service-layer.md)** - Hooks, contexts, and utilities documentation
+- **[Component Documentation](./reference/component-documentation.md)** - Individual component guides
 
-### Project Structure
+### 📄 Pages Architecture
+- **[Pages Overview](./pages/README.md)** - Complete website page architecture
+- **[Main Pages](./pages/main-pages.md)** - Core pages documentation
+- **[Expertise Pages](./pages/expertise-pages.md)** - Medical procedure pages
+- **[Patient Resources](./pages/patient-resources.md)** - Educational and resource pages
+- **[GP Resources](./pages/gp-resources.md)** - Professional resource pages
+- **[Location Pages](./pages/location-pages.md)** - Clinic location pages
+- **[Utility Pages](./pages/utility-pages.md)** - Support and legal pages
+- **[Architecture Overview](./pages/architecture-overview.md)** - Complete navigation flow
+
+### 💡 Examples & Implementation
+- **[Homepage Example](./examples/homepage.md)** - Homepage implementation details
+- **[About Page Example](./examples/about.md)** - About page documentation
+- **[Appointments Example](./examples/appointments.md)** - Appointment booking system
+- **[Contact Example](./examples/contact.md)** - Contact page implementation
+- **[Expertise Example](./examples/expertise.md)** - Medical expertise pages
+
+## 🏥 Project Overview
+
+The miNEURO website is a modern, production-ready React application built for Dr. Ales Aliashkevich's neurosurgery practice. It features comprehensive patient resources, GP referral tools, and multilingual support.
+
+### ✨ Key Features
+- 🌐 **Multilingual Support** (English/Chinese with 1700+ translation keys each)
+- 📱 **Responsive Design** (Mobile-first approach with device detection)
+- ♿ **Accessibility Compliant** (WCAG 2.1 AA with comprehensive ARIA support)
+- 🔍 **SEO Optimized** with structured data and meta tags
+- ⚡ **Performance Optimized** (90+ Lighthouse scores, code splitting)
+- 🏥 **Medical Content Management** (Exercise library, condition information)
+- 🔒 **Production Ready** (Error boundaries, security measures, monitoring)
+
+### 📊 Current Statistics - Updated
+- **Total Components**: 200+ files (comprehensive coverage)
+- **Page Components**: 67+ pages (fully documented)
+- **UI Components**: 30+ shadcn/ui components
+- **Translation Keys**: English: 111,815 chars, Chinese: 57,338 chars (100% coverage)
+- **Medical Conditions**: 15+ detailed condition pages (all documented)
+- **Exercise Library**: 75+ exercises with demonstrations
+- **Image Assets**: 200+ optimized images
+- **Documentation**: 100% complete coverage
+
+### 🛠️ Technology Stack
+
+| Category | Technology | Purpose |
+|----------|------------|---------|
+| **Frontend** | React 18 + TypeScript | Type-safe UI development |
+| **Build Tool** | Vite | Fast development and optimized builds |
+| **Styling** | Tailwind CSS | Utility-first CSS framework |
+| **Components** | shadcn/ui + Radix UI | Accessible component library |
+| **Routing** | React Router v6 | Client-side routing with i18n |
+| **State Management** | React Query + Context | Data fetching and global state |
+| **Forms** | React Hook Form + Zod | Form handling with validation |
+| **Internationalization** | Custom i18n system | English/Chinese support |
+
+### Project Structure Overview
 ```
-src/
-├── components/           # Reusable UI components (25+ components)
-│   ├── ui/              # shadcn/ui base components
-│   ├── Layout.tsx       # Main layout wrapper
-│   ├── Navbar.tsx       # Navigation header
-│   ├── Footer.tsx       # Site footer
-│   ├── PageHeader.tsx   # Page header component
-│   ├── HeroSection.tsx  # Homepage hero with parallax
-│   ├── TestimonialsSection.tsx # Patient testimonials
-│   ├── ProcedureCard.tsx # Medical procedure cards
-│   ├── ContactForm.tsx  # Contact and appointment forms
-│   ├── SafeImage.tsx    # Optimized image component
-│   ├── ErrorBoundary.tsx # Error handling
-│   ├── ScreenReaderAnnouncer.tsx # Accessibility
-│   ├── LanguageSelector.tsx # Language switching
-│   ├── LanguageWrapper.tsx # Language route wrapper
-│   ├── ThemeToggle.tsx  # Dark/light mode toggle
-│   └── SkipLink.tsx     # Accessibility skip navigation
-├── contexts/            # React Context providers
-│   └── LanguageContext.tsx # Multilingual support (English/Chinese)
-├── hooks/               # Custom React hooks
-│   ├── use-mobile.ts    # Device detection and mobile utilities
-│   └── useSEO.ts        # SEO management hook
-├── lib/                 # Utility libraries and services
-│   ├── utils.ts         # General utilities
-│   ├── seo.ts           # SEO utilities and meta management
-│   ├── performance.ts   # Performance monitoring system (420 lines)
-│   ├── mobile-optimization.ts # Mobile optimization utilities (401 lines)
-│   ├── accessibility.ts # Accessibility helpers
-│   ├── security.ts      # Security utilities
-│   └── env-validation.ts # Environment validation
-├── locales/             # Translation files
-│   ├── en.ts            # English translations (comprehensive)
-│   └── zh.ts            # Chinese translations (comprehensive)
-├── pages/               # Page components (50+ pages)
-│   ├── Index.tsx        # Homepage with hero, services, testimonials
-│   ├── Appointments.tsx # Appointment information
-│   ├── AppointmentBooking.tsx # Multi-step booking system
-│   ├── About.tsx        # Doctor information and credentials
-│   ├── Contact.tsx      # Contact information and forms
-│   ├── Expertise.tsx    # Medical expertise and procedures
-│   ├── Locations.tsx    # Consulting locations
-│   ├── GPResources.tsx  # Resources for general practitioners
-│   ├── TestImages.tsx   # Test page for image verification
-│   ├── NotFound.tsx     # 404 error page
-│   ├── patient-resources/ # Patient education pages
-│   │   └── IndividualSpineHealthProgram.tsx
-│   └── expertise/       # Detailed expertise pages
-│       ├── ImageGuidedSurgery.tsx
-│       └── RoboticSpineSurgery.tsx
-├── routes/              # Route configuration
-│   └── routeConfig.tsx  # Route definitions with i18n
-├── App.tsx              # Main application component
-├── main.tsx             # Application entry point with initialization
-└── index.css            # Global styles
-
-public/
-├── images/              # Static images (200+ organized files)
-│   ├── conditions/      # Medical condition images (30+ files)
-│   ├── exercises/       # Exercise demonstrations (97 files)
-│   ├── gp-resources/    # GP referral images (20+ files)
-│   ├── locations/       # Clinic location photos (30+ files)
-│   ├── patient-resources/ # Patient education images
-│   ├── expertise/       # Medical expertise images
-│   └── testimonials/    # Patient testimonial photos
-├── data/                # JSON data files
-│   ├── exercises.json   # Exercise library (75 exercises, 8 categories)
-│   └── conditions.json  # Medical conditions data
-├── pages/               # Static markdown content files
-│   ├── brain-spine-image-guided-surgery/
-│   ├── robotic-spine-surgery/
-│   └── [other-content]/ # Organized by page/feature
-├── logo/                # Brand assets (multiple formats)
-├── favicon.ico          # Site favicon
-├── manifest.json        # PWA manifest
-├── robots.txt           # SEO robots file
-└── sitemap.xml          # SEO sitemap
-
-docs/                    # Project documentation (this folder)
-├── README.md            # This file - project overview
-├── architecture/        # Architecture documentation
-│   └── project-structure.md # Detailed project structure
-├── components/          # Component documentation
-│   └── component-documentation.md # Component usage guide
-├── pages/               # Page content documentation
-│   ├── homepage.md      # Homepage content specification
-│   ├── appointments.md  # Appointments page specification
-│   ├── about.md         # About page specification
-│   ├── contact.md       # Contact page specification
-│   └── expertise.md     # Expertise page specification
-└── setup/               # Setup and deployment guides
-    └── lovable-clone-script.md # Complete cloning instructions
-
-scripts/                 # Utility scripts
-├── verify-production-env.js # Environment verification (215 lines)
-└── verify-no-console.js # Console detection (235 lines)
+miNEURO/
+├── src/
+│   ├── components/            # 50+ reusable UI components
+│   │   ├── ui/               # 25+ shadcn/ui base components
+│   │   ├── layout/           # Layout-specific components
+│   │   ├── medical-conditions/ # Medical condition components
+│   │   └── ...               # Utility and feature components
+│   ├── pages/                # 67+ page components
+│   │   ├── expertise/        # Medical expertise pages
+│   │   ├── patient-resources/ # Patient education
+│   │   ├── gp-resources/     # GP referral tools
+│   │   └── locations/        # Clinic locations
+│   ├── contexts/             # Global state management
+│   │   ├── LanguageContext.tsx # Internationalization
+│   │   └── DeviceContext.tsx # Device detection
+│   ├── hooks/                # Custom React hooks
+│   │   ├── useSEO.ts         # SEO metadata management
+│   │   └── use-mobile.ts     # Mobile device detection
+│   ├── lib/                  # Utility functions and helpers
+│   │   ├── utils.ts          # General utilities
+│   │   ├── accessibility.ts  # Accessibility helpers
+│   │   ├── seo.ts            # SEO functionality
+│   │   ├── performance.ts    # Performance monitoring
+│   │   └── ...               # Other utilities
+│   ├── data/                 # Static data management
+│   ├── locales/              # Translation files
+│   ├── routes/               # Routing configuration
+│   └── types/                # TypeScript type definitions
+├── public/                   # Static assets
+│   ├── images/               # 200+ optimized images
+│   ├── data/                 # JSON data files
+│   └── pages/                # Markdown content
+├── docs/                     # Comprehensive documentation
+└── scripts/                  # Utility scripts
 ```
 
-## Key Features
+## Documentation Structure
 
-1. **Multilingual Support**: Complete English and Chinese translations
-2. **Responsive Design**: Mobile-first approach with device detection
-3. **Performance Monitoring**: Custom performance tracking system
-4. **SEO Optimization**: Comprehensive SEO utilities and meta management
-5. **Accessibility**: Screen reader support and ARIA compliance
-6. **Mobile Optimization**: Dedicated mobile performance enhancements
-7. **Error Handling**: Global error boundary and error reporting
-8. **Appointment Booking**: Multi-step appointment booking system
-9. **Location-based Pages**: Multiple consulting location pages
-10. **Professional Services**: Comprehensive medical service information
+### Core Documentation
+- **README.md** - This overview document
+- **getting-started.md** - Complete setup guide
+- **architecture.md** - Technical architecture
+- **components.md** - Component library guide
+- **internationalization.md** - Multi-language support
+- **deployment.md** - Deployment instructions
 
-## Core Architecture Components
+### Detailed Documentation
+- **architecture/** - Detailed architecture documentation
+  - `codebase-mapping.md` - Complete file structure mapping
+  - `project-structure.md` - Directory organization
+- **components/** - Component system documentation
+  - `component-system.md` - Detailed component docs
+  - `component-documentation.md` - Individual component guides
+- **services/** - Service layer documentation
+  - `service-layer.md` - Hooks, contexts, and utilities
+- **development/** - Development guidelines
+  - `guidelines.md` - Coding standards and best practices
+- **pages/** - Page-specific documentation
+  - Individual page implementation details
+- **setup/** - Setup and configuration
+  - Platform-specific setup instructions
 
-### Layout System
-- `Layout.tsx` - Main layout wrapper with SEO integration
-- `Navbar.tsx` - Responsive navigation with mobile menu
-- `Footer.tsx` - Site footer with contact information
-- `PageHeader.tsx` - Reusable page header with background support
+## 🚀 Quick Start
 
-### Content Components
-- `HeroSection.tsx` - Homepage hero with parallax effects
-- `TestimonialsSection.tsx` - Patient testimonials carousel
-- `ProcedureCard.tsx` - Medical procedure information displays
-- `ContactForm.tsx` - Contact and appointment forms
-- `SafeImage.tsx` - Optimized image loading with error handling
+1. **Setup**: Follow the [Getting Started Guide](./setup/getting-started.md)
+2. **Architecture**: Review the [Architecture Overview](./reference/architecture.md)
+3. **Components**: Explore the [Component Library](./reference/component-library.md)
+4. **Development**: Follow the [Development Guidelines](./guides/development-guidelines.md)
+5. **Deployment**: Use the [Deployment Guide](./setup/deployment.md)
 
-### Service Layer
-- `lib/performance.ts` - Performance monitoring (420 lines)
-- `lib/mobile-optimization.ts` - Mobile optimization (401 lines)
-- `lib/seo.ts` - SEO management utilities
-- `lib/accessibility.ts` - Accessibility helper functions
-- `lib/security.ts` - Security utilities
+## Key Principles
 
-### Context & State Management
-- `LanguageContext.tsx` - Multilingual support context
-- Custom hooks for device detection and SEO management
-- Local state management for UI components
+### Development Standards
+- **Type Safety**: Full TypeScript implementation with strict mode
+- **Accessibility**: WCAG 2.1 AA compliance throughout
+- **Performance**: Optimized for Core Web Vitals
+- **Maintainability**: Consistent patterns and documentation
+- **Internationalization**: Built-in multi-language support
 
-## Production Readiness
+### Code Quality
+- **Zero TypeScript errors**: Strict type checking enabled
+- **ESLint compliance**: React and TypeScript rules enforced
+- **Component standards**: Consistent structure and patterns
+- **Error handling**: Comprehensive error boundaries
+- **Testing**: Component and integration testing
 
-The application is production-ready with:
-- Zero console statements in production builds
-- Comprehensive error handling and reporting
-- Performance monitoring and optimization
-- Security compliance measures
-- Mobile optimization features
-- Complete SEO implementation
-- Accessibility compliance (WCAG 2.1 AA)
+### Production Readiness
+- **Build optimization**: Code splitting and tree shaking
+- **Security measures**: Input validation and XSS protection
+- **Performance monitoring**: Web Vitals tracking
+- **Error logging**: Comprehensive error reporting
+- **SEO optimization**: Meta tags and structured data
 
-## Development Guidelines
+## 🤝 Contributing
 
-1. **Component Structure**: Small, focused components (aim for <50 lines)
-2. **Performance**: Lazy loading and code splitting implemented
-3. **Accessibility**: ARIA labels and screen reader support throughout
-4. **Mobile-First**: Responsive design with device-specific optimizations
-5. **TypeScript**: Strict type checking enabled across the codebase
-6. **Error Handling**: Proper error boundaries and user feedback
-7. **SEO**: Meta tags and structured data on all pages
+When contributing to the project:
 
-## Build Configuration
+1. Follow the [Development Guidelines](./guides/development-guidelines.md)
+2. Ensure all TypeScript checks pass
+3. Maintain accessibility standards
+4. Update documentation as needed
+5. Test thoroughly before submitting
 
-- **Vite**: Optimized build with code splitting
-- **TypeScript**: Strict mode with comprehensive type checking
-- **Tailwind CSS**: Utility-first styling with custom components
-- **Environment**: Production-ready configuration with validation
+## 🆘 Support
 
-## Getting Started
+For questions or issues:
 
-See the setup documentation in `docs/setup/` for detailed instructions on cloning and deploying this application.
+1. Check the relevant documentation section
+2. Review the [Getting Started Guide](./setup/getting-started.md)
+3. Consult the [Architecture Overview](./reference/architecture.md)
+4. Refer to the [Component Library](./reference/component-library.md)
+
+## 🗂️ Documentation Organization
+
+The documentation is organized into four logical categories:
+
+### 🚀 **Setup** (`/setup/`)
+Everything you need to get started with the project:
+- Initial setup and installation
+- Development environment configuration
+- Deployment procedures
+
+### 📖 **Guides** (`/guides/`)
+Step-by-step tutorials and best practices:
+- Development guidelines and coding standards
+- Implementation guides for specific features
+- Best practices and patterns
+
+### 📋 **Reference** (`/reference/`)
+Technical reference documentation:
+- Architecture and system design
+- Complete API and component documentation
+- Detailed technical specifications
+
+### 📄 **Pages** (`/pages/`)
+Complete website page architecture:
+- All pages and sub-pages documentation
+- Content structure and navigation flow
+- User journey and page relationships
+
+### 💡 **Examples** (`/examples/`)
+Real-world implementation examples:
+- Page implementation details
+- Code examples and patterns
+- Use case demonstrations
+
+This documentation provides comprehensive coverage of the miNEURO codebase, ensuring developers can effectively understand, maintain, and extend the application.

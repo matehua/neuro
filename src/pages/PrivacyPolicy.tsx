@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
-
+import React, { useEffect } from 'react';
 import StandardPageLayout from '@/components/StandardPageLayout';
+
 
 const PrivacyPolicy: React.FC = () => {
 

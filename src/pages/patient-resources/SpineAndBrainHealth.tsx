@@ -7,9 +7,19 @@ import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
 
 const SpineAndBrainHealth: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Add minimal fallback structure based on component needs
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -225,7 +235,7 @@ const SpineAndBrainHealth: React.FC = () => {
               <div className="bg-muted p-6 rounded-lg my-8">
                 <h3 className="text-xl font-bold mb-4">💡 Popular Topics to Get You Started:</h3>
                 <ul className="space-y-4 list-none pl-0">
-                  {popularTopics?.map((topic: any, index: any) => (
+                  {popularTopics?.map((topic: { title: string; link: string; icon: React.ReactNode }, index: number) => (
                     <li key={index} className="flex items-start">
                       {topic.icon}
                       <Link to={topic.link} className="ml-2 text-primary hover:underline">

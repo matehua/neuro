@@ -1,16 +1,26 @@
+import React, { useEffect } from 'react';
 import { FileUp, ClipboardCheck, History, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import PageHeader from '@/components/PageHeader';
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 
 const AssessmentTools: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Add minimal fallback structure based on component needs
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -368,8 +378,7 @@ const AssessmentTools: React.FC = () => {
       </main>
     </StandardPageLayout>
   );
-AssessmentTools.displayName = 'AssessmentTools';
+};
 
+AssessmentTools.displayName = 'AssessmentTools';
 export default AssessmentTools;
-
-AssessmentTools.displayName = 'AssessmentTools';

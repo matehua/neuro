@@ -1,8 +1,8 @@
+import React, { useState, useEffect, useCallback } from 'react';
 import { Moon, Sun } from 'lucide-react';
-import { useEffect, useState, useCallback } from 'react';
-
 import ErrorBoundary from '@/components/ErrorBoundary';
 import { Button } from '@/components/ui/button';
+
 
 const ThemeToggle: React.FC = () => {
   const [isDark, setIsDark] = useState(false);
@@ -20,7 +20,7 @@ const ThemeToggle: React.FC = () => {
     }
   }, []);
 
-  const toggleTheme = () => {
+  const toggleTheme = useCallback(() => {
     setIsDark(!isDark);
 
     if (isDark) {
@@ -30,7 +30,7 @@ const ThemeToggle: React.FC = () => {
       document.documentElement.classList.add("dark");
       localStorage.setItem("theme", "dark");
     }
-  };
+  }, [isDark]);
 
   return (
     <ErrorBoundary>
@@ -48,7 +48,7 @@ const ThemeToggle: React.FC = () => {
             e.preventDefault();
             toggleTheme();
           }
-        }, [isDark, toggleTheme])}
+        }, [toggleTheme])}
       >
       {isDark ? (
         <Sun className="h-5 w-5 transition-transform duration-500 rotate-0" aria-hidden="true" />

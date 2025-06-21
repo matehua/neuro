@@ -1,464 +1,99 @@
-import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
-import SafeImage from '@/components/SafeImage';
+import React, { useEffect } from 'react';
 import StandardPageLayout from '@/components/StandardPageLayout';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { cn } from '@/lib/utils';
-import { useDeviceDetection } from '@/contexts/DeviceContext';
+import ConditionHeroSection from '@/components/medical-conditions/shared/ConditionHeroSection';
+import ConditionQuickFacts from '@/components/medical-conditions/shared/ConditionQuickFacts';
+import ConditionOverviewSection from '@/components/medical-conditions/shared/ConditionOverviewSection';
+import FacetJointAnatomySection from '@/components/medical-conditions/facet-arthropathy/FacetJointAnatomySection';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 import {
-  AlertTriangle,
-  Activity,
-  Brain,
-  Heart,
-  Shield,
-  Target,
-  Clock,
-  CheckCircle,
-  ArrowRight,
-  Download,
-  Phone,
-  Calendar,
   Users,
   TrendingUp,
-  Zap,
-  Eye,
   MapPin,
-  Gauge,
-  Network,
-  Disc,
-  Stethoscope,
-  Microscope,
-  Layers,
-  Settings,
-  Bone
+  CheckCircle
 } from "lucide-react";
 
 const FacetArthropathy: React.FC = () => {
   const { t } = useLanguage();
-  const deviceInfo = useDeviceDetection();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Basic fallback structure
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
+  // Quick facts data
+  const quickFacts = [
+    {
+      icon: Users,
+      title: "Prevalence",
+      value: "15-45% of back pain"
+    },
+    {
+      icon: TrendingUp,
+      title: "Peak Age",
+      value: "40-70 years old"
+    },
+    {
+      icon: MapPin,
+      title: "Most Common",
+      value: "Lumbar spine"
+    },
+    {
+      icon: CheckCircle,
+      title: "Treatment Success",
+      value: "70-90% improvement"
+    }
+  ];
+
+  // Overview content
+  const overviewDescription = [
+    "Facet arthropathy, also known as facet joint syndrome or facet joint arthritis, is a degenerative condition affecting the small joints (facet joints) that connect the vertebrae in the spine. These joints provide stability and guide spinal movement.",
+    "When facet joints become inflamed, degenerated, or arthritic, they can cause significant pain and stiffness. This condition is a common source of axial (localized) back and neck pain, particularly in older adults."
+  ];
+
+  const overviewKeyPoints = [
+    { text: "Progressive degenerative condition affecting spinal stability joints" },
+    { text: "Can affect any spinal level but most common in lumbar and cervical regions" },
+    { text: "Often occurs alongside disc degeneration and spinal stenosis" }
+  ];
+
   return (
     <StandardPageLayout title="Facet Arthropathy (Facet Joint Syndrome) - Comprehensive Guide" showHeader={false}>
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className={cn(
-          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background",
-          deviceInfo.isMobile ? "py-12" : "py-20"
-        )}>
-          <div className="absolute inset-0 overflow-hidden opacity-10">
-            <SafeImage
-              src="/images/spine-conditions/facet-joint-syndrome.jpg"
-              alt="Facet arthropathy spine anatomy"
-              className="w-full h-full object-cover"
-              fallbackSrc="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-            />
-          </div>
-          <div className={cn(
-            "container relative z-10",
-            deviceInfo.isMobile ? "px-4" : ""
-          )}>
-            <div className="text-center max-w-4xl mx-auto">
-              <Badge variant="secondary" className="mb-4">
-                Spine Conditions Library
-              </Badge>
-              <h1 className={cn(
-                "font-bold mb-6",
-                deviceInfo.isMobile ? "text-3xl" : "text-4xl md:text-5xl"
-              )}>
-                Facet Arthropathy: Complete Guide
-              </h1>
-              <p className={cn(
-                "text-muted-foreground mb-8",
-                deviceInfo.isMobile ? "text-base" : "text-lg"
-              )}>
-                Understanding facet arthropathy and facet joint syndrome: causes, symptoms, diagnosis, and comprehensive treatment options 
-                from conservative management to advanced interventional procedures for cervical, thoracic, and lumbar spine.
-              </p>
-              <div className={cn(
-                "flex justify-center gap-4",
-                deviceInfo.isMobile ? "flex-col items-center" : "flex-row"
-              )}>
-                <Button asChild size={deviceInfo.isMobile ? "default" : "lg"}>
-                  <Link to="#assessment">
-                    <Target className="mr-2 h-4 w-4" />
-                    Take Assessment
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size={deviceInfo.isMobile ? "default" : "lg"}>
-                  <Link to="/contact">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Book Consultation
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ConditionHeroSection
+          title="Facet Arthropathy: Complete Guide"
+          subtitle=""
+          description="Understanding facet arthropathy and facet joint syndrome: causes, symptoms, diagnosis, and comprehensive treatment options from conservative management to advanced interventional procedures for cervical, thoracic, and lumbar spine."
+          heroImageSrc="/images/spine-conditions/facet-joint-syndrome.jpg"
+          heroImageAlt="Facet arthropathy spine anatomy"
+        />
 
         {/* Quick Facts Section */}
-        <section className={cn(
-          "bg-muted/30",
-          deviceInfo.isMobile ? "py-8" : "py-12"
-        )}>
-          <div className={cn(
-            "container",
-            deviceInfo.isMobile ? "px-4" : ""
-          )}>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Users className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <h3 className="font-semibold mb-1">Prevalence</h3>
-                  <p className="text-sm text-muted-foreground">15-45% of back pain</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <TrendingUp className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <h3 className="font-semibold mb-1">Peak Age</h3>
-                  <p className="text-sm text-muted-foreground">40-70 years old</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <MapPin className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <h3 className="font-semibold mb-1">Most Common</h3>
-                  <p className="text-sm text-muted-foreground">Lumbar spine</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <CheckCircle className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <h3 className="font-semibold mb-1">Treatment Success</h3>
-                  <p className="text-sm text-muted-foreground">70-90% improvement</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
+        <ConditionQuickFacts facts={quickFacts} />
 
         {/* What is Facet Arthropathy Section */}
-        <section className={cn(
-          deviceInfo.isMobile ? "py-8" : "py-16"
-        )}>
-          <div className={cn(
-            "container",
-            deviceInfo.isMobile ? "px-4" : ""
-          )}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className={cn(
-                  "font-bold mb-6",
-                  deviceInfo.isMobile ? "text-2xl" : "text-3xl"
-                )}>
-                  What is Facet Arthropathy?
-                </h2>
-                <p className="text-muted-foreground mb-4">
-                  Facet arthropathy, also known as facet joint syndrome or facet joint arthritis, 
-                  is a degenerative condition affecting the small joints (facet joints) that connect 
-                  the vertebrae in the spine. These joints provide stability and guide spinal movement.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  When facet joints become inflamed, degenerated, or arthritic, they can cause 
-                  significant pain and stiffness. This condition is a common source of axial 
-                  (localized) back and neck pain, particularly in older adults.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm">Progressive degenerative condition affecting spinal stability joints</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm">Can affect any spinal level but most common in lumbar and cervical regions</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm">Often occurs alongside disc degeneration and spinal stenosis</p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                <SafeImage
-                  src="/images/spine-conditions/facet-joints.jpg"
-                  alt="Facet arthropathy anatomy illustration"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                  fallbackSrc="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                />
-                <div className="absolute bottom-4 left-4 right-4 bg-black/70 text-white p-3 rounded text-sm">
-                  Anatomical view showing normal facet joints vs. arthritic facet joints with inflammation and degeneration
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ConditionOverviewSection
+          title="What is Facet Arthropathy?"
+          description={overviewDescription}
+          keyPoints={overviewKeyPoints}
+          imageSrc="/images/spine-conditions/facet-joints.jpg"
+          imageAlt="Facet arthropathy anatomy illustration"
+          imageCaption="Anatomical view showing normal facet joints vs. arthritic facet joints with inflammation and degeneration"
+        />
 
         {/* Facet Joint Anatomy & Pathophysiology Section */}
-        <section className={cn(
-          "bg-muted/30",
-          deviceInfo.isMobile ? "py-8" : "py-16"
-        )}>
-          <div className={cn(
-            "container",
-            deviceInfo.isMobile ? "px-4" : ""
-          )}>
-            <h2 className={cn(
-              "font-bold text-center mb-12",
-              deviceInfo.isMobile ? "text-2xl mb-8" : "text-3xl"
-            )}>
-              Understanding Facet Joint Anatomy & Degeneration
-            </h2>
-
-            <Tabs defaultValue="anatomy" className="w-full max-w-4xl mx-auto">
-              <TabsList className={cn(
-                "grid mb-8",
-                deviceInfo.isMobile ? "grid-cols-1 h-auto" : "grid-cols-3"
-              )}>
-                <TabsTrigger value="anatomy" className={cn(
-                  "text-center",
-                  deviceInfo.isMobile ? "py-3" : "py-3"
-                )}>
-                  Joint Anatomy
-                </TabsTrigger>
-                <TabsTrigger value="pathophysiology" className={cn(
-                  "text-center",
-                  deviceInfo.isMobile ? "py-3" : "py-3"
-                )}>
-                  Degeneration Process
-                </TabsTrigger>
-                <TabsTrigger value="classification" className={cn(
-                  "text-center",
-                  deviceInfo.isMobile ? "py-3" : "py-3"
-                )}>
-                  Classification System
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="anatomy" className="bg-card p-6 rounded-lg shadow-sm">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xl font-bold mb-4">Facet Joint Structure</h3>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-primary mb-2">Articular Surfaces</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Smooth cartilage-covered surfaces of superior and inferior articular processes
-                          that form the synovial joint between adjacent vertebrae.
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-primary mb-2">Joint Capsule</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Fibrous capsule surrounding the joint, lined with synovial membrane
-                          that produces lubricating synovial fluid.
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-primary mb-2">Cartilage</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Hyaline cartilage covering the articular surfaces, providing smooth
-                          movement and shock absorption during spinal motion.
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-primary mb-2">Innervation</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Rich nerve supply from medial branches of dorsal rami, making
-                          these joints significant pain generators when degenerated.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <SafeImage
-                      src="/images/spine-anatomy/facet-joint-anatomy.jpg"
-                      alt="Detailed facet joint anatomy"
-                      className="w-full h-auto rounded-lg"
-                      fallbackSrc="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="pathophysiology" className="bg-card p-6 rounded-lg shadow-sm">
-                <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-center">Degenerative Process in Facet Arthropathy</h3>
-
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                    <div className="space-y-4">
-                      <Card className="p-4 border-blue-200 bg-blue-50 dark:bg-blue-950/20">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-blue-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                            1
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-blue-800 dark:text-blue-200 mb-2">Initial Cartilage Damage</h4>
-                            <ul className="text-sm text-blue-700 dark:text-blue-300 space-y-1">
-                              <li>• Surface fibrillation and roughening</li>
-                              <li>• Loss of cartilage elasticity</li>
-                              <li>• Decreased proteoglycan content</li>
-                              <li>• Increased water content initially</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </Card>
-
-                      <Card className="p-4 border-yellow-200 bg-yellow-50 dark:bg-yellow-950/20">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-yellow-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                            2
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Progressive Degeneration</h4>
-                            <ul className="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
-                              <li>• Cartilage thinning and erosion</li>
-                              <li>• Subchondral bone sclerosis</li>
-                              <li>• Joint space narrowing</li>
-                              <li>• Synovial inflammation</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </Card>
-
-                      <Card className="p-4 border-orange-200 bg-orange-50 dark:bg-orange-950/20">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                            3
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-orange-800 dark:text-orange-200 mb-2">Advanced Changes</h4>
-                            <ul className="text-sm text-orange-700 dark:text-orange-300 space-y-1">
-                              <li>• Osteophyte formation</li>
-                              <li>• Joint capsule thickening</li>
-                              <li>• Ligamentum flavum hypertrophy</li>
-                              <li>• Potential spinal stenosis</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </Card>
-                    </div>
-
-                    <div className="space-y-4">
-                      <Card className="p-4 border-red-200 bg-red-50 dark:bg-red-950/20">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                            4
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-red-800 dark:text-red-200 mb-2">End-Stage Disease</h4>
-                            <ul className="text-sm text-red-700 dark:text-red-300 space-y-1">
-                              <li>• Complete cartilage loss</li>
-                              <li>• Bone-on-bone contact</li>
-                              <li>• Severe joint deformity</li>
-                              <li>• Chronic pain and stiffness</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </Card>
-
-                      <div className="p-4 bg-purple-50 dark:bg-purple-950/20 rounded-lg">
-                        <h4 className="font-semibold text-purple-800 dark:text-purple-200 mb-2">
-                          Contributing Factors
-                        </h4>
-                        <ul className="text-sm text-purple-700 dark:text-purple-300 space-y-1">
-                          <li>• Age-related wear and tear</li>
-                          <li>• Biomechanical stress</li>
-                          <li>• Genetic predisposition</li>
-                          <li>• Previous spinal injuries</li>
-                          <li>• Disc degeneration (secondary changes)</li>
-                        </ul>
-                      </div>
-
-                      <div className="p-4 bg-green-50 dark:bg-green-950/20 rounded-lg">
-                        <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">
-                          Pain Mechanisms
-                        </h4>
-                        <ul className="text-sm text-green-700 dark:text-green-300 space-y-1">
-                          <li>• Nociceptor activation in joint capsule</li>
-                          <li>• Inflammatory mediator release</li>
-                          <li>• Mechanical compression of nerve endings</li>
-                          <li>• Referred pain patterns</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="classification" className="bg-card p-6 rounded-lg shadow-sm">
-                <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-center">Facet Arthropathy Classification</h3>
-
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                    <div>
-                      <h4 className="font-semibold mb-4">Radiographic Grading (Weishaupt Classification)</h4>
-                      <div className="space-y-3">
-                        <div className="p-3 bg-green-50 dark:bg-green-950/20 rounded-lg border border-green-200">
-                          <h5 className="font-semibold text-sm text-green-800 dark:text-green-200">Grade 0 - Normal</h5>
-                          <p className="text-sm text-green-700 dark:text-green-300">No degenerative changes visible</p>
-                        </div>
-                        <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-lg border border-blue-200">
-                          <h5 className="font-semibold text-sm text-blue-800 dark:text-blue-200">Grade 1 - Mild</h5>
-                          <p className="text-sm text-blue-700 dark:text-blue-300">Narrowing of joint space or small osteophytes</p>
-                        </div>
-                        <div className="p-3 bg-yellow-50 dark:bg-yellow-950/20 rounded-lg border border-yellow-200">
-                          <h5 className="font-semibold text-sm text-yellow-800 dark:text-yellow-200">Grade 2 - Moderate</h5>
-                          <p className="text-sm text-yellow-700 dark:text-yellow-300">Narrowing and osteophytes, sclerosis</p>
-                        </div>
-                        <div className="p-3 bg-red-50 dark:bg-red-950/20 rounded-lg border border-red-200">
-                          <h5 className="font-semibold text-sm text-red-800 dark:text-red-200">Grade 3 - Severe</h5>
-                          <p className="text-sm text-red-700 dark:text-red-300">Severe narrowing, large osteophytes, subchondral cysts</p>
-                        </div>
-                      </div>
-                    </div>
-
-                    <div>
-                      <h4 className="font-semibold mb-4">Clinical Classification</h4>
-                      <div className="space-y-3">
-                        <div className="p-3 bg-muted rounded-lg">
-                          <h5 className="font-semibold text-sm">Primary Facet Arthropathy</h5>
-                          <p className="text-sm text-muted-foreground">Age-related degeneration without underlying pathology</p>
-                        </div>
-                        <div className="p-3 bg-muted rounded-lg">
-                          <h5 className="font-semibold text-sm">Secondary Facet Arthropathy</h5>
-                          <p className="text-sm text-muted-foreground">Following disc degeneration, trauma, or instability</p>
-                        </div>
-                        <div className="p-3 bg-muted rounded-lg">
-                          <h5 className="font-semibold text-sm">Post-surgical Changes</h5>
-                          <p className="text-sm text-muted-foreground">Accelerated degeneration after spinal surgery</p>
-                        </div>
-                        <div className="p-3 bg-muted rounded-lg">
-                          <h5 className="font-semibold text-sm">Inflammatory Arthropathy</h5>
-                          <p className="text-sm text-muted-foreground">Associated with systemic inflammatory conditions</p>
-                        </div>
-                      </div>
-
-                      <div className="mt-6 text-center">
-                        <SafeImage
-                          src="/images/spine-anatomy/facet-joint-grading.jpg"
-                          alt="Facet joint degeneration grading system"
-                          className="w-full max-w-sm mx-auto h-auto rounded-lg"
-                          fallbackSrc="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80"
-                        />
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </TabsContent>
-            </Tabs>
-          </div>
-        </section>
+        <FacetJointAnatomySection />
 
         {/* Causes and Risk Factors Section */}
         <section className={cn(

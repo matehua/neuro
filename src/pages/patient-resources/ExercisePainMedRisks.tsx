@@ -1,13 +1,14 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import PageHeader from '@/components/PageHeader';
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 import {
-  Activity,
+Activity,
   FileText,
   Brain,
   AlertTriangle,
@@ -17,6 +18,15 @@ import {
 
 const ExercisePainMedRisks: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Add minimal fallback structure based on component needs
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);

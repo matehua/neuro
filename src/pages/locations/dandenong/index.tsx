@@ -1,13 +1,23 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 
 const DandenongLocation: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Basic fallback structure
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -24,13 +34,13 @@ const DandenongLocation: React.FC = () => {
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
-                <h1 className="text-3xl font-bold mb-6">{t.dandenongLocation?.expertNeurosurgery || 'Expert Neurosurgical Consultations in Dandenong'}</h1>
-                <h2 className="text-xl text-primary mb-4">{t.dandenongLocation?.subtitle || 'Helping You Live Pain-Free'}</h2>
+                <h1 className="text-3xl font-bold mb-6">{finalT.dandenongLocation?.expertNeurosurgery || 'Expert Neurosurgical Consultations in Dandenong'}</h1>
+                <h2 className="text-xl text-primary mb-4">{finalT.dandenongLocation?.subtitle || 'Helping You Live Pain-Free'}</h2>
                 <p className="text-muted-foreground mb-4">
-                  {t.dandenongLocation?.introduction1 || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, a neurosurgeon and spine surgeon, has cared for patients in Dandenong, Eastern Melbourne suburbs and Mornington Peninsula area since 2012. He offers consultations, procedures and operations at major Melbourne Hospitals, with expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions.'}
+                  {finalT.dandenongLocation?.introduction1 || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, a neurosurgeon and spine surgeon, has cared for patients in Dandenong, Eastern Melbourne suburbs and Mornington Peninsula area since 2012. He offers consultations, procedures and operations at major Melbourne Hospitals, with expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions.'}
                 </p>
                 <p className="text-muted-foreground">
-                  {t.dandenongLocation?.introduction2 || 'Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout Melbourne\'s southeastern region, eliminating the need to travel to central Melbourne for specialized care.'}
+                  {finalT.dandenongLocation?.introduction2 || 'Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout Melbourne\'s southeastern region, eliminating the need to travel to central Melbourne for specialized care.'}
                 </p>
               </div>
               <div className="md:w-1/2">
@@ -123,36 +133,36 @@ const DandenongLocation: React.FC = () => {
 
                 <div className="space-y-6">
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.location || 'Location'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.location || 'Location'}</h3>
                     <p className="text-muted-foreground mb-4">
-                      {t.dandenongLocation?.locationDetails1 ? t.dandenongLocation.locationDetails1 : <>The <a href="https://dandenongneurology.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dandenong Neurology Consulting Rooms</a> are conveniently situated at 136 David Street. Other locations are available for urgent appointments, including Frankston, Mornington, Wantrirna and Surrey Hills.</>}
+                      {finalT.dandenongLocation?.locationDetails1 ? finalT.dandenongLocation.locationDetails1 : <>The <a href="https://dandenongneurology.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dandenong Neurology Consulting Rooms</a> are conveniently situated at 136 David Street. Other locations are available for urgent appointments, including Frankston, Mornington, Wantrirna and Surrey Hills.</>}
                     </p>
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.diagnosticFacilities || 'Diagnostic Facilities'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.diagnosticFacilities || 'Diagnostic Facilities'}</h3>
                     <p className="text-muted-foreground mb-4">
-                      {t.dandenongLocation?.diagnosticFacilitiesDetails1 ? t.dandenongLocation.diagnosticFacilitiesDetails1 : <>The neurosurgical and spinal diagnostic imaging services in Dandenong include <a href="https://i-med.com.au/find-a-radiology-clinic/werribee-private-radiology" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">IMED</a>, Capital Radiology and Lumus Imaging. All the required radiological (MRI, SPECT, CT, ultrasound and X-rays) and neurophysiological (EMG and nerve conduction studies) investigations can be arranged for the patient's convenience.</>}
+                      {finalT.dandenongLocation?.diagnosticFacilitiesDetails1 ? finalT.dandenongLocation.diagnosticFacilitiesDetails1 : <>The neurosurgical and spinal diagnostic imaging services in Dandenong include <a href="https://i-med.com.au/find-a-radiology-clinic/werribee-private-radiology" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">IMED</a>, Capital Radiology and Lumus Imaging. All the required radiological (MRI, SPECT, CT, ultrasound and X-rays) and neurophysiological (EMG and nerve conduction studies) investigations can be arranged for the patient's convenience.</>}
                     </p>
                     <p className="text-muted-foreground">
-                      {t.dandenongLocation?.diagnosticFacilitiesDetails2 || 'Interventional radiology can also be arranged for image-guided local anaesthetic/steroid injections, medial branch blocks and provocative discography.'}
+                      {finalT.dandenongLocation?.diagnosticFacilitiesDetails2 || 'Interventional radiology can also be arranged for image-guided local anaesthetic/steroid injections, medial branch blocks and provocative discography.'}
                     </p>
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.gettingHere || 'Getting Here'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.gettingHere || 'Getting Here'}</h3>
                     <div className="space-y-4">
                       <div>
-                        <h4 className="text-lg font-medium mb-2">{t.dandenongLocation?.byPublicTransport || 'By Public Transport'}</h4>
+                        <h4 className="text-lg font-medium mb-2">{finalT.dandenongLocation?.byPublicTransport || 'By Public Transport'}</h4>
                         <p className="text-muted-foreground">
-                          {t.dandenongLocation?.byPublicTransportDetails || 'The consulting suites are accessible via train (Dandenong Station) and bus services. Dandenong train station is on the Pakenham and Cranbourne lines, with regular services to and from Melbourne.'}
+                          {finalT.dandenongLocation?.byPublicTransportDetails || 'The consulting suites are accessible via train (Dandenong Station) and bus services. Dandenong train station is on the Pakenham and Cranbourne lines, with regular services to and from Melbourne.'}
                         </p>
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-medium mb-2">{t.dandenongLocation?.parkingAndDisabledAccess || 'Parking and Disabled Access'}</h4>
+                        <h4 className="text-lg font-medium mb-2">{finalT.dandenongLocation?.parkingAndDisabledAccess || 'Parking and Disabled Access'}</h4>
                         <p className="text-muted-foreground">
-                          {t.dandenongLocation?.parkingAndDisabledAccessDetails || 'Dandenong Neurology Consulting Rooms have plenty of onsite free parking available for patients. Disabled parking is available close to the main entrance. It features a no-barrier environment to guarantee full mobility for individuals with disabilities.'}
+                          {finalT.dandenongLocation?.parkingAndDisabledAccessDetails || 'Dandenong Neurology Consulting Rooms have plenty of onsite free parking available for patients. Disabled parking is available close to the main entrance. It features a no-barrier environment to guarantee full mobility for individuals with disabilities.'}
                         </p>
                       </div>
                     </div>
@@ -167,15 +177,15 @@ const DandenongLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.dandenongLocation?.therapeuticInterventions?.title || 'Therapeutic Interventions'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.dandenongLocation?.therapeuticInterventions?.title || 'Therapeutic Interventions'}</h2>
               <p className="text-muted-foreground">
-                {t.dandenongLocation?.therapeuticInterventions?.subtitle || 'Tailored treatment plans for your specific needs'}
+                {finalT.dandenongLocation?.therapeuticInterventions?.subtitle || 'Tailored treatment plans for your specific needs'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.dandenongLocation?.therapeuticInterventions?.description ? t.dandenongLocation.therapeuticInterventions.description : <>Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> collaborates closely with other specialists in Dandenong and Melbourne to develop a tailored therapeutic plan designed to address your specific needs.</>}
+                {finalT.dandenongLocation?.therapeuticInterventions?.description ? finalT.dandenongLocation.therapeuticInterventions.description : <>Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> collaborates closely with other specialists in Dandenong and Melbourne to develop a tailored therapeutic plan designed to address your specific needs.</>}
               </p>
             </div>
 
@@ -188,9 +198,9 @@ const DandenongLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.therapeuticInterventions?.interventionalProcedures?.title || 'Interventional Procedures'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.therapeuticInterventions?.interventionalProcedures?.title || 'Interventional Procedures'}</h3>
                 <p className="text-muted-foreground">
-                  {t.dandenongLocation?.therapeuticInterventions?.interventionalProcedures?.description || 'In addition to traditional medical therapies, Dr Aliashkevich can offer a variety of minimally invasive interventional procedures to target pain and inflammation directly at the source, providing relief and promoting healing.'}
+                  {finalT.dandenongLocation?.therapeuticInterventions?.interventionalProcedures?.description || 'In addition to traditional medical therapies, Dr Aliashkevich can offer a variety of minimally invasive interventional procedures to target pain and inflammation directly at the source, providing relief and promoting healing.'}
                 </p>
               </div>
 
@@ -202,9 +212,9 @@ const DandenongLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.therapeuticInterventions?.physicalTherapy?.title || 'Physical Therapy and Hydrotherapy'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.therapeuticInterventions?.physicalTherapy?.title || 'Physical Therapy and Hydrotherapy'}</h3>
                 <p className="text-muted-foreground">
-                  {t.dandenongLocation?.therapeuticInterventions?.physicalTherapy?.description || 'Personalised exercise programmes to improve posture, strength, flexibility, and mobility. These therapies can be crucial components of both non-surgical management and post-operative rehabilitation.'}
+                  {finalT.dandenongLocation?.therapeuticInterventions?.physicalTherapy?.description || 'Personalised exercise programmes to improve posture, strength, flexibility, and mobility. These therapies can be crucial components of both non-surgical management and post-operative rehabilitation.'}
                 </p>
               </div>
 
@@ -216,9 +226,9 @@ const DandenongLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.therapeuticInterventions?.rehabilitation?.title || 'Rehabilitation'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.therapeuticInterventions?.rehabilitation?.title || 'Rehabilitation'}</h3>
                 <p className="text-muted-foreground">
-                  {t.dandenongLocation?.therapeuticInterventions?.rehabilitation?.description || 'Critical component for postoperative recovery to maximise function, independence, and quality of life. Dr. Aliashkevich works with rehabilitation specialists to ensure comprehensive care throughout your recovery journey.'}
+                  {finalT.dandenongLocation?.therapeuticInterventions?.rehabilitation?.description || 'Critical component for postoperative recovery to maximise function, independence, and quality of life. Dr. Aliashkevich works with rehabilitation specialists to ensure comprehensive care throughout your recovery journey.'}
                 </p>
               </div>
             </div>
@@ -229,15 +239,15 @@ const DandenongLocation: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.dandenongLocation?.facilities?.title || 'Our Facilities'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.dandenongLocation?.facilities?.title || 'Our Facilities'}</h2>
               <p className="text-muted-foreground">
-                {t.dandenongLocation?.facilities?.subtitle || 'Specialist care in a welcoming and comfortable environment'}
+                {finalT.dandenongLocation?.facilities?.subtitle || 'Specialist care in a welcoming and comfortable environment'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.dandenongLocation?.facilities?.description || 'Dr Aliashkevich wants his patients to be fully engaged in their treatment process and have a good understanding of their neurosurgical conditions. Hence, the rooms are equipped with large displays to review and discuss the imaging and make important decisions about the treatment options and available alternatives. We believe partnering with patients in their care is a modern gold standard for medical treatment and aim to deliver ethical and professional services to improve the quality of doctor-patient interactions.'}
+                {finalT.dandenongLocation?.facilities?.description || 'Dr Aliashkevich wants his patients to be fully engaged in their treatment process and have a good understanding of their neurosurgical conditions. Hence, the rooms are equipped with large displays to review and discuss the imaging and make important decisions about the treatment options and available alternatives. We believe partnering with patients in their care is a modern gold standard for medical treatment and aim to deliver ethical and professional services to improve the quality of doctor-patient interactions.'}
               </p>
             </div>
 
@@ -250,9 +260,9 @@ const DandenongLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.facilities?.consultingRooms?.title || 'Comfortable Consulting Rooms'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.facilities?.consultingRooms?.title || 'Comfortable Consulting Rooms'}</h3>
                 <p className="text-muted-foreground">
-                  {t.dandenongLocation?.facilities?.consultingRooms?.description || 'Our neurosurgical consulting rooms are patient-centric, allowing them to feel comfortable and relaxed when discussing important health issues. Every examination room has an accessible adjustable-height exam table and sufficient clear floor space next to it. There is plenty of space for wheelchair access and capacity for accompanying persons and family members. Hand sanitisers are available in all consulting and waiting spaces.'}
+                  {finalT.dandenongLocation?.facilities?.consultingRooms?.description || 'Our neurosurgical consulting rooms are patient-centric, allowing them to feel comfortable and relaxed when discussing important health issues. Every examination room has an accessible adjustable-height exam table and sufficient clear floor space next to it. There is plenty of space for wheelchair access and capacity for accompanying persons and family members. Hand sanitisers are available in all consulting and waiting spaces.'}
                 </p>
               </div>
 
@@ -264,9 +274,9 @@ const DandenongLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.facilities?.waitingSpace?.title || 'Convenient Waiting Space'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.facilities?.waitingSpace?.title || 'Convenient Waiting Space'}</h3>
                 <p className="text-muted-foreground">
-                  {t.dandenongLocation?.facilities?.waitingSpace?.description || 'The waiting areas are designed and fitted out with the patient\'s experience in mind. They convey neatness and a warm and welcoming feeling to help patients feel comfortable and at ease. Wider seats allow for separation from strangers, room for personal belongings, child prams and adequate support. The seating and spacing elements allow for privacy and safety. Knowing how valuable is our patients\' time, we take care to keep the waiting period as short as possible and make the waiting area as convenient as possible.'}
+                  {finalT.dandenongLocation?.facilities?.waitingSpace?.description || 'The waiting areas are designed and fitted out with the patient\'s experience in mind. They convey neatness and a warm and welcoming feeling to help patients feel comfortable and at ease. Wider seats allow for separation from strangers, room for personal belongings, child prams and adequate support. The seating and spacing elements allow for privacy and safety. Knowing how valuable is our patients\' time, we take care to keep the waiting period as short as possible and make the waiting area as convenient as possible.'}
                 </p>
               </div>
 
@@ -278,9 +288,9 @@ const DandenongLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.facilities?.accessibleEnvironment?.title || 'Welcoming Environment'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.facilities?.accessibleEnvironment?.title || 'Welcoming Environment'}</h3>
                 <p className="text-muted-foreground">
-                  {t.dandenongLocation?.facilities?.accessibleEnvironment?.description ? t.dandenongLocation.facilities.accessibleEnvironment.description : <><a href="https://dandenongneurology.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dandenong Neurology</a> Consulting Rooms provide all neurosurgical specialist services accessible to individuals with disabilities. It features a no-barrier environment to guarantee full mobility. Our friendly staff can assist with all examinations that require special positioning. Hand sanitisers are available in all consulting and waiting spaces.</>}
+                  {finalT.dandenongLocation?.facilities?.accessibleEnvironment?.description ? finalT.dandenongLocation.facilities.accessibleEnvironment.description : <><a href="https://dandenongneurology.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dandenong Neurology</a> Consulting Rooms provide all neurosurgical specialist services accessible to individuals with disabilities. It features a no-barrier environment to guarantee full mobility. Our friendly staff can assist with all examinations that require special positioning. Hand sanitisers are available in all consulting and waiting spaces.</>}
                 </p>
               </div>
             </div>
@@ -315,15 +325,15 @@ const DandenongLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.dandenongLocation?.nearbyAmenities?.title || 'Nearby Amenities'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.dandenongLocation?.nearbyAmenities?.title || 'Nearby Amenities'}</h2>
               <p className="text-muted-foreground">
-                {t.dandenongLocation?.nearbyAmenities?.subtitle || 'Convenient local amenities for patients visiting our Dandenong location'}
+                {finalT.dandenongLocation?.nearbyAmenities?.subtitle || 'Convenient local amenities for patients visiting our Dandenong location'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.dandenongLocation?.nearbyAmenities?.description ||
+                {finalT.dandenongLocation?.nearbyAmenities?.description ||
                   'Our Dandenong consulting location is situated in a convenient area with a variety of amenities nearby. ' +
                   'Whether you need to grab a coffee before your appointment, find a place for lunch afterward, or run errands while you\'re in the area, ' +
                   'you\'ll find everything you need within easy reach.'}
@@ -332,33 +342,33 @@ const DandenongLocation: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.nearbyAmenities?.cafesRestaurants?.title || 'Cafes & Restaurants'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.nearbyAmenities?.cafesRestaurants?.title || 'Cafes & Restaurants'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Dandenong Pavilion</span> - {t.dandenongLocation?.nearbyAmenities?.cafesRestaurants?.dandenongPavilion?.split(' - ')[1] ||
+                      <span className="font-medium">Dandenong Pavilion</span> - {finalT.dandenongLocation?.nearbyAmenities?.cafesRestaurants?.dandenongPavilion?.split(' - ')[1] ||
                         'A popular restaurant offering a diverse menu of quality meals, located just a short drive from our consulting rooms.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Dandenong Market Food Hall</span> - {t.dandenongLocation?.nearbyAmenities?.cafesRestaurants?.dandenongMarketFoodHall?.split(' - ')[1] ||
+                      <span className="font-medium">Dandenong Market Food Hall</span> - {finalT.dandenongLocation?.nearbyAmenities?.cafesRestaurants?.dandenongMarketFoodHall?.split(' - ')[1] ||
                         'A vibrant food destination with multiple food stalls offering diverse cuisines, perfect for a quick meal.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Round About Cafe</span> - {t.dandenongLocation?.nearbyAmenities?.cafesRestaurants?.roundAboutCafe?.split(' - ')[1] ||
+                      <span className="font-medium">Round About Cafe</span> - {finalT.dandenongLocation?.nearbyAmenities?.cafesRestaurants?.roundAboutCafe?.split(' - ')[1] ||
                         'A cozy cafe known for excellent coffee and fresh food options, ideal for a pre-appointment breakfast or light lunch.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Little India</span> - {t.dandenongLocation?.nearbyAmenities?.cafesRestaurants?.littleIndia?.split(' - ')[1] ||
+                      <span className="font-medium">Little India</span> - {finalT.dandenongLocation?.nearbyAmenities?.cafesRestaurants?.littleIndia?.split(' - ')[1] ||
                         'Authentic Indian cuisine in the heart of Dandenong\'s multicultural dining precinct.'}
                     </div>
                   </li>
@@ -366,33 +376,33 @@ const DandenongLocation: React.FC = () => {
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.nearbyAmenities?.shopping?.title || 'Shopping'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.nearbyAmenities?.shopping?.title || 'Shopping'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Dandenong Plaza</span> - {t.dandenongLocation?.nearbyAmenities?.shopping?.dandenongPlaza?.split(' - ')[1] ||
+                      <span className="font-medium">Dandenong Plaza</span> - {finalT.dandenongLocation?.nearbyAmenities?.shopping?.dandenongPlaza?.split(' - ')[1] ||
                         'A major shopping center with a wide range of retail stores, supermarkets, and services, located within easy reach of our consulting rooms.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Dandenong Market</span> - {t.dandenongLocation?.nearbyAmenities?.shopping?.dandenongMarket?.split(' - ')[1] ||
+                      <span className="font-medium">Dandenong Market</span> - {finalT.dandenongLocation?.nearbyAmenities?.shopping?.dandenongMarket?.split(' - ')[1] ||
                         'A vibrant market offering fresh produce, specialty foods, clothing, and household goods.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Chemist Warehouse</span> - {t.dandenongLocation?.nearbyAmenities?.shopping?.chemistWarehouse?.split(' - ')[1] ||
+                      <span className="font-medium">Chemist Warehouse</span> - {finalT.dandenongLocation?.nearbyAmenities?.shopping?.chemistWarehouse?.split(' - ')[1] ||
                         'Conveniently located pharmacy for prescription fills and health products.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Dandenong Retail Precinct</span> - {t.dandenongLocation?.nearbyAmenities?.shopping?.dandenongRetailPrecinct?.split(' - ')[1] ||
+                      <span className="font-medium">Dandenong Retail Precinct</span> - {finalT.dandenongLocation?.nearbyAmenities?.shopping?.dandenongRetailPrecinct?.split(' - ')[1] ||
                         'The main shopping street with various specialty shops and services.'}
                     </div>
                   </li>
@@ -400,33 +410,33 @@ const DandenongLocation: React.FC = () => {
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.nearbyAmenities?.parksRecreation?.title || 'Parks & Recreation'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.nearbyAmenities?.parksRecreation?.title || 'Parks & Recreation'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Dandenong Park</span> - {t.dandenongLocation?.nearbyAmenities?.parksRecreation?.dandenongPark?.split(' - ')[1] ||
+                      <span className="font-medium">Dandenong Park</span> - {finalT.dandenongLocation?.nearbyAmenities?.parksRecreation?.dandenongPark?.split(' - ')[1] ||
                         'A beautiful park with walking paths, gardens, and open spaces, perfect for a relaxing stroll before or after your appointment.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Greaves Reserve</span> - {t.dandenongLocation?.nearbyAmenities?.parksRecreation?.greavesReserve?.split(' - ')[1] ||
+                      <span className="font-medium">Greaves Reserve</span> - {finalT.dandenongLocation?.nearbyAmenities?.parksRecreation?.greavesReserve?.split(' - ')[1] ||
                         'A recreational area with sports facilities and walking tracks.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Dandenong Creek Trail</span> - {t.dandenongLocation?.nearbyAmenities?.parksRecreation?.dandenongCreekTrail?.split(' - ')[1] ||
+                      <span className="font-medium">Dandenong Creek Trail</span> - {finalT.dandenongLocation?.nearbyAmenities?.parksRecreation?.dandenongCreekTrail?.split(' - ')[1] ||
                         'A scenic walking and cycling path that follows Dandenong Creek.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Harmony Square</span> - {t.dandenongLocation?.nearbyAmenities?.parksRecreation?.harmonySquare?.split(' - ')[1] ||
+                      <span className="font-medium">Harmony Square</span> - {finalT.dandenongLocation?.nearbyAmenities?.parksRecreation?.harmonySquare?.split(' - ')[1] ||
                         'A central public space in Dandenong with seating areas and occasional community events.'}
                     </div>
                   </li>
@@ -434,33 +444,33 @@ const DandenongLocation: React.FC = () => {
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.nearbyAmenities?.otherAmenities?.title || 'Other Amenities'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.nearbyAmenities?.otherAmenities?.title || 'Other Amenities'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Dandenong Library</span> - {t.dandenongLocation?.nearbyAmenities?.otherAmenities?.dandenongLibrary?.split(' - ')[1] ||
+                      <span className="font-medium">Dandenong Library</span> - {finalT.dandenongLocation?.nearbyAmenities?.otherAmenities?.dandenongLibrary?.split(' - ')[1] ||
                         'A modern public library offering a quiet space for reading and research.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Banks & ATMs</span> - {t.dandenongLocation?.nearbyAmenities?.otherAmenities?.banksATMs?.split(' - ')[1] ||
+                      <span className="font-medium">Banks & ATMs</span> - {finalT.dandenongLocation?.nearbyAmenities?.otherAmenities?.banksATMs?.split(' - ')[1] ||
                         'Multiple banking options available in the Dandenong central business district.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Dandenong Post Office</span> - {t.dandenongLocation?.nearbyAmenities?.otherAmenities?.dandenongPostOffice?.split(' - ')[1] ||
+                      <span className="font-medium">Dandenong Post Office</span> - {finalT.dandenongLocation?.nearbyAmenities?.otherAmenities?.dandenongPostOffice?.split(' - ')[1] ||
                         'Conveniently located for postal services and bill payments.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Drum Theatre</span> - {t.dandenongLocation?.nearbyAmenities?.otherAmenities?.drumTheatre?.split(' - ')[1] ||
+                      <span className="font-medium">Drum Theatre</span> - {finalT.dandenongLocation?.nearbyAmenities?.otherAmenities?.drumTheatre?.split(' - ')[1] ||
                         'A performing arts venue hosting various cultural events and performances.'}
                     </div>
                   </li>
@@ -474,15 +484,15 @@ const DandenongLocation: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.dandenongLocation?.nearbyHospitals?.title || 'Nearby Hospitals'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.dandenongLocation?.nearbyHospitals?.title || 'Nearby Hospitals'}</h2>
               <p className="text-muted-foreground">
-                {t.dandenongLocation?.nearbyHospitals?.subtitle || 'Dr. Aliashkevich operates at these hospitals near Dandenong'}
+                {finalT.dandenongLocation?.nearbyHospitals?.subtitle || 'Dr. Aliashkevich operates at these hospitals near Dandenong'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.dandenongLocation?.nearbyHospitals?.description || 'In addition to consultations at his Dandenong location, Dr. Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.'}
+                {finalT.dandenongLocation?.nearbyHospitals?.description || 'In addition to consultations at his Dandenong location, Dr. Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.'}
               </p>
             </div>
 
@@ -496,16 +506,16 @@ const DandenongLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.title || 'Peninsula Private Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.title || 'Peninsula Private Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.description || 'Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr. Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.'}
+                  {finalT.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.description || 'Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr. Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.address?.split('：')[1] || '525 McClelland Drive, Frankston VIC 3199'}<br />
-                  <span className="font-medium">Phone:</span> {t.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.phone?.split('：')[1] || '(03) 9788 3333'}
+                  <span className="font-medium">Address:</span> {finalT.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.address?.split('：')[1] || '525 McClelland Drive, Frankston VIC 3199'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.dandenongLocation?.nearbyHospitals?.peninsulaPrivateHospital?.phone?.split('：')[1] || '(03) 9788 3333'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.peninsulaph.com.au/" target="_blank" rel="noopener noreferrer">{t.hospitals?.peninsulaPrivate?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.peninsulaph.com.au/" target="_blank" rel="noopener noreferrer">{finalT.hospitals?.peninsulaPrivate?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
 
@@ -518,16 +528,16 @@ const DandenongLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.hospitals?.epworthEastern?.title || 'Epworth Eastern Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.hospitals?.epworthEastern?.title || 'Epworth Eastern Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.epworthEastern?.description || 'Epworth Eastern Hospital is a leading private hospital in Melbourne\'s eastern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
+                  {finalT.hospitals?.epworthEastern?.description || 'Epworth Eastern Hospital is a leading private hospital in Melbourne\'s eastern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.hospitals?.epworthEastern?.address?.split(':')[1]?.trim() || '1 Arnold Street, Box Hill VIC 3128'}<br />
-                  <span className="font-medium">Phone:</span> {t.hospitals?.epworthEastern?.phone?.split(':')[1]?.trim() || '(03) 8807 7100'}
+                  <span className="font-medium">Address:</span> {finalT.hospitals?.epworthEastern?.address?.split(':')[1]?.trim() || '1 Arnold Street, Box Hill VIC 3128'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.hospitals?.epworthEastern?.phone?.split(':')[1]?.trim() || '(03) 8807 7100'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.epworth.org.au/our-locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.epworth.org.au/our-locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{finalT.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
 
@@ -540,16 +550,16 @@ const DandenongLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.nearbyHospitals?.baysHospital?.title || 'The Bays Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.nearbyHospitals?.baysHospital?.title || 'The Bays Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.dandenongLocation?.nearbyHospitals?.baysHospital?.description || 'The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.'}
+                  {finalT.dandenongLocation?.nearbyHospitals?.baysHospital?.description || 'The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.dandenongLocation?.nearbyHospitals?.baysHospital?.address?.split('：')[1] || 'Vale Street, Mornington VIC 3931'}<br />
-                  <span className="font-medium">Phone:</span> {t.dandenongLocation?.nearbyHospitals?.baysHospital?.phone?.split('：')[1] || '(03) 5975 2009'}
+                  <span className="font-medium">Address:</span> {finalT.dandenongLocation?.nearbyHospitals?.baysHospital?.address?.split('：')[1] || 'Vale Street, Mornington VIC 3931'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.dandenongLocation?.nearbyHospitals?.baysHospital?.phone?.split('：')[1] || '(03) 5975 2009'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.thebays.com.au/" target="_blank" rel="noopener noreferrer">{t.hospitals?.baysHospital?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.thebays.com.au/" target="_blank" rel="noopener noreferrer">{finalT.hospitals?.baysHospital?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
             </div>
@@ -560,32 +570,32 @@ const DandenongLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.dandenongLocation?.patientsPrivacy?.title || 'Patients\' Privacy'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.dandenongLocation?.patientsPrivacy?.title || 'Patients\' Privacy'}</h2>
               <p className="text-muted-foreground">
-                {t.dandenongLocation?.patientsPrivacy?.subtitle || 'Your privacy is our priority'}
+                {finalT.dandenongLocation?.patientsPrivacy?.subtitle || 'Your privacy is our priority'}
               </p>
             </div>
 
             <div className="max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground mb-4">
-                {t.dandenongLocation?.patientsPrivacy?.description1 || 'Dr Aliashkevich pays great respect to patient\'s privacy and provides a safe environment. The goal is to build and maintain trust between the neurosurgeon and the patient. Patients\' comfort is as important as their treatment, and we ensure that anything you discuss with Dr Aliashkevich is kept private.'}
+                {finalT.dandenongLocation?.patientsPrivacy?.description1 || 'Dr Aliashkevich pays great respect to patient\'s privacy and provides a safe environment. The goal is to build and maintain trust between the neurosurgeon and the patient. Patients\' comfort is as important as their treatment, and we ensure that anything you discuss with Dr Aliashkevich is kept private.'}
               </p>
               <p className="text-muted-foreground mb-4">
-                {t.dandenongLocation?.patientsPrivacy?.description2 || 'Any files and all personal information are kept secure. Patients can give consent to share their health information, for example, when attending other medical practitioners.'} <a href="https://www.peninsulaph.com.au/Specialists/Specialists/peninsula-private-hospital/neurosurgery/105163/dr-ales-aliashkevich" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> {t.dandenongLocation?.patientsPrivacy?.description2 ? '' : 'will never release any information to insurers or other parties without consent.'}
+                {finalT.dandenongLocation?.patientsPrivacy?.description2 || 'Any files and all personal information are kept secure. Patients can give consent to share their health information, for example, when attending other medical practitioners.'} <a href="https://www.peninsulaph.com.au/Specialists/Specialists/peninsula-private-hospital/neurosurgery/105163/dr-ales-aliashkevich" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> {finalT.dandenongLocation?.patientsPrivacy?.description2 ? '' : 'will never release any information to insurers or other parties without consent.'}
               </p>
               <p className="text-muted-foreground">
-                {t.dandenongLocation?.patientsPrivacy?.description3 || 'At the end of every patient\'s visit, our office emails a summary of their conditions, including the diagnosis, history, examination findings, radiological results and recommended action plan.'}
+                {finalT.dandenongLocation?.patientsPrivacy?.description3 || 'At the end of every patient\'s visit, our office emails a summary of their conditions, including the diagnosis, history, examination findings, radiological results and recommended action plan.'}
               </p>
             </div>
 
             <div className="text-center">
-              <h2 className="text-2xl font-bold mb-6">{t.dandenongLocation?.readyToSchedule?.title || 'Contact Us'}</h2>
+              <h2 className="text-2xl font-bold mb-6">{finalT.dandenongLocation?.readyToSchedule?.title || 'Contact Us'}</h2>
               <p className="text-lg mb-8 max-w-2xl mx-auto text-muted-foreground">
-                {t.dandenongLocation?.readyToSchedule?.description ? t.dandenongLocation.readyToSchedule.description : <>Don't wait to seek help if you are struggling with pain, a neurosurgical or a spinal condition. Schedule a consultation with <a href="http://www.neurosurgeon.au" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Ales Aliashkevich</a> at <a href="https://dandenongneurology.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dandenong Neurology</a> Consulting Rooms and take the first step toward improved health and well-being. We're here to support you every step of the way to recovery.</>}
+                {finalT.dandenongLocation?.readyToSchedule?.description ? finalT.dandenongLocation.readyToSchedule.description : <>Don't wait to seek help if you are struggling with pain, a neurosurgical or a spinal condition. Schedule a consultation with <a href="http://www.neurosurgeon.au" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Ales Aliashkevich</a> at <a href="https://dandenongneurology.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dandenong Neurology</a> Consulting Rooms and take the first step toward improved health and well-being. We're here to support you every step of the way to recovery.</>}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-8">
                 <div className="card p-6 rounded-lg shadow-md bg-card text-center">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.dandenongLocation?.address || 'Address'}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.dandenongLocation?.address || 'Address'}</h3>
                   <p className="text-muted-foreground">
                     136 David Street<br />
                     DANDENONG 3175
@@ -593,14 +603,14 @@ const DandenongLocation: React.FC = () => {
                 </div>
 
                 <div className="card p-6 rounded-lg shadow-md bg-card text-center">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.email || 'Email'}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.email || 'Email'}</h3>
                   <p className="text-muted-foreground">
                     info@mineuro.com.au
                   </p>
                 </div>
 
                 <div className="card p-6 rounded-lg shadow-md bg-card text-center">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.phone || 'Phone'}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.phone || 'Phone'}</h3>
                   <p className="text-muted-foreground">
                     03 90084200
                   </p>
@@ -609,13 +619,13 @@ const DandenongLocation: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">
-                  <Link to="/appointments">{t.dandenongLocation?.readyToSchedule?.bookAppointment || 'Book an Appointment'}</Link>
+                  <Link to="/appointments">{finalT.dandenongLocation?.readyToSchedule?.bookAppointment || 'Book an Appointment'}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/locations">{t.dandenongLocation?.readyToSchedule?.viewAllLocations || 'View All Locations'}</Link>
+                  <Link to="/locations">{finalT.dandenongLocation?.readyToSchedule?.viewAllLocations || 'View All Locations'}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">{t.dandenongLocation?.readyToSchedule?.contactUs || 'Contact Us'}</Link>
+                  <Link to="/contact">{finalT.dandenongLocation?.readyToSchedule?.contactUs || 'Contact Us'}</Link>
                 </Button>
               </div>
             </div>

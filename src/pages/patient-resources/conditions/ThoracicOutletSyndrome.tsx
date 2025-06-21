@@ -43,6 +43,15 @@ import {
 
 const ThoracicOutletSyndrome: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Basic fallback structure
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
   const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
@@ -174,6 +183,7 @@ const ThoracicOutletSyndrome: React.FC = () => {
                 <p className="text-muted-foreground mb-6">
                   The thoracic outlet is a narrow passageway bounded by the first rib, collarbone (clavicle), 
                   and the muscles of the neck. Through this space pass important neurovascular structures 
+import en from '@/locales/en';
                   including the brachial plexus nerves and subclavian blood vessels that supply the arm and hand.
                 </p>
                 <div className="space-y-3">

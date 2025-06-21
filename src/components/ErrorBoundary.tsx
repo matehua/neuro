@@ -65,7 +65,7 @@ class ErrorBoundary extends Component<Props, State> {
         fetch(import.meta.env.VITE_ERROR_REPORTING_ENDPOINT, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify(errorReport),
+          body: JSON.stringify(errorReport)
         }).catch(() => {
           // Silently fail if error reporting fails
         });
@@ -99,7 +99,7 @@ class ErrorBoundary extends Component<Props, State> {
     }
   };
 
-  render() {
+  render(): ReactNode {
     if (this.state.hasError) {
       // Custom fallback UI
       if (this.props.fallback) {
@@ -162,7 +162,7 @@ class ErrorBoundary extends Component<Props, State> {
                   <a 
                     href="/contact" 
                     className="text-primary hover:underline"
-                    onClick={(e: any) => {
+                    onClick={(e: React.FormEvent) => {
                       e.preventDefault();
                       window.location.href = '/contact';
                     }}

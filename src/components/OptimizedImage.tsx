@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useCallback } from 'react';
 
 import EnhancedImage from '@/components/EnhancedImage';
 import { cn } from '@/lib/utils';
@@ -49,8 +49,8 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
       blurDataURL={blurDataURL}
       sizes={sizes}
       quality={quality}
-      onLoad={onLoad
-                            onError={onError
+      onLoad={onLoad}
+      onError={onError}
     />
   );
 };
@@ -58,6 +58,7 @@ export const OptimizedImage: React.FC<OptimizedImageProps> = ({
 /**
  * Hook for responsive image sizes
  */
+export const useResponsiveImageSizes = (breakpoints: Record<string, number>) => {
   const generateSizes = React.useCallback(() => {
     const sizeEntries = Object.entries(breakpoints)
       .sort(([, a], [, b]) => b - a) // Sort by width descending
@@ -91,5 +92,7 @@ export const MedicalImage: React.FC<OptimizedImageProps & {
     />
   );
 };
+
+OptimizedImage.displayName = 'OptimizedImage';
 
 export default OptimizedImage;

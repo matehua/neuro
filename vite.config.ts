@@ -51,86 +51,10 @@ export default defineConfig(({ mode }) => ({
         tryCatchDeoptimization: false
       },
       output: {
-        manualChunks: (id) => {
-          // React core
-          if (id.includes('react') || id.includes('react-dom') || id.includes('react-router')) {
-            return 'react-vendor';
-          }
-
-          // Radix UI components (split by usage frequency)
-          if (id.includes('@radix-ui')) {
-            // Core UI components used frequently
-            if (id.includes('dialog') || id.includes('popover') || id.includes('dropdown-menu') ||
-                id.includes('select') || id.includes('tabs') || id.includes('accordion')) {
-              return 'ui-core';
-            }
-            // Form-related components
-            if (id.includes('checkbox') || id.includes('radio-group') || id.includes('switch') ||
-                id.includes('slider') || id.includes('label')) {
-              return 'ui-forms';
-            }
-            // Navigation components
-            if (id.includes('navigation-menu') || id.includes('menubar') || id.includes('context-menu')) {
-              return 'ui-navigation';
-            }
-            // Other UI components
-            return 'ui-misc';
-          }
-
-          // Form libraries
-          if (id.includes('react-hook-form') || id.includes('@hookform') || id.includes('zod')) {
-            return 'form-vendor';
-          }
-
-          // Query libraries
-          if (id.includes('@tanstack/react-query') || id.includes('react-query')) {
-            return 'query-vendor';
-          }
-
-          // Animation libraries
-          if (id.includes('framer-motion') || id.includes('lottie') || id.includes('gsap')) {
-            return 'animation-vendor';
-          }
-
-          // Chart libraries
-          if (id.includes('recharts') || id.includes('d3') || id.includes('chart')) {
-            return 'chart-vendor';
-          }
-
-          // Utility libraries
-          if (id.includes('date-fns') || id.includes('clsx') || id.includes('tailwind-merge') ||
-              id.includes('class-variance-authority') || id.includes('lucide-react')) {
-            return 'utility-vendor';
-          }
-
-          // Page-specific chunks for better caching
-          if (id.includes('/pages/')) {
-            const pageName = id.split('/pages/')[1].split('/')[0].split('.')[0];
-            return `page-${pageName}`;
-          }
-
-          // Component chunks for large components
-          if (id.includes('/components/') && id.includes('.tsx')) {
-            const componentPath = id.split('/components/')[1];
-            if (componentPath.includes('ui/')) {
-              return 'ui-components';
-            }
-            if (componentPath.includes('forms/')) {
-              return 'form-components';
-            }
-          }
-
-          // Large third-party libraries
-          if (id.includes('node_modules')) {
-            return 'vendor';
-          }
-        },
-        // Optimize chunk naming for caching
-        chunkFileNames: (chunkInfo) => {
-          const facadeModuleId = chunkInfo.facadeModuleId ? chunkInfo.facadeModuleId.split('/').pop() : 'chunk';
-          return `assets/[name]-[hash].js`;
-        },
-        assetFileNames: 'assets/[name]-[hash].[ext]'
+        // Let Vite handle chunking automatically to prevent empty chunks
+        chunkFileNames: 'assets/[name]-[hash].js',
+        assetFileNames: 'assets/[name]-[hash].[ext]',
+        entryFileNames: 'assets/[name]-[hash].js'
       }
     },
     terserOptions: mode === 'production' ? {

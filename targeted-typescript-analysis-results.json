@@ -1,0 +1,1089 @@
+{
+  "summary": {
+    "totalComponents": 43,
+    "largeComponents": 39,
+    "missingInterfaces": 11,
+    "productionIssues": 0,
+    "goodExamples": 32
+  },
+  "details": {
+    "componentsNeedingInterfaces": [
+      {
+        "name": "LayoutVariants",
+        "path": "src\\components\\layout\\LayoutVariants.tsx",
+        "lines": 121,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": false,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          }
+        ]
+      },
+      {
+        "name": "StandardSection",
+        "path": "src\\components\\layout\\StandardSection.tsx",
+        "lines": 108,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": false,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          }
+        ]
+      },
+      {
+        "name": "ConditionHero",
+        "path": "src\\components\\medical-conditions\\ConditionHero.tsx",
+        "lines": 118,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": false,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          }
+        ]
+      },
+      {
+        "name": "ConditionOverview",
+        "path": "src\\components\\medical-conditions\\ConditionOverview.tsx",
+        "lines": 74,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": false,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          }
+        ]
+      },
+      {
+        "name": "alert-dialog",
+        "path": "src\\components\\ui\\alert-dialog.tsx",
+        "lines": 140,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": false,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          }
+        ]
+      },
+      {
+        "name": "breadcrumb",
+        "path": "src\\components\\ui\\breadcrumb.tsx",
+        "lines": 116,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": false,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          }
+        ]
+      },
+      {
+        "name": "dialog",
+        "path": "src\\components\\ui\\dialog.tsx",
+        "lines": 147,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": false,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          }
+        ]
+      },
+      {
+        "name": "menubar",
+        "path": "src\\components\\ui\\menubar.tsx",
+        "lines": 231,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": false,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          }
+        ]
+      },
+      {
+        "name": "resizable",
+        "path": "src\\components\\ui\\resizable.tsx",
+        "lines": 45,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": false,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          }
+        ]
+      },
+      {
+        "name": "Contact",
+        "path": "src\\pages\\Contact.tsx",
+        "lines": 760,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          },
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (760 lines)"
+          }
+        ]
+      },
+      {
+        "name": "ExerciseLibrary",
+        "path": "src\\pages\\patient-resources\\ExerciseLibrary.tsx",
+        "lines": 586,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          },
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (586 lines)"
+          }
+        ]
+      }
+    ],
+    "componentsWithGoodInterfaces": [
+      {
+        "name": "CTASection",
+        "path": "src\\components\\CTASection.tsx",
+        "lines": 125,
+        "usesProps": false,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "EnhancedImage",
+        "path": "src\\components\\EnhancedImage.tsx",
+        "lines": 324,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "ErrorBoundary",
+        "path": "src\\components\\ErrorBoundary.tsx",
+        "lines": 217,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "LanguageWrapper",
+        "path": "src\\components\\LanguageWrapper.tsx",
+        "lines": 26,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "Layout",
+        "path": "src\\components\\Layout.tsx",
+        "lines": 36,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "Loading",
+        "path": "src\\components\\Loading.tsx",
+        "lines": 256,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "ArthrosisTypesSection",
+        "path": "src\\components\\medical-conditions\\arthrosis\\ArthrosisTypesSection.tsx",
+        "lines": 271,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "DegenerationProcess",
+        "path": "src\\components\\medical-conditions\\DegenerationProcess.tsx",
+        "lines": 194,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "FacetJointAnatomySection",
+        "path": "src\\components\\medical-conditions\\facet-arthropathy\\FacetJointAnatomySection.tsx",
+        "lines": 277,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "ConditionHeroSection",
+        "path": "src\\components\\medical-conditions\\shared\\ConditionHeroSection.tsx",
+        "lines": 128,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "ConditionOverviewSection",
+        "path": "src\\components\\medical-conditions\\shared\\ConditionOverviewSection.tsx",
+        "lines": 110,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "ConditionQuickFacts",
+        "path": "src\\components\\medical-conditions\\shared\\ConditionQuickFacts.tsx",
+        "lines": 81,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "NetworkStatus",
+        "path": "src\\components\\NetworkStatus.tsx",
+        "lines": 250,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "OptimizedImage",
+        "path": "src\\components\\OptimizedImage.tsx",
+        "lines": 99,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "PageHeader",
+        "path": "src\\components\\PageHeader.tsx",
+        "lines": 134,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "ProcedureCard",
+        "path": "src\\components\\ProcedureCard.tsx",
+        "lines": 138,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "SafeImage",
+        "path": "src\\components\\SafeImage.tsx",
+        "lines": 93,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "ScreenReaderAnnouncer",
+        "path": "src\\components\\ScreenReaderAnnouncer.tsx",
+        "lines": 69,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "SEOHead",
+        "path": "src\\components\\SEOHead.tsx",
+        "lines": 256,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "SkipLink",
+        "path": "src\\components\\SkipLink.tsx",
+        "lines": 46,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "StandardPageLayout",
+        "path": "src\\components\\StandardPageLayout.tsx",
+        "lines": 124,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "badge",
+        "path": "src\\components\\ui\\badge.tsx",
+        "lines": 38,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "calendar",
+        "path": "src\\components\\ui\\calendar.tsx",
+        "lines": 74,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "carousel",
+        "path": "src\\components\\ui\\carousel.tsx",
+        "lines": 254,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "chart",
+        "path": "src\\components\\ui\\chart.tsx",
+        "lines": 144,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "command",
+        "path": "src\\components\\ui\\command.tsx",
+        "lines": 153,
+        "usesProps": false,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "form",
+        "path": "src\\components\\ui\\form.tsx",
+        "lines": 178,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "pagination",
+        "path": "src\\components\\ui\\pagination.tsx",
+        "lines": 117,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "sheet",
+        "path": "src\\components\\ui\\sheet.tsx",
+        "lines": 131,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "sidebar",
+        "path": "src\\components\\ui\\sidebar.tsx",
+        "lines": 760,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (760 lines)"
+          }
+        ]
+      },
+      {
+        "name": "sonner",
+        "path": "src\\components\\ui\\sonner.tsx",
+        "lines": 65,
+        "usesProps": false,
+        "hasProperTyping": true,
+        "isLarge": false,
+        "issues": []
+      },
+      {
+        "name": "AppointmentBooking",
+        "path": "src\\pages\\AppointmentBooking.tsx",
+        "lines": 891,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (891 lines)"
+          }
+        ]
+      }
+    ],
+    "largeComponents": [
+      {
+        "name": "Radiculopathy",
+        "path": "src\\pages\\patient-resources\\conditions\\Radiculopathy.tsx",
+        "lines": 1842,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1842 lines)"
+          }
+        ]
+      },
+      {
+        "name": "SpinalStenosis",
+        "path": "src\\pages\\patient-resources\\conditions\\SpinalStenosis.tsx",
+        "lines": 1772,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1772 lines)"
+          }
+        ]
+      },
+      {
+        "name": "Spondylolisthesis",
+        "path": "src\\pages\\patient-resources\\conditions\\Spondylolisthesis.tsx",
+        "lines": 1751,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1751 lines)"
+          }
+        ]
+      },
+      {
+        "name": "Sciatica",
+        "path": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+        "lines": 1742,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1742 lines)"
+          }
+        ]
+      },
+      {
+        "name": "ThoracicOutletSyndrome",
+        "path": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+        "lines": 1683,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1683 lines)"
+          }
+        ]
+      },
+      {
+        "name": "ParsDefects",
+        "path": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+        "lines": 1682,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1682 lines)"
+          }
+        ]
+      },
+      {
+        "name": "SacroiliacArthropathy",
+        "path": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+        "lines": 1681,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1681 lines)"
+          }
+        ]
+      },
+      {
+        "name": "PiriformisSyndrome",
+        "path": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+        "lines": 1678,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1678 lines)"
+          }
+        ]
+      },
+      {
+        "name": "Spondylosis",
+        "path": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+        "lines": 1678,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1678 lines)"
+          }
+        ]
+      },
+      {
+        "name": "OccipitalNeuralgia",
+        "path": "src\\pages\\patient-resources\\conditions\\OccipitalNeuralgia.tsx",
+        "lines": 1664,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1664 lines)"
+          }
+        ]
+      },
+      {
+        "name": "HerniatedDisc",
+        "path": "src\\pages\\patient-resources\\conditions\\HerniatedDisc.tsx",
+        "lines": 1604,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1604 lines)"
+          }
+        ]
+      },
+      {
+        "name": "FacetArthropathy",
+        "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+        "lines": 1478,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1478 lines)"
+          }
+        ]
+      },
+      {
+        "name": "Arthrosis",
+        "path": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+        "lines": 1461,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (1461 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\surrey-hills\\index.tsx",
+        "lines": 903,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (903 lines)"
+          }
+        ]
+      },
+      {
+        "name": "AppointmentBooking",
+        "path": "src\\pages\\AppointmentBooking.tsx",
+        "lines": 891,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (891 lines)"
+          }
+        ]
+      },
+      {
+        "name": "LifestyleModifications",
+        "path": "src\\pages\\patient-resources\\LifestyleModifications.tsx",
+        "lines": 869,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (869 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\frankston\\index.tsx",
+        "lines": 865,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (865 lines)"
+          }
+        ]
+      },
+      {
+        "name": "Appointments",
+        "path": "src\\pages\\Appointments.tsx",
+        "lines": 824,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (824 lines)"
+          }
+        ]
+      },
+      {
+        "name": "Index",
+        "path": "src\\pages\\Index.tsx",
+        "lines": 777,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (777 lines)"
+          }
+        ]
+      },
+      {
+        "name": "SpineConditionsLibrary",
+        "path": "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx",
+        "lines": 774,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (774 lines)"
+          }
+        ]
+      },
+      {
+        "name": "sidebar",
+        "path": "src\\components\\ui\\sidebar.tsx",
+        "lines": 760,
+        "usesProps": true,
+        "hasProperTyping": true,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (760 lines)"
+          }
+        ]
+      },
+      {
+        "name": "Contact",
+        "path": "src\\pages\\Contact.tsx",
+        "lines": 760,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          },
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (760 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\heidelberg\\index.tsx",
+        "lines": 733,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (733 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\sunbury\\index.tsx",
+        "lines": 731,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (731 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\werribee\\index.tsx",
+        "lines": 731,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (731 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\moonee-ponds\\index.tsx",
+        "lines": 719,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (719 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\mornington\\index.tsx",
+        "lines": 710,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (710 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\dandenong\\index.tsx",
+        "lines": 644,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (644 lines)"
+          }
+        ]
+      },
+      {
+        "name": "Medicolegal",
+        "path": "src\\pages\\Medicolegal.tsx",
+        "lines": 633,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (633 lines)"
+          }
+        ]
+      },
+      {
+        "name": "SpineSafeExercises",
+        "path": "src\\pages\\patient-resources\\SpineSafeExercises.tsx",
+        "lines": 630,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (630 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\langwarrin\\index.tsx",
+        "lines": 623,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (623 lines)"
+          }
+        ]
+      },
+      {
+        "name": "CervicalSpineExercises",
+        "path": "src\\pages\\patient-resources\\CervicalSpineExercises.tsx",
+        "lines": 619,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (619 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\bundoora\\index.tsx",
+        "lines": 618,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (618 lines)"
+          }
+        ]
+      },
+      {
+        "name": "Expertise",
+        "path": "src\\pages\\Expertise.tsx",
+        "lines": 616,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (616 lines)"
+          }
+        ]
+      },
+      {
+        "name": "index",
+        "path": "src\\pages\\locations\\wantirna\\index.tsx",
+        "lines": 607,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (607 lines)"
+          }
+        ]
+      },
+      {
+        "name": "ExerciseLibrary",
+        "path": "src\\pages\\patient-resources\\ExerciseLibrary.tsx",
+        "lines": 586,
+        "usesProps": true,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "MISSING_PROPS_INTERFACE",
+            "severity": "medium",
+            "message": "Component uses props but lacks TypeScript interface"
+          },
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (586 lines)"
+          }
+        ]
+      },
+      {
+        "name": "YouthfulSpine",
+        "path": "src\\pages\\patient-resources\\YouthfulSpine.tsx",
+        "lines": 562,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (562 lines)"
+          }
+        ]
+      },
+      {
+        "name": "PatientDashboard",
+        "path": "src\\pages\\patient-resources\\PatientDashboard.tsx",
+        "lines": 508,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (508 lines)"
+          }
+        ]
+      },
+      {
+        "name": "PatientResources",
+        "path": "src\\pages\\PatientResources.tsx",
+        "lines": 504,
+        "usesProps": false,
+        "hasProperTyping": false,
+        "isLarge": true,
+        "issues": [
+          {
+            "type": "LARGE_COMPONENT",
+            "severity": "high",
+            "message": "Component is very large (504 lines)"
+          }
+        ]
+      }
+    ],
+    "productionIssues": []
+  },
+  "timestamp": "2025-06-20T02:02:12.990Z"
+}

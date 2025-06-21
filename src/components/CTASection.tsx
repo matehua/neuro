@@ -1,9 +1,11 @@
+import React from 'react';
 import { Link } from 'react-router-dom';
 
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
 
 interface CTASectionProps {
   className?: string;
@@ -31,11 +33,14 @@ const CTASection: React.FC<CTASectionProps> = ({
   const { t } = useLanguage();
   const deviceInfo = useDeviceDetection();
 
-  // Use provided text or default to translations
-  const ctaTitle = title || t.home.cta.title;
-  const ctaDescription = description || t.home.cta.description;
-  const primaryBtnText = primaryButtonText || t.home.cta.bookNow;
-  const secondaryBtnText = secondaryButtonText || t.nav.contact;
+  // Fallback to English translations if context fails
+  const safeT = t || en;
+
+  // Use provided text or default to translations with safety checks
+  const ctaTitle = title || safeT?.home?.cta?.title || 'Book Your Consultation';
+  const ctaDescription = description || safeT?.home?.cta?.description || 'Schedule your appointment today';
+  const primaryBtnText = primaryButtonText || safeT?.home?.cta?.bookNow || 'Book Now';
+  const secondaryBtnText = secondaryButtonText || safeT?.nav?.contact || 'Contact';
 
   // Generate unique IDs for accessibility
   const sectionId = id || `cta-section-${Math.random().toString(36).substring(2, 9)}`;

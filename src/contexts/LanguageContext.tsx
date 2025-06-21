@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect, useContext, ReactNode, useMemo, useCallback } from 'react';
+import React, { useState, createContext, useContext, useEffect, useCallback, useMemo, ReactNode } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 
 import ErrorBoundary from '@/components/ErrorBoundary';
@@ -28,16 +28,25 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<SupportedLanguage>('en');
   const [t, setT] = useState<Translations>(translations.en);
-  const [isLanguageLoaded, setIsLanguageLoaded] = useState(true); // Start as true since we have default translations
+  const [isLanguageLoaded, setIsLanguageLoaded] = useState(true);
   const location = useLocation();
   const navigate = useNavigate();
 
-  // Ensure translations are always available
+  // Ensure translations are always available with minimal validation
   const safeT = useMemo(() => {
-    // Always ensure we have a valid translation object with required structure
-    if (!t || typeof t !== 'object' || !t.home || !t.home.welcome) {
+    // Always ensure we have a valid translation object
+    if (!t || typeof t !== 'object') {
+      console.warn('Translation object is invalid, falling back to English');
       return translations.en;
     }
+
+    // Check for essential structure - be more lenient
+    if (!t.home || typeof t.home !== 'object') {
+      console.warn('Translation home section missing, falling back to English');
+      return translations.en;
+    }
+
+    // If we have a valid translation object with home section, use it
     return t;
   }, [t]);
 
@@ -66,17 +75,22 @@ export const LanguageProvider = ({ children }: { children: ReactNode }) => {
     };
 
     const detectedLanguage = detectLanguage();
-    setLanguage(detectedLanguage);
-    setT(translations[detectedLanguage]);
-    localStorage.setItem('language', detectedLanguage);
-    setIsLanguageLoaded(true);
-  }, [location.pathname]);
+    // Only update if different from current language to avoid unnecessary re-renders
+    if (detectedLanguage !== language) {
+      setLanguage(detectedLanguage);
+      // Ensure we have a valid translation object
+      const translationToSet = translations[detectedLanguage] || translations.en;
+      setT(translationToSet);
+      localStorage.setItem('language', detectedLanguage);
+    }
+  }, [location.pathname, language]);
 
   // Change language and update URL if needed
   const changeLanguage = useCallback((lang: SupportedLanguage) => {
-    if (translations[lang]) {
+    const translationToSet = translations[lang] || translations.en;
+    if (translationToSet) {
       setLanguage(lang);
-      setT(translations[lang]);
+      setT(translationToSet);
       localStorage.setItem('language', lang);
 
       // Update URL to reflect language change if not already at that language

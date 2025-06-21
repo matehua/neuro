@@ -11,7 +11,6 @@ import { useDeviceDetection } from '@/contexts/DeviceContext';
  * Reusable overview section for medical condition pages
  */
 
-
 const ConditionOverview: React.FC<ConditionOverviewProps> = React.memo(({
   title,
   description,
@@ -36,13 +35,13 @@ const ConditionOverview: React.FC<ConditionOverviewProps> = React.memo(({
             )}>
               {title}
             </h2>
-            {description?.map((paragraph: any, index: any) => (
+            {description?.map((paragraph: string, index: number) => (
               <p key={index} className="text-muted-foreground mb-4">
                 {paragraph}
               </p>
             ))}
             <div className="space-y-3">
-              {keyPoints?.map((point: any, index: any) => (
+              {keyPoints?.map((point: string, index: number) => (
                 <div key={index} className="flex items-start gap-3">
                   <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
                   <p className="text-sm">{point}</p>

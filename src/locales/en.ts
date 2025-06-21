@@ -30,6 +30,7 @@ export default {
       professionalEnvironment: {
         title: "Professional Environment",
         description: "From the welcoming reception area to the well-appointed consulting rooms, we prioritise creating a positive experience for all occupants."
+      }
     },
     whyChoose: {
       title: "Why You Should Choose Our Suites",
@@ -60,6 +61,7 @@ export default {
       kitchenette: {
         title: "Kitchenette",
         description: "Our kitchenette allows us to prepare and enjoy refreshments throughout the day. Whether you need a quick coffee break between appointments or a snack to recharge, our kitchenette offers the perfect space to unwind and refuel. It features essential appliances, including a refrigerator, microwave, toaster, sandwich press and boiling/chilled water taps."
+      }
     },
     location: {
       title: "Location",
@@ -139,6 +141,7 @@ export default {
       title: "Have Questions?",
       description: "If you have any questions about our consulting room options or would like to arrange a viewing, please don't hesitate to contact us.",
       contactUs: "Contact Us"
+    }
   },
   expertiseCards: {
     brainConditions: {
@@ -156,6 +159,51 @@ export default {
     medicolegalReports: {
       title: "Medico-Legal Reports",
       description: "Assessment of impairment according to AMA Guides to Permanent impairment, incapacity, work cover, transport accident injuries, liability enquiries."
+    }
+  },
+  expertisePage: {
+    hero: {
+      title: "Neurosurgical Expertise",
+      subtitle: "Explore our neurosurgical specialties from spine surgery to brain tumor removal."
+    },
+    introduction: {
+      paragraph1: "is a specialist neurosurgeon and spine surgeon with extensive experience in treating complex brain, spine, and nerve conditions.",
+      paragraph2: "utilises the latest minimally invasive techniques and state-of-the-art technology to provide optimal patient outcomes.",
+      paragraph3: "His comprehensive approach combines advanced surgical techniques with personalised patient care to achieve the best possible results."
+    },
+    specializedProcedures: {
+      cervicalDisc: {
+        description: "Motion-preserving cervical disc replacement surgery to treat neck pain and restore natural mobility."
+      },
+      lumbarDisc: {
+        description: "Advanced lumbar disc replacement procedures to address lower back pain and preserve spinal motion."
+      },
+      imageGuided: {
+        description: "Precision image-guided surgery using advanced navigation systems for optimal surgical accuracy."
+      },
+      roboticSpine: {
+        description: "State-of-the-art robotic-assisted spine surgery for enhanced precision and minimal invasiveness."
+      }
+    },
+    surgicalApproach: {
+      title: "Our Surgical Approach",
+      subtitle: " follows a systematic approach to neurosurgical care:",
+      principles: {
+        identification: {
+          title: "Accurate Identification",
+          description: "Precise diagnosis using advanced imaging and diagnostic techniques to identify the exact problem."
+        },
+        access: {
+          title: "Minimally Invasive Access",
+          description: "Safe access to the pathological area with minimal injury to surrounding healthy tissues."
+        },
+        repair: {
+          title: "Effective Repair",
+          description: "Delicate and effective repair of complex structures using the latest surgical techniques."
+        }
+      },
+      cta: "Schedule Your Consultation"
+    }
   },
   minimallyInvasive: {
     subtitle: "NEUROSURGEON WHO BELIEVES THAT LESS IS MORE",
@@ -264,6 +312,7 @@ export default {
       procedures: "procedures",
       noMatch: "No procedures match your filters",
       adjustFilters: "Try adjusting your filters to see more results"
+    }
   },
   notFound: {
     title: "Page Not Found",
@@ -318,11 +367,14 @@ export default {
         location: {
           title: "Artificial Disc Replacement",
           description: "We offer cervical and lumbar artificial disc replacement, a motion-preserving technique that reduces pain and improves quality of life."
+        }
+      }
     },
     cta: {
       title: "Ready to Address Your Spine or Brain Issue?",
       description: "Book a consultation today and learn how we can improve your quality of life using minimally-invasive techniques.",
       bookNow: "Schedule Your Consultation"
+    }
   },
   patientResources: {
     title: "Patient Resources",
@@ -449,6 +501,7 @@ export default {
             "Goal achievement visualisation"
           ],
           button: "View Dashboard"
+        }
       },
       assessmentTools: {
         title: "Assessment Tools",
@@ -513,6 +566,7 @@ export default {
           ],
           timeToComplete: "Upload time varies based on file size and internet speed",
           button: "Upload Imaging"
+        }
       },
       benefits: {
         title: "Benefits of Our Assessment Tools",
@@ -630,6 +684,7 @@ export default {
             "Exercise Achievement"
           ],
           preview: "This is a preview of the goal setting features. Create an account to access the full dashboard."
+        }
       },
       successStories: {
         title: "Individual Spine Health Programme Success Stories",
@@ -647,6 +702,7 @@ export default {
           name: "Emma, 35",
           condition: "Chronic Neck Pain",
           testimonial: "Being able to track my progress over time has been incredibly motivating. I can see how my pain levels have decreased and my range of motion has improved. The goal-setting feature helped me stay committed to my recovery journey."
+        }
       },
       accessDashboard: {
         title: "Access Your Dashboard",
@@ -664,6 +720,7 @@ export default {
         description: "Start your personalised journey to better spine health today. Our Individual Spine Health Programme will help you understand your condition, provide personalised recommendations, and track your progress over time.",
         startAssessment: "Start Assessment",
         scheduleConsultation: "Schedule Consultation"
+      }
     },
     spineHealthApp: {
       title: "Spine Health App",
@@ -675,6 +732,7 @@ export default {
         assessment: "Comprehensive Assessment",
         tracking: "Progress Tracking",
         goals: "Goal Setting"
+      }
     },
     conditionInfo: {
       title: "Spine Conditions Library",
@@ -735,6 +793,7 @@ export default {
         setGoals: "Set and Track Goals",
         viewHistory: "View Assessment History",
         shareWithProvider: "Share with Healthcare Provider"
+      }
     },
     categories: {
       beforeVisit: "Before Your Visit",
@@ -803,6 +862,8 @@ export default {
       viewDetails: "View Details",
       features: "features",
       more: "more"
+    }
+  }
   },
   gallery: {
     title: "Medical Gallery",
@@ -812,6 +873,7 @@ export default {
       exterior: "Clinic Facilities",
       rooms: "Operating Rooms",
       amenities: "Medical Equipment"
+    }
   },
   appointment: {
     title: "Book Your Consultation",
@@ -899,6 +961,7 @@ export default {
       emailSent: "Your appointment has been successfully confirmed. A confirmation email has been sent to",
       appointmentReference: "Appointment Reference",
       returnToHome: "Return to Homepage"
+    }
   },
   contact: {
     title: "Contact Us",
@@ -918,6 +981,18 @@ export default {
     send: "Send Message",
     messageSent: "Message Sent!",
     thankYou: "Thank you for reaching out. Our medical team will respond to your message as soon as possible.",
+    emergencyContact: {
+      title: "Emergency Contact Information",
+      businessHours: "Neurosurgical Urgent Enquiries (Business Hours): (03) 9008 4200",
+      afterHours: "After Hours Emergency: 000",
+      epworthRichmond: {
+        title: "Epworth Richmond Hospital Emergency Department (24 hours)",
+        address: "62 Erin Street, Richmond Victoria 3121",
+        phone: "(03) 9506 3000",
+        website: "https://www.epworth.org.au/Our-Services/Emergency"
+      },
+      important: "Important: For immediate life-threatening emergencies, always call 000 first. For neurosurgical consultation during business hours, call (03) 9008 4200."
+    },
     faq: "Frequently Asked Questions",
     faqSubtitle: "Find quick answers to commonly asked questions about our neurosurgical services and procedures.",
     questions: {
@@ -944,6 +1019,8 @@ export default {
       amenities: {
         question: "What medical equipment and technology does the clinic offer?",
         answer: "Our clinics are equipped with state-of-the-art neurosurgical equipment, including high-precision image guidance systems, robotic-assisted spine surgery systems, neurological monitoring equipment, and minimally invasive surgical instruments. We use the latest technology to ensure the safety and effectiveness of our procedures."
+      }
+    }
   },
   procedureDescriptions: {
     "cervical-disc-replacement": {
@@ -969,6 +1046,7 @@ export default {
     "peripheral-nerve-surgery": {
       name: "Peripheral Nerve Surgery",
       description: "Minimally-invasive procedures to treat nerve pain, compression, and tumours affecting the peripheral nervous system."
+    }
   },
   appointments: {
     title: "Appointment with Neurosurgeon and Spine Surgeon",
@@ -994,6 +1072,8 @@ export default {
         treatmentDecisions: {
           title: "Treatment Decisions",
           description: "Surgery will be only the last resort when every other form of conservative treatment fails to improve your condition. Our primary goal is to avoid operation and to focus on other available strategies when possible."
+        }
+      }
     },
     appointmentInfo: {
       title: "Appointment Information",
@@ -1025,6 +1105,7 @@ export default {
         title: "Telehealth Options",
         description1: "For your convenience, we are happy to offer all forms of telehealth consultations, including phone, Skype, Zoom, Facetime, and other suitable conferencing options of your preference.",
         description2: "Telehealth consultations are particularly useful for follow-up appointments and for patients who live in remote areas."
+      }
     },
     requestForm: {
       title: "Request an Appointment",
@@ -1099,6 +1180,8 @@ export default {
         workCover: {
           title: "WorkCover",
           description: "Claim details and consultation approval from the WorkSafe insurer are required. Patients must pay the consultation fee upfront and claim reimbursement from their insurer."
+        }
+      }
     },
     privacy: {
       title: "Patient's Privacy",
@@ -1156,6 +1239,8 @@ export default {
         medicalNegligence: {
           title: "Medical Negligence Cases",
           description: "Expert opinion on standards of care and causation in neurosurgical and spinal cases. Dr. Aliashkevich can provide objective assessments of treatment standards and outcomes."
+        }
+      }
     },
     impairmentAssessment: {
       title: "Whole Person Impairment Assessment",
@@ -1174,6 +1259,8 @@ export default {
       expertWitness: {
         title: "Expert Witness Opinions",
         description: "If required, Dr Aliashkevich can appear in court to provide an expert neurosurgical opinion. He can provide an expert opinion based on available medical records, imaging, neurophysiological testing results and other documentation."
+        }
+      }
     },
     independentReports: {
       title: "Independent Examinations and Reports",
@@ -1312,10 +1399,10 @@ export default {
       description: "Epworth Eastern Hospital is a leading private hospital in Melbourne's eastern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.",
       address: "Address: 1 Arnold Street, Box Hill VIC 3128",
       phone: "Phone: (03) 8807 7100"
+    }
   },
 
-  locations: {
-    langwarrinLocation: {
+  langwarrinLocation: {
       expertNeurosurgery: "Expert Neurosurgery and Spine Care in Langwarrin",
       peninsulaConsultingSuites: "PENINSULA CONSULTING SUITES",
       subtitle: "Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, neurosurgeon and spine surgeon, offers consultations at Peninsula Consulting Suites in Langwarrin, providing convenient access to specialised care for patients in the southeastern suburbs of Melbourne.",
@@ -1352,6 +1439,7 @@ export default {
         rehabilitation: {
           title: "Rehabilitation",
           description: "Critical component for postoperative recovery to maximise function, independence, and quality of life. Dr. Aliashkevich works with rehabilitation specialists to ensure comprehensive care throughout your recovery journey."
+        }
       },
       nearbyAmenities: {
         title: "Nearby Amenities",
@@ -1368,6 +1456,7 @@ export default {
         },
         parks: {
           title: "Parks & Recreation"
+        }
       },
       nearbyHospitals: {
         title: "Nearby Hospitals",
@@ -1384,6 +1473,7 @@ export default {
           description: "The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalised care in a community-focussed environment.",
           address: "<span class=\"font-medium\">Address:</span> Vale Street, Mornington VIC 3931",
           phone: "<span class=\"font-medium\">Phone:</span> (03) 5975 2009"
+        }
       },
       insuranceAndFunding: {
         title: "Insurances and Surgery Funding",
@@ -1409,6 +1499,7 @@ export default {
           description1: "Dr Aliashkevich pays great respect to patient's privacy and provides a safe environment. The goal is to build and maintain trust between the neurosurgeon and the patient. Patients' comfort is as important as their treatment, and we ensure that anything you discuss with Dr Aliashkevich is kept private.",
           description2: "Any files and all personal information are kept secure. Patients can give consent to share their health information, for example, when attending other medical practitioners. Dr Aliashkevich will never release any information to insurers or other parties without consent.",
           description3: "At the end of every patient's visit, our office emails a summary of their conditions, including the diagnosis, history, examination findings, radiological results and recommended action plan."
+        }
       },
       readyToSchedule: {
         title: "Ready to Schedule an Appointment?",
@@ -1416,6 +1507,7 @@ export default {
         bookAppointment: "Book an Appointment",
         viewAllLocations: "View All Locations",
         contactUs: "Contact Us"
+      }
     },
     morningtonLocation: {
       subtitle: "Dr Ales Aliashkevich, neurosurgeon and spine surgeon, has been providing care to patients on Mornington Peninsula since 2012. He offers consultations at Mornington Specialist Centre and operates at Peninsula Private and The Bays Hospitals.",
@@ -1440,6 +1532,7 @@ export default {
       byPublicTransportDetails: "The Nepean Specialist Centre is accessible via bus services that stop on Nepean Highway. Several bus routes service the area, connecting Mornington to surrounding suburbs and Frankston train station.",
       parkingAndDisabledAccess: "Parking and Disabled Access",
       parkingAndDisabledAccessDetails: "Mornington Specialist Centre has plenty of onsite free parking available for patients. Nepean Highway Service Road serves as the main entrance to the parking area, and disabled parking is available close to the main entrance."
+    }
   },
 
   technologiesPage: {
@@ -1534,6 +1627,8 @@ export default {
             description: "Trigeminal neuralgia treatment uses minimally-invasive techniques to relieve facial pain and restore normal life."
           }
         ]
+      }
+    }
   },
   gpResources: {
     title: "GP Resources",
@@ -1675,7 +1770,7 @@ export default {
         description: "The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalised care in a community-focussed environment.",
         address: "Vale Street, Mornington VIC 3931",
         phone: "(03) 5975 2009"
-      }
-    }
-  }
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}};
+      },
+    },
+  },
+};

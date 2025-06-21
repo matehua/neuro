@@ -1,10 +1,10 @@
+import React, { useMemo, ComponentProps } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-import { ComponentProps, useMemo } from 'react';
 import { DayPicker } from 'react-day-picker';
-
 import { buttonVariants } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
+
 
 export type CalendarProps = ComponentProps<typeof DayPicker>;
 

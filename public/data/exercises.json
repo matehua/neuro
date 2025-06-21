@@ -1175,8 +1175,8 @@
           "scientificValue": "Research demonstrates that reverse fly exercises effectively strengthen the posterior chain and reduce forward head posture when performed regularly."
         },
         {
-          "id": "seated-rows",
-          "name": "Seated Rows",
+          "id": "seated-rows-upper-back",
+          "name": "Seated Rows (Upper Back)",
           "description": "Strengthens the upper and mid-back muscles using resistance bands or cables.",
           "difficulty": "intermediate",
           "image": "/images/exercises/seated-rows.jpg",
@@ -1210,8 +1210,8 @@
           "scientificValue": "Studies demonstrate that rowing exercises effectively improve upper back strength and postural alignment."
         },
         {
-          "id": "prone-t-raises",
-          "name": "Prone T Raises",
+          "id": "prone-t-raises-upper-back",
+          "name": "Prone T Raises (Upper Back)",
           "description": "Strengthens the middle trapezius and rhomboids while lying prone.",
           "difficulty": "intermediate",
           "image": "/images/exercises/prone-t-raises.jpg",
@@ -1244,8 +1244,8 @@
           "scientificValue": "Research shows that prone T raises effectively activate the middle trapezius and improve scapular stability."
         },
         {
-          "id": "prone-y-raises",
-          "name": "Prone Y Raises",
+          "id": "prone-y-raises-upper-back",
+          "name": "Prone Y Raises (Upper Back)",
           "description": "Strengthens the lower trapezius and serratus anterior while lying prone.",
           "difficulty": "intermediate",
           "image": "/images/exercises/prone-y-raises.jpg",
@@ -1278,8 +1278,8 @@
           "scientificValue": "Clinical studies show that Y raises effectively strengthen the lower trapezius and improve scapular kinematics."
         },
         {
-          "id": "thoracic-extension-foam-roller",
-          "name": "Thoracic Extension on Foam Roller",
+          "id": "thoracic-extension-foam-roller-upper-back",
+          "name": "Thoracic Extension on Foam Roller (Upper Back)",
           "description": "Improves thoracic spine mobility and reduces stiffness using a foam roller.",
           "difficulty": "intermediate",
           "image": "/images/exercises/thoracic-extension-foam-roller.jpg",
@@ -1312,8 +1312,8 @@
           "scientificValue": "Research shows that foam rolling effectively improves thoracic mobility and reduces upper back stiffness."
         },
         {
-          "id": "face-pulls",
-          "name": "Face Pulls",
+          "id": "face-pulls-upper-back",
+          "name": "Face Pulls (Upper Back)",
           "description": "Targets the posterior deltoids, middle trapezius, and external rotators of the shoulder.",
           "difficulty": "intermediate",
           "image": "/images/exercises/face-pulls.jpg",
@@ -1347,8 +1347,8 @@
           "scientificValue": "Studies demonstrate that face pulls effectively strengthen the posterior deltoids and improve shoulder stability."
         },
         {
-          "id": "thoracic-rotation",
-          "name": "Thoracic Rotation",
+          "id": "thoracic-rotation-upper-back",
+          "name": "Thoracic Rotation (Upper Back)",
           "description": "Improves rotational mobility of the thoracic spine.",
           "difficulty": "intermediate",
           "image": "/images/exercises/thoracic-rotation.jpg",
@@ -2661,8 +2661,8 @@
           "scientificValue": "Studies demonstrate that hip strengthening exercises like clamshells effectively improve hip stability and reduce lower back pain."
         },
         {
-          "id": "side-plank",
-          "name": "Side Plank",
+          "id": "side-plank-posture",
+          "name": "Side Plank (Posture)",
           "description": "Strengthens the lateral core muscles and improves spinal stability.",
           "difficulty": "intermediate",
           "image": "/images/exercises/side-plank.jpg",

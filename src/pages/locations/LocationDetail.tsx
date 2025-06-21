@@ -7,26 +7,36 @@ import Navbar from '@/components/Navbar';
 import SafeImage from '@/components/SafeImage';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
 
 const LocationDetail: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Basic fallback structure
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
   const { location } = useParams<{ location: string }>();
   interface LocationData {
     id: string;
-    name: string;
-    address: string;
-    phone: string;
+  name: string;
+  address: string;
+  phone: string;
     fax?: string;
     email?: string;
     hours: string;
-    isPrimary: boolean;
+  isPrimary: boolean;
     image?: string;
     description: string;
-    parking: string;
-    publicTransport: string;
+  parking: string;
+  publicTransport: string;
     nearbyFacilities?: string[];
     mapUrl?: string;
-  }
+}
 
   const [locationData, setLocationData] = useState<LocationData | null>(null);
 
@@ -38,19 +48,19 @@ const LocationDetail: React.FC = () => {
     // For this example, we'll use hardcoded data
     const locations: Record<string, {
       id: string;
-      name: string;
-      address: string;
-      phone: string;
+  name: string;
+  address: string;
+  phone: string;
       fax?: string;
       email: string;
-      hours: string;
-      isPrimary: boolean;
-      image: string;
-      description: string;
-      parking: string;
-      publicTransport: string;
-      nearbyFacilities: string[];
-      mapUrl: string;
+  hours: string;
+  isPrimary: boolean;
+  image: string;
+  description: string;
+  parking: string;
+  publicTransport: string;
+  nearbyFacilities: string[];
+  mapUrl: string;
     }> = {
       "surrey-hills": {
         id: "surrey-hills",

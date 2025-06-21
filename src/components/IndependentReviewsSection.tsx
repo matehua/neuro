@@ -1,3 +1,4 @@
+import React from 'react';
 import { ExternalLink, Star } from 'lucide-react';
 
 import SafeImage from '@/components/SafeImage';
@@ -5,9 +6,19 @@ import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
 
 const IndependentReviewsSection: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Add minimal fallback structure based on component needs
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
   const deviceInfo = useDeviceDetection();
 
   const reviewPlatforms = [
@@ -77,7 +88,7 @@ const IndependentReviewsSection: React.FC = () => {
                 : "text-3xl md:text-4xl mb-4"
             )}
           >
-            {t.testimonials?.title || "Independent Patient Reviews"}
+            {finalT.testimonials?.title || "Independent Patient Reviews"}
           </h2>
           <p
             id={descriptionId}
@@ -86,7 +97,7 @@ const IndependentReviewsSection: React.FC = () => {
               deviceInfo.isMobile ? "mobile-text" : ""
             )}
           >
-            {t.testimonials?.description || "Dr. Aliashkevich has received excellent feedback across multiple independent review platforms. See what patients are saying about their experiences."}
+            {finalT.testimonials?.description || "Dr. Aliashkevich has received excellent feedback across multiple independent review platforms. See what patients are saying about their experiences."}
           </p>
         </div>
 
@@ -96,7 +107,7 @@ const IndependentReviewsSection: React.FC = () => {
             ? "grid grid-cols-1 gap-mobile-md"
             : "grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 mb-10"
         )}>
-          {reviewPlatforms?.map((platform: any) => (
+          {reviewPlatforms?.map((platform: unknown) => (
             <div
               key={platform.name}
               className={cn(
@@ -143,7 +154,7 @@ const IndependentReviewsSection: React.FC = () => {
                 aria-label={`${platform.rating} out of 5 stars`}
                 role="img"
               >
-                {[...Array(5)].map((_: any, i: any) => (
+                {[...Array(5)].map((_, i: number) => (
                   <Star
                     key={i}
                     className={`h-4 w-4 fill-primary text-primary`}

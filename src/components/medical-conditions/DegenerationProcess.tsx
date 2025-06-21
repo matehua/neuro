@@ -12,7 +12,6 @@ import { useDeviceDetection } from '@/contexts/DeviceContext';
  * Reusable component for showing degeneration stages and anatomical information
  */
 
-
 const DegenerationProcess: React.FC<DegenerationProcessProps> = React.memo(({
   stages,
   anatomicalComponents,
@@ -86,7 +85,7 @@ const DegenerationProcess: React.FC<DegenerationProcessProps> = React.memo(({
               <h3 className="text-xl font-bold text-center">Stages of Degeneration</h3>
 
               <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                {stages?.map((stage: any, index: any) => {
+                {stages?.map((stage: { stage: number; title: string; severity: string; characteristics: string[] }, index: number) => {
                   const classes = getSeverityClasses(stage.severity);
                   return (
                     <Card key={index} className={cn("p-4", classes.card)}>
@@ -102,7 +101,7 @@ const DegenerationProcess: React.FC<DegenerationProcessProps> = React.memo(({
                             {stage.title}
                           </h4>
                           <ul className={cn("text-sm space-y-1", classes.list)}>
-                            {stage.characteristics?.map((char: any, charIndex: any) => (
+                            {stage.characteristics?.map((char: string, charIndex: number) => (
                               <li key={charIndex}>• {char}</li>
                             ))}
                           </ul>
@@ -130,7 +129,7 @@ const DegenerationProcess: React.FC<DegenerationProcessProps> = React.memo(({
               <div>
                 <h3 className="text-xl font-bold mb-4">Anatomical Components</h3>
                 <div className="space-y-4">
-                  {anatomicalComponents?.map((component: any, index: any) => (
+                  {anatomicalComponents?.map((component: { name: string; description: string }, index: number) => (
                     <div key={index}>
                       <h4 className="font-semibold text-primary mb-2">{component.name}</h4>
                       <p className="text-sm text-muted-foreground">
@@ -156,13 +155,13 @@ const DegenerationProcess: React.FC<DegenerationProcessProps> = React.memo(({
               <h3 className="text-xl font-bold text-center">Structural Changes</h3>
 
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                {['biochemical', 'structural'].map((type: any) => (
+                {['biochemical', 'structural'].map((type: string) => (
                   <div key={type}>
                     <h4 className="font-semibold mb-4 capitalize">{type} Changes</h4>
                     <div className="space-y-3">
                       {structuralChanges
                         .filter(change => change.type === type)
-                        .map((change: any, index: any) => (
+                        .map((change: { type: string; title: string; description: string }, index: number) => (
                           <div key={index} className="p-3 bg-muted rounded-lg">
                             <h5 className="font-semibold text-sm">{change.title}</h5>
                             <p className="text-sm text-muted-foreground">{change.description}</p>

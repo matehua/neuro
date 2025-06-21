@@ -1,11 +1,12 @@
-import { useEffect, useState, useCallback } from 'react';
-
+import React, { useEffect, useCallback, useState } from 'react';
 import ProcedureCard from '@/components/ProcedureCard';
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
 import { ProcedureProps } from '@/types/procedures';
 import { Slider } from '@/components/ui/slider';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 import {
   Select,
   SelectContent,
@@ -110,6 +111,15 @@ const allProcedures: ProcedureProps[] = [
 
 const Specialties: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Add minimal fallback structure based on component needs
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
   const [filteredProcedures, setFilteredProcedures] = useState<ProcedureProps[]>(allProcedures);
   const [complexityFilter, setComplexityFilter] = useState<string>("all");
   const [locationFilter, setLocationFilter] = useState<string>("all");
@@ -149,10 +159,17 @@ const Specialties: React.FC = () => {
   // Get unique locations for filter
   const locations = ["all", ...new Set(allProcedures?.map(proc => proc.location))];
 
+  // Create reset filters callback to avoid hook violations
+  const resetFilters = useCallback(() => {
+    setComplexityFilter("all");
+    setLocationFilter("all");
+    setRecoveryRange([0, 40]);
+  }, []);
+
   return (
     <StandardPageLayout
-      title={t.specialties.title || 'Neurosurgical Specialties'}
-      subtitle={t.specialties.description || 'Advanced procedures using cutting-edge technology for brain, spine, and nerve conditions'}
+      title={finalT.specialties.title || 'Neurosurgical Specialties'}
+      subtitle={finalT.specialties.description || 'Advanced procedures using cutting-edge technology for brain, spine, and nerve conditions'}
       pageType="service"
       enableErrorBoundary={true}
     >
@@ -164,18 +181,18 @@ const Specialties: React.FC = () => {
               {/* Complexity Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  {t.specialties.filters.complexity || 'Procedure Complexity'}
+                  {finalT.specialties.filters.complexity || 'Procedure Complexity'}
                 </label>
                 <Select value={complexityFilter} onValueChange={setComplexityFilter}>
                   <SelectTrigger className="w-full">
                     <SelectValue placeholder="Select complexity" />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">{t.specialties.filters.anyComplexity || 'Any complexity'}</SelectItem>
-                    <SelectItem value="6">{t.specialties.filters.moderate || 'Moderate (6+)'}</SelectItem>
-                    <SelectItem value="7">{t.specialties.filters.advanced || 'Advanced (7+)'}</SelectItem>
-                    <SelectItem value="8">{t.specialties.filters.complex || 'Complex (8+)'}</SelectItem>
-                    <SelectItem value="9">{t.specialties.filters.highlyComplex || 'Highly Complex (9+)'}</SelectItem>
+                    <SelectItem value="all">{finalT.specialties.filters.anyComplexity || 'Any complexity'}</SelectItem>
+                    <SelectItem value="6">{finalT.specialties.filters.moderate || 'Moderate (6+)'}</SelectItem>
+                    <SelectItem value="7">{finalT.specialties.filters.advanced || 'Advanced (7+)'}</SelectItem>
+                    <SelectItem value="8">{finalT.specialties.filters.complex || 'Complex (8+)'}</SelectItem>
+                    <SelectItem value="9">{finalT.specialties.filters.highlyComplex || 'Highly Complex (9+)'}</SelectItem>
                   </SelectContent>
                 </Select>
               </div>
@@ -183,14 +200,14 @@ const Specialties: React.FC = () => {
               {/* Location Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  {t.specialties.filters.location}
+                  {finalT.specialties.filters.location}
                 </label>
                 <Select value={locationFilter} onValueChange={setLocationFilter}>
                   <SelectTrigger className="w-full">
-                    <SelectValue placeholder={t.specialties.filters.location} />
+                    <SelectValue placeholder={finalT.specialties.filters.location} />
                   </SelectTrigger>
                   <SelectContent>
-                    <SelectItem value="all">{t.specialties.filters.allLocations}</SelectItem>
+                    <SelectItem value="all">{finalT.specialties.filters.allLocations}</SelectItem>
                     {locations?.filter(loc => loc !== "all").map(location => (
                       <SelectItem key={location} value={location}>{location}</SelectItem>
                     ))}
@@ -201,7 +218,7 @@ const Specialties: React.FC = () => {
               {/* Recovery Time Filter */}
               <div>
                 <label className="block text-sm font-medium mb-2">
-                  {t.specialties.filters.recoveryTime || 'Recovery Time (days)'}
+                  {finalT.specialties.filters.recoveryTime || 'Recovery Time (days)'}
                 </label>
                 <div className="pt-6 px-2">
                   <Slider
@@ -213,8 +230,8 @@ const Specialties: React.FC = () => {
                     onValueChange={setRecoveryRange}
                   />
                   <div className="flex justify-between mt-2 text-sm text-muted-foreground">
-                    <span>{recoveryRange[0]} {t.specialties.filters.days || 'days'}</span>
-                    <span>{recoveryRange[1]} {t.specialties.filters.days || 'days'}</span>
+                    <span>{recoveryRange[0]} {finalT.specialties.filters.days || 'days'}</span>
+                    <span>{recoveryRange[1]} {finalT.specialties.filters.days || 'days'}</span>
                   </div>
                 </div>
               </div>
@@ -222,17 +239,13 @@ const Specialties: React.FC = () => {
 
             <div className="flex justify-between items-center mt-6 animate-fade-in [animation-delay:200ms]">
               <p className="text-muted-foreground">
-                {t.specialties.filters.showing} {filteredProcedures?.length} {t.specialties.filters.of} {allProcedures?.length} {t.specialties.filters.procedures}
+                {finalT.specialties.filters.showing} {filteredProcedures?.length} {finalT.specialties.filters.of} {allProcedures?.length} {finalT.specialties.filters.procedures}
               </p>
               <Button
                 variant="outline"
-                onClick={useCallback(() => {
-                  setComplexityFilter("all");
-                  setLocationFilter("all");
-                  setRecoveryRange([0, 40]);
-                }, [])}
+                onClick={resetFilters}
               >
-                {t.specialties.filters.resetFilters || 'Reset Filters'}
+                {finalT.specialties.filters.resetFilters || 'Reset Filters'}
               </Button>
           </div>
         </div>
@@ -251,17 +264,13 @@ const Specialties: React.FC = () => {
             </div>
           ) : (
             <div className="text-center py-12 animate-fade-in">
-              <h3 className="text-xl font-semibold mb-2">{t.specialties.filters.noMatch}</h3>
-              <p className="text-muted-foreground mb-6">{t.specialties.filters.adjustFilters}</p>
+              <h3 className="text-xl font-semibold mb-2">{finalT.specialties.filters.noMatch}</h3>
+              <p className="text-muted-foreground mb-6">{finalT.specialties.filters.adjustFilters}</p>
               <Button
                 variant="outline"
-                onClick={useCallback(() => {
-                  setComplexityFilter("all");
-                  setLocationFilter("all");
-                  setRecoveryRange([0, 40]);
-                }, [])}
+                onClick={resetFilters}
               >
-                {t.specialties.filters.resetFilters || 'Reset Filters'}
+                {finalT.specialties.filters.resetFilters || 'Reset Filters'}
               </Button>
             </div>
           )}

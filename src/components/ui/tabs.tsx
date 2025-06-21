@@ -9,7 +9,7 @@ const Tabs = TabsPrimitive.Root
 const TabsList = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.List>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.List>
->(({ className: any, ...props }: any, ref: any) => {
+>(({ className, ...props }, ref) => {
   const deviceInfo = useDeviceDetection();
 
   return (
@@ -31,7 +31,7 @@ TabsList.displayName = TabsPrimitive.List.displayName
 const TabsTrigger = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Trigger>
->(({ className: any, ...props }: any, ref: any) => {
+>(({ className, ...props }, ref) => {
   const deviceInfo = useDeviceDetection();
 
   return (
@@ -53,7 +53,7 @@ TabsTrigger.displayName = TabsPrimitive.Trigger.displayName
 const TabsContent = React.forwardRef<
   React.ElementRef<typeof TabsPrimitive.Content>,
   React.ComponentPropsWithoutRef<typeof TabsPrimitive.Content>
->(({ className: any, ...props }: any, ref: any) => {
+>(({ className, ...props }, ref) => {
   const deviceInfo = useDeviceDetection();
 
   return (

@@ -1,4 +1,4 @@
-import React, {  useState, useEffect , useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Send, Check, FileText, CreditCard, Building, Users } from 'lucide-react';
 
@@ -11,9 +11,39 @@ import { Label } from '@/components/ui/label';
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
 
 const Contact: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.contact && safeT.nav && safeT.home) ? safeT : {
+    contact: {
+      title: "Contact Us",
+      subtitle: "Get in touch with our team to schedule your consultation.",
+      getInTouch: "Get in Touch",
+      address: "Address",
+      phone: "Phone",
+      email: "Email",
+      receptionHours: "Reception Hours",
+      sendMessage: "Send a Message",
+      fullName: "Full Name",
+      phoneNumber: "Phone Number",
+      subject: "Subject",
+      message: "Message",
+      howCanWeHelp: "How can we help you?",
+      send: "Send Message"
+    },
+    nav: {
+      locations: "Locations"
+    },
+    home: {
+      featuredProcedures: {
+        viewAll: "View All Locations"
+      }
+    }
+  };
   const deviceInfo = useDeviceDetection();
   const [formData, setFormData] = useState({
     name: "",
@@ -58,8 +88,8 @@ const Contact: React.FC = () => {
   return (
     <StandardPageLayout showHeader={false}>
       <PageHeader
-        title={t.contact.title}
-        subtitle={`${t.contact.subtitle} Our staff will assist to coordinate an appointment at the location most convenient and accessible for you. Urgent appointments are available on request.`}
+        title={finalT.contact.title}
+        subtitle={`${finalT.contact.subtitle} Our staff will assist to coordinate an appointment at the location most convenient and accessible for you. Urgent appointments are available on request.`}
         backgroundImage="/images/neurosurgical-consultation-suite-Surrey-Hills-miNEURO-reception.jpg"
         enableParallax={true}
       />
@@ -82,7 +112,7 @@ const Contact: React.FC = () => {
                   "font-bold mb-mobile-lg",
                   deviceInfo.isMobile ? "mobile-heading" : "text-2xl mb-6"
                 )}>
-                  {t.contact.getInTouch}
+                  {finalT.contact.getInTouch}
                 </h2>
 
                 <div className="relative rounded-xl overflow-hidden mb-8 shadow-lg">
@@ -115,7 +145,7 @@ const Contact: React.FC = () => {
                         "font-semibold mb-1",
                         deviceInfo.isMobile ? "mobile-subheading" : ""
                       )}>
-                        {t.contact.address}
+                        {finalT.contact.address}
                       </h3>
                       <p className={cn(
                         "text-muted-foreground",
@@ -152,7 +182,7 @@ const Contact: React.FC = () => {
                         "font-semibold mb-1",
                         deviceInfo.isMobile ? "mobile-subheading" : ""
                       )}>
-                        {t.contact.phone}
+                        {finalT.contact.phone}
                       </h3>
                       <a
                         href="tel:+61390084200"
@@ -189,7 +219,7 @@ const Contact: React.FC = () => {
                       <Mail className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">{t.contact.email}</h3>
+                      <h3 className="font-semibold mb-1">{finalT.contact.email}</h3>
                       <p className="text-muted-foreground">Email: info@mineuro.com.au</p>
                       <p className="text-muted-foreground">Argus: argus@mineuro.com.au</p>
                       <p className="text-muted-foreground">HealthLink: mineuros</p>
@@ -201,10 +231,49 @@ const Contact: React.FC = () => {
                       <Clock className="h-5 w-5 text-primary" />
                     </div>
                     <div>
-                      <h3 className="font-semibold mb-1">{t.contact.receptionHours}</h3>
+                      <h3 className="font-semibold mb-1">{finalT.contact.receptionHours}</h3>
                       <p className="text-muted-foreground">
                         Monday - Friday: 8:30 AM - 5:30 PM<br />
                         Saturday - Sunday: Closed
+                      </p>
+                    </div>
+                  </div>
+                </div>
+
+                <h3 className="text-xl font-bold mb-4">Emergency Contact Information</h3>
+                <div className="glass-card p-6 mb-8">
+                  <div className="space-y-4">
+                    <div className="p-4 border border-red-300 bg-red-50 dark:bg-red-950/20 rounded-md">
+                      <h4 className="font-bold text-red-700 dark:text-red-400 mb-3">Emergency Contact Numbers</h4>
+                      <div className="space-y-2">
+                        <p className="text-sm">
+                          <span className="font-bold">Neurosurgical Urgent Enquiries (Business Hours):</span>
+                          <span className="text-red-700 dark:text-red-400 font-bold ml-2">(03) 9008 4200</span>
+                        </p>
+                        <p className="text-sm">
+                          <span className="font-bold">After Hours Emergency:</span>
+                          <span className="text-red-700 dark:text-red-400 font-bold ml-2">000</span>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="p-4 border border-blue-300 bg-blue-50 dark:bg-blue-950/20 rounded-md">
+                      <h4 className="font-bold text-blue-700 dark:text-blue-400 mb-3">Epworth Richmond Hospital Emergency Department (24 hours)</h4>
+                      <div className="space-y-1 text-sm text-blue-700 dark:text-blue-300">
+                        <p><span className="font-medium">Address:</span> 62 Erin Street, Richmond Victoria 3121</p>
+                        <p><span className="font-medium">Phone:</span> (03) 9506 3000</p>
+                        <p>
+                          <span className="font-medium">Website:</span>
+                          <a href="https://www.epworth.org.au/Our-Services/Emergency" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600 ml-1">
+                            https://www.epworth.org.au/Our-Services/Emergency
+                          </a>
+                        </p>
+                      </div>
+                    </div>
+
+                    <div className="p-3 bg-yellow-50 dark:bg-yellow-950/20 rounded-md border border-yellow-200">
+                      <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium">
+                        <strong>Important:</strong> For immediate life-threatening emergencies, always call 000 first. For neurosurgical consultation during business hours, call (03) 9008 4200.
                       </p>
                     </div>
                   </div>
@@ -311,7 +380,7 @@ const Contact: React.FC = () => {
 
               {/* Contact Form */}
               <div className="animate-fade-in [animation-delay:300ms]">
-                <h2 className="text-2xl font-bold mb-6">{t.contact.sendMessage}</h2>
+                <h2 className="text-2xl font-bold mb-6">{finalT.contact.sendMessage}</h2>
 
                 <div className="relative rounded-xl overflow-hidden mb-8 shadow-lg">
                   <SafeImage
@@ -351,7 +420,7 @@ const Contact: React.FC = () => {
                               deviceInfo.isMobile ? "mobile-text font-medium" : ""
                             )}
                           >
-                            {t.contact.fullName}
+                            {finalT.contact.fullName}
                           </Label>
                           <Input
                             id="name"
@@ -375,7 +444,7 @@ const Contact: React.FC = () => {
                               deviceInfo.isMobile ? "mobile-text font-medium" : ""
                             )}
                           >
-                            {t.contact.email}
+                            {finalT.contact.email}
                           </Label>
                           <Input
                             id="email"
@@ -406,7 +475,7 @@ const Contact: React.FC = () => {
                               deviceInfo.isMobile ? "mobile-text font-medium" : ""
                             )}
                           >
-                            {t.contact.phoneNumber}
+                            {finalT.contact.phoneNumber}
                           </Label>
                           <Input
                             id="phone"
@@ -430,7 +499,7 @@ const Contact: React.FC = () => {
                               deviceInfo.isMobile ? "mobile-text font-medium" : ""
                             )}
                           >
-                            {t.contact.subject}
+                            {finalT.contact.subject}
                           </Label>
                           <Input
                             id="subject"
@@ -455,14 +524,14 @@ const Contact: React.FC = () => {
                             deviceInfo.isMobile ? "mobile-text font-medium" : ""
                           )}
                         >
-                          {t.contact.message}
+                          {finalT.contact.message}
                         </Label>
                         <textarea
                           id="message"
                           name="message"
                           value={formData.message}
                           onChange={handleInputChange}
-                            placeholder={t.contact.howCanWeHelp}
+                            placeholder={finalT.contact.howCanWeHelp}
                           className={cn(
                             "w-full p-3 rounded-md border border-input bg-background touch-manipulation",
                             deviceInfo.isMobile
@@ -484,7 +553,7 @@ const Contact: React.FC = () => {
                           "mr-2",
                           deviceInfo.isMobile ? "h-5 w-5" : "h-4 w-4"
                         )} />
-                        {t.contact.send}
+                        {finalT.contact.send}
                       </Button>
                     </form>
                   ) : (
@@ -492,9 +561,9 @@ const Contact: React.FC = () => {
                       <div className="w-16 h-16 bg-green-100 dark:bg-green-900/30 rounded-full flex items-center justify-center mx-auto mb-6">
                         <Check className="h-8 w-8 text-green-600 dark:text-green-400" />
                       </div>
-                      <h3 className="text-xl font-semibold mb-2">{t.contact.messageSent}</h3>
+                      <h3 className="text-xl font-semibold mb-2">{finalT.contact.messageSent}</h3>
                       <p className="text-muted-foreground mb-6">
-                        {t.contact.thankYou}
+                        {finalT.contact.thankYou}
                       </p>
                     </div>
                   )}
@@ -514,7 +583,7 @@ const Contact: React.FC = () => {
               "font-bold text-center mb-mobile-lg",
               deviceInfo.isMobile ? "mobile-heading" : "text-2xl mb-8"
             )}>
-              {t.nav.locations}
+              {finalT.nav.locations}
             </h2>
             <p className={cn(
               "text-center text-muted-foreground max-w-3xl mx-auto mb-mobile-lg",
@@ -675,7 +744,7 @@ const Contact: React.FC = () => {
 
             <div className="text-center">
               <Button asChild size="lg">
-                <Link to="/locations">{t.home.featuredProcedures.viewAll}</Link>
+                <Link to="/locations">{finalT.home.featuredProcedures.viewAll}</Link>
               </Button>
             </div>
           </div>

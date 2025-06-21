@@ -231,7 +231,7 @@ export function normalizeProcedureData(data: RawProcedureData): ProcedureProps {
     followUpRequired: data.followUpRequired,
     hospitalStay: data.hospitalStay,
     equipmentUsed: data.equipmentUsed,
-    surgeonSpecialty: data.surgeonSpecialty,
+    surgeonSpecialty: data.surgeonSpecialty
   };
 }
 
@@ -302,4 +302,3 @@ export function createSafeProcedure(data: Partial<RawProcedureData>): ProcedureP
     return null;
   }
 }
-

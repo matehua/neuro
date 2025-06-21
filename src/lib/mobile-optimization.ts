@@ -62,7 +62,7 @@ export class MobileOptimiser {
 
     // Prevent zoom on double tap for better UX
     let lastTouchEnd = 0;
-    document.addEventListener('touchend', (e: any) => {
+    document.addEventListener('touchend', (e: React.FormEvent) => {
       const now = Date.now();
       if (now - lastTouchEnd <= 300) {
         e.preventDefault();
@@ -122,7 +122,7 @@ export class MobileOptimiser {
   private optimiseImages(): void {
     // Add intersection observer for lazy loading
     if ('IntersectionObserver' in window) {
-      const imageObserver = new IntersectionObserver((entries: any) => {
+      const imageObserver = new IntersectionObserver((entries: unknown) => {
         entries.forEach(entry => {
           if (entry.isIntersecting) {
             const img = entry.target as HTMLImageElement;
@@ -149,7 +149,7 @@ export class MobileOptimiser {
    */
   private addMobileSecurity(): void {
     // Prevent context menu on long press (optional)
-    document.addEventListener('contextmenu', (e: any) => {
+    document.addEventListener('contextmenu', (e: React.FormEvent) => {
       if (this.isMobileDevice()) {
         e.preventDefault();
       }
@@ -261,7 +261,7 @@ export class MobileOptimiser {
     // TODO: Re-enable after fixing service worker MIME type handling
 
     // Add app install prompt handling
-    window.addEventListener('beforeinstallprompt', (e: any) => {
+    window.addEventListener('beforeinstallprompt', (e: React.FormEvent) => {
       e.preventDefault();
       // Store the event for later use if needed
     });
@@ -287,7 +287,7 @@ export class MobileOptimiser {
    */
   public enhanceAccessibility(): void {
     // Ensure proper focus management on mobile
-    document.addEventListener('focusin', (e: any) => {
+    document.addEventListener('focusin', (e: React.FormEvent) => {
       const target = e.target as HTMLElement;
       if (target && this.isMobileDevice()) {
         target.scrollIntoView({ behavior: 'smooth', block: 'center' });
@@ -397,5 +397,7 @@ export const MobileUtils = {
     }
   }
 };
+
+MobileOptimiser.displayName = 'MobileOptimiser';
 
 export default MobileOptimiser;

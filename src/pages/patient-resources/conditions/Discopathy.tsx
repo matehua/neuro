@@ -1,4 +1,4 @@
-import React, {  useEffect , useCallback } from 'react';
+import React, { useEffect } from 'react';
 
 import ConditionHero from '@/components/medical-conditions/ConditionHero';
 import ConditionOverview from '@/components/medical-conditions/ConditionOverview';
@@ -10,7 +10,6 @@ import { discopathyData } from '@/data/conditions/discopathy';
  * Discopathy Page Component
  * Refactored to use modular components and data-driven approach
  */
-
 
 const Discopathy: React.FC = React.memo(() => {
   useEffect(() => {

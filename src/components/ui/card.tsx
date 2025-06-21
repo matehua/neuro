@@ -6,7 +6,7 @@ import { useDeviceDetection } from '@/contexts/DeviceContext';
 const Card = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className: any, ...props }: any, ref: any) => (
+>(({ className, ...props }, ref) => (
   <div
     ref={ref}
     className={cn(
@@ -21,15 +21,23 @@ Card.displayName = "Card"
 const CardHeader = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className: any, ...props }: any, ref: any) => {
-  const deviceInfo = useDeviceDetection();
+>(({ className, ...props }, ref) => {
+  // Safe device detection with fallback
+  let isMobile = false;
+  try {
+    const deviceInfo = useDeviceDetection();
+    isMobile = deviceInfo.isMobile;
+  } catch {
+    // Fallback: assume desktop if context not available
+    isMobile = false;
+  }
 
   return (
     <div
       ref={ref}
       className={cn(
         "flex flex-col",
-        deviceInfo.isMobile
+        isMobile
           ? "space-y-mobile-sm p-mobile-lg"
           : "space-y-1.5 p-6",
         className
@@ -43,7 +51,7 @@ CardHeader.displayName = "CardHeader"
 const CardTitle = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLHeadingElement>
->(({ className: any, ...props }: any, ref: any) => (
+>(({ className, ...props }, ref) => (
   <h3
     ref={ref}
     className={cn(
@@ -58,7 +66,7 @@ CardTitle.displayName = "CardTitle"
 const CardDescription = React.forwardRef<
   HTMLParagraphElement,
   React.HTMLAttributes<HTMLParagraphElement>
->(({ className: any, ...props }: any, ref: any) => (
+>(({ className, ...props }, ref) => (
   <p
     ref={ref}
     className={cn("text-sm text-muted-foreground", className)}
@@ -70,15 +78,23 @@ CardDescription.displayName = "CardDescription"
 const CardContent = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className: any, ...props }: any, ref: any) => {
-  const deviceInfo = useDeviceDetection();
+>(({ className, ...props }, ref) => {
+  // Safe device detection with fallback
+  let isMobile = false;
+  try {
+    const deviceInfo = useDeviceDetection();
+    isMobile = deviceInfo.isMobile;
+  } catch {
+    // Fallback: assume desktop if context not available
+    isMobile = false;
+  }
 
   return (
     <div
       ref={ref}
       className={cn(
         "pt-0",
-        deviceInfo.isMobile ? "p-mobile-lg" : "p-6",
+        isMobile ? "p-mobile-lg" : "p-6",
         className
       )}
       {...props}
@@ -90,15 +106,23 @@ CardContent.displayName = "CardContent"
 const CardFooter = React.forwardRef<
   HTMLDivElement,
   React.HTMLAttributes<HTMLDivElement>
->(({ className: any, ...props }: any, ref: any) => {
-  const deviceInfo = useDeviceDetection();
+>(({ className, ...props }, ref) => {
+  // Safe device detection with fallback
+  let isMobile = false;
+  try {
+    const deviceInfo = useDeviceDetection();
+    isMobile = deviceInfo.isMobile;
+  } catch {
+    // Fallback: assume desktop if context not available
+    isMobile = false;
+  }
 
   return (
     <div
       ref={ref}
       className={cn(
         "flex items-center pt-0",
-        deviceInfo.isMobile ? "p-mobile-lg" : "p-6",
+        isMobile ? "p-mobile-lg" : "p-6",
         className
       )}
       {...props}

@@ -20,7 +20,7 @@ export class SecurityManager {
   private static instance: SecurityManager;
   private config: SecurityConfig;
   private initialized = false;
-  private observers: any[] = [];
+  private observers: unknown[] = [];
   private intervals: number[] = [];
   private securityEvents: Array<{ type: string; timestamp: number; details: string }> = [];
 
@@ -99,7 +99,7 @@ export class SecurityManager {
    */
   private setupCSP(): void {
     // CSP is handled via headers, but we can add reporting
-    document.addEventListener('securitypolicyviolation', (e: any) => {
+    document.addEventListener('securitypolicyviolation', (e: React.FormEvent) => {
       this.logSecurityEvent('CSP_VIOLATION', `Blocked: ${e.blockedURI} - Directive: ${e.violatedDirective}`);
     });
   }
@@ -126,7 +126,7 @@ export class SecurityManager {
    * Setup input sanitization
    */
   private setupInputSanitization(): void {
-    document.addEventListener('input', (e: any) => {
+    document.addEventListener('input', (e: React.FormEvent) => {
       const target = e.target as HTMLInputElement;
       if (target.tagName === 'INPUT' || target.tagName === 'TEXTAREA') {
         this.sanitizeInput(target);
@@ -183,7 +183,7 @@ export class SecurityManager {
    * Setup form validation
    */
   private setupFormValidation(): void {
-    document.addEventListener('submit', (e: any) => {
+    document.addEventListener('submit', (e: React.FormEvent) => {
       const form = e.target as HTMLFormElement;
       if (!this.validateForm(form)) {
         e.preventDefault();
@@ -232,7 +232,7 @@ export class SecurityManager {
   private setupNetworkSecurity(): void {
     // Monitor for suspicious network requests
     const originalFetch = window.fetch;
-    window.fetch = async (...args: any) => {
+    window.fetch = async (...args: Parameters<typeof fetch>) => {
       const url = args[0] as string;
       
       // Check for suspicious URLs
@@ -293,7 +293,7 @@ export class SecurityManager {
   private monitorXSSAttempts(): void {
     // Monitor DOM mutations for potential XSS
     if ('MutationObserver' in window) {
-      const observer = new MutationObserver((mutations: any) => {
+      const observer = new MutationObserver((mutations: unknown) => {
         mutations.forEach(mutation => {
           if (mutation.type === 'childList') {
             mutation.addedNodes.forEach(node => {
@@ -406,11 +406,11 @@ export class SecurityManager {
     warning.className = 'security-warning';
     warning.style.cssText = `
       position: fixed;
-      top: 20px;
-      right: 20px;
-      background: #ff6b6b;
-      color: white;
-      padding: 10px 15px;
+  top: 20px;
+  right: 20px;
+  background: #ff6b6b;
+  color: white;
+  padding: 10px 15px;
       border-radius: 5px;
       z-index: 10000;
       font-size: 14px;
@@ -509,5 +509,7 @@ export const SecurityUtils = {
     return div.innerHTML;
   }
 };
+
+SecurityManager.displayName = 'SecurityManager';
 
 export default SecurityManager;

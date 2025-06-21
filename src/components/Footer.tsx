@@ -1,14 +1,44 @@
+import React from 'react';
 import { Facebook, Instagram, Twitter, Mail, Phone, MapPin } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
 
 const Footer: React.FC = () => {
   const { t } = useLanguage();
   const currentYear = new Date().getFullYear();
   const deviceInfo = useDeviceDetection();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.footer && safeT.nav) ? safeT : {
+    footer: {
+      description: "Dr. Ales Aliashkevich is a specialist in minimally invasive neurosurgery and spine surgery, using the latest technology to provide the best outcomes for patients.",
+      quickLinks: "Quick Links",
+      contact: "Contact",
+      allRights: "All rights reserved."
+    },
+    nav: {
+      home: "Home",
+      expertise: "Expertise",
+      appointments: "Appointments",
+      gpResources: "GP Resources",
+      locations: "Locations",
+      contact: "Contact",
+      locationsSubmenu: {
+        surreyHills: "Surrey Hills",
+        mornington: "Mornington",
+        frankston: "Frankston",
+        mooneePonds: "Moonee Ponds"
+      }
+    },
+    patientResources: {
+      title: "Patient Resources"
+    }
+  };
 
   return (
     <footer className={cn(
@@ -35,14 +65,15 @@ const Footer: React.FC = () => {
               "text-muted-foreground mb-mobile-md",
               deviceInfo.isMobile ? "mobile-text" : "mb-4"
             )}>
-              {t.footer.description}
+              {finalT.footer.description}
             </p>
-            <div className={cn(
+            <nav aria-label="Social media links" className={cn(
               "flex",
               deviceInfo.isMobile ? "space-x-mobile-md" : "space-x-4"
             )}>
               <a
                 href="#"
+                aria-label="Follow us on Facebook"
                 className={cn(
                   "text-muted-foreground transition-colors touch-feedback",
                   deviceInfo.isMobile
@@ -50,11 +81,11 @@ const Footer: React.FC = () => {
                     : "hover:text-primary"
                 )}
               >
-                <Facebook size={deviceInfo.isMobile ? 24 : 20} />
-                <span className="sr-only">Facebook</span>
+                <Facebook size={deviceInfo.isMobile ? 24 : 20} aria-hidden="true" />
               </a>
               <a
                 href="#"
+                aria-label="Follow us on Instagram"
                 className={cn(
                   "text-muted-foreground transition-colors touch-feedback",
                   deviceInfo.isMobile
@@ -62,11 +93,11 @@ const Footer: React.FC = () => {
                     : "hover:text-primary"
                 )}
               >
-                <Instagram size={deviceInfo.isMobile ? 24 : 20} />
-                <span className="sr-only">Instagram</span>
+                <Instagram size={deviceInfo.isMobile ? 24 : 20} aria-hidden="true" />
               </a>
               <a
                 href="#"
+                aria-label="Follow us on Twitter"
                 className={cn(
                   "text-muted-foreground transition-colors touch-feedback",
                   deviceInfo.isMobile
@@ -74,33 +105,32 @@ const Footer: React.FC = () => {
                     : "hover:text-primary"
                 )}
               >
-                <Twitter size={deviceInfo.isMobile ? 24 : 20} />
-                <span className="sr-only">Twitter</span>
+                <Twitter size={deviceInfo.isMobile ? 24 : 20} aria-hidden="true" />
               </a>
-            </div>
+            </nav>
           </div>
 
-          <div className={cn(
+          <nav aria-labelledby="quick-links-heading" className={cn(
             deviceInfo.isMobile ? "mobile-fade-in" : "animate-fade-in [animation-delay:200ms]"
           )}>
-            <h4 className={cn(
+            <h4 id="quick-links-heading" className={cn(
               "font-bold mb-mobile-md",
               deviceInfo.isMobile ? "mobile-subheading" : "text-xl mb-4"
             )}>
-              {t.footer.quickLinks}
+              {finalT.footer.quickLinks}
             </h4>
             <ul className={cn(
               deviceInfo.isMobile ? "space-y-mobile-sm" : "space-y-2"
             )}>
               {[
-                { name: t.nav.home, path: "/" },
-                { name: t.nav.expertise, path: "/expertise" },
-                { name: t.patientResources.title, path: "/patient-resources" },
-                { name: t.nav.appointments, path: "/appointments" },
-                { name: t.nav.gpResources, path: "/gp-resources" },
-                { name: t.nav.locations, path: "/locations" },
-                { name: t.nav.contact, path: "/contact" },
-              ].map((link: any) => (
+                { name: finalT.nav.home, path: "/" },
+                { name: finalT.nav.expertise, path: "/expertise" },
+                { name: finalT.patientResources.title, path: "/patient-resources" },
+                { name: finalT.nav.appointments, path: "/appointments" },
+                { name: finalT.nav.gpResources, path: "/gp-resources" },
+                { name: finalT.nav.locations, path: "/locations" },
+                { name: finalT.nav.contact, path: "/contact" },
+              ].map((link: unknown) => (
                 <li key={link.name}>
                   <Link
                     to={link.path}
@@ -116,25 +146,25 @@ const Footer: React.FC = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
-          <div className={cn(
+          <section aria-labelledby="contact-heading" className={cn(
             deviceInfo.isMobile ? "mobile-fade-in" : "animate-fade-in [animation-delay:300ms]"
           )}>
-            <h4 className={cn(
+            <h4 id="contact-heading" className={cn(
               "font-bold mb-mobile-md",
               deviceInfo.isMobile ? "mobile-subheading" : "text-xl mb-4"
             )}>
-              {t.footer.contact}
+              {finalT.footer.contact}
             </h4>
-            <ul className={cn(
+            <address className={cn(
               deviceInfo.isMobile ? "space-y-mobile-md" : "space-y-3"
-            )}>
-              <li className="flex items-start">
+            )} style={{ fontStyle: 'normal' }}>
+              <div className="flex items-start">
                 <MapPin className={cn(
                   "text-primary mr-mobile-sm mt-0.5",
                   deviceInfo.isMobile ? "w-5 h-5" : "w-5 h-5 mr-2"
-                )} />
+                )} aria-hidden="true" />
                 <span className={cn(
                   "text-muted-foreground",
                   deviceInfo.isMobile ? "mobile-text" : ""
@@ -143,14 +173,15 @@ const Footer: React.FC = () => {
                   Surrey Hills VIC 3127<br />
                   Australia
                 </span>
-              </li>
-              <li className="flex items-center">
+              </div>
+              <div className="flex items-center">
                 <Phone className={cn(
                   "text-primary mr-mobile-sm",
                   deviceInfo.isMobile ? "w-5 h-5" : "w-5 h-5 mr-2"
-                )} />
+                )} aria-hidden="true" />
                 <a
                   href="tel:+61390084200"
+                  aria-label="Call us at (03) 9008 4200"
                   className={cn(
                     "text-muted-foreground transition-colors touch-feedback",
                     deviceInfo.isMobile
@@ -160,14 +191,15 @@ const Footer: React.FC = () => {
                 >
                   (03) 9008 4200
                 </a>
-              </li>
-              <li className="flex items-center">
+              </div>
+              <div className="flex items-center">
                 <Mail className={cn(
                   "text-primary mr-mobile-sm",
                   deviceInfo.isMobile ? "w-5 h-5" : "w-5 h-5 mr-2"
-                )} />
+                )} aria-hidden="true" />
                 <a
                   href="mailto:info@mineuro.com.au"
+                  aria-label="Email us at info@mineuro.com.au"
                   className={cn(
                     "text-muted-foreground transition-colors touch-feedback",
                     deviceInfo.isMobile
@@ -177,18 +209,18 @@ const Footer: React.FC = () => {
                 >
                   info@mineuro.com.au
                 </a>
-              </li>
-            </ul>
-          </div>
+              </div>
+            </address>
+          </section>
 
-          <div className={cn(
+          <nav aria-labelledby="locations-heading" className={cn(
             deviceInfo.isMobile ? "mobile-fade-in" : "animate-fade-in [animation-delay:400ms]"
           )}>
-            <h4 className={cn(
+            <h4 id="locations-heading" className={cn(
               "font-bold mb-mobile-md",
               deviceInfo.isMobile ? "mobile-subheading" : "text-xl mb-4"
             )}>
-              {t.nav.locations}
+              {finalT.nav.locations}
             </h4>
             <ul className={cn(
               deviceInfo.isMobile ? "space-y-mobile-sm" : "space-y-2"
@@ -203,7 +235,7 @@ const Footer: React.FC = () => {
                       : "hover:text-primary"
                   )}
                 >
-                  {t.nav.locationsSubmenu.surreyHills}
+                  {finalT.nav.locationsSubmenu.surreyHills}
                 </Link>
               </li>
               <li>
@@ -216,7 +248,7 @@ const Footer: React.FC = () => {
                       : "hover:text-primary"
                   )}
                 >
-                  {t.nav.locationsSubmenu.mornington}
+                  {finalT.nav.locationsSubmenu.mornington}
                 </Link>
               </li>
               <li>
@@ -229,7 +261,7 @@ const Footer: React.FC = () => {
                       : "hover:text-primary"
                   )}
                 >
-                  {t.nav.locationsSubmenu.frankston}
+                  {finalT.nav.locationsSubmenu.frankston}
                 </Link>
               </li>
               <li>
@@ -242,7 +274,7 @@ const Footer: React.FC = () => {
                       : "hover:text-primary"
                   )}
                 >
-                  {t.nav.locationsSubmenu.mooneePonds}
+                  {finalT.nav.locationsSubmenu.mooneePonds}
                 </Link>
               </li>
               <li>
@@ -259,7 +291,7 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </nav>
         </div>
 
         <div className={cn(
@@ -271,7 +303,7 @@ const Footer: React.FC = () => {
           <p className={cn(
             deviceInfo.isMobile ? "mobile-text" : ""
           )}>
-            &copy; {currentYear} Dr. Ales Aliashkevich | miNEURO Brain and Spine Surgery. {t.footer.allRights}
+            &copy; {currentYear} Dr. Ales Aliashkevich | miNEURO Brain and Spine Surgery. {finalT.footer.allRights}
           </p>
           <div className={cn(
             deviceInfo.isMobile

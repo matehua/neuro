@@ -1,0 +1,2544 @@
+{
+  "structure": {
+    "components": [
+      {
+        "name": "AppointmentForm.tsx",
+        "path": "src\\components\\AppointmentForm.tsx",
+        "size": 8459
+      },
+      {
+        "name": "CTASection.tsx",
+        "path": "src\\components\\CTASection.tsx",
+        "size": 3835
+      },
+      {
+        "name": "EnhancedImage.tsx",
+        "path": "src\\components\\EnhancedImage.tsx",
+        "size": 9784
+      },
+      {
+        "name": "ErrorBoundary.tsx",
+        "path": "src\\components\\ErrorBoundary.tsx",
+        "size": 7370
+      },
+      {
+        "name": "Footer.tsx",
+        "path": "src\\components\\Footer.tsx",
+        "size": 12503
+      },
+      {
+        "name": "HeroSection.tsx",
+        "path": "src\\components\\HeroSection.tsx",
+        "size": 8271
+      },
+      {
+        "name": "IndependentReviewsSection.tsx",
+        "path": "src\\components\\IndependentReviewsSection.tsx",
+        "size": 7823
+      },
+      {
+        "name": "LanguageSelector.tsx",
+        "path": "src\\components\\LanguageSelector.tsx",
+        "size": 2971
+      },
+      {
+        "name": "LanguageWrapper.tsx",
+        "path": "src\\components\\LanguageWrapper.tsx",
+        "size": 750
+      },
+      {
+        "name": "index.ts",
+        "path": "src\\components\\layout\\index.ts",
+        "size": 819
+      },
+      {
+        "name": "LayoutVariants.tsx",
+        "path": "src\\components\\layout\\LayoutVariants.tsx",
+        "size": 3164
+      },
+      {
+        "name": "StandardSection.tsx",
+        "path": "src\\components\\layout\\StandardSection.tsx",
+        "size": 2679
+      },
+      {
+        "name": "types.ts",
+        "path": "src\\components\\layout\\types.ts",
+        "size": 1176
+      },
+      {
+        "name": "Layout.tsx",
+        "path": "src\\components\\Layout.tsx",
+        "size": 1057
+      },
+      {
+        "name": "Loading.tsx",
+        "path": "src\\components\\Loading.tsx",
+        "size": 5898
+      },
+      {
+        "name": "ConditionHero.tsx",
+        "path": "src\\components\\medical-conditions\\ConditionHero.tsx",
+        "size": 4093
+      },
+      {
+        "name": "ConditionOverview.tsx",
+        "path": "src\\components\\medical-conditions\\ConditionOverview.tsx",
+        "size": 2442
+      },
+      {
+        "name": "DegenerationProcess.tsx",
+        "path": "src\\components\\medical-conditions\\DegenerationProcess.tsx",
+        "size": 7961
+      },
+      {
+        "name": "index.ts",
+        "path": "src\\components\\medical-conditions\\index.ts",
+        "size": 388
+      },
+      {
+        "name": "types.ts",
+        "path": "src\\components\\medical-conditions\\types.ts",
+        "size": 4316
+      },
+      {
+        "name": "Navbar.tsx",
+        "path": "src\\components\\Navbar.tsx",
+        "size": 17046
+      },
+      {
+        "name": "NetworkStatus.tsx",
+        "path": "src\\components\\NetworkStatus.tsx",
+        "size": 7738
+      },
+      {
+        "name": "OptimizedImage.tsx",
+        "path": "src\\components\\OptimizedImage.tsx",
+        "size": 2443
+      },
+      {
+        "name": "PageHeader.tsx",
+        "path": "src\\components\\PageHeader.tsx",
+        "size": 4256
+      },
+      {
+        "name": "ProcedureCard.tsx",
+        "path": "src\\components\\ProcedureCard.tsx",
+        "size": 5410
+      },
+      {
+        "name": "SafeImage.tsx",
+        "path": "src\\components\\SafeImage.tsx",
+        "size": 2693
+      },
+      {
+        "name": "ScreenReaderAnnouncer.tsx",
+        "path": "src\\components\\ScreenReaderAnnouncer.tsx",
+        "size": 2011
+      },
+      {
+        "name": "SEOHead.tsx",
+        "path": "src\\components\\SEOHead.tsx",
+        "size": 7932
+      },
+      {
+        "name": "SkipLink.tsx",
+        "path": "src\\components\\SkipLink.tsx",
+        "size": 1151
+      },
+      {
+        "name": "StandardPageLayout.tsx",
+        "path": "src\\components\\StandardPageLayout.tsx",
+        "size": 3286
+      },
+      {
+        "name": "TestimonialsSection.tsx",
+        "path": "src\\components\\TestimonialsSection.tsx",
+        "size": 7485
+      },
+      {
+        "name": "ThemeToggle.tsx",
+        "path": "src\\components\\ThemeToggle.tsx",
+        "size": 2141
+      },
+      {
+        "name": "accordion.tsx",
+        "path": "src\\components\\ui\\accordion.tsx",
+        "size": 2605
+      },
+      {
+        "name": "alert-dialog.tsx",
+        "path": "src\\components\\ui\\alert-dialog.tsx",
+        "size": 4558
+      },
+      {
+        "name": "alert.tsx",
+        "path": "src\\components\\ui\\alert.tsx",
+        "size": 1643
+      },
+      {
+        "name": "aspect-ratio.tsx",
+        "path": "src\\components\\ui\\aspect-ratio.tsx",
+        "size": 146
+      },
+      {
+        "name": "avatar.tsx",
+        "path": "src\\components\\ui\\avatar.tsx",
+        "size": 1451
+      },
+      {
+        "name": "badge.tsx",
+        "path": "src\\components\\ui\\badge.tsx",
+        "size": 1186
+      },
+      {
+        "name": "breadcrumb.tsx",
+        "path": "src\\components\\ui\\breadcrumb.tsx",
+        "size": 2815
+      },
+      {
+        "name": "button.tsx",
+        "path": "src\\components\\ui\\button.tsx",
+        "size": 3104
+      },
+      {
+        "name": "calendar.tsx",
+        "path": "src\\components\\ui\\calendar.tsx",
+        "size": 3095
+      },
+      {
+        "name": "card.tsx",
+        "path": "src\\components\\ui\\card.tsx",
+        "size": 3137
+      },
+      {
+        "name": "carousel.tsx",
+        "path": "src\\components\\ui\\carousel.tsx",
+        "size": 6531
+      },
+      {
+        "name": "chart.tsx",
+        "path": "src\\components\\ui\\chart.tsx",
+        "size": 3321
+      },
+      {
+        "name": "checkbox.tsx",
+        "path": "src\\components\\ui\\checkbox.tsx",
+        "size": 2947
+      },
+      {
+        "name": "collapsible.tsx",
+        "path": "src\\components\\ui\\collapsible.tsx",
+        "size": 325
+      },
+      {
+        "name": "command.tsx",
+        "path": "src\\components\\ui\\command.tsx",
+        "size": 5035
+      },
+      {
+        "name": "context-menu.tsx",
+        "path": "src\\components\\ui\\context-menu.tsx",
+        "size": 7441
+      },
+      {
+        "name": "dialog.tsx",
+        "path": "src\\components\\ui\\dialog.tsx",
+        "size": 4755
+      },
+      {
+        "name": "drawer.tsx",
+        "path": "src\\components\\ui\\drawer.tsx",
+        "size": 3118
+      },
+      {
+        "name": "dropdown-menu.tsx",
+        "path": "src\\components\\ui\\dropdown-menu.tsx",
+        "size": 7501
+      },
+      {
+        "name": "form.tsx",
+        "path": "src\\components\\ui\\form.tsx",
+        "size": 4386
+      },
+      {
+        "name": "hover-card.tsx",
+        "path": "src\\components\\ui\\hover-card.tsx",
+        "size": 1212
+      },
+      {
+        "name": "input-otp.tsx",
+        "path": "src\\components\\ui\\input-otp.tsx",
+        "size": 2264
+      },
+      {
+        "name": "input.tsx",
+        "path": "src\\components\\ui\\input.tsx",
+        "size": 2287
+      },
+      {
+        "name": "label.tsx",
+        "path": "src\\components\\ui\\label.tsx",
+        "size": 755
+      },
+      {
+        "name": "menubar.tsx",
+        "path": "src\\components\\ui\\menubar.tsx",
+        "size": 8219
+      },
+      {
+        "name": "navigation-menu.tsx",
+        "path": "src\\components\\ui\\navigation-menu.tsx",
+        "size": 5191
+      },
+      {
+        "name": "pagination.tsx",
+        "path": "src\\components\\ui\\pagination.tsx",
+        "size": 2880
+      },
+      {
+        "name": "popover.tsx",
+        "path": "src\\components\\ui\\popover.tsx",
+        "size": 1594
+      },
+      {
+        "name": "progress.tsx",
+        "path": "src\\components\\ui\\progress.tsx",
+        "size": 806
+      },
+      {
+        "name": "radio-group.tsx",
+        "path": "src\\components\\ui\\radio-group.tsx",
+        "size": 1515
+      },
+      {
+        "name": "resizable.tsx",
+        "path": "src\\components\\ui\\resizable.tsx",
+        "size": 1782
+      },
+      {
+        "name": "scroll-area.tsx",
+        "path": "src\\components\\ui\\scroll-area.tsx",
+        "size": 1689
+      },
+      {
+        "name": "select.tsx",
+        "path": "src\\components\\ui\\select.tsx",
+        "size": 7523
+      },
+      {
+        "name": "separator.tsx",
+        "path": "src\\components\\ui\\separator.tsx",
+        "size": 739
+      },
+      {
+        "name": "sheet.tsx",
+        "path": "src\\components\\ui\\sheet.tsx",
+        "size": 4390
+      },
+      {
+        "name": "sidebar.tsx",
+        "path": "src\\components\\ui\\sidebar.tsx",
+        "size": 24528
+      },
+      {
+        "name": "skeleton.tsx",
+        "path": "src\\components\\ui\\skeleton.tsx",
+        "size": 303
+      },
+      {
+        "name": "slider.tsx",
+        "path": "src\\components\\ui\\slider.tsx",
+        "size": 1101
+      },
+      {
+        "name": "sonner.tsx",
+        "path": "src\\components\\ui\\sonner.tsx",
+        "size": 2256
+      },
+      {
+        "name": "switch.tsx",
+        "path": "src\\components\\ui\\switch.tsx",
+        "size": 1193
+      },
+      {
+        "name": "table.tsx",
+        "path": "src\\components\\ui\\table.tsx",
+        "size": 3193
+      },
+      {
+        "name": "tabs.tsx",
+        "path": "src\\components\\ui\\tabs.tsx",
+        "size": 2499
+      },
+      {
+        "name": "textarea.tsx",
+        "path": "src\\components\\ui\\textarea.tsx",
+        "size": 2217
+      },
+      {
+        "name": "toggle-group.tsx",
+        "path": "src\\components\\ui\\toggle-group.tsx",
+        "size": 1837
+      },
+      {
+        "name": "toggle.tsx",
+        "path": "src\\components\\ui\\toggle.tsx",
+        "size": 1472
+      },
+      {
+        "name": "tooltip.tsx",
+        "path": "src\\components\\ui\\tooltip.tsx",
+        "size": 1171
+      },
+      {
+        "name": "use-toast.ts",
+        "path": "src\\components\\ui\\use-toast.ts",
+        "size": 52
+      }
+    ],
+    "pages": [
+      {
+        "name": "AppointmentBooking.tsx",
+        "path": "src\\pages\\AppointmentBooking.tsx",
+        "size": 41852
+      },
+      {
+        "name": "Appointments.tsx",
+        "path": "src\\pages\\Appointments.tsx",
+        "size": 39032
+      },
+      {
+        "name": "ConsultingRooms.tsx",
+        "path": "src\\pages\\ConsultingRooms.tsx",
+        "size": 22314
+      },
+      {
+        "name": "Contact.tsx",
+        "path": "src\\pages\\Contact.tsx",
+        "size": 33348
+      },
+      {
+        "name": "CervicalDiscReplacement.tsx",
+        "path": "src\\pages\\expertise\\CervicalDiscReplacement.tsx",
+        "size": 27335
+      },
+      {
+        "name": "ImageGuidedSurgery.tsx",
+        "path": "src\\pages\\expertise\\ImageGuidedSurgery.tsx",
+        "size": 26226
+      },
+      {
+        "name": "LumbarDiscReplacement.tsx",
+        "path": "src\\pages\\expertise\\LumbarDiscReplacement.tsx",
+        "size": 27019
+      },
+      {
+        "name": "RoboticSpineSurgery.tsx",
+        "path": "src\\pages\\expertise\\RoboticSpineSurgery.tsx",
+        "size": 29923
+      },
+      {
+        "name": "Expertise.tsx",
+        "path": "src\\pages\\Expertise.tsx",
+        "size": 31065
+      },
+      {
+        "name": "Faq.tsx",
+        "path": "src\\pages\\Faq.tsx",
+        "size": 39253
+      },
+      {
+        "name": "Gallery.tsx",
+        "path": "src\\pages\\Gallery.tsx",
+        "size": 11322
+      },
+      {
+        "name": "CareCoordination.tsx",
+        "path": "src\\pages\\gp-resources\\CareCoordination.tsx",
+        "size": 33799
+      },
+      {
+        "name": "Diagnostics.tsx",
+        "path": "src\\pages\\gp-resources\\Diagnostics.tsx",
+        "size": 31502
+      },
+      {
+        "name": "Emergencies.tsx",
+        "path": "src\\pages\\gp-resources\\Emergencies.tsx",
+        "size": 23745
+      },
+      {
+        "name": "ReferralProtocols.tsx",
+        "path": "src\\pages\\gp-resources\\ReferralProtocols.tsx",
+        "size": 20012
+      },
+      {
+        "name": "GPResources.tsx",
+        "path": "src\\pages\\GPResources.tsx",
+        "size": 7309
+      },
+      {
+        "name": "Index.tsx",
+        "path": "src\\pages\\Index.tsx",
+        "size": 45569
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\bundoora\\index.tsx",
+        "size": 39394
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\dandenong\\index.tsx",
+        "size": 47391
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\frankston\\index.tsx",
+        "size": 62399
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\heidelberg\\index.tsx",
+        "size": 53369
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\langwarrin\\index.tsx",
+        "size": 45731
+      },
+      {
+        "name": "LocationDetail.tsx",
+        "path": "src\\pages\\locations\\LocationDetail.tsx",
+        "size": 24350
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\moonee-ponds\\index.tsx",
+        "size": 53774
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\mornington\\index.tsx",
+        "size": 55856
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\sunbury\\index.tsx",
+        "size": 54128
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\surrey-hills\\index.tsx",
+        "size": 61952
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\wantirna\\index.tsx",
+        "size": 42763
+      },
+      {
+        "name": "index.tsx",
+        "path": "src\\pages\\locations\\werribee\\index.tsx",
+        "size": 53304
+      },
+      {
+        "name": "Locations.tsx",
+        "path": "src\\pages\\Locations.tsx",
+        "size": 13356
+      },
+      {
+        "name": "Medicolegal.tsx",
+        "path": "src\\pages\\Medicolegal.tsx",
+        "size": 40238
+      },
+      {
+        "name": "NotFound.tsx",
+        "path": "src\\pages\\NotFound.tsx",
+        "size": 1444
+      },
+      {
+        "name": "AgeSpecificSpineRecommendations.tsx",
+        "path": "src\\pages\\patient-resources\\AgeSpecificSpineRecommendations.tsx",
+        "size": 26753
+      },
+      {
+        "name": "AssessmentTools.tsx",
+        "path": "src\\pages\\patient-resources\\AssessmentTools.tsx",
+        "size": 19984
+      },
+      {
+        "name": "CervicalSpineExercises.tsx",
+        "path": "src\\pages\\patient-resources\\CervicalSpineExercises.tsx",
+        "size": 33101
+      },
+      {
+        "name": "CervicalSpineInjury.tsx",
+        "path": "src\\pages\\patient-resources\\CervicalSpineInjury.tsx",
+        "size": 25317
+      },
+      {
+        "name": "ConditionInformation.tsx",
+        "path": "src\\pages\\patient-resources\\ConditionInformation.tsx",
+        "size": 13129
+      },
+      {
+        "name": "Arthrosis.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+        "size": 87668
+      },
+      {
+        "name": "Discopathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Discopathy.tsx",
+        "size": 2697
+      },
+      {
+        "name": "FacetArthropathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+        "size": 91099
+      },
+      {
+        "name": "FacetArthropathyRefactored.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx",
+        "size": 17730
+      },
+      {
+        "name": "HerniatedDisc.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\HerniatedDisc.tsx",
+        "size": 75039
+      },
+      {
+        "name": "OccipitalNeuralgia.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\OccipitalNeuralgia.tsx",
+        "size": 82097
+      },
+      {
+        "name": "ParsDefects.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+        "size": 83154
+      },
+      {
+        "name": "PiriformisSyndrome.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+        "size": 83161
+      },
+      {
+        "name": "Radiculopathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Radiculopathy.tsx",
+        "size": 89071
+      },
+      {
+        "name": "SacroiliacArthropathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+        "size": 82976
+      },
+      {
+        "name": "Sciatica.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+        "size": 83653
+      },
+      {
+        "name": "SpinalStenosis.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\SpinalStenosis.tsx",
+        "size": 84529
+      },
+      {
+        "name": "Spondylolisthesis.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Spondylolisthesis.tsx",
+        "size": 86480
+      },
+      {
+        "name": "Spondylosis.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+        "size": 81088
+      },
+      {
+        "name": "ThoracicOutletSyndrome.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+        "size": 82498
+      },
+      {
+        "name": "ExerciseLibrary.tsx",
+        "path": "src\\pages\\patient-resources\\ExerciseLibrary.tsx",
+        "size": 26873
+      },
+      {
+        "name": "ExercisePainMedRisks.tsx",
+        "path": "src\\pages\\patient-resources\\ExercisePainMedRisks.tsx",
+        "size": 25966
+      },
+      {
+        "name": "IndividualSpineHealthProgramme.tsx",
+        "path": "src\\pages\\patient-resources\\IndividualSpineHealthProgramme.tsx",
+        "size": 16832
+      },
+      {
+        "name": "LifestyleModifications.tsx",
+        "path": "src\\pages\\patient-resources\\LifestyleModifications.tsx",
+        "size": 53538
+      },
+      {
+        "name": "PatientDashboard.tsx",
+        "path": "src\\pages\\patient-resources\\PatientDashboard.tsx",
+        "size": 26533
+      },
+      {
+        "name": "SpineAndBrainHealth.tsx",
+        "path": "src\\pages\\patient-resources\\SpineAndBrainHealth.tsx",
+        "size": 18197
+      },
+      {
+        "name": "SpineConditionsLibrary.tsx",
+        "path": "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx",
+        "size": 44563
+      },
+      {
+        "name": "SpineHealthApp.tsx",
+        "path": "src\\pages\\patient-resources\\SpineHealthApp.tsx",
+        "size": 19233
+      },
+      {
+        "name": "SpineSafeExercises.tsx",
+        "path": "src\\pages\\patient-resources\\SpineSafeExercises.tsx",
+        "size": 33283
+      },
+      {
+        "name": "YouthfulSpine.tsx",
+        "path": "src\\pages\\patient-resources\\YouthfulSpine.tsx",
+        "size": 35095
+      },
+      {
+        "name": "PatientResources.tsx",
+        "path": "src\\pages\\PatientResources.tsx",
+        "size": 24833
+      },
+      {
+        "name": "PrivacyPolicy.tsx",
+        "path": "src\\pages\\PrivacyPolicy.tsx",
+        "size": 14199
+      },
+      {
+        "name": "Specialties.tsx",
+        "path": "src\\pages\\Specialties.tsx",
+        "size": 13242
+      },
+      {
+        "name": "TermsConditions.tsx",
+        "path": "src\\pages\\TermsConditions.tsx",
+        "size": 7749
+      },
+      {
+        "name": "TestImages.tsx",
+        "path": "src\\pages\\TestImages.tsx",
+        "size": 538
+      }
+    ],
+    "contexts": [
+      {
+        "name": "DeviceContext.tsx",
+        "path": "src\\contexts\\DeviceContext.tsx",
+        "size": 5855
+      },
+      {
+        "name": "LanguageContext.tsx",
+        "path": "src\\contexts\\LanguageContext.tsx",
+        "size": 4694
+      }
+    ],
+    "hooks": [
+      {
+        "name": "useSEO.ts",
+        "path": "src\\hooks\\useSEO.ts",
+        "size": 5095
+      }
+    ],
+    "lib": [
+      {
+        "name": "accessibility.ts",
+        "path": "src\\lib\\accessibility.ts",
+        "size": 6432
+      },
+      {
+        "name": "env-validation.ts",
+        "path": "src\\lib\\env-validation.ts",
+        "size": 9294
+      },
+      {
+        "name": "error-handling.ts",
+        "path": "src\\lib\\error-handling.ts",
+        "size": 11027
+      },
+      {
+        "name": "mobile-optimization.ts",
+        "path": "src\\lib\\mobile-optimization.ts",
+        "size": 12437
+      },
+      {
+        "name": "performance.ts",
+        "path": "src\\lib\\performance.ts",
+        "size": 9460
+      },
+      {
+        "name": "security.ts",
+        "path": "src\\lib\\security.ts",
+        "size": 14194
+      },
+      {
+        "name": "seo.ts",
+        "path": "src\\lib\\seo.ts",
+        "size": 19370
+      },
+      {
+        "name": "sitemap.ts",
+        "path": "src\\lib\\sitemap.ts",
+        "size": 6771
+      },
+      {
+        "name": "test-utils.tsx",
+        "path": "src\\lib\\test-utils.tsx",
+        "size": 9663
+      },
+      {
+        "name": "type-safety.ts",
+        "path": "src\\lib\\type-safety.ts",
+        "size": 6704
+      },
+      {
+        "name": "utils.ts",
+        "path": "src\\lib\\utils.ts",
+        "size": 1371
+      }
+    ],
+    "routes": [
+      {
+        "name": "route-definitions.ts",
+        "path": "src\\routes\\route-definitions.ts",
+        "size": 10508
+      },
+      {
+        "name": "route-loader.tsx",
+        "path": "src\\routes\\route-loader.tsx",
+        "size": 6483
+      },
+      {
+        "name": "routeConfig.tsx",
+        "path": "src\\routes\\routeConfig.tsx",
+        "size": 9577
+      }
+    ],
+    "types": [
+      {
+        "name": "motion.ts",
+        "path": "src\\types\\motion.ts",
+        "size": 3969
+      },
+      {
+        "name": "procedures.ts",
+        "path": "src\\types\\procedures.ts",
+        "size": 9201
+      },
+      {
+        "name": "translations.ts",
+        "path": "src\\types\\translations.ts",
+        "size": 9239
+      }
+    ],
+    "locales": [
+      {
+        "name": "en.ts",
+        "path": "src\\locales\\en.ts",
+        "size": 108728
+      },
+      {
+        "name": "zh.ts",
+        "path": "src\\locales\\zh.ts",
+        "size": 82700
+      }
+    ]
+  },
+  "issues": [
+    {
+      "file": "src\\components\\AppointmentForm.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ErrorBoundary.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\Footer.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\layout\\StandardSection.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\medical-conditions\\ConditionHero.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\medical-conditions\\ConditionOverview.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\medical-conditions\\DegenerationProcess.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\NetworkStatus.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ProcedureCard.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ui\\accordion.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ui\\alert-dialog.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ui\\badge.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ui\\card.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ui\\chart.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ui\\command.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ui\\drawer.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ui\\resizable.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ui\\sheet.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\components\\ui\\skeleton.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\AppointmentBooking.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\Appointments.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\ConsultingRooms.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\Contact.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\expertise\\CervicalDiscReplacement.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\expertise\\ImageGuidedSurgery.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\expertise\\LumbarDiscReplacement.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\expertise\\RoboticSpineSurgery.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\Expertise.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\Faq.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\Gallery.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\gp-resources\\CareCoordination.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\gp-resources\\Diagnostics.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\gp-resources\\Emergencies.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\gp-resources\\ReferralProtocols.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\GPResources.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\Index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\bundoora\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\dandenong\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\frankston\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\heidelberg\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\langwarrin\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\LocationDetail.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\moonee-ponds\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\mornington\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\sunbury\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\surrey-hills\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\wantirna\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\locations\\werribee\\index.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\Locations.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\Medicolegal.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\NotFound.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\AgeSpecificSpineRecommendations.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\AssessmentTools.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\CervicalSpineExercises.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\CervicalSpineInjury.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\ConditionInformation.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\HerniatedDisc.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\OccipitalNeuralgia.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\Radiculopathy.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\SpinalStenosis.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\Spondylolisthesis.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\ExerciseLibrary.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\ExercisePainMedRisks.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\IndividualSpineHealthProgramme.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\LifestyleModifications.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\PatientDashboard.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\SpineAndBrainHealth.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\SpineHealthApp.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\SpineSafeExercises.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\patient-resources\\YouthfulSpine.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\PatientResources.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\PrivacyPolicy.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\Specialties.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\TermsConditions.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "file": "src\\pages\\TestImages.tsx",
+      "issue": "Potential accessibility issue - div without semantic meaning",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/appointments\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/appointment-booking\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/contact\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/faq\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/privacy-policy\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/terms-conditions\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/specialties\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/medicolegal\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/condition-information\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/spine-conditions-library\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/exercise-library\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/individual-spine-health-programme\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/spine-and-brain-health\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/cervical-spine-injury\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/cervical-spine-exercises\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/spine-safe-exercises\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/exercise-pain-med-risks\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/age-specific-spine-recommendations\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/youthful-spine\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/lifestyle-modifications\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/assessment-tools\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/patient-dashboard\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/spine-health-app\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/herniated-disc\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/spinal-stenosis\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/sciatica\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/radiculopathy\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/arthrosis\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/discopathy\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/facet-arthropathy\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/sacroiliac-arthropathy\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/piriformis-syndrome\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/thoracic-outlet-syndrome\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/occipital-neuralgia\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/spondylosis\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/pars-defects\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/patient-resources/conditions/spondylolisthesis\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/expertise/cervical-disc-replacement\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/expertise/lumbar-disc-replacement\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/expertise/image-guided-surgery\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/expertise/robotic-spine-surgery\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/locations/location-detail\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/gp-resources/referral-protocols\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/gp-resources/diagnostics\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/gp-resources/care-coordination\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/gp-resources/emergencies\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/home\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/about\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/services\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/resources\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/contact-us\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/find-us\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/privacy\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/terms\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/book\" defined but not used in config",
+      "severity": "warning"
+    },
+    {
+      "issue": "Route path \"/booking\" defined but not used in config",
+      "severity": "warning"
+    }
+  ],
+  "conflicts": [],
+  "inconsistencies": [],
+  "missingFiles": [],
+  "recommendations": [
+    {
+      "priority": "MEDIUM",
+      "category": "Code Quality",
+      "action": "Address 141 warnings to improve code quality",
+      "details": [
+        "Review import patterns",
+        "Improve component structure",
+        "Enhance accessibility"
+      ]
+    },
+    {
+      "priority": "MEDIUM",
+      "category": "Component Optimization",
+      "action": "Refactor 65 large components",
+      "details": [
+        "src\\components\\Footer.tsx (343 lines)",
+        "src\\components\\Navbar.tsx (416 lines)",
+        "src\\components\\ui\\sidebar.tsx (760 lines)",
+        "src\\pages\\AppointmentBooking.tsx (891 lines)",
+        "src\\pages\\Appointments.tsx (824 lines)",
+        "src\\pages\\ConsultingRooms.tsx (337 lines)",
+        "src\\pages\\Contact.tsx (721 lines)",
+        "src\\pages\\expertise\\CervicalDiscReplacement.tsx (422 lines)",
+        "src\\pages\\expertise\\ImageGuidedSurgery.tsx (374 lines)",
+        "src\\pages\\expertise\\LumbarDiscReplacement.tsx (421 lines)",
+        "src\\pages\\expertise\\RoboticSpineSurgery.tsx (436 lines)",
+        "src\\pages\\Expertise.tsx (616 lines)",
+        "src\\pages\\Faq.tsx (441 lines)",
+        "src\\pages\\Gallery.tsx (288 lines)",
+        "src\\pages\\gp-resources\\CareCoordination.tsx (457 lines)",
+        "src\\pages\\gp-resources\\Diagnostics.tsx (495 lines)",
+        "src\\pages\\gp-resources\\Emergencies.tsx (353 lines)",
+        "src\\pages\\gp-resources\\ReferralProtocols.tsx (323 lines)",
+        "src\\pages\\Index.tsx (777 lines)",
+        "src\\pages\\locations\\bundoora\\index.tsx (618 lines)",
+        "src\\pages\\locations\\dandenong\\index.tsx (644 lines)",
+        "src\\pages\\locations\\frankston\\index.tsx (865 lines)",
+        "src\\pages\\locations\\heidelberg\\index.tsx (733 lines)",
+        "src\\pages\\locations\\langwarrin\\index.tsx (623 lines)",
+        "src\\pages\\locations\\LocationDetail.tsx (406 lines)",
+        "src\\pages\\locations\\moonee-ponds\\index.tsx (719 lines)",
+        "src\\pages\\locations\\mornington\\index.tsx (710 lines)",
+        "src\\pages\\locations\\sunbury\\index.tsx (731 lines)",
+        "src\\pages\\locations\\surrey-hills\\index.tsx (903 lines)",
+        "src\\pages\\locations\\wantirna\\index.tsx (607 lines)",
+        "src\\pages\\locations\\werribee\\index.tsx (731 lines)",
+        "src\\pages\\Locations.tsx (327 lines)",
+        "src\\pages\\Medicolegal.tsx (633 lines)",
+        "src\\pages\\patient-resources\\AgeSpecificSpineRecommendations.tsx (485 lines)",
+        "src\\pages\\patient-resources\\AssessmentTools.tsx (385 lines)",
+        "src\\pages\\patient-resources\\CervicalSpineExercises.tsx (619 lines)",
+        "src\\pages\\patient-resources\\CervicalSpineInjury.tsx (465 lines)",
+        "src\\pages\\patient-resources\\ConditionInformation.tsx (269 lines)",
+        "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx (1826 lines)",
+        "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx (1853 lines)",
+        "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx (378 lines)",
+        "src\\pages\\patient-resources\\conditions\\HerniatedDisc.tsx (1604 lines)",
+        "src\\pages\\patient-resources\\conditions\\OccipitalNeuralgia.tsx (1664 lines)",
+        "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx (1682 lines)",
+        "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx (1678 lines)",
+        "src\\pages\\patient-resources\\conditions\\Radiculopathy.tsx (1842 lines)",
+        "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx (1681 lines)",
+        "src\\pages\\patient-resources\\conditions\\Sciatica.tsx (1742 lines)",
+        "src\\pages\\patient-resources\\conditions\\SpinalStenosis.tsx (1772 lines)",
+        "src\\pages\\patient-resources\\conditions\\Spondylolisthesis.tsx (1751 lines)",
+        "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx (1678 lines)",
+        "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx (1683 lines)",
+        "src\\pages\\patient-resources\\ExerciseLibrary.tsx (586 lines)",
+        "src\\pages\\patient-resources\\ExercisePainMedRisks.tsx (470 lines)",
+        "src\\pages\\patient-resources\\IndividualSpineHealthProgramme.tsx (330 lines)",
+        "src\\pages\\patient-resources\\LifestyleModifications.tsx (869 lines)",
+        "src\\pages\\patient-resources\\PatientDashboard.tsx (508 lines)",
+        "src\\pages\\patient-resources\\SpineAndBrainHealth.tsx (331 lines)",
+        "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx (774 lines)",
+        "src\\pages\\patient-resources\\SpineHealthApp.tsx (372 lines)",
+        "src\\pages\\patient-resources\\SpineSafeExercises.tsx (630 lines)",
+        "src\\pages\\patient-resources\\YouthfulSpine.tsx (562 lines)",
+        "src\\pages\\PatientResources.tsx (504 lines)",
+        "src\\pages\\PrivacyPolicy.tsx (263 lines)",
+        "src\\pages\\Specialties.tsx (286 lines)"
+      ]
+    }
+  ],
+  "summary": {
+    "totalFiles": 168,
+    "totalIssues": 141,
+    "criticalIssues": 0,
+    "warnings": 141,
+    "componentMetrics": {
+      "totalComponents": 141,
+      "averageSize": 0,
+      "largeComponents": [
+        {
+          "file": "src\\components\\Footer.tsx",
+          "size": 12503,
+          "lines": 343
+        },
+        {
+          "file": "src\\components\\Navbar.tsx",
+          "size": 17046,
+          "lines": 416
+        },
+        {
+          "file": "src\\components\\ui\\sidebar.tsx",
+          "size": 24528,
+          "lines": 760
+        },
+        {
+          "file": "src\\pages\\AppointmentBooking.tsx",
+          "size": 41852,
+          "lines": 891
+        },
+        {
+          "file": "src\\pages\\Appointments.tsx",
+          "size": 39032,
+          "lines": 824
+        },
+        {
+          "file": "src\\pages\\ConsultingRooms.tsx",
+          "size": 22314,
+          "lines": 337
+        },
+        {
+          "file": "src\\pages\\Contact.tsx",
+          "size": 33348,
+          "lines": 721
+        },
+        {
+          "file": "src\\pages\\expertise\\CervicalDiscReplacement.tsx",
+          "size": 27335,
+          "lines": 422
+        },
+        {
+          "file": "src\\pages\\expertise\\ImageGuidedSurgery.tsx",
+          "size": 26226,
+          "lines": 374
+        },
+        {
+          "file": "src\\pages\\expertise\\LumbarDiscReplacement.tsx",
+          "size": 27019,
+          "lines": 421
+        },
+        {
+          "file": "src\\pages\\expertise\\RoboticSpineSurgery.tsx",
+          "size": 29923,
+          "lines": 436
+        },
+        {
+          "file": "src\\pages\\Expertise.tsx",
+          "size": 31065,
+          "lines": 616
+        },
+        {
+          "file": "src\\pages\\Faq.tsx",
+          "size": 39253,
+          "lines": 441
+        },
+        {
+          "file": "src\\pages\\Gallery.tsx",
+          "size": 11322,
+          "lines": 288
+        },
+        {
+          "file": "src\\pages\\gp-resources\\CareCoordination.tsx",
+          "size": 33799,
+          "lines": 457
+        },
+        {
+          "file": "src\\pages\\gp-resources\\Diagnostics.tsx",
+          "size": 31502,
+          "lines": 495
+        },
+        {
+          "file": "src\\pages\\gp-resources\\Emergencies.tsx",
+          "size": 23745,
+          "lines": 353
+        },
+        {
+          "file": "src\\pages\\gp-resources\\ReferralProtocols.tsx",
+          "size": 20012,
+          "lines": 323
+        },
+        {
+          "file": "src\\pages\\Index.tsx",
+          "size": 45569,
+          "lines": 777
+        },
+        {
+          "file": "src\\pages\\locations\\bundoora\\index.tsx",
+          "size": 39394,
+          "lines": 618
+        },
+        {
+          "file": "src\\pages\\locations\\dandenong\\index.tsx",
+          "size": 47391,
+          "lines": 644
+        },
+        {
+          "file": "src\\pages\\locations\\frankston\\index.tsx",
+          "size": 62399,
+          "lines": 865
+        },
+        {
+          "file": "src\\pages\\locations\\heidelberg\\index.tsx",
+          "size": 53369,
+          "lines": 733
+        },
+        {
+          "file": "src\\pages\\locations\\langwarrin\\index.tsx",
+          "size": 45731,
+          "lines": 623
+        },
+        {
+          "file": "src\\pages\\locations\\LocationDetail.tsx",
+          "size": 24350,
+          "lines": 406
+        },
+        {
+          "file": "src\\pages\\locations\\moonee-ponds\\index.tsx",
+          "size": 53774,
+          "lines": 719
+        },
+        {
+          "file": "src\\pages\\locations\\mornington\\index.tsx",
+          "size": 55856,
+          "lines": 710
+        },
+        {
+          "file": "src\\pages\\locations\\sunbury\\index.tsx",
+          "size": 54128,
+          "lines": 731
+        },
+        {
+          "file": "src\\pages\\locations\\surrey-hills\\index.tsx",
+          "size": 61952,
+          "lines": 903
+        },
+        {
+          "file": "src\\pages\\locations\\wantirna\\index.tsx",
+          "size": 42763,
+          "lines": 607
+        },
+        {
+          "file": "src\\pages\\locations\\werribee\\index.tsx",
+          "size": 53304,
+          "lines": 731
+        },
+        {
+          "file": "src\\pages\\Locations.tsx",
+          "size": 13356,
+          "lines": 327
+        },
+        {
+          "file": "src\\pages\\Medicolegal.tsx",
+          "size": 40238,
+          "lines": 633
+        },
+        {
+          "file": "src\\pages\\patient-resources\\AgeSpecificSpineRecommendations.tsx",
+          "size": 26753,
+          "lines": 485
+        },
+        {
+          "file": "src\\pages\\patient-resources\\AssessmentTools.tsx",
+          "size": 19984,
+          "lines": 385
+        },
+        {
+          "file": "src\\pages\\patient-resources\\CervicalSpineExercises.tsx",
+          "size": 33101,
+          "lines": 619
+        },
+        {
+          "file": "src\\pages\\patient-resources\\CervicalSpineInjury.tsx",
+          "size": 25317,
+          "lines": 465
+        },
+        {
+          "file": "src\\pages\\patient-resources\\ConditionInformation.tsx",
+          "size": 13129,
+          "lines": 269
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+          "size": 87668,
+          "lines": 1826
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+          "size": 91099,
+          "lines": 1853
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx",
+          "size": 17730,
+          "lines": 378
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\HerniatedDisc.tsx",
+          "size": 75039,
+          "lines": 1604
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\OccipitalNeuralgia.tsx",
+          "size": 82097,
+          "lines": 1664
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+          "size": 83154,
+          "lines": 1682
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+          "size": 83161,
+          "lines": 1678
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\Radiculopathy.tsx",
+          "size": 89071,
+          "lines": 1842
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+          "size": 82976,
+          "lines": 1681
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+          "size": 83653,
+          "lines": 1742
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\SpinalStenosis.tsx",
+          "size": 84529,
+          "lines": 1772
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\Spondylolisthesis.tsx",
+          "size": 86480,
+          "lines": 1751
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+          "size": 81088,
+          "lines": 1678
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+          "size": 82498,
+          "lines": 1683
+        },
+        {
+          "file": "src\\pages\\patient-resources\\ExerciseLibrary.tsx",
+          "size": 26873,
+          "lines": 586
+        },
+        {
+          "file": "src\\pages\\patient-resources\\ExercisePainMedRisks.tsx",
+          "size": 25966,
+          "lines": 470
+        },
+        {
+          "file": "src\\pages\\patient-resources\\IndividualSpineHealthProgramme.tsx",
+          "size": 16832,
+          "lines": 330
+        },
+        {
+          "file": "src\\pages\\patient-resources\\LifestyleModifications.tsx",
+          "size": 53538,
+          "lines": 869
+        },
+        {
+          "file": "src\\pages\\patient-resources\\PatientDashboard.tsx",
+          "size": 26533,
+          "lines": 508
+        },
+        {
+          "file": "src\\pages\\patient-resources\\SpineAndBrainHealth.tsx",
+          "size": 18197,
+          "lines": 331
+        },
+        {
+          "file": "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx",
+          "size": 44563,
+          "lines": 774
+        },
+        {
+          "file": "src\\pages\\patient-resources\\SpineHealthApp.tsx",
+          "size": 19233,
+          "lines": 372
+        },
+        {
+          "file": "src\\pages\\patient-resources\\SpineSafeExercises.tsx",
+          "size": 33283,
+          "lines": 630
+        },
+        {
+          "file": "src\\pages\\patient-resources\\YouthfulSpine.tsx",
+          "size": 35095,
+          "lines": 562
+        },
+        {
+          "file": "src\\pages\\PatientResources.tsx",
+          "size": 24833,
+          "lines": 504
+        },
+        {
+          "file": "src\\pages\\PrivacyPolicy.tsx",
+          "size": 14199,
+          "lines": 263
+        },
+        {
+          "file": "src\\pages\\Specialties.tsx",
+          "size": 13242,
+          "lines": 286
+        }
+      ],
+      "missingPropTypes": [
+        {
+          "file": "src\\components\\AppointmentForm.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\Footer.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\HeroSection.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\IndependentReviewsSection.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\layout\\LayoutVariants.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\layout\\StandardSection.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\medical-conditions\\ConditionHero.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\medical-conditions\\ConditionOverview.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ThemeToggle.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\accordion.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\alert-dialog.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\aspect-ratio.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\avatar.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\breadcrumb.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\card.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\collapsible.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\context-menu.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\dialog.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\drawer.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\dropdown-menu.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\hover-card.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\input-otp.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\menubar.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\navigation-menu.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\popover.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\progress.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\radio-group.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\resizable.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\scroll-area.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\separator.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\skeleton.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\slider.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\switch.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\table.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\tabs.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\components\\ui\\tooltip.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\Appointments.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\ConsultingRooms.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\Contact.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\expertise\\CervicalDiscReplacement.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\expertise\\ImageGuidedSurgery.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\expertise\\LumbarDiscReplacement.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\expertise\\RoboticSpineSurgery.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\Expertise.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\Gallery.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\gp-resources\\CareCoordination.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\gp-resources\\Diagnostics.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\gp-resources\\Emergencies.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\gp-resources\\ReferralProtocols.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\GPResources.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\Index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\bundoora\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\dandenong\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\frankston\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\heidelberg\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\langwarrin\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\moonee-ponds\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\mornington\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\sunbury\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\surrey-hills\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\wantirna\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\locations\\werribee\\index.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\Locations.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\Medicolegal.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\NotFound.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\AgeSpecificSpineRecommendations.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\AssessmentTools.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\CervicalSpineExercises.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\CervicalSpineInjury.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\ConditionInformation.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\Discopathy.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\ExercisePainMedRisks.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\IndividualSpineHealthProgramme.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\LifestyleModifications.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\PatientDashboard.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\SpineAndBrainHealth.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\SpineHealthApp.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\SpineSafeExercises.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\patient-resources\\YouthfulSpine.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\PatientResources.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\PrivacyPolicy.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\Specialties.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\TermsConditions.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        },
+        {
+          "file": "src\\pages\\TestImages.tsx",
+          "issue": "No TypeScript interfaces or types found"
+        }
+      ],
+      "inconsistentNaming": [
+        {
+          "file": "src\\components\\ui\\accordion.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\alert-dialog.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\alert.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\aspect-ratio.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\avatar.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\badge.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\breadcrumb.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\button.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\calendar.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\card.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\carousel.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\chart.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\checkbox.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\collapsible.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\command.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\context-menu.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\dialog.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\drawer.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\dropdown-menu.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\form.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\hover-card.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\input-otp.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\input.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\label.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\menubar.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\navigation-menu.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\pagination.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\popover.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\progress.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\radio-group.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\resizable.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\scroll-area.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\select.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\separator.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\sheet.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\sidebar.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\skeleton.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\slider.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\sonner.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\switch.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\table.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\tabs.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\textarea.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\toggle-group.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\toggle.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\components\\ui\\tooltip.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\bundoora\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\dandenong\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\frankston\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\heidelberg\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\langwarrin\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\moonee-ponds\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\mornington\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\sunbury\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\surrey-hills\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\wantirna\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        },
+        {
+          "file": "src\\pages\\locations\\werribee\\index.tsx",
+          "issue": "Component file should start with uppercase"
+        }
+      ]
+    },
+    "timestamp": "2025-06-19T22:11:49.979Z"
+  }
+}

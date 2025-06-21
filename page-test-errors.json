@@ -1,0 +1,387 @@
+{
+  "timestamp": "2025-06-19T03:22:53.970Z",
+  "totalPages": 63,
+  "passedPages": 0,
+  "failedPages": 63,
+  "successRate": "0.0",
+  "errors": [
+    {
+      "url": "/",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/appointments",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/contact",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/expertise",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/gallery",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/faq",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/gp-resources",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/consulting-rooms",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/medicolegal",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/specialties",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/privacy-policy",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/terms-conditions",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/expertise/cervical-disc-replacement",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/expertise/image-guided-surgery",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/expertise/lumbar-disc-replacement",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/expertise/robotic-spine-surgery",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/surrey-hills",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/mornington",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/frankston",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/moonee-ponds",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/sunbury",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/werribee",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/bundoora",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/dandenong",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/heidelberg",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/wantirna",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/locations/langwarrin",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/condition-information",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/exercise-library",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/spine-health-app",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/assessment-tools",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/lifestyle-modifications",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/cervical-spine-exercises",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/spine-safe-exercises",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/cervical-spine-injury",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/exercise-pain-med-risks",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/age-specific-spine-recommendations",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/youthful-spine",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/spine-and-brain-health",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/individual-spine-health-program",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/individual-spine-health-programme",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/spine-conditions-library",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/patient-dashboard",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/arthrosis",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/discopathy",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/facet-arthropathy",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/herniated-disc",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/occipital-neuralgia",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/pars-defects",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/piriformis-syndrome",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/radiculopathy",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/sacroiliac-arthropathy",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/sciatica",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/spinal-stenosis",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/spondylolisthesis",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/spondylosis",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/patient-resources/conditions/thoracic-outlet-syndrome",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/gp-resources/care-coordination",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/gp-resources/diagnostics",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/gp-resources/emergencies",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    },
+    {
+      "url": "/gp-resources/referral-protocols",
+      "errors": [
+        "page.waitForTimeout is not a function"
+      ]
+    }
+  ]
+}

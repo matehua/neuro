@@ -1,0 +1,402 @@
+{
+  "timestamp": "2025-06-19T09:05:28.061Z",
+  "summary": {
+    "criticalIssues": 0,
+    "highIssues": 0,
+    "mediumIssues": 5,
+    "suggestions": 50,
+    "totalIssues": 5
+  },
+  "issues": {
+    "critical": [],
+    "high": [],
+    "medium": [
+      {
+        "type": "MISSING_REACT_IMPORT",
+        "severity": "MEDIUM",
+        "file": "ui/popover.tsx",
+        "message": "Component uses JSX but may be missing React import",
+        "fix": "Add React import if needed for older React versions"
+      },
+      {
+        "type": "MISSING_REACT_IMPORT",
+        "severity": "MEDIUM",
+        "file": "ui/select.tsx",
+        "message": "Component uses JSX but may be missing React import",
+        "fix": "Add React import if needed for older React versions"
+      },
+      {
+        "type": "MISSING_REACT_IMPORT",
+        "severity": "MEDIUM",
+        "file": "ui/switch.tsx",
+        "message": "Component uses JSX but may be missing React import",
+        "fix": "Add React import if needed for older React versions"
+      },
+      {
+        "type": "MISSING_REACT_IMPORT",
+        "severity": "MEDIUM",
+        "file": "NotFound.tsx",
+        "message": "Component uses JSX but may be missing React import",
+        "fix": "Add React import if needed for older React versions"
+      },
+      {
+        "type": "TRANSLATION_KEY_MISMATCH",
+        "severity": "MEDIUM",
+        "message": "Significant difference in translation keys: EN(1354) vs ZH(1288)",
+        "fix": "Review and synchronize translation keys"
+      }
+    ],
+    "suggestions": [
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "Navbar.tsx",
+        "message": "Component has 416 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "ui/sidebar.tsx",
+        "message": "Component has 767 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "AppointmentBooking.tsx",
+        "message": "Component has 891 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "Appointments.tsx",
+        "message": "Component has 824 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "Contact.tsx",
+        "message": "Component has 721 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "expertise/CervicalDiscReplacement.tsx",
+        "message": "Component has 422 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "expertise/LumbarDiscReplacement.tsx",
+        "message": "Component has 421 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "expertise/RoboticSpineSurgery.tsx",
+        "message": "Component has 436 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "Expertise.tsx",
+        "message": "Component has 616 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "Faq.tsx",
+        "message": "Component has 441 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "gp-resources/CareCoordination.tsx",
+        "message": "Component has 457 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "gp-resources/Diagnostics.tsx",
+        "message": "Component has 495 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "Index.tsx",
+        "message": "Component has 777 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/bundoora/index.tsx",
+        "message": "Component has 618 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/dandenong/index.tsx",
+        "message": "Component has 644 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/frankston/index.tsx",
+        "message": "Component has 865 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/heidelberg/index.tsx",
+        "message": "Component has 733 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/langwarrin/index.tsx",
+        "message": "Component has 623 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/LocationDetail.tsx",
+        "message": "Component has 406 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/moonee-ponds/index.tsx",
+        "message": "Component has 719 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/mornington/index.tsx",
+        "message": "Component has 710 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/sunbury/index.tsx",
+        "message": "Component has 731 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/surrey-hills/index.tsx",
+        "message": "Component has 903 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/wantirna/index.tsx",
+        "message": "Component has 607 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "locations/werribee/index.tsx",
+        "message": "Component has 731 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "Medicolegal.tsx",
+        "message": "Component has 633 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/AgeSpecificSpineRecommendations.tsx",
+        "message": "Component has 485 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/CervicalSpineExercises.tsx",
+        "message": "Component has 619 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/CervicalSpineInjury.tsx",
+        "message": "Component has 465 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/Arthrosis.tsx",
+        "message": "Component has 1826 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/FacetArthropathy.tsx",
+        "message": "Component has 1853 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/HerniatedDisc.tsx",
+        "message": "Component has 1604 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/OccipitalNeuralgia.tsx",
+        "message": "Component has 1664 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/ParsDefects.tsx",
+        "message": "Component has 1682 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/PiriformisSyndrome.tsx",
+        "message": "Component has 1678 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/Radiculopathy.tsx",
+        "message": "Component has 1842 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/SacroiliacArthropathy.tsx",
+        "message": "Component has 1681 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/Sciatica.tsx",
+        "message": "Component has 1742 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/SpinalStenosis.tsx",
+        "message": "Component has 1772 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/Spondylolisthesis.tsx",
+        "message": "Component has 1751 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/Spondylosis.tsx",
+        "message": "Component has 1678 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/conditions/ThoracicOutletSyndrome.tsx",
+        "message": "Component has 1683 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/ExerciseLibrary.tsx",
+        "message": "Component has 586 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/ExercisePainMedRisks.tsx",
+        "message": "Component has 470 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/LifestyleModifications.tsx",
+        "message": "Component has 869 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/PatientDashboard.tsx",
+        "message": "Component has 508 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/SpineConditionsLibrary.tsx",
+        "message": "Component has 774 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/SpineSafeExercises.tsx",
+        "message": "Component has 630 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "patient-resources/YouthfulSpine.tsx",
+        "message": "Component has 562 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      },
+      {
+        "type": "LARGE_COMPONENT",
+        "severity": "LOW",
+        "file": "PatientResources.tsx",
+        "message": "Component has 504 lines - consider splitting",
+        "fix": "Break down into smaller components"
+      }
+    ]
+  }
+}

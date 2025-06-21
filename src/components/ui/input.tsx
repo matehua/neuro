@@ -6,7 +6,6 @@ import { generateId } from '@/lib/accessibility';
 export interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   /** Error message to display and announce to screen readers */
   error?: string;
-
   /** Description for the input field */
   description?: string;
 }
@@ -61,6 +60,6 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({ className, type,
     );
   }
 );
-Input.displayName = "Input"
+Input.displayName = "Input";
 
-export { Input }
+export { Input };

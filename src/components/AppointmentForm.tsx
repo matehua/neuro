@@ -1,27 +1,53 @@
-import React, {  useState, useEffect, useRef , useCallback } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import { Check, CalendarIcon, Users } from 'lucide-react';
-
 import { format } from 'date-fns';
 
 import { Button } from '@/components/ui/button';
 import { Calendar } from '@/components/ui/calendar';
-import { cn } from '@/lib/utils';
-import { useDeviceDetection } from '@/contexts/DeviceContext';
-import { useLanguage } from '@/contexts/LanguageContext';
-
+import {
   Popover,
   PopoverContent,
   PopoverTrigger,
 } from "@/components/ui/popover";
+import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { cn } from '@/lib/utils';
+import { useDeviceDetection } from '@/contexts/DeviceContext';
+import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
+// Type definitions for appointment form
+interface AppointmentFormData {
+  appointmentDate: Date | undefined;
+  appointmentTime: Date | undefined;
+  adults: string;
+  children: string;
+}
+
+interface AppointmentFormState {
+  submitted: boolean;
+  isValid: boolean;
+}
+
+// Type for patient count options
+type PatientCount = '0' | '1' | '2' | '3' | '4' | '5' | '6';
 
 const AppointmentForm: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Basic fallback structure
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
   const deviceInfo = useDeviceDetection();
   const [startDate, setStartDate] = useState<Date>();
   const [endDate, setEndDate] = useState<Date>();
@@ -35,6 +61,7 @@ const AppointmentForm: React.FC = () => {
     return () => {
       if (timerRef.current) {
         clearTimeout(timerRef.current);
+      }
     };
   }, []);
 
@@ -45,6 +72,8 @@ const AppointmentForm: React.FC = () => {
     if (!startDate || !endDate) {
       // In a real app, you would show an error message to the user
       return;
+    }
+
     // In a real app, this would send the booking data to a server
     // with proper input sanitization and validation
     setSubmitted(true);
@@ -53,6 +82,8 @@ const AppointmentForm: React.FC = () => {
     // Clear any existing timer
     if (timerRef.current) {
       clearTimeout(timerRef.current);
+    }
+
     // Set a new timer
     timerRef.current = window.setTimeout(() => {
       setSubmitted(false);
@@ -62,8 +93,8 @@ const AppointmentForm: React.FC = () => {
 
   return (
     <form
-      onSubmit={handleSubmit
-                            className={cn(
+      onSubmit={handleSubmit}
+      className={cn(
         "glass-card animate-fade-in [animation-delay:200ms]",
         deviceInfo.isMobile
           ? "p-mobile-lg space-y-mobile-lg"
@@ -76,7 +107,7 @@ const AppointmentForm: React.FC = () => {
           ? "mobile-2xl"
           : "text-2xl mb-6"
       )}>
-        {t.appointmentForm.title}
+        {finalT.appointmentForm.title}
       </h3>
 
       <div className={cn(
@@ -98,7 +129,7 @@ const AppointmentForm: React.FC = () => {
                 deviceInfo.isMobile ? "mobile-text" : "text-sm"
               )}
             >
-              {t.appointmentForm.appointmentDate}
+              {finalT.appointmentForm.appointmentDate}
             </label>
             <Popover>
               <PopoverTrigger asChild>
@@ -115,7 +146,7 @@ const AppointmentForm: React.FC = () => {
                     "mr-2",
                     deviceInfo.isMobile ? "h-5 w-5" : "h-4 w-4"
                   )} />
-                  {startDate ? format(startDate, "PPP") : <span>{t.appointmentForm.selectDate}</span>}
+                  {startDate ? format(startDate, "PPP") : <span>{finalT.appointmentForm.selectDate}</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent
@@ -128,9 +159,9 @@ const AppointmentForm: React.FC = () => {
                 <Calendar
                   mode="single"
                   selected={startDate}
-                  onSelect={setStartDate
+                  onSelect={setStartDate}
                   initialFocus
-                            disabled={(date: any) => date < new Date()}
+                  disabled={(date) => date < new Date()}
                   className="pointer-events-auto"
                 />
               </PopoverContent>
@@ -140,7 +171,7 @@ const AppointmentForm: React.FC = () => {
           {/* Appointment Time */}
           <div className="space-y-2">
             <label htmlFor="appointment-time" className="block text-sm font-medium">
-              {t.appointmentForm.appointmentTime}
+              {finalT.appointmentForm.appointmentTime}
             </label>
             <Popover>
               <PopoverTrigger asChild>
@@ -153,16 +184,16 @@ const AppointmentForm: React.FC = () => {
                   )}
                 >
                   <CalendarIcon className="mr-2 h-4 w-4" />
-                  {endDate ? format(endDate, "PPP") : <span>{t.appointmentForm.selectTime}</span>}
+                  {endDate ? format(endDate, "PPP") : <span>{finalT.appointmentForm.selectTime}</span>}
                 </Button>
               </PopoverTrigger>
               <PopoverContent className="w-auto p-0" align="start">
                 <Calendar
                   mode="single"
                   selected={endDate}
-                  onSelect={setEndDate
+                  onSelect={setEndDate}
                   initialFocus
-                            disabled={(date: any) => date < (startDate || new Date())}
+                  disabled={(date) => date < (startDate || new Date())}
                   className="pointer-events-auto"
                 />
               </PopoverContent>
@@ -176,12 +207,12 @@ const AppointmentForm: React.FC = () => {
             <label htmlFor="adults" className="block text-sm font-medium">
               Adults
             </label>
-            <Select value={adults} onValueChange={setAdults>
+            <Select value={adults} onValueChange={setAdults}>
               <SelectTrigger id="adults" className="w-full">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
-                {[1, 2, 3, 4, 5, 6].map((num: any) => (
+                {[1, 2, 3, 4, 5, 6].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
                     {num} {num === 1 ? "Adult" : "Adults"}
                   </SelectItem>
@@ -195,12 +226,12 @@ const AppointmentForm: React.FC = () => {
             <label htmlFor="children" className="block text-sm font-medium">
               Children
             </label>
-            <Select value={children} onValueChange={setChildren>
+            <Select value={children} onValueChange={setChildren}>
               <SelectTrigger id="children" className="w-full">
                 <SelectValue placeholder="Select" />
               </SelectTrigger>
               <SelectContent>
-                {[0, 1, 2, 3, 4].map((num: any) => (
+                {[0, 1, 2, 3, 4].map((num) => (
                   <SelectItem key={num} value={num.toString()}>
                     {num} {num === 1 ? "Child" : "Children"}
                   </SelectItem>
@@ -215,24 +246,19 @@ const AppointmentForm: React.FC = () => {
         {submitted ? (
           <>
             <Check className="mr-2 h-4 w-4" />
-            {t.appointmentForm.appointmentConfirmed}
+            {finalT.appointmentForm.appointmentConfirmed}
           </>
         ) : (
           <>
             <Users className="mr-2 h-4 w-4" />
-            {t.appointmentForm.checkAvailability}
+            {finalT.appointmentForm.checkAvailability}
           </>
         )}
       </Button>
     </form>
   );
+};
+
 AppointmentForm.displayName = 'AppointmentForm';
 
 export default AppointmentForm;
-
-AppointmentForm.displayName = 'AppointmentForm';
-  }
-}
-}
-}
-}

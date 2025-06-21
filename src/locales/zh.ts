@@ -4,1056 +4,1838 @@ export default {
       title: "在萨里山扩展您的医疗实践",
       subtitle: "专业环境",
       description: "在萨里山的miNEURO医疗咨询套房租用全套设备的医疗咨询室。对于医疗专业人士来说，我们的先进空间位于主要医疗设施和交通枢纽附近，是理想之选。无论您需要临时还是永久设置，我们在充满活力的购物区的黄金位置提供现代化和便捷的工作空间，以提供一流的患者护理。",
-      scheduleViewing: "安排参观"
+      scheduleViewing: "安排参观",
     },
     features: {
       convenientLocation: {
         title: "便利位置",
-        description: "我们的设施距离繁忙的博士山医疗中心、爱普沃斯东部医院、几家全科诊所和繁忙的购物/商业/交通区域仅几分钟车程。"
+        description: "我们的设施距离繁忙的博士山医疗中心、爱普沃斯东部医院、几家全科诊所和繁忙的购物/商业/交通区域仅几分钟车程。",
       },
       fullyEquipped: {
         title: "全套设备房间",
-        description: "我们的咨询室配备了现代化的医疗设备、经验丰富的接待员、检查台、人体工学座椅、电脑、洗手池和高速互联网接入。"
+        description: "我们的咨询室配备了现代化的医疗设备、经验丰富的接待员、检查台、人体工学座椅、电脑、洗手池和高速互联网接入。",
       },
       flexibleTerms: {
         title: "灵活的许可条款",
-        description: "我们提供灵活的许可条款，包括临时、短期和长期租赁选项，以满足您的需求。"
+        description: "我们提供灵活的许可条款，包括临时、短期和长期租赁选项，以满足您的需求。",
       },
       customisation: {
         title: "定制选项",
-        description: "无论您需要额外的医疗设备还是特定的房间配置，我们都提供定制选项以满足您的要求。"
+        description: "无论您需要额外的医疗设备还是特定的房间配置，我们都提供定制选项以满足您的要求。",
       },
       receptionistSupport: {
         title: "接待员支持",
-        description: "从迎接患者到管理预约和咨询，我们经验丰富的接待员在这里协助您提供卓越的患者护理。"
+        description: "从迎接患者到管理预约和咨询，我们经验丰富的接待员在这里协助您提供卓越的患者护理。",
       },
       professionalEnvironment: {
         title: "专业环境",
-        description: "从温馨的接待区到设备齐全的咨询室，我们优先为所有使用者创造积极的体验。"
-
-    },
-    whyChoose: {
-      title: "为什么选择我们的套房",
-      description: "在miNEURO医疗咨询室，我们致力于为医疗专业人士提供量身定制的资源和支持，以满足医疗专业人士的多样化需求。我们的设施在萨里山的黄金位置提供临时或永久的全套设备的最先进医疗咨询套房出租，靠近主要医疗机构、繁忙的购物区和便利的交通枢纽。这使其成为寻求现代化和便利工作空间以提供优质患者服务的医疗专业人士的理想选择。"
-    },
-    facilities: {
-      title: "设施",
-      consultingRooms: {
-        title: "咨询室",
-        description: "我们的咨询室经过精心设计和配备，以支持各种医疗专科。每个房间都有现代化的医疗设备，包括检查台、洗手池、人体工学座椅和充足的储存空间。"
+        description: "从温馨的接待区到设备齐全的咨询室，我们优先为所有使用者创造积极的体验。",
       },
-      waitingArea: {
-        title: "舒适的等候区",
-        description: "我们温馨的等候区旨在为患者及其陪同人员提供舒适和便利。配备舒适的座椅、阅读材料、装有清爽饮料的冰箱、电视、高保真音响系统和环境照明，我们的等候区为等待预约的患者营造了宁静的氛围。"
+      whyChoose: {
+        title: "Why You Should Choose Our Suites",
+        description: "At miNEURO Medical Consulting Rooms, we are committed to providing healthcare professionals with the 资源 and 支持 tailored to meet the diverse needs of healthcare professionals. Our facility offers for rent sessional or permanent fully-equipped 最先进的 medical consulting suites in 萨里山 at a prime location near key medical institutions, a bustling shopping district, and a 便利的 transportation hub. It creates an ideal choice for healthcare professionals seeking a 现代化的 and 无障碍的 workspace to deliver quality 患者 服务.",
       },
-      amenities: {
-        title: "便利设施",
-        description: "我们的设施提供基本便利设施以支持您的诊所运营。包括患者和员工洗手间以及茶点设施，确保患者在就诊期间感到舒适。"
+      facilities: {
+        title: "Facilities",
+        consultingRooms: {
+          title: "Consulting Rooms",
+          description: "Our consulting rooms are meticulously designed and equipped to 支持 various medical specialties. Each room has 现代化的 medical equipment, including examination tables, sinks, ergonomic seating, and ample storage space.",
+        },
+        waitingArea: {
+          title: "舒适的 Waiting Area",
+          description: "Our welcoming waiting area is designed to provide comfort and convenience for patients and their companions. Furnished with 舒适的 seating, reading materials, a fridge with refreshing drinks, a TV, a HiFi audio system and ambient lighting, our waiting area creates a calming atmosphere for patients awaiting their appointments.",
+        },
+        amenities: {
+          title: "Access to Amenities",
+          description: "Our facility provides access to essential amenities to 支持 your practice operations. They include restrooms for patients and staff and refreshment facilities to ensure patients feel 舒适的 during their visit.",
+        },
+        technology: {
+          title: "Technology Infrastructure",
+          description: "High-speed internet access is available in every consulting room, allowing healthcare professionals to seamlessly access electronic medical records and research 资源 and communicate with colleagues. 萨里山 Medical Consulting Rooms has 先进的 technology infrastructure to 支持 现代化的 healthcare practices. It includes secure high-speed NBN network connectivity, telecommunication systems, CCTV, alarm and video conferencing capabilities to facilitate 沟通 and collaboration among healthcare professionals.",
+        },
+        accessibility: {
+          title: "Accessibility Features",
+          description: "We are committed to providing an inclusive environment for 全部 individuals. Our facility is designed to be 无障碍的 to patients with mobility impairments, with wide doors, wheelchair ramps, handrails, and 无障碍的 restroom facilities. We strive to ensure every 患者 can access our 服务 comfortably and with dignity.",
+        },
+        kitchenette: {
+          title: "Kitchenette",
+          description: "特色",
+        },
+        location: {
+          title: "Location",
+          description: "Our consulting suites are strategically located at 619 Canterbury Road, 萨里山, offering a prime location for healthcare professionals seeking a 便利的 and 无障碍的 workspace. Situated within a few minutes drive from the bustling Box Hill Medical Hub, our facility provides easy access to essential medical 服务 and collaborative opportunities with fellow healthcare professionals.",
+          nearbyHospitals: "Located nearby, Epworth Eastern 医院 is a leading private 医院 renowned for its 全面的 range of medical 服务 and exceptional diagnostic and 治疗 facilities. Our rooms offer 全部 healthcare professionals 便利的 access to 医院 资源, 专科医生 consultations, and diagnostic 服务. Several GP clinics are also located nearby, offering 全面的 healthcare solutions and 患者 referrals.",
+        },
+        surroundings: {
+          title: "Surrounded by Amenities",
+          description: "Enjoy a variety of dining options with a selection of local eateries and cafes, recreational areas, playgrounds, post office and a 新建 Coles supermarket within a 100-meter radius of our facility. Whether you need a quick coffee break between appointments, meet colleagues for lunch, or buy ingredients for a meal, amenities are readily available nearby.",
+          retail: "Explore a range of nearby retail shops, offering convenience for tenants and patients running errands before or after appointments. From pharmacies to convenience stores, essential amenities are easily 无障碍的 from our location.",
+        },
+        transportation: {
+          title: "便利的 Transportation Options",
+          publicTransport: "With the 新建 Union train station within walking distance, accessing our facility is 便利的 for healthcare providers and patients. Whether you're commuting from the city or neighbouring suburbs, our location offers easy access via public transportation. The newly built Union Station connects you to major train lines. Multiple local bus routes provide additional transportation options.",
+          driving: "设施",
+        },
+        neighbourhood: {
+          title: "安全的 and Welcoming Neighbourhood",
+          description: "萨里山 is renowned for its 安全的 and welcoming community atmosphere, providing a conducive environment for healthcare professionals to practise and patients to seek medical 护理. Our location offers peace of mind for tenants and patients, ensuring a positive experience during their visit.",
+        },
+        parking: {
+          title: "Parking",
+          description: "Secure gated background parking is available on-site for consultants during their sessional time, offering 便利的 access to our premises. Ample free parking space is available along the surrounding streets or at the Union train station.",
+        },
+        pricing: {
+          title: "Pricing",
+          description: "Our flexible rental options are designed to provide affordability and convenience, allowing you to focus on delivering exceptional 患者 护理.",
+        },
+        contact: {
+          title: "联系我们",
+          description: "联系 us to 了解更多 关于 our facilities, 安排 a viewing or inquire 关于 our rental options. Join us and elevate your practice to 新建 heights in 萨里山. Our facility fosters collaboration and networking opportunities, providing a supportive 专业的 growth and development environment.",
+          address: "Suite 4, 619 Canterbury Road, 萨里山 VIC 3127",
+          email: "info@mineuro.com.au",
+          phone: "03 90084200",
+        },
+        gallery: {
+          title: "Facility Gallery",
+          description: "Our 萨里山 medical consulting facility features 现代化的, fully-equipped consulting rooms designed to provide a 专业的 and 舒适的 environment for healthcare practitioners and their patients. Browse through our gallery to see our entrance, reception area, waiting rooms, consulting suites, and amenities.",
+        },
+        form: {
+          title: "Consulting Room Enquiry",
+          firstName: "名字",
+          lastName: "姓氏",
+          specialty: "Medical Specialty",
+          email: "邮箱",
+          phone: "电话",
+          preferredLocation: "Preferred Location",
+          selectLocation: "Select a location",
+          locations: {
+            surreyHills: "萨里山",
+            mornington: "莫宁顿",
+            frankston: "弗兰克斯顿",
+          },
+          rentalFrequency: "Session Frequency",
+          selectFrequency: "Select frequency",
+          frequencies: {
+            weekly: "Weekly",
+            fortnightly: "Fortnightly",
+            monthly: "Monthly",
+            casual: "Casual",
+          },
+          preferredDays: "Preferred Days",
+          days: {
+            monday: "星期一",
+            tuesday: "星期二",
+            wednesday: "星期三",
+            thursday: "星期四",
+            friday: "星期五",
+          },
+          additionalRequirements: "Additional Requirements",
+          additionalRequirementsPlaceholder: "请 specify any additional requirements or questions you may have",
+          submit: "提交 Enquiry",
+          confirmation: "We will 联系 you within 1-2 business days to discuss your requirements and availability.",
+          thankYou: "谢谢 for your enquiry. We will 联系 you shortly.",
+        },
+        cta: {
+          title: "Have Questions?",
+          description: "If you have any questions 关于 our consulting room options or would like to arrange a viewing, 请 don't hesitate to 联系 us.",
+          contactUs: "联系我们",
+        },
       },
-      technology: {
-        title: "技术基础设施",
-        description: "每个咨询室都提供高速互联网接入，使医疗专业人士能够无缝访问电子病历和研究资源，并与同事沟通。萨里山医疗咨询室拥有先进的技术基础设施，支持现代医疗实践。包括安全的高速NBN网络连接、电信系统、闭路电视、警报和视频会议功能，以促进医疗专业人士之间的沟通和协作。"
-      },
-      accessibility: {
-        title: "无障碍功能",
-        description: "我们致力于为所有人提供包容性环境。我们的设施设计为行动不便的患者提供无障碍通道，配有宽门、轮椅坡道、扶手和无障碍洗手间设施。我们努力确保每位患者都能舒适和有尊严地使用我们的服务。"
-      },
-      kitchenette: {
-        title: "小厨房",
-        description: "我们的小厨房让我们能够在一天中准备和享用茶点。无论您需要在预约之间快速喝杯咖啡还是吃点零食来补充能量，我们的小厨房都提供了放松和补充能量的完美空间。它配备了基本电器，包括冰箱、微波炉、烤面包机、三明治机和开水/冷水龙头。"
-
     },
-    additionalAmenities: {
-      title: "设施和便利",
-      subtitle: "为您的医疗实践提供全面支持",
-      description: "我们的咨询套房不仅提供优质的医疗空间，还包括各种便利设施，确保您的实践顺利运行。",
-      reception: {
-        title: "接待服务",
-        description: "专业的接待服务，包括预约安排、患者登记和一般行政支持。"
-      },
-      parking: {
-        title: "停车设施",
-        description: "为患者和医疗专业人士提供充足的现场停车位，包括残疾人专用停车位。"
-      },
-      accessibility: {
-        title: "无障碍通道",
-        description: "我们的设施完全符合无障碍标准，确保所有患者都能轻松进入。"
-      },
-      technology: {
-        title: "技术支持",
-        description: "高速互联网、现代化的通信系统和IT支持，确保您的实践高效运行。"
-      }
-    },
-    pricing: {
-      title: "租赁选项和定价",
-      subtitle: "灵活的租赁方案适合您的需求",
-      description: "我们提供多种租赁选项，从临时使用到长期租赁，价格透明，无隐藏费用。",
-      sessional: {
-        title: "临时租赁",
-        description: "按需租赁，适合偶尔需要咨询空间的医疗专业人士。",
-        features: ["按小时计费", "灵活预订", "包含基本设备", "接待支持"]
-      },
-      regular: {
-        title: "定期租赁",
-        description: "每周或每月定期租赁，适合建立稳定实践的医疗专业人士。",
-        features: ["优惠价格", "优先预订", "个性化设置", "营销支持"]
-      },
-      permanent: {
-        title: "长期租赁",
-        description: "长期租赁协议，适合希望建立永久实践的医疗专业人士。",
-        features: ["最优惠价格", "专用空间", "完全定制", "全面支持"]
-
-    },
-    location: {
-      title: "位置",
-      description: "我们的咨询套房战略性地位于萨里山Canterbury Road 619号，为寻求便利和易达工作空间的医疗专业人士提供黄金位置。位于距离繁忙的博士山医疗中心几分钟车程的地方，我们的设施提供了便利的基本医疗服务和与同行医疗专业人士合作的机会。",
-      nearbyHospitals: "位于附近的爱普沃斯东部医院是一家领先的私立医院，以其全面的医疗服务和卓越的诊断和治疗设施而闻名。我们的房间为所有医疗专业人士提供便利的医院资源、专科咨询和诊断服务。附近还有几家全科诊所，提供全面的医疗解决方案和患者转诊。"
-    },
-    surroundings: {
-      title: "周围便利设施",
-      description: "在我们设施100米半径内享受各种餐饮选择，包括当地餐厅和咖啡馆、娱乐区、游乐场、邮局和新的Coles超市。无论您需要在预约之间快速喝杯咖啡、与同事共进午餐，还是购买食材做饭，附近都有便利设施。",
-      retail: "探索附近的各种零售商店，为租户和患者在预约前后办事提供便利。从药房到便利店，从我们的位置都可以轻松到达基本便利设施。"
-    },
-    transportation: {
-      title: "便利的交通选择",
-      publicTransport: "新的Union火车站步行即可到达，医疗提供者和患者都可以方便地到达我们的设施。无论您是从市中心还是邻近郊区通勤，我们的位置都通过公共交通提供便利的通道。新建的Union站连接您到主要火车线路。多条当地公交线路提供额外的交通选择。",
-      driving: "位于Canterbury Road上，我们的设施享有到主要道路的优良连接，包括东部高速公路、Warrigal Road、Union Road和Whitehorse Road。无论您是从市中心还是邻近郊区通勤，我们的位置都通过连接良好的道路网络提供便利的通道。"
-    },
-    neighbourhood: {
-      title: "安全友好的社区",
-      description: "萨里山以其安全友好的社区氛围而闻名，为医疗专业人士执业和患者寻求医疗护理提供了有利的环境。我们的位置为租户和患者提供安心，确保他们在就诊期间有积极的体验。"
-    },
-    parking: {
-      title: "停车",
-      description: "现场为顾问在其临时时间提供安全的门控背景停车，提供到我们场所的便利通道。周围街道或Union火车站提供充足的免费停车位。"
-    },
-    contact: {
-      title: "联系我们",
-      description: "联系我们了解更多关于我们设施的信息、安排参观或咨询我们的租赁选择。加入我们，在萨里山将您的诊所提升到新的高度。我们的设施促进合作和网络机会，为专业成长和发展提供支持性环境。",
-      address: "Suite 4, 619 Canterbury Road, Surrey Hills VIC 3127",
-      email: "info@mineuro.com.au",
-      phone: "03 90084200"
-    },
-    gallery: {
-      title: "设施图库",
-      description: "我们的萨里山医疗咨询设施拥有现代化、全套设备的咨询室，旨在为医疗从业者及其患者提供专业舒适的环境。浏览我们的图库，查看我们的入口、接待区、等候室、咨询套房和便利设施。"
-    },
-    form: {
-      title: "咨询室查询",
-      firstName: "名字",
-      lastName: "姓氏",
-      specialty: "医疗专科",
-      email: "电子邮件",
-      phone: "电话",
-      preferredLocation: "首选位置",
-      selectLocation: "选择位置",
-      locations: {
-        surreyHills: "萨里山",
-        mornington: "莫宁顿",
-        frankston: "弗兰克斯顿"
-      },
-      rentalFrequency: "会话频率",
-      selectFrequency: "选择频率",
-      frequencies: {
-        weekly: "每周",
-        fortnightly: "每两周",
-        monthly: "每月",
-        casual: "临时"
-      },
-      preferredDays: "首选日期",
-      days: {
-        monday: "星期一",
-        tuesday: "星期二",
-        wednesday: "星期三",
-        thursday: "星期四",
-        friday: "星期五"
-      },
-      additionalRequirements: "额外要求",
-      additionalRequirementsPlaceholder: "请说明您可能有的任何额外要求或问题",
-      submit: "提交查询",
-      confirmation: "我们将在1-2个工作日内联系您，讨论您的要求和可用性。",
-      thankYou: "感谢您的查询。我们将很快联系您。"
-    },
-    cta: {
-      title: "有问题？",
-      description: "如果您对我们的咨询室选项有任何问题，或想安排参观，请随时联系我们。",
-      contactUs: "联系我们"
-
-  },
-  expertiseCards: {
-    brainConditions: {
-      title: "脑部疾病",
-      description: "脑肿瘤（胶质瘤、脑膜瘤、前庭神经鞘瘤、垂体腺瘤等）、脑积水、脑动脉瘤、动静脉畸形、海绵状血管瘤、癫痫、三叉神经痛、Chiari畸形。"
-    },
-    spinalProblems: {
-      title: "脊柱问题",
-      description: "颈部和背部疼痛、坐骨神经痛、臂丛神经痛、脊柱狭窄、椎间盘突出、脊椎滑脱、脊柱炎、硬膜外脓肿、不稳定、脊髓病、脊髓压迫、脊柱肿瘤、脊柱血管畸形。"
-    },
-    nerveProblems: {
-      title: "神经问题",
-      description: "神经肿瘤（神经鞘瘤、神经纤维瘤、神经瘤）、神经疼痛、神经损伤、神经压迫（腕管综合征、肘管综合征）、神经和肌肉活检。"
-    },
-    medicolegalReports: {
-      title: "医疗法律报告",
-      description: "根据AMA永久性损伤指南进行损伤评估、能力评估、工伤赔偿、交通事故伤害、责任咨询。"
-
-  },
-  minimallyInvasive: {
-    subtitle: "相信少即是多的神经外科医生",
-    title: "为什么选择微创手术？",
-    description1: "任何神经外科医生和脊柱外科医生的最终目标是通过提供关于可用治疗选择的良好建议来改善患者的生活质量甚至延长生命。在脑部、脊髓或脊柱的最先进病理中，需要手术来恢复身体结构之间的正常解剖关系。",
-    description2: "手术和麻醉学的发展使得实现这一目标并成功管理以前无法治疗的疾病成为可能。然而，特别是在脑部和脊柱手术领域，仍有很大的改进空间。",
-    description3: "微创手术代表了专注于患者安全和满意度的手术理念的逻辑演进。手术理念包括",
-    principle1: "准确识别问题",
-    principle2: "安全进入病理区域，对周围组织的损伤最小",
-    principle3: "有效但精细地修复复杂结构，即使它们位于身体深处",
-    buttonText: "微创手术"
-  },
-  discReplacement: {
-    title: "椎间盘置换",
-    subtitle: "保留运动的脊柱手术",
-    description1: "椎间盘的自然老化（退化）或创伤可能影响其活动性并导致其缓冲功能减弱。它可能表现为对神经结构的压力，导致颈部、背部、手臂、肩膀、臀部、腿部和足部疼痛、麻木或无力。",
-    description2: "椎间盘置换（关节成形术）旨在恢复受影响节段的减震功能，同时减压神经结构。与已经确立的髋关节和膝关节置换手术类似，人工椎间盘假体的发展也可能显著改善患者的生活质量并达到高水平的患者满意度。",
-    description3: "关节成形术保留运动并减少对上下椎间盘的负荷，保护它们免受加速退化。多项研究表明，在适当选择的候选人中，与脊柱融合相比，关节成形术后患者结果更好，患者满意度更高，再手术率更低，并发症更少，成本更低。",
-    buttonText: "椎间盘置换"
   },
   nav: {
     home: "首页",
+    about: "关于我们",
     expertise: "专业领域",
-    expertiseSubmenu: {
-      cervicalDisc: "颈椎间盘置换",
-      lumbarDisc: "腰椎间盘置换",
-      imageGuided: "影像引导手术",
-      roboticSpine: "机器人辅助脊柱手术"
-    },
     appointments: "预约",
     gpResources: "全科医生资源",
-    gpResourcesSubmenu: {
-      referralProtocols: "转诊和分诊协议",
-      diagnostics: "神经外科诊断",
-      careCoordination: "多学科护理",
-      emergencies: "紧急情况和危险信号"
-    },
-    medicolegal: "医疗法律咨询",
     locations: "诊所位置",
+    contact: "联系我们",
     locationsSubmenu: {
+      surreyHills: "萨里山",
       mornington: "莫宁顿",
       frankston: "弗兰克斯顿",
-      langwarrin: "朗沃林",
-      mooneePonds: "穆尼庞兹",
-      sunbury: "桑伯里",
+      mooneePonds: "月亮池塘",
+      langwarrin: "朗瓦林",
+      sunbury: "森伯里",
       werribee: "韦里比",
       bundoora: "邦多拉",
       dandenong: "丹德农",
       heidelberg: "海德堡",
-      wantirna: "万蒂尔纳",
-      surreyHills: "萨里山"
+      wantirna: "万蒂纳",
+      allLocations: "所有位置",
+    },
+    expertiseSubmenu: {
+      cervicalDisc: "颈椎间盘置换术",
+      lumbarDisc: "腰椎间盘置换术",
+      imageGuided: "影像引导手术",
+      roboticSpine: "机器人脊柱手术",
+      brainSurgery: "脑部手术",
+      spinalSurgery: "脊柱手术",
+      nerveSurgery: "神经手术",
+      painManagement: "疼痛管理",
     },
     faq: "常见问题",
-    contact: "联系我们",
-    consultingRooms: "诊室租赁",
-    bookNow: "立即预约"
+    gpResourcesSubmenu: {
+      referralProtocols: "转诊协议",
+      diagnostics: "神经外科诊断",
+      careCoordination: "多学科护理",
+      emergencies: "急诊与危险信号",
+    },
+    medicolegal: "医疗法律",
+    bookNow: "立即预约",
+    patientResources: "患者资源",
+    patientResourcesSubmenu: {
+      preOperative: "术前准备",
+      postOperative: "术后护理",
+      education: "患者教育",
+      support: "患者支持",
+    },
   },
   hero: {
-    subtitle: "脑部和脊柱手术的黄金标准",
-    title: "神经外科专业知识和创新技术，实现卓越的脑部和脊柱手术结果",
-    description: "阿利什凯维奇医生专注于对脑部、脊柱和周围神经疾病的前瞻性治疗。他在神经外科领域拥有超过30年的经验，并利用安全的微创技术和创新方法致力于恢复和改善患者的生活方式。阿利什凯维奇医生有资格使用各种最先进的机器人和影像引导导航系统、保留运动功能的脊柱手术、椎间盘置换和微创手术，取得了出色的效果。他的开创性方法已经积极影响了众多人的生活，从运动员和执法人员到退休人员。他在维多利亚州的咨询办公室提供及时的面对面和远程医疗咨询。",
+    subtitle: "大脑和脊柱手术的黄金标准",
+    title: "神经外科专业技术和创新技术，实现卓越的大脑和脊柱手术效果",
+    description: "Aliashkevich医生专门从事影响大脑、脊柱和周围神经的疾病的前瞻性治疗。他在神经外科拥有30多年的经验，运用安全的微创技术和创新方法，致力于恢复和改善患者的生活方式。Aliashkevich医生有资格使用各种最先进的机器人和影像引导导航系统、运动保护脊柱手术、椎间盘置换术和锁孔手术，效果卓越。他的开创性方法积极影响了众多人的生活，从运动员和执法人员到退休人员。他在维多利亚州的咨询办公室提供及时的面对面和远程医疗咨询。",
     bookConsultation: "预约咨询",
     exploreTreatments: "探索治疗选项",
-    scrollDown: "向下滚动"
+    scrollDown: "向下滚动",
+    learnMore: "了解更多",
+    getStarted: "开始咨询",
   },
   footer: {
-    description: "阿利什凯维奇医生是微创神经外科和脊柱手术的专家，使用最新技术为患者提供最佳效果。",
+    description: "miNEURO是一家领先的神经外科诊所，专门从事脑部、脊柱和神经系统疾病的治疗。我们致力于为患者提供最高质量的护理。",
     quickLinks: "快速链接",
-    contact: "联系",
-    newsletter: "通讯",
-    newsletterDesc: "订阅我们的通讯以获取医疗更新和诊所新闻。",
-    yourEmail: "您的电子邮件地址",
-    subscribe: "订阅",
-    allRights: "版权所有。"
+    contact: "联系方式",
+    allRights: "版权所有",
+    followUs: "关注我们",
+    privacyPolicy: "隐私政策",
+    termsOfService: "服务条款",
+    sitemap: "网站地图",
+  },
+  patientResources: {
+    title: "患者资源",
+    description: "我们致力于为患者提供全面的教育资源，帮助您了解病情、治疗选择和康复过程。",
+    preOperative: {
+      title: "术前准备",
+      description: "充分的术前准备是手术成功的关键。以下信息将帮助您为手术做好准备。",
+      subtitle: "手术前的重要准备信息",
+      preparation: {
+        title: "术前准备清单",
+        medical: {
+          title: "医疗准备",
+          items: ["完成所有必要的术前检查","停止服用可能影响手术的药物","告知医生所有当前用药","报告任何过敏史","完成麻醉评估","确保血液检查结果正常"],
+        },
+        lifestyle: {
+          title: "生活方式调整",
+          items: ["术前至少4周戒烟","限制酒精摄入","保持健康饮食","适度运动","充足睡眠","减少压力"],
+        },
+        practical: {
+          title: "实用准备",
+          items: ["安排术后护理人员","准备舒适的家居环境","购买必要的康复用品","安排交通","处理工作安排","准备保险文件"],
+        },
+      },
+      instructions: {
+        title: "术前指导",
+        fasting: {
+          title: "禁食指导",
+          description: "手术前需要禁食以确保麻醉安全。",
+          solid: "固体食物：手术前8小时开始禁食",
+          liquid: "液体：手术前2小时开始禁水",
+          medication: "必要药物可用少量水服用",
+        },
+        hygiene: {
+          title: "个人卫生",
+          items: ["术前晚上洗澡","使用抗菌肥皂","不要使用化妆品","移除所有首饰","修剪指甲","不要涂指甲油"],
+        },
+        arrival: {
+          title: "到院指导",
+          items: ["按时到达医院","携带身份证件","带上保险卡","穿着舒适的衣服","不要携带贵重物品","由家属陪同"],
+        },
+      },
+    },
+    postOperative: {
+      title: "术后护理",
+      description: "术后护理对于成功康复至关重要。请仔细遵循以下指导。",
+      subtitle: "手术后的恢复指导",
+      immediate: {
+        title: "术后即时护理",
+        monitoring: {
+          title: "监测要点",
+          items: ["生命体征监测","神经功能评估","伤口检查","疼痛评估","液体平衡","并发症观察"],
+        },
+        activity: {
+          title: "活动指导",
+          items: ["按医嘱逐渐增加活动","避免剧烈运动","正确的体位","深呼吸练习","早期活动预防血栓","避免长时间卧床"],
+        },
+      },
+      recovery: {
+        title: "康复阶段",
+        timeline: {
+          title: "恢复时间表",
+          week1: {
+            title: "第1周",
+            description: "重点是休息和伤口愈合，逐渐恢复基本活动。",
+          },
+          week2to4: {
+            title: "第2-4周",
+            description: "逐渐增加活动量，开始物理治疗。",
+          },
+          month2to3: {
+            title: "第2-3个月",
+            description: "继续康复训练，恢复日常活动。",
+          },
+          month3plus: {
+            title: "3个月以上",
+            description: "完全康复，恢复正常生活和工作。",
+          },
+        },
+        signs: {
+          title: "需要关注的症状",
+          warning: ["发热超过38.5°C","伤口红肿或渗液","剧烈头痛","视力改变","言语困难","肢体无力加重"],
+          normal: ["轻度疼痛","疲劳感","食欲不振","情绪波动","睡眠障碍","轻微头晕"],
+        },
+      },
+      medications: {
+        title: "用药指导",
+        pain: {
+          title: "疼痛管理",
+          description: "按医嘱服用止痛药，不要忍受不必要的疼痛。",
+        },
+        antibiotics: {
+          title: "抗生素",
+          description: "如果开具抗生素，请按时完成整个疗程。",
+        },
+        other: {
+          title: "其他药物",
+          description: "继续服用慢性病药物，除非医生另有指示。",
+        },
+      },
+    },
+    education: {
+      title: "患者教育",
+      description: "教育是治疗的重要组成部分。了解您的病情有助于更好的治疗效果。",
+      subtitle: "了解您的病情和治疗",
+      anatomy: {
+        title: "解剖学基础",
+        brain: {
+          title: "大脑解剖",
+          description: "了解大脑的基本结构和功能。",
+        },
+        spine: {
+          title: "脊柱解剖",
+          description: "了解脊柱的结构和神经系统。",
+        },
+        nerves: {
+          title: "神经系统",
+          description: "了解周围神经系统的功能。",
+        },
+      },
+      conditions: {
+        title: "疾病知识",
+        understanding: {
+          title: "理解您的病情",
+          items: ["疾病的原因","症状的发展","自然病程","治疗选择","预后评估","预防措施"],
+        },
+        questions: {
+          title: "常见问题",
+          items: ["我的病情严重吗？","需要手术治疗吗？","有哪些治疗选择？","康复需要多长时间？","会有后遗症吗？","如何预防复发？"],
+        },
+      },
+      lifestyle: {
+        title: "生活方式指导",
+        diet: {
+          title: "饮食建议",
+          items: ["均衡营养","充足蛋白质","维生素补充","充足水分","限制酒精","戒烟"],
+        },
+        exercise: {
+          title: "运动指导",
+          items: ["适度有氧运动","力量训练","柔韧性练习","平衡训练","避免高风险活动","循序渐进"],
+        },
+        stress: {
+          title: "压力管理",
+          items: ["放松技巧","冥想练习","充足睡眠","社交支持","专业咨询","兴趣爱好"],
+        },
+      },
+    },
+    submenu: {
+      comprehensiveSolution: "综合解决方案",
+      conditionInfo: "疾病信息",
+      exerciseLibrary: "康复训练库",
+    },
+    conditionInfo: {
+      title: "疾病信息",
+      subtitle: "了解您的病情",
+      searchPlaceholder: "搜索疾病或症状",
+      exploreConditions: "探索疾病",
+      understandingAnatomy: "了解解剖结构",
+      notSureAboutCondition: "不确定您的病情？",
+      takeAssessment: "进行评估",
+    },
+    conditions: "疾病信息",
+    assessmentTools: {
+      startAssessment: "开始评估",
+    },
+    individualSpineHealthProgramme: {
+      title: "个性化脊柱健康计划",
+      subtitle: "量身定制的脊柱健康管理方案",
+      startAssessment: "开始评估",
+      exploreFeatures: "探索功能",
+      journey: {
+        title: "您的健康之旅",
+        description: "我们的综合方法帮助您实现最佳的脊柱健康",
+        approach: "我们的方法",
+        assess: "评估",
+        educate: "教育",
+        recommend: "建议",
+        track: "跟踪",
+        support: "支持",
+        howItWorks: "工作原理",
+      },
+      keyFeatures: {
+        title: "主要功能",
+        assessment: {
+          title: "健康评估",
+          description: "全面的脊柱健康评估",
+          content: "通过详细的问卷和评估工具了解您的当前状况",
+          button: "开始评估",
+        },
+        education: {
+          title: "患者教育",
+          description: "个性化的教育内容",
+          content: "根据您的具体情况提供相关的教育材料",
+          button: "学习更多",
+        },
+        exercisePlans: {
+          title: "康复训练计划",
+          description: "定制的康复训练方案",
+          content: "基于您的评估结果制定个性化的康复训练计划",
+          button: "查看计划",
+        },
+        progressTracking: {
+          title: "进度跟踪",
+          description: "监测您的康复进展",
+          content: "实时跟踪您的康复进度和改善情况",
+          button: "查看进度",
+        },
+        goalSetting: {
+          title: "目标设定",
+          description: "设定和实现健康目标",
+          content: "与医疗团队一起设定现实可行的康复目标",
+          button: "设定目标",
+        },
+        healthcareIntegration: {
+          title: "医疗整合",
+          description: "与您的医疗团队协作",
+          content: "将您的进度与医疗提供者分享，确保协调一致的护理",
+          button: "了解更多",
+        },
+      },
+      readyToTakeControl: {
+        title: "准备好掌控您的脊柱健康了吗？",
+        description: "立即开始您的个性化脊柱健康之旅",
+        startAssessment: "开始评估",
+        scheduleConsultation: "预约咨询",
+      },
+    },
+    patientDashboard: {
+      title: "患者仪表板",
+      subtitle: "管理您的健康之旅",
+      login: "登录",
+      register: "注册",
+      features: {
+        trackProgress: "跟踪进度",
+        manageExercises: "管理康复训练",
+        setGoals: "设定目标",
+        viewHistory: "查看历史记录",
+        shareWithProvider: "与医疗提供者分享",
+      },
+    },
+    categories: {
+      beforeVisit: "就诊前准备",
+      conditionsTreatments: "疾病与治疗",
+      surgeryInfo: "手术信息",
+      patientSupport: "患者支持",
+    },
+    resources: {
+      newPatientForms: "新患者表格",
+      newPatientFormsDesc: "下载并填写必要的新患者表格",
+      insuranceInfo: "保险信息",
+      insuranceInfoDesc: "了解保险覆盖范围和付款选项",
+      preparingForAppointment: "预约准备",
+      preparingForAppointmentDesc: "为您的预约做好充分准备",
+      brainConditions: "脑部疾病",
+      brainConditionsDesc: "了解各种脑部疾病和治疗选择",
+      spineConditions: "脊柱疾病",
+      spineConditionsDesc: "了解脊柱疾病和治疗方案",
+      minimallyInvasive: "微创手术",
+      minimallyInvasiveDesc: "了解微创手术技术和优势",
+      preSurgeryInstructions: "术前指导",
+      preSurgeryInstructionsDesc: "手术前的重要准备指导",
+      postSurgeryCare: "术后护理",
+      postSurgeryCareDesc: "手术后的护理指导和康复建议",
+      hospitalInfo: "医院信息",
+      hospitalInfoDesc: "查看医院位置、设施和服务信息",
+      supportGroups: "支持小组",
+      supportGroupsDesc: "加入患者支持小组获得帮助",
+      rehabilitationResources: "康复资源",
+      rehabilitationResourcesDesc: "康复治疗资源和指导",
+      mentalHealthSupport: "心理健康支持",
+      mentalHealthSupportDesc: "心理健康支持和咨询服务",
+    },
+    viewInstructions: "查看指导",
+    viewHospitals: "查看医院",
+    findSupport: "寻找支持",
+    viewResources: "查看资源",
+    subtitle: "为患者及其家属提供的综合资源和信息",
+    educationalMaterials: "教育材料",
+    needAppointment: "需要预约？",
+    appointmentDesc: "联系我们安排咨询或获取更多信息",
+    support: {
+      title: "患者支持",
+      subtitle: "我们为您提供全方位支持",
+      description: "除了医疗治疗，我们还提供各种支持服务帮助您度过治疗过程。",
+      emotional: {
+        title: "情感支持",
+        counseling: {
+          title: "心理咨询",
+          description: "专业心理咨询师提供情感支持和应对策略。",
+        },
+        groups: {
+          title: "支持小组",
+          description: "与其他患者分享经验，获得相互支持。",
+        },
+        family: {
+          title: "家庭支持",
+          description: "为家属提供指导和支持资源。",
+        },
+      },
+      practical: {
+        title: "实用支持",
+        financial: {
+          title: "经济援助",
+          description: "了解保险覆盖和经济援助选项。",
+        },
+        transport: {
+          title: "交通服务",
+          description: "医院交通和停车信息。",
+        },
+        accommodation: {
+          title: "住宿安排",
+          description: "外地患者的住宿建议。",
+        },
+      },
+      resources: {
+        title: "资源链接",
+        websites: {
+          title: "有用网站",
+          items: ["澳大利亚神经外科学会","脑肿瘤基金会","脊柱健康协会","患者权益组织","康复资源中心","医疗保险信息"],
+        },
+        books: {
+          title: "推荐读物",
+          items: ["神经外科患者指南","脑部健康手册","脊柱护理指南","康复训练手册","营养指导书籍","心理健康资源"],
+        },
+      },
+    },
+    exercises: {
+      title: "康复训练",
+      subtitle: "专业的康复指导",
+      description: "适当的康复训练有助于恢复功能和预防并发症。",
+      cervical: {
+        title: "颈椎康复",
+        description: "颈椎手术后的康复训练指导。",
+        exercises: ["颈部轻柔转动","肩胛骨活动","上肢伸展","姿势矫正","深呼吸练习","渐进性力量训练"],
+      },
+      lumbar: {
+        title: "腰椎康复",
+        description: "腰椎手术后的康复训练指导。",
+        exercises: ["骨盆倾斜","腹肌强化","腰背肌训练","下肢伸展","步行训练","核心稳定性"],
+      },
+      general: {
+        title: "一般康复",
+        description: "适用于所有患者的基础康复训练。",
+        principles: ["循序渐进","持之以恒","避免疼痛","专业指导","个性化方案","定期评估"],
+      },
+    },
   },
   appointmentForm: {
     title: "预约咨询",
     appointmentDate: "预约日期",
-    appointmentTime: "首选时间",
     selectDate: "选择日期",
+    appointmentTime: "预约时间",
     selectTime: "选择时间",
-    checkAvailability: "查看可用性",
-    appointmentConfirmed: "预约已确认！"
+    appointmentConfirmed: "预约已确认",
+    checkAvailability: "检查可用性",
   },
   testimonials: {
-    title: "患者见证",
-    description: "了解为什么我们的患者信任阿利什凯维奇医生进行神经外科和脊柱手术。"
+    title: "患者评价",
+    description: "听听我们患者的真实体验",
+    readMore: "阅读更多",
+    viewAll: "查看所有评价",
+  },
+  expertise: {
+    title: "专业领域",
+    description: "我们在神经外科各个领域拥有丰富的经验",
+    brainSurgery: {
+      title: "脑部手术",
+      description: "专业的脑肿瘤、动脉瘤和其他脑部疾病治疗",
+    },
+    spinalSurgery: {
+      title: "脊柱手术",
+      description: "微创脊柱手术和复杂脊柱疾病治疗",
+    },
+    nerveSurgery: {
+      title: "神经手术",
+      description: "周围神经疾病和神经损伤的专业治疗",
+    },
+  },
+  locations: {
+    surreyHills: {
+      title: "萨里山诊所",
+      address: "619 Canterbury Road, Surrey Hills VIC 3127",
+      description: "我们的主要诊所位于萨里山，配备最先进的神经外科设施和技术。这里是我们的总部，提供全面的神经外科服务。",
+      subtitle: "主要诊所",
+      phone: "(03) 9830 8566",
+      fax: "(03) 9830 8577",
+      email: "info@mineuro.com.au",
+      features: {
+        title: "诊所特色",
+        items: ["最先进的神经外科设备","经验丰富的医疗团队","舒适的候诊区域","便利的停车设施","无障碍通道","现代化的检查室"],
+      },
+      services: {
+        title: "提供的服务",
+        items: ["神经外科咨询","脑部手术","脊柱手术","神经系统检查","影像学诊断","术后随访"],
+      },
+      hours: {
+        title: "营业时间",
+        monday: "周一: 8:00 AM - 5:00 PM",
+        tuesday: "周二: 8:00 AM - 5:00 PM",
+        wednesday: "周三: 8:00 AM - 5:00 PM",
+        thursday: "周四: 8:00 AM - 5:00 PM",
+        friday: "周五: 8:00 AM - 5:00 PM",
+        saturday: "周六: 预约制",
+        sunday: "周日: 休息",
+      },
+      directions: {
+        title: "交通指南",
+        byTrain: "乘坐火车：从市中心乘坐Belgrave/Lilydale线至Mont Albert站，步行10分钟。",
+        byCar: "驾车：从市中心沿Canterbury Road向东行驶约15分钟。",
+        parking: "停车：诊所提供免费停车位。",
+        publicTransport: "公共交通：多条公交线路经过，交通便利。",
+      },
+    },
+    mornington: {
+      title: "莫宁顿诊所",
+      description: "为莫宁顿半岛地区的患者提供便利的神经外科服务，无需长途跋涉到市中心。",
+      subtitle: "半岛地区服务",
+      address: "Mornington Peninsula, VIC",
+      phone: "(03) 9830 8566",
+      features: {
+        title: "诊所特色",
+        items: ["服务半岛地区患者","现代化医疗设备","专业医疗团队","舒适的就诊环境","便利的位置","充足的停车位"],
+      },
+      services: {
+        title: "提供的服务",
+        items: ["神经外科咨询","术前评估","术后随访","神经系统检查","治疗计划制定","患者教育"],
+      },
+      hours: {
+        title: "营业时间",
+        note: "预约制服务，请提前致电安排。",
+      },
+    },
+    frankston: {
+      title: "弗兰克斯顿诊所",
+      description: "为墨尔本南部地区的患者提供专业的神经外科服务，地理位置优越，交通便利。",
+      subtitle: "南部地区服务",
+      address: "Frankston, VIC",
+      phone: "(03) 9830 8566",
+      features: {
+        title: "诊所特色",
+        items: ["服务南部地区","专业神经外科团队","现代化设施","患者友好环境","便利交通","预约制服务"],
+      },
+      services: {
+        title: "提供的服务",
+        items: ["专科咨询","诊断评估","治疗规划","随访护理","患者支持","医疗协调"],
+      },
+    },
+    title: "诊所位置",
+    subtitle: "我们在墨尔本多个便利位置为您提供服务",
+    description: "选择最适合您的诊所位置，我们在每个地点都提供相同的高质量神经外科护理。",
+    mooneePonds: {
+      title: "月亮池塘诊所",
+      subtitle: "西北部地区服务",
+      address: "Moonee Ponds, VIC",
+      phone: "(03) 9830 8566",
+      description: "为墨尔本西北部地区的患者提供便利的神经外科服务，减少患者的出行负担。",
+      features: {
+        title: "诊所特色",
+        items: ["服务西北部地区","经验丰富的团队","现代化诊疗设备","舒适的环境","便利的位置","个性化护理"],
+      },
+      services: {
+        title: "提供的服务",
+        items: ["神经外科咨询","病情评估","治疗建议","术后护理","康复指导","长期随访"],
+      },
+    },
+    langwarrin: {
+      title: "朗瓦林诊所",
+      subtitle: "半岛南部服务",
+      address: "Langwarrin, VIC",
+      phone: "(03) 9830 8566",
+      description: "为半岛南部地区的患者提供专业的神经外科服务。",
+      services: {
+        title: "提供的服务",
+        items: ["专科咨询","诊断服务","治疗规划","随访护理"],
+      },
+    },
+    general: {
+      title: "所有诊所位置",
+      subtitle: "选择最便利的位置",
+      description: "我们在墨尔本多个地点提供相同标准的高质量神经外科护理。",
+      commonFeatures: {
+        title: "所有诊所的共同特色",
+        items: ["经验丰富的神经外科专家","最新的医疗设备和技术","舒适安全的就诊环境","个性化的患者护理","便利的预约系统","全面的医疗服务"],
+      },
+      bookingInfo: {
+        title: "预约信息",
+        description: "所有诊所均采用预约制，请提前致电或在线预约。",
+        phone: "预约电话：(03) 9830 8566",
+        email: "预约邮箱：info@mineuro.com.au",
+        online: "在线预约：通过我们的网站预约系统",
+      },
+      accessibility: {
+        title: "无障碍设施",
+        description: "所有诊所均配备无障碍设施，为行动不便的患者提供便利。",
+        features: ["轮椅通道","无障碍停车位","无障碍洗手间","电梯设施","辅助设备"],
+      },
+    },
+  },
+  conditions: {
+    brainTumors: {
+      title: "脑肿瘤",
+      description: "脑肿瘤是指在脑组织中异常生长的细胞团块。我们提供全面的脑肿瘤诊断、治疗和护理服务。",
+      subtitle: "脑肿瘤的诊断和治疗",
+      types: {
+        title: "脑肿瘤类型",
+        glioma: {
+          title: "胶质瘤",
+          description: "起源于胶质细胞的脑肿瘤，是最常见的原发性脑肿瘤类型。",
+        },
+        meningioma: {
+          title: "脑膜瘤",
+          description: "起源于脑膜的肿瘤，通常为良性，生长缓慢。",
+        },
+        pituitary: {
+          title: "垂体腺瘤",
+          description: "发生在垂体的肿瘤，可能影响激素分泌。",
+        },
+        acoustic: {
+          title: "听神经瘤",
+          description: "发生在听神经上的良性肿瘤，可能影响听力和平衡。",
+        },
+      },
+      symptoms: {
+        title: "常见症状",
+        items: ["持续性头痛","癫痫发作","视力或听力改变","言语困难","平衡问题","记忆力减退","性格改变","恶心和呕吐"],
+      },
+      diagnosis: {
+        title: "诊断方法",
+        items: ["磁共振成像（MRI）","计算机断层扫描（CT）","正电子发射断层扫描（PET）","脑血管造影","活组织检查","神经系统检查"],
+      },
+      treatment: {
+        title: "治疗选择",
+        surgery: {
+          title: "手术治疗",
+          description: "通过手术切除肿瘤，是治疗脑肿瘤的主要方法。",
+        },
+        radiation: {
+          title: "放射治疗",
+          description: "使用高能射线杀死癌细胞或阻止其生长。",
+        },
+        chemotherapy: {
+          title: "化学治疗",
+          description: "使用药物杀死癌细胞或阻止其分裂。",
+        },
+        targeted: {
+          title: "靶向治疗",
+          description: "针对特定癌细胞特征的精准治疗。",
+        },
+      },
+    },
+    spinalDisorders: {
+      title: "脊柱疾病",
+      description: "脊柱狭窄、椎间盘突出、脊椎滑脱等疾病的治疗",
+    },
+    nerveDisorders: {
+      title: "神经疾病",
+      description: "三叉神经痛、神经压迫、神经肿瘤等疾病的治疗",
+    },
+    spinalStenosis: {
+      title: "脊柱狭窄",
+      subtitle: "脊柱管狭窄的治疗",
+      description: "脊柱狭窄是指脊柱管变窄，压迫脊髓或神经根，导致疼痛和功能障碍。",
+      types: {
+        title: "狭窄类型",
+        cervical: {
+          title: "颈椎狭窄",
+          description: "颈椎部位的脊柱管狭窄，可能影响手臂和手部功能。",
+        },
+        lumbar: {
+          title: "腰椎狭窄",
+          description: "腰椎部位的脊柱管狭窄，常导致腿部疼痛和行走困难。",
+        },
+        thoracic: {
+          title: "胸椎狭窄",
+          description: "胸椎部位的脊柱管狭窄，相对较少见。",
+        },
+      },
+      symptoms: {
+        title: "症状表现",
+        cervical: ["颈部疼痛","手臂麻木","手部无力","精细动作困难","平衡问题"],
+        lumbar: ["腰部疼痛","腿部疼痛","行走困难","间歇性跛行","腿部麻木"],
+      },
+      treatment: {
+        title: "治疗方案",
+        conservative: {
+          title: "保守治疗",
+          items: ["物理治疗","药物治疗","注射治疗","生活方式调整"],
+        },
+        surgical: {
+          title: "手术治疗",
+          items: ["椎板切除术","椎间孔扩大术","脊柱融合术","微创手术"],
+        },
+      },
+    },
+    discHerniation: {
+      title: "椎间盘突出",
+      subtitle: "椎间盘突出的诊断和治疗",
+      description: "椎间盘突出是指椎间盘的内容物突出或脱出，压迫神经根或脊髓。",
+      causes: {
+        title: "常见原因",
+        items: ["年龄相关退化","外伤或损伤","重复性活动","遗传因素","不良姿势","肥胖"],
+      },
+      symptoms: {
+        title: "症状",
+        items: ["局部疼痛","放射性疼痛","麻木和刺痛","肌肉无力","反射减弱","活动受限"],
+      },
+      treatment: {
+        title: "治疗方法",
+        nonSurgical: {
+          title: "非手术治疗",
+          items: ["休息和活动调整","物理治疗","药物治疗","硬膜外注射","脊柱推拿"],
+        },
+        surgical: {
+          title: "手术治疗",
+          items: ["椎间盘切除术","显微椎间盘切除术","内镜椎间盘切除术","椎间盘置换术"],
+        },
+      },
+    },
+    trigeminalNeuralgia: {
+      title: "三叉神经痛",
+      subtitle: "三叉神经痛的治疗",
+      description: "三叉神经痛是一种影响三叉神经的慢性疼痛疾病，特征是面部剧烈的电击样疼痛。",
+      symptoms: {
+        title: "症状特点",
+        items: ["突发性剧烈疼痛","电击样或刀割样疼痛","疼痛持续数秒到数分钟","触发点敏感","单侧面部疼痛","疼痛可由轻触引发"],
+      },
+      triggers: {
+        title: "常见触发因素",
+        items: ["轻触面部","刷牙","说话","咀嚼","微风吹拂","剃须"],
+      },
+      treatment: {
+        title: "治疗选择",
+        medication: {
+          title: "药物治疗",
+          description: "抗癫痫药物是一线治疗选择。",
+        },
+        surgery: {
+          title: "手术治疗",
+          options: ["微血管减压术","伽马刀放射外科","球囊压迫术","甘油注射"],
+        },
+      },
+    },
+  },
+  procedures: {
+    minimallyInvasive: {
+      title: "微创手术",
+      description: "微创手术通过小切口和先进技术进行治疗，减少创伤，加快恢复。",
+      subtitle: "先进的微创治疗技术",
+      advantages: {
+        title: "微创优势",
+        items: ["切口小，疤痕少","出血量少","感染风险低","疼痛轻微","恢复快速","住院时间短"],
+      },
+      techniques: {
+        title: "微创技术",
+        endoscopic: {
+          title: "内镜技术",
+          description: "使用内镜进行精确的微创治疗。",
+        },
+        stereotactic: {
+          title: "立体定向技术",
+          description: "使用精确定位系统进行治疗。",
+        },
+        robotic: {
+          title: "机器人辅助",
+          description: "使用机器人系统提高手术精确度。",
+        },
+      },
+    },
+    stereotactic: {
+      title: "立体定向手术",
+      description: "精确的立体定向技术，提高手术安全性和效果",
+    },
+    endoscopic: {
+      title: "内镜手术",
+      description: "通过内镜技术进行精确的微创治疗",
+    },
+    craniotomy: {
+      title: "开颅手术",
+      subtitle: "脑部手术的标准方法",
+      description: "开颅手术是通过在颅骨上开一个窗口来接近脑组织进行治疗的手术方法。",
+      indications: {
+        title: "适应症",
+        items: ["脑肿瘤切除","脑血管疾病治疗","癫痫手术","脑外伤处理","脑积水治疗","脑血管畸形治疗"],
+      },
+      procedure: {
+        title: "手术过程",
+        steps: ["全身麻醉","头皮切开","颅骨开窗","硬脑膜切开","病变处理","逐层关闭"],
+      },
+      recovery: {
+        title: "术后恢复",
+        items: ["重症监护观察","神经功能监测","疼痛管理","康复治疗","定期随访","生活指导"],
+      },
+    },
+    spinalFusion: {
+      title: "脊柱融合术",
+      subtitle: "脊柱稳定性重建手术",
+      description: "脊柱融合术是通过植骨或植入物使两个或多个椎骨永久连接的手术。",
+      types: {
+        title: "融合术类型",
+        anterior: {
+          title: "前路融合术",
+          description: "从身体前方进入脊柱进行融合。",
+        },
+        posterior: {
+          title: "后路融合术",
+          description: "从身体后方进入脊柱进行融合。",
+        },
+        lateral: {
+          title: "侧方融合术",
+          description: "从身体侧方进入脊柱进行融合。",
+        },
+      },
+      benefits: {
+        title: "手术优势",
+        items: ["恢复脊柱稳定性","减轻疼痛","防止进一步退化","改善神经功能","提高生活质量"],
+      },
+      recovery: {
+        title: "恢复过程",
+        timeline: ["术后1-2天：开始活动","2-6周：逐渐增加活动","3-6个月：骨融合过程","6-12个月：完全恢复"],
+      },
+    },
+  },
+  contact: {
+    title: "联系我们",
+    description: "如有任何问题或需要预约，请随时联系我们的团队。",
+    phone: "电话",
+    email: "邮箱",
+    address: "地址",
+    hours: "营业时间",
+    emergency: "紧急情况",
+    getDirections: "获取路线",
+    subtitle: "我们随时为您提供帮助",
+    getInTouch: "联系我们",
+    receptionHours: "接待时间",
+    sendMessage: "发送消息",
+    fullName: "全名",
+    phoneNumber: "电话号码",
+    subject: "主题",
+    message: "留言内容",
+    howCanWeHelp: "我们如何为您提供帮助？",
+    send: "发送",
+    messageSent: "消息已发送",
+    thankYou: "感谢您的留言，我们将尽快回复。",
+    faqSubtitle: "常见问题解答",
+    contactInfo: "联系信息",
+    officeHours: "办公时间",
+    emergencyContact: "紧急联系",
+    contactForm: "联系表单",
+    fax: "传真",
+    website: "网站",
+    emailAddress: "邮箱地址",
+    mondayToFriday: "周一至周五",
+    saturday: "周六",
+    sunday: "周日",
+    closed: "休息",
+    emergencyInstructions: "如遇紧急情况，请立即拨打000或前往最近的急诊科。",
+    parking: "停车信息",
+    publicTransport: "公共交通",
+  },
+  common: {
+    loading: "加载中...",
+    error: "错误",
+    success: "成功",
+    cancel: "取消",
+    confirm: "确认",
+    save: "保存",
+    edit: "编辑",
+    delete: "删除",
+    back: "返回",
+    next: "下一步",
+    previous: "上一步",
+    submit: "提交",
+    reset: "重置",
+    search: "搜索",
+    filter: "筛选",
+    sort: "排序",
+    viewMore: "查看更多",
+    viewLess: "收起",
+    readMore: "阅读更多",
+    learnMore: "了解更多",
+    book: "预约",
+    schedule: "时间表",
+    contact: "联系",
+    call: "致电",
+    email: "邮件",
+    send: "发送",
+    update: "更新",
+    create: "创建",
+    add: "添加",
+    remove: "移除",
+    continue: "继续",
+    finish: "完成",
+    close: "关闭",
+    open: "打开",
+    view: "查看",
+    download: "下载",
+    upload: "上传",
+    print: "打印",
+    share: "分享",
+    copy: "复制",
+    clear: "清除",
+    refresh: "刷新",
+    reload: "重新加载",
+    saving: "保存中...",
+    processing: "处理中...",
+    warning: "警告",
+    info: "信息",
+    completed: "已完成",
+    pending: "待处理",
+    cancelled: "已取消",
+    failed: "失败",
+    retry: "重试",
+    menu: "菜单",
+    navigation: "导航",
+    breadcrumb: "面包屑导航",
+    pagination: "分页",
+    firstPage: "首页",
+    lastPage: "末页",
+    nextPage: "下一页",
+    previousPage: "上一页",
+    readLess: "收起",
+    showMore: "显示更多",
+    showLess: "显示更少",
+    viewAll: "查看全部",
+    viewDetails: "查看详情",
+    moreInfo: "更多信息",
+    expand: "展开",
+    collapse: "折叠",
+    today: "今天",
+    yesterday: "昨天",
+    tomorrow: "明天",
+    thisWeek: "本周",
+    thisMonth: "本月",
+    thisYear: "今年",
+    date: "日期",
+    time: "时间",
+    duration: "持续时间",
+    required: "必填项",
+    optional: "可选",
+    invalid: "无效",
+    valid: "有效",
+    pleaseSelect: "请选择",
+    pleaseEnter: "请输入",
+    pleaseChoose: "请选择",
+    selectOption: "选择选项",
+    enterText: "输入文本",
+    chooseFile: "选择文件",
+    yes: "是",
+    no: "否",
+    ok: "好的",
+    maybe: "可能",
+    unknown: "未知",
+    none: "无",
+    all: "全部",
+    any: "任何",
+    other: "其他",
+    new: "新建",
+    old: "旧的",
+    current: "当前",
+    default: "默认",
+    custom: "自定义",
+    automatic: "自动",
+    manual: "手动",
+  },
+  forms: {
+    firstName: "名字",
+    lastName: "姓氏",
+    email: "邮箱地址",
+    phone: "电话号码",
+    message: "留言",
+    required: "此字段为必填项",
+    invalid: "无效",
+    pleaseSelect: "请选择",
+    pleaseEnter: "请输入",
+    fullName: "全名",
+    name: "姓名",
+    title: "称谓",
+    gender: "性别",
+    dateOfBirth: "出生日期",
+    age: "年龄",
+    emailAddress: "邮箱地址",
+    phoneNumber: "电话号码",
+    mobile: "手机号码",
+    address: "地址",
+    streetAddress: "街道地址",
+    city: "城市",
+    state: "州",
+    postcode: "邮编",
+    country: "国家",
+    medicalHistory: "病史",
+    currentMedications: "当前用药",
+    allergies: "过敏史",
+    symptoms: "症状",
+    chiefComplaint: "主诉",
+    referringDoctor: "转诊医生",
+    insuranceProvider: "保险公司",
+    insuranceNumber: "保险号码",
+    appointmentDate: "预约日期",
+    appointmentTime: "预约时间",
+    preferredDate: "首选日期",
+    preferredTime: "首选时间",
+    appointmentType: "预约类型",
+    consultationType: "咨询类型",
+    urgency: "紧急程度",
+    reason: "原因",
+    comments: "备注",
+    notes: "注释",
+    subject: "主题",
+    description: "描述",
+    details: "详情",
+    submit: "提交",
+    reset: "重置",
+    save: "保存",
+    cancel: "取消",
+    next: "下一步",
+    previous: "上一步",
+    invalidEmail: "请输入有效的邮箱地址",
+    invalidPhone: "请输入有效的电话号码",
+    invalidDate: "请输入有效的日期",
+    tooShort: "输入内容太短",
+    tooLong: "输入内容太长",
+    enterEmail: "请输入邮箱地址",
+    enterPhone: "请输入电话号码",
+    enterName: "请输入姓名",
+    enterMessage: "请输入留言",
+    selectDate: "选择日期",
+    selectTime: "选择时间",
+    selectOption: "请选择选项",
   },
   specialties: {
-    title: "神经外科专业",
-    description: "使用尖端技术进行脑部、脊柱和神经疾病的先进手术",
+    neurosurgery: "神经外科",
+    spinalSurgery: "脊柱外科",
+    pediatricNeurosurgery: "小儿神经外科",
+    functionalNeurosurgery: "功能神经外科",
+    vascularNeurosurgery: "血管神经外科",
+    tumorSurgery: "肿瘤外科",
+    title: "专业领域",
+    description: "我们在神经外科各个专业领域拥有丰富的经验和专业知识",
     filters: {
-      location: "治疗部位",
-      allLocations: "所有部位",
-      complexity: "手术复杂度",
-      anyComplexity: "任何复杂度",
-      moderate: "中等 (6+)",
-      advanced: "高级 (7+)",
-      complex: "复杂 (8+)",
-      highlyComplex: "高度复杂 (9+)",
-      recoveryTime: "恢复时间（天）",
+      complexity: "复杂程度",
+      anyComplexity: "任何复杂程度",
+      moderate: "中等",
+      advanced: "高级",
+      complex: "复杂",
+      highlyComplex: "高度复杂",
+      location: "位置",
+      allLocations: "所有位置",
+      recoveryTime: "恢复时间",
       days: "天",
-      resetFilters: "重置筛选",
       showing: "显示",
       of: "共",
       procedures: "个手术",
-      noMatch: "没有符合您筛选条件的手术",
-      adjustFilters: "请尝试调整筛选条件以查看更多结果"
-
+      resetFilters: "重置筛选",
+      noMatch: "没有匹配的结果",
+      adjustFilters: "请调整筛选条件",
+    },
   },
-  notFound: {
-    title: "页面未找到",
-    description: "我们找不到您要查找的页面。请返回首页或尝试其他链接。",
-    returnHome: "返回首页"
+  treatments: {
+    surgical: {
+      title: "手术治疗",
+      description: "当保守治疗无效时考虑的手术选择。",
+      approaches: {
+        traditional: {
+          title: "传统手术",
+          description: "经典的开放式手术方法。",
+        },
+        minimally: {
+          title: "微创手术",
+          description: "通过小切口进行的精确手术。",
+        },
+        robotic: {
+          title: "机器人手术",
+          description: "使用机器人系统的高精度手术。",
+        },
+      },
+    },
+    nonSurgical: "非手术治疗",
+    rehabilitation: "康复治疗",
+    painManagement: "疼痛管理",
+    followUp: "随访护理",
+    conservative: {
+      title: "保守治疗",
+      description: "非手术治疗方法，适用于轻度到中度的病情。",
+      methods: {
+        physiotherapy: {
+          title: "物理治疗",
+          description: "通过运动和手法治疗改善功能。",
+        },
+        medication: {
+          title: "药物治疗",
+          description: "使用药物控制疼痛和炎症。",
+        },
+        injection: {
+          title: "注射治疗",
+          description: "局部注射药物缓解症状。",
+        },
+      },
+    },
+  },
+  procedureDescriptions: {
+    "brain-tumour-removal": {
+      name: "脑肿瘤切除术",
+      title: "脑肿瘤切除术",
+      description: "使用先进的微创技术安全切除脑肿瘤。",
+      benefits: "精确切除、保护正常组织、快速恢复",
+    },
+    "lumbar-disc-replacement": {
+      name: "腰椎间盘置换术",
+      title: "腰椎间盘置换术",
+      description: "创新的腰椎间盘置换技术，恢复脊柱功能。",
+      benefits: "缓解疼痛、改善功能、长期效果",
+    },
+    "peripheral-nerve-surgery": {
+      name: "周围神经手术",
+      title: "周围神经手术",
+      description: "专业的周围神经修复和重建手术。",
+      benefits: "恢复神经功能、减少疼痛、改善生活质量",
+    },
+    cervicalDiscReplacement: {
+      title: "颈椎间盘置换术",
+      description: "先进的颈椎间盘置换技术，保持颈椎的自然运动。",
+      benefits: "减少疼痛、保持活动度、快速恢复",
+    },
+    lumbarDiscReplacement: {
+      title: "腰椎间盘置换术",
+      description: "创新的腰椎间盘置换技术，恢复脊柱功能。",
+      benefits: "缓解疼痛、改善功能、长期效果",
+    },
+    imageGuidedSurgery: {
+      title: "影像引导手术",
+      description: "使用先进影像技术指导的精确手术。",
+      benefits: "提高精确度、减少风险、更好效果",
+    },
+    roboticSpineSurgery: {
+      title: "机器人脊柱手术",
+      description: "采用机器人技术的精确脊柱手术。",
+      benefits: "极高精确度、微创技术、快速恢复",
+    },
+  },
+  en: "英语",
+  navigation: "导航",
+  appointments: {
+    title: "预约咨询",
+    subtitle: "安排您的神经外科咨询",
+    description1: "我们的专家团队随时为您提供专业的神经外科咨询服务。",
+    description2: "请填写以下信息以安排您的预约。",
+    bookAppointment: "预约咨询",
+    scheduleConsultation: "安排咨询",
+    checkAvailability: "检查可用性",
+    confirmAppointment: "确认预约",
+    appointmentConfirmed: "预约已确认",
+    appointmentPending: "预约待确认",
+    rescheduleAppointment: "重新安排预约",
+    cancelAppointment: "取消预约",
+    process: {
+      title: "预约流程",
+      subtitle: "简单的四步预约流程",
+      steps: {
+        initialConsultation: {
+          title: "初次咨询",
+          description: "与我们的神经外科专家进行详细的初次咨询，讨论您的症状、病史和关注的问题。",
+        },
+        investigations: {
+          title: "检查评估",
+          description: "根据需要进行相关的医学检查和影像学评估，包括MRI、CT扫描等。",
+        },
+        treatmentPlan: {
+          title: "治疗方案",
+          description: "制定个性化的治疗方案，包括手术或非手术选择。",
+        },
+        discussionOptions: {
+          title: "讨论治疗选择",
+          description: "详细讨论所有可用的治疗选择，包括手术和非手术方案。",
+        },
+        treatmentDecisions: {
+          title: "治疗决策",
+          description: "与您共同制定最适合您情况的个性化治疗方案。",
+        },
+      },
+    },
+    types: {
+      initialConsultation: "初次咨询",
+      followUp: "复诊",
+      secondOpinion: "第二意见",
+      preOperative: "术前咨询",
+      postOperative: "术后随访",
+      emergency: "紧急咨询",
+    },
+    urgency: {
+      routine: "常规",
+      urgent: "紧急",
+      semiUrgent: "半紧急",
+      emergency: "急诊",
+    },
+    appointmentInfo: {
+      title: "预约信息",
+      referralRequirements: {
+        title: "转诊要求",
+        description1: "为了获得Medicare报销，您需要来自全科医生或其他专科医生的转诊信。",
+        description2: "如果您没有转诊信，我们仍然可以为您提供咨询，但费用将完全自费。",
+      },
+      whatToBring: {
+        title: "请携带以下物品",
+        items: ["转诊信（如有）","Medicare卡","私人健康保险卡（如有）","相关的医学影像（X光、MRI、CT扫描）","当前用药清单","相关的医疗报告"],
+        description: "请确保携带所有相关的医疗文件，以便我们为您提供最准确的评估。",
+      },
+      consultationProcess: {
+        title: "咨询流程",
+        description1: "初次咨询通常需要45-60分钟。",
+        description2: "我们将详细了解您的病史、进行体格检查，并讨论您的症状。",
+        description3: "根据需要，我们可能会建议进行进一步的检查或影像学评估。",
+      },
+      telehealth: {
+        title: "远程医疗咨询",
+        description1: "我们提供远程医疗咨询服务，适用于随访预约和某些初次咨询。",
+        description2: "远程咨询通过安全的视频通话平台进行，确保您的隐私和医疗信息安全。",
+      },
+    },
+    requestForm: {
+      title: "预约申请表",
+      firstName: "名字",
+      lastName: "姓氏",
+      email: "邮箱地址",
+      phone: "电话号码",
+      preferredLocation: "首选诊所",
+      selectLocation: "请选择诊所",
+      reason: "咨询原因",
+      reasonPlaceholder: "请简要描述您的症状或关注的问题",
+      referral: "转诊情况",
+      selectOption: "请选择选项",
+      haveReferral: "我有转诊信",
+      needReferralInfo: "我需要转诊信息",
+      submit: "提交申请",
+      confirmation: "感谢您的预约申请。我们将在24小时内与您联系确认预约时间。",
+    },
+    investigations: {
+      title: "检查和评估",
+      description1: "根据您的症状和初次咨询结果，我们可能会建议进行以下检查：",
+      description2: "所有检查都将在我们的合作医疗机构进行，确保高质量的诊断服务。",
+      items: ["磁共振成像（MRI）","计算机断层扫描（CT）","X光检查","神经传导检查","肌电图（EMG）","血液检查","骨密度检查"],
+      description3: "我们将为您安排所有必要的检查，并确保您了解每项检查的目的和过程。",
+    },
+    treatmentOptions: {
+      title: "治疗选择",
+      description1: "我们提供全面的治疗选择，从保守治疗到先进的外科手术。",
+      description2: "每个治疗方案都将根据您的具体情况进行个性化定制。",
+      description3: "我们的目标是为您提供最有效、最安全的治疗方案。",
+      description4: "所有治疗决策都将与您充分讨论，确保您完全了解并同意治疗方案。",
+    },
+    fees: {
+      title: "费用信息",
+      subtitle: "透明的收费结构",
+      initialConsultation: {
+        title: "初次咨询",
+        description: "包括详细的病史采集、体格检查和治疗建议",
+        fee: "$450",
+        rebate: "$230",
+        outOfPocket: "$220",
+      },
+      reviewConsultation: {
+        title: "复诊咨询",
+        description: "随访检查和治疗进展评估",
+        fee: "$280",
+        rebate: "$150",
+        outOfPocket: "$130",
+      },
+      insuranceOptions: {
+        title: "保险选择",
+        privateHealth: {
+          title: "私人健康保险",
+          description: "我们与大多数私人健康保险公司合作，可能覆盖部分或全部费用。",
+        },
+        tac: {
+          title: "交通事故委员会（TAC）",
+          description: "交通事故相关的伤害可能由TAC承保。",
+        },
+        veteranAffairs: {
+          title: "退伍军人事务部",
+          description: "符合条件的退伍军人可能享受特殊费用安排。",
+        },
+        workCover: {
+          title: "工伤保险",
+          description: "工作相关的伤害可能由WorkCover承保。",
+        },
+      },
+    },
+    privacy: {
+      title: "隐私和保密",
+      description1: "我们严格遵守澳大利亚隐私法律，保护您的个人和医疗信息。",
+      description2: "您的所有医疗信息都将被严格保密，只有在您同意的情况下才会与其他医疗专业人员分享。",
+    },
+    locations: {
+      title: "诊所位置",
+      subtitle1: "我们在墨尔本多个地点提供服务",
+      subtitle2: "选择最方便的位置进行您的咨询",
+      mainOffice: {
+        title: "萨里山主诊所",
+        address: "619 Canterbury Road\nSurrey Hills VIC 3127",
+        phone: "(03) 9830 8566",
+        fax: "(03) 9830 8577",
+        email: "info@mineuro.com.au",
+        viewDetails: "查看详情",
+      },
+      allLocations: "所有诊所位置",
+      viewAllLocations: "查看所有位置",
+    },
+    fee: "费用",
+    medicareRebate: "Medicare报销",
+    outOfPocketCost: "自付费用",
+    phone: "电话",
+    fax: "传真",
+    email: "邮箱",
+  },
+  technologiesPage: {
+    title: "先进技术",
+    description: "我们采用最新的医疗技术为患者提供最佳治疗效果",
+    categories: {
+      wellness: {
+        title: "微创技术",
+        description: "先进的微创神经外科技术，减少创伤，加快恢复",
+        items: [{"title":"微创脑部手术","description":"使用最新的微创技术进行脑部手术，减少组织损伤，提高手术精确度。"},{"title":"内镜辅助手术","description":"通过内镜技术进行精确的神经外科手术，创伤小，恢复快。"},{"title":"立体定向手术","description":"使用立体定向技术进行精确的脑部病变定位和治疗。"},{"title":"微创脊柱手术","description":"采用微创技术进行脊柱手术，减少肌肉损伤，缩短恢复时间。"}],
+      },
+      imagingTech: {
+        title: "影像引导技术",
+        description: "先进的影像引导系统，提供实时导航和精确定位",
+        items: [{"title":"术中MRI导航","description":"实时MRI成像指导手术，确保精确的病变切除和正常组织保护。"},{"title":"神经导航系统","description":"三维导航系统提供精确的手术路径规划和实时定位。"},{"title":"术中神经监测","description":"实时监测神经功能，确保手术安全性和功能保护。"},{"title":"荧光引导手术","description":"使用荧光技术增强肿瘤可视化，提高切除的完整性。"}],
+      },
+      services: {
+        title: "脊柱手术技术",
+        description: "全面的脊柱手术服务，从微创到复杂重建手术",
+        items: [{"title":"人工椎间盘置换","description":"使用先进的人工椎间盘恢复脊柱运动功能，避免融合手术。"},{"title":"机器人辅助脊柱手术","description":"机器人技术提供极高的手术精确度和安全性。"},{"title":"脊柱畸形矫正","description":"复杂脊柱畸形的综合治疗和矫正手术。"},{"title":"微创脊柱融合","description":"使用微创技术进行脊柱融合，减少手术创伤。"}],
+      },
+      brainSurgery: {
+        title: "脑部手术技术",
+        description: "先进的脑部手术技术，治疗各种脑部疾病",
+        items: [{"title":"脑肿瘤切除术","description":"使用最新技术安全切除各种类型的脑肿瘤，保护正常脑组织。"},{"title":"脑血管手术","description":"治疗脑动脉瘤、动静脉畸形等脑血管疾病。"},{"title":"功能性神经外科","description":"治疗癫痫、帕金森病等功能性神经系统疾病。"},{"title":"颅底手术","description":"复杂颅底病变的精确手术治疗。"}],
+      },
+    },
+  },
+  gallery: {
+    title: "诊所图库",
+    subtitle: "探索我们现代化的医疗设施",
+    filters: {
+      all: "全部",
+      exterior: "外观",
+      rooms: "诊室",
+      amenities: "设施",
+    },
+  },
+  gpResources: {
+    careCoordination: {
+      title: "护理协调",
+      subtitle: "与全科医生的协作护理",
+      description: "我们与全科医生密切合作，确保为患者提供无缝的护理体验。",
+      teamApproach: {
+        title: "团队护理方法",
+        description: "我们采用多学科团队方法，包括神经外科医生、全科医生、护士和其他专业人员，为患者提供全面的护理。",
+      },
+      preoperativeManagement: {
+        title: "术前管理",
+        description: "我们与您的全科医生合作，确保患者在手术前得到适当的准备和评估。",
+      },
+      postoperativeFollowUp: {
+        title: "术后随访",
+        description: "手术后，我们与全科医生协调，确保患者得到持续的护理和监测。",
+      },
+      sharedCareModels: {
+        title: "共享护理模式",
+        description: "我们建立了有效的共享护理模式，确保专科护理与初级护理之间的顺畅过渡。",
+      },
+    },
+    diagnostics: {
+      title: "诊断服务",
+      subtitle: "全面的神经外科诊断",
+      description: "我们提供全面的诊断服务，帮助准确诊断神经外科疾病。",
+      imagingGuidelines: {
+        title: "影像学指导",
+        description: "神经外科疾病的影像学检查指导原则。",
+      },
+      neurologicalAssessment: {
+        title: "神经系统评估",
+        description: "标准化的神经系统检查方法和评估工具。",
+      },
+      specialisedTests: {
+        description: "专业的神经外科诊断测试和检查方法。",
+      },
+      interpretingResults: {
+        title: "结果解读",
+        description: "如何正确解读神经外科检查结果。",
+      },
+      imagingServices: {
+        title: "影像学服务",
+        description: "包括MRI、CT扫描、X光检查等先进的影像学诊断服务。",
+      },
+      neurologicalTesting: {
+        title: "神经系统检查",
+        description: "专业的神经系统功能评估和检查。",
+      },
+      laboratoryTests: {
+        title: "实验室检查",
+        description: "相关的血液检查和其他实验室诊断服务。",
+      },
+    },
+    referralProtocols: {
+      title: "转诊协议",
+      subtitle: "标准化转诊流程",
+      description: "详细的转诊指导和分诊协议，确保患者得到及时适当的治疗。",
+      urgentReferrals: {
+        title: "紧急转诊",
+        description: "需要立即转诊的情况和处理流程。",
+      },
+      standardReferrals: {
+        title: "标准转诊",
+        description: "常规转诊的标准流程和要求。",
+      },
+      referralProcess: {
+        title: "转诊流程",
+        description: "从初步评估到专科治疗的完整转诊流程。",
+      },
+      triageCategories: {
+        title: "分诊分类",
+        description: "根据紧急程度对患者进行分类的标准。",
+      },
+    },
+    title: "全科医生资源",
+    subtitle: "为全科医生提供的专业资源和指导",
+    overview: {
+      title: "资源概览",
+      description: "我们为全科医生提供全面的神经外科资源，包括转诊指导、诊断协议和紧急情况处理。",
+    },
+    emergencies: {
+      title: "急诊与危险信号",
+      subtitle: "识别和处理神经外科急诊",
+      description: "了解需要紧急转诊的神经外科症状和体征。",
+    },
+    referralGuidelines: {
+      title: "转诊指南",
+      subtitle: "何时转诊至神经外科",
+      description: "为全科医生提供的神经外科转诊指南和标准。",
+      urgentReferrals: {
+        title: "紧急转诊",
+        description: "需要紧急神经外科评估的情况和症状。",
+      },
+      routineReferrals: {
+        title: "常规转诊",
+        description: "适合常规神经外科咨询的病情和症状。",
+      },
+      referralProcess: {
+        title: "转诊流程",
+        description: "如何进行转诊以及需要提供的信息。",
+      },
+    },
+    communicationProtocols: {
+      title: "沟通协议",
+      subtitle: "有效的医生间沟通",
+      description: "建立有效的沟通渠道，确保患者护理的连续性。",
+      reportingStructure: {
+        title: "报告结构",
+        description: "标准化的报告格式和沟通协议。",
+      },
+      followUpProtocols: {
+        title: "随访协议",
+        description: "术后随访和长期护理的沟通协议。",
+      },
+      emergencyContact: {
+        title: "紧急联系",
+        description: "紧急情况下的联系方式和协议。",
+      },
+    },
+  },
+  dandenongLocation: {
+    locationDetails1: "丹德农诊所位置详情",
+    diagnosticFacilitiesDetails1: "先进的诊断设施和设备",
+    therapeuticInterventions: {
+      description: "提供全面的治疗干预服务",
+    },
+    facilities: {
+      accessibleEnvironment: {
+        description: "无障碍环境，方便所有患者就诊",
+      },
+    },
+    readyToSchedule: {
+      description: "准备好预约了吗？联系我们安排您的咨询。",
+    },
+  },
+  hospitals: "医院",
+  email: "电子邮箱",
+  phone: "电话",
+  frankstonLocation: {
+    conditionsTreated: {
+      spinalConditions: {
+        title: "脊柱疾病",
+        conditions: ["椎间盘突出和膨出","脊柱狭窄","退行性椎间盘疾病","脊椎滑脱","脊柱骨折","脊柱肿瘤"],
+      },
+      brainConditions: {
+        title: "脑部疾病",
+        conditions: ["脑肿瘤","脑积水","三叉神经痛","脑动脉瘤","动静脉畸形","创伤性脑损伤"],
+      },
+      nerveConditions: {
+        title: "神经疾病",
+        conditions: ["腕管综合征","尺神经卡压","周围神经肿瘤","神经损伤","臂丛神经损伤","神经压迫综合征"],
+      },
+    },
+    nearbyHospitals: {
+      title: "附近医院",
+      subtitle: "Aliashkevich医生在这些医院进行手术",
+      description: "Aliashkevich医生在墨尔本的多家医院进行手术，包括以下设施。这些医院配备了最先进的神经外科和脊柱手术技术。",
+    },
+    insuranceAndFunding: {
+      title: "保险和手术资助",
+      subtitle: "欢迎TAC和WorkCover患者",
+      privateHealthInsurance: {
+        title: "私人健康保险",
+        description2: "请注意，所谓的基本和青铜保险可能不涵盖私立医院的脊柱手术或神经外科手术。颈椎和腰椎人工椎间盘置换术（关节成形术）属于关节置换类别，通常包含在银卡和金卡政策中。患者需要检查其政策的覆盖水平、排除项和包含项。",
+      },
+      tacAndWorkCover: {
+        title: "TAC和WorkCover",
+        tac: "需要TAC的索赔详情和咨询批准。患者必须预先支付咨询费用，并向其保险公司申请报销。",
+        workCover: "需要WorkSafe保险公司的索赔详情和咨询批准。患者必须预先支付咨询费用，并向其保险公司申请报销。",
+        veteranAffairs: "\"金卡\"和\"白卡\"患者均符合条件。对于\"白卡\"持有者，病情必须由DVA覆盖。",
+      },
+      uninsuredPatients: {
+        title: "无保险患者",
+        description1: "自费患者可以获得所有手术、麻醉和医院费用的报价。例如，在维多利亚州私立医院进行不需要任何植入物的单节段脊柱手术所需的最低金额约为15,000至20,000澳元。",
+        description2: "此金额可能包括医院和手术室费用、外科医生、助手、麻醉师、围手术期医师的专业护理以及HDU或ICU护理。Aliashkevich医生与公立医院没有隶属关系，因此除非患者愿意在私立医院支付手术费用，否则他无法为没有适当保险的人进行手术。对于所有其他无保险转诊，请直接联系最近的公立医院。",
+      },
+      patientsPrivacy: {
+        title: "患者隐私",
+        description1: "Aliashkevich医生非常尊重患者隐私并提供安全的环境。目标是在神经外科医生和患者之间建立和维持信任。患者的舒适度与治疗同样重要，我们确保您与Aliashkevich医生讨论的任何内容都保持私密。",
+        description3: "在每次患者就诊结束时，我们的办公室会通过电子邮件发送其病情摘要，包括诊断、病史、检查结果、放射学结果和建议的行动计划。",
+      },
+    },
+    readyToSchedule: {
+      title: "准备预约了吗？",
+      description: "如果您正在与疼痛、神经外科或脊柱疾病作斗争，请不要等待寻求帮助。在Peninsula Private Hospital与Ales Aliashkevich医生安排咨询，迈出改善健康和福祉的第一步。我们在这里支持您康复的每一步。",
+      bookAppointment: "预约",
+      viewAllLocations: "查看所有位置",
+      contactUs: "联系我们",
+    },
+  },
+  heidelbergLocation: {
+    diagnosticFacilitiesDetails1: "海德堡诊所的先进诊断设施",
+    therapeuticInterventions: {
+      description: "专业的治疗干预和康复服务",
+    },
+  },
+  locationDetails: "位置详情",
+  langwarrinLocation: "朗瓦林诊所",
+  mooneePondsLocation: "月亮池塘诊所",
+  morningtonLocation: "莫宁顿诊所",
+  sunburyLocation: "森伯里诊所",
+  surreyHillsLocation: "萨里山诊所",
+  wantirnaLocation: {
+    byCarDetails: "驾车前往万蒂纳诊所的详细路线",
+    facilities: {
+      description: "现代化的医疗设施和舒适的就诊环境",
+    },
+    readyToSchedule: {
+      description: "准备好预约了吗？我们期待为您提供服务。",
+    },
+  },
+  werribeeLocation: "韦里比诊所",
+  medicolegal: "医疗法律",
+  contactInfo: {
+    mainOffice: {
+      title: "主要办公室",
+      address: "619 Canterbury Road, Surrey Hills VIC 3127",
+      phone: "(03) 9008 4200",
+      fax: "(03) 9923 6688",
+      email: "info@mineuro.com.au",
+    },
+    emergencyContact: {
+      title: "紧急联系",
+      description: "如遇紧急情况，请拨打000或前往最近的急诊科。",
+      afterHours: "非工作时间紧急情况请拨打：000",
+      businessHours: "工作时间神经外科紧急咨询：(03) 9008 4200",
+      epworthRichmond: {
+        title: "Epworth Richmond医院急诊科（24小时开放）",
+        address: "62 Erin Street, Richmond Victoria 3121",
+        phone: "(03) 9506 3000",
+        website: "https://www.epworth.org.au/Our-Services/Emergency"
+      }
+    },
+    generalInquiries: {
+      title: "一般咨询",
+      description: "如有任何问题或需要预约，请联系我们的接待团队。",
+      phone: "电话：(03) 9008 4200",
+      email: "邮箱：info@mineuro.com.au",
+      hours: "接待时间：周一至周五 8:30 AM - 5:30 PM",
+    },
   },
   home: {
     welcome: {
       subtitle: "全面的神经外科服务",
-      title: "脑部、脊柱和周围神经疾病的专业护理",
-      description1: "阿利什凯维奇医生为各种神经系统疾病提供专业诊断和治疗。他的诊所专注于脑肿瘤、脊柱疾病、神经压迫综合征和复杂的神经系统损伤。使用最新的诊断技术和治疗方法，他为每位患者提供精确、个性化的护理。",
-      description2: "服务包括微创脊柱手术、人工椎间盘置换、机器人辅助手术、脑肿瘤切除、神经压迫疾病治疗以及退行性脊柱疾病的综合管理。阿利什凯维奇医生还为创伤性脑部和脊柱损伤提供专业护理，并为复杂的神经系统病例提供专家第二意见。",
-      learnMore: "查看我们的神经外科服务"
+      title: "专业的脑部、脊柱和周围神经疾病护理",
+      description1: "阿利亚什克维奇医生为各种神经系统疾病提供专业诊断和治疗。他的专业领域包括脑肿瘤、脊柱疾病、神经压迫综合征和复杂的神经系统损伤。使用最新的诊断技术和治疗方法，为每位患者提供精确、个性化的护理。",
+      description2: "服务包括微创脊柱手术、人工椎间盘置换、机器人辅助手术、脑肿瘤切除、神经压迫疾病治疗，以及退行性脊柱疾病的全面管理。阿利亚什克维奇医生还为创伤性脑部和脊柱损伤提供专业护理，以及复杂神经系统病例的专家第二意见。",
+      learnMore: "了解更多",
     },
     booking: {
       subtitle: "预约咨询",
       title: "预约您的神经外科咨询",
-      description: "迈出康复的第一步，预约咨询。我们简单的预约流程确保您可以在方便的时间和地点与阿利什凯维奇医生会面。",
-      benefits: ["及时响应", "专家评估", "个性化治疗计划", "全面的后续护理"]
+      description: "通过预约咨询迈出康复的第一步。我们简单的预约流程确保您可以在方便的时间和地点与阿利亚什克维奇医生会面。",
+      benefits: "快速响应，专家评估，个性化治疗方案，全面随访护理",
     },
     featuredProcedures: {
       subtitle: "我们的专业领域",
       title: "专业治疗领域",
       description: "我们使用最新的微创技术治疗各种脑部、脊柱和神经疾病。",
-      viewAll: "探索所有神经外科专业"
+      viewAll: "查看全部神经外科专业",
     },
     advancedTechnologies: {
       subtitle: "先进技术",
       title: "微创方法",
-      description: "医疗技术的进步促进了微创手术，使我们能够治疗以前由于大小或关键位置而被认为无法手术的脑部和脊柱病变。",
+      description: "医疗技术的进步促进了微创手术的发展，使我们能够治疗以前因大小或关键位置而被认为无法手术的脑部和脊柱病变。",
       features: {
         minimallyInvasive: {
           title: "微创技术",
-          description: "医疗技术的进步促进了微创手术，使我们能够治疗以前由于大小或关键位置而被认为无法手术的脑部和脊柱病变。"
+          description: "医疗技术的进步促进了微创手术的发展，使我们能够治疗以前因大小或关键位置而被认为无法手术的脑部和脊柱病变。",
         },
         advancedImaging: {
           title: "先进影像导航",
-          description: "MRI是神经外科和脊柱成像的首选方式，因为它具有出色的图像分辨率和对比度。我们对所有脑部和脊柱问题的患者使用它。"
+          description: "磁共振成像是神经外科和脊柱成像的首选方式，因其出色的图像分辨率和对比度。我们为所有脑部和脊柱问题患者使用此技术。",
         },
         roboticSurgery: {
           title: "相比传统手术的优势",
-          description: "使用导航技术比传统开放手术有多种优势：提高准确性和完全切除病变。"
+          description: "使用导航技术相比传统开放手术有多重优势：提高准确性和完整的病变切除。",
         },
         patientRecovery: {
           title: "影像引导应用",
-          description: "成功治疗脑部或脊柱肿瘤和其他病理需要最大程度地切除，同时对周围健康组织的影响最小。"
+          description: "成功治疗脑部或脊柱肿瘤及其他病理通常需要最大程度切除，同时对周围健康组织的影响最小。",
         },
-        bar: {
-          title: "机器人辅助脊柱手术",
-          description: "机器人辅助脊柱手术提供前所未有的精确度和控制，使复杂的脊柱手术更安全、更有效。"
-        },
-        location: {
-          title: "人工椎间盘置换",
-          description: "我们提供颈椎和腰椎人工椎间盘置换，这是一种保留运动的技术，可减轻疼痛并提高生活质量。"
-
-
+      },
     },
     cta: {
-      title: "准备解决您的脊柱或脑部问题？",
-      description: "今天预约咨询，了解我们如何使用微创技术改善您的生活质量。",
-      bookNow: "安排您的咨询"
-
+      title: "准备开始您的治疗之旅？",
+      description: "立即预约咨询，与我们的神经外科专家讨论您的治疗选择。",
+      bookNow: "立即预约",
+    },
   },
-  patientResources: {
-    title: "患者资源",
-    subtitle: "为患者在治疗前、治疗中和治疗后提供有用的信息和资源。",
-    submenu: {
-      spineHealthApp: "脊柱健康应用",
-      conditionInfo: "疾病信息",
-      exerciseLibrary: "运动库",
-      assessmentTools: "评估工具",
-      patientDashboard: "患者仪表板",
-      comprehensiveSolution: "个人脊柱健康计划",
-      faq: "常见问题"
+  expertiseCards: {
+    brainConditions: {
+      title: "脑部疾病",
+      description: "脑肿瘤（胶质瘤、脑膜瘤、听神经瘤、垂体腺瘤等）、脑积水、脑动脉瘤、动静脉畸形、海绵状血管瘤、癫痫、三叉神经痛、Chiari畸形。",
     },
-    individualSpineHealthProgramme: {
-      title: "个人脊柱健康计划",
-      subtitle: "通过评估、教育和进度跟踪，为您提供个性化的脊柱健康改善之旅。",
-      startAssessment: "开始评估",
-      exploreFeatures: "探索功能"
+    spinalProblems: {
+      title: "脊柱问题",
+      description: "颈部和背部疼痛、坐骨神经痛、臂丛神经痛、脊柱狭窄、椎间盘突出、脊椎滑脱、脊柱炎、硬膜外脓肿、脊柱不稳、脊髓病、脊髓压迫、脊柱肿瘤、脊柱血管畸形。",
     },
-    spineHealthApp: {
-      title: "脊柱健康应用",
-      subtitle: "您了解和管理慢性颈部和背部问题的个性化指南。",
-      description: "我们基于证据的应用程序帮助您了解自己的病情，跟踪进度，并获得个性化的运动建议。",
-      features: {
-        education: "基于证据的教育",
-        exercises: "个性化运动计划",
-        assessment: "综合评估",
-        tracking: "进度跟踪",
-        goals: "目标设定"
-
+    nerveProblems: {
+      title: "神经问题",
+      description: "神经肿瘤（神经鞘瘤、神经纤维瘤、神经瘤）、神经疼痛、神经损伤、神经压迫（腕管综合征、肘管综合征）、神经和肌肉活检。",
     },
-    conditionInfo: {
-      title: "脊柱疾病库",
-      subtitle: "关于常见脊柱疾病、其原因、症状和治疗选择的综合信息。",
-      searchPlaceholder: "搜索疾病...",
-      exploreConditions: "探索脊柱疾病",
-      understandingAnatomy: "了解脊柱解剖",
-      notSureAboutCondition: "不确定您的病情？",
-      takeAssessment: "进行我们的综合评估，获得关于您症状的个性化见解。"
+    medicolegalReports: {
+      title: "医疗法律报告",
+      description: "根据AMA永久性损伤指南进行损伤评估、工作能力评估、工伤赔偿、交通事故伤害、责任调查。",
     },
-    exerciseLibrary: {
-      title: "运动库",
-      subtitle: "探索我们由神经外科专家设计的脊柱专用运动综合集合。",
-      searchPlaceholder: "搜索运动...",
-      categories: {
-        all: "所有运动",
-        neck: "颈部运动",
-        upperBack: "上背部运动",
-        lowerBack: "下背部运动",
-        core: "核心强化",
-        mobility: "活动性运动",
-        stretching: "拉伸运动",
-        posture: "姿势矫正"
-      },
-      difficulty: {
-        all: "所有级别",
-        beginner: "初级",
-        intermediate: "中级",
-        advanced: "高级"
-      },
-      benefits: {
-        title: "定期运动对脊柱健康的益处",
-        strengthens: "强化支撑肌肉",
-        improves: "改善灵活性",
-        enhances: "增强姿势",
-        reduces: "减少疼痛"
-      },
-      getPersonalised: "获取您的个性化运动计划"
+    minimallyInvasive: {
+      subtitle: "神经外科医生 WHO BELIEVES THAT LESS IS MORE",
     },
-    assessmentTools: {
-      title: "评估工具",
-      subtitle: "评估您的病情和跟踪进度的综合工具。",
-      startAssessment: "开始评估",
-      painAssessment: "疼痛评估",
-      functionalAssessment: "功能评估",
-      medicalHistory: "病史",
-      uploadImaging: "上传影像结果",
-      shareWithProvider: "与医疗提供者分享结果"
-    },
-    patientDashboard: {
-      title: "患者仪表板",
-      subtitle: "跟踪您的进度并管理您的个性化护理计划。",
-      login: "登录您的账户",
-      register: "创建账户",
-      features: {
-        trackProgress: "跟踪进度",
-        manageExercises: "管理运动计划",
-        setGoals: "设定和跟踪目标",
-        viewHistory: "查看评估历史",
-        shareWithProvider: "与医疗提供者分享"
-
-    },
-    categories: {
-      beforeVisit: "就诊前",
-      conditionsTreatments: "疾病和治疗",
-      surgeryInfo: "手术信息",
-      patientSupport: "患者支持"
-    },
-    resources: {
-      newPatientForms: "新患者表格",
-      newPatientFormsDesc: "在首次预约前下载并填写这些表格以节省时间。",
-      insuranceInfo: "保险信息",
-      insuranceInfoDesc: "了解接受的保险计划和付款选项。",
-      preparingForAppointment: "准备预约",
-      preparingForAppointmentDesc: "神经外科咨询需要携带什么以及如何准备。",
-      brainConditions: "脑部疾病",
-      brainConditionsDesc: "阿利什凯维奇医生治疗的常见脑部疾病信息。",
-      spineConditions: "脊柱疾病",
-      spineConditionsDesc: "常见脊柱疾病和可用治疗方法的信息。",
-      minimallyInvasive: "微创手术",
-      minimallyInvasiveDesc: "了解微创神经外科技术的优势。",
-      preSurgeryInstructions: "术前指导",
-      preSurgeryInstructionsDesc: "手术前的重要准备指导和说明。",
-      postSurgeryCare: "术后护理",
-      postSurgeryCareDesc: "手术后的恢复指导和护理说明。",
-      hospitalInfo: "医院信息",
-      hospitalInfoDesc: "阿利什凯维奇医生进行手术的医院信息。",
-      supportGroups: "支持小组",
-      supportGroupsDesc: "与其他患者联系并获得情感支持。",
-      rehabilitationResources: "康复资源",
-      rehabilitationResourcesDesc: "帮助您康复过程的资源和工具。",
-      mentalHealthSupport: "心理健康支持",
-      mentalHealthSupportDesc: "应对神经外科疾病的心理健康资源。"
-    },
-    educationalMaterials: "教育材料",
-    brainTumours: "了解脑肿瘤",
-    brainTumoursDesc: "脑肿瘤类型、症状和治疗选择的综合指南。",
-    spineRecovery: "脊柱手术恢复指南",
-    spineRecoveryDesc: "各种脊柱手术恢复期间的预期情况。",
-    painManagement: "疼痛管理策略",
-    painManagementDesc: "神经外科前后疼痛管理的技术和方法。",
-    discReplacement: "人工椎间盘置换指南",
-    discReplacementDesc: "关于颈椎和腰椎间盘置换手术的信息。",
-    needAppointment: "需要安排预约？",
-    appointmentDesc: "我们的团队随时准备协助您在我们便利的地点安排与阿利什凯维奇医生的咨询。",
-    downloadPDF: "下载PDF",
-    findSupport: "寻找支持",
-    viewResources: "查看资源",
-    viewInstructions: "查看说明",
-    viewHospitals: "查看医院",
-    filters: {
-      condition: "疾病",
-      allConditions: "所有疾病",
-      brainConditions: "脑部疾病",
-      spineConditions: "脊柱疾病",
-      nerveConditions: "周围神经疾病",
-      otherConditions: "其他神经外科疾病",
-      location: "诊所位置",
-      allLocations: "所有诊所",
-      surgeryType: "手术类型",
-      showing: "显示",
-      of: "共",
-      procedures: "治疗选择",
-      resetFilters: "重置筛选",
-      noMatch: "没有治疗选择符合您的筛选条件",
-      adjustFilters: "尝试调整您的筛选条件以查看更多选项。",
-      viewDetails: "查看详情",
-      features: "功能",
-      more: "更多"
-
   },
-  gallery: {
-    title: "图片库",
-    subtitle: "查看我们的设施、技术和团队",
-    description: "探索我们最先进的设施和先进的神经外科技术。",
-    categories: {
-      facilities: "设施",
-      technology: "技术",
-      team: "团队",
-      procedures: "手术"
-
+  expertisePage: {
+    hero: {
+      title: "神经外科专业技术",
+      subtitle: "探索我们的神经外科专业领域，从脊柱手术到脑肿瘤切除。",
+    },
+    introduction: {
+      paragraph1: "专门从事微创神经外科和脊柱手术，运用最新技术和技术为患者提供最佳治疗效果。他是运动保护性脊柱手术的坚定倡导者，自2012年以来一直使用颈椎和腰椎椎间盘置换术作为脊柱融合术的替代方案。",
+      paragraph2: "擅长使用一系列先进的神经外科工具，能够为每位患者的具体需求选择最合适的技术。他适应新技术的发展，不断提高为所有患者实现最佳治疗效果的能力。",
+      paragraph3: "在手术方法的各个方面应用锁孔、影像引导、机器人和运动保护技术。他的方法的有效性已通过极低并发症率的优异手术结果得到证实。多年来，他在单节段和多节段关节成形术以及混合手术方面积累了丰富经验。",
+    },
+    specializedProcedures: {
+      cervicalDisc: {
+        description: "人工椎间盘置换术是一种可以缓解疼痛同时保持颈部运动并降低邻近节段退变风险的手术。",
+      },
+      lumbarDisc: {
+        description: "腰椎间盘置换术旨在缓解背痛，同时保持腰椎的运动和功能。",
+      },
+      imageGuided: {
+        description: "影像引导手术允许在复杂手术过程中进行精确导航，提高准确性和安全性。",
+      },
+      roboticSpine: {
+        description: "机器人辅助脊柱手术在复杂脊柱手术过程中提供增强的精确性和控制。",
+      },
+    },
+    surgicalApproach: {
+      title: "我们的手术方法",
+      subtitle: "的手术理念基于指导所有手术的三个主要原则",
+      principles: {
+        identification: {
+          title: "准确识别",
+          description: "使用先进的诊断影像和临床评估精确识别问题，确保针对性治疗",
+        },
+        access: {
+          title: "微创入路",
+          description: "安全进入病理区域，对周围组织造成最小损伤，保护正常功能",
+        },
+        repair: {
+          title: "有效修复",
+          description: "即使位于身体深部的复杂结构也能进行精细有效的修复，使用先进的手术技术",
+        },
+      },
+      cta: "预约咨询",
+    },
+    minimallyInvasiveInfo: {
+      title: "Why Minimally-Invasive 手术?",
+      description1: "The ultimate goal of any 神经外科医生 and 脊柱 外科医生 is to improve the 患者's quality and even length of life by providing good recommendations regarding available 治疗 options. In the most 先进的 pathologies of the 大脑, 脊髓 or 脊柱, 手术 is 必填 to restore normal anatomical relationships between bodily structures.",
+      description2: "The evolution of 手术 and anaesthesiology allowed for achieving this goal and successfully managing previously untreatable conditions. However, there is still a lot of space for improvement, in particular in the field of 大脑 and 脊柱手术.",
+      description3: "微创 procedures represent a logical evolution of surgical philosophy focussing on 患者 safety and satisfaction. The surgical philosophy of",
+      principle1: "accurate identification of the problem",
+      principle2: "安全的 access to the pathological area with minimal injury to the surrounding tissues",
+      principle3: "有效的 but delicate repair of complex structures even if they are located deeply in the body",
+      buttonText: "MINIMALLY-INVASIVE PROCEDURES",
+    },
+    discReplacement: {
+      subtitle: "CHRONIC NECK AND 返回 疼痛",
+      title: "颈椎 and 腰椎 Arthroplasty (Artificial 椎间盘 Replacement)",
+      description1: "Natural ageing of the 椎间盘 (degeneration) or trauma can affect its mobility and cause a reduction of its cushioning function. It may manifest in pressure on the neural structures and result in neck, 返回, arm, shoulder, hip, leg and foot 疼痛, 麻木 or 无力.",
+      description2: "椎间盘 replacement (arthroplasty) is aimed at restoring the shock-absorbing function of the affected segment with simultaneous 减压术 of the neural structures. Similar to the well-established hip and knee joint replacement procedures, the evolution of artificial 椎间盘 prostheses may also result in a dramatic improvement in patients' quality of life and achieve high levels of 患者 satisfaction.",
+      description3: "Arthroplasty preserves motion and reduces the load on the discs above and below protecting them against accelerated degeneration. Multiple investigations have shown superior 患者 outcomes, higher 患者 satisfaction rates, reduced rate of re-operations, fewer complications and reduced costs after arthroplasty when compared with spinal 融合术 in properly selected candidates.",
+      buttonText: "椎间盘 REPLACEMENT",
+    },
   },
-  appointment: {
-    title: "预约咨询",
-    subtitle: "安排您与阿利什凯维奇医生的咨询",
-    description: "使用我们的在线预约系统安排您的神经外科咨询。",
-    form: {
-      personalInfo: "个人信息",
-      firstName: "名字",
-      lastName: "姓氏",
-      email: "电子邮件",
-      phone: "电话",
-      dateOfBirth: "出生日期",
-      appointmentDetails: "预约详情",
-      preferredDate: "首选日期",
-      preferredTime: "首选时间",
-      location: "地点",
-      reasonForVisit: "就诊原因",
-      medicalHistory: "病史",
-      currentSymptoms: "当前症状",
-      previousTreatments: "既往治疗",
-      medications: "当前用药",
-      allergies: "过敏史",
-      insuranceInfo: "保险信息",
-      insuranceProvider: "保险公司",
-      policyNumber: "保单号",
-      referralInfo: "转诊信息",
-      referringDoctor: "转诊医生",
-      urgency: "紧急程度",
-      additionalNotes: "其他备注",
-      submit: "提交预约",
-      confirmation: "预约确认",
-      back: "返回",
-      confirmAppointment: "确认预约",
-      success: "预约已确认！",
-      emailSent: "您的预约已成功确认。确认电子邮件已发送至",
-      appointmentReference: "预约参考号",
-      returnToHome: "返回首页"
-
+  notFound: {
+    title: "Page Not Found",
+    description: "We couldn't find the page you were looking for. 请 return to the homepage or try another link.",
+    returnHome: "Return 首页",
   },
-  contact: {
-    title: "联系我们",
-    subtitle: "与我们的团队取得联系",
-    description: "如有任何问题或需要安排预约，请联系我们。",
-    mainOffice: {
-      title: "主办公室",
-      address: "miNEURO咨询套房\n套房4，地面层，619 Canterbury Road\nSURREY HILLS VIC 3127",
-      phone: "电话：03 9008 4200",
-      fax: "传真：03 9923 6688",
-      email: "电子邮件：info@mineuro.com.au",
-      hours: "办公时间：周一至周五 上午9:00 - 下午5:00"
-    },
-    emergencyContact: {
-      title: "紧急联系",
-      description: "如有紧急医疗情况，请拨打000或前往最近的急诊科。",
-      afterHours: "非办公时间紧急咨询，请联系您的转诊医生或医院。"
-    },
-    form: {
-      name: "姓名",
-      email: "电子邮件",
-      phone: "电话",
-      subject: "主题",
-      message: "信息",
-      send: "发送信息",
-      sending: "发送中...",
-      success: "信息已发送！",
-      error: "发送失败，请重试。"
-
-  },
-  procedureDescriptions: {
-    cervicalDiscReplacement: {
-      title: "颈椎间盘置换术",
-      subtitle: "运动保持技术治疗颈椎疾病",
-      description: "颈椎间盘置换术是一种先进的手术技术，用于治疗颈椎间盘退变性疾病，同时保持颈椎的自然运动。"
-    },
-    lumbarDiscReplacement: {
-      title: "腰椎间盘置换术",
-      subtitle: "保持腰椎运动的创新治疗",
-      description: "腰椎间盘置换术为腰椎间盘退变患者提供了一种保持脊柱运动的替代治疗方案。"
-    },
-    imageGuidedSurgery: {
-      title: "影像引导手术",
-      subtitle: "精确的神经外科手术技术",
-      description: "影像引导手术使用先进的导航技术，提高手术精确度并减少并发症风险。"
-    },
-    roboticSpineSurgery: {
-      title: "机器人脊柱手术",
-      subtitle: "下一代脊柱手术技术",
-      description: "机器人辅助脊柱手术提供前所未有的精确度和控制，使复杂的脊柱手术更安全、更有效。"
-
-  },
-  appointments: {
-    title: "预约",
-    subtitle: "安排您的神经外科咨询",
-    description: "预约与阿利什凯维奇医生的咨询，讨论您的神经外科或脊柱疾病。",
-    bookingProcess: {
-      title: "预约流程",
-      step1: "联系我们的办公室",
-      step2: "提供您的详细信息",
-      step3: "选择合适的时间和地点",
-      step4: "确认您的预约"
-    },
-    locations: {
-      title: "我们的地点",
-      subtitle1: "阿利什凯维奇医生在墨尔本和维多利亚州的多个地点进行咨询，为您提供便利。我们的办公室将协助在最方便和最容易到达的地点为您协调预约。",
-      subtitle2: "我们的主办公室位于萨里山，距离火车站步行2分钟。",
-      mainOffice: {
-        title: "主办公室 - 萨里山",
-        address: "miNEURO咨询套房\n套房4，地面层，619 Canterbury Road\nSURREY HILLS VIC 3127",
-        phone: "电话：03 9008 4200",
-        fax: "传真：03 9923 6688",
-        email: "电子邮件：info@mineuro.com.au",
-        argus: "Argus：argus@mineuro.com.au",
-        healthLink: "HealthLink：mineuros",
-        viewDetails: "查看萨里山地点详情"
-      },
-      allLocations: "所有咨询地点",
-      viewAllLocations: "查看所有咨询地点"
-    },
-    fee: "咨询费",
-    medicareRebate: "Medicare退款",
-    outOfPocketCost: "自付费用",
-    phone: "电话",
-    fax: "传真",
-    email: "电子邮件"
-  },
-  medicolegal: {
-    title: "医疗法律报告",
-    subtitle: "专业的神经外科医疗法律评估",
-    description: "阿利什凯维奇医生为法律程序提供全面的医疗法律报告和专家意见，专门针对神经外科和脊柱相关的伤害和病情。",
-    services: {
-      title: "我们的服务",
-      impairmentAssessment: {
-        title: "损伤评估",
-        description: "根据AMA永久性损伤指南进行详细的损伤评估，为法律程序提供客观的医疗意见。"
-      },
-      capacityEvaluation: {
-        title: "能力评估",
-        description: "评估患者的工作能力和日常生活活动能力，为工伤赔偿和保险索赔提供专业意见。"
-      },
-      treatmentReview: {
-        title: "治疗审查",
-        description: "审查既往治疗的适当性和有效性，为法律案件提供专业的医疗意见。"
-      },
-      futureCarePlanning: {
-        title: "未来护理规划",
-        description: "评估患者未来的医疗需求和护理要求，为长期护理规划提供专业建议。"
-
-    },
-    process: {
-      title: "评估流程",
-      step1: {
-        title: "案件审查",
-        description: "详细审查所有相关医疗记录、影像和法律文件。"
-      },
-      step2: {
-        title: "临床检查",
-        description: "进行全面的神经外科检查和功能评估。"
-      },
-      step3: {
-        title: "报告准备",
-        description: "准备详细的医疗法律报告，包括诊断、预后和建议。"
-      },
-      step4: {
-        title: "专家证词",
-        description: "如需要，可提供法庭专家证词和咨询服务。"
-
-    },
-    expertise: {
-      title: "专业领域",
-      areas: [
-        "脑外伤和脊髓损伤",
-        "脊柱退变性疾病",
-        "神经根病和神经压迫",
-        "手术并发症评估",
-        "疼痛和功能障碍评估",
-        "工作能力评估"
-      ]
-    },
-    contact: {
-      title: "联系我们",
-      description: "如需医疗法律评估服务，请联系我们的办公室安排咨询。",
-      phone: "电话：03 9008 4200",
-      email: "电子邮件：info@mineuro.com.au"
-
-  },
-  hospitals: {
-    title: "我们的医院",
-    subtitle: "阿利什凯维奇医生在墨尔本的多家医院进行手术",
-    description: "阿利什凯维奇医生在墨尔本的多家医院进行手术，包括私立和公立设施。这些医院配备了最先进的技术，为患者提供最高水平的护理。",
-    warringalPrivate: {
-      title: "沃林加尔私立医院",
-      description: "沃林加尔私立医院是墨尔本北部的一家领先私立医院，提供全面的医疗和外科服务。阿利什凯维奇医生在这家配备先进技术的医院进行神经外科和脊柱手术。",
-      address: "地址：216 Burgundy Street, Heidelberg VIC 3084",
-      phone: "电话：(03) 9450 3333",
-      visitWebsite: "访问医院网站"
-    },
-    epworthRichmond: {
-      title: "爱普沃斯里士满医院",
-      description: "爱普沃斯里士满医院是墨尔本最大的私立医院之一，提供全面的医疗和外科服务。阿利什凯维奇医生在这家配备先进技术的医院进行神经外科和脊柱手术。",
-      address: "地址：89 Bridge Road, Richmond VIC 3121",
-      phone: "电话：(03) 9426 6666",
-      visitWebsite: "访问医院网站"
-    },
-    epworthEastern: {
-      title: "爱普沃斯东部医院",
-      description: "爱普沃斯东部医院是墨尔本东部郊区的领先私立医院，提供全面的医疗和外科服务。阿利什凯维奇医生在这家配备先进技术的医院进行神经外科和脊柱手术。",
-      address: "地址：1 Arnold Street, Box Hill VIC 3128",
-      phone: "电话：(03) 8807 7100",
-      visitWebsite: "访问医院网站"
-    },
-    peninsulaPrivate: {
-      title: "半岛私立医院",
-      description: "半岛私立医院是莫宁顿半岛上一家领先的私立医疗机构，提供全面的外科和医疗服务。",
-      address: "地址：525 McClelland Drive, Frankston VIC 3199",
-      phone: "电话：(03) 9788 3333",
-      visitWebsite: "访问医院网站"
-    },
-    baysHospital: {
-      title: "The Bays莫宁顿医院",
-      description: "莫宁顿的The Bays医院是一家非营利性社区医院，提供广泛的医疗和外科服务。",
-      address: "地址：Vale Street, Mornington VIC 3931",
-      phone: "电话：(03) 5975 2009",
-      visitWebsite: "访问医院网站"
-
-  },
-  locations: {
-    title: "我们的地点",
-    subtitle1: "阿利什凯维奇医生在墨尔本和维多利亚州的多个地点进行咨询，为您提供便利。我们的办公室将协助在最方便和最容易到达的地点为您协调预约。",
-    subtitle2: "我们的主办公室位于萨里山，距离火车站步行2分钟。",
-    mainOffice: {
-      title: "主办公室 - 萨里山",
-      address: "miNEURO咨询套房\n套房4，地面层，619 Canterbury Road\nSURREY HILLS VIC 3127",
-      phone: "电话：03 9008 4200",
-      fax: "传真：03 9923 6688",
-      email: "电子邮件：info@mineuro.com.au",
-      argus: "Argus：argus@mineuro.com.au",
-      healthLink: "HealthLink：mineuros",
-      viewDetails: "查看萨里山地点详情"
-    },
-    allLocations: "所有咨询地点",
-    viewAllLocations: "查看所有咨询地点"
-  },
-  technologiesPage: {
-    title: "我们的先进技术",
-    subtitle: "探索我们的微创神经外科技术和设备。",
-    description: "在阿利什凯维奇医生的神经外科实践中，我们致力于提供最先进的神经外科技术和设备。从影像引导手术到机器人辅助脊柱手术，每一项技术都经过精心选择，以确保最大的安全性和最佳的治疗效果。",
-    categories: {
-      wellness: {
-        title: "微创技术",
-        description: "我们的微创技术减少疼痛，加速恢复，并改善手术效果。",
-        items: [
-          {
-            title: "微创脑部手术",
-            description: "通过较小的开口进行脑部手术，减少对周围组织的损伤，加速恢复，并降低并发症风险。"
-          },
-          {
-            title: "内窥镜手术",
-            description: "使用微型摄像头和专门设计的工具，通过极小的切口进行手术，减少疼痛和恢复时间。"
-          },
-          {
-            title: "经皮手术",
-            description: "通过皮肤的小切口进行手术，避免大范围组织损伤，特别适用于某些脊柱手术。"
-          },
-          {
-            title: "微创脊柱手术",
-            description: "通过较小的切口和特殊设计的工具进行脊柱手术，减少肌肉损伤，加速恢复，并减少术后疼痛。"
-          }
-        ]
-      },
-      imagingTech: {
-        title: "影像引导技术",
-        description: "先进的影像技术提供实时导航，使手术更加精确和安全。",
-        items: [
-          {
-            title: "术中导航系统",
-            description: "类似于GPS的技术，帮助外科医生在手术过程中精确定位，特别是在处理复杂解剖结构时。"
-          },
-          {
-            title: "术中MRI",
-            description: "在手术过程中进行磁共振成像，提供实时反馈，确保完全切除肿瘤或准确放置植入物。"
-          },
-          {
-            title: "荧光引导手术",
-            description: "使用特殊染料和光学技术，使肿瘤组织在手术过程中更加可见，提高切除的完整性。"
-          },
-          {
-            title: "3D成像重建",
-            description: "创建患者解剖结构的详细三维模型，用于手术前规划和术中导航，提高精确度。"
-          }
-        ]
-
-
-  },
-  gpResources: {
-    title: "全科医生资源",
-    subtitle: "为全科医生提供支持最佳患者护理和简化转诊的资源。",
-    overview: {
-      title: "全科医生资源",
-      description: "欢迎访问我们专为全科医生设计的资源部分。我们开发了这些资源，以支持您为神经外科疾病患者提供最佳护理，并促进向我们诊所的高效转诊。我们的目标是加强初级保健和专科神经外科服务之间的协作。"
-    },
-    referralProtocols: {
-      title: "全科医生转诊和分诊协议",
-      subtitle: "高效转诊至神经外科服务的指南",
-      description: "这些协议旨在帮助您确定何时将患者转诊至神经外科服务，转诊中应包含哪些信息，以及如何识别需要紧急关注的病例。",
-      urgentReferrals: {
-        title: "紧急转诊标准",
-        description: "需要立即或紧急神经外科咨询的情况："
-      },
-      standardReferrals: {
-        title: "标准转诊指南",
-        description: "神经外科转诊中建议包含的信息："
-      },
-      referralProcess: {
-        title: "转诊流程",
-        description: "如何将患者转诊至我们的神经外科诊所："
-      },
-      triageCategories: {
-        title: "分诊类别",
-        description: "我们如何根据临床表现优先处理转诊："
-      },
-    diagnostics: {
-      title: "神经外科诊断",
-      subtitle: "神经外科疾病的诊断方法和工具",
-      description: "了解神经外科疾病的诊断方法和工具，以及何时考虑转诊至神经外科专家。",
-      commonTests: {
-        title: "常见神经外科测试",
-        description: "神经外科评估中常用的诊断测试："
-      },
-      imagingGuidelines: {
-        title: "影像指南",
-        description: "神经外科疾病的影像指南："
-      },
-      clinicalAssessment: {
-        title: "临床评估",
-        description: "神经外科疾病的临床评估要点："
-      },
-    careCoordination: {
-      title: "多学科护理",
-      subtitle: "协调神经外科患者的多学科护理",
-      description: "了解如何协调神经外科患者的多学科护理，以及我们如何与初级保健提供者合作。",
-      teamApproach: {
-        title: "团队方法",
-        description: "我们的多学科团队方法："
-      },
-      communicationChannels: {
-        title: "沟通渠道",
-        description: "与我们的神经外科团队沟通的方式："
-      },
-      careTransitions: {
-        title: "护理过渡",
-        description: "管理神经外科患者护理过渡的最佳实践："
-      },
-    emergencies: {
-      title: "紧急情况和危险信号",
-      subtitle: "识别需要紧急神经外科干预的情况",
-      description: "了解需要紧急神经外科干预的危险信号和症状，以及如何处理这些情况。",
-      redFlags: {
-        title: "神经外科危险信号",
-        description: "需要紧急评估的神经外科危险信号："
-      },
-      emergencyManagement: {
-        title: "紧急管理",
-        description: "神经外科紧急情况的初始管理："
-      },
-      contactInformation: {
-        title: "紧急联系信息",
-        description: "紧急神经外科咨询的联系信息："
-      }
-    },
-  dandenongLocation: {
-    expertNeurosurgery: "丹德农专业神经外科咨询",
-    subtitle: "帮助您无痛生活",
-    introduction1: "您是否正在为颈部或背部问题而苦恼？您是否需要神经外科或脊柱疾病的专业咨询和治疗？阿利什凯维奇医生，一位神经外科医生和脊柱外科医生，自2012年以来一直为丹德农、墨尔本东部郊区和莫宁顿半岛地区的患者提供护理。他在墨尔本主要医院提供咨询、手术和操作，专长于各种神经外科和脊柱疾病的先进微创治疗。",
-    introduction2: "阿利什凯维奇医生专门治疗神经根病、脊髓病、脑部、脊柱和神经肿瘤或椎间盘问题。这个地点为墨尔本东南部地区的患者提供便捷的专业神经外科护理，无需前往墨尔本中心寻求专科护理。",
-    location: "丹德农神经病学咨询室位于丹德农的中心位置，为墨尔本东南部地区的患者提供便利的神经外科护理。",
-    locationDetails1: "我们的丹德农地点为患者提供便利的专业神经外科护理，无需前往墨尔本中心寻求专科护理。",
-    diagnosticFacilities: "诊断设施",
-    diagnosticFacilitiesDetails1: "我们的丹德农地点配备了最新的诊断设备，包括先进的影像技术和神经功能测试设备。",
-    diagnosticFacilitiesDetails2: "这些设施使我们能够为患者提供准确的诊断和个性化的治疗计划。",
-    gettingHere: "如何到达",
-    byPublicTransport: "公共交通",
-    byPublicTransportDetails: "丹德农火车站距离我们的诊所仅几分钟步行路程，多条公交线路服务该地区。",
-    parkingAndDisabledAccess: "停车和残疾人通道",
-    parkingAndDisabledAccessDetails: "现场提供充足的停车位，包括残疾人专用停车位。我们的设施完全符合残疾人通道标准。",
-    therapeuticInterventions: {
-      title: "治疗干预",
-      description: "阿利什凯维奇医生提供全面的神经外科治疗选择，包括微创手术和先进的治疗技术。",
-      minimallyInvasive: {
-        title: "微创手术",
-        description: "使用最新的微创技术进行脑部和脊柱手术，减少恢复时间和并发症风险。"
-      },
-      spineInterventions: {
-        title: "脊柱干预",
-        description: "包括椎间盘置换、脊柱融合和神经减压手术等先进的脊柱治疗选择。"
-      },
-      brainSurgery: {
-        title: "脑部手术",
-        description: "使用影像引导技术进行精确的脑肿瘤切除和神经血管手术。"
-      },
-    facilities: {
-      title: "设施",
-      description: "我们的丹德农地点配备了现代化的医疗设备和舒适的患者环境。",
-      consultingRooms: {
-        title: "咨询室",
-        description: "现代化的咨询室配备了最新的医疗设备和技术。"
-      },
-      waitingArea: {
-        title: "等候区",
-        description: "舒适的等候区为患者及其家属提供放松的环境。"
-      },
-      accessibility: {
-        title: "无障碍设施",
-        description: "完全符合无障碍标准的设施，确保所有患者都能轻松进入。"
-      },
-    nearbyAmenities: {
-      title: "附近设施",
-      subtitle: "为访问我们丹德农地点的患者提供便捷的本地设施",
-      description: "我们的丹德农咨询地点位于一个便捷的区域，附近有各种设施。无论您需要在预约前喝杯咖啡，预约后找个地方吃午餐，还是在您所在的区域办理事务，您都能在附近找到所需的一切。",
-      cafesRestaurants: {
-        title: "咖啡馆和餐厅",
-        dandenongPavilion: "Dandenong Pavilion - 一家受欢迎的餐厅，提供多样化的优质餐点，距离我们的咨询室仅需短途驾驶。",
-        dandenongMarketFoodHall: "Dandenong市场美食广场 - 一个充满活力的美食目的地，拥有多个提供多样化美食的食品摊位，非常适合快餐。",
-        roundAboutCafe: "Round About咖啡馆 - 一家舒适的咖啡馆，以优质咖啡和新鲜食品选择而闻名，非常适合预约前的早餐或轻便午餐。",
-        littleIndia: "Little India - 丹德农多元文化餐饮区中心的正宗印度美食。"
-      },
-      shopping: {
-        title: "购物",
-        dandenongPlaza: "Dandenong Plaza - 一个主要购物中心，拥有各种零售商店、超市和服务，位于我们咨询室的便捷范围内。",
-        dandenongMarket: "Dandenong市场 - 一个充满活力的市场，提供新鲜农产品、特色食品、服装和家居用品。",
-        chemistWarehouse: "Chemist Warehouse - 便捷位置的药房，提供处方药和健康产品。",
-        dandenongRetailPrecinct: "Dandenong零售区 - 主要购物街，拥有各种专卖店和服务。"
-      },
-      parksRecreation: {
-        title: "公园和娱乐",
-        dandenongPark: "Dandenong公园 - 一个美丽的公园，拥有步行道、花园和开放空间，非常适合在预约前后进行轻松散步。",
-        greavesReserve: "Greaves保护区 - 一个娱乐区，拥有体育设施和步行道。",
-        dandenongCreekTrail: "Dandenong溪步道 - 一条沿着Dandenong溪的风景优美的步行和骑行道。",
-        harmonySquare: "Harmony广场 - 丹德农的中心公共空间，拥有座位区和偶尔举办的社区活动。"
-      },
-      otherAmenities: {
-        title: "其他设施",
-        dandenongLibrary: "Dandenong图书馆 - 一个现代化的公共图书馆，提供安静的阅读和研究空间。",
-        banksATMs: "银行和自动取款机 - 丹德农中央商务区有多个银行选择。",
-        dandenongPostOffice: "Dandenong邮局 - 便捷位置，提供邮政服务和账单支付。",
-        drumTheatre: "Drum剧院 - 一个表演艺术场所，举办各种文化活动和表演。"
-      },
-    nearbyHospitals: {
-      title: "附近医院",
-      subtitle: "阿利什凯维奇医生在丹德农附近的这些医院进行手术",
-      description: "除了在丹德农地点进行咨询外，阿利什凯维奇医生还在该地区的几家医院进行手术。这些设施配备了最先进的神经外科和脊柱手术技术。",
-      peninsulaPrivateHospital: {
-        title: "半岛私立医院",
-        description: "半岛私立医院是莫宁顿半岛上一家领先的私立医疗机构，提供全面的外科和医疗服务。阿利什凯维奇医生在这家医院进行神经外科和脊柱手术，该医院配备了用于复杂手术的先进技术。",
-        address: "525 McClelland Drive, Frankston VIC 3199",
-        phone: "(03) 9788 3333"
-      },
-      epworthEasternHospital: {
-        title: "爱普沃斯东部医院",
-        description: "爱普沃斯东部医院是墨尔本东部郊区的一家领先私立医院，提供全面的医疗和外科服务。阿利什凯维奇医生在这家设施进行神经外科和脊柱手术，该设施配备了用于复杂手术的先进技术。",
-        address: "1 Arnold Street, Box Hill VIC 3128",
-        phone: "(03) 8807 7100"
-      },
-      baysHospital: {
-        title: "The Bays莫宁顿医院",
-        description: "莫宁顿的The Bays医院是一家非营利性社区医院，提供广泛的医疗和外科服务。阿利什凯维奇医生在这家设施进行选定的神经外科手术，该设施在以社区为中心的环境中提供个性化护理。",
-        address: "Vale Street, Mornington VIC 3931",
-        phone: "(03) 5975 2009"
-      },
-    patientsPrivacy: {
-      title: "患者隐私",
-      subtitle: "您的隐私是我们的优先事项",
-      description1: "阿利什凯维奇医生非常尊重患者的隐私，并提供安全的环境。目标是在神经外科医生和患者之间建立和维持信任。患者的舒适与他们的治疗同样重要，我们确保您与阿利什凯维奇医生讨论的任何事情都保持私密。",
-      description2: "所有文件和个人信息都被安全保存。患者可以同意分享他们的健康信息，例如，当就诊其他医生时。阿利什凯维奇医生绝不会未经同意向保险公司或其他方透露任何信息。",
-      description3: "在每位患者就诊结束时，我们的办公室会通过电子邮件发送其病情摘要，包括诊断、病史、检查结果、放射学结果和推荐的行动计划。"
-    },
-    readyToSchedule: {
-      title: "准备预约咨询？",
-      description: "如果您正在与疼痛、神经外科或脊柱疾病作斗争，请不要等待寻求帮助。在丹德农神经病学咨询室预约与阿利什凯维奇医生的咨询，迈出改善健康和福祉的第一步。我们将在恢复的每一步都支持您。",
-      bookAppointment: "预约咨询",
-      viewAllLocations: "查看所有地点",
-      contactUs: "联系我们"
-    },
-    address: "丹德农神经病学咨询室地址",
-    email: "电子邮件",
-    phone: "电话"
-  },
-  navigation: {
-    home: "首页",
-    about: "关于我们",
-    expertise: "专业领域",
-    locations: "诊所位置",
-    patientResources: "患者资源",
-    contact: "联系我们",
-    bookAppointment: "预约咨询",
-    language: "语言",
-    menu: "菜单",
-    close: "关闭",
-    skipToContent: "跳转到内容"
-  },
-  common: {
-    loading: "加载中...",
-    save: "保存",
-    cancel: "取消",
-    submit: "提交",
-    back: "返回",
-    next: "下一步",
-    previous: "上一步",
-    close: "关闭",
-    open: "打开",
-    yes: "是",
-    no: "否",
-    ok: "确定",
-    error: "错误",
-    success: "成功",
-    warning: "警告",
-    info: "信息"
-  }
-}}}}}}}}}}}}}}}}}}}}}}}}}}}}}}};
+};

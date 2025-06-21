@@ -13,7 +13,6 @@ import { TooltipProvider } from '@/components/ui/tooltip';
  * Provides consistent testing setup and utilities for components, hooks, and integration tests
  */
 
-
 // Mock implementations for testing
 export const mockDeviceInfo = {
   isMobile: false,
@@ -24,14 +23,14 @@ export const mockDeviceInfo = {
   orientation: 'landscape' as const,
   screenSize: 'lg' as const,
   width: 1024,
-  height: 768,
+  height: 768
   };
   export const mockLanguageContext = {
   language: 'en' as const,
   setLanguage: jest.fn(),
   t: {
-    navigation: {
-      home: 'Home',
+  navigation: {
+  home: 'Home',
       about: 'About',
       expertise: 'Expertise',
       locations: 'Locations',
@@ -44,7 +43,7 @@ export const mockDeviceInfo = {
       skipToContent: 'Skip to Content'
     },
     hero: {
-      title: 'Test Hero Title',
+  title: 'Test Hero Title',
       subtitle: 'Test Hero Subtitle',
       primaryCTA: 'Primary CTA',
       secondaryCTA: 'Secondary CTA',
@@ -52,7 +51,7 @@ export const mockDeviceInfo = {
     },
     // Add other translation sections as needed for tests
   },
-  isLanguageLoaded: true,
+  isLanguageLoaded: true
 };
 
 // Custom render function with all providers
@@ -62,6 +61,8 @@ interface CustomRenderOptions extends Omit<RenderOptions, 'wrapper'> {
   deviceInfo?: typeof mockDeviceInfo;
   languageContext?: typeof mockLanguageContext;
   withErrorBoundary?: boolean;
+}
+
 export function renderWithProviders(
   ui: ReactElement,
   options: CustomRenderOptions = {}
@@ -72,12 +73,12 @@ export function renderWithProviders(
       defaultOptions: {
         queries: {
           retry: false,
-          gcTime: 0,
+          gcTime: 0
         },
         mutations: {
-          retry: false,
-        },
-      },
+          retry: false
+        }
+      }
     }),
     deviceInfo = mockDeviceInfo,
     languageContext = mockLanguageContext,
@@ -88,13 +89,13 @@ export function renderWithProviders(
   // Mock device detection hook
   jest.mock('@/contexts/DeviceContext', () => ({
     useDeviceDetection: () => deviceInfo,
-    DeviceProvider: ({ children }: { children: ReactNode }) => <>{children}</>,
+    DeviceProvider: ({ children }: { children: ReactNode }) => <>{children}</>
   }));
 
   // Mock language context hook
   jest.mock('@/contexts/LanguageContext', () => ({
     useLanguage: () => languageContext,
-    LanguageProvider: ({ children }: { children: ReactNode }) => <>{children}</>,
+    LanguageProvider: ({ children }: { children: ReactNode }) => <>{children}</>
   }));
 
   function Wrapper({ children }: { children: ReactNode }) {
@@ -115,11 +116,9 @@ export function renderWithProviders(
     return withErrorBoundary ? (
       <ErrorBoundary>{content}</ErrorBoundary>
     ) : content;
+  }
 
   return render(ui, { wrapper: Wrapper, ...renderOptions });
-
-// Utility functions for common testing scenarios
-
 }
 
 /**
@@ -130,7 +129,7 @@ export function createMockIntersectionObserver() {
   mockIntersectionObserver.mockReturnValue({
     observe: jest.fn(),
     unobserve: jest.fn(),
-    disconnect: jest.fn(),
+    disconnect: jest.fn()
   });
   window.IntersectionObserver = mockIntersectionObserver;
   return mockIntersectionObserver;
@@ -144,7 +143,7 @@ export function createMockResizeObserver() {
   mockResizeObserver.mockReturnValue({
     observe: jest.fn(),
     unobserve: jest.fn(),
-    disconnect: jest.fn(),
+    disconnect: jest.fn()
   });
   window.ResizeObserver = mockResizeObserver;
   return mockResizeObserver;
@@ -164,8 +163,8 @@ export function mockMatchMedia(matches: boolean = false) {
       removeListener: jest.fn(), // deprecated
       addEventListener: jest.fn(),
       removeEventListener: jest.fn(),
-      dispatchEvent: jest.fn(),
-    })),
+      dispatchEvent: jest.fn()
+    }))
   });
 
 }
@@ -181,11 +180,11 @@ export function mockPerformanceAPI() {
     getEntriesByType: jest.fn(() => []),
     getEntriesByName: jest.fn(() => []),
     clearMarks: jest.fn(),
-    clearMeasures: jest.fn(),
+    clearMeasures: jest.fn()
   };
   Object.defineProperty(window, 'performance', {
     writable: true,
-    value: mockPerformance,
+    value: mockPerformance
   });
 
   return mockPerformance;
@@ -200,7 +199,7 @@ export function mockFetch(response: Record<string, unknown> = {}, ok: boolean = 
       ok,
       status: ok ? 200 : 500,
       json: () => Promise.resolve(response),
-      text: () => Promise.resolve(JSON.stringify(response)),
+      text: () => Promise.resolve(JSON.stringify(response))
     })
   );
 
@@ -216,10 +215,10 @@ export function mockLocalStorage() {
     getItem: jest.fn(),
     setItem: jest.fn(),
     removeItem: jest.fn(),
-    clear: jest.fn(),
+    clear: jest.fn()
   };
   Object.defineProperty(window, 'localStorage', {
-    value: localStorageMock,
+    value: localStorageMock
   });
 
   return localStorageMock;
@@ -233,10 +232,10 @@ export function mockSessionStorage() {
     getItem: jest.fn(),
     setItem: jest.fn(),
     removeItem: jest.fn(),
-    clear: jest.fn(),
+    clear: jest.fn()
   };
   Object.defineProperty(window, 'sessionStorage', {
-    value: sessionStorageMock,
+    value: sessionStorageMock
   });
 
   return sessionStorageMock;
@@ -245,9 +244,8 @@ export function mockSessionStorage() {
   /**
  * Wait for async operations to complete
  */
-export function waitForAsync(  return new Promise(resolve => setTimeout(resolve, ms));
-): $3 {
-$4
+export function waitForAsync(ms: number = 0): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, ms));
 }
 
 /**
@@ -265,7 +263,7 @@ export function createMockProcedure(overrides: Record<string, unknown> = {}) {
     location: 'Brain',
     benefits: ['Minimally Invasive', 'Quick Recovery'],
     complexity: 7,
-    ...overrides,
+    ...overrides
   };
    }
 
@@ -276,7 +274,7 @@ export function createMockTranslations(overrides: Record<string, unknown> = {}) 
   return {
     navigation: mockLanguageContext.t.navigation,
     hero: mockLanguageContext.t.hero,
-    ...overrides,
+    ...overrides
   };
    }
 
@@ -284,10 +282,10 @@ export function createMockTranslations(overrides: Record<string, unknown> = {}) 
  * Test helper for error boundary testing
  */
 export function ThrowError({ shouldThrow }: { shouldThrow: boolean }) {
-  if (    throw new Error('Test error');
+  if (shouldThrow) throw new Error('Test error');
 
   return <div>No error</div>;
-  }
+}
 
   /**
  * Custom matchers for testing
@@ -306,10 +304,8 @@ export const customMatchers = {
         pass
           ? `Expected element not to be accessible`
           : `Expected element to be accessible (have aria-label, role, or tabindex)`,
-      pass,) {
- 
-    }
-    $3};
+      pass
+    };
   },
   
   toHaveValidSEO: (received: Document) => {
@@ -324,9 +320,9 @@ export const customMatchers = {
         pass
           ? `Expected document not to have valid SEO`
           : `Expected document to have title, description, and canonical link`,
-      pass,
-  };
-   },
+      pass
+    };
+  }
 };
 
 // Setup function to be called in test setup files
@@ -351,6 +347,7 @@ export function setupTestEnvironment() {
   afterEach(() => {
     console.error = originalError;
   });
+}
 
 // Export everything for easy importing
 export * from '@testing-library/react';

@@ -1,10 +1,10 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import PageHeader from '@/components/PageHeader';
 import SafeImage from '@/components/SafeImage';
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
+
 
 const RoboticSpineSurgery: React.FC = () => {
 

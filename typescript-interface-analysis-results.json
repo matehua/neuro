@@ -1,0 +1,1709 @@
+{
+  "analysis": {
+    "componentsAnalyzed": 154,
+    "missingInterfaces": [
+      {
+        "file": "AppointmentForm.tsx",
+        "path": "src\\components\\AppointmentForm.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Footer.tsx",
+        "path": "src\\components\\Footer.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "HeroSection.tsx",
+        "path": "src\\components\\HeroSection.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "IndependentReviewsSection.tsx",
+        "path": "src\\components\\IndependentReviewsSection.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "LayoutVariants.tsx",
+        "path": "src\\components\\layout\\LayoutVariants.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "StandardSection.tsx",
+        "path": "src\\components\\layout\\StandardSection.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "ConditionHero.tsx",
+        "path": "src\\components\\medical-conditions\\ConditionHero.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "ConditionOverview.tsx",
+        "path": "src\\components\\medical-conditions\\ConditionOverview.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "ThemeToggle.tsx",
+        "path": "src\\components\\ThemeToggle.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "alert-dialog.tsx",
+        "path": "src\\components\\ui\\alert-dialog.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "breadcrumb.tsx",
+        "path": "src\\components\\ui\\breadcrumb.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "context-menu.tsx",
+        "path": "src\\components\\ui\\context-menu.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "dialog.tsx",
+        "path": "src\\components\\ui\\dialog.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "drawer.tsx",
+        "path": "src\\components\\ui\\drawer.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "dropdown-menu.tsx",
+        "path": "src\\components\\ui\\dropdown-menu.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "menubar.tsx",
+        "path": "src\\components\\ui\\menubar.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "resizable.tsx",
+        "path": "src\\components\\ui\\resizable.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "skeleton.tsx",
+        "path": "src\\components\\ui\\skeleton.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Appointments.tsx",
+        "path": "src\\pages\\Appointments.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "ConsultingRooms.tsx",
+        "path": "src\\pages\\ConsultingRooms.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Contact.tsx",
+        "path": "src\\pages\\Contact.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "CervicalDiscReplacement.tsx",
+        "path": "src\\pages\\expertise\\CervicalDiscReplacement.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "ImageGuidedSurgery.tsx",
+        "path": "src\\pages\\expertise\\ImageGuidedSurgery.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "LumbarDiscReplacement.tsx",
+        "path": "src\\pages\\expertise\\LumbarDiscReplacement.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "RoboticSpineSurgery.tsx",
+        "path": "src\\pages\\expertise\\RoboticSpineSurgery.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Expertise.tsx",
+        "path": "src\\pages\\Expertise.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Gallery.tsx",
+        "path": "src\\pages\\Gallery.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "CareCoordination.tsx",
+        "path": "src\\pages\\gp-resources\\CareCoordination.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Diagnostics.tsx",
+        "path": "src\\pages\\gp-resources\\Diagnostics.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Emergencies.tsx",
+        "path": "src\\pages\\gp-resources\\Emergencies.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "ReferralProtocols.tsx",
+        "path": "src\\pages\\gp-resources\\ReferralProtocols.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "GPResources.tsx",
+        "path": "src\\pages\\GPResources.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Index.tsx",
+        "path": "src\\pages\\Index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\bundoora\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\dandenong\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\frankston\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\heidelberg\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\langwarrin\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\moonee-ponds\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\mornington\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\sunbury\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\surrey-hills\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\wantirna\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\werribee\\index.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Locations.tsx",
+        "path": "src\\pages\\Locations.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Medicolegal.tsx",
+        "path": "src\\pages\\Medicolegal.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "NotFound.tsx",
+        "path": "src\\pages\\NotFound.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "AgeSpecificSpineRecommendations.tsx",
+        "path": "src\\pages\\patient-resources\\AgeSpecificSpineRecommendations.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "AssessmentTools.tsx",
+        "path": "src\\pages\\patient-resources\\AssessmentTools.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "CervicalSpineExercises.tsx",
+        "path": "src\\pages\\patient-resources\\CervicalSpineExercises.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "CervicalSpineInjury.tsx",
+        "path": "src\\pages\\patient-resources\\CervicalSpineInjury.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "ConditionInformation.tsx",
+        "path": "src\\pages\\patient-resources\\ConditionInformation.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Arthrosis.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Discopathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Discopathy.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "FacetArthropathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "FacetArthropathyRefactored.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "ParsDefects.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "PiriformisSyndrome.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "SacroiliacArthropathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Sciatica.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Spondylosis.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "ThoracicOutletSyndrome.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "ExercisePainMedRisks.tsx",
+        "path": "src\\pages\\patient-resources\\ExercisePainMedRisks.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "IndividualSpineHealthProgramme.tsx",
+        "path": "src\\pages\\patient-resources\\IndividualSpineHealthProgramme.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "LifestyleModifications.tsx",
+        "path": "src\\pages\\patient-resources\\LifestyleModifications.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "PatientDashboard.tsx",
+        "path": "src\\pages\\patient-resources\\PatientDashboard.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "SpineAndBrainHealth.tsx",
+        "path": "src\\pages\\patient-resources\\SpineAndBrainHealth.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "SpineConditionsLibrary.tsx",
+        "path": "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "SpineHealthApp.tsx",
+        "path": "src\\pages\\patient-resources\\SpineHealthApp.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "SpineSafeExercises.tsx",
+        "path": "src\\pages\\patient-resources\\SpineSafeExercises.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "YouthfulSpine.tsx",
+        "path": "src\\pages\\patient-resources\\YouthfulSpine.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "PatientResources.tsx",
+        "path": "src\\pages\\PatientResources.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "PrivacyPolicy.tsx",
+        "path": "src\\pages\\PrivacyPolicy.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "Specialties.tsx",
+        "path": "src\\pages\\Specialties.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "TermsConditions.tsx",
+        "path": "src\\pages\\TermsConditions.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      },
+      {
+        "file": "TestImages.tsx",
+        "path": "src\\pages\\TestImages.tsx",
+        "issue": "No TypeScript interfaces found",
+        "severity": "medium",
+        "suggestion": "Add interface for component props"
+      }
+    ],
+    "missingPropTypes": [
+      {
+        "file": "AppointmentForm.tsx",
+        "path": "src\\components\\AppointmentForm.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Footer.tsx",
+        "path": "src\\components\\Footer.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "HeroSection.tsx",
+        "path": "src\\components\\HeroSection.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "IndependentReviewsSection.tsx",
+        "path": "src\\components\\IndependentReviewsSection.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "LanguageSelector.tsx",
+        "path": "src\\components\\LanguageSelector.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Navbar.tsx",
+        "path": "src\\components\\Navbar.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "TestimonialsSection.tsx",
+        "path": "src\\components\\TestimonialsSection.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "ThemeToggle.tsx",
+        "path": "src\\components\\ThemeToggle.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "carousel.tsx",
+        "path": "src\\components\\ui\\carousel.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "chart.tsx",
+        "path": "src\\components\\ui\\chart.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "sidebar.tsx",
+        "path": "src\\components\\ui\\sidebar.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "AppointmentBooking.tsx",
+        "path": "src\\pages\\AppointmentBooking.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Appointments.tsx",
+        "path": "src\\pages\\Appointments.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "ConsultingRooms.tsx",
+        "path": "src\\pages\\ConsultingRooms.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Contact.tsx",
+        "path": "src\\pages\\Contact.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "CervicalDiscReplacement.tsx",
+        "path": "src\\pages\\expertise\\CervicalDiscReplacement.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "ImageGuidedSurgery.tsx",
+        "path": "src\\pages\\expertise\\ImageGuidedSurgery.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "LumbarDiscReplacement.tsx",
+        "path": "src\\pages\\expertise\\LumbarDiscReplacement.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "RoboticSpineSurgery.tsx",
+        "path": "src\\pages\\expertise\\RoboticSpineSurgery.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Expertise.tsx",
+        "path": "src\\pages\\Expertise.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Faq.tsx",
+        "path": "src\\pages\\Faq.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Gallery.tsx",
+        "path": "src\\pages\\Gallery.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "CareCoordination.tsx",
+        "path": "src\\pages\\gp-resources\\CareCoordination.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Diagnostics.tsx",
+        "path": "src\\pages\\gp-resources\\Diagnostics.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Emergencies.tsx",
+        "path": "src\\pages\\gp-resources\\Emergencies.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "ReferralProtocols.tsx",
+        "path": "src\\pages\\gp-resources\\ReferralProtocols.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "GPResources.tsx",
+        "path": "src\\pages\\GPResources.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Index.tsx",
+        "path": "src\\pages\\Index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\bundoora\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\dandenong\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\frankston\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\heidelberg\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\langwarrin\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "LocationDetail.tsx",
+        "path": "src\\pages\\locations\\LocationDetail.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\moonee-ponds\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\mornington\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\sunbury\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\surrey-hills\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\wantirna\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "index.tsx",
+        "path": "src\\pages\\locations\\werribee\\index.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Locations.tsx",
+        "path": "src\\pages\\Locations.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Medicolegal.tsx",
+        "path": "src\\pages\\Medicolegal.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "NotFound.tsx",
+        "path": "src\\pages\\NotFound.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "AgeSpecificSpineRecommendations.tsx",
+        "path": "src\\pages\\patient-resources\\AgeSpecificSpineRecommendations.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "AssessmentTools.tsx",
+        "path": "src\\pages\\patient-resources\\AssessmentTools.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "CervicalSpineExercises.tsx",
+        "path": "src\\pages\\patient-resources\\CervicalSpineExercises.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "CervicalSpineInjury.tsx",
+        "path": "src\\pages\\patient-resources\\CervicalSpineInjury.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "ConditionInformation.tsx",
+        "path": "src\\pages\\patient-resources\\ConditionInformation.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Arthrosis.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Discopathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Discopathy.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "FacetArthropathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "FacetArthropathyRefactored.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "HerniatedDisc.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\HerniatedDisc.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "OccipitalNeuralgia.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\OccipitalNeuralgia.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "ParsDefects.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "PiriformisSyndrome.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Radiculopathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Radiculopathy.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "SacroiliacArthropathy.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Sciatica.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "SpinalStenosis.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\SpinalStenosis.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Spondylolisthesis.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Spondylolisthesis.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Spondylosis.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "ThoracicOutletSyndrome.tsx",
+        "path": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "ExerciseLibrary.tsx",
+        "path": "src\\pages\\patient-resources\\ExerciseLibrary.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "ExercisePainMedRisks.tsx",
+        "path": "src\\pages\\patient-resources\\ExercisePainMedRisks.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "IndividualSpineHealthProgramme.tsx",
+        "path": "src\\pages\\patient-resources\\IndividualSpineHealthProgramme.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "LifestyleModifications.tsx",
+        "path": "src\\pages\\patient-resources\\LifestyleModifications.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "PatientDashboard.tsx",
+        "path": "src\\pages\\patient-resources\\PatientDashboard.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "SpineAndBrainHealth.tsx",
+        "path": "src\\pages\\patient-resources\\SpineAndBrainHealth.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "SpineConditionsLibrary.tsx",
+        "path": "src\\pages\\patient-resources\\SpineConditionsLibrary.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "SpineHealthApp.tsx",
+        "path": "src\\pages\\patient-resources\\SpineHealthApp.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "SpineSafeExercises.tsx",
+        "path": "src\\pages\\patient-resources\\SpineSafeExercises.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "YouthfulSpine.tsx",
+        "path": "src\\pages\\patient-resources\\YouthfulSpine.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "PatientResources.tsx",
+        "path": "src\\pages\\PatientResources.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "PrivacyPolicy.tsx",
+        "path": "src\\pages\\PrivacyPolicy.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "Specialties.tsx",
+        "path": "src\\pages\\Specialties.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "TermsConditions.tsx",
+        "path": "src\\pages\\TermsConditions.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "TestImages.tsx",
+        "path": "src\\pages\\TestImages.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "useSEO.ts",
+        "path": "src\\hooks\\useSEO.ts",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      },
+      {
+        "file": "LanguageContext.tsx",
+        "path": "src\\contexts\\LanguageContext.tsx",
+        "issue": "Component not properly typed",
+        "severity": "medium",
+        "suggestion": "Add proper TypeScript typing to React.FC or props"
+      }
+    ],
+    "goodExamples": [
+      {
+        "file": "CTASection.tsx",
+        "path": "src\\components\\CTASection.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "EnhancedImage.tsx",
+        "path": "src\\components\\EnhancedImage.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "LanguageWrapper.tsx",
+        "path": "src\\components\\LanguageWrapper.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "Layout.tsx",
+        "path": "src\\components\\Layout.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "Loading.tsx",
+        "path": "src\\components\\Loading.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "ArthrosisTypesSection.tsx",
+        "path": "src\\components\\medical-conditions\\arthrosis\\ArthrosisTypesSection.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "DegenerationProcess.tsx",
+        "path": "src\\components\\medical-conditions\\DegenerationProcess.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "FacetJointAnatomySection.tsx",
+        "path": "src\\components\\medical-conditions\\facet-arthropathy\\FacetJointAnatomySection.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "ConditionHeroSection.tsx",
+        "path": "src\\components\\medical-conditions\\shared\\ConditionHeroSection.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "ConditionOverviewSection.tsx",
+        "path": "src\\components\\medical-conditions\\shared\\ConditionOverviewSection.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "ConditionQuickFacts.tsx",
+        "path": "src\\components\\medical-conditions\\shared\\ConditionQuickFacts.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "NetworkStatus.tsx",
+        "path": "src\\components\\NetworkStatus.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "OptimizedImage.tsx",
+        "path": "src\\components\\OptimizedImage.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "PageHeader.tsx",
+        "path": "src\\components\\PageHeader.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "ProcedureCard.tsx",
+        "path": "src\\components\\ProcedureCard.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "SafeImage.tsx",
+        "path": "src\\components\\SafeImage.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "ScreenReaderAnnouncer.tsx",
+        "path": "src\\components\\ScreenReaderAnnouncer.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "SEOHead.tsx",
+        "path": "src\\components\\SEOHead.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "SkipLink.tsx",
+        "path": "src\\components\\SkipLink.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      },
+      {
+        "file": "StandardPageLayout.tsx",
+        "path": "src\\components\\StandardPageLayout.tsx",
+        "reason": "Has proper interfaces and typed React.FC"
+      }
+    ],
+    "recommendations": [
+      {
+        "category": "Missing Interfaces",
+        "priority": "MEDIUM",
+        "count": 76,
+        "action": "Add TypeScript interfaces for component props",
+        "impact": "Improves type safety and developer experience",
+        "examples": [
+          {
+            "file": "AppointmentForm.tsx",
+            "path": "src\\components\\AppointmentForm.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "Footer.tsx",
+            "path": "src\\components\\Footer.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "HeroSection.tsx",
+            "path": "src\\components\\HeroSection.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "IndependentReviewsSection.tsx",
+            "path": "src\\components\\IndependentReviewsSection.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "LayoutVariants.tsx",
+            "path": "src\\components\\layout\\LayoutVariants.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          }
+        ],
+        "template": "\ninterface ComponentNameProps {\n  title: string;\n  description?: string;\n  onClick?: () => void;\n  children?: React.ReactNode;\n}\n\nconst ComponentName: React.FC<ComponentNameProps> = ({\n  title,\n  description,\n  onClick,\n  children\n}) => {\n  // Component implementation\n};"
+      },
+      {
+        "category": "Missing Prop Types",
+        "priority": "MEDIUM",
+        "count": 80,
+        "action": "Add proper TypeScript typing to React components",
+        "impact": "Prevents runtime errors and improves code quality",
+        "examples": [
+          {
+            "file": "AppointmentForm.tsx",
+            "path": "src\\components\\AppointmentForm.tsx",
+            "issue": "Component not properly typed",
+            "severity": "medium",
+            "suggestion": "Add proper TypeScript typing to React.FC or props"
+          },
+          {
+            "file": "Footer.tsx",
+            "path": "src\\components\\Footer.tsx",
+            "issue": "Component not properly typed",
+            "severity": "medium",
+            "suggestion": "Add proper TypeScript typing to React.FC or props"
+          },
+          {
+            "file": "HeroSection.tsx",
+            "path": "src\\components\\HeroSection.tsx",
+            "issue": "Component not properly typed",
+            "severity": "medium",
+            "suggestion": "Add proper TypeScript typing to React.FC or props"
+          },
+          {
+            "file": "IndependentReviewsSection.tsx",
+            "path": "src\\components\\IndependentReviewsSection.tsx",
+            "issue": "Component not properly typed",
+            "severity": "medium",
+            "suggestion": "Add proper TypeScript typing to React.FC or props"
+          },
+          {
+            "file": "LanguageSelector.tsx",
+            "path": "src\\components\\LanguageSelector.tsx",
+            "issue": "Component not properly typed",
+            "severity": "medium",
+            "suggestion": "Add proper TypeScript typing to React.FC or props"
+          }
+        ],
+        "template": "\n// Before\nconst Component = (props) => { ... }\n\n// After\ninterface ComponentProps {\n  // Define prop types here\n}\n\nconst Component: React.FC<ComponentProps> = (props) => { ... }"
+      },
+      {
+        "category": "Form Components",
+        "priority": "HIGH",
+        "action": "Add strict typing for form inputs and validation",
+        "impact": "Prevents form-related bugs and improves UX",
+        "files": [
+          {
+            "file": "AppointmentForm.tsx",
+            "path": "src\\components\\AppointmentForm.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "ConditionInformation.tsx",
+            "path": "src\\pages\\patient-resources\\ConditionInformation.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "PiriformisSyndrome.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          }
+        ]
+      },
+      {
+        "category": "Medical Components",
+        "priority": "HIGH",
+        "action": "Add medical data interfaces for condition components",
+        "impact": "Ensures medical data consistency and safety",
+        "files": [
+          {
+            "file": "ConditionHero.tsx",
+            "path": "src\\components\\medical-conditions\\ConditionHero.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "ConditionOverview.tsx",
+            "path": "src\\components\\medical-conditions\\ConditionOverview.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "Arthrosis.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "Discopathy.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\Discopathy.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "FacetArthropathy.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "FacetArthropathyRefactored.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "ParsDefects.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "PiriformisSyndrome.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "SacroiliacArthropathy.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "Sciatica.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "Spondylosis.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          },
+          {
+            "file": "ThoracicOutletSyndrome.tsx",
+            "path": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+            "issue": "No TypeScript interfaces found",
+            "severity": "medium",
+            "suggestion": "Add interface for component props"
+          }
+        ]
+      }
+    ]
+  },
+  "recommendations": [
+    {
+      "category": "Missing Interfaces",
+      "priority": "MEDIUM",
+      "count": 76,
+      "action": "Add TypeScript interfaces for component props",
+      "impact": "Improves type safety and developer experience",
+      "examples": [
+        {
+          "file": "AppointmentForm.tsx",
+          "path": "src\\components\\AppointmentForm.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "Footer.tsx",
+          "path": "src\\components\\Footer.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "HeroSection.tsx",
+          "path": "src\\components\\HeroSection.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "IndependentReviewsSection.tsx",
+          "path": "src\\components\\IndependentReviewsSection.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "LayoutVariants.tsx",
+          "path": "src\\components\\layout\\LayoutVariants.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        }
+      ],
+      "template": "\ninterface ComponentNameProps {\n  title: string;\n  description?: string;\n  onClick?: () => void;\n  children?: React.ReactNode;\n}\n\nconst ComponentName: React.FC<ComponentNameProps> = ({\n  title,\n  description,\n  onClick,\n  children\n}) => {\n  // Component implementation\n};"
+    },
+    {
+      "category": "Missing Prop Types",
+      "priority": "MEDIUM",
+      "count": 80,
+      "action": "Add proper TypeScript typing to React components",
+      "impact": "Prevents runtime errors and improves code quality",
+      "examples": [
+        {
+          "file": "AppointmentForm.tsx",
+          "path": "src\\components\\AppointmentForm.tsx",
+          "issue": "Component not properly typed",
+          "severity": "medium",
+          "suggestion": "Add proper TypeScript typing to React.FC or props"
+        },
+        {
+          "file": "Footer.tsx",
+          "path": "src\\components\\Footer.tsx",
+          "issue": "Component not properly typed",
+          "severity": "medium",
+          "suggestion": "Add proper TypeScript typing to React.FC or props"
+        },
+        {
+          "file": "HeroSection.tsx",
+          "path": "src\\components\\HeroSection.tsx",
+          "issue": "Component not properly typed",
+          "severity": "medium",
+          "suggestion": "Add proper TypeScript typing to React.FC or props"
+        },
+        {
+          "file": "IndependentReviewsSection.tsx",
+          "path": "src\\components\\IndependentReviewsSection.tsx",
+          "issue": "Component not properly typed",
+          "severity": "medium",
+          "suggestion": "Add proper TypeScript typing to React.FC or props"
+        },
+        {
+          "file": "LanguageSelector.tsx",
+          "path": "src\\components\\LanguageSelector.tsx",
+          "issue": "Component not properly typed",
+          "severity": "medium",
+          "suggestion": "Add proper TypeScript typing to React.FC or props"
+        }
+      ],
+      "template": "\n// Before\nconst Component = (props) => { ... }\n\n// After\ninterface ComponentProps {\n  // Define prop types here\n}\n\nconst Component: React.FC<ComponentProps> = (props) => { ... }"
+    },
+    {
+      "category": "Form Components",
+      "priority": "HIGH",
+      "action": "Add strict typing for form inputs and validation",
+      "impact": "Prevents form-related bugs and improves UX",
+      "files": [
+        {
+          "file": "AppointmentForm.tsx",
+          "path": "src\\components\\AppointmentForm.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "ConditionInformation.tsx",
+          "path": "src\\pages\\patient-resources\\ConditionInformation.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "PiriformisSyndrome.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        }
+      ]
+    },
+    {
+      "category": "Medical Components",
+      "priority": "HIGH",
+      "action": "Add medical data interfaces for condition components",
+      "impact": "Ensures medical data consistency and safety",
+      "files": [
+        {
+          "file": "ConditionHero.tsx",
+          "path": "src\\components\\medical-conditions\\ConditionHero.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "ConditionOverview.tsx",
+          "path": "src\\components\\medical-conditions\\ConditionOverview.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "Arthrosis.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\Arthrosis.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "Discopathy.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\Discopathy.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "FacetArthropathy.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathy.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "FacetArthropathyRefactored.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\FacetArthropathyRefactored.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "ParsDefects.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\ParsDefects.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "PiriformisSyndrome.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\PiriformisSyndrome.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "SacroiliacArthropathy.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\SacroiliacArthropathy.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "Sciatica.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\Sciatica.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "Spondylosis.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\Spondylosis.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        },
+        {
+          "file": "ThoracicOutletSyndrome.tsx",
+          "path": "src\\pages\\patient-resources\\conditions\\ThoracicOutletSyndrome.tsx",
+          "issue": "No TypeScript interfaces found",
+          "severity": "medium",
+          "suggestion": "Add interface for component props"
+        }
+      ]
+    }
+  ],
+  "implementationPlan": {
+    "phase1": {
+      "name": "Critical Component Interfaces",
+      "duration": "2-3 hours",
+      "priority": "HIGH",
+      "tasks": [
+        "Add interfaces to form components",
+        "Add interfaces to medical condition components",
+        "Add interfaces to navigation components",
+        "Add interfaces to layout components"
+      ],
+      "files": [
+        "AppointmentForm.tsx",
+        "Footer.tsx",
+        "HeroSection.tsx",
+        "IndependentReviewsSection.tsx",
+        "LayoutVariants.tsx",
+        "StandardSection.tsx",
+        "ConditionHero.tsx",
+        "ConditionOverview.tsx",
+        "ThemeToggle.tsx",
+        "alert-dialog.tsx"
+      ]
+    },
+    "phase2": {
+      "name": "UI Component Type Safety",
+      "duration": "2-3 hours",
+      "priority": "MEDIUM",
+      "tasks": [
+        "Add interfaces to reusable UI components",
+        "Add interfaces to shared components",
+        "Standardize prop naming conventions",
+        "Add optional prop documentation"
+      ],
+      "files": [
+        "breadcrumb.tsx",
+        "context-menu.tsx",
+        "dialog.tsx",
+        "drawer.tsx",
+        "dropdown-menu.tsx",
+        "menubar.tsx",
+        "resizable.tsx",
+        "skeleton.tsx",
+        "Appointments.tsx",
+        "ConsultingRooms.tsx"
+      ]
+    },
+    "phase3": {
+      "name": "Hook and Context Interfaces",
+      "duration": "1-2 hours",
+      "priority": "MEDIUM",
+      "tasks": [
+        "Add interfaces to custom hooks",
+        "Add interfaces to context providers",
+        "Add return type annotations",
+        "Add generic type constraints"
+      ],
+      "files": []
+    },
+    "phase4": {
+      "name": "Utility and Helper Interfaces",
+      "duration": "1 hour",
+      "priority": "LOW",
+      "tasks": [
+        "Add interfaces to utility functions",
+        "Add interfaces to helper components",
+        "Add type exports for shared types",
+        "Add JSDoc comments with type information"
+      ],
+      "files": []
+    }
+  },
+  "summary": {
+    "componentsAnalyzed": 154,
+    "missingInterfaces": 76,
+    "missingPropTypes": 80,
+    "goodExamples": 20,
+    "typeScriptCoverage": 13
+  },
+  "timestamp": "2025-06-19T23:21:34.906Z"
+}

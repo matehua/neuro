@@ -1,24 +1,8 @@
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 
-import { generatePageSEO, generateLanguageAlternates, normalizeCanonicalUrl, validateStructuredData, SupportedLanguageCode, MetaTagManager } from '@/lib/seo';
-
-export interface SEOData {
-  title: string;
-  description: string;
-  keywords: string;
-  ogTitle?: string;
-  ogDescription?: string;
-  ogImage?: string;
-  ogType?: string;
-  twitterTitle?: string;
-  twitterDescription?: string;
-  twitterImage?: string;
-  canonical?: string;
-  structuredData?: Record<string, unknown>;
-  languageAlternates?: Array<{ hreflang: string; href: string }>;
-  currentLanguage?: SupportedLanguageCode;
-}
+import { generatePageSEO, generateLanguageAlternates, normalizeCanonicalUrl, validateStructuredData, MetaTagManager } from '@/lib/seo';
+import type { SEOData, SupportedLanguageCode } from '@/types/seo';
 
 /**
  * Custom hook for managing SEO metadata
@@ -100,10 +84,10 @@ export const useSEO = (seoData: SEOData) => {
 
       if (process.env.NODE_ENV === 'development') {
         if (!validation.isValid) {
-          console.warn('Structured data validation errors:', validation.errors);
+          console.warn('SEO validation failed:', validation.errors);
         }
         if (validation.warnings?.length > 0) {
-          console.warn('Structured data validation warnings:', validation.warnings);
+          console.warn('SEO validation warnings:', validation.warnings);
         }
       }
 
@@ -144,5 +128,7 @@ export const usePageSEO = (pageData?: Partial<SEOData>) => {
 
   useSEO(seoDataToSet);
 };
+
+useSEO.displayName = 'useSEO';
 
 export default useSEO;

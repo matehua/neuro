@@ -1,6 +1,5 @@
+import React, { useEffect, useMemo } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import CTASection from '@/components/CTASection';
 import PageHeader from '@/components/PageHeader';
 import SafeImage from '@/components/SafeImage';
@@ -10,9 +9,18 @@ import { cn } from '@/lib/utils';
 import { generatePageSEO, generateMedicalProcedureStructuredData } from '@/lib/seo';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
+interface TechnologyItem {
+  title: string;
+  description: string;
+}
 
 const Expertise: React.FC = () => {
   const { t } = useLanguage();
+
+  // Use translations with safe fallback
+  const finalT = t || en;
   const deviceInfo = useDeviceDetection();
 
   useEffect(() => {
@@ -22,36 +30,25 @@ const Expertise: React.FC = () => {
 
   // Generate SEO data for expertise page with structured data
   const expertiseSeoData = useMemo(() => {
-    return generatePageSeoData({
+    return generatePageSEO('expertise', {
       title: "Neurosurgery Expertise - Dr Ales Aliashkevich",
-      description: "Comprehensive neurosurgical expertise including brain surgery, spine surgery, minimally invasive procedures, and advanced surgical techniques.",
-      structuredData: {
-        "@context": "https://schema.org",
-        "@type": "MedicalWebPage",
-        "name": "Neurosurgery Expertise - Dr Ales Aliashkevich",
-        "description": "Comprehensive neurosurgical expertise including brain surgery, spine surgery, minimally invasive procedures, and advanced surgical techniques.",
-        "medicalAudience": ["Patient", "Physician"],
-        "about": [
-          generateMedicalProcedureStructuredData({
-            name: "Brain Tumor Surgery",
-            description: "Advanced surgical treatment for brain tumors using image-guided techniques",
-            bodyLocation: "Brain"
-          }),
-          generateMedicalProcedureStructuredData({
-            name: "Spine Surgery",
-            description: "Minimally invasive spine surgery including disc replacement and fusion procedures",
-            bodyLocation: "Spine"
-          })
-        ]
-      }
+      description: "Comprehensive neurosurgical expertise including brain surgery, spine surgery, minimally invasive procedures, and advanced surgical techniques."
     });
   }, []);
+
+  // Ensure we have the required translation structure with fallbacks
+  const safeExpertisePage = finalT?.expertisePage || en.expertisePage;
+  const safeProcedureDescriptions = finalT?.procedureDescriptions || en.procedureDescriptions;
+  const safeTechnologiesPage = finalT?.technologiesPage || en.technologiesPage;
+  const safeExpertiseCards = finalT?.expertiseCards || en.expertiseCards;
+  const safeNav = finalT?.nav || en.nav;
+  const safeHome = finalT?.home || en.home;
 
   return (
     <StandardPageLayout pageType="expertise" seoData={expertiseSeoData} showHeader={false}>
       <PageHeader
-        title="Neurosurgical Expertise"
-        subtitle="Explore our neurosurgical specialties, from spine surgery to brain tumour removal."
+        title={safeExpertisePage.hero.title}
+        subtitle={safeExpertisePage.hero.subtitle}
         backgroundImage="/images/Ales-Aliashkevich-spine-brain-image-guided-neurosurgery-microsurgery-advanced-maximum-precision-robotic-spine-Melbourne.jpg"
         enableParallax={true}
       />
@@ -81,7 +78,7 @@ const Expertise: React.FC = () => {
                     rel="noopener noreferrer"
                   >
                     Dr Ales Aliashkevich
-                  </a> specialises in minimally invasive neurosurgery and spine surgery, utilising the latest technologies and techniques to provide the best possible outcomes for his patients. He is a strong advocate for motion-preserving spinal surgery and has been using cervical and lumbar disc replacement as an alternative to spinal fusion since 2012.
+                  </a> {safeExpertisePage.introduction.paragraph1}
                 </p>
                 <p className={cn(
                   "text-muted-foreground mb-mobile-md",
@@ -96,24 +93,11 @@ const Expertise: React.FC = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    Dr Ales Aliashkevich
-                  </a> specialises in minimally invasive neurosurgery and spine surgery, utilising the latest technologies and techniques to provide the best possible outcomes for his patients. He is a strong advocate for motion-preserving spinal surgery and has been using cervical and lumbar disc replacement as an alternative to spinal fusion since 2012.
-                </p>
-                <p className="mb-4">
-                  <a
-                    href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/"
-                    className={cn(
-                      "text-primary transition-colors touch-feedback",
-                      deviceInfo.isMobile ? "" : "hover:underline"
-                    )}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
                     Dr Aliashkevich
-                  </a> is skilled in using a range of advanced neurosurgical tools and will be able to select the most appropriate techniques for each patient's specific needs. He adapts to new technologies as they become available, continuously improving his ability to achieve the best treatment outcomes for all patients.
+                  </a> {safeExpertisePage.introduction.paragraph2}
                 </p>
                 <p>
-                  He applies keyhole, image-guided, robotic and motion-preserving technology in all aspects of operative approaches. The validity of his approach has been confirmed by excellent surgery results with very low complication rates. Over the years, he has gained extensive experience in single and multilevel arthroplasty and hybrid procedures.
+                  {safeExpertisePage.introduction.paragraph3}
                 </p>
               </div>
             </div>
@@ -152,13 +136,13 @@ const Expertise: React.FC = () => {
                     ? "mobile-subheading"
                     : "text-xl mb-3"
                 )}>
-                  {t.procedureDescriptions["brain-tumour-removal"].name}
+                  {safeProcedureDescriptions["brain-tumour-removal"].name}
                 </h3>
                 <p className={cn(
                   "text-muted-foreground mb-mobile-lg",
                   deviceInfo.isMobile ? "mobile-text" : "mb-6"
                 )}>
-                  Brain tumours (glioma, meningioma, vestibular schwannoma, pituitary adenoma etc), hydrocephalus, cerebral aneurysms, arterio-venous malformations, cavernomas, epilepsy, trigeminal neuralgia, Chiari malformations.
+                  {safeExpertiseCards.brainConditions.description}
                 </p>
               </div>
 
@@ -171,9 +155,9 @@ const Expertise: React.FC = () => {
                     className="h-20 w-20 object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary text-center">{t.procedureDescriptions["lumbar-disc-replacement"].name}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary text-center">{safeProcedureDescriptions["lumbar-disc-replacement"].name}</h3>
                 <p className="text-muted-foreground mb-6">
-                  Neck and back pain, sciatica, brachialgia, spinal stenosis, disc prolapse, spondylolisthesis, spondylitis, epidural abscess, instability, myelopathy, spinal cord compression, spinal tumours, spinal vascular malformations.
+                  {safeExpertiseCards.spinalProblems.description}
                 </p>
               </div>
 
@@ -186,9 +170,9 @@ const Expertise: React.FC = () => {
                     className="h-20 w-20 object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary text-center">{t.procedureDescriptions["peripheral-nerve-surgery"].name}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary text-center">{safeProcedureDescriptions["peripheral-nerve-surgery"].name}</h3>
                 <p className="text-muted-foreground mb-6">
-                  Nerve tumours (schwannoma, neurofibroma, neuroma), nerve pain, nerve injuries, nerve compression (carpal tunnel syndrome, cubital tunnel syndrome), nerve and muscle biopsies.
+                  {safeExpertiseCards.nerveProblems.description}
                 </p>
               </div>
 
@@ -201,13 +185,13 @@ const Expertise: React.FC = () => {
                     className="h-20 w-20 object-contain"
                   />
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary text-center">Medico-Legal Reports</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary text-center">{safeExpertiseCards.medicolegalReports.title}</h3>
                 <p className="text-muted-foreground mb-6">
-                  Assessment of impairment according to AMA Guides to Permanent impairment, incapacity, work cover, transport accident injuries, liability enquiries.
+                  {safeExpertiseCards.medicolegalReports.description}
                 </p>
                 <div className="text-center">
                   <Button asChild variant="outline">
-                    <Link to="/medicolegal">{t.home.welcome.learnMore}</Link>
+                    <Link to="/medicolegal">{safeHome.welcome.learnMore}</Link>
                   </Button>
                 </div>
               </div>
@@ -215,45 +199,45 @@ const Expertise: React.FC = () => {
 
             {/* Specialised Procedures */}
             <div className="mt-16">
-              <h2 className="text-3xl font-bold mb-8 text-center">{t.home.featuredProcedures.title}</h2>
+              <h2 className="text-3xl font-bold mb-8 text-center">{safeHome.featuredProcedures.title}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="card p-6 rounded-lg shadow-md bg-card">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.nav.expertiseSubmenu.cervicalDisc}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{safeNav.expertiseSubmenu.cervicalDisc}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Artificial disc replacement is a procedure that can relieve pain while maintaining neck motion and reducing the risk of adjacent segment degeneration.
+                    {safeExpertisePage.specializedProcedures.cervicalDisc.description}
                   </p>
                   <Button asChild>
-                    <Link to="/expertise/cervical-disc-replacement">{t.home.welcome.learnMore}</Link>
+                    <Link to="/expertise/cervical-disc-replacement">{safeHome.welcome.learnMore}</Link>
                   </Button>
                 </div>
 
                 <div className="card p-6 rounded-lg shadow-md bg-card">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.nav.expertiseSubmenu.lumbarDisc}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.nav.expertiseSubmenu.lumbarDisc}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Lumbar disc replacement is designed to relieve back pain while preserving motion and function in the lumbar spine.
+                    {finalT.expertisePage.specializedProcedures.lumbarDisc.description}
                   </p>
                   <Button asChild>
-                    <Link to="/expertise/lumbar-disc-replacement">{t.home.welcome.learnMore}</Link>
+                    <Link to="/expertise/lumbar-disc-replacement">{finalT.home.welcome.learnMore}</Link>
                   </Button>
                 </div>
 
                 <div className="card p-6 rounded-lg shadow-md bg-card">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.nav.expertiseSubmenu.imageGuided}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.nav.expertiseSubmenu.imageGuided}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Image-guided surgery allows for precise navigation during complex procedures, improving accuracy and safety.
+                    {finalT.expertisePage.specializedProcedures.imageGuided.description}
                   </p>
                   <Button asChild>
-                    <Link to="/expertise/image-guided-surgery">{t.home.welcome.learnMore}</Link>
+                    <Link to="/expertise/image-guided-surgery">{finalT.home.welcome.learnMore}</Link>
                   </Button>
                 </div>
 
                 <div className="card p-6 rounded-lg shadow-md bg-card">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.nav.expertiseSubmenu.roboticSpine}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.nav.expertiseSubmenu.roboticSpine}</h3>
                   <p className="text-muted-foreground mb-4">
-                    Robotic-assisted spine surgery offers enhanced precision and control during complex spinal procedures.
+                    {finalT.expertisePage.specializedProcedures.roboticSpine.description}
                   </p>
                   <Button asChild>
-                    <Link to="/expertise/robotic-spine-surgery">{t.home.welcome.learnMore}</Link>
+                    <Link to="/expertise/robotic-spine-surgery">{finalT.home.welcome.learnMore}</Link>
                   </Button>
                 </div>
               </div>
@@ -265,9 +249,9 @@ const Expertise: React.FC = () => {
         <section className="py-16 bg-card">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-6">Our Surgical Approach</h2>
+              <h2 className="text-3xl font-bold mb-6">{finalT.expertisePage.surgicalApproach.title}</h2>
               <p className="text-muted-foreground">
-                <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich's</a> surgical philosophy is based on three main principles that guide all procedures
+                <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a>{finalT.expertisePage.surgicalApproach.subtitle}
               </p>
             </div>
 
@@ -276,9 +260,9 @@ const Expertise: React.FC = () => {
                 <div className="flex justify-center mb-4">
                   <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold">1</div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-center">Accurate Identification</h3>
+                <h3 className="text-xl font-semibold mb-3 text-center">{finalT.expertisePage.surgicalApproach.principles.identification.title}</h3>
                 <p className="text-muted-foreground text-center">
-                  Precise identification of the problem using advanced diagnostic imaging and clinical assessment to ensure targeted treatment
+                  {finalT.expertisePage.surgicalApproach.principles.identification.description}
                 </p>
               </div>
 
@@ -286,9 +270,9 @@ const Expertise: React.FC = () => {
                 <div className="flex justify-center mb-4">
                   <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold">2</div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-center">Minimally Invasive Access</h3>
+                <h3 className="text-xl font-semibold mb-3 text-center">{finalT.expertisePage.surgicalApproach.principles.access.title}</h3>
                 <p className="text-muted-foreground text-center">
-                  Safe access to the pathological area with minimal injury to the surrounding tissues, preserving normal function
+                  {finalT.expertisePage.surgicalApproach.principles.access.description}
                 </p>
               </div>
 
@@ -296,16 +280,16 @@ const Expertise: React.FC = () => {
                 <div className="flex justify-center mb-4">
                   <div className="h-16 w-16 rounded-full bg-primary/10 flex items-center justify-center text-primary text-2xl font-bold">3</div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-center">Effective Repair</h3>
+                <h3 className="text-xl font-semibold mb-3 text-center">{finalT.expertisePage.surgicalApproach.principles.repair.title}</h3>
                 <p className="text-muted-foreground text-center">
-                  Delicate and effective repair of complex structures even when they are located deeply in the body, using advanced surgical techniques
+                  {finalT.expertisePage.surgicalApproach.principles.repair.description}
                 </p>
               </div>
             </div>
 
             <div className="mt-12 text-center">
               <Button asChild size="lg">
-                <Link to="/appointments">Schedule a Consultation</Link>
+                <Link to="/appointments">{finalT.expertisePage.surgicalApproach.cta}</Link>
               </Button>
             </div>
           </div>
@@ -315,9 +299,9 @@ const Expertise: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-6">{t.technologiesPage.title}</h2>
+              <h2 className="text-3xl font-bold mb-6">{finalT.technologiesPage.title}</h2>
               <p className="text-muted-foreground">
-                {t.technologiesPage.description}
+                {finalT.technologiesPage.description}
               </p>
             </div>
           </div>
@@ -326,9 +310,9 @@ const Expertise: React.FC = () => {
         {/* Minimally-Invasive Techniques */}
         <section className="py-16 bg-primary/5">
           <div className="container">
-            <h2 className="text-3xl font-bold mb-8 text-center">{t.technologiesPage.categories.wellness.title}</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">{finalT.technologiesPage.categories.wellness.title}</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-              {t.technologiesPage.categories.wellness.description}
+              {finalT.technologiesPage.categories.wellness.description}
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
@@ -341,7 +325,7 @@ const Expertise: React.FC = () => {
               </div>
               <div>
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.wellness.items.slice(0, 2).map((item: any, index: any) => (
+                  {finalT.technologiesPage.categories.wellness.items.slice(0, 2).map((item: TechnologyItem, index: number) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -356,7 +340,7 @@ const Expertise: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.wellness.items.slice(2, 4).map((item: any, index: any) => (
+                  {finalT.technologiesPage.categories.wellness.items.slice(2, 4).map((item: TechnologyItem, index: number) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -380,9 +364,9 @@ const Expertise: React.FC = () => {
         {/* Image-Guided Technologies */}
         <section className="py-16">
           <div className="container">
-            <h2 className="text-3xl font-bold mb-8 text-center">{t.technologiesPage.categories.imagingTech.title}</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">{finalT.technologiesPage.categories.imagingTech.title}</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-              {t.technologiesPage.categories.imagingTech.description}
+              {finalT.technologiesPage.categories.imagingTech.description}
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
@@ -396,7 +380,7 @@ const Expertise: React.FC = () => {
               </div>
               <div>
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.imagingTech.items.slice(0, 2).map((item: any, index: any) => (
+                  {finalT.technologiesPage.categories.imagingTech.items.slice(0, 2).map((item: TechnologyItem, index: number) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -411,7 +395,7 @@ const Expertise: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.imagingTech.items.slice(2, 4).map((item: any, index: any) => (
+                  {finalT.technologiesPage.categories.imagingTech.items.slice(2, 4).map((item: TechnologyItem, index: number) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -435,9 +419,9 @@ const Expertise: React.FC = () => {
         {/* Spine Surgery Techniques */}
         <section className="py-16 bg-primary/5">
           <div className="container">
-            <h2 className="text-3xl font-bold mb-8 text-center">{t.technologiesPage.categories.services.title}</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">{finalT.technologiesPage.categories.services.title}</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-              {t.technologiesPage.categories.services.description}
+              {finalT.technologiesPage.categories.services.description}
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
@@ -450,7 +434,7 @@ const Expertise: React.FC = () => {
               </div>
               <div>
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.services.items.slice(0, 2).map((item: any, index: any) => (
+                  {finalT.technologiesPage.categories.services.items.slice(0, 2).map((item: TechnologyItem, index: number) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -465,7 +449,7 @@ const Expertise: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.services.items.slice(2, 4).map((item: any, index: any) => (
+                  {finalT.technologiesPage.categories.services.items.slice(2, 4).map((item: TechnologyItem, index: number) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -489,9 +473,9 @@ const Expertise: React.FC = () => {
         {/* Brain Surgery Techniques */}
         <section className="py-16">
           <div className="container">
-            <h2 className="text-3xl font-bold mb-8 text-center">{t.technologiesPage.categories.brainSurgery.title}</h2>
+            <h2 className="text-3xl font-bold mb-8 text-center">{finalT.technologiesPage.categories.brainSurgery.title}</h2>
             <p className="text-center text-muted-foreground mb-12 max-w-3xl mx-auto">
-              {t.technologiesPage.categories.brainSurgery.description}
+              {finalT.technologiesPage.categories.brainSurgery.description}
             </p>
 
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center mb-12">
@@ -504,7 +488,7 @@ const Expertise: React.FC = () => {
               </div>
               <div>
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.brainSurgery.items.slice(0, 2).map((item: any, index: any) => (
+                  {finalT.technologiesPage.categories.brainSurgery.items.slice(0, 2).map((item: TechnologyItem, index: number) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">
@@ -519,7 +503,7 @@ const Expertise: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div className="order-2 lg:order-1">
                 <div className="grid grid-cols-1 gap-6">
-                  {t.technologiesPage.categories.brainSurgery.items.slice(2, 4).map((item: any, index: any) => (
+                  {finalT.technologiesPage.categories.brainSurgery.items.slice(2, 4).map((item: TechnologyItem, index: number) => (
                     <div key={index} className="card p-6 rounded-lg shadow-md bg-card">
                       <h3 className="text-xl font-semibold mb-3 text-primary">{item.title}</h3>
                       <p className="text-muted-foreground">

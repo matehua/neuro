@@ -1,7 +1,6 @@
+import React, { useEffect } from 'react';
 import { LineChart, BarChart, Activity, Target, Calendar, ClipboardList, Share2 } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
@@ -10,9 +9,34 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 
 const PatientDashboard: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.patientResources && safeT.patientResources.patientDashboard) ? safeT : {
+    patientResources: {
+      patientDashboard: {
+        title: "Patient Dashboard",
+        subtitle: "Track your progress, manage your care, and access personalized resources",
+        login: "Login",
+        register: "Register",
+        features: {
+          trackProgress: "Track Progress",
+          manageExercises: "Manage Exercises",
+          setGoals: "Set Goals",
+          viewHistory: "View History",
+          shareWithProvider: "Share with Provider"
+        }
+      }
+    },
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -29,17 +53,17 @@ const PatientDashboard: React.FC = () => {
           <div className="container relative z-10">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
-                {t.patientResources.patientDashboard.title}
+                {finalT.patientResources.patientDashboard.title}
               </h1>
               <p className="text-muted-foreground mb-8">
-                {t.patientResources.patientDashboard.subtitle}
+                {finalT.patientResources.patientDashboard.subtitle}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">
-                  <Link to="#login">{t.patientResources.patientDashboard.login}</Link>
+                  <Link to="#login">{finalT.patientResources.patientDashboard.login}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="#register">{t.patientResources.patientDashboard.register}</Link>
+                  <Link to="#register">{finalT.patientResources.patientDashboard.register}</Link>
                 </Button>
               </div>
             </div>
@@ -54,7 +78,7 @@ const PatientDashboard: React.FC = () => {
               <Card className="bg-card shadow-md hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <Activity className="h-10 w-10 text-primary mb-2" />
-                  <CardTitle>{t.patientResources.patientDashboard.features.trackProgress}</CardTitle>
+                  <CardTitle>{finalT.patientResources.patientDashboard.features.trackProgress}</CardTitle>
                   <CardDescription>
                     Monitor your improvement over time
                   </CardDescription>
@@ -74,7 +98,7 @@ const PatientDashboard: React.FC = () => {
               <Card className="bg-card shadow-md hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <Calendar className="h-10 w-10 text-primary mb-2" />
-                  <CardTitle>{t.patientResources.patientDashboard.features.manageExercises}</CardTitle>
+                  <CardTitle>{finalT.patientResources.patientDashboard.features.manageExercises}</CardTitle>
                   <CardDescription>
                     Manage your personalized exercise program
                   </CardDescription>
@@ -94,7 +118,7 @@ const PatientDashboard: React.FC = () => {
               <Card className="bg-card shadow-md hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <Target className="h-10 w-10 text-primary mb-2" />
-                  <CardTitle>{t.patientResources.patientDashboard.features.setGoals}</CardTitle>
+                  <CardTitle>{finalT.patientResources.patientDashboard.features.setGoals}</CardTitle>
                   <CardDescription>
                     Set and track personalized health goals
                   </CardDescription>
@@ -114,7 +138,7 @@ const PatientDashboard: React.FC = () => {
               <Card className="bg-card shadow-md hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <ClipboardList className="h-10 w-10 text-primary mb-2" />
-                  <CardTitle>{t.patientResources.patientDashboard.features.viewHistory}</CardTitle>
+                  <CardTitle>{finalT.patientResources.patientDashboard.features.viewHistory}</CardTitle>
                   <CardDescription>
                     Access your assessment history
                   </CardDescription>
@@ -134,7 +158,7 @@ const PatientDashboard: React.FC = () => {
               <Card className="bg-card shadow-md hover:shadow-lg transition-shadow">
                 <CardHeader>
                   <Share2 className="h-10 w-10 text-primary mb-2" />
-                  <CardTitle>{t.patientResources.patientDashboard.features.shareWithProvider}</CardTitle>
+                  <CardTitle>{finalT.patientResources.patientDashboard.features.shareWithProvider}</CardTitle>
                   <CardDescription>
                     Share information with your healthcare team
                   </CardDescription>
@@ -477,8 +501,7 @@ const PatientDashboard: React.FC = () => {
       <Footer />
     </div>
   );
-PatientDashboard.displayName = 'PatientDashboard';
+};
 
+PatientDashboard.displayName = 'PatientDashboard';
 export default PatientDashboard;
-
-PatientDashboard.displayName = 'PatientDashboard';

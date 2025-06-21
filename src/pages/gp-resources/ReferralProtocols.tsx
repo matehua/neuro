@@ -1,15 +1,44 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import PageHeader from '@/components/PageHeader';
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 
 const ReferralProtocols: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.gpResources && safeT.gpResources.referralProtocols) ? safeT : {
+    gpResources: {
+      referralProtocols: {
+        title: "Referral & Triage Protocols",
+        subtitle: "Guidelines for referring patients to neurosurgical services",
+        description: "Comprehensive guidelines to help general practitioners make appropriate referrals to neurosurgical services.",
+        urgentReferrals: {
+          title: "Urgent Referrals",
+          description: "Conditions requiring immediate or urgent neurosurgical assessment:"
+        },
+        standardReferrals: {
+          title: "Standard Referral Guidelines",
+          description: "For optimal patient care, please include the following information in your referral:"
+        },
+        referralProcess: {
+          title: "Referral Process",
+          description: "Our streamlined referral process ensures timely assessment and communication:"
+        },
+        triageCategories: {
+          title: "Triage Categories",
+          description: "Referrals are triaged according to clinical urgency:"
+        }
+      }
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,8 +86,8 @@ const ReferralProtocols: React.FC = () => {
   return (
     <StandardPageLayout showHeader={false}>
       <PageHeader
-        title={t.gpResources.referralProtocols.title}
-        subtitle={t.gpResources.referralProtocols.subtitle}
+        title={finalT.gpResources.referralProtocols.title}
+        subtitle={finalT.gpResources.referralProtocols.subtitle}
         backgroundImage="/images/gp-resources/referral-protocols-hero.jpg"
       />
 
@@ -66,7 +95,7 @@ const ReferralProtocols: React.FC = () => {
         <div className="container">
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg mb-8">
-              {t.gpResources.referralProtocols.description}
+              {finalT.gpResources.referralProtocols.description}
             </p>
 
             <Tabs defaultValue="urgent" className="w-full">
@@ -80,10 +109,10 @@ const ReferralProtocols: React.FC = () => {
               <TabsContent value="urgent" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.referralProtocols.urgentReferrals.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.referralProtocols.urgentReferrals.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.referralProtocols.urgentReferrals.description}</p>
+                    <p className="mb-4">{finalT.gpResources.referralProtocols.urgentReferrals.description}</p>
                     <ul className="list-disc pl-6 space-y-2">
                       <li><strong>Cauda equina syndrome:</strong> Saddle anesthesia, bladder/bowel dysfunction, bilateral leg weakness</li>
                       <li><strong>Acute or progressive myelopathy:</strong> Spinal cord compression with neurological deficits</li>
@@ -113,10 +142,10 @@ const ReferralProtocols: React.FC = () => {
               <TabsContent value="standard" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.referralProtocols.standardReferrals.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.referralProtocols.standardReferrals.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.referralProtocols.standardReferrals.description}</p>
+                    <p className="mb-4">{finalT.gpResources.referralProtocols.standardReferrals.description}</p>
                     <ul className="list-disc pl-6 space-y-2">
                       <li><strong>Clinical history:</strong> Onset, duration, progression of symptoms, exacerbating/relieving factors</li>
                       <li><strong>Neurological symptoms:</strong> Detailed description of pain, sensory changes, motor deficits, and their distribution</li>
@@ -151,10 +180,10 @@ const ReferralProtocols: React.FC = () => {
               <TabsContent value="process" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.referralProtocols.referralProcess.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.referralProtocols.referralProcess.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.referralProtocols.referralProcess.description}</p>
+                    <p className="mb-4">{finalT.gpResources.referralProtocols.referralProcess.description}</p>
                     <ol className="list-decimal pl-6 space-y-4">
                       <li>
                         <strong>Submit referral</strong> via one of the following methods:
@@ -200,10 +229,10 @@ const ReferralProtocols: React.FC = () => {
               <TabsContent value="triage" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.referralProtocols.triageCategories.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.referralProtocols.triageCategories.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.referralProtocols.triageCategories.description}</p>
+                    <p className="mb-4">{finalT.gpResources.referralProtocols.triageCategories.description}</p>
                     <div className="space-y-6">
                       <div className="p-4 border border-red-300 bg-red-50 dark:bg-red-950/20 rounded-md">
                         <h3 className="font-bold text-red-700 dark:text-red-400">Emergency (Same Day)</h3>
@@ -259,7 +288,7 @@ const ReferralProtocols: React.FC = () => {
           <div className="mt-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Case Examples</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {caseExamples?.map((example: any, index: any) => (
+              {caseExamples?.map((example: { title: string; description: string; approach: string; outcome: string }, index: number) => (
                 <Card key={index} className="bg-card">
                   <CardHeader>
                     <CardTitle className="text-xl">{example.title}</CardTitle>

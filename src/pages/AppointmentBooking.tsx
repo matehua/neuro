@@ -1,9 +1,7 @@
+import React, { useState, useEffect, useCallback } from 'react';
 import { CalendarIcon, CreditCard, Check, ChevronRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect, useState } from 'react';
-
 import { format, addDays, differenceInDays } from 'date-fns';
-
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
@@ -13,19 +11,20 @@ import { Label } from '@/components/ui/label';
 import { ProcedureProps } from '@/components/ProcedureCard';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { cn } from '@/lib/utils';
+
+
 import {
   Popover,
   PopoverContent,
-  PopoverTrigger,
+  PopoverTrigger
 } from "@/components/ui/popover";
 import {
   Select,
   SelectContent,
   SelectItem,
   SelectTrigger,
-  SelectValue,
+  SelectValue
 } from "@/components/ui/select";
-import { useCallback } from 'react';
 
 // Sample clinic data
 interface ClinicData {
@@ -234,7 +233,7 @@ const AppointmentBooking: React.FC = () => {
             <div className="absolute top-5 left-0 right-0 h-0.5 bg-muted z-0">
               <div
                 className="h-full bg-primary transition-all duration-300"
-                style={{ width: `${((currentStep - 1) / 2) * 100}%` }}
+                style={{ width: ((currentStep - 1) / 2) * 100 + '%' }}
               />
             </div>
           </div>
@@ -272,7 +271,7 @@ const AppointmentBooking: React.FC = () => {
                             selected={startDate}
                             onSelect={setStartDate}
                             initialFocus
-                            disabled={(date: any) => date < new Date()}
+                            disabled={(date: unknown) => date < new Date()}
                             className="pointer-events-auto"
                           />
                         </PopoverContent>
@@ -304,7 +303,7 @@ const AppointmentBooking: React.FC = () => {
                             selected={endDate}
                             onSelect={setEndDate}
                             initialFocus
-                            disabled={(date: any) => date < (startDate || new Date())}
+                            disabled={(date: unknown) => date < (startDate || new Date())}
                             className="pointer-events-auto"
                           />
                         </PopoverContent>
@@ -321,7 +320,7 @@ const AppointmentBooking: React.FC = () => {
                           <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>
-                          {[1, 2, 3, 4, 5, 6].map((num: any) => (
+                          {[1, 2, 3, 4, 5, 6].map((num: unknown) => (
                             <SelectItem key={num} value={num.toString()}>
                               {num} {num === 1 ? "Adult" : "Adults"}
                             </SelectItem>
@@ -340,7 +339,7 @@ const AppointmentBooking: React.FC = () => {
                           <SelectValue placeholder="Select" />
                         </SelectTrigger>
                         <SelectContent>
-                          {[0, 1, 2, 3, 4].map((num: any) => (
+                          {[0, 1, 2, 3, 4].map((num: unknown) => (
                             <SelectItem key={num} value={num.toString()}>
                               {num} {num === 1 ? "Child" : "Children"}
                             </SelectItem>
@@ -354,7 +353,7 @@ const AppointmentBooking: React.FC = () => {
                 {/* Procedures Selection */}
                 <h2 className="text-xl font-semibold mb-4">Select Your Clinic Location</h2>
                 <div className="space-y-6">
-                  {proceduresData?.map((procedure: any) => (
+                  {proceduresData?.map((procedure: unknown) => (
                     <div
                       key={procedure.id}
                       className={cn(
@@ -552,8 +551,7 @@ const AppointmentBooking: React.FC = () => {
 
                       <h2 className="text-xl font-semibold mb-4">Payment Information</h2>
                       <div className="glass-card p-6 space-y-6">
-                        <Tabs defaultValue="credit-card" onValueChange={(value) => handleSelectChange("paymentMethod", value)
-}>
+                        <Tabs defaultValue="credit-card" onValueChange={(value) => handleSelectChange("paymentMethod", value)}>
                           <TabsList className="grid w-full grid-cols-2">
                             <TabsTrigger value="credit-card">Credit Card</TabsTrigger>
                             <TabsTrigger value="pay-at-clinic">Pay at Clinic</TabsTrigger>

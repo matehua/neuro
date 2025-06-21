@@ -1,0 +1,35 @@
+{
+  "timestamp": "2025-06-19T06:22:01.193Z",
+  "summary": {
+    "totalIssues": 0,
+    "critical": 0,
+    "high": 0,
+    "medium": 0
+  },
+  "issues": [],
+  "warnings": [
+    {
+      "type": "DUPLICATE_COMPONENT_NAME",
+      "severity": "MEDIUM",
+      "name": "index",
+      "paths": [
+        "layout/index.ts",
+        "medical-conditions/index.ts"
+      ],
+      "message": "Duplicate component name: index",
+      "fix": "Rename one of the components to avoid conflicts"
+    },
+    {
+      "type": "DUPLICATE_COMPONENT_NAME",
+      "severity": "MEDIUM",
+      "name": "types",
+      "paths": [
+        "layout/types.ts",
+        "medical-conditions/types.ts"
+      ],
+      "message": "Duplicate component name: types",
+      "fix": "Rename one of the components to avoid conflicts"
+    }
+  ],
+  "suggestions": []
+}

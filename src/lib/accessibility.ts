@@ -164,7 +164,7 @@ export function initializeAccessibility(): void {
   }
   // Add focus-visible polyfill behaviour
   if (typeof document !== 'undefined') {
-    document.addEventListener('keydown', (e: any) => {
+    document.addEventListener('keydown', (e: React.FormEvent) => {
       if (e.key === 'Tab') {
         document.body.classList.add('keyboard-navigation');
       }

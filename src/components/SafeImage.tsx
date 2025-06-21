@@ -89,4 +89,6 @@ const SafeImage: React.FC<SafeImageProps> = ({
   );
 };
 
+SafeImage.displayName = 'SafeImage';
+
 export default SafeImage;

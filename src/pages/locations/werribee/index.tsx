@@ -10,6 +10,15 @@ import { useLanguage } from '@/contexts/LanguageContext';
 const WerribeeLocation: React.FC = () => {
   const { t } = useLanguage();
 
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Basic fallback structure
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
+
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
@@ -25,13 +34,13 @@ const WerribeeLocation: React.FC = () => {
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
-                <h1 className="text-3xl font-bold mb-6">{t.locations?.werribeeLocation?.expertNeurosurgery || 'Expert Neurosurgical Consultations in Werribee'}</h1>
-                <h2 className="text-xl text-primary mb-4">{t.locations?.werribeeLocation?.subtitle || 'Helping You Live Pain-Free'}</h2>
+                <h1 className="text-3xl font-bold mb-6">{finalT.locations?.werribeeLocation?.expertNeurosurgery || 'Expert Neurosurgical Consultations in Werribee'}</h1>
+                <h2 className="text-xl text-primary mb-4">{finalT.locations?.werribeeLocation?.subtitle || 'Helping You Live Pain-Free'}</h2>
                 <p className="text-muted-foreground mb-4">
-                  {t.locations?.werribeeLocation?.introduction1 || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, a neurosurgeon and spine surgeon, has cared for patients in Werribee and Western Melbourne suburbs area since 2012. He offers consultations, procedures and operations at major Melbourne Hospitals, with expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions.'}
+                  {finalT.locations?.werribeeLocation?.introduction1 || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, a neurosurgeon and spine surgeon, has cared for patients in Werribee and Western Melbourne suburbs area since 2012. He offers consultations, procedures and operations at major Melbourne Hospitals, with expertise in advanced minimally-invasive treatments for various neurosurgical and spinal conditions.'}
                 </p>
                 <p className="text-muted-foreground">
-                  {t.locations?.werribeeLocation?.introduction2 || 'Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout Melbourne\'s western region, eliminating the need to travel to central Melbourne for specialized care.'}
+                  {finalT.locations?.werribeeLocation?.introduction2 || 'Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout Melbourne\'s western region, eliminating the need to travel to central Melbourne for specialized care.'}
                 </p>
               </div>
               <div className="md:w-1/2">
@@ -55,13 +64,13 @@ const WerribeeLocation: React.FC = () => {
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold mb-4">Location Details</h2>
                   <p className="text-muted-foreground">
-                    {t.locations?.werribeeLocation?.locationDetails || 'Everything you need to know about our Werribee consulting location'}
+                    {finalT.locations?.werribeeLocation?.locationDetails || 'Everything you need to know about our Werribee consulting location'}
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.address || 'Address'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.address || 'Address'}</h3>
                     <p className="text-muted-foreground">
                       Consulting Rooms<br />
                       297 Princes Highway<br />
@@ -70,7 +79,7 @@ const WerribeeLocation: React.FC = () => {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.contactInformation || 'Contact Information'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.contactInformation || 'Contact Information'}</h3>
                     <p className="text-muted-foreground mb-2">
                       <span className="font-medium">Phone:</span> 03 90084200
                     </p>
@@ -83,25 +92,25 @@ const WerribeeLocation: React.FC = () => {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.consultingHours || 'Consulting Hours'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.consultingHours || 'Consulting Hours'}</h3>
                     <p className="text-muted-foreground mb-2">
-                      <span className="font-medium">Tuesday:</span> {t.locations?.werribeeLocation?.consultingHoursDetails || '9:00 AM - 5:00 PM (fortnightly)'}
+                      <span className="font-medium">Tuesday:</span> {finalT.locations?.werribeeLocation?.consultingHoursDetails || '9:00 AM - 5:00 PM (fortnightly)'}
                     </p>
                     <p className="text-muted-foreground mb-4">
-                      {t.locations?.werribeeLocation?.consultationsByAppointment || 'Consultations are by appointment only. Please call our office to schedule an appointment.'}
+                      {finalT.locations?.werribeeLocation?.consultationsByAppointment || 'Consultations are by appointment only. Please call our office to schedule an appointment.'}
                     </p>
                     <p className="text-muted-foreground">
-                      <span className="font-medium">Note:</span> {t.locations?.werribeeLocation?.urgentAppointments || 'Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.'}
+                      <span className="font-medium">Note:</span> {finalT.locations?.werribeeLocation?.urgentAppointments || 'Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.'}
                     </p>
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.appointmentProcess || 'Appointment Process'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.appointmentProcess || 'Appointment Process'}</h3>
                     <p className="text-muted-foreground mb-2">
-                      {t.locations?.werribeeLocation?.appointmentProcessDetails1 || 'Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.'}
+                      {finalT.locations?.werribeeLocation?.appointmentProcessDetails1 || 'Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.'}
                     </p>
                     <p className="text-muted-foreground">
-                      {t.locations?.werribeeLocation?.appointmentProcessDetails2 || 'All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.'}
+                      {finalT.locations?.werribeeLocation?.appointmentProcessDetails2 || 'All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.'}
                     </p>
                   </div>
                 </div>
@@ -124,36 +133,36 @@ const WerribeeLocation: React.FC = () => {
 
                 <div className="space-y-6">
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.location || 'Location'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.location || 'Location'}</h3>
                     <p className="text-muted-foreground mb-4">
-                      {t.locations?.werribeeLocation?.locationDetails1 || 'The consulting rooms are conveniently situated at 297 Princes Hwy Werribee in walking distance from Hoppers Crossing Train Station. Other locations are available for urgent appointments, including Moonee Ponds, Sunbury and Heidelberg.'}
+                      {finalT.locations?.werribeeLocation?.locationDetails1 || 'The consulting rooms are conveniently situated at 297 Princes Hwy Werribee in walking distance from Hoppers Crossing Train Station. Other locations are available for urgent appointments, including Moonee Ponds, Sunbury and Heidelberg.'}
                     </p>
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.diagnosticFacilities || 'Diagnostic Facilities'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.diagnosticFacilities || 'Diagnostic Facilities'}</h3>
                     <p className="text-muted-foreground mb-4">
-                      The neurosurgical and spinal diagnostic imaging services in Werribee include <a href="https://i-med.com.au/find-a-radiology-clinic/werribee-private-radiology" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">IMED</a>, Capital Radiology and <a href="https://www.lakeimaging.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Lake Imaging</a>. {t.locations?.werribeeLocation?.diagnosticFacilitiesDetails1 || 'All the required radiological (MRI, SPECT, CT, ultrasound and X-rays) and neurophysiological (EMG and nerve conduction studies) investigations can be arranged for the patient\'s convenience.'}
+                      The neurosurgical and spinal diagnostic imaging services in Werribee include <a href="https://i-med.com.au/find-a-radiology-clinic/werribee-private-radiology" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">IMED</a>, Capital Radiology and <a href="https://www.lakeimaging.com.au/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Lake Imaging</a>. {finalT.locations?.werribeeLocation?.diagnosticFacilitiesDetails1 || 'All the required radiological (MRI, SPECT, CT, ultrasound and X-rays) and neurophysiological (EMG and nerve conduction studies) investigations can be arranged for the patient\'s convenience.'}
                     </p>
                     <p className="text-muted-foreground">
-                      {t.locations?.werribeeLocation?.diagnosticFacilitiesDetails2 || 'Interventional radiology can also be arranged for image-guided local anaesthetic/steroid injections, medial branch blocks and provocative discography.'}
+                      {finalT.locations?.werribeeLocation?.diagnosticFacilitiesDetails2 || 'Interventional radiology can also be arranged for image-guided local anaesthetic/steroid injections, medial branch blocks and provocative discography.'}
                     </p>
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.gettingHere || 'Getting Here'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.gettingHere || 'Getting Here'}</h3>
                     <div className="space-y-4">
                       <div>
-                        <h4 className="text-lg font-medium mb-2">{t.locations?.werribeeLocation?.byPublicTransport || 'By Public Transport'}</h4>
+                        <h4 className="text-lg font-medium mb-2">{finalT.locations?.werribeeLocation?.byPublicTransport || 'By Public Transport'}</h4>
                         <p className="text-muted-foreground">
-                          {t.locations?.werribeeLocation?.byPublicTransportDetails || 'The consulting rooms are accessible via bus services that stop on Princes Highway. Several bus routes connect the location to Werribee train station and surrounding suburbs.'}
+                          {finalT.locations?.werribeeLocation?.byPublicTransportDetails || 'The consulting rooms are accessible via bus services that stop on Princes Highway. Several bus routes connect the location to Werribee train station and surrounding suburbs.'}
                         </p>
                       </div>
 
                       <div>
-                        <h4 className="text-lg font-medium mb-2">{t.locations?.werribeeLocation?.parkingAndDisabledAccess || 'Parking and Disabled Access'}</h4>
+                        <h4 className="text-lg font-medium mb-2">{finalT.locations?.werribeeLocation?.parkingAndDisabledAccess || 'Parking and Disabled Access'}</h4>
                         <p className="text-muted-foreground">
-                          {t.locations?.werribeeLocation?.parkingAndDisabledAccessDetails || 'Werribee Consulting Rooms have plenty of onsite free parking available for patients. Disabled parking is available close to the main entrance. It features a no-barrier environment to guarantee full mobility for individuals with disabilities.'}
+                          {finalT.locations?.werribeeLocation?.parkingAndDisabledAccessDetails || 'Werribee Consulting Rooms have plenty of onsite free parking available for patients. Disabled parking is available close to the main entrance. It features a no-barrier environment to guarantee full mobility for individuals with disabilities.'}
                         </p>
                       </div>
                     </div>
@@ -168,15 +177,15 @@ const WerribeeLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.locations?.werribeeLocation?.therapeuticInterventions?.title || 'Therapeutic Interventions'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.locations?.werribeeLocation?.therapeuticInterventions?.title || 'Therapeutic Interventions'}</h2>
               <p className="text-muted-foreground">
-                {t.locations?.werribeeLocation?.therapeuticInterventions?.subtitle || 'Tailored treatment plans for your specific needs'}
+                {finalT.locations?.werribeeLocation?.therapeuticInterventions?.subtitle || 'Tailored treatment plans for your specific needs'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.locations?.werribeeLocation?.therapeuticInterventions?.description || 'Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established,'} <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> {t.locations?.werribeeLocation?.therapeuticInterventions?.description ? '' : 'collaborates closely with other specialists in Werribee and Melbourne to develop a tailored therapeutic plan designed to address your specific needs.'}
+                {finalT.locations?.werribeeLocation?.therapeuticInterventions?.description || 'Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established,'} <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> {finalT.locations?.werribeeLocation?.therapeuticInterventions?.description ? '' : 'collaborates closely with other specialists in Werribee and Melbourne to develop a tailored therapeutic plan designed to address your specific needs.'}
               </p>
             </div>
 
@@ -189,9 +198,9 @@ const WerribeeLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.therapeuticInterventions?.interventionalProcedures?.title || 'Interventional Procedures'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.therapeuticInterventions?.interventionalProcedures?.title || 'Interventional Procedures'}</h3>
                 <p className="text-muted-foreground">
-                  {t.locations?.werribeeLocation?.therapeuticInterventions?.interventionalProcedures?.description || 'In addition to traditional medical therapies, Dr Aliashkevich can offer a variety of minimally invasive interventional procedures to target pain and inflammation directly at the source, providing relief and promoting healing.'}
+                  {finalT.locations?.werribeeLocation?.therapeuticInterventions?.interventionalProcedures?.description || 'In addition to traditional medical therapies, Dr Aliashkevich can offer a variety of minimally invasive interventional procedures to target pain and inflammation directly at the source, providing relief and promoting healing.'}
                 </p>
               </div>
 
@@ -203,9 +212,9 @@ const WerribeeLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.therapeuticInterventions?.physicalTherapy?.title || 'Physical Therapy and Hydrotherapy'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.therapeuticInterventions?.physicalTherapy?.title || 'Physical Therapy and Hydrotherapy'}</h3>
                 <p className="text-muted-foreground">
-                  {t.locations?.werribeeLocation?.therapeuticInterventions?.physicalTherapy?.description || 'Personalised exercise programmes to improve posture, strength, flexibility, and mobility. These therapies can be crucial components of both non-surgical management and post-operative rehabilitation.'}
+                  {finalT.locations?.werribeeLocation?.therapeuticInterventions?.physicalTherapy?.description || 'Personalised exercise programmes to improve posture, strength, flexibility, and mobility. These therapies can be crucial components of both non-surgical management and post-operative rehabilitation.'}
                 </p>
               </div>
 
@@ -217,9 +226,9 @@ const WerribeeLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.therapeuticInterventions?.rehabilitation?.title || 'Rehabilitation'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.therapeuticInterventions?.rehabilitation?.title || 'Rehabilitation'}</h3>
                 <p className="text-muted-foreground">
-                  {t.locations?.werribeeLocation?.therapeuticInterventions?.rehabilitation?.description || 'Critical component for postoperative recovery to maximise function, independence, and quality of life. Dr. Aliashkevich works with rehabilitation specialists to ensure comprehensive care throughout your recovery journey.'}
+                  {finalT.locations?.werribeeLocation?.therapeuticInterventions?.rehabilitation?.description || 'Critical component for postoperative recovery to maximise function, independence, and quality of life. Dr. Aliashkevich works with rehabilitation specialists to ensure comprehensive care throughout your recovery journey.'}
                 </p>
               </div>
             </div>
@@ -230,15 +239,15 @@ const WerribeeLocation: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.locations?.werribeeLocation?.facilities?.title || 'Our Facilities'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.locations?.werribeeLocation?.facilities?.title || 'Our Facilities'}</h2>
               <p className="text-muted-foreground">
-                {t.locations?.werribeeLocation?.facilities?.subtitle || 'Specialist care in a welcoming and comfortable environment'}
+                {finalT.locations?.werribeeLocation?.facilities?.subtitle || 'Specialist care in a welcoming and comfortable environment'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.locations?.werribeeLocation?.facilities?.description || 'Dr Aliashkevich wants his patients to be fully engaged in their treatment process and have a good understanding of their neurosurgical conditions. Hence, the rooms are equipped with large displays to review and discuss the imaging and make important decisions about the treatment options and available alternatives. We believe partnering with patients in their care is a modern gold standard for medical treatment and aim to deliver ethical and professional services to improve the quality of doctor-patient interactions.'}
+                {finalT.locations?.werribeeLocation?.facilities?.description || 'Dr Aliashkevich wants his patients to be fully engaged in their treatment process and have a good understanding of their neurosurgical conditions. Hence, the rooms are equipped with large displays to review and discuss the imaging and make important decisions about the treatment options and available alternatives. We believe partnering with patients in their care is a modern gold standard for medical treatment and aim to deliver ethical and professional services to improve the quality of doctor-patient interactions.'}
               </p>
             </div>
 
@@ -251,9 +260,9 @@ const WerribeeLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.facilities?.consultingRooms?.title || 'Comfortable Consulting Rooms'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.facilities?.consultingRooms?.title || 'Comfortable Consulting Rooms'}</h3>
                 <p className="text-muted-foreground">
-                  {t.locations?.werribeeLocation?.facilities?.consultingRooms?.description || 'Our neurosurgical consulting rooms are patient-centric, allowing them to feel comfortable and relaxed when discussing important health issues. Every examination room has an accessible adjustable-height exam table and sufficient clear floor space next to it. There is plenty of space for wheelchair access and capacity for accompanying persons and family members. Hand sanitisers are available in all consulting and waiting spaces.'}
+                  {finalT.locations?.werribeeLocation?.facilities?.consultingRooms?.description || 'Our neurosurgical consulting rooms are patient-centric, allowing them to feel comfortable and relaxed when discussing important health issues. Every examination room has an accessible adjustable-height exam table and sufficient clear floor space next to it. There is plenty of space for wheelchair access and capacity for accompanying persons and family members. Hand sanitisers are available in all consulting and waiting spaces.'}
                 </p>
               </div>
 
@@ -265,9 +274,9 @@ const WerribeeLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.facilities?.waitingSpace?.title || 'Convenient Waiting Space'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.facilities?.waitingSpace?.title || 'Convenient Waiting Space'}</h3>
                 <p className="text-muted-foreground">
-                  {t.locations?.werribeeLocation?.facilities?.waitingSpace?.description || 'The waiting areas are designed and fitted out with the patient\'s experience in mind. They convey neatness and a warm and welcoming feeling to help patients feel comfortable and at ease. Wider seats allow for separation from strangers, room for personal belongings, child prams and adequate support. The seating and spacing elements allow for privacy and safety. Knowing how valuable is our patients\' time, we take care to keep the waiting period as short as possible and make the waiting area as convenient as possible.'}
+                  {finalT.locations?.werribeeLocation?.facilities?.waitingSpace?.description || 'The waiting areas are designed and fitted out with the patient\'s experience in mind. They convey neatness and a warm and welcoming feeling to help patients feel comfortable and at ease. Wider seats allow for separation from strangers, room for personal belongings, child prams and adequate support. The seating and spacing elements allow for privacy and safety. Knowing how valuable is our patients\' time, we take care to keep the waiting period as short as possible and make the waiting area as convenient as possible.'}
                 </p>
               </div>
 
@@ -279,9 +288,9 @@ const WerribeeLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.werribeeLocation?.facilities?.accessibleEnvironment?.title || 'Welcoming Environment'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.werribeeLocation?.facilities?.accessibleEnvironment?.title || 'Welcoming Environment'}</h3>
                 <p className="text-muted-foreground">
-                  {t.locations?.werribeeLocation?.facilities?.accessibleEnvironment?.description || 'Werribee Consulting Rooms provide all services accessible to individuals with disabilities. It features a no-barrier environment to guarantee full mobility. Our friendly staff can assist with all examinations that require special positioning. Hand sanitisers are available in all consulting and waiting spaces.'}
+                  {finalT.locations?.werribeeLocation?.facilities?.accessibleEnvironment?.description || 'Werribee Consulting Rooms provide all services accessible to individuals with disabilities. It features a no-barrier environment to guarantee full mobility. Our friendly staff can assist with all examinations that require special positioning. Hand sanitisers are available in all consulting and waiting spaces.'}
                 </p>
               </div>
             </div>
@@ -316,15 +325,15 @@ const WerribeeLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.werribeeLocation?.nearbyAmenities?.title || 'Nearby Amenities'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.werribeeLocation?.nearbyAmenities?.title || 'Nearby Amenities'}</h2>
               <p className="text-muted-foreground">
-                {t.werribeeLocation?.nearbyAmenities?.subtitle || 'Convenient local amenities for patients visiting our Werribee location'}
+                {finalT.werribeeLocation?.nearbyAmenities?.subtitle || 'Convenient local amenities for patients visiting our Werribee location'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.werribeeLocation?.nearbyAmenities?.description ||
+                {finalT.werribeeLocation?.nearbyAmenities?.description ||
                   'Our Werribee consulting location is situated in a convenient area with a variety of amenities nearby. ' +
                   'Whether you need to grab a coffee before your appointment, find a place for lunch afterward, or run errands while you\'re in the area, ' +
                   'you\'ll find everything you need within easy reach.'}
@@ -333,33 +342,33 @@ const WerribeeLocation: React.FC = () => {
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.werribeeLocation?.nearbyAmenities?.cafesRestaurants?.title || 'Cafes & Restaurants'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.werribeeLocation?.nearbyAmenities?.cafesRestaurants?.title || 'Cafes & Restaurants'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">The Corner Cafe</span> - {t.werribeeLocation?.nearbyAmenities?.cafesRestaurants?.cornerCafe?.split(' - ')[1] ||
+                      <span className="font-medium">The Corner Cafe</span> - {finalT.werribeeLocation?.nearbyAmenities?.cafesRestaurants?.cornerCafe?.split(' - ')[1] ||
                         'A popular cafe offering excellent coffee and a variety of breakfast and lunch options, located just a short walk from our consulting rooms.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Cafe Derailleur</span> - {t.werribeeLocation?.nearbyAmenities?.cafesRestaurants?.cafeDerailleur?.split(' - ')[1] ||
+                      <span className="font-medium">Cafe Derailleur</span> - {finalT.werribeeLocation?.nearbyAmenities?.cafesRestaurants?.cafeDerailleur?.split(' - ')[1] ||
                         'A charming cafe known for its quality coffee and fresh food options.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Werribee CBD Restaurants</span> - {t.werribeeLocation?.nearbyAmenities?.cafesRestaurants?.werribeeCBDRestaurants?.split(' - ')[1] ||
+                      <span className="font-medium">Werribee CBD Restaurants</span> - {finalT.werribeeLocation?.nearbyAmenities?.cafesRestaurants?.werribeeCBDRestaurants?.split(' - ')[1] ||
                         'A variety of dining options in the Werribee central business district, from casual cafes to more upscale restaurants.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Park Hotel</span> - {t.werribeeLocation?.nearbyAmenities?.cafesRestaurants?.parkHotel?.split(' - ')[1] ||
+                      <span className="font-medium">Park Hotel</span> - {finalT.werribeeLocation?.nearbyAmenities?.cafesRestaurants?.parkHotel?.split(' - ')[1] ||
                         'A local pub offering quality meals in a relaxed setting.'}
                     </div>
                   </li>
@@ -367,33 +376,33 @@ const WerribeeLocation: React.FC = () => {
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.werribeeLocation?.nearbyAmenities?.shopping?.title || 'Shopping'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.werribeeLocation?.nearbyAmenities?.shopping?.title || 'Shopping'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Pacific Werribee Shopping Centre</span> - {t.werribeeLocation?.nearbyAmenities?.shopping?.pacificWerribeeShoppingCentre?.split(' - ')[1] ||
+                      <span className="font-medium">Pacific Werribee Shopping Centre</span> - {finalT.werribeeLocation?.nearbyAmenities?.shopping?.pacificWerribeeShoppingCentre?.split(' - ')[1] ||
                         'A major shopping center with a wide range of retail stores, supermarkets, and services, located within easy reach of our consulting rooms.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Werribee Plaza</span> - {t.werribeeLocation?.nearbyAmenities?.shopping?.werribeePlaza?.split(' - ')[1] ||
+                      <span className="font-medium">Werribee Plaza</span> - {finalT.werribeeLocation?.nearbyAmenities?.shopping?.werribeePlaza?.split(' - ')[1] ||
                         'A shopping center offering various retail options and services.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Werribee Pharmacy</span> - {t.werribeeLocation?.nearbyAmenities?.shopping?.werribeePharmacy?.split(' - ')[1] ||
+                      <span className="font-medium">Werribee Pharmacy</span> - {finalT.werribeeLocation?.nearbyAmenities?.shopping?.werribeePharmacy?.split(' - ')[1] ||
                         'Conveniently located pharmacy for prescription fills and health products.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Watton Street Shopping Precinct</span> - {t.werribeeLocation?.nearbyAmenities?.shopping?.wattonStreetShoppingPrecinct?.split(' - ')[1] ||
+                      <span className="font-medium">Watton Street Shopping Precinct</span> - {finalT.werribeeLocation?.nearbyAmenities?.shopping?.wattonStreetShoppingPrecinct?.split(' - ')[1] ||
                         'A variety of specialty shops and services along Werribee\'s main shopping street.'}
                     </div>
                   </li>
@@ -401,33 +410,33 @@ const WerribeeLocation: React.FC = () => {
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.werribeeLocation?.nearbyAmenities?.parksRecreation?.title || 'Parks & Recreation'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.werribeeLocation?.nearbyAmenities?.parksRecreation?.title || 'Parks & Recreation'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Werribee Park</span> - {t.werribeeLocation?.nearbyAmenities?.parksRecreation?.werribeePark?.split(' - ')[1] ||
+                      <span className="font-medium">Werribee Park</span> - {finalT.werribeeLocation?.nearbyAmenities?.parksRecreation?.werribeePark?.split(' - ')[1] ||
                         'A beautiful park with walking paths, gardens, and open spaces, perfect for a relaxing stroll before or after your appointment.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Werribee River Trail</span> - {t.werribeeLocation?.nearbyAmenities?.parksRecreation?.werribeeRiverTrail?.split(' - ')[1] ||
+                      <span className="font-medium">Werribee River Trail</span> - {finalT.werribeeLocation?.nearbyAmenities?.parksRecreation?.werribeeRiverTrail?.split(' - ')[1] ||
                         'A scenic walking and cycling path along the Werribee River, offering a peaceful natural environment.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Chirnside Park</span> - {t.werribeeLocation?.nearbyAmenities?.parksRecreation?.chirnsidePark?.split(' - ')[1] ||
+                      <span className="font-medium">Chirnside Park</span> - {finalT.werribeeLocation?.nearbyAmenities?.parksRecreation?.chirnsidePark?.split(' - ')[1] ||
                         'A recreational area with sports facilities and walking tracks.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Werribee Open Range Zoo</span> - {t.werribeeLocation?.nearbyAmenities?.parksRecreation?.werribeeOpenRangeZoo?.split(' - ')[1] ||
+                      <span className="font-medium">Werribee Open Range Zoo</span> - {finalT.werribeeLocation?.nearbyAmenities?.parksRecreation?.werribeeOpenRangeZoo?.split(' - ')[1] ||
                         'A unique zoo experience just a short drive away, perfect for a family outing.'}
                     </div>
                   </li>
@@ -435,33 +444,33 @@ const WerribeeLocation: React.FC = () => {
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.werribeeLocation?.nearbyAmenities?.otherAmenities?.title || 'Other Amenities'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.werribeeLocation?.nearbyAmenities?.otherAmenities?.title || 'Other Amenities'}</h3>
                 <ul className="text-muted-foreground list-none space-y-3">
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Werribee Library</span> - {t.werribeeLocation?.nearbyAmenities?.otherAmenities?.werribeeLibrary?.split(' - ')[1] ||
+                      <span className="font-medium">Werribee Library</span> - {finalT.werribeeLocation?.nearbyAmenities?.otherAmenities?.werribeeLibrary?.split(' - ')[1] ||
                         'A community library offering a quiet space for reading and research.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Banks & ATMs</span> - {t.werribeeLocation?.nearbyAmenities?.otherAmenities?.banksATMs?.split(' - ')[1] ||
+                      <span className="font-medium">Banks & ATMs</span> - {finalT.werribeeLocation?.nearbyAmenities?.otherAmenities?.banksATMs?.split(' - ')[1] ||
                         'Several banking options within walking distance of our consulting rooms.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Werribee Post Office</span> - {t.werribeeLocation?.nearbyAmenities?.otherAmenities?.werribeePostOffice?.split(' - ')[1] ||
+                      <span className="font-medium">Werribee Post Office</span> - {finalT.werribeeLocation?.nearbyAmenities?.otherAmenities?.werribeePostOffice?.split(' - ')[1] ||
                         'Conveniently located for postal services and bill payments.'}
                     </div>
                   </li>
                   <li className="flex items-start">
                     <span className="text-primary mr-2">•</span>
                     <div>
-                      <span className="font-medium">Wyndham Cultural Centre</span> - {t.werribeeLocation?.nearbyAmenities?.otherAmenities?.wyndhamCulturalCentre?.split(' - ')[1] ||
+                      <span className="font-medium">Wyndham Cultural Centre</span> - {finalT.werribeeLocation?.nearbyAmenities?.otherAmenities?.wyndhamCulturalCentre?.split(' - ')[1] ||
                         'A performing arts venue hosting various cultural events and performances.'}
                     </div>
                   </li>
@@ -475,15 +484,15 @@ const WerribeeLocation: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.werribeeLocation?.otherConsultingLocations?.title || 'Other Consulting Locations'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.werribeeLocation?.otherConsultingLocations?.title || 'Other Consulting Locations'}</h2>
               <p className="text-muted-foreground">
-                {t.werribeeLocation?.otherConsultingLocations?.subtitle || 'Dr. Aliashkevich also consults at these nearby locations'}
+                {finalT.werribeeLocation?.otherConsultingLocations?.subtitle || 'Dr. Aliashkevich also consults at these nearby locations'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.werribeeLocation?.otherConsultingLocations?.description || 'For your convenience, Dr. Aliashkevich consults at multiple locations across Melbourne. If the Werribee location is not suitable for you, appointments can be arranged at these alternative locations.'}
+                {finalT.werribeeLocation?.otherConsultingLocations?.description || 'For your convenience, Dr. Aliashkevich consults at multiple locations across Melbourne. If the Werribee location is not suitable for you, appointments can be arranged at these alternative locations.'}
               </p>
             </div>
 
@@ -497,16 +506,16 @@ const WerribeeLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.werribeeLocation?.otherConsultingLocations?.mooneePonds?.title || 'Moonee Ponds'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.werribeeLocation?.otherConsultingLocations?.mooneePonds?.title || 'Moonee Ponds'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.werribeeLocation?.otherConsultingLocations?.mooneePonds?.description || 'Dr. Aliashkevich consults at the Moonee Ponds Specialist Centre, providing specialized neurosurgical care to patients in Melbourne\'s northwestern suburbs.'}
+                  {finalT.werribeeLocation?.otherConsultingLocations?.mooneePonds?.description || 'Dr. Aliashkevich consults at the Moonee Ponds Specialist Centre, providing specialized neurosurgical care to patients in Melbourne\'s northwestern suburbs.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.werribeeLocation?.otherConsultingLocations?.mooneePonds?.address?.split('：')[1] || '827 Mt Alexander Road, Moonee Ponds VIC 3039'}<br />
-                  <span className="font-medium">Phone:</span> {t.werribeeLocation?.otherConsultingLocations?.mooneePonds?.phone?.split('：')[1] || '03 9008 4200'}
+                  <span className="font-medium">Address:</span> {finalT.werribeeLocation?.otherConsultingLocations?.mooneePonds?.address?.split('：')[1] || '827 Mt Alexander Road, Moonee Ponds VIC 3039'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.werribeeLocation?.otherConsultingLocations?.mooneePonds?.phone?.split('：')[1] || '03 9008 4200'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/locations/moonee-ponds">{t.werribeeLocation?.otherConsultingLocations?.mooneePonds?.viewDetails || 'View Details'}</Link>
+                  <Link to="/locations/moonee-ponds">{finalT.werribeeLocation?.otherConsultingLocations?.mooneePonds?.viewDetails || 'View Details'}</Link>
                 </Button>
               </div>
 
@@ -519,16 +528,16 @@ const WerribeeLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.werribeeLocation?.otherConsultingLocations?.heidelberg?.title || 'Heidelberg'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.werribeeLocation?.otherConsultingLocations?.heidelberg?.title || 'Heidelberg'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.werribeeLocation?.otherConsultingLocations?.heidelberg?.description || 'Warringal Private Hospital in Heidelberg provides convenient access to neurosurgical care for patients in Melbourne\'s northern suburbs. Dr. Aliashkevich consults here regularly.'}
+                  {finalT.werribeeLocation?.otherConsultingLocations?.heidelberg?.description || 'Warringal Private Hospital in Heidelberg provides convenient access to neurosurgical care for patients in Melbourne\'s northern suburbs. Dr. Aliashkevich consults here regularly.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.werribeeLocation?.otherConsultingLocations?.heidelberg?.address?.split('：')[1] || '216 Burgundy Street, Heidelberg VIC 3084'}<br />
-                  <span className="font-medium">Phone:</span> {t.werribeeLocation?.otherConsultingLocations?.heidelberg?.phone?.split('：')[1] || '03 9008 4200'}
+                  <span className="font-medium">Address:</span> {finalT.werribeeLocation?.otherConsultingLocations?.heidelberg?.address?.split('：')[1] || '216 Burgundy Street, Heidelberg VIC 3084'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.werribeeLocation?.otherConsultingLocations?.heidelberg?.phone?.split('：')[1] || '03 9008 4200'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/locations/heidelberg">{t.werribeeLocation?.otherConsultingLocations?.heidelberg?.viewDetails || 'View Details'}</Link>
+                  <Link to="/locations/heidelberg">{finalT.werribeeLocation?.otherConsultingLocations?.heidelberg?.viewDetails || 'View Details'}</Link>
                 </Button>
               </div>
 
@@ -541,16 +550,16 @@ const WerribeeLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.werribeeLocation?.otherConsultingLocations?.sunbury?.title || 'Sunbury'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.werribeeLocation?.otherConsultingLocations?.sunbury?.title || 'Sunbury'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.werribeeLocation?.otherConsultingLocations?.sunbury?.description || 'Dr. Aliashkevich consults at Lake Imaging in Sunbury, providing specialized neurosurgical care to patients in Melbourne\'s outer northwestern region.'}
+                  {finalT.werribeeLocation?.otherConsultingLocations?.sunbury?.description || 'Dr. Aliashkevich consults at Lake Imaging in Sunbury, providing specialized neurosurgical care to patients in Melbourne\'s outer northwestern region.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.werribeeLocation?.otherConsultingLocations?.sunbury?.address?.split('：')[1] || '17 Horne Street, Sunbury VIC 3429'}<br />
-                  <span className="font-medium">Phone:</span> {t.werribeeLocation?.otherConsultingLocations?.sunbury?.phone?.split('：')[1] || '03 9008 4200'}
+                  <span className="font-medium">Address:</span> {finalT.werribeeLocation?.otherConsultingLocations?.sunbury?.address?.split('：')[1] || '17 Horne Street, Sunbury VIC 3429'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.werribeeLocation?.otherConsultingLocations?.sunbury?.phone?.split('：')[1] || '03 9008 4200'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/locations/sunbury">{t.werribeeLocation?.otherConsultingLocations?.sunbury?.viewDetails || 'View Details'}</Link>
+                  <Link to="/locations/sunbury">{finalT.werribeeLocation?.otherConsultingLocations?.sunbury?.viewDetails || 'View Details'}</Link>
                 </Button>
               </div>
             </div>
@@ -561,15 +570,15 @@ const WerribeeLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.werribeeLocation?.nearbyHospitals?.title || 'Nearby Hospitals'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.werribeeLocation?.nearbyHospitals?.title || 'Nearby Hospitals'}</h2>
               <p className="text-muted-foreground">
-                {t.werribeeLocation?.nearbyHospitals?.subtitle || 'Dr. Aliashkevich performs surgery at these hospitals'}
+                {finalT.werribeeLocation?.nearbyHospitals?.subtitle || 'Dr. Aliashkevich performs surgery at these hospitals'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.werribeeLocation?.nearbyHospitals?.description || 'Dr. Aliashkevich performs surgery at multiple hospitals across Melbourne, including the following facilities. These hospitals are equipped with state-of-the-art technology for neurosurgical and spine procedures.'}
+                {finalT.werribeeLocation?.nearbyHospitals?.description || 'Dr. Aliashkevich performs surgery at multiple hospitals across Melbourne, including the following facilities. These hospitals are equipped with state-of-the-art technology for neurosurgical and spine procedures.'}
               </p>
             </div>
 
@@ -583,16 +592,16 @@ const WerribeeLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.hospitals?.warringalPrivate?.title || 'Warringal Private Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.hospitals?.warringalPrivate?.title || 'Warringal Private Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.warringalPrivate?.description || 'Warringal Private Hospital is a leading private hospital in Melbourne\'s northern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
+                  {finalT.hospitals?.warringalPrivate?.description || 'Warringal Private Hospital is a leading private hospital in Melbourne\'s northern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.warringalPrivate?.address || 'Address: 216 Burgundy Street, Heidelberg VIC 3084'}<br />
-                  {t.hospitals?.warringalPrivate?.phone || 'Phone: (03) 9274 1300'}
+                  {finalT.hospitals?.warringalPrivate?.address || 'Address: 216 Burgundy Street, Heidelberg VIC 3084'}<br />
+                  {finalT.hospitals?.warringalPrivate?.phone || 'Phone: (03) 9274 1300'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.warringalprivatehospital.com.au/" target="_blank" rel="noopener noreferrer">{t.hospitals?.warringalPrivate?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.warringalprivatehospital.com.au/" target="_blank" rel="noopener noreferrer">{finalT.hospitals?.warringalPrivate?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
 
@@ -605,16 +614,16 @@ const WerribeeLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.hospitals?.epworthRichmond?.title || 'Epworth Richmond Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.hospitals?.epworthRichmond?.title || 'Epworth Richmond Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.epworthRichmond?.description || 'Epworth Richmond Hospital is one of Melbourne\'s largest private hospitals, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
+                  {finalT.hospitals?.epworthRichmond?.description || 'Epworth Richmond Hospital is one of Melbourne\'s largest private hospitals, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.epworthRichmond?.address || 'Address: 89 Bridge Road, Richmond VIC 3121'}<br />
-                  {t.hospitals?.epworthRichmond?.phone || 'Phone: (03) 9426 6666'}
+                  {finalT.hospitals?.epworthRichmond?.address || 'Address: 89 Bridge Road, Richmond VIC 3121'}<br />
+                  {finalT.hospitals?.epworthRichmond?.phone || 'Phone: (03) 9426 6666'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.epworth.org.au/our-locations/epworth-richmond" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthRichmond?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.epworth.org.au/our-locations/epworth-richmond" target="_blank" rel="noopener noreferrer">{finalT.hospitals?.epworthRichmond?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
 
@@ -627,16 +636,16 @@ const WerribeeLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.hospitals?.epworthEastern?.title || 'Epworth Eastern Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.hospitals?.epworthEastern?.title || 'Epworth Eastern Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.epworthEastern?.description || 'Epworth Eastern Hospital is a leading private hospital in Melbourne\'s eastern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
+                  {finalT.hospitals?.epworthEastern?.description || 'Epworth Eastern Hospital is a leading private hospital in Melbourne\'s eastern suburbs, offering comprehensive medical and surgical services. Dr. Aliashkevich performs neurosurgical and spine procedures at this facility, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.hospitals?.epworthEastern?.address || 'Address: 1 Arnold Street, Box Hill VIC 3128'}<br />
-                  {t.hospitals?.epworthEastern?.phone || 'Phone: (03) 8807 7100'}
+                  {finalT.hospitals?.epworthEastern?.address || 'Address: 1 Arnold Street, Box Hill VIC 3128'}<br />
+                  {finalT.hospitals?.epworthEastern?.phone || 'Phone: (03) 8807 7100'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <a href="https://www.epworth.org.au/our-locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{t.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
+                  <a href="https://www.epworth.org.au/our-locations/epworth-eastern" target="_blank" rel="noopener noreferrer">{finalT.hospitals?.epworthEastern?.visitWebsite || 'Visit Hospital Website'}</a>
                 </Button>
               </div>
             </div>
@@ -647,32 +656,33 @@ const WerribeeLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.werribeeLocation?.patientsPrivacy?.title || 'Patients\' Privacy'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.werribeeLocation?.patientsPrivacy?.title || 'Patients\' Privacy'}</h2>
               <p className="text-muted-foreground">
-                {t.werribeeLocation?.patientsPrivacy?.subtitle || 'Your privacy is our priority'}
+                {finalT.werribeeLocation?.patientsPrivacy?.subtitle || 'Your privacy is our priority'}
               </p>
             </div>
 
             <div className="max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground mb-4">
-                {t.werribeeLocation?.patientsPrivacy?.description1 || 'Dr Aliashkevich pays great respect to patient\'s privacy and provides a safe environment. The goal is to build and maintain trust between the neurosurgeon and the patient. Patients\' comfort is as important as their treatment, and we ensure that anything you discuss with Dr Aliashkevich is kept private.'}
+                {finalT.werribeeLocation?.patientsPrivacy?.description1 || 'Dr Aliashkevich pays great respect to patient\'s privacy and provides a safe environment. The goal is to build and maintain trust between the neurosurgeon and the patient. Patients\' comfort is as important as their treatment, and we ensure that anything you discuss with Dr Aliashkevich is kept private.'}
+import en from '@/locales/en';
               </p>
               <p className="text-muted-foreground mb-4">
-                {t.werribeeLocation?.patientsPrivacy?.description2 || 'Any files and all personal information are kept secure. Patients can give consent to share their health information, for example, when attending other medical practitioners.'} <a href="https://www.peninsulaph.com.au/Specialists/Specialists/peninsula-private-hospital/neurosurgery/105163/dr-ales-aliashkevich" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> {t.werribeeLocation?.patientsPrivacy?.description2 ? '' : 'will never release any information to insurers or other parties without consent.'}
+                {finalT.werribeeLocation?.patientsPrivacy?.description2 || 'Any files and all personal information are kept secure. Patients can give consent to share their health information, for example, when attending other medical practitioners.'} <a href="https://www.peninsulaph.com.au/Specialists/Specialists/peninsula-private-hospital/neurosurgery/105163/dr-ales-aliashkevich" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr Aliashkevich</a> {finalT.werribeeLocation?.patientsPrivacy?.description2 ? '' : 'will never release any information to insurers or other parties without consent.'}
               </p>
               <p className="text-muted-foreground">
-                {t.werribeeLocation?.patientsPrivacy?.description3 || 'At the end of every patient\'s visit, our office emails a summary of their conditions, including the diagnosis, history, examination findings, radiological results and recommended action plan.'}
+                {finalT.werribeeLocation?.patientsPrivacy?.description3 || 'At the end of every patient\'s visit, our office emails a summary of their conditions, including the diagnosis, history, examination findings, radiological results and recommended action plan.'}
               </p>
             </div>
 
             <div className="text-center">
-              <h2 className="text-2xl font-bold mb-6">{t.werribeeLocation?.readyToSchedule?.title || 'Contact Us'}</h2>
+              <h2 className="text-2xl font-bold mb-6">{finalT.werribeeLocation?.readyToSchedule?.title || 'Contact Us'}</h2>
               <p className="text-lg mb-8 max-w-2xl mx-auto text-muted-foreground">
-                {t.werribeeLocation?.readyToSchedule?.description || 'Don\'t wait to seek help if you are struggling with pain, a neurosurgical or a spinal condition. Schedule a consultation with Dr Ales Aliashkevich in Werribee and take the first step toward improved health and well-being. We\'re here to support you every step of the way to recovery.'}
+                {finalT.werribeeLocation?.readyToSchedule?.description || 'Don\'t wait to seek help if you are struggling with pain, a neurosurgical or a spinal condition. Schedule a consultation with Dr Ales Aliashkevich in Werribee and take the first step toward improved health and well-being. We\'re here to support you every step of the way to recovery.'}
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto mb-8">
                 <div className="card p-6 rounded-lg shadow-md bg-card text-center">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.werribeeLocation?.address || 'Address'}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.werribeeLocation?.address || 'Address'}</h3>
                   <p className="text-muted-foreground">
                     297 Princes Hwy<br />
                     Werribee VIC 3030
@@ -680,14 +690,14 @@ const WerribeeLocation: React.FC = () => {
                 </div>
 
                 <div className="card p-6 rounded-lg shadow-md bg-card text-center">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.email || 'Email'}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.email || 'Email'}</h3>
                   <p className="text-muted-foreground">
                     info@mineuro.com.au
                   </p>
                 </div>
 
                 <div className="card p-6 rounded-lg shadow-md bg-card text-center">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.phone || 'Phone'}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.phone || 'Phone'}</h3>
                   <p className="text-muted-foreground">
                     03 90084200
                   </p>
@@ -696,13 +706,13 @@ const WerribeeLocation: React.FC = () => {
 
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">
-                  <Link to="/appointments">{t.werribeeLocation?.readyToSchedule?.bookAppointment || 'Book an Appointment'}</Link>
+                  <Link to="/appointments">{finalT.werribeeLocation?.readyToSchedule?.bookAppointment || 'Book an Appointment'}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/locations">{t.werribeeLocation?.readyToSchedule?.viewAllLocations || 'View All Locations'}</Link>
+                  <Link to="/locations">{finalT.werribeeLocation?.readyToSchedule?.viewAllLocations || 'View All Locations'}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">{t.werribeeLocation?.readyToSchedule?.contactUs || 'Contact Us'}</Link>
+                  <Link to="/contact">{finalT.werribeeLocation?.readyToSchedule?.contactUs || 'Contact Us'}</Link>
                 </Button>
               </div>
             </div>

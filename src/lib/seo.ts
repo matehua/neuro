@@ -1,9 +1,9 @@
-import { SEOData } from '@/hooks/useSEO';
+import type { SEOData, SupportedLanguageCode, SEOValidationResult, LanguageAlternate, MetaTagConfig, LinkTagConfig } from '@/types/seo';
 
 // Supported languages configuration
 export const SUPPORTED_LANGUAGES = {
   en: {
-    code: 'en',
+  code: 'en',
     locale: 'en_AU',
     name: 'English',
     nativeName: 'English',
@@ -11,7 +11,7 @@ export const SUPPORTED_LANGUAGES = {
     hreflang: 'en-AU'
   },
   zh: {
-    code: 'zh',
+  code: 'zh',
     locale: 'zh_CN',
     name: 'Chinese',
     nativeName: '中文',
@@ -19,8 +19,6 @@ export const SUPPORTED_LANGUAGES = {
     hreflang: 'zh-CN'
   }
 } as const;
-
-export type SupportedLanguageCode = keyof typeof SUPPORTED_LANGUAGES;
 
 // Base SEO configuration
 export const SEO_CONFIG = {
@@ -45,14 +43,14 @@ export const PRACTICE_INFO = {
   url: SEO_CONFIG.siteUrl,
   telephone: '+61 3 9008 4200',
   address: {
-    streetAddress: '1 Surrey Hills',
+  streetAddress: '1 Surrey Hills',
     addressLocality: 'Surrey Hills',
     addressRegion: 'Victoria',
     postalCode: '3127',
     addressCountry: 'Australia'
   },
   doctor: {
-    name: 'Dr Ales Aliashkevich',
+  name: 'Dr Ales Aliashkevich',
     specialty: [
       'Neurosurgery',
       'Spine Surgery',
@@ -72,7 +70,7 @@ export const generatePageSEO = (
 ): SEOData => {
   // Define base SEO from SEO_CONFIG
   const baseSeoData: SEOData = {
-    title: SEO_CONFIG.defaultTitle,
+  title: SEO_CONFIG.defaultTitle,
     description: SEO_CONFIG.defaultDescription,
     keywords: SEO_CONFIG.defaultKeywords,
     ogTitle: SEO_CONFIG.defaultTitle,
@@ -89,58 +87,58 @@ export const generatePageSEO = (
   // Page-specific SEO configurations (remains unchanged)
   const pageConfigs: Record<string, Partial<SEOData>> = {
     home: {
-      title: 'Dr Ales Aliashkevich | Leading Neurosurgeon & Spine Surgeon Melbourne',
+  title: 'Dr Ales Aliashkevich | Leading Neurosurgeon & Spine Surgeon Melbourne',
       description: 'Expert neurosurgeon Dr Ales Aliashkevich offers advanced brain and spine surgery in Melbourne. Specializing in minimally invasive procedures with cutting-edge technology.',
       keywords: 'neurosurgeon Melbourne, spine surgeon Victoria, brain surgery, minimally invasive spine surgery, Dr Ales Aliashkevich, miNEURO',
       canonical: '/', // Example: path for homepage
     },
     appointments: {
-      title: 'Book Appointment | Dr Ales Aliashkevich Neurosurgeon Melbourne',
+  title: 'Book Appointment | Dr Ales Aliashkevich Neurosurgeon Melbourne',
       description: 'Schedule your consultation with Dr Ales Aliashkevich, leading neurosurgeon in Melbourne. Expert brain and spine surgery consultations available.',
       keywords: 'book neurosurgeon appointment Melbourne, spine surgeon consultation, brain surgery appointment',
-      canonical: '/appointments',
+      canonical: '/appointments'
     },
     expertise: {
-      title: 'Neurosurgery Expertise | Advanced Brain & Spine Surgery Melbourne',
+  title: 'Neurosurgery Expertise | Advanced Brain & Spine Surgery Melbourne',
       description: 'Discover Dr Aliashkevich\'s expertise in neurosurgery, spine surgery, and minimally invasive procedures. Advanced surgical techniques for optimal patient outcomes.',
       keywords: 'neurosurgery expertise, spine surgery techniques, minimally invasive neurosurgery, robotic spine surgery',
-      canonical: '/expertise',
+      canonical: '/expertise'
     },
     locations: {
-      title: 'Clinic Locations | Neurosurgeon Melbourne Victoria',
+  title: 'Clinic Locations | Neurosurgeon Melbourne Victoria',
       description: 'Find Dr. Aliashkevich\'s neurosurgery clinic locations across Melbourne and Victoria. Convenient locations for brain and spine surgery consultations.',
       keywords: 'neurosurgeon clinic Melbourne, spine surgeon locations Victoria, brain surgery clinic',
-      canonical: '/locations',
+      canonical: '/locations'
     },
     'patient-resources': {
       title: 'Patient Resources | Spine Health & Recovery Information',
       description: 'Comprehensive patient resources for spine health, recovery guides, and educational materials from Dr. Aliashkevich\'s neurosurgery practice.',
       keywords: 'spine health resources, neurosurgery recovery, patient education, spine exercises',
-      canonical: '/patient-resources',
+      canonical: '/patient-resources'
     },
     medicolegal: {
-      title: 'Medico-Legal Reports | Expert Neurosurgical Assessments',
+  title: 'Medico-Legal Reports | Expert Neurosurgical Assessments',
       description: 'Professional medico-legal reports and expert assessments from Dr Ales Aliashkevich. Comprehensive neurological and spinal injury evaluations.',
       keywords: 'medico-legal reports, neurosurgical assessment, spinal injury evaluation, expert medical opinion',
-      canonical: '/medicolegal',
+      canonical: '/medicolegal'
     },
     'gp-resources': {
       title: 'GP Resources | Referral Guidelines for Neurosurgery',
       description: 'Resources for general practitioners including referral protocols, diagnostic guidelines, and care coordination for neurosurgical patients.',
       keywords: 'GP neurosurgery referrals, medical professional resources, neurosurgical guidelines',
-      canonical: '/gp-resources',
+      canonical: '/gp-resources'
     },
     contact: {
-      title: 'Contact Dr Ales Aliashkevich | Neurosurgeon Melbourne',
+  title: 'Contact Dr Ales Aliashkevich | Neurosurgeon Melbourne',
       description: 'Contact Dr Ales Aliashkevich\'s neurosurgery practice in Melbourne. Get in touch for consultations, appointments, and inquiries.',
       keywords: 'contact neurosurgeon Melbourne, spine surgeon contact, neurosurgery clinic contact',
-      canonical: '/contact',
+      canonical: '/contact'
     },
     faq: {
-      title: 'Frequently Asked Questions | Neurosurgery & Spine Surgery',
+  title: 'Frequently Asked Questions | Neurosurgery & Spine Surgery',
       description: 'Common questions about neurosurgery, spine surgery, and treatments answered by Dr Ales Aliashkevich\'s practice.',
       keywords: 'neurosurgery FAQ, spine surgery questions, brain surgery information',
-      canonical: '/faq',
+      canonical: '/faq'
     }
   };
 
@@ -223,7 +221,7 @@ export const generateProcedureSEO = (
     description: `Expert ${procedureName} performed by Dr Ales Aliashkevich in Melbourne. Advanced surgical techniques for optimal patient outcomes.`,
     keywords: `${procedureName} Melbourne, ${procedureName} surgeon, minimally invasive ${procedureName}`,
     canonical: procedureSpecificCanonicalPath,
-    ...customData,
+    ...customData
   });
 };
 
@@ -299,7 +297,7 @@ export const generateBreadcrumbStructuredData = (breadcrumbs?: Array<{ name: str
   return {
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
-    "itemListElement": breadcrumbs?.map((crumb: any, index: any) => ({
+    "itemListElement": breadcrumbs?.map((crumb: { name: string; url: string }, index: number) => ({
       "@type": "ListItem",
       "position": index + 1,
       "name": crumb.name,
@@ -383,7 +381,7 @@ export const normalizeCanonicalUrl = (
 /**
  * Validate structured data against schema.org standards
  */
-export const validateStructuredData = (data: any): {
+export const validateStructuredData = (data: unknown): {
   isValid: boolean;
   errors: string[];
   warnings: string[]

@@ -15,7 +15,6 @@ import { useDeviceDetection } from '@/contexts/DeviceContext';
  * Reusable hero section for medical condition pages
  */
 
-
 const ConditionHero: React.FC<ConditionHeroProps> = React.memo(({
   title,
   description,
@@ -95,7 +94,7 @@ const ConditionHero: React.FC<ConditionHeroProps> = React.memo(({
             "grid gap-6",
             deviceInfo.isMobile ? "grid-cols-1" : "grid-cols-2 md:grid-cols-4"
           )}>
-            {quickFacts?.map((fact: any, index: any) => (
+            {quickFacts?.map((fact: { icon: React.ReactNode; title: string; value: string }, index: number) => (
               <Card key={index} className="text-center">
                 <CardContent className="pt-6">
                   <div className="h-8 w-8 mx-auto mb-2 text-primary flex items-center justify-center">

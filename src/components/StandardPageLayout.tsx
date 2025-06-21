@@ -15,7 +15,6 @@ import { useSEO } from '@/hooks/useSEO';
  * Refactored for better maintainability and modularity
  */
 
-
 // Re-export types for backward compatibility
 export type { StandardPageLayoutProps } from './layout/types';
 

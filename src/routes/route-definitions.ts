@@ -25,7 +25,7 @@ export const ROUTE_PATHS = {
 
   // Patient Resources Routes
   PATIENT_RESOURCES_ROUTES: {
-    CONDITION_INFORMATION: '/patient-resources/condition-information',
+  CONDITION_INFORMATION: '/patient-resources/condition-information',
     SPINE_CONDITIONS_LIBRARY: '/patient-resources/spine-conditions-library',
     EXERCISE_LIBRARY: '/patient-resources/exercise-library',
     INDIVIDUAL_SPINE_HEALTH_PROGRAMME: '/patient-resources/individual-spine-health-programme',
@@ -37,11 +37,14 @@ export const ROUTE_PATHS = {
     AGE_SPECIFIC_SPINE_RECOMMENDATIONS: '/patient-resources/age-specific-spine-recommendations',
     YOUTHFUL_SPINE: '/patient-resources/youthful-spine',
     LIFESTYLE_MODIFICATIONS: '/patient-resources/lifestyle-modifications',
+    ASSESSMENT_TOOLS: '/patient-resources/assessment-tools',
+    PATIENT_DASHBOARD: '/patient-resources/patient-dashboard',
+    SPINE_HEALTH_APP: '/patient-resources/spine-health-app'
   },
 
   // Medical Conditions Routes
   CONDITIONS: {
-    HERNIATED_DISC: '/patient-resources/conditions/herniated-disc',
+  HERNIATED_DISC: '/patient-resources/conditions/herniated-disc',
     SPINAL_STENOSIS: '/patient-resources/conditions/spinal-stenosis',
     SCIATICA: '/patient-resources/conditions/sciatica',
     RADICULOPATHY: '/patient-resources/conditions/radiculopathy',
@@ -54,20 +57,20 @@ export const ROUTE_PATHS = {
     OCCIPITAL_NEURALGIA: '/patient-resources/conditions/occipital-neuralgia',
     SPONDYLOSIS: '/patient-resources/conditions/spondylosis',
     PARS_DEFECTS: '/patient-resources/conditions/pars-defects',
-    SPONDYLOLISTHESIS: '/patient-resources/conditions/spondylolisthesis',
+    SPONDYLOLISTHESIS: '/patient-resources/conditions/spondylolisthesis'
   },
 
   // Expertise/Technologies Routes
   EXPERTISE_ROUTES: {
-    CERVICAL_DISC_REPLACEMENT: '/expertise/cervical-disc-replacement',
+  CERVICAL_DISC_REPLACEMENT: '/expertise/cervical-disc-replacement',
     LUMBAR_DISC_REPLACEMENT: '/expertise/lumbar-disc-replacement',
     IMAGE_GUIDED_SURGERY: '/expertise/image-guided-surgery',
-    ROBOTIC_SPINE_SURGERY: '/expertise/robotic-spine-surgery',
+    ROBOTIC_SPINE_SURGERY: '/expertise/robotic-spine-surgery'
   },
 
   // Location Routes
   LOCATION_ROUTES: {
-    SURREY_HILLS: '/locations/surrey-hills',
+  SURREY_HILLS: '/locations/surrey-hills',
     MORNINGTON: '/locations/mornington',
     FRANKSTON: '/locations/frankston',
     LANGWARRIN: '/locations/langwarrin',
@@ -78,16 +81,16 @@ export const ROUTE_PATHS = {
     SUNBURY: '/locations/sunbury',
     DANDENONG: '/locations/dandenong',
     WANTIRNA: '/locations/wantirna',
-    LOCATION_DETAIL: '/locations/location-detail',
+    LOCATION_DETAIL: '/locations/location-detail'
   },
 
   // GP Resources Routes
   GP_RESOURCES_ROUTES: {
-    REFERRAL_PROTOCOLS: '/gp-resources/referral-protocols',
+  REFERRAL_PROTOCOLS: '/gp-resources/referral-protocols',
     DIAGNOSTICS: '/gp-resources/diagnostics',
     CARE_COORDINATION: '/gp-resources/care-coordination',
-    EMERGENCIES: '/gp-resources/emergencies',
-  },
+    EMERGENCIES: '/gp-resources/emergencies'
+  }
 } as const;
 
 // Route redirects
@@ -101,7 +104,7 @@ export const ROUTE_REDIRECTS: Record<string, string> = {
   '/privacy': ROUTE_PATHS.PRIVACY_POLICY,
   '/terms': ROUTE_PATHS.TERMS_CONDITIONS,
   '/book': ROUTE_PATHS.APPOINTMENTS,
-  '/booking': ROUTE_PATHS.APPOINTMENT_BOOKING,
+  '/booking': ROUTE_PATHS.APPOINTMENT_BOOKING
 };
 
 // Route metadata interface
@@ -122,7 +125,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['neurosurgery', 'spine surgery', 'brain surgery', 'Melbourne'],
     category: 'core',
     priority: 'high',
-    changeFreq: 'weekly',
+    changeFreq: 'weekly'
   },
   [ROUTE_PATHS.APPOINTMENTS]: {
     title: 'Book Appointment',
@@ -130,7 +133,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['appointments', 'booking', 'consultation', 'neurosurgery'],
     category: 'core',
     priority: 'high',
-    changeFreq: 'daily',
+    changeFreq: 'daily'
   },
   [ROUTE_PATHS.APPOINTMENT_BOOKING]: {
     title: 'Appointment Booking',
@@ -138,7 +141,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['booking', 'appointment', 'schedule'],
     category: 'core',
     priority: 'high',
-    changeFreq: 'daily',
+    changeFreq: 'daily'
   },
   [ROUTE_PATHS.EXPERTISE]: {
     title: 'Expertise & Technologies',
@@ -146,7 +149,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['neurosurgical procedures', 'medical technology', 'spine surgery'],
     category: 'expertise',
     priority: 'high',
-    changeFreq: 'monthly',
+    changeFreq: 'monthly'
   },
   [ROUTE_PATHS.PATIENT_RESOURCES]: {
     title: 'Patient Resources',
@@ -154,7 +157,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['patient resources', 'spine health', 'exercises', 'conditions'],
     category: 'patient-resources',
     priority: 'high',
-    changeFreq: 'weekly',
+    changeFreq: 'weekly'
   },
   [ROUTE_PATHS.CONTACT]: {
     title: 'Contact Us',
@@ -162,7 +165,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['contact', 'appointments', 'consultation'],
     category: 'core',
     priority: 'high',
-    changeFreq: 'monthly',
+    changeFreq: 'monthly'
   },
   [ROUTE_PATHS.FAQ]: {
     title: 'Frequently Asked Questions',
@@ -170,7 +173,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['FAQ', 'questions', 'neurosurgery', 'spine surgery'],
     category: 'core',
     priority: 'medium',
-    changeFreq: 'monthly',
+    changeFreq: 'monthly'
   },
   [ROUTE_PATHS.LOCATIONS]: {
     title: 'Our Locations',
@@ -178,7 +181,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['locations', 'clinics', 'Melbourne', 'neurosurgery'],
     category: 'locations',
     priority: 'high',
-    changeFreq: 'monthly',
+    changeFreq: 'monthly'
   },
   [ROUTE_PATHS.SPECIALTIES]: {
     title: 'Neurosurgical Specialties',
@@ -186,7 +189,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['specialties', 'procedures', 'neurosurgery', 'treatments'],
     category: 'expertise',
     priority: 'high',
-    changeFreq: 'monthly',
+    changeFreq: 'monthly'
   },
   [ROUTE_PATHS.MEDICOLEGAL]: {
     title: 'Medico-Legal Services',
@@ -194,7 +197,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['medico-legal', 'assessments', 'reports', 'expert'],
     category: 'core',
     priority: 'medium',
-    changeFreq: 'monthly',
+    changeFreq: 'monthly'
   },
   [ROUTE_PATHS.GP_RESOURCES]: {
     title: 'GP Resources',
@@ -202,7 +205,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['GP resources', 'referrals', 'protocols', 'healthcare'],
     category: 'gp-resources',
     priority: 'medium',
-    changeFreq: 'monthly',
+    changeFreq: 'monthly'
   },
   [ROUTE_PATHS.PRIVACY_POLICY]: {
     title: 'Privacy Policy',
@@ -210,7 +213,7 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['privacy', 'data protection', 'policy'],
     category: 'core',
     priority: 'low',
-    changeFreq: 'yearly',
+    changeFreq: 'yearly'
   },
   [ROUTE_PATHS.TERMS_CONDITIONS]: {
     title: 'Terms & Conditions',
@@ -218,8 +221,8 @@ export const ROUTE_METADATA: Record<string, RouteMetadata> = {
     keywords: ['terms', 'conditions', 'service'],
     category: 'core',
     priority: 'low',
-    changeFreq: 'yearly',
-  },
+    changeFreq: 'yearly'
+  }
 };
 
 // Utility functions
@@ -272,6 +275,6 @@ export function generateSitemapData() {
   return Object.entries(ROUTE_METADATA).map(([path, metadata]) => ({
     path,
     ...metadata,
-    languages: SUPPORTED_LANGUAGES,
+    languages: SUPPORTED_LANGUAGES
   }));
 }

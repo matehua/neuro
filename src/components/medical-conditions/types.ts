@@ -5,7 +5,6 @@ import { ReactNode } from 'react';
  * Shared type definitions for medical condition pages and components
  */
 
-
 // Base condition information
 export interface ConditionInfo {
   name: string;
@@ -14,12 +13,14 @@ export interface ConditionInfo {
   onsetAge: string;
   commonLocations: string;
   management: string;
+}
 
 // Quick facts for condition overview
 export interface QuickFact {
   icon: ReactNode;
   title: string;
   value: string;
+}
 
 // Degeneration stage information
 export interface DegenerationStage {
@@ -27,17 +28,20 @@ export interface DegenerationStage {
   title: string;
   characteristics: string[];
   severity: 'normal' | 'mild' | 'moderate' | 'severe' | 'critical';
+}
 
 // Anatomical component information
 export interface AnatomicalComponent {
   name: string;
   description: string;
+}
 
 // Structural change information
 export interface StructuralChange {
   type: 'biochemical' | 'structural';
   title: string;
   description: string;
+}
 
 // Cause/Risk factor information
 export interface CauseRiskFactor {
@@ -45,6 +49,7 @@ export interface CauseRiskFactor {
   title: string;
   description: string;
   icon: ReactNode;
+}
 
 // Symptom information
 export interface Symptom {
@@ -53,6 +58,7 @@ export interface Symptom {
   description: string;
   severity: 'mild' | 'moderate' | 'severe';
   icon: ReactNode;
+}
 
 // Diagnostic method information
 export interface DiagnosticMethod {
@@ -61,6 +67,7 @@ export interface DiagnosticMethod {
   description: string;
   accuracy: string;
   icon: ReactNode;
+}
 
 // Treatment option information
 export interface TreatmentOption {
@@ -70,6 +77,7 @@ export interface TreatmentOption {
   effectiveness: string;
   duration: string;
   icon: ReactNode;
+}
 
 // Exercise information
 export interface Exercise {
@@ -79,6 +87,7 @@ export interface Exercise {
   duration: string;
   frequency: string;
   benefits: string[];
+}
 
 // Prevention strategy information
 export interface PreventionStrategy {
@@ -87,12 +96,14 @@ export interface PreventionStrategy {
   description: string;
   effectiveness: string;
   icon: ReactNode;
+}
 
 // Prognosis information
 export interface PrognosisInfo {
   timeframe: string;
   outcome: string;
   factors: string[];
+}
 
 // Complete condition data structure
 export interface ConditionData {
@@ -108,6 +119,7 @@ export interface ConditionData {
   exercises?: Exercise[];
   prevention: PreventionStrategy[];
   prognosis: PrognosisInfo[];
+}
 
 // Component props interfaces
 export interface ConditionHeroProps {
@@ -115,38 +127,48 @@ export interface ConditionHeroProps {
   description: string;
   backgroundImage?: string;
   quickFacts: QuickFact[];
+}
 
 export interface ConditionOverviewProps {
   title: string;
   description: string[];
   keyPoints: string[];
   image?: string;
+}
 
 export interface DegenerationProcessProps {
   stages: DegenerationStage[];
   anatomicalComponents: AnatomicalComponent[];
   structuralChanges: StructuralChange[];
+}
 
 export interface CausesRiskFactorsProps {
   causes: CauseRiskFactor[];
+}
 
 export interface SymptomsProps {
   symptoms: Symptom[];
+}
 
 export interface DiagnosticsProps {
   methods: DiagnosticMethod[];
+}
 
 export interface TreatmentOptionsProps {
   treatments: TreatmentOption[];
+}
 
 export interface ExercisesProps {
   exercises: Exercise[];
+}
 
 export interface PreventionProps {
   strategies: PreventionStrategy[];
+}
 
 export interface PrognosisProps {
   prognosis: PrognosisInfo[];
+}
 
 // Utility types
 export type ConditionSection = 
@@ -165,3 +187,4 @@ export interface ConditionPageProps {
   sections?: ConditionSection[];
   showAssessment?: boolean;
   showBooking?: boolean;
+}

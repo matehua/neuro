@@ -1,4 +1,4 @@
-import React from 'react';
+import React , { useEffect, useCallback, useMemo } from 'react';
 
 /**
  * Performance metrics interface
@@ -316,7 +316,7 @@ export function usePerformanceMetric(name: string, dependencies: React.Dependenc
     return () => {
       monitor.endMeasure(name);
     };
-  }, [getMonitor, name, ...dependencies]);
+  }, [getMonitor, name, dependencies]);
 
   return React.useMemo(() => ({
     startMeasure: (metricName: string) => getMonitor().startMeasure(metricName),

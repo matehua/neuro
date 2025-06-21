@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-
+import React, { useState, useEffect } from 'react';
 import { useLanguage, SupportedLanguage } from '@/contexts/LanguageContext';
+
 import {
   Select,
   SelectContent,

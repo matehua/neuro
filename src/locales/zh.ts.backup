@@ -1,0 +1,36 @@
+export default {
+  consultingRooms: {
+    hero: {
+      title: "在萨里山扩展您的医疗实践",
+      subtitle: "专业环境",
+      description: "在萨里山的miNEURO医疗咨询套房租用全套设备的医疗咨询室。对于医疗专业人士来说，我们的先进空间位于主要医疗设施和交通枢纽附近，是理想之选。无论您需要临时还是永久设置，我们在充满活力的购物区的黄金位置提供现代化和便捷的工作空间，以提供一流的患者护理。",
+      scheduleViewing: "安排参观"
+    },
+    features: {
+      convenientLocation: {
+        title: "便利位置",
+        description: "我们的设施距离繁忙的博士山医疗中心、爱普沃斯东部医院、几家全科诊所和繁忙的购物/商业/交通区域仅几分钟车程。"
+      },
+      fullyEquipped: {
+        title: "全套设备房间",
+        description: "我们的咨询室配备了现代化的医疗设备、经验丰富的接待员、检查台、人体工学座椅、电脑、洗手池和高速互联网接入。"
+      },
+      flexibleTerms: {
+        title: "灵活的许可条款",
+        description: "我们提供灵活的许可条款，包括临时、短期和长期租赁选项，以满足您的需求。"
+      },
+      customisation: {
+        title: "定制选项",
+        description: "无论您需要额外的医疗设备还是特定的房间配置，我们都提供定制选项以满足您的要求。"
+      },
+      receptionistSupport: {
+        title: "接待员支持",
+        description: "从迎接患者到管理预约和咨询，我们经验丰富的接待员在这里协助您提供卓越的患者护理。"
+      },
+      professionalEnvironment: {
+        title: "专业环境",
+        description: "从温馨的接待区到设备齐全的咨询室，我们优先为所有使用者创造积极的体验。"
+      }
+    }
+  }
+};

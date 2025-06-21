@@ -1,7 +1,7 @@
-import { useEffect } from 'react';
-
+import React, { useEffect } from 'react';
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
+
 
 const TermsConditions: React.FC = () => {
   

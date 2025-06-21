@@ -19,7 +19,7 @@ const ScreenReaderAnnouncer: React.FC<ScreenReaderAnnouncerProps> = ({
   message,
   politeness = 'polite',
   clearAfter = 5000,
-  role = 'status',
+  role = 'status'
 }) => {
   const announcerRef = useRef<HTMLDivElement>(null);
 
@@ -65,5 +65,7 @@ const ScreenReaderAnnouncer: React.FC<ScreenReaderAnnouncerProps> = ({
     />
   );
 };
+
+ScreenReaderAnnouncer.displayName = 'ScreenReaderAnnouncer';
 
 export default ScreenReaderAnnouncer;

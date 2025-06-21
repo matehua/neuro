@@ -1,13 +1,13 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Clock } from 'lucide-react';
-import { useEffect } from 'react';
-
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import SafeImage from '@/components/SafeImage';
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
+
 
 const Locations: React.FC = () => {
   const deviceInfo = useDeviceDetection();

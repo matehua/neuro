@@ -1,0 +1,155 @@
+{
+  "duplicateExports": [
+    {
+      "export": "named:MedicalImage",
+      "files": [
+        "src/components/EnhancedImage.tsx",
+        "src/components/OptimizedImage.tsx"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "export": "named:SupportedLanguage",
+      "files": [
+        "src/contexts/LanguageContext.tsx",
+        "src/routes/route-definitions.ts"
+      ],
+      "severity": "HIGH"
+    },
+    {
+      "export": "named:SUPPORTED_LANGUAGES",
+      "files": [
+        "src/lib/seo.ts",
+        "src/routes/route-definitions.ts"
+      ],
+      "severity": "HIGH"
+    }
+  ],
+  "missingImports": [
+    {
+      "file": "src/main.tsx",
+      "import": "./index.css",
+      "severity": "HIGH"
+    },
+    {
+      "file": "src/main.tsx",
+      "import": "./App.tsx",
+      "severity": "HIGH"
+    }
+  ],
+  "circularDependencies": [],
+  "inconsistentNaming": [
+    {
+      "file": "src/components/layout/index.ts",
+      "issue": "Component file should be PascalCase",
+      "current": "index",
+      "severity": "MEDIUM"
+    },
+    {
+      "file": "src/components/layout/types.ts",
+      "issue": "Component file should be PascalCase",
+      "current": "types",
+      "severity": "MEDIUM"
+    },
+    {
+      "file": "src/components/medical-conditions/index.ts",
+      "issue": "Component file should be PascalCase",
+      "current": "index",
+      "severity": "MEDIUM"
+    },
+    {
+      "file": "src/components/medical-conditions/types.ts",
+      "issue": "Component file should be PascalCase",
+      "current": "types",
+      "severity": "MEDIUM"
+    },
+    {
+      "file": "src/routes/routeConfig.tsx",
+      "issue": "Component file should be PascalCase",
+      "current": "routeConfig",
+      "severity": "MEDIUM"
+    },
+    {
+      "file": "src/routes/route-loader.tsx",
+      "issue": "Hook file should start with \"use\"",
+      "current": "route-loader",
+      "severity": "HIGH"
+    }
+  ],
+  "missingTranslations": [],
+  "unusedFiles": [],
+  "typeConflicts": [],
+  "pathInconsistencies": [],
+  "componentStructureIssues": [
+    {
+      "file": "src/components/EnhancedImage.tsx",
+      "issue": "Component is too large (over 300 lines)",
+      "linesOfCode": 328,
+      "severity": "MEDIUM"
+    },
+    {
+      "file": "src/components/Footer.tsx",
+      "issue": "Component is too large (over 300 lines)",
+      "linesOfCode": 343,
+      "severity": "MEDIUM"
+    },
+    {
+      "file": "src/components/layout/index.ts",
+      "issue": "Missing React import",
+      "severity": "HIGH"
+    },
+    {
+      "file": "src/components/layout/index.ts",
+      "issue": "Component should have default export",
+      "severity": "HIGH"
+    },
+    {
+      "file": "src/components/layout/LayoutVariants.tsx",
+      "issue": "Component should have default export",
+      "severity": "HIGH"
+    },
+    {
+      "file": "src/components/layout/types.ts",
+      "issue": "Component should have default export",
+      "severity": "HIGH"
+    },
+    {
+      "file": "src/components/medical-conditions/index.ts",
+      "issue": "Missing React import",
+      "severity": "HIGH"
+    },
+    {
+      "file": "src/components/medical-conditions/index.ts",
+      "issue": "Component should have default export",
+      "severity": "HIGH"
+    },
+    {
+      "file": "src/components/medical-conditions/types.ts",
+      "issue": "Component should have default export",
+      "severity": "HIGH"
+    },
+    {
+      "file": "src/components/Navbar.tsx",
+      "issue": "Component is too large (over 300 lines)",
+      "linesOfCode": 416,
+      "severity": "MEDIUM"
+    },
+    {
+      "file": "src/routes/routeConfig.tsx",
+      "issue": "Component should have default export",
+      "severity": "HIGH"
+    }
+  ],
+  "organizationIssues": [
+    {
+      "file": "src/routes/routeConfig.tsx",
+      "issue": "Component not in components or pages directory",
+      "severity": "MEDIUM"
+    },
+    {
+      "file": "src/routes/route-loader.tsx",
+      "issue": "Hook not in hooks directory",
+      "severity": "MEDIUM"
+    }
+  ]
+}

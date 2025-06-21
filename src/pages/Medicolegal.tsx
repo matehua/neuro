@@ -1,14 +1,28 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import PageHeader from '@/components/PageHeader';
 import SafeImage from '@/components/SafeImage';
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
+interface LocationInfo {
+  name: string;
+  address: string;
+}
 
 const Medicolegal: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Add minimal fallback structure based on component needs
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -18,8 +32,8 @@ const Medicolegal: React.FC = () => {
   return (
     <StandardPageLayout showHeader={false}>
       <PageHeader
-        title={t.medicolegal?.title || 'Medicolegal Services'}
-        subtitle={t.medicolegal?.subtitle || 'Expert medicolegal assessments and reports for legal and insurance purposes.'}
+        title={finalT.medicolegal?.title || 'Medicolegal Services'}
+        subtitle={finalT.medicolegal?.subtitle || 'Expert medicolegal assessments and reports for legal and insurance purposes.'}
         backgroundImage="/images/themis-statue-holding-a-scale-Q8JZGEY-min.jpg"
         enableParallax={true}
       />
@@ -66,9 +80,9 @@ const Medicolegal: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.medicolegal?.assessmentsReports?.title || 'Assessments and Reports'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.medicolegal?.assessmentsReports?.title || 'Assessments and Reports'}</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                {t.medicolegal?.assessmentsReports?.description || 'Expert medicolegal assessments for brain, spine, and nerve injuries.'}
+                {finalT.medicolegal?.assessmentsReports?.description || 'Expert medicolegal assessments for brain, spine, and nerve injuries.'}
               </p>
             </div>
 
@@ -76,10 +90,10 @@ const Medicolegal: React.FC = () => {
               {/* Independent Medical Examinations */}
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t.medicolegal?.independentExaminations?.title || 'Independent and Joint Medical Examinations'}
+                  {finalT.medicolegal?.independentExaminations?.title || 'Independent and Joint Medical Examinations'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.independentExaminations?.description || 'Independent Medical Examinations and reports may be provided to TAC, Worksafe, insurers, employers, lawyers and solicitors.'}
+                  {finalT.medicolegal?.independentExaminations?.description || 'Independent Medical Examinations and reports may be provided to TAC, Worksafe, insurers, employers, lawyers and solicitors.'}
                 </p>
                 <img
                   src="/images/law-neurosurgery-report-spine-brain-insurance-claim-medicolegal-miNEURO-work-injury-accident.jpg"
@@ -91,10 +105,10 @@ const Medicolegal: React.FC = () => {
               {/* Whole Person Impairment Assessment */}
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t.medicolegal?.impairmentAssessment?.title || 'Whole Person Impairment Assessment'}
+                  {finalT.medicolegal?.impairmentAssessment?.title || 'Whole Person Impairment Assessment'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.impairmentAssessment?.amaCertified?.description || 'Dr. Aliashkevich is certified to conduct Whole Person Impairment (WPI) assessments based on the AMA or Comcare guidelines.'}
+                  {finalT.medicolegal?.impairmentAssessment?.amaCertified?.description || 'Dr. Aliashkevich is certified to conduct Whole Person Impairment (WPI) assessments based on the AMA or Comcare guidelines.'}
                 </p>
                 <img
                   src="/images/law-AMA-4th-edition-medicolegal-miNEURO-work-injury-accident-traffic-TAC-WorkCover-impairment-assessment.jpg"
@@ -106,10 +120,10 @@ const Medicolegal: React.FC = () => {
               {/* Work Capacity Assessments */}
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t.medicolegal?.impairmentAssessment?.workCapacity?.title || 'Work Capacity and Disability Assessments'}
+                  {finalT.medicolegal?.impairmentAssessment?.workCapacity?.title || 'Work Capacity and Disability Assessments'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.impairmentAssessment?.workCapacity?.description || 'We can help determine the injury impact on worker\'s ability to perform pre-injury employment or suitability for alternate work duties.'}
+                  {finalT.medicolegal?.impairmentAssessment?.workCapacity?.description || 'We can help determine the injury impact on worker\'s ability to perform pre-injury employment or suitability for alternate work duties.'}
                 </p>
                 <img
                   src="/images/employment-worker-safety-construction-medicolegal-miNEURO-work-injury.jpg"
@@ -125,9 +139,9 @@ const Medicolegal: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.medicolegal?.independentReports?.title || 'Independent Examinations and Reports'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.medicolegal?.independentReports?.title || 'Independent Examinations and Reports'}</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                {t.medicolegal?.independentReports?.description1 || 'Dr Ales Aliashkevich specialises in brain, spine and nerve injuries and has more than 17 years of experience in the provision of medicolegal services.'}
+                {finalT.medicolegal?.independentReports?.description1 || 'Dr Ales Aliashkevich specialises in brain, spine and nerve injuries and has more than 17 years of experience in the provision of medicolegal services.'}
               </p>
             </div>
 
@@ -142,10 +156,10 @@ const Medicolegal: React.FC = () => {
               </div>
               <div>
                 <p className="text-muted-foreground mb-6">
-                  {t.medicolegal?.independentReports?.description2 || 'His assessments are always in line with the current evidence-based treatment recommendations, considering the values of multidisciplinary approaches and availability of minimally-invasive and motion-preserving surgical techniques.'}
+                  {finalT.medicolegal?.independentReports?.description2 || 'His assessments are always in line with the current evidence-based treatment recommendations, considering the values of multidisciplinary approaches and availability of minimally-invasive and motion-preserving surgical techniques.'}
                 </p>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {t.medicolegal?.services?.items?.slice(0, 4).map((item: any, index: any) => (
+                  {finalT.medicolegal?.services?.items?.slice(0, 4).map((item: string, index: number) => (
                     <div key={index} className="bg-card p-3 rounded-md shadow-sm">
                       <p className="font-medium">{item}</p>
                     </div>
@@ -154,7 +168,7 @@ const Medicolegal: React.FC = () => {
                     'Independent Medical Examinations (IME)',
                     'Joint Medical Examinations (JME)',
                     'Whole Person Impairment Assessments (WPI)'
-                  ].map((item: any, index: any) => (
+                  ].map((item: string, index: number) => (
                     <div key={index} className="bg-card p-3 rounded-md shadow-sm">
                       <p className="font-medium">{item}</p>
                     </div>
@@ -166,10 +180,10 @@ const Medicolegal: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="bg-card p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t.medicolegal?.independentExaminations?.types?.workCover?.title || 'WorkCover Claims'}
+                  {finalT.medicolegal?.independentExaminations?.types?.workCover?.title || 'WorkCover Claims'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.independentExaminations?.types?.workCover?.description || 'Comprehensive assessments for work-related injuries affecting the brain, spine, or nervous system. Dr. Aliashkevich is an accredited WorkCover impairment assessor for the spine and nervous system.'}
+                  {finalT.medicolegal?.independentExaminations?.types?.workCover?.description || 'Comprehensive assessments for work-related injuries affecting the brain, spine, or nervous system. Dr. Aliashkevich is an accredited WorkCover impairment assessor for the spine and nervous system.'}
                 </p>
                 <SafeImage
                   src="/images/employment-worker-medicolegal-miNEURO-work-injury-accident-motor-vehicle-traffic-TAC-WorkCover.jpg"
@@ -181,10 +195,10 @@ const Medicolegal: React.FC = () => {
 
               <div className="bg-card p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t.medicolegal?.independentExaminations?.types?.transportAccident?.title || 'Transport Accident Claims'}
+                  {finalT.medicolegal?.independentExaminations?.types?.transportAccident?.title || 'Transport Accident Claims'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.independentExaminations?.types?.transportAccident?.description || 'Expert evaluation of neurological and spinal injuries resulting from motor vehicle accidents. Dr. Aliashkevich is an accredited TAC impairment assessor for the spine and nervous system.'}
+                  {finalT.medicolegal?.independentExaminations?.types?.transportAccident?.description || 'Expert evaluation of neurological and spinal injuries resulting from motor vehicle accidents. Dr. Aliashkevich is an accredited TAC impairment assessor for the spine and nervous system.'}
                 </p>
                 <SafeImage
                   src="/images/motor-vehicle-traffic-road-accident-injury-medicolegal-miNEURO-Ales-Aliashkevich.jpg"
@@ -198,19 +212,19 @@ const Medicolegal: React.FC = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-card p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t.medicolegal?.independentExaminations?.types?.publicLiability?.title || 'Public Liability Claims'}
+                  {finalT.medicolegal?.independentExaminations?.types?.publicLiability?.title || 'Public Liability Claims'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.independentExaminations?.types?.publicLiability?.description || 'Assessment of injuries sustained in public places or due to third-party negligence. These reports can be used for insurance claims and legal proceedings.'}
+                  {finalT.medicolegal?.independentExaminations?.types?.publicLiability?.description || 'Assessment of injuries sustained in public places or due to third-party negligence. These reports can be used for insurance claims and legal proceedings.'}
                 </p>
               </div>
 
               <div className="bg-card p-6 rounded-lg shadow-md">
                 <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t.medicolegal?.independentExaminations?.types?.medicalNegligence?.title || 'Medical Negligence Cases'}
+                  {finalT.medicolegal?.independentExaminations?.types?.medicalNegligence?.title || 'Medical Negligence Cases'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.independentExaminations?.types?.medicalNegligence?.description || 'Expert opinion on standards of care and causation in neurosurgical and spinal cases. Dr. Aliashkevich can provide objective assessments of treatment standards and outcomes.'}
+                  {finalT.medicolegal?.independentExaminations?.types?.medicalNegligence?.description || 'Expert opinion on standards of care and causation in neurosurgical and spinal cases. Dr. Aliashkevich can provide objective assessments of treatment standards and outcomes.'}
                 </p>
               </div>
             </div>
@@ -221,15 +235,15 @@ const Medicolegal: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.medicolegal?.impairmentAssessmentDetails?.title || 'Medicolegal Impairment Assessment'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.medicolegal?.impairmentAssessmentDetails?.title || 'Medicolegal Impairment Assessment'}</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                {t.medicolegal?.impairmentAssessmentDetails?.description1 || 'Dr. Aliashkevich is certified by the Australian Medical Association (AMA) Victoria and the Personal Injury Education Foundation (PIEF) in Impairment Assessment using the American Medical Association Guides to the Evaluation of Permanent Impairment 4th Edition and other prescribed methods, as applied to relevant Victorian legislation.'}
+                {finalT.medicolegal?.impairmentAssessmentDetails?.description1 || 'Dr. Aliashkevich is certified by the Australian Medical Association (AMA) Victoria and the Personal Injury Education Foundation (PIEF) in Impairment Assessment using the American Medical Association Guides to the Evaluation of Permanent Impairment 4th Edition and other prescribed methods, as applied to relevant Victorian legislation.'}
               </p>
             </div>
 
             <div className="card p-6 rounded-lg shadow-md bg-card mb-12">
               <p className="text-muted-foreground mb-6">
-                {t.medicolegal?.impairmentAssessmentDetails?.description2 || 'He is accredited for assessing the spine using both the methodology from Chapter 3 of the Guides and modification to those criteria by the Spinal Impairment Guides Modification Document (SIGMD). He can perform an expert apportionment to disentangle what impairment may or may not be related to a compensable event.'}
+                {finalT.medicolegal?.impairmentAssessmentDetails?.description2 || 'He is accredited for assessing the spine using both the methodology from Chapter 3 of the Guides and modification to those criteria by the Spinal Impairment Guides Modification Document (SIGMD). He can perform an expert apportionment to disentangle what impairment may or may not be related to a compensable event.'}
               </p>
               <div className="flex flex-wrap justify-center gap-8 mt-6">
                 <SafeImage
@@ -253,16 +267,16 @@ const Medicolegal: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-xl font-semibold mb-4 text-primary">
-                  {t.medicolegal?.impairmentAssessment?.amaCertified?.title || 'AMA Certified Assessments'}
+                  {finalT.medicolegal?.impairmentAssessment?.amaCertified?.title || 'AMA Certified Assessments'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.impairmentAssessment?.amaCertified?.description || 'Dr. Aliashkevich is certified to conduct Whole Person Impairment (WPI) assessments based on the AMA or Comcare guidelines in matters where compensation is sought for the permanent impairment of part(s) of an individual\'s body. The impairment is calculated in terms of the extent to which an injury impacts your whole person.'}
+                  {finalT.medicolegal?.impairmentAssessment?.amaCertified?.description || 'Dr. Aliashkevich is certified to conduct Whole Person Impairment (WPI) assessments based on the AMA or Comcare guidelines in matters where compensation is sought for the permanent impairment of part(s) of an individual\'s body. The impairment is calculated in terms of the extent to which an injury impacts your whole person.'}
                 </p>
                 <h3 className="text-xl font-semibold mb-4 mt-6 text-primary">
-                  {t.medicolegal?.impairmentAssessment?.expertWitness?.title || 'Expert Witness Opinions'}
+                  {finalT.medicolegal?.impairmentAssessment?.expertWitness?.title || 'Expert Witness Opinions'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.impairmentAssessment?.expertWitness?.description || 'If required, Dr. Aliashkevich can appear in court to provide an expert neurosurgical opinion. He can provide an expert opinion based on available medical records, imaging, neurophysiological testing results and other documentation.'}
+                  {finalT.medicolegal?.impairmentAssessment?.expertWitness?.description || 'If required, Dr. Aliashkevich can appear in court to provide an expert neurosurgical opinion. He can provide an expert opinion based on available medical records, imaging, neurophysiological testing results and other documentation.'}
                 </p>
               </div>
               <div className="relative rounded-xl overflow-hidden shadow-lg">
@@ -280,21 +294,21 @@ const Medicolegal: React.FC = () => {
         <section className="py-16 bg-card">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.medicolegal?.services?.title || 'Our Range of Services'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.medicolegal?.services?.title || 'Our Range of Services'}</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                {t.medicolegal?.helpRecover?.description || 'Our reports are prepared in accordance with the Expert Witness Code of Conduct and the guidelines specified by AMA (American Medical Association), TAC (Transport Accident Commission) and Worksafe.'}
+                {finalT.medicolegal?.helpRecover?.description || 'Our reports are prepared in accordance with the Expert Witness Code of Conduct and the guidelines specified by AMA (American Medical Association), TAC (Transport Accident Commission) and Worksafe.'}
               </p>
             </div>
 
             <div className="mb-12">
               <h3 className="text-xl font-semibold mb-6 text-primary text-center">
-                {t.medicolegal?.helpRecover?.title || 'Help to Recover from Injury'}
+                {finalT.medicolegal?.helpRecover?.title || 'Help to Recover from Injury'}
               </h3>
               <p className="text-muted-foreground mb-6 text-center max-w-3xl mx-auto">
                 Our reports can be used for a variety of legal purposes:
               </p>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4 max-w-3xl mx-auto mb-12">
-                {t.medicolegal?.helpRecover?.purposes?.map((purpose: any, index: any) => (
+                {finalT.medicolegal?.helpRecover?.purposes?.map((purpose: string, index: number) => (
                   <div key={index} className="bg-background p-4 rounded-lg shadow-sm flex items-center">
                     <div className="bg-primary/10 rounded-full p-2 mr-3">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -308,7 +322,7 @@ const Medicolegal: React.FC = () => {
                   'Assisting with insurance and compensation claims',
                   'Impairment assessments',
                   'Estimation of work capacity'
-                ].map((purpose: any, index: any) => (
+                ].map((purpose: string, index: number) => (
                   <div key={index} className="bg-background p-4 rounded-lg shadow-sm flex items-center">
                     <div className="bg-primary/10 rounded-full p-2 mr-3">
                       <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-primary" viewBox="0 0 20 20" fill="currentColor">
@@ -322,7 +336,7 @@ const Medicolegal: React.FC = () => {
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
-              {t.medicolegal?.services?.items?.map((item: any, index: any) => (
+              {finalT.medicolegal?.services?.items?.map((item: string, index: number) => (
                 <div key={index} className="card p-4 rounded-lg shadow-md bg-background">
                   <p className="font-medium">{item}</p>
                 </div>
@@ -339,7 +353,7 @@ const Medicolegal: React.FC = () => {
                 'Expert Witness Opinions',
                 'File/Imaging Reviews',
                 'Teleconferences'
-              ].map((item: any, index: any) => (
+              ].map((item: string, index: number) => (
                 <div key={index} className="card p-4 rounded-lg shadow-md bg-background">
                   <p className="font-medium">{item}</p>
                 </div>
@@ -349,17 +363,17 @@ const Medicolegal: React.FC = () => {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
               <div className="order-2 lg:order-1">
                 <h3 className="text-xl font-semibold mb-4 text-primary">
-                  {t.medicolegal?.flexibleArrangements?.title || 'Flexible Arrangements'}
+                  {finalT.medicolegal?.flexibleArrangements?.title || 'Flexible Arrangements'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.flexibleArrangements?.description1 || 'Dr Ales Aliashkevich can assist in meeting your requirements timely and in a cost-effective manner. Our fees are based on the volume of the provided materials, the complexity of the injuries and urgency of the request.'}
+                  {finalT.medicolegal?.flexibleArrangements?.description1 || 'Dr Ales Aliashkevich can assist in meeting your requirements timely and in a cost-effective manner. Our fees are based on the volume of the provided materials, the complexity of the injuries and urgency of the request.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.flexibleArrangements?.description2 || 'Our network of locations and flexible timetabling allow us to arrange even weekend appointments for the most urgent cases and to respond to short-notice deadlines.'}
+                  {finalT.medicolegal?.flexibleArrangements?.description2 || 'Our network of locations and flexible timetabling allow us to arrange even weekend appointments for the most urgent cases and to respond to short-notice deadlines.'}
                 </p>
                 <div className="mt-6">
                   <Button asChild className="bg-primary hover:bg-primary/90 text-white">
-                    <Link to="/contact">{t.medicolegal?.contactUs || 'Contact Us for Medicolegal Services'}</Link>
+                    <Link to="/contact">{finalT.medicolegal?.contactUs || 'Contact Us for Medicolegal Services'}</Link>
                   </Button>
                 </div>
               </div>
@@ -379,9 +393,9 @@ const Medicolegal: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.medicolegal?.assessmentProcess?.title || 'Medicolegal Assessment Process'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.medicolegal?.assessmentProcess?.title || 'Medicolegal Assessment Process'}</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                {t.medicolegal?.assessmentProcess?.description || 'Medical examinations form a crucial part of the personal injury and compensation claim assessment. Dr. Aliashkevich provides unbiased independent expert reviews with appropriate qualifications, deep knowledge of the problem, and specific training to provide impairment ratings.'}
+                {finalT.medicolegal?.assessmentProcess?.description || 'Medical examinations form a crucial part of the personal injury and compensation claim assessment. Dr. Aliashkevich provides unbiased independent expert reviews with appropriate qualifications, deep knowledge of the problem, and specific training to provide impairment ratings.'}
               </p>
             </div>
 
@@ -389,13 +403,13 @@ const Medicolegal: React.FC = () => {
               {/* Before Appointment */}
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t.medicolegal?.assessmentProcess?.beforeAppointment?.title || 'Before the Appointment'}
+                  {finalT.medicolegal?.assessmentProcess?.beforeAppointment?.title || 'Before the Appointment'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.assessmentProcess?.beforeAppointment?.description1 || 'To reduce the discomfort of the examination and collect as much information about the injury and its consequences, our medicolegal assistant will provide a registration form, health questionnaire, and consent form well in advance before the appointment.'}
+                  {finalT.medicolegal?.assessmentProcess?.beforeAppointment?.description1 || 'To reduce the discomfort of the examination and collect as much information about the injury and its consequences, our medicolegal assistant will provide a registration form, health questionnaire, and consent form well in advance before the appointment.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.assessmentProcess?.beforeAppointment?.description2 || 'Claimants are welcome to have a support person, carer, or legal guardian. A professional interpreter can be arranged if required. We can also arrange for a chaperone to be present during the examination.'}
+                  {finalT.medicolegal?.assessmentProcess?.beforeAppointment?.description2 || 'Claimants are welcome to have a support person, carer, or legal guardian. A professional interpreter can be arranged if required. We can also arrange for a chaperone to be present during the examination.'}
                 </p>
                 <SafeImage
                   src="/images/medical-consulting-doctor-room-lease-Surrey-Hills-miNEURO.jpg"
@@ -407,13 +421,13 @@ const Medicolegal: React.FC = () => {
               {/* During Appointment */}
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t.medicolegal?.assessmentProcess?.duringAppointment?.title || 'During the Appointment'}
+                  {finalT.medicolegal?.assessmentProcess?.duringAppointment?.title || 'During the Appointment'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.assessmentProcess?.duringAppointment?.description1 || 'The appointment consists of 4 parts: explanation of the purpose of the assessment, interview, examination, and time for any comments and conclusion.'}
+                  {finalT.medicolegal?.assessmentProcess?.duringAppointment?.description1 || 'The appointment consists of 4 parts: explanation of the purpose of the assessment, interview, examination, and time for any comments and conclusion.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.assessmentProcess?.duringAppointment?.description2 || 'The interview covers topics such as medical history, educational background, work history, accident circumstances, treatments received, current complaints, work capacity, medications, and the injury\'s impact on daily life. The neurological examination is not expected to cause any additional pain and focuses on the injured body part.'}
+                  {finalT.medicolegal?.assessmentProcess?.duringAppointment?.description2 || 'The interview covers topics such as medical history, educational background, work history, accident circumstances, treatments received, current complaints, work capacity, medications, and the injury\'s impact on daily life. The neurological examination is not expected to cause any additional pain and focuses on the injured body part.'}
                 </p>
                 <SafeImage
                   src="/images/neurological-examination-reflex-knee-jerk-neurosurgery-report-spine-brain-insurance-claim-medicolegal.jpg"
@@ -425,13 +439,13 @@ const Medicolegal: React.FC = () => {
               {/* After Appointment */}
               <div className="card p-6 rounded-lg shadow-md bg-card">
                 <h3 className="text-xl font-semibold mb-3 text-primary">
-                  {t.medicolegal?.assessmentProcess?.afterAppointment?.title || 'After the Appointment'}
+                  {finalT.medicolegal?.assessmentProcess?.afterAppointment?.title || 'After the Appointment'}
                 </h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.assessmentProcess?.afterAppointment?.description1 || 'Medicolegal reports provide significantly more detail than usual specialist letters. They are legal documents that can be used as evidence in courts. In complex cases, reports can be 30-50 pages long.'}
+                  {finalT.medicolegal?.assessmentProcess?.afterAppointment?.description1 || 'Medicolegal reports provide significantly more detail than usual specialist letters. They are legal documents that can be used as evidence in courts. In complex cases, reports can be 30-50 pages long.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.medicolegal?.assessmentProcess?.afterAppointment?.description2 || 'After the report is finalized, it will be sent directly to the requesting party. As a general rule, Dr Aliashkevich doesn\'t mind for his reports to be forwarded to the claimants or their general practitioners if they help with future treatment planning.'}
+                  {finalT.medicolegal?.assessmentProcess?.afterAppointment?.description2 || 'After the report is finalized, it will be sent directly to the requesting party. As a general rule, Dr Aliashkevich doesn\'t mind for his reports to be forwarded to the claimants or their general practitioners if they help with future treatment planning.'}
                 </p>
                 <SafeImage
                   src="/images/treatment-discussion-neurosurgery-report-spine-brain-insurance-claim-medicolegal.jpg"
@@ -455,9 +469,9 @@ const Medicolegal: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.medicolegal?.locations?.title || 'Our Locations'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.medicolegal?.locations?.title || 'Our Locations'}</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                {t.medicolegal?.locations?.description1 || 'All medicolegal appointments are booked by our main office in Surrey Hills. It is located within 2 minutes walking distance from the train station and has plenty of on-street parking available.'}
+                {finalT.medicolegal?.locations?.description1 || 'All medicolegal appointments are booked by our main office in Surrey Hills. It is located within 2 minutes walking distance from the train station and has plenty of on-street parking available.'}
               </p>
             </div>
 
@@ -465,31 +479,31 @@ const Medicolegal: React.FC = () => {
               <div>
                 <div className="card p-6 rounded-lg shadow-md bg-card mb-6">
                   <h3 className="text-xl font-semibold mb-3 text-primary">
-                    {t.medicolegal?.locations?.mainOffice?.title || 'Main Office'}
+                    {finalT.medicolegal?.locations?.mainOffice?.title || 'Main Office'}
                   </h3>
                   <p className="text-muted-foreground whitespace-pre-line mb-4">
-                    {t.medicolegal?.locations?.mainOffice?.address || 'miNEURO Consulting Suites\nSuite 4, Ground Floor, 619 Canterbury Road\nSURREY HILLS VIC 3127'}
+                    {finalT.medicolegal?.locations?.mainOffice?.address || 'miNEURO Consulting Suites\nSuite 4, Ground Floor, 619 Canterbury Road\nSURREY HILLS VIC 3127'}
                   </p>
                   <div className="flex flex-col sm:flex-row gap-4 mb-4">
                     <div>
-                      <p className="font-medium text-primary">{t.medicolegal?.contactInfo?.phone || 'Phone'}</p>
-                      <p className="text-muted-foreground">{t.medicolegal?.contactInfo?.phoneNumber || '03 9008 4200'}</p>
+                      <p className="font-medium text-primary">{finalT.medicolegal?.contactInfo?.phone || 'Phone'}</p>
+                      <p className="text-muted-foreground">{finalT.medicolegal?.contactInfo?.phoneNumber || '03 9008 4200'}</p>
                     </div>
                     <div>
-                      <p className="font-medium text-primary">{t.medicolegal?.contactInfo?.email || 'Email'}</p>
-                      <p className="text-muted-foreground">{t.medicolegal?.contactInfo?.emailAddress || 'info@mineuro.com.au'}</p>
+                      <p className="font-medium text-primary">{finalT.medicolegal?.contactInfo?.email || 'Email'}</p>
+                      <p className="text-muted-foreground">{finalT.medicolegal?.contactInfo?.emailAddress || 'info@mineuro.com.au'}</p>
                     </div>
                   </div>
                   <p className="text-muted-foreground mb-4">
-                    {t.medicolegal?.locations?.mainOffice?.contactInfo || 'Please call us on 03 9008 4200 and we will coordinate an appointment most convenient and accessible for your clients.'}
+                    {finalT.medicolegal?.locations?.mainOffice?.contactInfo || 'Please call us on 03 9008 4200 and we will coordinate an appointment most convenient and accessible for your clients.'}
                   </p>
                 </div>
 
                 <h3 className="text-xl font-semibold mb-4 text-primary">
-                  {t.medicolegal?.locations?.additionalLocations?.title || 'Additional Locations'}
+                  {finalT.medicolegal?.locations?.additionalLocations?.title || 'Additional Locations'}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                  {t.medicolegal?.locations?.additionalLocations?.locations?.map((location: any, index: any) => (
+                  {finalT.medicolegal?.locations?.additionalLocations?.locations?.map((location: LocationInfo, index: number) => (
                     <div key={index} className="bg-card p-4 rounded-md shadow-sm">
                       <h4 className="font-semibold text-primary mb-2">{location.name}</h4>
                       <p className="text-sm text-muted-foreground whitespace-pre-line">{location.address}</p>
@@ -503,7 +517,7 @@ const Medicolegal: React.FC = () => {
                     { name: 'Moonee Ponds', address: 'Moonee Ponds Specialist Centre\n827 Mt Alexander Road' },
                     { name: 'Dandenong', address: 'Dandenong Neurology & Specialists Group\n136 David Street' },
                     { name: 'Sunbury', address: 'Lake Imaging\n17-19 Horne Street' }
-                  ].map((location: any, index: any) => (
+                  ].map((location: LocationInfo, index: number) => (
                     <div key={index} className="bg-card p-4 rounded-md shadow-sm">
                       <h4 className="font-semibold text-primary mb-2">{location.name}</h4>
                       <p className="text-sm text-muted-foreground whitespace-pre-line">{location.address}</p>
@@ -535,35 +549,35 @@ const Medicolegal: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center mb-8">
-              <h2 className="text-3xl font-bold mb-4">{t.medicolegal?.contactInfo?.title || 'Contact Information'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.medicolegal?.contactInfo?.title || 'Contact Information'}</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto mb-8">
-                {t.medicolegal?.contactInfo?.description || 'If you have any questions about our medicolegal services, please call our main office or email us.'}
+                {finalT.medicolegal?.contactInfo?.description || 'If you have any questions about our medicolegal services, please call our main office or email us.'}
               </p>
 
               <div className="flex flex-col md:flex-row justify-center gap-8 mb-8">
                 <div className="bg-card p-6 rounded-lg shadow-md text-center">
                   <h3 className="text-xl font-semibold mb-3 text-primary">
-                    {t.medicolegal?.contactInfo?.phone || 'Phone'}
+                    {finalT.medicolegal?.contactInfo?.phone || 'Phone'}
                   </h3>
-                  <p className="text-lg font-medium">{t.medicolegal?.contactInfo?.phoneNumber || '03 9008 4200'}</p>
+                  <p className="text-lg font-medium">{finalT.medicolegal?.contactInfo?.phoneNumber || '03 9008 4200'}</p>
                   <p className="text-muted-foreground mt-2">Available Monday to Friday, 9am to 5pm</p>
                 </div>
 
                 <div className="bg-card p-6 rounded-lg shadow-md text-center">
                   <h3 className="text-xl font-semibold mb-3 text-primary">
-                    {t.medicolegal?.contactInfo?.email || 'Email'}
+                    {finalT.medicolegal?.contactInfo?.email || 'Email'}
                   </h3>
-                  <p className="text-lg font-medium">{t.medicolegal?.contactInfo?.emailAddress || 'info@mineuro.com.au'}</p>
+                  <p className="text-lg font-medium">{finalT.medicolegal?.contactInfo?.emailAddress || 'info@mineuro.com.au'}</p>
                   <p className="text-muted-foreground mt-2">We aim to respond within 24 business hours</p>
                 </div>
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild className="bg-primary hover:bg-primary/90 text-white">
-                  <Link to="/contact">{t.medicolegal?.contactUs || 'Contact Us'}</Link>
+                  <Link to="/contact">{finalT.medicolegal?.contactUs || 'Contact Us'}</Link>
                 </Button>
                 <Button asChild variant="outline">
-                  <Link to="/appointments">{t.home?.cta?.bookNow || 'Book an Appointment'}</Link>
+                  <Link to="/appointments">{finalT.home?.cta?.bookNow || 'Book an Appointment'}</Link>
                 </Button>
               </div>
             </div>
@@ -574,9 +588,9 @@ const Medicolegal: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.contact?.faq || 'Frequently Asked Questions'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.contact?.faq || 'Frequently Asked Questions'}</h2>
               <p className="text-muted-foreground max-w-3xl mx-auto">
-                {t.contact?.faqSubtitle || 'Common questions about our medicolegal services and assessment process'}
+                {finalT.contact?.faqSubtitle || 'Common questions about our medicolegal services and assessment process'}
               </p>
             </div>
 

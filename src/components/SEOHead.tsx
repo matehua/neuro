@@ -1,3 +1,4 @@
+import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
 import { useLanguage } from '@/contexts/LanguageContext';
@@ -103,6 +104,8 @@ export const SEOHead: React.FC<SEOProps> = ({
       recognizedBy: {
         '@type': 'Organization',
         name: 'Royal Australasian College of Surgeons'
+      }
+    }
   };
 
   // Generate condition-specific structured data
@@ -118,6 +121,7 @@ export const SEOHead: React.FC<SEOProps> = ({
     possibleTreatment: {
       '@type': 'MedicalTherapy',
       name: procedure || 'Neurosurgical Treatment'
+    }
   } : null;
 
   // Generate procedure-specific structured data
@@ -130,6 +134,7 @@ export const SEOHead: React.FC<SEOProps> = ({
     bodyLocation: {
       '@type': 'AnatomicalStructure',
       name: 'Brain and Spine'
+    }
   } : null;
 
   // Generate article structured data
@@ -152,6 +157,7 @@ export const SEOHead: React.FC<SEOProps> = ({
       logo: {
         '@type': 'ImageObject',
         url: `${siteUrl}/images/logo.png`
+      }
     },
     medicalAudience: {
       '@type': 'MedicalAudience',
@@ -167,11 +173,10 @@ export const SEOHead: React.FC<SEOProps> = ({
     <Helmet>
       {/* Basic Meta Tags */}
       <title>{pageTitle}</title>
-      <meta name="description" content={pageDescription />
-      <meta name="keywords" content={useCallback(pageKeywords.join(', ')
-                }, []) />
-      <meta name="author" content={author />
-      <meta name="language" content={language />
+      <meta name="description" content={pageDescription} />
+      <meta name="keywords" content={pageKeywords.join(', ')} />
+      <meta name="author" content={author} />
+      <meta name="language" content={language} />
       
       {/* Robots */}
       {noIndex && <meta name="robots" content="noindex, nofollow" />}
@@ -180,29 +185,29 @@ export const SEOHead: React.FC<SEOProps> = ({
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
       
       {/* Open Graph */}
-      <meta property="og:type" content={type />
-      <meta property="og:title" content={pageTitle />
-      <meta property="og:description" content={pageDescription />
-      <meta property="og:image" content={pageImage />
-      <meta property="og:url" content={pageUrl />
-      <meta property="og:siteName" content={siteName />
-      <meta property="og:locale" content={language === 'zh' ? 'zh_CN' : 'en_AU' />
+      <meta property="og:type" content={type} />
+      <meta property="og:title" content={pageTitle} />
+      <meta property="og:description" content={pageDescription} />
+      <meta property="og:image" content={pageImage} />
+      <meta property="og:url" content={pageUrl} />
+      <meta property="og:siteName" content={siteName} />
+      <meta property="og:locale" content={language === 'zh' ? 'zh_CN' : 'en_AU'} />
       
       {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
-      <meta name="twitter:title" content={pageTitle />
-      <meta name="twitter:description" content={pageDescription />
-      <meta name="twitter:image" content={pageImage />
-      
+      <meta name="twitter:title" content={pageTitle} />
+      <meta name="twitter:description" content={pageDescription} />
+      <meta name="twitter:image" content={pageImage} />
+
       {/* Medical-specific meta tags */}
-      <meta name="medical-specialty" content={medicalSpecialty />
-      {condition && <meta name="medical-condition" content={condition />}
-      {procedure && <meta name="medical-procedure" content={procedure />}
-      
+      <meta name="medical-specialty" content={medicalSpecialty} />
+      {condition && <meta name="medical-condition" content={condition} />}
+      {procedure && <meta name="medical-procedure" content={procedure} />}
+
       {/* Article meta tags */}
-      {publishedTime && <meta property="article:publishedTime" content={publishedTime />}
-      {modifiedTime && <meta property="article:modifiedTime" content={modifiedTime />}
-      {author && <meta property="article:author" content={author />}
+      {publishedTime && <meta property="article:publishedTime" content={publishedTime} />}
+      {modifiedTime && <meta property="article:modifiedTime" content={modifiedTime} />}
+      {author && <meta property="article:author" content={author} />}
       
       {/* Structured Data */}
       <script type="application/ld+json">
@@ -238,10 +243,13 @@ export const SEOHead: React.FC<SEOProps> = ({
             '@type': 'SearchAction',
             target: `${siteUrl}/search?q={search_term_string}`,
             'query-input': 'required name=search_term_string'
+          }
         })}
       </script>
     </Helmet>
   );
 };
+
+SEOHead.displayName = 'SEOHead';
 
 export default SEOHead;

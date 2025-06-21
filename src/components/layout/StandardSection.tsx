@@ -9,18 +9,17 @@ import { useDeviceDetection } from '@/contexts/DeviceContext';
  * Provides consistent spacing and responsive design for page sections
  */
 
-
 /**
  * Section component with consistent spacing and responsive design
  */
-const StandardSection: React.FC = ({
+const StandardSection: React.FC<StandardSectionProps> = ({
   children,
   className = '',
   background = 'default',
   spacing = 'default',
   maxWidth = 'container',
   id,
-}: StandardSectionProps) {
+}) => {
   const deviceInfo = useDeviceDetection();
 
   const backgroundClasses = {
@@ -56,7 +55,7 @@ const StandardSection: React.FC = ({
       </div>
     </section>
   );
-  }
+};
 
   /**
  * Specialized section variants

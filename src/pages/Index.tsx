@@ -1,6 +1,6 @@
+import React, { useEffect } from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
 
 import CTASection from '@/components/CTASection';
 import HeroSection from '@/components/HeroSection';
@@ -12,27 +12,102 @@ import { cn } from '@/lib/utils';
 import { generatePageSEO, generateMedicalPracticeStructuredData, PRACTICE_INFO } from '@/lib/seo';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
 
 const Index: React.FC = () => {
   const { t, isLanguageLoaded } = useLanguage();
   const deviceInfo = useDeviceDetection();
+
+  // Fallback to English translations if context fails
+  const safeT = t || en;
 
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
-  // Show loading state while translations are loading
-  if (!isLanguageLoaded || !t) {
-    return (
-      <div className="flex items-center justify-center min-h-screen">
-        <div className="text-center">
-          <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary mx-auto mb-4"></div>
-          <p className="text-muted-foreground">Loading...</p>
-        </div>
-      </div>
-    );
-  }
+  // Create a completely safe fallback with hardcoded values to prevent any runtime errors
+  const safeFallback = {
+    home: {
+      welcome: {
+        subtitle: "COMPREHENSIVE NEUROSURGICAL SERVICES",
+        title: "Specialised Care for Brain, Spine and Peripheral Nerve Conditions",
+        description1: "Dr Aliashkevich provides expert diagnosis and treatment for a wide range of neurological conditions.",
+        description2: "Services include minimally invasive spine surgery, artificial disc replacement, and robotic-assisted procedures.",
+        learnMore: "View Our Neurosurgical Services"
+      },
+      advancedTechnologies: {
+        subtitle: "Advanced Technology",
+        title: "Minimally-Invasive Approach",
+        description: "Advances in medical technology have facilitated minimally-invasive surgery.",
+        features: {
+          minimallyInvasive: {
+            title: "Minimally-Invasive Techniques",
+            description: "Advanced medical technology for safer procedures."
+          },
+          advancedImaging: {
+            title: "Advanced Imaging Navigation",
+            description: "MRI imaging for precise surgical navigation."
+          },
+          roboticSurgery: {
+            title: "Advantages Over Traditional Surgery",
+            description: "Improved accuracy and complete lesion removal."
+          },
+          patientRecovery: {
+            title: "Image-Guided Applications",
+            description: "Maximum removal with minimal impact on healthy tissues."
+          }
+        }
+      },
+      featuredProcedures: {
+        subtitle: "Our Expertise",
+        title: "Specialised Treatment Areas",
+        description: "We use the latest minimally-invasive techniques."
+      }
+    },
+    expertiseCards: {
+      brainConditions: {
+        title: "Brain Conditions",
+        description: "Brain tumours, hydrocephalus, cerebral aneurysms, and more."
+      },
+      spinalProblems: {
+        title: "Spinal Problems",
+        description: "Neck and back pain, sciatica, disc prolapse, and more."
+      },
+      nerveProblems: {
+        title: "Nerve Problems",
+        description: "Nerve tumours, nerve pain, nerve injuries, and more."
+      },
+      medicolegalReports: {
+        title: "Medico-Legal Reports",
+        description: "Assessment of impairment and liability enquiries."
+      }
+    },
+    minimallyInvasive: {
+      subtitle: "NEUROSURGEON WHO BELIEVES THAT LESS IS MORE",
+      title: "Why Minimally-Invasive Surgery?",
+      description1: "The ultimate goal of any neurosurgeon and spine surgeon is to improve the patient's quality and even length of life.",
+      description2: "The evolution of surgery and anaesthesiology allowed for achieving this goal and successfully managing previously untreatable conditions.",
+      description3: "Minimally invasive procedures represent a logical evolution of surgical philosophy focussing on patient safety and satisfaction.",
+      principle1: "accurate identification of the problem",
+      principle2: "safe access to the pathological area with minimal injury to the surrounding tissues",
+      principle3: "effective but delicate repair of complex structures even if they are located deeply in the body",
+      buttonText: "MINIMALLY-INVASIVE PROCEDURES"
+    },
+    discReplacement: {
+      subtitle: "CHRONIC NECK AND BACK PAIN",
+      title: "Cervical and Lumbar Arthroplasty (Artificial Disc Replacement)",
+      description1: "Natural ageing of the disc (degeneration) or trauma can affect its mobility and cause a reduction of its cushioning function.",
+      description2: "Disc replacement (arthroplasty) is aimed at restoring the shock-absorbing function of the affected segment.",
+      description3: "Arthroplasty preserves motion and reduces the load on the discs above and below protecting them against accelerated degeneration.",
+      buttonText: "DISC REPLACEMENT"
+    }
+  };
+
+  // Use the most reliable translation source available
+  const finalT = (safeT && safeT.home && safeT.home.welcome) ? safeT :
+                 (en && en.home && en.home.welcome) ? en :
+                 safeFallback;
 
   // Generate comprehensive SEO data for homepage
   const homeSeoData = generatePageSEO('home', {
@@ -59,7 +134,7 @@ const Index: React.FC = () => {
                   "text-primary font-medium uppercase tracking-wider",
                   deviceInfo.isMobile ? "mobile-text" : "text-sm"
                 )}>
-                  {t.home.welcome.subtitle}
+                  {finalT?.home.welcome.subtitle}
                 </span>
                 <h2 className={cn(
                   "font-bold mt-2 mb-mobile-lg",
@@ -67,13 +142,13 @@ const Index: React.FC = () => {
                     ? "mobile-3xl"
                     : "text-3xl md:text-4xl mb-6"
                 )}>
-                  {t.home.welcome.title}
+                  {finalT?.home.welcome.title}
                 </h2>
                 <p className={cn(
                   "text-muted-foreground mb-mobile-lg",
                   deviceInfo.isMobile ? "mobile-text" : "mb-6"
                 )}>
-                  {t.home.welcome.description1}
+                  {finalT?.home.welcome.description1}
                 </p>
                 <p className={cn(
                   "text-muted-foreground mb-mobile-lg",
@@ -89,11 +164,11 @@ const Index: React.FC = () => {
                     rel="noopener noreferrer"
                   >
                     Dr Ales Aliashkevich
-                  </a> {t.home.welcome.description2}
+                  </a> {finalT?.home.welcome.description2}
                 </p>
                 <Button asChild className="btn-primary">
                   <Link to="/expertise">
-                    {t.home.welcome.learnMore} <ArrowRight className={cn(
+                    {finalT?.home.welcome.learnMore} <ArrowRight className={cn(
                       "ml-2",
                       deviceInfo.isMobile ? "h-5 w-5" : "h-4 w-4"
                     )} />
@@ -130,7 +205,7 @@ const Index: React.FC = () => {
                 "text-primary font-medium uppercase tracking-wider",
                 deviceInfo.isMobile ? "mobile-text" : "text-sm"
               )}>
-                {t.home.advancedTechnologies.subtitle}
+                {finalT?.home.advancedTechnologies.subtitle}
               </span>
               <h2 className={cn(
                 "font-bold mt-2 mb-mobile-md",
@@ -138,13 +213,13 @@ const Index: React.FC = () => {
                   ? "mobile-3xl"
                   : "text-3xl md:text-4xl mb-4"
               )}>
-                {t.home.advancedTechnologies.title}
+                {finalT?.home.advancedTechnologies.title}
               </h2>
               <p className={cn(
                 "text-muted-foreground",
                 deviceInfo.isMobile ? "mobile-text" : ""
               )}>
-                {t.home.advancedTechnologies.description}
+                {finalT?.home.advancedTechnologies.description}
               </p>
             </div>
 
@@ -196,13 +271,13 @@ const Index: React.FC = () => {
                     ? "mobile-subheading"
                     : "text-xl mb-3"
                 )}>
-                  {t.home.advancedTechnologies.features.minimallyInvasive.title}
+                  {finalT?.home.advancedTechnologies.features.minimallyInvasive.title}
                 </h3>
                 <p className={cn(
                   "text-muted-foreground text-center",
                   deviceInfo.isMobile ? "mobile-text" : ""
                 )}>
-                  {t.home.advancedTechnologies.features.minimallyInvasive.description}
+                  {finalT?.home.advancedTechnologies.features.minimallyInvasive.description}
                 </p>
                 <div className={cn(
                   "text-center",
@@ -215,7 +290,7 @@ const Index: React.FC = () => {
                       deviceInfo.isMobile ? "" : "hover:underline"
                     )}
                   >
-                    {t.home.welcome.learnMore}
+                    {finalT?.home.welcome.learnMore}
                   </Link>
                 </div>
               </div>
@@ -269,12 +344,12 @@ const Index: React.FC = () => {
                   deviceInfo.isMobile
                     ? "mobile-subheading"
                     : "text-xl mb-3"
-                )}>{t.home.advancedTechnologies.features.advancedImaging.title}</h3>
+                )}>{finalT?.home.advancedTechnologies.features.advancedImaging.title}</h3>
                 <p className={cn(
                   "text-muted-foreground text-center",
                   deviceInfo.isMobile ? "mobile-text" : ""
                 )}>
-                  {t.home.advancedTechnologies.features.advancedImaging.description}
+                  {finalT?.home.advancedTechnologies.features.advancedImaging.description}
                 </p>
                 <div className={cn(
                   "text-center",
@@ -287,7 +362,7 @@ const Index: React.FC = () => {
                       deviceInfo.isMobile ? "" : "hover:underline"
                     )}
                   >
-                    {t.home.welcome.learnMore}
+                    {finalT?.home.welcome.learnMore}
                   </Link>
                 </div>
               </div>
@@ -333,13 +408,13 @@ const Index: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.roboticSurgery.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-center">{finalT?.home.advancedTechnologies.features.roboticSurgery.title}</h3>
                 <p className="text-muted-foreground text-center">
-                  {t.home.advancedTechnologies.features.roboticSurgery.description}
+                  {finalT?.home.advancedTechnologies.features.roboticSurgery.description}
                 </p>
                 <div className="mt-4 text-center">
                   <Link to="/expertise" className="text-primary hover:underline">
-                    {t.home.welcome.learnMore}
+                    {finalT?.home.welcome.learnMore}
                   </Link>
                 </div>
               </div>
@@ -382,13 +457,13 @@ const Index: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-center">{t.home.advancedTechnologies.features.patientRecovery.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-center">{finalT?.home.advancedTechnologies.features.patientRecovery.title}</h3>
                 <p className="text-muted-foreground text-center">
-                  {t.home.advancedTechnologies.features.patientRecovery.description}
+                  {finalT?.home.advancedTechnologies.features.patientRecovery.description}
                 </p>
                 <div className="mt-4 text-center">
                   <Link to="/expertise" className="text-primary hover:underline">
-                    {t.home.welcome.learnMore}
+                    {finalT?.home.welcome.learnMore}
                   </Link>
                 </div>
               </div>
@@ -407,7 +482,7 @@ const Index: React.FC = () => {
                 "text-primary font-medium uppercase tracking-wider",
                 deviceInfo.isMobile ? "mobile-text" : "text-sm"
               )}>
-                {t.home.featuredProcedures.subtitle}
+                {finalT?.home.featuredProcedures.subtitle}
               </span>
               <h2 className={cn(
                 "font-bold mt-2 mb-mobile-md",
@@ -415,13 +490,13 @@ const Index: React.FC = () => {
                   ? "mobile-3xl"
                   : "text-3xl md:text-4xl mb-4"
               )}>
-                {t.home.featuredProcedures.title}
+                {finalT?.home.featuredProcedures.title}
               </h2>
               <p className={cn(
                 "text-muted-foreground",
                 deviceInfo.isMobile ? "mobile-text" : ""
               )}>
-                {t.home.featuredProcedures.description}
+                {finalT?.home.featuredProcedures.description}
               </p>
             </div>
 
@@ -460,13 +535,13 @@ const Index: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.expertiseCards.brainConditions.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT?.expertiseCards.brainConditions.title}</h3>
                 <p className="text-muted-foreground">
-                  {t.expertiseCards.brainConditions.description}
+                  {finalT?.expertiseCards.brainConditions.description}
                 </p>
                 <div className="mt-4">
                   <Link to="/expertise" className="text-primary hover:underline">
-                    {t.home.welcome.learnMore}
+                    {finalT?.home.welcome.learnMore}
                   </Link>
                 </div>
               </div>
@@ -504,13 +579,13 @@ const Index: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.expertiseCards.spinalProblems.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT?.expertiseCards.spinalProblems.title}</h3>
                 <p className="text-muted-foreground">
-                  {t.expertiseCards.spinalProblems.description}
+                  {finalT?.expertiseCards.spinalProblems.description}
                 </p>
                 <div className="mt-4">
                   <Link to="/expertise" className="text-primary hover:underline">
-                    {t.home.welcome.learnMore}
+                    {finalT?.home.welcome.learnMore}
                   </Link>
                 </div>
               </div>
@@ -552,13 +627,13 @@ const Index: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.expertiseCards.nerveProblems.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT?.expertiseCards.nerveProblems.title}</h3>
                 <p className="text-muted-foreground">
-                  {t.expertiseCards.nerveProblems.description}
+                  {finalT?.expertiseCards.nerveProblems.description}
                 </p>
                 <div className="mt-4">
                   <Link to="/expertise" className="text-primary hover:underline">
-                    {t.home.welcome.learnMore}
+                    {finalT?.home.welcome.learnMore}
                   </Link>
                 </div>
               </div>
@@ -597,13 +672,13 @@ const Index: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.expertiseCards.medicolegalReports.title}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT?.expertiseCards.medicolegalReports.title}</h3>
                 <p className="text-muted-foreground">
-                  {t.expertiseCards.medicolegalReports.description}
+                  {finalT?.expertiseCards.medicolegalReports.description}
                 </p>
                 <div className="mt-4">
                   <Link to="/medicolegal" className="text-primary hover:underline">
-                    {t.home.welcome.learnMore}
+                    {finalT?.home.welcome.learnMore}
                   </Link>
                 </div>
               </div>
@@ -616,25 +691,25 @@ const Index: React.FC = () => {
           <div className="container">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
-                <span className="text-primary font-medium uppercase mb-2 block">{t.minimallyInvasive.subtitle}</span>
-                <h2 className="text-2xl font-bold mb-4">{t.minimallyInvasive.title}</h2>
+                <span className="text-primary font-medium uppercase mb-2 block">{finalT?.minimallyInvasive?.subtitle}</span>
+                <h2 className="text-2xl font-bold mb-4">{finalT?.minimallyInvasive?.title}</h2>
                 <p className="text-muted-foreground mb-4">
-                  {t.minimallyInvasive.description1}
+                  {finalT?.minimallyInvasive?.description1}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.minimallyInvasive.description2}
+                  {finalT?.minimallyInvasive?.description2}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.minimallyInvasive.description3} <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a>
+                  {finalT?.minimallyInvasive?.description3} <a href="https://mpscentre.com.au/dtTeam/dr-ales-aliashkevich/" className="text-primary hover:underline" target="_blank" rel="noopener noreferrer">Dr. Aliashkevich</a>
                 </p>
                 <ul className="text-muted-foreground mb-6 list-none space-y-1">
-                  <li>– {t.minimallyInvasive.principle1}</li>
-                  <li>– {t.minimallyInvasive.principle2}</li>
-                  <li>– {t.minimallyInvasive.principle3}</li>
+                  <li>– {finalT?.minimallyInvasive?.principle1}</li>
+                  <li>– {finalT?.minimallyInvasive?.principle2}</li>
+                  <li>– {finalT?.minimallyInvasive?.principle3}</li>
                 </ul>
                 <Button asChild>
                   <Link to="/expertise">
-                    {t.minimallyInvasive.buttonText}
+                    {finalT?.minimallyInvasive?.buttonText}
                   </Link>
                 </Button>
               </div>
@@ -665,20 +740,20 @@ const Index: React.FC = () => {
                 </div>
               </div>
               <div className="md:w-1/2">
-                <span className="text-primary font-medium uppercase mb-2 block">{t.discReplacement.subtitle}</span>
-                <h2 className="text-2xl font-bold mb-4">{t.discReplacement.title}</h2>
+                <span className="text-primary font-medium uppercase mb-2 block">{finalT?.discReplacement?.subtitle}</span>
+                <h2 className="text-2xl font-bold mb-4">{finalT?.discReplacement?.title}</h2>
                 <p className="text-muted-foreground mb-4">
-                  {t.discReplacement.description1}
+                  {finalT?.discReplacement?.description1}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.discReplacement.description2}
+                  {finalT?.discReplacement?.description2}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.discReplacement.description3}
+                  {finalT?.discReplacement?.description3}
                 </p>
                 <Button asChild>
                   <Link to="/expertise/cervical-disc-replacement">
-                    {t.discReplacement.buttonText}
+                    {finalT?.discReplacement?.buttonText}
                   </Link>
                 </Button>
               </div>
@@ -686,10 +761,8 @@ const Index: React.FC = () => {
           </div>
         </section>
 
-
         {/* Independent Reviews Section */}
         <IndependentReviewsSection />
-
 
         {/* CTA Section */}
         <CTASection className="py-24" />

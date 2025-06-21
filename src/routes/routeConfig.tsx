@@ -35,6 +35,9 @@ registerRoutes({
   [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.AGE_SPECIFIC_SPINE_RECOMMENDATIONS]: () => import('@/pages/patient-resources/AgeSpecificSpineRecommendations'),
   [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.YOUTHFUL_SPINE]: () => import('@/pages/patient-resources/YouthfulSpine'),
   [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.LIFESTYLE_MODIFICATIONS]: () => import('@/pages/patient-resources/LifestyleModifications'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.ASSESSMENT_TOOLS]: () => import('@/pages/patient-resources/AssessmentTools'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.PATIENT_DASHBOARD]: () => import('@/pages/patient-resources/PatientDashboard'),
+  [ROUTE_PATHS.PATIENT_RESOURCES_ROUTES.SPINE_HEALTH_APP]: () => import('@/pages/patient-resources/SpineHealthApp'),
 
   // Medical Conditions
   [ROUTE_PATHS.CONDITIONS.HERNIATED_DISC]: () => import('@/pages/patient-resources/conditions/HerniatedDisc'),

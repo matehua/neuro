@@ -1,6 +1,5 @@
-import { useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { ConditionHero, ConditionOverview, DegenerationProcess } from '@/components/medical-conditions';
 import { Button } from '@/components/ui/button';
@@ -12,8 +11,10 @@ import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useLanguage } from '@/contexts/LanguageContext';
 import { facetArthropathyData } from '@/data/conditions/facet-arthropathy';
+import en from '@/locales/en';
+
 import {
-  Calendar,
+Calendar,
   Download,
   Phone,
   ArrowRight,
@@ -31,6 +32,15 @@ import {
 
 const FacetArthropathyRefactored: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Basic fallback structure
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
   const deviceInfo = useDeviceDetection();
 
   useEffect(() => {

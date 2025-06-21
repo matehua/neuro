@@ -1,11 +1,27 @@
+import React, { useState, useEffect } from 'react';
 import { ChevronDown } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-
 import { Button } from '@/components/ui/button';
 import { cn } from '@/lib/utils';
 import { useDeviceDetection } from '@/contexts/DeviceContext';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
+// Type definitions for hero section
+interface HeroContent {
+  subtitle: string;
+  title: string;
+  description: string;
+  bookConsultation: string;
+  exploreTreatments: string;
+  scrollDown: string;
+}
+
+interface ParallaxState {
+  scrollY: number;
+  backgroundY: number;
+  contentY: number;
+}
 
 /**
  * HeroSection component for the homepage with parallax scrolling effect
@@ -15,6 +31,19 @@ const HeroSection: React.FC = () => {
   const { t } = useLanguage();
   const [scrollY, setScrollY] = useState(0);
   const deviceInfo = useDeviceDetection();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.hero) ? safeT : {
+    hero: {
+      subtitle: "THE GOLD STANDARD FOR BRAIN AND SPINE SURGERY",
+      title: "Neurosurgical Expertise and Innovative Technology for Superior Brain and Spine Surgery Results",
+      description: "Dr Aliashkevich specialises in future-minded treatment of conditions affecting the brain, spine and peripheral nerves.",
+      bookConsultation: "Book Consultation",
+      exploreTreatments: "Explore Treatment Options",
+      scrollDown: "Scroll Down"
+    }
+  };
 
   // Generate unique IDs for accessibility
   const headingId = 'hero-heading';
@@ -82,7 +111,7 @@ const HeroSection: React.FC = () => {
             "inline-block text-foreground/90 tracking-wide border-b border-foreground/30 pb-2 mb-mobile-md",
             deviceInfo.isMobile ? "mobile-text" : "text-lg mb-4"
           )}>
-            {t.hero.subtitle}
+            {finalT.hero.subtitle}
           </span>
           <h1
             id={headingId}
@@ -93,13 +122,13 @@ const HeroSection: React.FC = () => {
                 : "text-4xl md:text-5xl lg:text-6xl mb-6"
             )}
           >
-            {t.hero.title}
+            {finalT.hero.title}
           </h1>
           <p className={cn(
             "text-muted-foreground max-w-2xl mx-auto mb-mobile-xl",
             deviceInfo.isMobile ? "mobile-text" : "text-lg mb-8"
           )}>
-            {t.hero.description}
+            {finalT.hero.description}
           </p>
           <div className={cn(
             "flex items-center justify-center",
@@ -119,9 +148,9 @@ const HeroSection: React.FC = () => {
             >
               <Link
                 to="/appointments"
-                aria-label={t.hero.bookConsultation}
+                aria-label={finalT.hero.bookConsultation}
               >
-                {t.hero.bookConsultation}
+                {finalT.hero.bookConsultation}
               </Link>
             </Button>
             <Button
@@ -137,9 +166,9 @@ const HeroSection: React.FC = () => {
             >
               <Link
                 to="/expertise"
-                aria-label={t.hero.exploreTreatments}
+                aria-label={finalT.hero.exploreTreatments}
               >
-                {t.hero.exploreTreatments}
+                {finalT.hero.exploreTreatments}
               </Link>
             </Button>
           </div>
@@ -163,7 +192,7 @@ const HeroSection: React.FC = () => {
             "mb-2",
             deviceInfo.isMobile ? "mobile-sm" : "text-sm"
           )}>
-            {t.hero.scrollDown}
+            {finalT.hero.scrollDown}
           </span>
           <ChevronDown className={cn(
             deviceInfo.isMobile ? "h-5 w-5" : "h-6 w-6"

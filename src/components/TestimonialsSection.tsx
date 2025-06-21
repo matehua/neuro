@@ -1,8 +1,9 @@
+import React, { useState, useEffect, useCallback } from 'react';
 import { ChevronLeft, ChevronRight, Star } from 'lucide-react';
-import { useState, useEffect, useCallback } from 'react';
-
 import { cn } from '@/lib/utils';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 
 interface Testimonial {
   id: number;
@@ -11,6 +12,8 @@ interface Testimonial {
   avatar: string;
   content: string;
   rating: number;
+}
+
 const testimonials: Testimonial[] = [
   {
     id: 1,
@@ -40,6 +43,15 @@ const testimonials: Testimonial[] = [
 
 const TestimonialsSection: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Add minimal fallback structure based on component needs
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    hero: { title: "Welcome", subtitle: "Professional Care", description: "Expert medical services" },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
   const [activeIndex, setActiveIndex] = useState(0);
   const [isAnimating, setIsAnimating] = useState(false);
 
@@ -47,7 +59,7 @@ const TestimonialsSection: React.FC = () => {
     if (isAnimating) return;
 
     setIsAnimating(true);
-    setActiveIndex((prev: any) => (prev + 1) % testimonials?.length);
+    setActiveIndex((prev: number) => (prev + 1) % testimonials?.length);
 
     setTimeout(() => {
       setIsAnimating(false);
@@ -58,7 +70,7 @@ const TestimonialsSection: React.FC = () => {
     if (isAnimating) return;
 
     setIsAnimating(true);
-    setActiveIndex((prev: any) => (prev - 1 + testimonials?.length) % testimonials?.length);
+    setActiveIndex((prev: number) => (prev - 1 + testimonials?.length) % testimonials?.length);
 
     setTimeout(() => {
       setIsAnimating(false);
@@ -75,10 +87,10 @@ const TestimonialsSection: React.FC = () => {
       <div className="container">
         <div className="text-center max-w-3xl mx-auto mb-12 animate-fade-in">
           <h2 className="text-3xl md:text-4xl font-bold mb-4">
-            {t.testimonials.title}
+            {finalT.testimonials.title}
           </h2>
           <p className="text-muted-foreground">
-            {t.testimonials.description}
+            {finalT.testimonials.description}
           </p>
         </div>
 
@@ -106,7 +118,7 @@ const TestimonialsSection: React.FC = () => {
                       />
                     </div>
                     <div className="flex mb-2">
-                      {[...Array(5)].map((_: any, i: any) => (
+                      {[...Array(5)].map((_, i: number) => (
                         <Star
                           key={i}
                           className={`h-4 w-4 ${i < testimonial.rating ? "fill-primary text-primary" : "text-muted-foreground"}`}
@@ -129,25 +141,24 @@ const TestimonialsSection: React.FC = () => {
 
           <div className="flex justify-between mt-8">
             <button
-              onClick={prevTestimonial
-                            className="p-2 rounded-full bg-card hover:bg-muted border border-border transition-colors"
-                            disabled={isAnimating}
+              onClick={prevTestimonial}
+              className="p-2 rounded-full bg-card hover:bg-muted border border-border transition-colors"
+              disabled={isAnimating}
             >
               <ChevronLeft className="h-5 w-5" />
               <span className="sr-only">Previous testimonial</span>
             </button>
 
             <div className="flex space-x-2">
-              {testimonials?.map((_: any, index: any) => (
+              {testimonials?.map((_, index: number) => (
                 <button
                   key={index}
-                  onClick={useCallback((
+                  onClick={() => {
                     if (isAnimating) return;
                     setIsAnimating(true);
                     setActiveIndex(index);
-                    setTimeout(() => setIsAnimating(false), 500);) => {
-                  $2
-                }, [])
+                    setTimeout(() => setIsAnimating(false), 500);
+                  }}
                   className={`w-3 h-3 rounded-full transition-all ${
                     activeIndex === index
                       ? "bg-primary w-6"
@@ -159,7 +170,7 @@ const TestimonialsSection: React.FC = () => {
             </div>
 
             <button
-              onClick={useCallback(nextTestimonial, [])}
+              onClick={nextTestimonial}
               className="p-2 rounded-full bg-card hover:bg-muted border border-border transition-colors"
               disabled={isAnimating}
             >
@@ -171,8 +182,8 @@ const TestimonialsSection: React.FC = () => {
       </div>
     </section>
   );
+};
+
 TestimonialsSection.displayName = 'TestimonialsSection';
 
 export default TestimonialsSection;
-
-TestimonialsSection.displayName = 'TestimonialsSection';

@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useState, useEffect, useMemo, ReactNode } from 'react';
-import ErrorBoundary from '@/components/ErrorBoundary';
 
 // Breakpoint constants
 const MOBILE_BREAKPOINT = 768;
@@ -42,7 +41,7 @@ export function DeviceProvider({ children }: DeviceProviderProps) {
     orientation: 'portrait',
     screenSize: 'unknown',
     width: 0,
-    height: 0,
+    height: 0
   });
   const [isLoaded, setIsLoaded] = useState(false);
 
@@ -91,7 +90,7 @@ export function DeviceProvider({ children }: DeviceProviderProps) {
           orientation,
           screenSize,
           width,
-          height,
+          height
         };
 
         // Only update if values have actually changed
@@ -129,15 +128,13 @@ export function DeviceProvider({ children }: DeviceProviderProps) {
   // Memoize context value to prevent unnecessary re-renders
   const contextValue = useMemo(() => ({
     deviceInfo,
-    isLoaded,
+    isLoaded
   }), [deviceInfo, isLoaded]);
 
   return (
-    <ErrorBoundary>
-      <DeviceContext.Provider value={contextValue}>
-        {children}
-      </DeviceContext.Provider>
-    </ErrorBoundary>
+    <DeviceContext.Provider value={contextValue}>
+      {children}
+    </DeviceContext.Provider>
   );
 }
 
@@ -201,3 +198,5 @@ export function useBreakpoint(): DeviceInfo['screenSize'] {
   const { screenSize } = useDeviceDetection();
   return screenSize;
 }
+
+export default DeviceContext;

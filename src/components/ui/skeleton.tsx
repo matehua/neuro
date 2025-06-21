@@ -1,3 +1,4 @@
+import React from 'react';
 import { cn } from '@/lib/utils';
 
 function Skeleton({
@@ -10,4 +11,6 @@ function Skeleton({
       {...props}
     />
   )
+}
+
 export { Skeleton }

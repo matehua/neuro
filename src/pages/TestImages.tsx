@@ -1,3 +1,4 @@
+import React from 'react';
 import StandardPageLayout from '@/components/StandardPageLayout';
 
 const TestImages: React.FC = () => {
@@ -11,6 +12,7 @@ const TestImages: React.FC = () => {
   );
 TestImages.displayName = 'TestImages';
 
+}
 export default TestImages;
 
 TestImages.displayName = 'TestImages';

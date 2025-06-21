@@ -1,14 +1,24 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, Car, Train, Bus } from 'lucide-react';
-import { useEffect } from 'react';
-
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 
 const LangwarrinLocation: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Basic fallback structure
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -25,13 +35,13 @@ const LangwarrinLocation: React.FC = () => {
           <div className="container relative z-10">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="md:w-1/2">
-                <h1 className="text-3xl font-bold mb-6">{t.locations?.langwarrinLocation?.expertNeurosurgery || 'Expert Neurosurgery and Spine Care'}</h1>
-                <h2 className="text-xl text-primary mb-4">{t.locations?.langwarrinLocation?.peninsulaConsultingSuites || 'PENINSULA CONSULTING SUITES'}</h2>
+                <h1 className="text-3xl font-bold mb-6">{finalT.locations?.langwarrinLocation?.expertNeurosurgery || 'Expert Neurosurgery and Spine Care'}</h1>
+                <h2 className="text-xl text-primary mb-4">{finalT.locations?.langwarrinLocation?.peninsulaConsultingSuites || 'PENINSULA CONSULTING SUITES'}</h2>
                 <p className="text-muted-foreground mb-4">
-                  {t.locations?.langwarrinLocation?.subtitle || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, neurosurgeon and spine surgeon, offers consultations at Peninsula Consulting Suites in Langwarrin, providing convenient access to specialized care for patients in the southeastern suburbs of Melbourne.'}
+                  {finalT.locations?.langwarrinLocation?.subtitle || 'Are you struggling with neck or back problems? Do you need expert consultation and treatment for neurosurgical or spinal conditions? Dr Ales Aliashkevich, neurosurgeon and spine surgeon, offers consultations at Peninsula Consulting Suites in Langwarrin, providing convenient access to specialized care for patients in the southeastern suburbs of Melbourne.'}
                 </p>
                 <p className="text-muted-foreground">
-                  {t.locations?.langwarrinLocation?.expertise || 'Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout the Langwarrin and surrounding areas, eliminating the need to travel to Melbourne for specialized care.'}
+                  {finalT.locations?.langwarrinLocation?.expertise || 'Dr. Aliashkevich specializes in treating radiculopathy, myelopathy, brain, spine and nerve tumours or intervertebral disc problems. This location provides convenient access to expert neurosurgical care for patients throughout the Langwarrin and surrounding areas, eliminating the need to travel to Melbourne for specialized care.'}
                 </p>
               </div>
               <div className="md:w-1/2">
@@ -55,13 +65,13 @@ const LangwarrinLocation: React.FC = () => {
                 <div className="mb-8">
                   <h2 className="text-2xl font-bold mb-4">{'Location Details'}</h2>
                   <p className="text-muted-foreground">
-                    {t.locations?.langwarrinLocation?.locationDetails || 'Everything you need to know about our Langwarrin consulting location'}
+                    {finalT.locations?.langwarrinLocation?.locationDetails || 'Everything you need to know about our Langwarrin consulting location'}
                   </p>
                 </div>
 
                 <div className="space-y-6">
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.address || 'Address'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.address || 'Address'}</h3>
                     <p className="text-muted-foreground">
                       Peninsula Consulting Suites<br />
                       Suite 3, 35-37 Cranbourne-Frankston Road<br />
@@ -70,7 +80,7 @@ const LangwarrinLocation: React.FC = () => {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.contactInformation || 'Contact Information'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.contactInformation || 'Contact Information'}</h3>
                     <p className="text-muted-foreground mb-2">
                       <span className="font-medium">Phone:</span> 03 9008 4200
                     </p>
@@ -83,7 +93,7 @@ const LangwarrinLocation: React.FC = () => {
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.consultingHours || 'Consulting Hours'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.consultingHours || 'Consulting Hours'}</h3>
                     <p className="text-muted-foreground mb-2">
                       <span className="font-medium">Tuesday and Thursday:</span> 9:00 AM - 5:00 PM
                     </p>
@@ -91,17 +101,17 @@ const LangwarrinLocation: React.FC = () => {
                       Consultations are by appointment only. Please call our office to schedule an appointment.
                     </p>
                     <p className="text-muted-foreground">
-                      <span className="font-medium">{'Note'}:</span> {t.locations?.langwarrinLocation?.urgentAppointments || 'Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.'}
+                      <span className="font-medium">{'Note'}:</span> {finalT.locations?.langwarrinLocation?.urgentAppointments || 'Urgent appointments are available on request. Our staff will do their best to accommodate patients with urgent conditions as quickly as possible.'}
                     </p>
                   </div>
 
                   <div className="card p-6 rounded-lg shadow-md bg-card">
-                    <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.appointmentProcess || 'Appointment Process'}</h3>
+                    <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.appointmentProcess || 'Appointment Process'}</h3>
                     <p className="text-muted-foreground mb-2">
-                      {t.locations?.langwarrinLocation?.appointmentProcessDetails1 || 'Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.'}
+                      {finalT.locations?.langwarrinLocation?.appointmentProcessDetails1 || 'Before your appointment, our office will liaise with your GP to obtain a referral and relevant medical information, including results of previous imaging and other investigations.'}
                     </p>
                     <p className="text-muted-foreground">
-                      {t.locations?.langwarrinLocation?.appointmentProcessDetails2 || 'All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.'}
+                      {finalT.locations?.langwarrinLocation?.appointmentProcessDetails2 || 'All new patients will be asked to fill out a detailed registration form to help us understand the nature and urgency of your problem. This information helps Dr. Aliashkevich prepare for your consultation and provide the most appropriate care.'}
                     </p>
                   </div>
                 </div>
@@ -123,19 +133,19 @@ const LangwarrinLocation: React.FC = () => {
                 </div>
 
                 <div className="card p-6 rounded-lg shadow-md bg-card">
-                  <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.gettingHere || 'Getting Here'}</h3>
+                  <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.gettingHere || 'Getting Here'}</h3>
                   <div className="space-y-4">
                     <div>
-                      <h4 className="text-lg font-medium mb-2">{t.locations?.langwarrinLocation?.byPublicTransport || 'By Public Transport'}</h4>
+                      <h4 className="text-lg font-medium mb-2">{finalT.locations?.langwarrinLocation?.byPublicTransport || 'By Public Transport'}</h4>
                       <p className="text-muted-foreground">
-                        {t.locations?.langwarrinLocation?.byPublicTransportDetails || 'Peninsula Consulting Suites is accessible via bus services that stop nearby. Several bus routes connect the clinic to Frankston train station and surrounding suburbs.'}
+                        {finalT.locations?.langwarrinLocation?.byPublicTransportDetails || 'Peninsula Consulting Suites is accessible via bus services that stop nearby. Several bus routes connect the clinic to Frankston train station and surrounding suburbs.'}
                       </p>
                     </div>
 
                     <div>
-                      <h4 className="text-lg font-medium mb-2">{t.locations?.langwarrinLocation?.byCar || 'By Car'}</h4>
+                      <h4 className="text-lg font-medium mb-2">{finalT.locations?.langwarrinLocation?.byCar || 'By Car'}</h4>
                       <p className="text-muted-foreground">
-                        {t.locations?.langwarrinLocation?.byCarDetails || 'Free on-site parking is available for patients at Peninsula Consulting Suites. The clinic is easily accessible from Cranbourne-Frankston Road, with convenient access from the Mornington Peninsula Freeway and Peninsula Link.'}
+                        {finalT.locations?.langwarrinLocation?.byCarDetails || 'Free on-site parking is available for patients at Peninsula Consulting Suites. The clinic is easily accessible from Cranbourne-Frankston Road, with convenient access from the Mornington Peninsula Freeway and Peninsula Link.'}
                       </p>
                     </div>
                   </div>
@@ -148,9 +158,9 @@ const LangwarrinLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.locations?.langwarrinLocation?.facilityImages?.title || 'Our Facility'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.locations?.langwarrinLocation?.facilityImages?.title || 'Our Facility'}</h2>
               <p className="text-muted-foreground">
-                {t.locations?.langwarrinLocation?.facilityImages?.subtitle || 'Take a look at our modern, comfortable consulting rooms at Peninsula Consulting Suites'}
+                {finalT.locations?.langwarrinLocation?.facilityImages?.subtitle || 'Take a look at our modern, comfortable consulting rooms at Peninsula Consulting Suites'}
               </p>
             </div>
 
@@ -184,15 +194,15 @@ const LangwarrinLocation: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.locations?.langwarrinLocation?.therapeuticInterventions?.title || 'Therapeutic Interventions'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.locations?.langwarrinLocation?.therapeuticInterventions?.title || 'Therapeutic Interventions'}</h2>
               <p className="text-muted-foreground">
-                {t.locations?.langwarrinLocation?.therapeuticInterventions?.subtitle || 'Tailored treatment plans for your specific needs'}
+                {finalT.locations?.langwarrinLocation?.therapeuticInterventions?.subtitle || 'Tailored treatment plans for your specific needs'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.locations?.langwarrinLocation?.therapeuticInterventions?.description || 'Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, Dr Aliashkevich collaborates closely with other specialists in Langwarrin and surrounding areas to develop a tailored therapeutic plan designed to address your specific needs.'}
+                {finalT.locations?.langwarrinLocation?.therapeuticInterventions?.description || 'Thorough evaluation and diagnosis, utilising advanced imaging techniques and neurophysiological testing, allows us to pinpoint the underlying cause of your symptoms. Once a diagnosis is established, Dr Aliashkevich collaborates closely with other specialists in Langwarrin and surrounding areas to develop a tailored therapeutic plan designed to address your specific needs.'}
               </p>
             </div>
 
@@ -205,9 +215,9 @@ const LangwarrinLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.therapeuticInterventions?.interventionalProcedures?.title || 'Interventional Procedures'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.therapeuticInterventions?.interventionalProcedures?.title || 'Interventional Procedures'}</h3>
                 <p className="text-muted-foreground">
-                  {t.locations?.langwarrinLocation?.therapeuticInterventions?.interventionalProcedures?.description || 'In addition to traditional medical therapies, Dr Aliashkevich can offer a variety of minimally invasive interventional procedures to target pain and inflammation directly at the source, providing relief and promoting healing.'}
+                  {finalT.locations?.langwarrinLocation?.therapeuticInterventions?.interventionalProcedures?.description || 'In addition to traditional medical therapies, Dr Aliashkevich can offer a variety of minimally invasive interventional procedures to target pain and inflammation directly at the source, providing relief and promoting healing.'}
                 </p>
               </div>
 
@@ -219,9 +229,9 @@ const LangwarrinLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.therapeuticInterventions?.physicalTherapy?.title || 'Physical Therapy and Hydrotherapy'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.therapeuticInterventions?.physicalTherapy?.title || 'Physical Therapy and Hydrotherapy'}</h3>
                 <p className="text-muted-foreground">
-                  {t.locations?.langwarrinLocation?.therapeuticInterventions?.physicalTherapy?.description || 'Personalised exercise programmes to improve posture, strength, flexibility, and mobility. These therapies can be crucial components of both non-surgical management and post-operative rehabilitation.'}
+                  {finalT.locations?.langwarrinLocation?.therapeuticInterventions?.physicalTherapy?.description || 'Personalised exercise programmes to improve posture, strength, flexibility, and mobility. These therapies can be crucial components of both non-surgical management and post-operative rehabilitation.'}
                 </p>
               </div>
 
@@ -233,9 +243,9 @@ const LangwarrinLocation: React.FC = () => {
                     </svg>
                   </div>
                 </div>
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.therapeuticInterventions?.rehabilitation?.title || 'Rehabilitation'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.therapeuticInterventions?.rehabilitation?.title || 'Rehabilitation'}</h3>
                 <p className="text-muted-foreground">
-                  {t.locations?.langwarrinLocation?.therapeuticInterventions?.rehabilitation?.description || 'Critical component for postoperative recovery to maximise function, independence, and quality of life. Dr. Aliashkevich works with rehabilitation specialists to ensure comprehensive care throughout your recovery journey.'}
+                  {finalT.locations?.langwarrinLocation?.therapeuticInterventions?.rehabilitation?.description || 'Critical component for postoperative recovery to maximise function, independence, and quality of life. Dr. Aliashkevich works with rehabilitation specialists to ensure comprehensive care throughout your recovery journey.'}
                 </p>
               </div>
             </div>
@@ -246,15 +256,15 @@ const LangwarrinLocation: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.locations?.langwarrinLocation?.nearbyAmenities?.title || 'Nearby Amenities'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.locations?.langwarrinLocation?.nearbyAmenities?.title || 'Nearby Amenities'}</h2>
               <p className="text-muted-foreground">
-                {t.locations?.langwarrinLocation?.nearbyAmenities?.subtitle || 'Convenient local facilities for patients visiting our Langwarrin location'}
+                {finalT.locations?.langwarrinLocation?.nearbyAmenities?.subtitle || 'Convenient local facilities for patients visiting our Langwarrin location'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.locations?.langwarrinLocation?.nearbyAmenities?.description || 'Our Langwarrin consulting location at Peninsula Consulting Suites is surrounded by a variety of convenient amenities. Whether you need to grab a coffee before your appointment, find a place for lunch afterward, or run errands while in the area, you\'ll find everything you need nearby.'}
+                {finalT.locations?.langwarrinLocation?.nearbyAmenities?.description || 'Our Langwarrin consulting location at Peninsula Consulting Suites is surrounded by a variety of convenient amenities. Whether you need to grab a coffee before your appointment, find a place for lunch afterward, or run errands while in the area, you\'ll find everything you need nearby.'}
               </p>
             </div>
 
@@ -264,7 +274,7 @@ const LangwarrinLocation: React.FC = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 3h2l.4 2M7 13h10l4-8H5.4M7 13L5.4 5M7 13l-2.293 2.293c-.63.63-.184 1.707.707 1.707H17m0 0a2 2 0 100 4 2 2 0 000-4zm-8 2a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
-                  {t.locations?.langwarrinLocation?.nearbyAmenities?.shopping?.title || 'Shopping'}
+                  {finalT.locations?.langwarrinLocation?.nearbyAmenities?.shopping?.title || 'Shopping'}
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -293,7 +303,7 @@ const LangwarrinLocation: React.FC = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
                   </svg>
-                  {t.locations?.langwarrinLocation?.nearbyAmenities?.diningOptions?.title || 'Dining Options'}
+                  {finalT.locations?.langwarrinLocation?.nearbyAmenities?.diningOptions?.title || 'Dining Options'}
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -322,7 +332,7 @@ const LangwarrinLocation: React.FC = () => {
                   <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 mr-2 text-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
                   </svg>
-                  {t.locations?.langwarrinLocation?.nearbyAmenities?.pharmacies?.title || 'Pharmacies & Healthcare'}
+                  {finalT.locations?.langwarrinLocation?.nearbyAmenities?.pharmacies?.title || 'Pharmacies & Healthcare'}
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -352,7 +362,7 @@ const LangwarrinLocation: React.FC = () => {
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
-                  {t.locations?.langwarrinLocation?.nearbyAmenities?.parks?.title || 'Parks & Recreation'}
+                  {finalT.locations?.langwarrinLocation?.nearbyAmenities?.parks?.title || 'Parks & Recreation'}
                 </h3>
                 <ul className="space-y-3">
                   <li className="flex items-start">
@@ -383,15 +393,15 @@ const LangwarrinLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.langwarrinLocation?.otherConsultingLocations?.title || 'Other Consulting Locations'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.langwarrinLocation?.otherConsultingLocations?.title || 'Other Consulting Locations'}</h2>
               <p className="text-muted-foreground">
-                {t.langwarrinLocation?.otherConsultingLocations?.subtitle || 'Dr. Aliashkevich also consults at these nearby locations'}
+                {finalT.langwarrinLocation?.otherConsultingLocations?.subtitle || 'Dr. Aliashkevich also consults at these nearby locations'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.langwarrinLocation?.otherConsultingLocations?.description || 'For your convenience, Dr. Aliashkevich consults at multiple locations across Melbourne. If the Langwarrin location is not suitable for you, appointments can be arranged at these alternative locations.'}
+                {finalT.langwarrinLocation?.otherConsultingLocations?.description || 'For your convenience, Dr. Aliashkevich consults at multiple locations across Melbourne. If the Langwarrin location is not suitable for you, appointments can be arranged at these alternative locations.'}
               </p>
             </div>
 
@@ -405,16 +415,16 @@ const LangwarrinLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.langwarrinLocation?.otherConsultingLocations?.frankston?.title || 'Frankston'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.langwarrinLocation?.otherConsultingLocations?.frankston?.title || 'Frankston'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.langwarrinLocation?.otherConsultingLocations?.frankston?.description || 'Dr. Aliashkevich consults at Peninsula Private Hospital in Frankston, providing specialized neurosurgical care to patients in the Frankston area.'}
+                  {finalT.langwarrinLocation?.otherConsultingLocations?.frankston?.description || 'Dr. Aliashkevich consults at Peninsula Private Hospital in Frankston, providing specialized neurosurgical care to patients in the Frankston area.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.langwarrinLocation?.otherConsultingLocations?.frankston?.address?.split('：')[1] || 'Peninsula Private Hospital, Mezzanine Consulting Suites, 525 McClelland Drive, Frankston VIC 3199'}<br />
-                  <span className="font-medium">Phone:</span> {t.langwarrinLocation?.otherConsultingLocations?.frankston?.phone?.split('：')[1] || '03 9781 4133'}
+                  <span className="font-medium">Address:</span> {finalT.langwarrinLocation?.otherConsultingLocations?.frankston?.address?.split('：')[1] || 'Peninsula Private Hospital, Mezzanine Consulting Suites, 525 McClelland Drive, Frankston VIC 3199'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.langwarrinLocation?.otherConsultingLocations?.frankston?.phone?.split('：')[1] || '03 9781 4133'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/locations/frankston">{t.langwarrinLocation?.otherConsultingLocations?.frankston?.viewDetails || 'View Details'}</Link>
+                  <Link to="/locations/frankston">{finalT.langwarrinLocation?.otherConsultingLocations?.frankston?.viewDetails || 'View Details'}</Link>
                 </Button>
               </div>
 
@@ -427,16 +437,16 @@ const LangwarrinLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.langwarrinLocation?.otherConsultingLocations?.mornington?.title || 'Mornington'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.langwarrinLocation?.otherConsultingLocations?.mornington?.title || 'Mornington'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.langwarrinLocation?.otherConsultingLocations?.mornington?.description || 'Dr. Aliashkevich consults at the Nepean Specialist Centre in Mornington, providing specialized neurosurgical care to patients on the Mornington Peninsula.'}
+                  {finalT.langwarrinLocation?.otherConsultingLocations?.mornington?.description || 'Dr. Aliashkevich consults at the Nepean Specialist Centre in Mornington, providing specialized neurosurgical care to patients on the Mornington Peninsula.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.langwarrinLocation?.otherConsultingLocations?.mornington?.address?.split('：')[1] || '1050 Nepean Highway, Mornington VIC 3931'}<br />
-                  <span className="font-medium">Phone:</span> {t.langwarrinLocation?.otherConsultingLocations?.mornington?.phone?.split('：')[1] || '03 9008 4200'}
+                  <span className="font-medium">Address:</span> {finalT.langwarrinLocation?.otherConsultingLocations?.mornington?.address?.split('：')[1] || '1050 Nepean Highway, Mornington VIC 3931'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.langwarrinLocation?.otherConsultingLocations?.mornington?.phone?.split('：')[1] || '03 9008 4200'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/locations/mornington">{t.langwarrinLocation?.otherConsultingLocations?.mornington?.viewDetails || 'View Details'}</Link>
+                  <Link to="/locations/mornington">{finalT.langwarrinLocation?.otherConsultingLocations?.mornington?.viewDetails || 'View Details'}</Link>
                 </Button>
               </div>
 
@@ -449,16 +459,16 @@ const LangwarrinLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.langwarrinLocation?.otherConsultingLocations?.surreyHills?.title || 'Surrey Hills'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.langwarrinLocation?.otherConsultingLocations?.surreyHills?.title || 'Surrey Hills'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.langwarrinLocation?.otherConsultingLocations?.surreyHills?.description || 'The miNEURO Consulting Suites in Surrey Hills are Dr. Aliashkevich\'s main practice location. These modern facilities offer comprehensive neurosurgical consultations in a central, easily accessible location.'}
+                  {finalT.langwarrinLocation?.otherConsultingLocations?.surreyHills?.description || 'The miNEURO Consulting Suites in Surrey Hills are Dr. Aliashkevich\'s main practice location. These modern facilities offer comprehensive neurosurgical consultations in a central, easily accessible location.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <span className="font-medium">Address:</span> {t.langwarrinLocation?.otherConsultingLocations?.surreyHills?.address?.split('：')[1] || 'Suite 4, 619 Canterbury Road, Surrey Hills VIC 3127'}<br />
-                  <span className="font-medium">Phone:</span> {t.langwarrinLocation?.otherConsultingLocations?.surreyHills?.phone?.split('：')[1] || '03 9008 4200'}
+                  <span className="font-medium">Address:</span> {finalT.langwarrinLocation?.otherConsultingLocations?.surreyHills?.address?.split('：')[1] || 'Suite 4, 619 Canterbury Road, Surrey Hills VIC 3127'}<br />
+                  <span className="font-medium">Phone:</span> {finalT.langwarrinLocation?.otherConsultingLocations?.surreyHills?.phone?.split('：')[1] || '03 9008 4200'}
                 </p>
                 <Button asChild variant="outline" className="w-full">
-                  <Link to="/locations/surrey-hills">{t.langwarrinLocation?.otherConsultingLocations?.surreyHills?.viewDetails || 'View Details'}</Link>
+                  <Link to="/locations/surrey-hills">{finalT.langwarrinLocation?.otherConsultingLocations?.surreyHills?.viewDetails || 'View Details'}</Link>
                 </Button>
               </div>
             </div>
@@ -469,15 +479,15 @@ const LangwarrinLocation: React.FC = () => {
         <section className="py-16">
           <div className="container">
             <div className="mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.locations?.langwarrinLocation?.nearbyHospitals?.title || 'Nearby Hospitals'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.locations?.langwarrinLocation?.nearbyHospitals?.title || 'Nearby Hospitals'}</h2>
               <p className="text-muted-foreground">
-                {t.locations?.langwarrinLocation?.nearbyHospitals?.subtitle || 'Dr. Aliashkevich operates at these hospitals near Langwarrin'}
+                {finalT.locations?.langwarrinLocation?.nearbyHospitals?.subtitle || 'Dr. Aliashkevich operates at these hospitals near Langwarrin'}
               </p>
             </div>
 
             <div className="mt-8 max-w-3xl mx-auto mb-12">
               <p className="text-muted-foreground text-center">
-                {t.locations?.langwarrinLocation?.nearbyHospitals?.description || 'In addition to consultations at Peninsula Consulting Suites, Dr. Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.'}
+                {finalT.locations?.langwarrinLocation?.nearbyHospitals?.description || 'In addition to consultations at Peninsula Consulting Suites, Dr. Aliashkevich performs surgeries at several hospitals in the region. These facilities are equipped with state-of-the-art technology for neurosurgical and spinal procedures.'}
               </p>
             </div>
 
@@ -491,13 +501,13 @@ const LangwarrinLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.title || 'Peninsula Private Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.title || 'Peninsula Private Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.description || 'Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr. Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.'}
+                  {finalT.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.description || 'Peninsula Private Hospital is a leading private healthcare facility on the Mornington Peninsula, offering a comprehensive range of surgical and medical services. Dr. Aliashkevich performs neurosurgical and spinal procedures at this hospital, which is equipped with advanced technology for complex surgeries.'}
                 </p>
                 <p className="text-muted-foreground">
-                  {t.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.address || '<span className="font-medium">Address:</span> 525 McClelland Drive, Frankston VIC 3199'}<br />
-                  {t.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.phone || '<span className="font-medium">Phone:</span> (03) 9788 3333'}
+                  {finalT.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.address || '<span className="font-medium">Address:</span> 525 McClelland Drive, Frankston VIC 3199'}<br />
+                  {finalT.locations?.langwarrinLocation?.nearbyHospitals?.peninsulaPrivateHospital?.phone || '<span className="font-medium">Phone:</span> (03) 9788 3333'}
                 </p>
               </div>
 
@@ -510,13 +520,13 @@ const LangwarrinLocation: React.FC = () => {
                   />
                 </div>
 
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.title || 'The Bays Hospital'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.title || 'The Bays Hospital'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.description || 'The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.'}
+                  {finalT.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.description || 'The Bays Hospital in Mornington is a not-for-profit community hospital providing a wide range of medical and surgical services. Dr. Aliashkevich performs selected neurosurgical procedures at this facility, which offers personalized care in a community-focused environment.'}
                 </p>
                 <p className="text-muted-foreground">
-                  {t.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.address || '<span className="font-medium">Address:</span> Vale Street, Mornington VIC 3931'}<br />
-                  {t.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.phone || '<span className="font-medium">Phone:</span> (03) 5975 2009'}
+                  {finalT.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.address || '<span className="font-medium">Address:</span> Vale Street, Mornington VIC 3931'}<br />
+                  {finalT.locations?.langwarrinLocation?.nearbyHospitals?.baysHospital?.phone || '<span className="font-medium">Phone:</span> (03) 5975 2009'}
                 </p>
               </div>
             </div>
@@ -527,74 +537,74 @@ const LangwarrinLocation: React.FC = () => {
         <section className="py-16 bg-primary/5">
           <div className="container">
             <div className="text-center max-w-3xl mx-auto mb-12">
-              <h2 className="text-3xl font-bold mb-4">{t.locations?.langwarrinLocation?.insuranceAndFunding?.title || 'Insurances and Surgery Funding'}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.locations?.langwarrinLocation?.insuranceAndFunding?.title || 'Insurances and Surgery Funding'}</h2>
               <p className="text-muted-foreground">
-                {t.locations?.langwarrinLocation?.insuranceAndFunding?.subtitle || 'TAC and WorkCover Welcome'}
+                {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.subtitle || 'TAC and WorkCover Welcome'}
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.insuranceAndFunding?.privateHealthInsurance?.title || 'Private Health Insurance'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.insuranceAndFunding?.privateHealthInsurance?.title || 'Private Health Insurance'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.privateHealthInsurance?.description1 || 'Patients must have valid private health/hospital insurance with no waiting periods. Extras are not applicable for inpatient hospital treatment. The health funds don\'t contribute to consultation and outpatient treatment fees.'}
+                  {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.privateHealthInsurance?.description1 || 'Patients must have valid private health/hospital insurance with no waiting periods. Extras are not applicable for inpatient hospital treatment. The health funds don\'t contribute to consultation and outpatient treatment fees.'}
                 </p>
                 <p className="text-muted-foreground">
-                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.privateHealthInsurance?.description2 || 'Please note that so-called basic and bronze covers may not cover spinal surgery or neurosurgery in private hospitals. Cervical and lumbar artificial disc replacement (arthroplasty) falls into the Joint Replacement Category, which is usually included in Silver and Gold policies. Patients need to check their policy for coverage levels, exclusions, and inclusions.'}
+                  {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.privateHealthInsurance?.description2 || 'Please note that so-called basic and bronze covers may not cover spinal surgery or neurosurgery in private hospitals. Cervical and lumbar artificial disc replacement (arthroplasty) falls into the Joint Replacement Category, which is usually included in Silver and Gold policies. Patients need to check their policy for coverage levels, exclusions, and inclusions.'}
                 </p>
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.title || 'TAC and WorkCover'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.title || 'TAC and WorkCover'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  <strong>TAC:</strong> {t.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.tac || 'Claim details and consultation approval from TAC. Patients must pay the consultation fee upfront and claim reimbursement from their insurer.'}
+                  <strong>TAC:</strong> {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.tac || 'Claim details and consultation approval from TAC. Patients must pay the consultation fee upfront and claim reimbursement from their insurer.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  <strong>WorkCover:</strong> {t.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.workCover || 'Claim details and consultation approval from the WorkSafe insurer. Patients must pay the consultation fee upfront and claim reimbursement from their insurer.'}
+                  <strong>WorkCover:</strong> {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.workCover || 'Claim details and consultation approval from the WorkSafe insurer. Patients must pay the consultation fee upfront and claim reimbursement from their insurer.'}
                 </p>
                 <p className="text-muted-foreground">
-                  <strong>Veteran Affairs/Military:</strong> {t.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.veteranAffairs || 'Both "Gold Card" and "White Card" patients are eligible. For "White Card" holders, a condition must be covered by DVA.'}
+                  <strong>Veteran Affairs/Military:</strong> {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.tacAndWorkCover?.veteranAffairs || 'Both "Gold Card" and "White Card" patients are eligible. For "White Card" holders, a condition must be covered by DVA.'}
                 </p>
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.insuranceAndFunding?.uninsuredPatients?.title || 'Uninsured Patients'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.insuranceAndFunding?.uninsuredPatients?.title || 'Uninsured Patients'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.uninsuredPatients?.description1 || 'Self-funded patients can be provided with a quote for all surgical, anaesthetic and hospital costs. For example, the minimum amount required for a single-segment spinal surgery not requiring any implants in a private hospital in Victoria can be around $15,000 – $20,000.'}
+                  {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.uninsuredPatients?.description1 || 'Self-funded patients can be provided with a quote for all surgical, anaesthetic and hospital costs. For example, the minimum amount required for a single-segment spinal surgery not requiring any implants in a private hospital in Victoria can be around $15,000 – $20,000.'}
                 </p>
                 <p className="text-muted-foreground">
-                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.uninsuredPatients?.description2 || 'This amount may include hospital and operating theatre fees, surgeon, assistant, anaesthetist, specialised care from a perioperative physician, and HDU or ICU care. Dr Aliashkevich has no affiliation with a public hospital, so unless a patient is willing to pay for surgery in a private hospital, he cannot undertake surgery on someone without appropriate insurance. For all other uninsured referrals, please get in touch with the closest public hospital directly.'}
+                  {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.uninsuredPatients?.description2 || 'This amount may include hospital and operating theatre fees, surgeon, assistant, anaesthetist, specialised care from a perioperative physician, and HDU or ICU care. Dr Aliashkevich has no affiliation with a public hospital, so unless a patient is willing to pay for surgery in a private hospital, he cannot undertake surgery on someone without appropriate insurance. For all other uninsured referrals, please get in touch with the closest public hospital directly.'}
                 </p>
               </div>
 
               <div className="card p-6 rounded-lg shadow-md bg-card">
-                <h3 className="text-xl font-semibold mb-3 text-primary">{t.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.title || 'Patients\' Privacy'}</h3>
+                <h3 className="text-xl font-semibold mb-3 text-primary">{finalT.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.title || 'Patients\' Privacy'}</h3>
                 <p className="text-muted-foreground mb-4">
-                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.description1 || 'Dr Aliashkevich pays great respect to patient\'s privacy and provides a safe environment. The goal is to build and maintain trust between the neurosurgeon and the patient. Patients\' comfort is as important as their treatment, and we ensure that anything you discuss with Dr Aliashkevich is kept private.'}
+                  {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.description1 || 'Dr Aliashkevich pays great respect to patient\'s privacy and provides a safe environment. The goal is to build and maintain trust between the neurosurgeon and the patient. Patients\' comfort is as important as their treatment, and we ensure that anything you discuss with Dr Aliashkevich is kept private.'}
                 </p>
                 <p className="text-muted-foreground mb-4">
-                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.description2 || 'Any files and all personal information are kept secure. Patients can give consent to share their health information, for example, when attending other medical practitioners. Dr Aliashkevich will never release any information to insurers or other parties without consent.'}
+                  {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.description2 || 'Any files and all personal information are kept secure. Patients can give consent to share their health information, for example, when attending other medical practitioners. Dr Aliashkevich will never release any information to insurers or other parties without consent.'}
                 </p>
                 <p className="text-muted-foreground">
-                  {t.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.description3 || 'At the end of every patient\'s visit, our office emails a summary of their conditions, including the diagnosis, history, examination findings, radiological results and recommended action plan.'}
+                  {finalT.locations?.langwarrinLocation?.insuranceAndFunding?.patientsPrivacy?.description3 || 'At the end of every patient\'s visit, our office emails a summary of their conditions, including the diagnosis, history, examination findings, radiological results and recommended action plan.'}
                 </p>
               </div>
             </div>
 
             <div className="text-center">
-              <h2 className="text-2xl font-bold mb-6">{t.locations?.langwarrinLocation?.readyToSchedule?.title || 'Ready to Schedule an Appointment?'}</h2>
+              <h2 className="text-2xl font-bold mb-6">{finalT.locations?.langwarrinLocation?.readyToSchedule?.title || 'Ready to Schedule an Appointment?'}</h2>
               <p className="text-lg mb-8 max-w-2xl mx-auto text-muted-foreground">
-                {t.locations?.langwarrinLocation?.readyToSchedule?.description || 'Don\'t wait to seek help if you are struggling with pain, a neurosurgical or a spinal condition. Schedule a consultation with Dr Ales Aliashkevich at Peninsula Consulting Suites in Langwarrin and take the first step toward improved health and well-being. We\'re here to support you every step of the way to recovery.'}
+                {finalT.locations?.langwarrinLocation?.readyToSchedule?.description || 'Don\'t wait to seek help if you are struggling with pain, a neurosurgical or a spinal condition. Schedule a consultation with Dr Ales Aliashkevich at Peninsula Consulting Suites in Langwarrin and take the first step toward improved health and well-being. We\'re here to support you every step of the way to recovery.'}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">
-                  <Link to="/appointments">{t.locations?.langwarrinLocation?.readyToSchedule?.bookAppointment || 'Book an Appointment'}</Link>
+                  <Link to="/appointments">{finalT.locations?.langwarrinLocation?.readyToSchedule?.bookAppointment || 'Book an Appointment'}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/locations">{t.locations?.langwarrinLocation?.readyToSchedule?.viewAllLocations || 'View All Locations'}</Link>
+                  <Link to="/locations">{finalT.locations?.langwarrinLocation?.readyToSchedule?.viewAllLocations || 'View All Locations'}</Link>
                 </Button>
                 <Button asChild variant="outline" size="lg">
-                  <Link to="/contact">{t.locations?.langwarrinLocation?.readyToSchedule?.contactUs || 'Contact Us'}</Link>
+                  <Link to="/contact">{finalT.locations?.langwarrinLocation?.readyToSchedule?.contactUs || 'Contact Us'}</Link>
                 </Button>
               </div>
             </div>

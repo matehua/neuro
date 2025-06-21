@@ -7,7 +7,6 @@ import { SEOData } from '@/lib/seo';
  * Shared type definitions for layout components
  */
 
-
 export interface StandardPageLayoutProps {
   children: ReactNode;
   title?: string;
@@ -22,6 +21,7 @@ export interface StandardPageLayoutProps {
   contentClassName?: string;
   enableErrorBoundary?: boolean;
   customErrorFallback?: ReactNode;
+}
 
 export interface StandardSectionProps {
   children: ReactNode;
@@ -30,6 +30,7 @@ export interface StandardSectionProps {
   spacing?: 'none' | 'sm' | 'default' | 'lg' | 'xl';
   maxWidth?: 'none' | 'container' | 'prose' | 'narrow';
   id?: string;
+}
 
 export type LayoutVariant = 'standard' | 'landing' | 'service' | 'location' | 'article';
 
@@ -39,3 +40,4 @@ export interface LayoutConfig {
   showHeader?: boolean;
   className?: string;
   contentClassName?: string;
+}

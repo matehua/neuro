@@ -1,7 +1,6 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search } from 'lucide-react';
-import { useEffect } from 'react';
-
 import Footer from '@/components/Footer';
 import Navbar from '@/components/Navbar';
 import SafeImage from '@/components/SafeImage';
@@ -9,9 +8,31 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 
 const ConditionInformation: React.FC = () => {
   const { t, language } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.patientResources && safeT.patientResources.conditionInfo) ? safeT : {
+    patientResources: {
+      conditionInfo: {
+        title: "Spine Condition Information",
+        subtitle: "Comprehensive information about common spine conditions and their treatments",
+        searchPlaceholder: "Search conditions...",
+        exploreConditions: "Explore Spine Conditions",
+        understandingAnatomy: "Understanding Spine Anatomy",
+        notSureAboutCondition: "Not Sure About Your Condition?",
+        takeAssessment: "Take our comprehensive spine health assessment to better understand your symptoms and get personalized recommendations."
+      },
+      assessmentTools: {
+        startAssessment: "Start Assessment"
+      },
+      conditions: {}
+    }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -116,16 +137,16 @@ const ConditionInformation: React.FC = () => {
           <div className="container relative z-10">
             <div className="text-center max-w-3xl mx-auto">
               <h1 className="text-4xl md:text-5xl font-bold mt-2 mb-6">
-                {t.patientResources.conditionInfo.title}
+                {finalT.patientResources.conditionInfo.title}
               </h1>
               <p className="text-muted-foreground mb-8">
-                {t.patientResources.conditionInfo.subtitle}
+                {finalT.patientResources.conditionInfo.subtitle}
               </p>
               <div className="relative max-w-xl mx-auto">
                 <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-muted-foreground" />
                 <Input
                   type="text"
-                  placeholder={t.patientResources.conditionInfo.searchPlaceholder}
+                  placeholder={finalT.patientResources.conditionInfo.searchPlaceholder}
                   className="pl-10 pr-4 py-6 rounded-full"
                 />
               </div>
@@ -136,16 +157,16 @@ const ConditionInformation: React.FC = () => {
         {/* Conditions Grid */}
         <section className="py-16">
           <div className="container">
-            <h2 className="text-3xl font-bold mb-12">{t.patientResources.conditionInfo.exploreConditions}</h2>
+            <h2 className="text-3xl font-bold mb-12">{finalT.patientResources.conditionInfo.exploreConditions}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
               {conditions?.map((condition) => {
                 // Get translated condition name and description if available
-                const translatedName = language !== 'en' && t.patientResources?.conditions && t.patientResources.conditions[condition.id]?.name
-                  ? t.patientResources.conditions[condition.id].name
+                const translatedName = language !== 'en' && finalT.patientResources?.conditions && finalT.patientResources.conditions[condition.id]?.name
+                  ? finalT.patientResources.conditions[condition.id].name
                   : condition.name;
 
-                const translatedDescription = language !== 'en' && t.patientResources?.conditions && t.patientResources.conditions[condition.id]?.description
-                  ? t.patientResources.conditions[condition.id].description
+                const translatedDescription = language !== 'en' && finalT.patientResources?.conditions && finalT.patientResources.conditions[condition.id]?.description
+                  ? finalT.patientResources.conditions[condition.id].description
                   : condition.description;
 
                 return (
@@ -183,7 +204,7 @@ const ConditionInformation: React.FC = () => {
           <div className="container">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">{t.patientResources.conditionInfo.understandingAnatomy}</h2>
+                <h2 className="text-3xl font-bold mb-6">{finalT.patientResources.conditionInfo.understandingAnatomy}</h2>
                 <p className="text-muted-foreground mb-4">
                   {language === 'zh' ?
                     "脊柱是一个复杂的结构，由椎骨、椎间盘、神经以及支撑肌肉和韧带组成。了解脊柱的基本解剖结构可以帮助您更好地理解您的病情和治疗选择。" :
@@ -219,13 +240,13 @@ const ConditionInformation: React.FC = () => {
           <div className="container">
             <div className="bg-primary/5 rounded-lg p-8 md:p-12">
               <div className="text-center max-w-3xl mx-auto">
-                <h2 className="text-3xl font-bold mb-6">{t.patientResources.conditionInfo.notSureAboutCondition}</h2>
+                <h2 className="text-3xl font-bold mb-6">{finalT.patientResources.conditionInfo.notSureAboutCondition}</h2>
                 <p className="text-muted-foreground mb-8">
-                  {t.patientResources.conditionInfo.takeAssessment}
+                  {finalT.patientResources.conditionInfo.takeAssessment}
                 </p>
                 <div className="flex flex-col sm:flex-row justify-center gap-4">
                   <Button asChild size="lg">
-                    <Link to="/patient-resources/individual-spine-health-program#assessment">{t.patientResources.assessmentTools.startAssessment}</Link>
+                    <Link to="/patient-resources/individual-spine-health-program#assessment">{finalT.patientResources.assessmentTools.startAssessment}</Link>
                   </Button>
                   <Button asChild variant="outline" size="lg">
                     <Link to="/patient-resources/individual-spine-health-program">{language === 'zh' ? "探索脊柱健康应用" : "Explore Spine Health App"}</Link>

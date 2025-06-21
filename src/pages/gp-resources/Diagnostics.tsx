@@ -1,15 +1,43 @@
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import PageHeader from '@/components/PageHeader';
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 
 const Diagnostics: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.gpResources && safeT.gpResources.diagnostics) ? safeT : {
+    gpResources: {
+      diagnostics: {
+        title: "Neurosurgical Diagnostics",
+        subtitle: "Comprehensive diagnostic guidelines for neurosurgical conditions",
+        description: "Evidence-based diagnostic approaches for common neurosurgical conditions.",
+        imagingGuidelines: {
+          title: "Imaging Guidelines",
+          description: "Comprehensive imaging protocols for neurosurgical conditions:"
+        },
+        neurologicalAssessment: {
+          title: "Neurological Assessment",
+          description: "Systematic approach to neurological examination:"
+        },
+        specialisedTests: {
+          description: "Advanced diagnostic tests for complex cases:"
+        },
+        interpretingResults: {
+          title: "Interpreting Results",
+          description: "Guidelines for interpreting diagnostic findings:"
+        }
+      }
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -57,8 +85,8 @@ const Diagnostics: React.FC = () => {
   return (
     <StandardPageLayout showHeader={false}>
       <PageHeader
-        title={t.gpResources.diagnostics.title}
-        subtitle={t.gpResources.diagnostics.subtitle}
+        title={finalT.gpResources.diagnostics.title}
+        subtitle={finalT.gpResources.diagnostics.subtitle}
         backgroundImage="/images/gp-resources/diagnostics-hero.jpg"
       />
 
@@ -66,7 +94,7 @@ const Diagnostics: React.FC = () => {
         <div className="container">
           <div className="max-w-3xl mx-auto mb-12">
             <p className="text-lg mb-8">
-              {t.gpResources.diagnostics.description}
+              {finalT.gpResources.diagnostics.description}
             </p>
 
             <Tabs defaultValue="imaging" className="w-full">
@@ -80,10 +108,10 @@ const Diagnostics: React.FC = () => {
               <TabsContent value="imaging" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.diagnostics.imagingGuidelines.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.diagnostics.imagingGuidelines.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.diagnostics.imagingGuidelines.description}</p>
+                    <p className="mb-4">{finalT.gpResources.diagnostics.imagingGuidelines.description}</p>
 
                     <h3 className="font-bold text-lg mt-6 mb-3">Spine Imaging</h3>
                     <div className="space-y-4">
@@ -163,10 +191,10 @@ const Diagnostics: React.FC = () => {
               <TabsContent value="neurological" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.diagnostics.neurologicalAssessment.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.diagnostics.neurologicalAssessment.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.diagnostics.neurologicalAssessment.description}</p>
+                    <p className="mb-4">{finalT.gpResources.diagnostics.neurologicalAssessment.description}</p>
 
                     <h3 className="font-bold text-lg mt-6 mb-3">Radiculopathy Assessment</h3>
                     <div className="p-4 bg-muted rounded-md mb-6">
@@ -231,7 +259,7 @@ const Diagnostics: React.FC = () => {
                     <CardTitle>Specialised Diagnostic Tests</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.diagnostics.specialisedTests.description}</p>
+                    <p className="mb-4">{finalT.gpResources.diagnostics.specialisedTests.description}</p>
 
                     <div className="space-y-6 mt-4">
                       <div className="p-4 bg-muted rounded-md">
@@ -330,10 +358,10 @@ const Diagnostics: React.FC = () => {
               <TabsContent value="interpreting" className="mt-6">
                 <Card>
                   <CardHeader>
-                    <CardTitle>{t.gpResources.diagnostics.interpretingResults.title}</CardTitle>
+                    <CardTitle>{finalT.gpResources.diagnostics.interpretingResults.title}</CardTitle>
                   </CardHeader>
                   <CardContent>
-                    <p className="mb-4">{t.gpResources.diagnostics.interpretingResults.description}</p>
+                    <p className="mb-4">{finalT.gpResources.diagnostics.interpretingResults.description}</p>
 
                     <h3 className="font-bold text-lg mt-6 mb-3">Spine Imaging Interpretation</h3>
                     <div className="p-4 bg-muted rounded-md mb-6">
@@ -432,7 +460,7 @@ const Diagnostics: React.FC = () => {
           <div className="mt-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Case Examples</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {caseExamples?.map((example: any, index: any) => (
+              {caseExamples?.map((example: { title: string; description: string; approach: string; outcome: string }, index: number) => (
                 <Card key={index} className="bg-card">
                   <CardHeader>
                     <CardTitle className="text-xl">{example.title}</CardTitle>

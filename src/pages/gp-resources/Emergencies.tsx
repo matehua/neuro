@@ -1,12 +1,12 @@
+import React, { useEffect } from 'react';
 import { AlertTriangle, Phone, Clock, Stethoscope, Brain, Activity } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import PageHeader from '@/components/PageHeader';
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+
 
 const Emergencies: React.FC = () => {
   // No translations needed for this page
@@ -265,19 +265,33 @@ const Emergencies: React.FC = () => {
                         </h3>
                         <ul className="list-none pl-0 mt-2 space-y-3">
                           <li className="flex items-center gap-2">
-                            <span className="font-bold min-w-[180px]">Neurosurgical Emergency Line:</span>
+                            <span className="font-bold min-w-[220px]">Neurosurgical Urgent Enquiries (Business Hours):</span>
                             <span className="text-red-700 dark:text-red-400 font-bold">(03) 9008 4200</span>
                           </li>
                           <li className="flex items-center gap-2">
-                            <span className="font-bold min-w-[180px]">After Hours Emergency:</span>
-                            <span className="text-red-700 dark:text-red-400 font-bold">(03) 9008 4200</span>
-                            <span className="text-sm">(Diverts to on-call neurosurgeon)</span>
+                            <span className="font-bold min-w-[220px]">After Hours Emergency:</span>
+                            <span className="text-red-700 dark:text-red-400 font-bold">000</span>
                           </li>
-                          <li className="flex items-center gap-2">
-                            <span className="font-bold min-w-[180px]">Emergency Department:</span>
-                            <span>Direct patient to nearest emergency department with neurosurgical capabilities</span>
+                          <li className="mt-4">
+                            <div className="p-3 bg-blue-50 dark:bg-blue-950/20 rounded-md border border-blue-200">
+                              <h4 className="font-bold text-blue-800 dark:text-blue-200 mb-2">Epworth Richmond Hospital Emergency Department (24 hours)</h4>
+                              <p className="text-sm text-blue-700 dark:text-blue-300 mb-1">
+                                <strong>Address:</strong> 62 Erin Street, Richmond Victoria 3121
+                              </p>
+                              <p className="text-sm text-blue-700 dark:text-blue-300 mb-1">
+                                <strong>Phone:</strong> (03) 9506 3000
+                              </p>
+                              <p className="text-sm text-blue-700 dark:text-blue-300">
+                                <strong>Website:</strong> <a href="https://www.epworth.org.au/Our-Services/Emergency" target="_blank" rel="noopener noreferrer" className="underline hover:text-blue-600">https://www.epworth.org.au/Our-Services/Emergency</a>
+                              </p>
+                            </div>
                           </li>
                         </ul>
+                        <div className="mt-4 p-3 bg-yellow-50 dark:bg-yellow-950/20 rounded-md border border-yellow-200">
+                          <p className="text-sm text-yellow-800 dark:text-yellow-200 font-medium">
+                            <strong>Important:</strong> For immediate life-threatening emergencies, always call 000 first. For neurosurgical consultation during business hours, call (03) 9008 4200.
+                          </p>
+                        </div>
                       </div>
 
                       <div className="p-4 border border-primary/30 bg-primary/5 rounded-md">
@@ -318,7 +332,7 @@ const Emergencies: React.FC = () => {
           <div className="mt-16">
             <h2 className="text-3xl font-bold mb-8 text-center">Emergency Case Examples</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-              {emergencyCases?.map((example: any, index: any) => (
+              {emergencyCases?.map((example: { title: string; description: string; approach: string; outcome: string }, index: number) => (
                 <Card key={index} className="bg-card border-red-200 dark:border-red-800">
                   <CardHeader className="bg-red-50 dark:bg-red-950/20 border-b border-red-200 dark:border-red-800">
                     <CardTitle className="text-xl text-red-700 dark:text-red-400">{example.title}</CardTitle>

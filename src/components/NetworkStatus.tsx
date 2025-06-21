@@ -1,4 +1,4 @@
-import React, {  useState, useEffect , useCallback } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Wifi, WifiOff, RefreshCw, AlertTriangle } from 'lucide-react';
 
 import ErrorBoundary from '@/components/ErrorBoundary';
@@ -9,7 +9,6 @@ import { cn } from '@/lib/utils';
 interface NetworkStatusProps {
   onRetry?: () => void;
   className?: string;
-
 }
 
   /**
@@ -39,6 +38,8 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
     // Show offline message if already offline
     if (!navigator.onLine) {
       setShowOfflineMessage(true);
+    }
+
     return () => {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
@@ -63,15 +64,19 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
         onRetry?.();
       } else {
         throw new Error('Network test failed');
+      }
     } catch (error) {
       // Still offline or network issues
       setIsOnline(false);
     } finally {
       setIsRetrying(false);
+    }
   };
 
   if (!showOfflineMessage && isOnline) {
     return null;
+  }
+
   return (
     <ErrorBoundary>
       <div className={cn('fixed top-4 left-4 right-4 z-50', className)}>
@@ -97,7 +102,7 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
               <Button
                 variant="outline"
                 size="sm"
-                onClick={() => setShowOfflineMessage(false)
+                onClick={() => setShowOfflineMessage(false)}
                 className="ml-4"
               >
                 Dismiss
@@ -113,8 +118,8 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
                 <Button
                   variant="outline"
                   size="sm"
-                            onClick={handleRetry
-                            disabled={isRetrying}
+                  onClick={handleRetry}
+                  disabled={isRetrying}
                   className="flex items-center gap-2"
                 >
                   <RefreshCw className={cn(
@@ -151,6 +156,7 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
 /**
  * Hook for network status monitoring
  */
+export const useNetworkStatus = () => {
   const [isOnline, setIsOnline] = useState(navigator.onLine);
   const [connectionType, setConnectionType] = useState<string>('unknown');
 
@@ -178,6 +184,9 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
           window.removeEventListener('offline', handleOffline);
           connection.removeEventListener('change', handleConnectionChange);
         };
+      }
+    }
+
     return () => {
       window.removeEventListener('online', handleOnline);
       window.removeEventListener('offline', handleOffline);
@@ -190,6 +199,7 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
 /**
  * Retry mechanism for failed requests
  */
+export const useRetryMechanism = (maxRetries: number = 3, baseDelay: number = 1000) => {
   const [retryCount, setRetryCount] = useState(0);
   const [isRetrying, setIsRetrying] = useState(false);
 
@@ -214,9 +224,14 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
           setIsRetrying(false);
           onError?.(error as Error);
           throw error;
+        }
+
         // Exponential backoff
         const delay = baseDelay * Math.pow(2, attempt);
         await new Promise(resolve => setTimeout(resolve, delay));
+      }
+    }
+
     setIsRetrying(false);
     return null;
   };
@@ -228,5 +243,7 @@ export const NetworkStatus: React.FC<NetworkStatusProps> = ({ onRetry, className
 
   return { retry, retryCount, isRetrying, reset };
 };
+
+NetworkStatus.displayName = 'NetworkStatus';
 
 export default NetworkStatus;

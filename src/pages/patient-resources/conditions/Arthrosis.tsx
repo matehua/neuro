@@ -1,454 +1,99 @@
-import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
-import SafeImage from '@/components/SafeImage';
+import React, { useEffect } from 'react';
 import StandardPageLayout from '@/components/StandardPageLayout';
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
-import { Badge } from '@/components/ui/badge';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { cn } from '@/lib/utils';
-import { useDeviceDetection } from '@/contexts/DeviceContext';
+import ConditionHeroSection from '@/components/medical-conditions/shared/ConditionHeroSection';
+import ConditionQuickFacts from '@/components/medical-conditions/shared/ConditionQuickFacts';
+import ConditionOverviewSection from '@/components/medical-conditions/shared/ConditionOverviewSection';
+import ArthrosisTypesSection from '@/components/medical-conditions/arthrosis/ArthrosisTypesSection';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
 import {
-  AlertTriangle,
-  Activity,
-  Brain,
-  Heart,
-  Shield,
-  Target,
-  Clock,
-  CheckCircle,
-  ArrowRight,
-  Download,
-  Phone,
-  Calendar,
   Users,
   TrendingUp,
-  Zap,
-  Eye,
   MapPin,
-  Gauge,
-  Network,
-  Bone,
-  Stethoscope,
-  Microscope
+  CheckCircle
 } from "lucide-react";
 
 const Arthrosis: React.FC = () => {
   const { t } = useLanguage();
-  const deviceInfo = useDeviceDetection();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = safeT || {
+    // Basic fallback structure
+    nav: { home: "Home", expertise: "Expertise", appointments: "Appointments", contact: "Contact" },
+    home: { welcome: { learnMore: "Learn More" }, featuredProcedures: { title: "Featured Procedures" } },
+    footer: { description: "Professional medical practice", quickLinks: "Quick Links", contact: "Contact" }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
     window.scrollTo(0, 0);
   }, []);
 
+  // Quick facts data
+  const quickFacts = [
+    {
+      icon: Users,
+      title: "Prevalence",
+      value: "85% over age 60"
+    },
+    {
+      icon: TrendingUp,
+      title: "Onset Age",
+      value: "40+ years typically"
+    },
+    {
+      icon: MapPin,
+      title: "Most Common",
+      value: "Cervical & Lumbar"
+    },
+    {
+      icon: CheckCircle,
+      title: "Management",
+      value: "Highly treatable"
+    }
+  ];
+
+  // Overview content
+  const overviewDescription = [
+    "Spinal arthrosis, also known as spondylosis, is a degenerative condition affecting the joints, discs, and bones of the spine. It represents the natural wear-and-tear process that occurs with aging, leading to structural changes in the vertebrae, facet joints, and intervertebral discs.",
+    "This condition involves the formation of bone spurs (osteophytes), disc degeneration, ligament thickening, and facet joint arthritis. While often asymptomatic, it can cause pain, stiffness, and neurological symptoms when nerve structures become compressed."
+  ];
+
+  const overviewKeyPoints = [
+    { text: "Progressive degenerative process affecting all spinal structures" },
+    { text: "Can affect cervical, thoracic, or lumbar spine regions" },
+    { text: "Often asymptomatic but may cause significant symptoms" }
+  ];
+
   return (
     <StandardPageLayout title="Arthrosis (Spondylosis) - Comprehensive Guide" showHeader={false}>
       <main className="flex-1 pt-20">
         {/* Hero Section */}
-        <section className={cn(
-          "relative bg-gradient-to-r from-primary/10 to-white dark:from-primary/20 dark:to-background",
-          deviceInfo.isMobile ? "py-12" : "py-20"
-        )}>
-          <div className="absolute inset-0 overflow-hidden opacity-10">
-            <SafeImage
-              src="/images/spine-conditions/cervical-spondylosis.jpg"
-              alt="Arthrosis spine anatomy"
-              className="w-full h-full object-cover"
-              fallbackSrc="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80"
-            />
-          </div>
-          <div className={cn(
-            "container relative z-10",
-            deviceInfo.isMobile ? "px-4" : ""
-          )}>
-            <div className="text-center max-w-4xl mx-auto">
-              <Badge variant="secondary" className="mb-4">
-                Spine Conditions Library
-              </Badge>
-              <h1 className={cn(
-                "font-bold mb-6",
-                deviceInfo.isMobile ? "text-3xl" : "text-4xl md:text-5xl"
-              )}>
-                Arthrosis (Spondylosis): Complete Guide
-              </h1>
-              <p className={cn(
-                "text-muted-foreground mb-8",
-                deviceInfo.isMobile ? "text-base" : "text-lg"
-              )}>
-                Understanding spinal arthrosis and spondylosis: degenerative joint changes, causes, symptoms, diagnosis, and comprehensive treatment options 
-                from conservative management to advanced surgical interventions for cervical, thoracic, and lumbar spine.
-              </p>
-              <div className={cn(
-                "flex justify-center gap-4",
-                deviceInfo.isMobile ? "flex-col items-center" : "flex-row"
-              )}>
-                <Button asChild size={deviceInfo.isMobile ? "default" : "lg"}>
-                  <Link to="#assessment">
-                    <Target className="mr-2 h-4 w-4" />
-                    Take Assessment
-                  </Link>
-                </Button>
-                <Button asChild variant="outline" size={deviceInfo.isMobile ? "default" : "lg"}>
-                  <Link to="/contact">
-                    <Calendar className="mr-2 h-4 w-4" />
-                    Book Consultation
-                  </Link>
-                </Button>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ConditionHeroSection
+          title="Arthrosis (Spondylosis): Complete Guide"
+          subtitle=""
+          description="Understanding spinal arthrosis and spondylosis: degenerative joint changes, causes, symptoms, diagnosis, and comprehensive treatment options from conservative management to advanced surgical interventions for cervical, thoracic, and lumbar spine."
+          heroImageSrc="/images/spine-conditions/cervical-spondylosis.jpg"
+          heroImageAlt="Arthrosis spine anatomy"
+        />
 
         {/* Quick Facts Section */}
-        <section className={cn(
-          "bg-muted/30",
-          deviceInfo.isMobile ? "py-8" : "py-12"
-        )}>
-          <div className={cn(
-            "container",
-            deviceInfo.isMobile ? "px-4" : ""
-          )}>
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <Users className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <h3 className="font-semibold mb-1">Prevalence</h3>
-                  <p className="text-sm text-muted-foreground">85% over age 60</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <TrendingUp className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <h3 className="font-semibold mb-1">Onset Age</h3>
-                  <p className="text-sm text-muted-foreground">40+ years typically</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <MapPin className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <h3 className="font-semibold mb-1">Most Common</h3>
-                  <p className="text-sm text-muted-foreground">Cervical & Lumbar</p>
-                </CardContent>
-              </Card>
-              <Card className="text-center">
-                <CardContent className="pt-6">
-                  <CheckCircle className="h-8 w-8 mx-auto mb-2 text-primary" />
-                  <h3 className="font-semibold mb-1">Management</h3>
-                  <p className="text-sm text-muted-foreground">Highly treatable</p>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
+        <ConditionQuickFacts facts={quickFacts} />
 
         {/* What is Arthrosis Section */}
-        <section className={cn(
-          deviceInfo.isMobile ? "py-8" : "py-16"
-        )}>
-          <div className={cn(
-            "container",
-            deviceInfo.isMobile ? "px-4" : ""
-          )}>
-            <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              <div>
-                <h2 className={cn(
-                  "font-bold mb-6",
-                  deviceInfo.isMobile ? "text-2xl" : "text-3xl"
-                )}>
-                  What is Spinal Arthrosis?
-                </h2>
-                <p className="text-muted-foreground mb-4">
-                  Spinal arthrosis, also known as spondylosis, is a degenerative condition affecting the joints, 
-                  discs, and bones of the spine. It represents the natural wear-and-tear process that occurs 
-                  with aging, leading to structural changes in the vertebrae, facet joints, and intervertebral discs.
-                </p>
-                <p className="text-muted-foreground mb-6">
-                  This condition involves the formation of bone spurs (osteophytes), disc degeneration, 
-                  ligament thickening, and facet joint arthritis. While often asymptomatic, it can cause 
-                  pain, stiffness, and neurological symptoms when nerve structures become compressed.
-                </p>
-                <div className="space-y-3">
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm">Progressive degenerative process affecting all spinal structures</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm">Can affect cervical, thoracic, or lumbar spine regions</p>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="h-5 w-5 text-green-600 mt-0.5 flex-shrink-0" />
-                    <p className="text-sm">Often asymptomatic but may cause significant symptoms</p>
-                  </div>
-                </div>
-              </div>
-              <div className="relative">
-                <SafeImage
-                  src="/images/spine-conditions/cervical-spondylosis.jpg"
-                  alt="Spinal arthrosis anatomy illustration"
-                  className="w-full h-auto rounded-lg shadow-lg"
-                  fallbackSrc="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
-                />
-                <div className="absolute bottom-4 left-4 right-4 bg-black/70 text-white p-3 rounded text-sm">
-                  Comparison showing normal spine vs. arthrotic changes with bone spurs and disc degeneration
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
+        <ConditionOverviewSection
+          title="What is Spinal Arthrosis?"
+          description={overviewDescription}
+          keyPoints={overviewKeyPoints}
+          imageSrc="/images/spine-conditions/cervical-spondylosis.jpg"
+          imageAlt="Spinal arthrosis anatomy illustration"
+          imageCaption="Comparison showing normal spine vs. arthrotic changes with bone spurs and disc degeneration"
+        />
 
         {/* Types and Pathophysiology Section */}
-        <section className={cn(
-          "bg-muted/30",
-          deviceInfo.isMobile ? "py-8" : "py-16"
-        )}>
-          <div className={cn(
-            "container",
-            deviceInfo.isMobile ? "px-4" : ""
-          )}>
-            <h2 className={cn(
-              "font-bold text-center mb-12",
-              deviceInfo.isMobile ? "text-2xl mb-8" : "text-3xl"
-            )}>
-              Types of Spinal Arthrosis & Degenerative Changes
-            </h2>
-
-            <Tabs defaultValue="types" className="w-full max-w-4xl mx-auto">
-              <TabsList className={cn(
-                "grid mb-8",
-                deviceInfo.isMobile ? "grid-cols-1 h-auto" : "grid-cols-3"
-              )}>
-                <TabsTrigger value="types" className={cn(
-                  "text-center",
-                  deviceInfo.isMobile ? "py-3" : "py-3"
-                )}>
-                  Types by Location
-                </TabsTrigger>
-                <TabsTrigger value="pathology" className={cn(
-                  "text-center",
-                  deviceInfo.isMobile ? "py-3" : "py-3"
-                )}>
-                  Degenerative Changes
-                </TabsTrigger>
-                <TabsTrigger value="stages" className={cn(
-                  "text-center",
-                  deviceInfo.isMobile ? "py-3" : "py-3"
-                )}>
-                  Progression Stages
-                </TabsTrigger>
-              </TabsList>
-
-              <TabsContent value="types" className="bg-card p-6 rounded-lg shadow-sm">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-lg">Cervical Spondylosis</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Degenerative changes in the neck region (C1-C7). Most commonly affects
-                        C5-C6 and C6-C7 levels, causing neck pain and potential arm symptoms.
-                      </p>
-                      <div className="space-y-2">
-                        <h5 className="font-semibold text-sm">Common Features:</h5>
-                        <ul className="text-sm space-y-1">
-                          <li>• Disc space narrowing</li>
-                          <li>• Uncovertebral joint arthritis</li>
-                          <li>• Facet joint degeneration</li>
-                          <li>• Ligamentum flavum thickening</li>
-                        </ul>
-                      </div>
-                      <Badge variant="secondary" className="mt-3">Most Symptomatic</Badge>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-lg">Thoracic Spondylosis</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Degenerative changes in the mid-back region (T1-T12). Less common
-                        to cause symptoms due to rib cage stability and reduced mobility.
-                      </p>
-                      <div className="space-y-2">
-                        <h5 className="font-semibold text-sm">Characteristics:</h5>
-                        <ul className="text-sm space-y-1">
-                          <li>• Often asymptomatic</li>
-                          <li>• May cause mid-back stiffness</li>
-                          <li>• Rib articulation changes</li>
-                          <li>• Potential myelopathy risk</li>
-                        </ul>
-                      </div>
-                      <Badge variant="outline" className="mt-3">Least Symptomatic</Badge>
-                    </CardContent>
-                  </Card>
-
-                  <Card>
-                    <CardHeader>
-                      <CardTitle className="text-lg">Lumbar Spondylosis</CardTitle>
-                    </CardHeader>
-                    <CardContent>
-                      <p className="text-sm text-muted-foreground mb-3">
-                        Degenerative changes in the lower back (L1-S1). Commonly affects
-                        L4-L5 and L5-S1 levels, often causing back pain and leg symptoms.
-                      </p>
-                      <div className="space-y-2">
-                        <h5 className="font-semibold text-sm">Key Features:</h5>
-                        <ul className="text-sm space-y-1">
-                          <li>• Facet joint hypertrophy</li>
-                          <li>• Disc degeneration</li>
-                          <li>• Ligamentum flavum buckling</li>
-                          <li>• Potential spinal stenosis</li>
-                        </ul>
-                      </div>
-                      <Badge variant="secondary" className="mt-3">High Impact</Badge>
-                    </CardContent>
-                  </Card>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="pathology" className="bg-card p-6 rounded-lg shadow-sm">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  <div>
-                    <h3 className="text-xl font-bold mb-4">Degenerative Process</h3>
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="font-semibold text-primary mb-2">Disc Degeneration</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Loss of disc height, water content, and elasticity. Leads to
-                          increased stress on facet joints and ligaments.
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-primary mb-2">Osteophyte Formation</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Bone spurs develop as the body attempts to stabilize degenerative
-                          segments. Can compress neural structures.
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-primary mb-2">Facet Joint Arthritis</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Cartilage wear in facet joints leads to bone-on-bone contact,
-                          inflammation, and joint enlargement.
-                        </p>
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-primary mb-2">Ligament Changes</h4>
-                        <p className="text-sm text-muted-foreground">
-                          Ligamentum flavum thickening and buckling can contribute to
-                          spinal canal narrowing and nerve compression.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                  <div className="relative">
-                    <SafeImage
-                      src="/images/spine-anatomy/degenerative-changes.jpg"
-                      alt="Degenerative spine changes illustration"
-                      className="w-full h-auto rounded-lg"
-                      fallbackSrc="https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-
-              <TabsContent value="stages" className="bg-card p-6 rounded-lg shadow-sm">
-                <div className="space-y-6">
-                  <h3 className="text-xl font-bold text-center">Progression of Arthrotic Changes</h3>
-
-                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-                    <div className="space-y-4">
-                      <Card className="p-4 border-green-200 bg-green-50 dark:bg-green-950/20">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-green-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                            1
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-green-800 dark:text-green-200 mb-2">Early Stage</h4>
-                            <ul className="text-sm text-green-700 dark:text-green-300 space-y-1">
-                              <li>• Mild disc space narrowing</li>
-                              <li>• Early osteophyte formation</li>
-                              <li>• Minimal symptoms</li>
-                              <li>• Normal function maintained</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </Card>
-
-                      <Card className="p-4 border-yellow-200 bg-yellow-50 dark:bg-yellow-950/20">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-yellow-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                            2
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-yellow-800 dark:text-yellow-200 mb-2">Moderate Stage</h4>
-                            <ul className="text-sm text-yellow-700 dark:text-yellow-300 space-y-1">
-                              <li>• Significant disc degeneration</li>
-                              <li>• Prominent bone spurs</li>
-                              <li>• Facet joint arthritis</li>
-                              <li>• Intermittent symptoms</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </Card>
-                    </div>
-
-                    <div className="space-y-4">
-                      <Card className="p-4 border-orange-200 bg-orange-50 dark:bg-orange-950/20">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-orange-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                            3
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-orange-800 dark:text-orange-200 mb-2">Advanced Stage</h4>
-                            <ul className="text-sm text-orange-700 dark:text-orange-300 space-y-1">
-                              <li>• Severe disc collapse</li>
-                              <li>• Large osteophytes</li>
-                              <li>• Ligament thickening</li>
-                              <li>• Persistent symptoms</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </Card>
-
-                      <Card className="p-4 border-red-200 bg-red-50 dark:bg-red-950/20">
-                        <div className="flex items-start gap-3">
-                          <div className="w-8 h-8 bg-red-600 text-white rounded-full flex items-center justify-center text-sm font-bold">
-                            4
-                          </div>
-                          <div>
-                            <h4 className="font-semibold text-red-800 dark:text-red-200 mb-2">Severe Stage</h4>
-                            <ul className="text-sm text-red-700 dark:text-red-300 space-y-1">
-                              <li>• Complete disc collapse</li>
-                              <li>• Spinal canal stenosis</li>
-                              <li>• Neurological symptoms</li>
-                              <li>• Functional impairment</li>
-                            </ul>
-                          </div>
-                        </div>
-                      </Card>
-                    </div>
-                  </div>
-
-                  <div className="text-center">
-                    <SafeImage
-                      src="/images/spine-anatomy/spondylosis-progression.jpg"
-                      alt="Spondylosis progression stages"
-                      className="w-full max-w-lg mx-auto h-auto rounded-lg"
-                      fallbackSrc="https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80"
-                    />
-                  </div>
-                </div>
-              </TabsContent>
-            </Tabs>
-          </div>
-        </section>
+        <ArthrosisTypesSection />
 
         {/* Causes and Risk Factors Section */}
         <section className={cn(

@@ -1,4 +1,4 @@
-import { useEffect, ReactNode } from 'react';
+import React, { useEffect, ReactNode } from 'react';
 import { useParams } from 'react-router-dom';
 
 import { useLanguage, SupportedLanguage } from '@/contexts/LanguageContext';

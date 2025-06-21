@@ -1,0 +1,377 @@
+{
+  "timestamp": "2025-06-19T11:55:26.364Z",
+  "completedTranslations": 22,
+  "previousCompletionRate": "97.8",
+  "newCompletionRate": "100.0",
+  "translationLog": [
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.booking.benefits",
+      "english": [
+        "Prompt response",
+        "Expert assessment",
+        "Personalised treatment plans",
+        "Comprehensive follow-up care"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assess.items",
+      "english": [
+        "Detailed symptom questionnaires",
+        "Pain mapping tools",
+        "Functional movement tests",
+        "Medical history analysis",
+        "Imaging results integration"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.learn.items",
+      "english": [
+        "Interactive anatomical models",
+        "Condition-specific information",
+        "Treatment option explanations",
+        "Pain science education",
+        "Biomechanics fundamentals"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.exercise.items",
+      "english": [
+        "Video demonstrations",
+        "Detailed instructions",
+        "Progression tracking",
+        "Difficulty adjustments",
+        "Feedback-based modifications"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.track.items",
+      "english": [
+        "Pain level monitoring",
+        "Mobility improvement tracking",
+        "Exercise completion logging",
+        "Symptom change documentation",
+        "Goal achievement visualisation"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.pain.items",
+      "english": [
+        "Use interactive body maps to indicate pain locations",
+        "Rate pain intensity on standardised scales",
+        "Describe pain qualities and patterns",
+        "Identify activities that worsen or improve symptoms",
+        "Track changes in pain over time"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.functional.items",
+      "english": [
+        "Complete standardised functional assessment questionnaires",
+        "Record video of movement tests (with privacy controls)",
+        "Evaluate impact on work, home, and recreational activities",
+        "Assess range of motion limitations",
+        "Track functional improvements over time"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.history.items",
+      "english": [
+        "Create a secure medical profile",
+        "Document previous spine conditions and treatments",
+        "List current medications and supplements",
+        "Record relevant medical conditions",
+        "Share family history of spine conditions"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.imaging.items",
+      "english": [
+        "Securely upload imaging studies (MRI, CT, X-ray)",
+        "Provide radiologist reports",
+        "Track changes in imaging findings over time",
+        "Receive expert interpretation of your imaging",
+        "Share imaging with your healthcare team"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.exercises.exercises",
+      "english": [
+        {
+          "name": "Cervical Retraction",
+          "sets": "3 sets x 10 reps"
+        },
+        {
+          "name": "Prone Cobra",
+          "sets": "3 sets x 8 reps"
+        },
+        {
+          "name": "Bird Dog",
+          "sets": "3 sets x 10 reps each side"
+        }
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.exercises.difficulties",
+      "english": [
+        "Too Easy",
+        "Just Right",
+        "Too Difficult"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.exercises.painLevels",
+      "english": [
+        "No Pain",
+        "Mild Pain",
+        "Moderate Pain",
+        "Severe Pain"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.goals.goalTypes",
+      "english": [
+        "Pain Reduction",
+        "Mobility Improvement",
+        "Activity Return",
+        "Exercise Achievement"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.successStories.spineHealthApp.patientDashboard.gallery.appointment.contact.questions.procedureDescriptions.appointments.process.steps.appointmentInfo.whatToBring.items",
+      "english": [
+        "Your referral letter from your GP or specialist",
+        "Medicare card and/or private health insurance details",
+        "Any relevant scans or imaging (or details of where these were performed)",
+        "List of current medications and dosages",
+        "List of any allergies",
+        "Previous medical reports related to your condition",
+        "List of questions you'd like to ask"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.successStories.spineHealthApp.patientDashboard.gallery.appointment.contact.questions.procedureDescriptions.appointments.process.steps.appointmentInfo.investigations.items",
+      "english": [
+        "MRI (magnetic resonance imaging) including weight-bearing scans and MR angiography",
+        "CT (computed tomography)",
+        "SPECT (single-photon emission computed tomography)",
+        "Flexion/extension, lateral bending, and other specific types of X-Rays",
+        "EOS imaging (low dose 3D imaging in natural standing position)",
+        "DEXA bone mineral density measurements",
+        "Ultrasound and other studies"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.successStories.spineHealthApp.patientDashboard.gallery.appointment.contact.questions.procedureDescriptions.appointments.process.steps.appointmentInfo.fees.medicolegal.independentExaminations.types.impairmentAssessment.helpRecover.purposes",
+      "english": [
+        "Assessment of injuries (work, transport accidents, public liability or medical negligence)",
+        "Assisting with insurance and compensation claims",
+        "Impairment assessments",
+        "Estimation of work capacity"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.successStories.spineHealthApp.patientDashboard.gallery.appointment.contact.questions.procedureDescriptions.appointments.process.steps.appointmentInfo.fees.medicolegal.independentExaminations.types.impairmentAssessment.services.items",
+      "english": [
+        "Standard Medical Reports",
+        "Independent Medical Examinations (IME)",
+        "Joint Medical Examinations (JME)",
+        "Whole Person Impairment Assessments (WPI)",
+        "Wrongs Act 1958 – Sect 28LN Certificate of Assessment",
+        "Total & Permanent Disability Assessments (TPD)",
+        "Work Capacity Assessments",
+        "Conciliation Reports",
+        "Medical Questionnaires",
+        "Expert Witness Opinions",
+        "File/Imaging Reviews",
+        "Teleconferences"
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.successStories.spineHealthApp.patientDashboard.gallery.appointment.contact.questions.procedureDescriptions.appointments.process.steps.appointmentInfo.fees.medicolegal.independentExaminations.types.impairmentAssessment.assessmentProcess.locations.additionalLocations.locations",
+      "english": [
+        {
+          "name": "Mornington",
+          "address": "Nepean Specialist Centre\n1050 Nepean Highway"
+        },
+        {
+          "name": "Bundoora",
+          "address": "UniHill Consulting Suites\nLevel 4 Suite 32, 240 Plenty Road"
+        },
+        {
+          "name": "Frankston",
+          "address": "Frankston Private Hospital\n525 McClelland Drive"
+        },
+        {
+          "name": "Werribee",
+          "address": "Consulting Rooms\n297 Princes Highway"
+        },
+        {
+          "name": "Heidelberg",
+          "address": "Consulting Suites, Level 7\n10 Martin Street"
+        },
+        {
+          "name": "Moonee Ponds",
+          "address": "Moonee Ponds Specialist Centre\n827 Mt Alexander Road"
+        },
+        {
+          "name": "Dandenong",
+          "address": "Dandenong Neurology & Specialists Group\n136 David Street"
+        },
+        {
+          "name": "Sunbury",
+          "address": "Lake Imaging\n17-19 Horne Street"
+        }
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.successStories.spineHealthApp.patientDashboard.gallery.appointment.contact.questions.procedureDescriptions.appointments.process.steps.appointmentInfo.fees.medicolegal.independentExaminations.types.impairmentAssessment.assessmentProcess.hospitals.locations.langwarrinLocation.therapeuticInterventions.nearbyAmenities.nearbyHospitals.insuranceAndFunding.technologiesPage.categories.wellness.items",
+      "english": [
+        {
+          "title": "Minimally-Invasive Brain Surgery",
+          "description": "Our minimally-invasive brain surgery uses small incisions and precise instruments to reduce trauma and recovery time while improving surgical precision."
+        },
+        {
+          "title": "Minimally-Invasive Spine Surgery",
+          "description": "Our minimally-invasive spine surgery uses small incisions and specialised instruments to reduce muscle damage and pain, speed recovery time."
+        },
+        {
+          "title": "Endoscopic Surgery",
+          "description": "Endoscopic surgery uses small incisions and specialised camera equipment to allow surgeons to see and treat spine issues through small incisions."
+        },
+        {
+          "title": "Percutaneous Procedures",
+          "description": "Percutaneous procedures are performed through small skin incisions, reducing trauma and pain, speeding recovery time, and improving surgical outcomes."
+        }
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.successStories.spineHealthApp.patientDashboard.gallery.appointment.contact.questions.procedureDescriptions.appointments.process.steps.appointmentInfo.fees.medicolegal.independentExaminations.types.impairmentAssessment.assessmentProcess.hospitals.locations.langwarrinLocation.therapeuticInterventions.nearbyAmenities.nearbyHospitals.insuranceAndFunding.technologiesPage.categories.imagingTech.items",
+      "english": [
+        {
+          "title": "Intraoperative Navigation",
+          "description": "Intraoperative navigation systems provide real-time three-dimensional images to help surgeons precisely locate and navigate complex anatomical structures."
+        },
+        {
+          "title": "Functional MRI",
+          "description": "Functional MRI helps us identify critical functional areas of the brain to ensure these areas are avoided during surgery."
+        },
+        {
+          "title": "Intraoperative Ultrasound",
+          "description": "Intraoperative ultrasound provides real-time images to help surgeons monitor progress and make adjustments during surgery."
+        },
+        {
+          "title": "Neuromonitoring",
+          "description": "Neuromonitoring techniques monitor neural function during surgery to reduce the risk of neural injury."
+        }
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.successStories.spineHealthApp.patientDashboard.gallery.appointment.contact.questions.procedureDescriptions.appointments.process.steps.appointmentInfo.fees.medicolegal.independentExaminations.types.impairmentAssessment.assessmentProcess.hospitals.locations.langwarrinLocation.therapeuticInterventions.nearbyAmenities.nearbyHospitals.insuranceAndFunding.technologiesPage.categories.services.items",
+      "english": [
+        {
+          "title": "Artificial Disc Replacement",
+          "description": "Artificial disc replacement is a motion-preserving technique that relieves pain and restores the natural motion of the spine."
+        },
+        {
+          "title": "Minimally-Invasive Spine Fusion",
+          "description": "Minimally-invasive spine fusion uses small incisions and specialised instruments to reduce muscle damage and recovery time."
+        },
+        {
+          "title": "Spinal Deformity Correction",
+          "description": "Spinal deformity correction surgery can treat scoliosis, kyphosis, and other spinal deformities."
+        },
+        {
+          "title": "Spinal Tumour Removal",
+          "description": "Spinal tumour removal surgery uses advanced techniques to safely remove spinal tumours while protecting surrounding neural structures."
+        }
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    },
+    {
+      "key": "consultingRooms.features.facilities.expertiseCards.specialties.home.advancedTechnologies.features.patientResources.individualSpineHealthProgramme.keyFeatures.howItWorks.assessmentTools.dashboard.successStories.spineHealthApp.patientDashboard.gallery.appointment.contact.questions.procedureDescriptions.appointments.process.steps.appointmentInfo.fees.medicolegal.independentExaminations.types.impairmentAssessment.assessmentProcess.hospitals.locations.langwarrinLocation.therapeuticInterventions.nearbyAmenities.nearbyHospitals.insuranceAndFunding.technologiesPage.categories.brainSurgery.items",
+      "english": [
+        {
+          "title": "Brain Tumour Removal",
+          "description": "Brain tumour removal surgery uses minimally-invasive techniques and image guidance to safely remove brain tumours."
+        },
+        {
+          "title": "Cerebrovascular Surgery",
+          "description": "Cerebrovascular surgery treats brain aneurysms, arteriovenous malformations, and other vascular conditions."
+        },
+        {
+          "title": "Epilepsy Surgery",
+          "description": "Epilepsy surgery can help control intractable seizures and improve patients' quality of life."
+        },
+        {
+          "title": "Trigeminal Neuralgia Treatment",
+          "description": "Trigeminal neuralgia treatment uses minimally-invasive techniques to relieve facial pain and restore normal life."
+        }
+      ],
+      "chinese": "[翻译错误]",
+      "category": "consulting-rooms",
+      "priority": "medium"
+    }
+  ]
+}

@@ -8,20 +8,15 @@ import { generateId } from '@/lib/accessibility';
 export interface CheckboxProps extends React.ComponentPropsWithoutRef<typeof CheckboxPrimitive.Root> {
   /** Label for the checkbox */
   label?: string;
-
-}
-
   /** Error message to display and announce to screen readers */
   error?: string;
-
-}
-
   /** Description for the checkbox */
   description?: string;
+}
 const Checkbox = React.forwardRef<
   React.ElementRef<typeof CheckboxPrimitive.Root>,
   CheckboxProps
->(({ className: any, label: any, error: any, description: any, id: any, ...props }: any, ref: any) => {
+>(({ className, label, error, description, id, ...props }, ref) => {
   // Generate unique IDs for accessibility
   const checkboxId = id || generateId('checkbox');
   const errorId = error ? `${checkboxId}-error` : undefined;

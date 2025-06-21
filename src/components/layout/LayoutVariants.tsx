@@ -9,7 +9,6 @@ import { cn } from '@/lib/utils';
  * Specialized layout components for different page types
  */
 
-
 /**
  * Specialized layout for landing pages
  */

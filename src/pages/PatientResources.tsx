@@ -1,14 +1,70 @@
+import React, { useEffect } from 'react';
 import { FileText, Calendar, Info, HelpCircle, FileDown, Clock } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { useEffect } from 'react';
-
 import PageHeader from '@/components/PageHeader';
 import StandardPageLayout from '@/components/StandardPageLayout';
 import { Button } from '@/components/ui/button';
 import { useLanguage } from '@/contexts/LanguageContext';
+import en from '@/locales/en';
+
+interface EducationalMaterial {
+  title: string;
+  description: string;
+  icon: React.ReactNode;
+  link: string;
+  downloadName: string;
+}
 
 const PatientResources: React.FC = () => {
   const { t } = useLanguage();
+
+  // Safe fallback for translations
+  const safeT = t || en;
+  const finalT = (safeT && safeT.patientResources && safeT.patientResources.categories && safeT.patientResources.resources) ? safeT : {
+    patientResources: {
+      title: "Patient Resources",
+      subtitle: "Comprehensive resources to support your healthcare journey",
+      categories: {
+        beforeVisit: "Before Your Visit",
+        conditionsTreatments: "Conditions & Treatments",
+        surgeryInfo: "Surgery Information",
+        patientSupport: "Patient Support"
+      },
+      resources: {
+        newPatientForms: "New Patient Forms",
+        newPatientFormsDesc: "Download and complete forms before your appointment",
+        insuranceInfo: "Insurance Information",
+        insuranceInfoDesc: "Understanding your insurance coverage and benefits",
+        preparingForAppointment: "Preparing for Your Appointment",
+        preparingForAppointmentDesc: "What to expect and how to prepare",
+        brainConditions: "Brain Conditions",
+        brainConditionsDesc: "Information about brain tumours and neurological conditions",
+        spineConditions: "Spine Conditions",
+        spineConditionsDesc: "Comprehensive spine condition information and treatments",
+        minimallyInvasive: "Minimally Invasive Surgery",
+        minimallyInvasiveDesc: "Advanced surgical techniques for better outcomes",
+        preSurgeryInstructions: "Pre-Surgery Instructions",
+        preSurgeryInstructionsDesc: "Important guidelines before your surgery",
+        postSurgeryCare: "Post-Surgery Care",
+        postSurgeryCareDesc: "Recovery guidelines and care instructions",
+        hospitalInfo: "Hospital Information",
+        hospitalInfoDesc: "Information about our partner hospitals",
+        supportGroups: "Support Groups",
+        supportGroupsDesc: "Connect with others facing similar challenges",
+        rehabilitationResources: "Rehabilitation Resources",
+        rehabilitationResourcesDesc: "Resources to support your recovery",
+        mentalHealthSupport: "Mental Health Support",
+        mentalHealthSupportDesc: "Psychological support during your healthcare journey"
+      },
+      educationalMaterials: "Educational Materials",
+      needAppointment: "Need an Appointment?",
+      appointmentDesc: "Schedule a consultation with our expert team",
+      viewInstructions: "View Instructions",
+      viewHospitals: "View Hospitals",
+      findSupport: "Find Support",
+      viewResources: "View Resources"
+    }
+  };
 
   useEffect(() => {
     // Scroll to top when component mounts
@@ -18,96 +74,96 @@ const PatientResources: React.FC = () => {
   // Resource categories
   const resourceCategories = [
     {
-      title: t.patientResources.categories.beforeVisit,
+      title: finalT.patientResources.categories.beforeVisit,
       icon: <Calendar className="h-8 w-8 text-primary" />,
       resources: [
         {
-          title: t.patientResources.resources.newPatientForms,
-          description: t.patientResources.resources.newPatientFormsDesc,
+          title: finalT.patientResources.resources.newPatientForms,
+          description: finalT.patientResources.resources.newPatientFormsDesc,
           link: "#",
           buttonText: "Download Forms"
         },
         {
-          title: t.patientResources.resources.insuranceInfo,
-          description: t.patientResources.resources.insuranceInfoDesc,
+          title: finalT.patientResources.resources.insuranceInfo,
+          description: finalT.patientResources.resources.insuranceInfoDesc,
           link: "#",
           buttonText: "View Details"
         },
         {
-          title: t.patientResources.resources.preparingForAppointment,
-          description: t.patientResources.resources.preparingForAppointmentDesc,
+          title: finalT.patientResources.resources.preparingForAppointment,
+          description: finalT.patientResources.resources.preparingForAppointmentDesc,
           link: "#",
           buttonText: "Read More"
         }
       ]
     },
     {
-      title: t.patientResources.categories.conditionsTreatments,
+      title: finalT.patientResources.categories.conditionsTreatments,
       icon: <Info className="h-8 w-8 text-primary" />,
       resources: [
         {
-          title: t.patientResources.resources.brainConditions,
-          description: t.patientResources.resources.brainConditionsDesc,
+          title: finalT.patientResources.resources.brainConditions,
+          description: finalT.patientResources.resources.brainConditionsDesc,
           link: "/expertise/image-guided-surgery",
           buttonText: "Learn More"
         },
         {
-          title: t.patientResources.resources.spineConditions,
-          description: t.patientResources.resources.spineConditionsDesc,
+          title: finalT.patientResources.resources.spineConditions,
+          description: finalT.patientResources.resources.spineConditionsDesc,
           link: "/expertise/cervical-disc-replacement",
           buttonText: "Learn More"
         },
         {
-          title: t.patientResources.resources.minimallyInvasive,
-          description: t.patientResources.resources.minimallyInvasiveDesc,
+          title: finalT.patientResources.resources.minimallyInvasive,
+          description: finalT.patientResources.resources.minimallyInvasiveDesc,
           link: "/expertise/robotic-spine-surgery",
           buttonText: "Learn More"
         }
       ]
     },
     {
-      title: t.patientResources.categories.surgeryInfo,
+      title: finalT.patientResources.categories.surgeryInfo,
       icon: <FileText className="h-8 w-8 text-primary" />,
       resources: [
         {
-          title: t.patientResources.resources.preSurgeryInstructions,
-          description: t.patientResources.resources.preSurgeryInstructionsDesc,
+          title: finalT.patientResources.resources.preSurgeryInstructions,
+          description: finalT.patientResources.resources.preSurgeryInstructionsDesc,
           link: "#",
-          buttonText: t.patientResources.viewInstructions
+          buttonText: finalT.patientResources.viewInstructions
         },
         {
-          title: t.patientResources.resources.postSurgeryCare,
-          description: t.patientResources.resources.postSurgeryCareDesc,
+          title: finalT.patientResources.resources.postSurgeryCare,
+          description: finalT.patientResources.resources.postSurgeryCareDesc,
           link: "#",
           buttonText: "Read More"
         },
         {
-          title: t.patientResources.resources.hospitalInfo,
-          description: t.patientResources.resources.hospitalInfoDesc,
+          title: finalT.patientResources.resources.hospitalInfo,
+          description: finalT.patientResources.resources.hospitalInfoDesc,
           link: "#",
-          buttonText: t.patientResources.viewHospitals
+          buttonText: finalT.patientResources.viewHospitals
         }
       ]
     },
     {
-      title: t.patientResources.categories.patientSupport,
+      title: finalT.patientResources.categories.patientSupport,
       icon: <HelpCircle className="h-8 w-8 text-primary" />,
       resources: [
         {
-          title: t.patientResources.resources.supportGroups,
-          description: t.patientResources.resources.supportGroupsDesc,
+          title: finalT.patientResources.resources.supportGroups,
+          description: finalT.patientResources.resources.supportGroupsDesc,
           link: "#",
-          buttonText: t.patientResources.findSupport
+          buttonText: finalT.patientResources.findSupport
         },
         {
-          title: t.patientResources.resources.rehabilitationResources,
-          description: t.patientResources.resources.rehabilitationResourcesDesc,
+          title: finalT.patientResources.resources.rehabilitationResources,
+          description: finalT.patientResources.resources.rehabilitationResourcesDesc,
           link: "#",
-          buttonText: t.patientResources.viewResources
+          buttonText: finalT.patientResources.viewResources
         },
         {
-          title: t.patientResources.resources.mentalHealthSupport,
-          description: t.patientResources.resources.mentalHealthSupportDesc,
+          title: finalT.patientResources.resources.mentalHealthSupport,
+          description: finalT.patientResources.resources.mentalHealthSupportDesc,
           link: "#",
           buttonText: "Learn More"
         }
@@ -150,8 +206,8 @@ const PatientResources: React.FC = () => {
   return (
     <StandardPageLayout showHeader={false}>
       <PageHeader
-        title={t.patientResources.title}
-        subtitle={t.patientResources.subtitle}
+        title={finalT.patientResources.title}
+        subtitle={finalT.patientResources.subtitle}
         backgroundImage="/images/patient-resources/spine-health-hero.jpg"
         enableParallax={true}
       />
@@ -188,9 +244,9 @@ const PatientResources: React.FC = () => {
         {/* Educational Materials */}
         <section className="py-16 bg-muted/30">
           <div className="container">
-            <h2 className="text-3xl font-bold text-center mb-12">{t.patientResources.educationalMaterials}</h2>
+            <h2 className="text-3xl font-bold text-center mb-12">{finalT.patientResources.educationalMaterials}</h2>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              {educationalMaterials?.map((material: any, index: any) => (
+              {educationalMaterials?.map((material: EducationalMaterial, index: number) => (
                 <div key={index} className="card p-6 rounded-lg shadow-md bg-card hover:shadow-lg transition-shadow animate-fade-in" style={{ animationDelay: `${index * 100}ms` }}>
                   <div className="flex justify-between items-start mb-4">
                     <h3 className="text-lg font-semibold">{material.title}</h3>
@@ -429,9 +485,9 @@ const PatientResources: React.FC = () => {
           <div className="container">
             <div className="max-w-3xl mx-auto text-center">
               <Clock className="h-12 w-12 text-primary mx-auto mb-4" />
-              <h2 className="text-3xl font-bold mb-4">{t.patientResources.needAppointment}</h2>
+              <h2 className="text-3xl font-bold mb-4">{finalT.patientResources.needAppointment}</h2>
               <p className="text-muted-foreground mb-8">
-                {t.patientResources.appointmentDesc}
+                {finalT.patientResources.appointmentDesc}
               </p>
               <div className="flex flex-col sm:flex-row justify-center gap-4">
                 <Button asChild size="lg">

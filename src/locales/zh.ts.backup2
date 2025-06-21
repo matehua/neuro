@@ -1,0 +1,212 @@
+export default {
+  consultingRooms: {
+    hero: {
+      title: "在萨里山扩展您的医疗实践",
+      subtitle: "专业环境",
+      description: "在萨里山的miNEURO医疗咨询套房租用全套设备的医疗咨询室。对于医疗专业人士来说，我们的先进空间位于主要医疗设施和交通枢纽附近，是理想之选。无论您需要临时还是永久设置，我们在充满活力的购物区的黄金位置提供现代化和便捷的工作空间，以提供一流的患者护理。",
+      scheduleViewing: "安排参观"
+    },
+    features: {
+      convenientLocation: {
+        title: "便利位置",
+        description: "我们的设施距离繁忙的博士山医疗中心、爱普沃斯东部医院、几家全科诊所和繁忙的购物/商业/交通区域仅几分钟车程。"
+      },
+      fullyEquipped: {
+        title: "全套设备房间",
+        description: "我们的咨询室配备了现代化的医疗设备、经验丰富的接待员、检查台、人体工学座椅、电脑、洗手池和高速互联网接入。"
+      },
+      flexibleTerms: {
+        title: "灵活的许可条款",
+        description: "我们提供灵活的许可条款，包括临时、短期和长期租赁选项，以满足您的需求。"
+      },
+      customisation: {
+        title: "定制选项",
+        description: "无论您需要额外的医疗设备还是特定的房间配置，我们都提供定制选项以满足您的要求。"
+      },
+      receptionistSupport: {
+        title: "接待员支持",
+        description: "从迎接患者到管理预约和咨询，我们经验丰富的接待员在这里协助您提供卓越的患者护理。"
+      },
+      professionalEnvironment: {
+        title: "专业环境",
+        description: "从温馨的接待区到设备齐全的咨询室，我们优先为所有使用者创造积极的体验。"
+      }
+    }
+  },
+  nav: {
+    home: "首页",
+    expertise: "专业领域",
+    appointments: "预约",
+    gpResources: "全科医生资源",
+    locations: "诊所位置",
+    contact: "联系我们",
+    locationsSubmenu: {
+      surreyHills: "萨里山",
+      mornington: "莫宁顿",
+      frankston: "弗兰克斯顿",
+      mooneePonds: "月亮池塘"
+    }
+  },
+  hero: {
+    subtitle: "专业神经外科护理",
+    title: "先进的神经外科解决方案",
+    description: "在miNEURO，我们提供全面的神经外科护理，专注于脑部、脊柱和神经系统疾病。我们的专家团队致力于为每位患者提供个性化的治疗方案。",
+    bookConsultation: "预约咨询",
+    exploreTreatments: "探索治疗方案",
+    scrollDown: "向下滚动"
+  },
+  footer: {
+    description: "miNEURO是一家领先的神经外科诊所，专门从事脑部、脊柱和神经系统疾病的治疗。我们致力于为患者提供最高质量的护理。",
+    quickLinks: "快速链接",
+    contact: "联系方式",
+    allRights: "版权所有"
+  },
+  patientResources: {
+    title: "患者资源",
+    description: "为患者及其家属提供的综合资源和信息",
+    preOperative: {
+      title: "术前准备",
+      description: "手术前的重要准备信息和指导"
+    },
+    postOperative: {
+      title: "术后护理",
+      description: "手术后的恢复指导和护理建议"
+    },
+    education: {
+      title: "患者教育",
+      description: "了解您的病情和治疗选择"
+    }
+  },
+  appointmentForm: {
+    title: "预约咨询",
+    appointmentDate: "预约日期",
+    selectDate: "选择日期",
+    appointmentTime: "预约时间",
+    selectTime: "选择时间",
+    appointmentConfirmed: "预约已确认",
+    checkAvailability: "检查可用性"
+  },
+  testimonials: {
+    title: "患者评价",
+    description: "听听我们患者的真实体验",
+    readMore: "阅读更多",
+    viewAll: "查看所有评价"
+  },
+  expertise: {
+    title: "专业领域",
+    description: "我们在神经外科各个领域拥有丰富的经验",
+    brainSurgery: {
+      title: "脑部手术",
+      description: "专业的脑肿瘤、动脉瘤和其他脑部疾病治疗"
+    },
+    spinalSurgery: {
+      title: "脊柱手术",
+      description: "微创脊柱手术和复杂脊柱疾病治疗"
+    },
+    nerveSurgery: {
+      title: "神经手术",
+      description: "周围神经疾病和神经损伤的专业治疗"
+    }
+  },
+  locations: {
+    surreyHills: {
+      title: "萨里山诊所",
+      address: "619 Canterbury Road, Surrey Hills VIC 3127",
+      description: "我们的主要诊所，配备最先进的设施和技术"
+    },
+    mornington: {
+      title: "莫宁顿诊所",
+      description: "为半岛地区患者提供便利的诊疗服务"
+    },
+    frankston: {
+      title: "弗兰克斯顿诊所",
+      description: "为南部地区患者提供专业的神经外科服务"
+    }
+  },
+  conditions: {
+    brainTumors: {
+      title: "脑肿瘤",
+      description: "包括胶质瘤、脑膜瘤、垂体腺瘤等各类脑肿瘤的诊断和治疗"
+    },
+    spinalDisorders: {
+      title: "脊柱疾病",
+      description: "脊柱狭窄、椎间盘突出、脊椎滑脱等疾病的治疗"
+    },
+    nerveDisorders: {
+      title: "神经疾病",
+      description: "三叉神经痛、神经压迫、神经肿瘤等疾病的治疗"
+    }
+  },
+  procedures: {
+    minimallyInvasive: {
+      title: "微创手术",
+      description: "采用最新的微创技术，减少创伤，加快恢复"
+    },
+    stereotactic: {
+      title: "立体定向手术",
+      description: "精确的立体定向技术，提高手术安全性和效果"
+    },
+    endoscopic: {
+      title: "内镜手术",
+      description: "通过内镜技术进行精确的微创治疗"
+    }
+  },
+  contact: {
+    title: "联系我们",
+    description: "如有任何问题或需要预约，请随时联系我们",
+    phone: "电话",
+    email: "邮箱",
+    address: "地址",
+    hours: "营业时间",
+    emergency: "紧急情况",
+    getDirections: "获取路线"
+  },
+  common: {
+    loading: "加载中...",
+    error: "错误",
+    success: "成功",
+    cancel: "取消",
+    confirm: "确认",
+    save: "保存",
+    edit: "编辑",
+    delete: "删除",
+    back: "返回",
+    next: "下一步",
+    previous: "上一步",
+    submit: "提交",
+    reset: "重置",
+    search: "搜索",
+    filter: "筛选",
+    sort: "排序",
+    viewMore: "查看更多",
+    viewLess: "收起",
+    readMore: "阅读更多",
+    learnMore: "了解更多"
+  },
+  forms: {
+    firstName: "名字",
+    lastName: "姓氏",
+    email: "邮箱",
+    phone: "电话",
+    message: "留言",
+    required: "必填项",
+    invalid: "无效",
+    pleaseSelect: "请选择",
+    pleaseEnter: "请输入"
+  },
+  specialties: {
+    neurosurgery: "神经外科",
+    spinalSurgery: "脊柱外科",
+    pediatricNeurosurgery: "小儿神经外科",
+    functionalNeurosurgery: "功能神经外科",
+    vascularNeurosurgery: "血管神经外科",
+    tumorSurgery: "肿瘤外科"
+  },
+  treatments: {
+    surgical: "手术治疗",
+    nonSurgical: "非手术治疗",
+    rehabilitation: "康复治疗",
+    painManagement: "疼痛管理",
+    followUp: "随访护理"
+  }
+};
